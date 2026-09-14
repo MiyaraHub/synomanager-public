@@ -48,8 +48,8 @@ Add your DiskStation once and the app becomes your console: live system and stor
 
 This is the **public bug + feature request repo** for Syno Manager, and it also hosts [synomanager.com](https://synomanager.com). (The app source code lives in a separate, private repository.)
 
-- **[Report a bug](https://github.com/MiyaraHub/synomanager/issues/new?template=bug_report.yml)** - the app crashed, a button doesn't work, something looks wrong.
-- **[Request a feature](https://github.com/MiyaraHub/synomanager/issues/new?template=feature_request.yml)** - something the app should do but doesn't.
+- **[Report a bug](https://github.com/MiyaraHub/synomanager-public/issues/new?template=bug_report.yml)** - the app crashed, a button doesn't work, something looks wrong.
+- **[Request a feature](https://github.com/MiyaraHub/synomanager-public/issues/new?template=feature_request.yml)** - something the app should do but doesn't.
 
 For general questions, drop into [Discord](https://discord.gg/UmVtxE5fXN), or email [admin@miyarahub.com](mailto:admin@miyarahub.com).
 
@@ -67,7 +67,7 @@ DSM 6 is not supported - it uses different API versions and authentication behav
 
 ## Support
 
-- **Bugs / features:** [open an issue](https://github.com/MiyaraHub/synomanager/issues/new/choose)
+- **Bugs / features:** [open an issue](https://github.com/MiyaraHub/synomanager-public/issues/new/choose)
 - **Manual:** [synomanager.com/guide](https://synomanager.com/guide/)
 - **Troubleshooting:** [synomanager.com/help](https://synomanager.com/help/)
 - **Discord:** [discord.gg/UmVtxE5fXN](https://discord.gg/UmVtxE5fXN)

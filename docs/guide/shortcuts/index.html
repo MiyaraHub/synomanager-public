@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Shortcuts & Deep Links - Syno Manager</title>
-<meta name="description" content="The synomanager:// URL scheme opens the app on any screen, so Siri, launcher shortcuts and automation apps can jump straight to storage, apps or backup." />
-<meta name="keywords" content="synomanager url scheme, Synology app deep link, Siri shortcut NAS, Android shortcut Synology, NAS automation shortcut" />
+<title>Shortcuts, Siri & Deep Links - Syno Manager</title>
+<meta name="description" content="The synomanager:// URL scheme opens the app on any screen, and on the Mac, Siri and Shortcuts see Syno Manager natively through App Intents." />
+<meta name="keywords" content="synomanager url scheme, Synology app deep link, Siri shortcut NAS, Synology Mac Shortcuts app, macOS App Intents, Android shortcut Synology, NAS automation shortcut" />
 <meta name="author" content="MiyaraHub Technologies LLC" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#3b82f6" />
 <link rel="canonical" href="https://synomanager.com/guide/shortcuts/" />
-<meta property="og:title" content="Shortcuts & Deep Links - Syno Manager" />
-<meta property="og:description" content="The synomanager:// URL scheme opens the app on any screen, so Siri, launcher shortcuts and automation apps can jump straight to storage, apps or backup." />
+<meta property="og:title" content="Shortcuts, Siri & Deep Links - Syno Manager" />
+<meta property="og:description" content="The synomanager:// URL scheme opens the app on any screen, and on the Mac, Siri and Shortcuts see Syno Manager natively through App Intents." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://synomanager.com/guide/shortcuts/" />
 <meta property="og:site_name" content="Syno Manager" />
 <meta property="og:image" content="https://synomanager.com/screenshots/dashboard.webp" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Shortcuts & Deep Links - Syno Manager" />
-<meta name="twitter:description" content="The synomanager:// URL scheme opens the app on any screen, so Siri, launcher shortcuts and automation apps can jump straight to storage, apps or backup." />
+<meta name="twitter:title" content="Shortcuts, Siri & Deep Links - Syno Manager" />
+<meta name="twitter:description" content="The synomanager:// URL scheme opens the app on any screen, and on the Mac, Siri and Shortcuts see Syno Manager natively through App Intents." />
 <meta name="twitter:image" content="https://synomanager.com/screenshots/dashboard.webp" />
 <link rel="icon" href="../../assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
@@ -79,8 +79,8 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "Shortcuts & Deep Links - Syno Manager",
-  "description": "The synomanager:// URL scheme opens the app on any screen, so Siri, launcher shortcuts and automation apps can jump straight to storage, apps or backup.",
+  "headline": "Shortcuts, Siri & Deep Links - Syno Manager",
+  "description": "The synomanager:// URL scheme opens the app on any screen, and on the Mac, Siri and Shortcuts see Syno Manager natively through App Intents.",
   "image": "https://synomanager.com/screenshots/dashboard.webp",
   "url": "https://synomanager.com/guide/shortcuts/",
   "inLanguage": "en",
@@ -145,6 +145,14 @@
         "@type": "Answer",
         "text": "No. A shortcut opens a screen; which NAS it opens on follows your Launch Behavior setting."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Syno Manager work with the Shortcuts app on a Mac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, natively. Open a section, Restart NAS and Shut down NAS appear as Syno Manager actions in Apple's Shortcuts app on macOS, with no URL to type. Restart NAS and Shut down NAS ask Siri or Shortcuts to confirm before doing anything, then only open the app to the power controls - the same confirm-first rule as everywhere else."
+      }
     }
   ]
 }
@@ -173,7 +181,7 @@
     <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Shortcuts</div>
     <div class="eyebrow">Shortcuts &amp; links</div>
     <h1>Straight to the <span class="g">screen you want</span></h1>
-    <p>Syno Manager registers the <code>synomanager://</code> URL scheme, so a Siri phrase, a launcher shortcut or an automation app can open the app exactly where you need it instead of on the home screen.</p>
+    <p>Syno Manager registers the <code>synomanager://</code> URL scheme, so a Siri phrase, a launcher shortcut or an automation app can open the app exactly where you need it instead of on the home screen. On the Mac, Siri and the Shortcuts app see Syno Manager natively, with no URL to type at all.</p>
   </div>
 </div>
 
@@ -246,6 +254,26 @@
 <section>
   <div class="wrap">
     <div class="section-head">
+      <div class="eyebrow">macOS</div>
+      <h2>Siri and Shortcuts, natively</h2>
+      <p class="lead">On the Mac, Syno Manager does not need a URL at all. It registers three actions directly with Apple's App Intents, so Siri and the Shortcuts app see <b>Syno Manager</b> as an app with its own vocabulary, the same way they see Apple's own apps.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Action</th><th>What it does</th><th>Say to Siri</th></tr></thead>
+      <tbody>
+        <tr><td>Open a section</td><td>Opens Syno Manager at whichever section you pick - Dashboard, Storage, System, Network, Apps, Backup, Files or Wake.</td><td>"Open Syno Manager"</td></tr>
+        <tr><td>Restart NAS</td><td>Asks you to confirm, then opens the app at the power controls. Nothing is sent to the NAS until you confirm again there.</td><td>"Restart my NAS with Syno Manager"</td></tr>
+        <tr><td>Shut down NAS</td><td>Same shape as Restart: confirm with Siri or Shortcuts, then the app opens at the power controls.</td><td>"Shut down my NAS with Syno Manager"</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Restart and shut down still confirm twice.</b> Siri or Shortcuts asks first - "Open Syno Manager to restart the NAS? Nothing is sent to the NAS yet - you confirm it in the app" - and the app's own power controls ask again. A voice command that reboots a NAS on the first misheard word is not a feature worth having.</div>
+    <p style="color:var(--steel);margin-top:18px;max-width:74ch"><b>Build your own automations on top of these.</b> Because they are ordinary Shortcuts actions, Open a section drops into any shortcut you build - run it on a schedule, trigger it from a Home Hub, or chain it after something else - exactly like an action from any other Mac app.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
       <div class="eyebrow">Common questions</div>
       <h2>Shortcuts FAQ</h2>
     </div>
@@ -253,6 +281,7 @@
     <details><summary>Can a shortcut restart my NAS in one tap?</summary><div class="body">No, and deliberately. The reboot and shutdown links only open the app at the power controls, where the existing confirmation applies.</div></details>
     <details><summary>Can I use these with Siri?</summary><div class="body">Yes. Create a shortcut in Apple's Shortcuts app that opens the URL, give it a phrase, and Siri will take you straight there.</div></details>
     <details><summary>Do shortcuts pick a specific NAS?</summary><div class="body">No. A shortcut opens a screen; which NAS it opens on follows your Launch Behavior setting.</div></details>
+    <details><summary>Does Syno Manager work with the Shortcuts app on a Mac?</summary><div class="body">Yes, natively. Open a section, Restart NAS and Shut down NAS appear as Syno Manager actions in Apple's Shortcuts app on macOS, with no URL to type. The two power actions ask Siri or Shortcuts to confirm before doing anything, then only open the app to the power controls.</div></details>
   </div>
 </section>
 

@@ -3,22 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>File Station, Shares & Notes - Syno Manager</title>
-<meta name="description" content="Browse File Station and download files from your Synology, manage shared folders, and read Note Station, Synology Office and Contacts from your phone." />
-<meta name="keywords" content="Synology File Station app, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app, Synology download file phone" />
+<title>File Station, Copy & Move, Notes - Syno Manager</title>
+<meta name="description" content="Browse File Station, copy or move files and folders on the NAS itself including to a USB drive, manage shares, and read Note Station, Office and Contacts." />
+<meta name="keywords" content="Synology File Station app, Synology copy move files, Synology USB drive copy, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app" />
 <meta name="author" content="MiyaraHub Technologies LLC" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#3b82f6" />
 <link rel="canonical" href="https://synomanager.com/guide/files/" />
-<meta property="og:title" content="File Station, Shares & Notes - Syno Manager" />
-<meta property="og:description" content="Browse File Station and download files from your Synology, manage shared folders, and read Note Station, Synology Office and Contacts from your phone." />
+<meta property="og:title" content="File Station, Copy & Move, Notes - Syno Manager" />
+<meta property="og:description" content="Browse File Station, copy or move files and folders on the NAS itself including to a USB drive, manage shares, and read Note Station, Office and Contacts." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://synomanager.com/guide/files/" />
 <meta property="og:site_name" content="Syno Manager" />
 <meta property="og:image" content="https://synomanager.com/screenshots/files-station.webp" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="File Station, Shares & Notes - Syno Manager" />
-<meta name="twitter:description" content="Browse File Station and download files from your Synology, manage shared folders, and read Note Station, Synology Office and Contacts from your phone." />
+<meta name="twitter:title" content="File Station, Copy & Move, Notes - Syno Manager" />
+<meta name="twitter:description" content="Browse File Station, copy or move files and folders on the NAS itself including to a USB drive, manage shares, and read Note Station, Office and Contacts." />
 <meta name="twitter:image" content="https://synomanager.com/screenshots/files-station.webp" />
 <link rel="icon" href="../../assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
@@ -79,8 +79,8 @@
 {
   "@context": "https://schema.org",
   "@type": "TechArticle",
-  "headline": "File Station, Shares & Notes - Syno Manager",
-  "description": "Browse File Station and download files from your Synology, manage shared folders, and read Note Station, Synology Office and Contacts from your phone.",
+  "headline": "File Station, Copy & Move, Notes - Syno Manager",
+  "description": "Browse File Station, copy or move files and folders on the NAS itself including to a USB drive, manage shares, and read Note Station, Office and Contacts.",
   "image": "https://synomanager.com/screenshots/files-station.webp",
   "url": "https://synomanager.com/guide/files/",
   "inLanguage": "en",
@@ -145,6 +145,22 @@
         "@type": "Answer",
         "text": "Because Office documents are stored in and opened through Synology Drive. The app reports that Office is installed and which document types it supports; editing a spreadsheet on a phone belongs in Synology's own Drive app."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy or move files to a USB drive plugged into the NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. An external drive shows up as a destination the same way a shared folder does, because the NAS mounts it as one. Pick Copy to or Move to, open the drive and confirm - the NAS writes to it directly, and nothing passes through your phone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does copying or moving pass through my phone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The NAS does the work itself over SYNO.FileStation.CopyMove. Your phone sends the request and then just watches progress, so a transfer of hundreds of gigabytes never touches your data plan or your phone's storage, and it keeps running if you close the app."
+      }
     }
   ]
 }
@@ -174,7 +190,7 @@
       <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Files</div>
       <div class="eyebrow">Files</div>
       <h1>Your shares, <span class="g">from anywhere</span></h1>
-      <p>File Station and Shared Folders, plus the three DSM apps that are really about content: Note Station, Synology Office and Contacts. If Download Station is installed it lives here too - it has <a href="/guide/downloads/">its own page</a>.</p>
+      <p>File Station and Shared Folders, copy and move on the NAS itself, plus the three DSM apps that are really about content: Note Station, Synology Office and Contacts. If Download Station is installed it lives here too - it has <a href="/guide/downloads/">its own page</a>.</p>
     </div>
     <div class="hero-shot"><img alt="File Station browsing shared folders" src="../../screenshots/files-station.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
   </div>
@@ -184,6 +200,7 @@
   <div class="wrap">
     <div class="onthispage"><b>On this page</b><ul>
       <li><a href="#file-station">File Station</a></li>
+      <li><a href="#copy-move">Copy and move</a></li>
       <li><a href="#shares">Shared Folders</a></li>
       <li><a href="#notes">Note Station</a></li>
       <li><a href="#office">Synology Office</a></li>
@@ -202,6 +219,39 @@
       <li><b>Upload a file to the NAS</b> by picking it from your device.</li>
     </ul>
     <div class="note"><b>What you can see is what DSM lets you see.</b> File Station here respects your DSM account's permissions exactly - a folder your account cannot read does not appear, the same as in the web interface.</div>
+  </div>
+</section>
+
+<section id="copy-move">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">File Station</div>
+      <h2>Copy and move, on the NAS itself</h2>
+      <p class="lead">Pick files or folders, choose <b>Copy to</b> or <b>Move to</b>, and the NAS carries out the transfer - not your phone. Even hundreds of gigabytes never pass through the device in your hand.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Long-press to select</b> one or more files and folders. The bar at the top switches to <b>Copy to...</b> and <b>Move to...</b>.</li>
+          <li><b>Pick a destination</b> the same way you browse File Station - open a share or a folder and confirm. Every share the NAS lists is a destination, <b>an external drive plugged into the NAS included</b>: it appears exactly like a shared folder, because the NAS mounts it as one.</li>
+          <li><b>A name clash asks first.</b> If an item already exists at the destination, you choose <b>overwrite it</b> or <b>skip it and keep the existing one</b> before anything starts.</li>
+          <li><b>A move is held to confirm.</b> Moving deletes the originals once the copy lands, so the confirm button has to be pressed and held rather than tapped - a beat of friction on purpose, before something that cannot be undone from the app.</li>
+        </ul>
+      </div>
+      <img alt="A folder selected in File Station with Copy to and Move to in the action bar" src="../../screenshots/files-copy-move-select.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="The Move to destination picker listing every share the NAS offers" src="../../screenshots/files-copy-move-destination.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">The destination picker is File Station again, scoped to choosing a folder rather than opening a file.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Progress while it runs</b> - bytes moved and a percentage, read from the NAS itself. A total the NAS is still working out shows as sizing rather than a number that means nothing yet.</li>
+          <li><b>Cancel stops it on the NAS</b>, mid-transfer. Whatever already copied stays at the destination; nothing is rolled back.</li>
+          <li><b>Close the app and it keeps going.</b> The task belongs to the NAS, not to a screen you have to keep open. Reopen File Station and the app reattaches to the same task rather than losing track of it.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px"><b>Why hold instead of tap.</b> A copy leaves the originals in place, so a mis-tap costs nothing - that one is a single tap. A move deletes them once the copy lands, so it gets the same hold-to-confirm pattern as the reboot and shutdown controls elsewhere in the app.</div>
   </div>
 </section>
 
@@ -292,6 +342,8 @@
       <h2>Files FAQ</h2>
     </div>
     <details open><summary>Can I download a file from my NAS to my phone?</summary><div class="body">Yes. Open File Station, find the file and download it. On mobile the share sheet takes over; on Windows and macOS you get a native Save As dialog. Downloads work over QuickConnect too.</div></details>
+    <details><summary>Can I copy or move files to a USB drive plugged into the NAS?</summary><div class="body">Yes. An external drive shows up as a destination the same way a shared folder does, because the NAS mounts it as one. Pick Copy to or Move to, open the drive and confirm - the NAS writes to it directly.</div></details>
+    <details><summary>Does copying or moving pass through my phone?</summary><div class="body">No. The NAS does the work itself. Your phone sends the request and watches progress, so a transfer of hundreds of gigabytes never touches your data plan, and it keeps running if you close the app.</div></details>
     <details><summary>Can I create a shared folder from the app?</summary><div class="body">Yes, from the Shared Folders sub-view. Existing shares show their name, their volume, their description and whether they carry ACL permissions.</div></details>
     <details><summary>Can I read my Note Station notes?</summary><div class="body">Yes. The Notes sub-view shows your notebooks with a note count and a tag count, and you can open any note to read it in full, create a notebook, or add a note.</div></details>
     <details><summary>Why does Synology Office only show a status?</summary><div class="body">Because Office documents are stored in and opened through Synology Drive. The app reports that Office is installed and which document types it supports; editing a document belongs in Synology's Drive app.</div></details>

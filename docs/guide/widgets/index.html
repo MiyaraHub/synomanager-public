@@ -4,21 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Home Screen Widgets - Syno Manager</title>
-<meta name="description" content="System Status, Storage Overview and Quick Actions widgets for Android and iOS - each showing when its numbers were taken, so a stale reading looks stale." />
-<meta name="keywords" content="Synology widget android, Synology widget ios, NAS home screen widget, Synology status widget, NAS storage widget" />
+<meta name="description" content="Twelve widgets for Android and iOS - health, backup, temperature and fan, Docker, cameras, network, UPS, downloads, volumes and more, each timestamped." />
+<meta name="keywords" content="Synology widget android, Synology widget ios, NAS home screen widget, Synology status widget, NAS storage widget, Synology Docker widget, Synology UPS widget, Synology camera widget" />
 <meta name="author" content="MiyaraHub Technologies LLC" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#3b82f6" />
 <link rel="canonical" href="https://synomanager.com/guide/widgets/" />
 <meta property="og:title" content="Home Screen Widgets - Syno Manager" />
-<meta property="og:description" content="System Status, Storage Overview and Quick Actions widgets for Android and iOS - each showing when its numbers were taken, so a stale reading looks stale." />
+<meta property="og:description" content="Twelve widgets for Android and iOS - health, backup, temperature and fan, Docker, cameras, network, UPS, downloads, volumes and more, each timestamped." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://synomanager.com/guide/widgets/" />
 <meta property="og:site_name" content="Syno Manager" />
 <meta property="og:image" content="https://synomanager.com/screenshots/dashboard.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Home Screen Widgets - Syno Manager" />
-<meta name="twitter:description" content="System Status, Storage Overview and Quick Actions widgets for Android and iOS - each showing when its numbers were taken, so a stale reading looks stale." />
+<meta name="twitter:description" content="Twelve widgets for Android and iOS - health, backup, temperature and fan, Docker, cameras, network, UPS, downloads, volumes and more, each timestamped." />
 <meta name="twitter:image" content="https://synomanager.com/screenshots/dashboard.webp" />
 <link rel="icon" href="../../assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
@@ -80,7 +80,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "Home Screen Widgets - Syno Manager",
-  "description": "System Status, Storage Overview and Quick Actions widgets for Android and iOS - each showing when its numbers were taken, so a stale reading looks stale.",
+  "description": "Twelve widgets for Android and iOS - health, backup, temperature and fan, Docker, cameras, network, UPS, downloads, volumes and more, each timestamped.",
   "image": "https://synomanager.com/screenshots/dashboard.webp",
   "url": "https://synomanager.com/guide/widgets/",
   "inLanguage": "en",
@@ -119,7 +119,7 @@
       "name": "What widgets does Syno Manager have?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Three: System Status at 2x2 for health at a glance, Storage Overview for volume usage, and Quick Actions at 4x1 for jumping straight into a screen. All three are available on Android and iOS."
+        "text": "Twelve: System Status, Storage Overview, Quick Actions, NAS Health, Backup, Temperature and Fan, Docker, Cameras, Network, UPS, Downloads and Volumes. All twelve are available on Android and iOS, each with a preview in the widget picker."
       }
     },
     {
@@ -144,6 +144,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "On Android, long-press the home screen, choose Widgets, find Syno Manager and drag the one you want. On iOS, long-press the home screen, tap the plus, search for Syno Manager and pick a size."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why don't I see the Docker or UPS widget in the picker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because your NAS does not offer that service. A widget for Docker, Cameras, Backup, UPS, Downloads or Volumes only appears once the app has seen your NAS report that capability - a widget that could never show data for your NAS is not offered instead of shipping empty."
       }
     }
   ]
@@ -173,30 +181,37 @@
     <div class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guide/">User Guide</a> &rsaquo; Widgets</div>
     <div class="eyebrow">Widgets</div>
     <h1>Your NAS on the <span class="g">home screen</span></h1>
-    <p>Three widgets on both Android and iOS - and each one tells you when its numbers were taken, which turns out to matter more than the numbers.</p>
+    <p>Twelve widgets on both Android and iOS, each with its own preview in the picker - and each one tells you when its numbers were taken, which turns out to matter more than the numbers.</p>
   </div>
 </div>
 
 <section>
   <div class="wrap">
     <div class="section-head">
-      <div class="eyebrow">The three</div>
+      <div class="eyebrow">The twelve</div>
       <h2>What each widget shows</h2>
+      <p class="lead">Nine of these joined the original three: System Status, Storage Overview and Quick Actions. Every one carries a preview in the launcher's widget picker, so you can see roughly what it looks like before you place it.</p>
     </div>
-    <div class="with-shot">
-      <div>
-        <div class="tscroll"><table class="t">
-          <thead><tr><th>Widget</th><th>Size</th><th>Shows</th></tr></thead>
-          <tbody>
-            <tr><td>System Status</td><td>2&times;2</td><td>NAS health at a glance - the state of the machine, without opening anything.</td></tr>
-            <tr><td>Storage Overview</td><td>-</td><td>Volume usage, so a volume filling up is visible from the launcher.</td></tr>
-            <tr><td>Quick Actions</td><td>4&times;1</td><td>Straight into a screen you use often, without going through the home screen first.</td></tr>
-          </tbody>
-        </table></div>
-        <div class="note">All three appear under <b>Syno Manager</b> in your launcher's widget picker, which is where the sizes above come from.</div>
-      </div>
-      <img alt="The launcher widget picker showing Quick Actions, Storage Overview and System Status under Syno Manager" src="../../screenshots/widget-picker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" />
-    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Widget</th><th>Shows</th><th>Needs</th></tr></thead>
+      <tbody>
+        <tr><td>System Status</td><td>NAS health at a glance - the state of the machine, without opening anything.</td><td>-</td></tr>
+        <tr><td>Storage Overview</td><td>Volume usage, so a volume filling up is visible from the launcher.</td><td>-</td></tr>
+        <tr><td>Quick Actions</td><td>Straight into a screen you use often, without going through the home screen first.</td><td>-</td></tr>
+        <tr><td>NAS Health</td><td>Whether anything is wrong, and what.</td><td>-</td></tr>
+        <tr><td>Backup</td><td>Last and next backup, and any failures.</td><td>A backup task configured</td></tr>
+        <tr><td>Temperature and Fan</td><td>System temperature with the fan mode.</td><td>-</td></tr>
+        <tr><td>Docker</td><td>Containers running, with their names.</td><td>Container Manager</td></tr>
+        <tr><td>Cameras</td><td>Cameras online.</td><td>Surveillance Station</td></tr>
+        <tr><td>Network</td><td>Live traffic on the busiest interface.</td><td>-</td></tr>
+        <tr><td>UPS</td><td>UPS charge and estimated runtime.</td><td>A UPS attached</td></tr>
+        <tr><td>Downloads</td><td>Active downloads and their speed.</td><td>Download Station</td></tr>
+        <tr><td>Volumes</td><td>Usage for every volume.</td><td>-</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>A widget for a service your NAS does not run is not offered.</b> Docker, Cameras, Backup, UPS, Downloads and Volumes only appear in the picker once the app has seen your NAS report that capability - the same rule the dashboard cards follow, applied to the launcher.</div>
+    <p style="color:var(--steel);margin-top:18px;max-width:72ch">On Android every widget <b>resizes both ways</b>, wider or taller, and settles on whichever layout fits the space you give it. All twelve appear under <b>Syno Manager</b> in your launcher's widget picker.</p>
+    <div class="note" style="margin-top:14px"><b>No picker screenshot on this page.</b> The picker only shows what it shows once a widget is actually on a home screen, and every device this site photographs is somebody's real, in-use phone - not a spare set up to be rearranged for a screenshot.</div>
   </div>
 </section>
 

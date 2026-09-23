@@ -4,21 +4,21 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The On-Device AI Assistant - Syno Manager</title>
-<meta name="description" content="Ask about your Synology NAS in plain words. The model runs on your phone - Gemini Nano or Apple Intelligence - works offline, and only ever reads." />
-<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant" />
+<meta name="description" content="Ask about your Synology NAS in plain words and get the same health verdict the dashboard shows. Runs on your phone, learns from your ratings, only reads." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
 <meta name="author" content="MiyaraHub Technologies LLC" />
 <meta name="robots" content="index, follow, max-image-preview:large" />
 <meta name="theme-color" content="#3b82f6" />
 <link rel="canonical" href="https://synomanager.com/guide/assistant/" />
 <meta property="og:title" content="The On-Device AI Assistant - Syno Manager" />
-<meta property="og:description" content="Ask about your Synology NAS in plain words. The model runs on your phone - Gemini Nano or Apple Intelligence - works offline, and only ever reads." />
+<meta property="og:description" content="Ask about your Synology NAS in plain words and get the same health verdict the dashboard shows. Runs on your phone, learns from your ratings, only reads." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://synomanager.com/guide/assistant/" />
 <meta property="og:site_name" content="Syno Manager" />
 <meta property="og:image" content="https://synomanager.com/screenshots/assistant.webp" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The On-Device AI Assistant - Syno Manager" />
-<meta name="twitter:description" content="Ask about your Synology NAS in plain words. The model runs on your phone - Gemini Nano or Apple Intelligence - works offline, and only ever reads." />
+<meta name="twitter:description" content="Ask about your Synology NAS in plain words and get the same health verdict the dashboard shows. Runs on your phone, learns from your ratings, only reads." />
 <meta name="twitter:image" content="https://synomanager.com/screenshots/assistant.webp" />
 <link rel="icon" href="../../assets/favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon-32.png" />
@@ -80,7 +80,7 @@
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "The On-Device AI Assistant - Syno Manager",
-  "description": "Ask about your Synology NAS in plain words. The model runs on your phone - Gemini Nano or Apple Intelligence - works offline, and only ever reads.",
+  "description": "Ask about your Synology NAS in plain words and get the same health verdict the dashboard shows. Runs on your phone, learns from your ratings, only reads.",
   "image": "https://synomanager.com/screenshots/assistant.webp",
   "url": "https://synomanager.com/guide/assistant/",
   "inLanguage": "en",
@@ -161,6 +161,22 @@
         "@type": "Answer",
         "text": "Because the device has no usable on-device model. Rather than showing a feature that cannot work, the app hides it entirely on hardware that cannot run it."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the assistant learn anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It learns from your ratings, on this device only. Rate an answer with the thumbs underneath it and similar questions start from where that answer was read, so the assistant gets better at reading your NAS the more you use it. Ratings never leave the device, and Forget ratings for this NAS clears them."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does it say the model is busy or out of turns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The on-device model is shared with every other app on your phone, and it only runs while Syno Manager is open on screen. When you hit one of those limits the assistant names which one, rather than showing a generic error, and says roughly how long to wait."
+      }
     }
   ]
 }
@@ -204,6 +220,7 @@
       <li><a href="#privacy">Where your data goes</a></li>
       <li><a href="#readonly">It only reads</a></li>
       <li><a href="#wrong">It can be wrong</a></li>
+      <li><a href="#learning">Learning from your ratings</a></li>
       <li><a href="#availability">Which devices have it</a></li>
     </ul></div>
 
@@ -230,12 +247,18 @@
       <h2>There is no list of topics</h2>
       <p class="lead">This is the part that is easy to miss. The assistant is not a set of canned answers about storage and backups - it is pointed at whatever your NAS actually publishes.</p>
     </div>
-    <ul class="plain">
-      <li><b>Your NAS publishes everything it can report</b> - over a thousand entries on a typical one - and the assistant searches that catalogue and reads whatever your question is about.</li>
-      <li><b>Install a package and it can answer about that too</b>, straight away, with no app update. Nothing about the catalogue is written into the app; it is discovered from your device.</li>
-      <li><b>It gets quicker as you use it.</b> How to read each part of DSM is worked out once and remembered, so later questions about the same thing are faster.</li>
-    </ul>
-    <div class="note"><b>Good questions look like questions.</b> "How is my NAS doing?", "Are my backups healthy?", "What is using the most space?", "What can you see about this NAS?" - the last one is worth asking once, because the answer tells you what it can reach on <em>your</em> NAS.</div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Your NAS publishes everything it can report</b> - over a thousand entries on a typical one - and the assistant searches that catalogue and reads whatever your question is about.</li>
+          <li><b>Install a package and it can answer about that too</b>, straight away, with no app update. Nothing about the catalogue is written into the app; it is discovered from your device.</li>
+          <li><b>It gets quicker as you use it.</b> How to read each part of DSM is worked out once and remembered, so later questions about the same thing are faster.</li>
+          <li><b>"How is my NAS doing?" answers with the health verdict</b> - the same Healthy, Warning or Critical reading the home screen shows, with the reasons behind it, not a raw temperature or a single reading pulled out of context.</li>
+        </ul>
+        <div class="note"><b>Good questions look like questions.</b> "How is my NAS doing?", "Are my backups healthy?", "What is using the most space?", "What can you see about this NAS?" - the last one is worth asking once, because the answer tells you what it can reach on <em>your</em> NAS.</div>
+      </div>
+      <img alt="The assistant answering How is my NAS doing with the health verdict" src="../../screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
   </div>
 </section>
 
@@ -280,8 +303,50 @@
     <ul class="plain">
       <li><b>Check anything that matters</b> on the screen that owns it. Every answer is about something the app also shows you directly.</li>
       <li><b>It is marked BETA</b> in the tab header for exactly this reason.</li>
-      <li><b>Your device shares the model between apps.</b> Ask a lot in a short time and it will say it is out for now, then work again shortly. Nothing is lost when that happens.</li>
     </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>When it cannot answer right now, it says why</h3>
+      <p class="lead">Not a generic error. One of three named reasons, and roughly how long to wait.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Reason</th><th>What it means</th></tr></thead>
+      <tbody>
+        <tr><td>Usage limit</td><td>This app has used its share of the on-device model for now. The device shares one model between every app that uses it; it answers again once your share renews, typically within a minute or few.</td></tr>
+        <tr><td>Busy</td><td>The on-device model is mid-answer for another request right now. Try again in a moment.</td></tr>
+        <tr><td>In the background</td><td>The on-device model only answers while Syno Manager is open on screen. Bring the app back to the front and ask again.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Nothing is lost when any of these happen.</b> Your question stays in the conversation; ask it again once the reason clears.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Getting better</div>
+      <h2>It learns from your ratings, on this device</h2>
+      <p class="lead">A thumbs up or down sits under every answer. Rate one and similar questions start from where that answer was read - the assistant gets better at reading <em>your</em> NAS the more you use it, without anything leaving the phone.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Good answer</b> or <b>Not a good answer</b> - the two thumbs under an answer, tapped once.</li>
+          <li><b>Kept per NAS.</b> Ratings are stored against the NAS that answered, on this device, so switching to a different NAS starts fresh for that one.</li>
+          <li><b>Never sent anywhere.</b> Ratings are as local as the model itself - no account, no sync, no upload.</li>
+        </ul>
+      </div>
+      <img alt="An assistant answer with the thumbs-up rating selected" src="../../screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="The What it has learned here card showing one rated answer and Forget ratings for this NAS" src="../../screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>What it has learned here</b>, on the How it works tab, counts how many answers on the current NAS were rated good and reads them back in plain words.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>No answer on this NAS has been rated good yet</b> is what it says before your first rating - not a zero, because a zero would read as a measurement rather than an absence.</li>
+          <li><b>Forget ratings for this NAS</b> deletes every rating kept for the current NAS on this device, in one tap.</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -316,6 +381,8 @@
     <details><summary>Can it change anything on my NAS?</summary><div class="body">No. It only ever reads. It cannot start, stop, delete or restart anything - because it is not given those tools.</div></details>
     <details><summary>Does it cost anything?</summary><div class="body">No. It uses the model already built into your device, so there is nothing to pay and no account to make.</div></details>
     <details><summary>Why can I not see the Assistant tab?</summary><div class="body">Because the device has no usable on-device model. Rather than showing a feature that cannot work, the app hides it entirely on hardware that cannot run it.</div></details>
+    <details><summary>Does the assistant learn anything?</summary><div class="body">It learns from your ratings, on this device only. Rate an answer with the thumbs underneath it and similar questions start from where that answer was read. Ratings never leave the device, and Forget ratings for this NAS clears them.</div></details>
+    <details><summary>Why does it say the model is busy or out of turns?</summary><div class="body">The on-device model is shared with every other app on your phone, and it only runs while Syno Manager is open on screen. The assistant names which of those it hit, rather than showing a generic error.</div></details>
   </div>
 </section>
 

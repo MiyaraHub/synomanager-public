@@ -135,7 +135,7 @@
       "name": "Can I read my Note Station notes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The Notes sub-view shows your notebooks with a note count and a tag count, and you can open any note to read it in full, create a notebook, or add a note."
+        "text": "Yes. The Notes sub-view shows your notebooks with a note count and a tag count, and you can open any note to read it in full, create a notebook, or add a note. Images inside a note show where they sit in the note, and an image the NAS cannot send shows a could-not-be-loaded placeholder instead of disappearing."
       }
     },
     {
@@ -245,7 +245,8 @@
       <div>
         <p class="lead" style="margin-top:0">The destination picker is File Station again, scoped to choosing a folder rather than opening a file.</p>
         <ul class="plain" style="margin-top:16px">
-          <li><b>Progress while it runs</b> - bytes moved and a percentage, read from the NAS itself. A total the NAS is still working out shows as sizing rather than a number that means nothing yet.</li>
+          <li><b>Progress while it runs</b> - bytes moved and a percentage, read from the NAS itself. A total the NAS is still working out shows as sizing rather than a number that means nothing yet, and while it is sizing the banner still shows how much has copied so far, for example "6.82 GB so far", with a moving bar rather than a stalled one.</li>
+          <li><b>Speed shows whenever the NAS reports one.</b> If the NAS goes quiet for a while - common while it writes to a slow USB drive - the banner keeps the amount already copied, hides the speed until a fresh reading arrives, and checks in less often until the NAS answers again. The copy itself keeps running on the NAS the whole time.</li>
           <li><b>Cancel stops it on the NAS</b>, mid-transfer. Whatever already copied stays at the destination; nothing is rolled back.</li>
           <li><b>Close the app and it keeps going.</b> The task belongs to the NAS, not to a screen you have to keep open. Reopen File Station and the app reattaches to the same task rather than losing track of it.</li>
         </ul>
@@ -288,6 +289,8 @@
         <p class="lead">A summary at the top - total notes, notebooks and tags - then <b>All Notes</b> and each notebook with its own count.</p>
         <ul class="plain" style="margin-top:16px">
           <li><b>Open any note</b> and read its full content.</li>
+          <li><b>Images show where they sit in the note</b>, between its paragraphs rather than stripped out or bunched at the end.</li>
+          <li><b>An image the NAS cannot send</b> shows <b>Image could not be loaded</b> in its place instead of just disappearing - including images the web clipper added from outside web pages, which a NAS sometimes cannot serve back.</li>
           <li><b>Create a notebook</b> or <b>add a note</b> with the two buttons at the bottom right.</li>
           <li><b>Delete a notebook</b> from its row.</li>
         </ul>
@@ -345,7 +348,7 @@
     <details><summary>Can I copy or move files to a USB drive plugged into the NAS?</summary><div class="body">Yes. An external drive shows up as a destination the same way a shared folder does, because the NAS mounts it as one. Pick Copy to or Move to, open the drive and confirm - the NAS writes to it directly.</div></details>
     <details><summary>Does copying or moving pass through my phone?</summary><div class="body">No. The NAS does the work itself. Your phone sends the request and watches progress, so a transfer of hundreds of gigabytes never touches your data plan, and it keeps running if you close the app.</div></details>
     <details><summary>Can I create a shared folder from the app?</summary><div class="body">Yes, from the Shared Folders sub-view. Existing shares show their name, their volume, their description and whether they carry ACL permissions.</div></details>
-    <details><summary>Can I read my Note Station notes?</summary><div class="body">Yes. The Notes sub-view shows your notebooks with a note count and a tag count, and you can open any note to read it in full, create a notebook, or add a note.</div></details>
+    <details><summary>Can I read my Note Station notes?</summary><div class="body">Yes. The Notes sub-view shows your notebooks with a note count and a tag count, and you can open any note to read it in full, create a notebook, or add a note. Images inside a note show where they sit in the note, and an image the NAS cannot send shows a could-not-be-loaded placeholder instead of disappearing.</div></details>
     <details><summary>Why does Synology Office only show a status?</summary><div class="body">Because Office documents are stored in and opened through Synology Drive. The app reports that Office is installed and which document types it supports; editing a document belongs in Synology's Drive app.</div></details>
     <details><summary>Why can I not see a folder I know exists?</summary><div class="body">File Station here respects your DSM account's permissions exactly. A folder your account cannot read does not appear, the same as in the web interface. Sign in as an account that can see it.</div></details>
   </div>

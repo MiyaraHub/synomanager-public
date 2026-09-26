@@ -145,6 +145,14 @@
         "@type": "Answer",
         "text": "No, and deliberately. A log used to re-read on a timer whether or not you were reading it, which cost battery and network for nothing. It now loads once and holds still. Press play to follow it live, press again to pause, and it stops following on its own when you leave the screen."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I export or copy the log I am looking at?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Long-press any line for the system Copy / Select all / Share bar, or use the export button beside the live toggle on the System tab, or above the list on the Connection tab. It opens a sheet with Save to a file, Share or email, and Copy to clipboard, and it exports exactly the entries on screen after the level filter and the search - one entry per line, with time, level, user and description separated by tabs."
+      }
     }
   ]
 }
@@ -306,7 +314,10 @@
       <li><b>Press play to follow live.</b> Press it again to pause. Following stops on its own when you leave the screen or send the app to the background, so a forgotten log tab is not quietly polling in your pocket.</li>
       <li><b>There is a search box</b> for finding one line in a long log.</li>
       <li><b>Container and stack logs work the same way</b> - see <a href="/guide/apps/#docker">Docker</a>.</li>
+      <li><b>The text is selectable.</b> Long-press a line and the system Copy / Select all / Share bar comes up, the same as anywhere else text sits on the screen.</li>
+      <li><b>Export what you are looking at.</b> An export button sits beside the live toggle on the System tab, and above the list on the Connection tab. It opens a sheet with three ways out: <b>Save to a file</b>, <b>Share</b> to send it or email it, or <b>Copy to clipboard</b>.</li>
     </ul>
+    <div class="note"><b>It exports what is on screen, not the whole log.</b> Whatever the level filter chip and the search box have narrowed the list down to is what goes out - nothing you have already filtered away comes back in the export. The file is plain text, one entry per line, with time, level, user and description separated by tabs.</div>
     <div class="note warn"><b>If the log will not load</b> and reports a connection timeout while the rest of the app is fine, the Log Center service on the NAS is the thing not answering, not your connection. Check that Log Center is installed and running in DSM's Package Center - the system log API is part of it.</div>
   </div>
 </section>
@@ -321,6 +332,7 @@
     <details><summary>Can I restart or shut down my NAS from my phone?</summary><div class="body">Yes, from Power Controls at the bottom of System Health. Both are confirmed before they run. Shutting down remotely is worth thinking twice about - a powered-off NAS cannot be woken over the internet without a VPN or a router configured for Wake-on-LAN.</div></details>
     <details><summary>What is Identify NAS for?</summary><div class="body">It blinks the NAS's status light so you can tell which box in a rack or a cupboard you are looking at. Silence beep stops the alarm buzzer without silencing the condition that set it off.</div></details>
     <details><summary>Do the logs refresh by themselves?</summary><div class="body">No, and deliberately. A log loads once and holds still so you can read it. Press play to follow it live, press again to pause, and it stops following on its own when you leave the screen or background the app.</div></details>
+    <details><summary>Can I export or copy the log I am looking at?</summary><div class="body">Yes. Long-press any line for the system Copy / Select all / Share bar, or use the export button beside the live toggle on the System tab, or above the list on the Connection tab. It opens a sheet with Save to a file, Share or email, and Copy to clipboard, and it exports exactly the entries on screen after the level filter and the search - one entry per line, with time, level, user and description separated by tabs.</div></details>
     <details><summary>Why is my load average high when CPU looks fine?</summary><div class="body">Load average counts processes waiting, and they are often waiting on disks rather than CPU. Check Disk I/O utilisation on the same screen - a high utilisation percentage with low CPU is the usual explanation.</div></details>
   </div>
 </section>

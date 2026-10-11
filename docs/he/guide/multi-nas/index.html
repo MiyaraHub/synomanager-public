@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ניהול כמה התקני Synology NAS - Syno Manager</title>
+<meta name="description" content="הוסף כמה התקני Synology שתרצה ועבור ביניהם בהקשה. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="ניהול כמה התקני Synology NAS - Syno Manager" />
+<meta property="og:description" content="הוסף כמה התקני Synology שתרצה ועבור ביניהם בהקשה. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ניהול כמה התקני Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="הוסף כמה התקני Synology שתרצה ועבור ביניהם בהקשה. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "מכשירי NAS מרובים"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ניהול כמה התקני Synology NAS - Syno Manager",
+  "description": "הוסף כמה התקני Synology שתרצה ועבור ביניהם בהקשה. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "he",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "כמה התקני NAS אפשר להוסיף?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כמה שרוצים. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו, כך ששרת מדיה ויעד גיבוי לא חייבים להיראות אותו דבר."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם שינוי שם של NAS משנה משהו ב-NAS עצמו?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. שינוי שם משנה רק את שם התצוגה באפליקציה. כדי לשנות את שם השרת של ה-NAS עצמו, השתמש בלוח הבקרה של DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה ההבדל בין שינוי IP לעריכת תצורה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "שינוי IP הוא קיצור דרך לשדה שמשתנה הכי הרבה - הכתובת והיציאה. עריכת תצורה פותחת את הטופס כולו, כולל HTTPS, אימות תעודה, פרטי גישה, 2FA ומתג מנהרת המצלמות."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה קורה כשמסירים NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "הרשומה ופרטי הגישה השמורים שלה נמחקים מהאפליקציה. שום דבר ב-NAS לא נוגעים בו - הוא לא מנותק מאף מקום אחר, ושום מידע לא נפגע."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; כמה התקני NAS</div>
+      <div class="eyebrow">מכשירי NAS מרובים</div>
+      <h1>אפליקציה אחת, <span class="g">כל ה-DiskStation שלך</span></h1>
+      <p>הוסף כמה שתרצה. לכל אחד נשמרים פרטי הגישה, פריסת הלוח וההגדרות שלו, כך שיעד הגיבוי במוסך לא חייב להיראות כמו שרת המדיה בסלון.</p>
+    </div>
+    <div class="hero-shot"><img alt="רשימת התקני ה-NAS עם התחבר והער" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">רשימת ההתקנים</div>
+      <h2>מה מציגה כל רשומה</h2>
+      <p class="lead">ניתן להגיע אליה דרך <b>הגדרות &rsaquo; ניהול התקני NAS</b>, או כמסך שהאפליקציה נפתחת בו כשיש לך יותר מהתקן אחד והגדרת לה לשאול.</p>
+    </div>
+    <ul class="plain">
+      <li><b>כינוי וכתובת</b> - השם שלך להתקן, והמארח והיציאה שדרכם הוא מתחבר.</li>
+      <li><b>תגיות</b> לדברים ששווה לראות בלי לפתוח את הטופס: האם הוא <b>HTTPS</b>, באיזו <b>יציאה</b>, ולאיזה <b>חשבון</b> הוא נכנס.</li>
+      <li><b>מחובר</b> כשזה ההתקן הפעיל.</li>
+      <li><b>התחבר</b> למעבר אליו, ו-<b>הער</b> לשליחת magic packet אם הוא במצב שינה.</li>
+      <li><b>ידית גרירה</b> - סדר את הרשימה כך שההתקן שבו אתה משתמש הכי הרבה יהיה למעלה.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">תפריט האפשרויות הנוספות</div>
+      <h2>חמש פעולות שאפשר לעשות על רשומה</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>פעולה</th><th>מה הוא עושה</th></tr></thead>
+          <tbody>
+            <tr><td>שינוי שם</td><td>משנה את <b>שם התצוגה בלבד</b> - התווית של האפליקציה להתקן. שם השרת של ה-NAS עצמו לא משתנה; הוא נמצא בלוח הבקרה של DSM.</td></tr>
+            <tr><td>שינוי IP</td><td>קיצור דרך לשדה שמשתנה הכי הרבה - הכתובת והיציאה - בלי לעבור על הטופס כולו.</td></tr>
+            <tr><td>עריכת תצורה</td><td>הטופס המלא: HTTPS, אימות תעודה, פרטי גישה, אימות דו-שלבי ומנהרת הצפייה החיה במצלמות.</td></tr>
+            <tr><td>בדיקת חיבור</td><td>בודק נגישות בלי לשנות דבר, ומבחין בין ״אי אפשר להגיע אליו״ לבין ״הגעתי אליו ופרטי הגישה נדחו״.</td></tr>
+            <tr><td>הסרת NAS</td><td>מוחק את הרשומה ואת פרטי הגישה השמורים שלה <b>מהאפליקציה</b>. שום דבר ב-NAS לא נוגעים בו.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="התפריט של כל NAS עם שינוי שם, שינוי IP, עריכת תצורה, בדיקת חיבור והסרה" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">מה נשמר לכל NAS</div>
+      <h2>מה כל התקן זוכר בנפרד</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>לכל NAS</h3>
+        <ul class="plain">
+          <li>פרטי גישה ואסימון ההתקן של 2FA.</li>
+          <li>אילו כרטיסי לוח מופעלים, ובאיזה סדר.</li>
+          <li>אילו כרטיסים מכווצים.</li>
+          <li>אילו תצוגות משנה מוסתרות בכל לשונית, ובאיזה סדר.</li>
+          <li>הגדרת מנהרת הצפייה החיה במצלמות.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>בכל האפליקציה</h3>
+        <ul class="plain">
+          <li>ערכת נושא, משטח, צבע הדגשה וגודל טקסט.</li>
+          <li>סרגל הניווט התחתון.</li>
+          <li>מרווח הדגימה ויחידת הטמפרטורה.</li>
+          <li>התנהגות בהפעלה.</li>
+          <li>אילו כרטיסי עזרה סגרת.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>אותו NAS פעמיים הוא הגדרה לגיטימית.</b> רשומה אחת לפי IP מקומי לבית, ורשומה אחת לפי QuickConnect לדרכים. אלה רשומות נפרדות עם פריסות נפרדות, והמעבר ביניהן לוקח הקשה אחת.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על כמה התקני NAS (FAQ)</h2>
+    </div>
+    <details open><summary>כמה התקני NAS אפשר להוסיף?</summary><div class="body">כמה שרוצים. לכל אחד נשמרים פרטי הגישה, פריסת הלוח, סדר הכרטיסים ומצב הכיווץ שלו.</div></details>
+    <details><summary>האם שינוי שם של NAS משנה משהו ב-NAS עצמו?</summary><div class="body">לא. שינוי שם משנה רק את שם התצוגה באפליקציה. כדי לשנות את שם השרת של ה-NAS עצמו, השתמש בלוח הבקרה של DSM.</div></details>
+    <details><summary>מה ההבדל בין שינוי IP לעריכת תצורה?</summary><div class="body">שינוי IP הוא קיצור דרך לכתובת וליציאה. עריכת תצורה פותחת את הטופס כולו, כולל HTTPS, אימות תעודה, פרטי גישה, 2FA ומתג מנהרת המצלמות.</div></details>
+    <details><summary>מה קורה כשמסירים NAS?</summary><div class="body">הרשומה ופרטי הגישה השמורים שלה נמחקים מהאפליקציה. שום דבר ב-NAS לא נוגעים בו.</div></details>
+    <details><summary>באיזה התקן האפליקציה נפתחת?</summary><div class="body">לפי מה שהגדרת ב-<a href="/he/guide/settings/#launch">התנהגות הפתיחה</a> - בורר ההתקנים, ההתקן האחרון שהשתמשת בו, או תמיד התקן מסוים.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">הער את ה-NAS, או כל דבר אחר ברשת שלך דרכו.</p>
+    <p><a class="btn" href="/he/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

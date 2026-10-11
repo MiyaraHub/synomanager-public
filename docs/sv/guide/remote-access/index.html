@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nå din Synology NAS på distans - Syno Manager</title>
+<meta name="description" content="Nå din Synology varifrån som helst med QuickConnect, en egen domän eller ett VPN. Vilka funktioner som fungerar över vilken väg, inklusive foton och kamerans livevy." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/sv/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Nå din Synology NAS på distans - Syno Manager" />
+<meta property="og:description" content="Nå din Synology varifrån som helst med QuickConnect, en egen domän eller ett VPN. Vilka funktioner som fungerar över vilken väg, inklusive foton och kamerans livevy." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/sv/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Nå din Synology NAS på distans - Syno Manager" />
+<meta name="twitter:description" content="Nå din Synology varifrån som helst med QuickConnect, en egen domän eller ett VPN. Vilka funktioner som fungerar över vilken väg, inklusive foton och kamerans livevy." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "sv",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Användarguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Borta från hemmet"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Nå din Synology NAS på distans - Syno Manager",
+  "description": "Nå din Synology varifrån som helst med QuickConnect, en egen domän eller ett VPN. Vilka funktioner som fungerar över vilken väg, inklusive foton och kamerans livevy.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "sv",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Måste jag vidarebefordra portar för att använda min NAS på distans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. QuickConnect förmedlar anslutningen via Synologys tjänst utan någon routerkonfiguration, och ett VPN in till ditt nätverk fungerar också. Portvidarebefordran behövs bara om du uttryckligen vill ha en direkt väg från internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fungerar foton och kamerans livevy över QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Miniatyrer, fullstora bilder, kamerans livevy samt nedladdningar från File Station och Drive går alla över den väg som är aktiv, även QuickConnect-reläet. Reläet är långsammare än ditt eget nätverk, men det fungerar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ska jag lägga till min NAS två gånger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Det är ett bra mönster. En post med lokal IP när du är hemma - snabbt och direkt - och en med QuickConnect när du är ute. De är separata poster med separata layouter, och det tar ett tryck att byta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Är QuickConnect säkert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Anslutningen är krypterad hela vägen när du använder HTTPS, och Synologys relä släpper igenom trafiken i stället för att lagra dina data. Dina DSM-inloggningsuppgifter gäller fortfarande, och tvåfaktorsautentisering fungerar fortfarande."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/sv/"><img src="/assets/syno-manager-icon.png" alt="Ikon för Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Sök i guiden..." data-i18n-empty="Inga träffar för" data-i18n-language="Språk">
+      <a href="/sv/">Hem</a>
+      <a href="/sv/guide/" class="active">Användarguide</a>
+      <a href="/sv/#screenshots">Skärmbilder</a>
+      <a href="/sv/compatible-nas/">Kompatibilitet</a>
+      <a href="/sv/best-synology-nas-app/">Därför byter man</a>
+      <a href="/sv/help/">Hjälp</a>
+      <a href="/sv/#top" class="cta">Ladda ner</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/sv/">Hem</a> &rsaquo; <a href="/sv/guide/">Användarguide</a> &rsaquo; Borta från hemmet</div>
+      <div class="eyebrow">Borta från hemmet</div>
+      <h1>Samma app, <span class="g">en annan väg</span></h1>
+      <p>Syno Manager fungerar likadant oavsett om du sitter bredvid din NAS eller på andra sidan jorden. Det som ändras är hur anslutningen tar sig dit, och varje väg har olika för- och nackdelar som är bra att känna till.</p>
+    </div>
+    <div class="hero-shot"><img alt="Formuläret Lägg till NAS med Direkt-IP och QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tre vägar</div>
+      <h2>Välj den som passar</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Väg</th><th>Konfiguration</th><th>Hastighet</th><th>Öppnar något?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Aktivera det i DSM och ange ID:t. Inget i routern.</td><td>Långsammare - trafiken går via Synologys relä.</td><td class="yes">Ingenting. Inga öppna portar hos dig.</td></tr>
+        <tr><td><b>Egen domän / DDNS</b></td><td>Ett värdnamn som pekar på din adress, plus en portvidarebefordran i routern.</td><td>Direkt, alltså så snabbt som din uppladdning tillåter.</td><td class="no">Ja - DSM-porten går att nå från internet.</td></tr>
+        <tr><td><b>VPN</b></td><td>En VPN-server på din router eller NAS, och en klient på telefonen.</td><td>Direkt när du är ansluten.</td><td class="yes">Bara VPN-porten. Allt annat förblir privat.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Är du osäker, välj QuickConnect.</b> Det är alternativet som inte kräver några routerkunskaper och inte öppnar något, och varje funktion i appen fungerar över det.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vad som fungerar på distans</div>
+      <h2>Allt, med två fotnoter</h2>
+      <p class="lead">Appen har inte färre funktioner när du är borta. De två sakerna som kräver en stunds eftertanke är kamerans livevy och att väcka en NAS som är avstängd.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Funktion</th><th>Borta från hemmet</th></tr></thead>
+      <tbody>
+        <tr><td>Övervakning - system, lagring, nätverk, hälsa</td><td class="yes">Fungerar över alla vägar.</td></tr>
+        <tr><td>Docker, paket, tjänster, uppgifter, användare</td><td class="yes">Fungerar över alla vägar.</td></tr>
+        <tr><td>Synology Photos - miniatyrer och fullstora bilder</td><td class="yes">Fungerar, reläet inräknat.</td></tr>
+        <tr><td>Nedladdningar från File Station och Drive</td><td class="yes">Fungerar, reläet inräknat.</td></tr>
+        <tr><td>Säkerhetskopior - status och Kör nu</td><td class="yes">Fungerar över alla vägar.</td></tr>
+        <tr><td>Väcka en annan enhet via NAS</td><td class="yes">Fungerar, så länge själva NAS-enheten är på.</td></tr>
+        <tr><td><b>Kamerans livevy</b></td><td>Slå på <b>Tunnla kamerans livevy via DSM-porten</b>. Utan den vill livevyn ha RTSP på port 554, som oftast inte går att nå utifrån. Se <a href="/sv/guide/media/#streaming">hur livevyn ansluter</a>.</td></tr>
+        <tr><td><b>Väcka själva NAS-enheten medan den är avstängd</b></td><td>Kräver ett VPN eller en Wake-on-LAN-vidarebefordran i routern. QuickConnect kan inte nå en NAS som är avstängd. Se <a href="/sv/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Så ställer du in det</h2>
+    </div>
+    <ol class="steps">
+      <li><b>I DSM:</b> Kontrollpanel &rsaquo; Extern åtkomst &rsaquo; QuickConnect. Aktivera det och notera QuickConnect-ID:t.</li>
+      <li><b>I appen:</b> lägg till en NAS och ändra <b>Anslutningstyp</b> till <b>QuickConnect</b>.</li>
+      <li><b>Ange ID:t</b> - inte en värd och port.</li>
+      <li><b>Dina DSM-inloggningsuppgifter</b>, och 2FA om kontot använder det.</li>
+      <li><b>Spara &amp; anslut.</b></li>
+    </ol>
+    <div class="note"><b>Räkna med att det är långsammare.</b> Reläet lägger till ett steg och Synology begränsar hastigheten, så ett fotobibliotek rullar mindre mjukt än hemma. Allt fungerar ändå - det är en skillnad i fördröjning, inte i förmåga.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ett mönster värt att kopiera</div>
+      <h2>Lägg till samma NAS två gånger</h2>
+      <p class="lead">En post med <b>lokal IP</b>, en med <b>QuickConnect</b>. Namnge dem så att du kan skilja dem åt - ”NAS (hemma)” och ”NAS (borta)”.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hemma</b> använder du den direkta: inget relä, full hastighet, miniatyrer direkt.</li>
+      <li><b>Ute</b> byter du till den med QuickConnect.</li>
+      <li><b>De har separata layouter</b>, så du kan skala ned posten för borta till de få kort du faktiskt kollar på mobildata.</li>
+      <li><b>Det tar ett tryck att byta</b> från enhetslistan.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Ställ in <a href="/sv/guide/settings/#launch">Startbeteende</a> på <b>Senaste NAS jag använde</b> så behåller appen den du senast var på.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanliga frågor</div>
+      <h2>FAQ om åtkomst på distans</h2>
+    </div>
+    <details open><summary>Måste jag vidarebefordra portar för att använda min NAS på distans?</summary><div class="body">Nej. QuickConnect förmedlar anslutningen utan någon routerkonfiguration, och ett VPN fungerar också. Portvidarebefordran behövs bara om du uttryckligen vill ha en direkt väg från internet.</div></details>
+    <details><summary>Fungerar foton och kamerans livevy över QuickConnect?</summary><div class="body">Ja. Miniatyrer, fullstora bilder, kamerans livevy samt nedladdningar från File Station och Drive går alla över den väg som är aktiv, reläet inräknat. Kamerans livevy kräver att tunnelväxeln för DSM-porten är på.</div></details>
+    <details><summary>Ska jag lägga till min NAS två gånger?</summary><div class="body">Det är ett bra mönster - en post med lokal IP för hemma och en med QuickConnect för borta, med separata layouter och byte med ett tryck.</div></details>
+    <details><summary>Är QuickConnect säkert?</summary><div class="body">Anslutningen är krypterad hela vägen när du använder HTTPS, och reläet släpper igenom trafiken i stället för att lagra dina data. Dina DSM-inloggningsuppgifter och tvåfaktorsautentisering gäller fortfarande.</div></details>
+    <details><summary>Varför fungerar inte min post med lokal IP på mobildata?</summary><div class="body">För att en privat adress som 192.168.x.x bara finns på ditt eget nätverk. Använd posten med QuickConnect, en domän, eller anslut till ditt VPN först.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Nästa: säkerhetskopiera &amp; återställ</h2>
+    <p class="lead" style="margin:0 auto 24px">Flytta appens inställningar till en ny telefon.</p>
+    <p><a class="btn" href="/sv/guide/backup-restore/">Säkerhetskopiera &amp; återställ &rarr;</a> &nbsp; <a class="btn ghost" href="/sv/guide/">Tillbaka till guiden</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/sv/">Hem</a><a href="/sv/guide/">Användarguide</a><a href="/sv/guide/getting-started/">Kom igång</a><a href="/sv/compatible-nas/">Kompatibilitet</a><a href="/sv/best-synology-nas-app/">Varför byta</a><a href="/sv/synology-app-for-iphone/">iPhone & iPad</a><a href="/sv/synology-app-for-android/">Android</a><a href="/sv/synology-app-for-mac-windows/">Mac & Windows</a><a href="/sv/ds-finder-alternative/">mot DS finder</a><a href="/sv/help/">Hjälp</a><a href="/sv/privacy/">Integritet</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportera en bugg</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager är en oberoende app och är inte knuten till, godkänd av eller sponsrad av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station och QuickConnect är varumärken som tillhör Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

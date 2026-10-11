@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology 스토리지, RAID 및 SMART 상태 - Syno Manager</title>
+<meta name="description" content="RAID 유형과 여유 공간이 표시되는 Synology 볼륨과 풀, 드라이브별 SMART 상태와 온도, 빠른 SMART 테스트, USB 및 eSATA 안전 제거를 지원합니다." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology 스토리지, RAID 및 SMART 상태 - Syno Manager" />
+<meta property="og:description" content="RAID 유형과 여유 공간이 표시되는 Synology 볼륨과 풀, 드라이브별 SMART 상태와 온도, 빠른 SMART 테스트, USB 및 eSATA 안전 제거를 지원합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology 스토리지, RAID 및 SMART 상태 - Syno Manager" />
+<meta name="twitter:description" content="RAID 유형과 여유 공간이 표시되는 Synology 볼륨과 풀, 드라이브별 SMART 상태와 온도, 빠른 SMART 테스트, USB 및 eSATA 안전 제거를 지원합니다." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "스토리지"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology 스토리지, RAID 및 SMART 상태 - Syno Manager",
+  "description": "RAID 유형과 여유 공간이 표시되는 Synology 볼륨과 풀, 드라이브별 SMART 상태와 온도, 빠른 SMART 테스트, USB 및 eSATA 안전 제거를 지원합니다.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "ko",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "드라이브별 SMART 상태를 볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 디스크 상태 하위 보기에 모든 드라이브가 모델, HDD 또는 SSD 구분, 용량, 온도, SMART 판정과 함께 나열됩니다. 휴대폰에서 원하는 드라이브에 빠른 SMART 테스트를 시작할 수도 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS 드라이브는 몇 도부터 너무 뜨거운 건가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "앱은 드라이브 온도가 45도(C)를 넘으면 호박색, 55도를 넘으면 빨간색으로 표시하고, 시스템 온도는 50도를 넘으면 호박색, 60도를 넘으면 빨간색으로 표시합니다. 이 기준은 홈 화면의 상태 배지에도 반영되므로, 일부러 찾아보지 않아도 뜨거운 드라이브가 있으면 거기서 알 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "앱에서 USB 드라이브를 안전하게 제거할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 외장 하위 보기에서 가능합니다. 제거 요청이 받아들여진 것이 아니라 드라이브가 실제로 기기 목록에서 사라졌을 때 제거가 확인되므로, 제거됐다고 표시되면 정말로 제거된 것입니다. 포맷 중이거나 초기화 중인 드라이브는 제거할 수 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "앱에서 볼륨을 만들거나 확장할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 볼륨과 풀의 생성, 확장, 복구는 DSM의 스토리지 관리자에서 합니다. 앱은 스토리지의 상태를 알려 주고 드라이브에 대한 작업을 할 수 있게 해 주지만, 휴대폰으로 어레이 구조를 바꾸지는 않습니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용자 가이드</a> &rsaquo; 스토리지</div>
+      <div class="eyebrow">스토리지</div>
+      <h1>모든 볼륨, <span class="g">모든 드라이브</span></h1>
+      <p>세 가지 하위 보기: 용량과 RAID를 보는 <b>볼륨 &amp; 풀</b>, 드라이브별 SMART와 온도를 보는 <b>디스크 상태</b>, 뒷면에 연결한 모든 장치를 보는 <b>외장</b>.</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager의 스토리지 볼륨과 드라이브" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>이 페이지의 내용</b><ul>
+      <li><a href="#volumes">볼륨 &amp; 풀</a></li>
+      <li><a href="#drives">드라이브 목록</a></li>
+      <li><a href="#disk-health">디스크 상태 &amp; SMART</a></li>
+      <li><a href="#thresholds">온도 기준</a></li>
+      <li><a href="#external">외장 &amp; 안전 제거</a></li>
+      <li><a href="#limits">하지 않는 일</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">볼륨 &amp; 풀</div>
+      <h2>한눈에 보는 용량</h2>
+      <p class="lead">볼륨마다 이름, RAID 유형, 상태, 구성 드라이브 수가 표시된 카드가 있고, 그 아래 사용 중, 비율, 전체, 여유 공간이 표시된 사용량 막대가 있습니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>표시 항목</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td>볼륨 이름</td><td>DSM이 붙인 이름 그대로 표시됩니다. <code>VOLUME_1</code> 등입니다.</td></tr>
+        <tr><td>RAID 유형</td><td>RAID 5, SHR, RAID 1, Basic 등 아래의 풀이 실제로 어떤 구성이든 그대로 표시됩니다.</td></tr>
+        <tr><td>상태</td><td>볼륨 자체의 상태: <b>정상</b>, 성능 저하, 손상. 성능 저하된 어레이는 이 화면에서 오늘 바로 조치해야 할 유일한 항목입니다.</td></tr>
+        <tr><td>드라이브 수</td><td>볼륨이 걸쳐 있는 물리 드라이브의 수입니다.</td></tr>
+        <tr><td>사용량 막대</td><td>평소에는 초록, 80%를 넘으면 호박색, 90%를 넘으면 빨간색입니다. <a href="/ko/guide/home/#header">상태 배지</a>가 쓰는 기준과 같습니다.</td></tr>
+        <tr><td>사용 중 / 전체 / 여유</td><td>세 가지를 모두 표시합니다. “70% 사용 중”과 “13 TB 남음”은 서로 다른 질문에 답하기 때문입니다.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>각 베이에 들어 있는 것</h2>
+      <p class="lead">볼륨 아래에 모든 물리 드라이브가 베이 번호순으로 나열됩니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>베이</b> - 디스크 1, 디스크 2 등으로, 본체에 붙은 라벨과 일치합니다.</li>
+      <li><b>모델</b> - 드라이브 자체의 모델 문자열입니다.</li>
+      <li><b>제조사와 유형</b> - 제조사와 HDD인지 SSD인지 표시합니다. NAS가 제조사를 식별하지 못한 드라이브는 추측하지 않고 <b>알 수 없음</b>으로 표시합니다.</li>
+      <li><b>온도</b>는 아래 기준에 따라 색으로 표시됩니다.</li>
+      <li><b>SMART 판정</b> - 드라이브의 자체 진단이 정상이면 <b>SMART OK</b>로 표시됩니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">디스크 상태</div>
+      <h2>SMART와 직접 시작할 수 있는 테스트</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">디스크 상태 하위 보기는 같은 드라이브를 더 넓게 보여 주며, 용량, 유형, 온도, SMART 상태가 각각의 칩으로 표시되고 모든 드라이브에 <b>빠른 SMART 테스트</b> 버튼이 있습니다.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>빠른 SMART 테스트</b>는 드라이브가 자체적인 짧은 진단을 실행하도록 요청합니다. 몇 분이 걸리며 볼륨을 사용하는 다른 작업을 방해하지 않습니다.</li>
+          <li><b>판정은 앱이 아니라 드라이브가 내립니다.</b> SMART는 드라이브가 스스로를 보고하는 것이고, 앱은 그것을 전달할 뿐입니다. 정상이라던 드라이브가 나중에 고장 나는 것은 읽기의 한계가 아니라 SMART 자체의 한계입니다.</li>
+          <li><b>읽을 수 없는 SMART 상태는 알 수 없음으로 표시하며</b> 절대 정상으로 표시하지 않습니다. 읽지 못한 것과 정상으로 읽은 것은 다르며, 둘을 섞지 않습니다.</li>
+        </ul>
+      </div>
+      <img alt="SMART 상태, 온도, 빠른 SMART 테스트 버튼이 있는 모든 드라이브를 보여 주는 디스크 상태" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">색상 뒤에 있는 수치</div>
+      <h2>기준</h2>
+      <p class="lead">여기에 있는 것 중 사용자의 하드웨어를 추측한 값은 없습니다. 앱이 색을 바꾸는 시점이며, 해당하는 경우 홈 화면의 상태 배지도 함께 바뀌는 시점입니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>수치</th><th>호박색 기준</th><th>빨간색 기준</th></tr></thead>
+      <tbody>
+        <tr><td>드라이브 온도</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>시스템 온도</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>볼륨 사용량</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS 충전량</td><td>50% 미만</td><td>20% 미만</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><a href="/ko/guide/settings/#preferences">설정 &rsaquo; 온도 단위</a>에서 &deg;C와 &deg;F를 바꿀 수 있습니다. 홈 화면과 위젯을 포함해 앱의 모든 온도가 즉시 따라 바뀝니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">외장</div>
+      <h2>USB, eSATA 및 안전 제거</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="연결된 장치는 없고 UPS가 나열된 외장 스토리지와 USB 장치" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">두 개의 섹션이 있습니다. 마운트하고 제거할 수 있는 드라이브를 위한 <b>외장 스토리지</b>와, UPS, 프린터, 동글처럼 그 밖에 연결된 모든 장치를 위한 <b>USB 장치</b>입니다.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>제거는 드라이브가 사라져야 확인됩니다.</b> 요청이 OK로 응답했다고 성공으로 알리지 않고, 기기 목록을 다시 읽어 드라이브가 실제로 없어졌을 때만 제거되었다고 알려 줍니다. “안전하게 뽑아도 됩니다”와 “아마 안전하게 뽑아도 됩니다”의 차이입니다.</li>
+          <li><b>사용 중인 드라이브는 제거할 수 없습니다.</b> 포맷 중이거나 초기화 중인 드라이브는 쓰는 도중에 뽑히는 일이 없도록 이유와 함께 거부됩니다.</li>
+          <li><b>연결된 장치가 없으면 분명하게 알려 줍니다.</b> 빈 목록에는 해석해야 하는 빈 상자 대신 “연결된 외장 드라이브 없음”이라고 표시됩니다.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">한계</div>
+      <h2>이 화면에서 하지 않는 것</h2>
+      <p class="lead">스토리지는 잘못 탭하면 되돌릴 수 없는 유일한 곳이므로, 앱은 쓰기보다 읽기를 훨씬 더 많이 합니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>볼륨이나 풀을 만들거나, 확장하거나, 삭제하지 않습니다.</b> 이 작업은 하려는 일을 충분히 보여 줄 수 있는 큰 화면의 DSM 스토리지 관리자에서 합니다.</li>
+      <li><b>성능이 저하된 어레이를 복구하지 않습니다.</b> 다만 어레이가 성능 저하 상태라는 사실은 홈 화면에서 분명하게 알려 줍니다.</li>
+      <li><b>무엇이든 포맷하지 않습니다.</b></li>
+      <li><b>전체 SMART 테스트는 실행하지 않고</b> 빠른 테스트만 실행합니다. 전체 표면 검사는 몇 시간이 걸리므로 자리를 비워도 되는 곳에서 해야 합니다.</li>
+    </ul>
+    <div class="note"><b>스크러빙, 재구축, 패리티 검사</b>는 진행 중에 실행 중인 작업으로 표시되므로, DSM에서 시작했더라도 앱에서 끝나는 모습을 지켜볼 수 있습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>스토리지 FAQ</h2>
+    </div>
+    <details open><summary>드라이브별 SMART 상태를 볼 수 있나요?</summary><div class="body">네. 디스크 상태 하위 보기에 모든 드라이브가 모델, HDD 또는 SSD 구분, 용량, 온도, SMART 판정과 함께 나열됩니다. 휴대폰에서 원하는 드라이브에 빠른 SMART 테스트를 시작할 수도 있습니다.</div></details>
+    <details><summary>NAS 드라이브는 몇 도부터 너무 뜨거운 건가요?</summary><div class="body">앱은 드라이브 온도가 45&deg;C를 넘으면 호박색, 55&deg;C를 넘으면 빨간색으로 표시하고, 시스템 온도는 50&deg;C를 넘으면 호박색, 60&deg;C를 넘으면 빨간색으로 표시합니다. 이 기준은 홈 화면의 상태 배지에도 반영됩니다.</div></details>
+    <details><summary>앱에서 USB 드라이브를 안전하게 제거할 수 있나요?</summary><div class="body">네, 외장 하위 보기에서 가능합니다. 제거 요청이 받아들여진 것이 아니라 드라이브가 실제로 기기 목록에서 사라졌을 때 제거가 확인됩니다. 포맷 중이거나 초기화 중인 드라이브는 제거할 수 없습니다.</div></details>
+    <details><summary>앱에서 볼륨을 만들거나 확장할 수 있나요?</summary><div class="body">아니요. 볼륨과 풀의 생성, 확장, 복구는 DSM의 스토리지 관리자에서 합니다. 앱은 스토리지의 상태를 알려 주고 드라이브에 대한 작업을 할 수 있게 해 주지만, 휴대폰으로 어레이 구조를 바꾸지는 않습니다.</div></details>
+    <details><summary>드라이브의 제조사가 왜 알 수 없음으로 표시되나요?</summary><div class="body">NAS가 제조사를 알려 주지 않았기 때문입니다. 앱은 모델 문자열로 제조사를 추측해 사실처럼 보여 주지 않고, 전달받은 내용만 그대로 표시합니다.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 네트워크</h2>
+    <p class="lead" style="margin:0 auto 24px">처리량, 연결, 서비스, VPN, DDNS.</p>
+    <p><a class="btn" href="/ko/guide/network/">네트워크 &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology File Station คัดลอกและย้ายบนมือถือ - Syno Manager</title>
+<meta name="description" content="เรียกดู File Station คัดลอกหรือย้ายไฟล์และโฟลเดอร์บน NAS เอง รวมถึงไปยังไดรฟ์ USB จัดการโฟลเดอร์ที่แชร์ และอ่าน Note Station, Office และ Contacts" />
+<meta name="keywords" content="Synology File Station app, Synology copy move files, Synology USB drive copy, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/files/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/files/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/files/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/files/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/files/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/files/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/files/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/files/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/files/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/files/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/files/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/files/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/files/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/files/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/files/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/files/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/files/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/files/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/files/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/files/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/files/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/files/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/files/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/files/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/files/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/files/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/files/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/files/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/files/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/files/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/files/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/files/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology File Station คัดลอกและย้ายบนมือถือ - Syno Manager" />
+<meta property="og:description" content="เรียกดู File Station คัดลอกหรือย้ายไฟล์และโฟลเดอร์บน NAS เอง รวมถึงไปยังไดรฟ์ USB จัดการโฟลเดอร์ที่แชร์ และอ่าน Note Station, Office และ Contacts" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/files/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology File Station คัดลอกและย้ายบนมือถือ - Syno Manager" />
+<meta name="twitter:description" content="เรียกดู File Station คัดลอกหรือย้ายไฟล์และโฟลเดอร์บน NAS เอง รวมถึงไปยังไดรฟ์ USB จัดการโฟลเดอร์ที่แชร์ และอ่าน Note Station, Office และ Contacts" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ไฟล์"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology File Station คัดลอกและย้ายบนมือถือ - Syno Manager",
+  "description": "เรียกดู File Station คัดลอกหรือย้ายไฟล์และโฟลเดอร์บน NAS เอง รวมถึงไปยังไดรฟ์ USB จัดการโฟลเดอร์ที่แชร์ และอ่าน Note Station, Office และ Contacts",
+  "image": "https://synomanager.com/screenshots/files-station.webp",
+  "url": "https://synomanager.com/guide/files/",
+  "mainEntityOfPage": "https://synomanager.com/guide/files/",
+  "inLanguage": "th",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ดาวน์โหลดไฟล์จาก NAS มายังมือถือได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ เปิด File Station หาไฟล์แล้วดาวน์โหลด บนมือถือเมนูแชร์จะเข้ามาแทน คุณจึงบันทึก เปิดในแอปอื่น หรือส่งต่อได้ บน Windows และ macOS จะได้กล่องโต้ตอบ Save As ของระบบ การดาวน์โหลดใช้ได้ผ่าน QuickConnect ด้วย การอยู่นอกบ้านจึงไม่ขัดขวาง"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "สร้างโฟลเดอร์ที่แชร์จากแอปได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ จากมุมมองย่อย Shared Folders โฟลเดอร์ที่แชร์ที่มีอยู่แสดงชื่อ วอลุ่ม คำอธิบาย และว่ามีสิทธิ์ ACL หรือไม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "อ่านบันทึกใน Note Station ได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ มุมมองย่อย Notes แสดงสมุดบันทึกพร้อมจำนวนบันทึกและจำนวนแท็ก และเปิดบันทึกใดก็ได้เพื่ออ่านเต็ม ๆ สร้างสมุดบันทึก หรือเพิ่มบันทึก รูปภาพในบันทึกแสดงตรงตำแหน่งที่อยู่ในบันทึก และรูปที่ NAS ส่งมาไม่ได้จะแสดงตัวแทนว่าโหลดไม่ได้ แทนที่จะหายไป"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไม Synology Office จึงแสดงแค่สถานะ",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เพราะเอกสาร Office ถูกเก็บและเปิดผ่าน Synology Drive แอปรายงานว่าติดตั้ง Office แล้วและรองรับเอกสารประเภทใด การแก้ไขสเปรดชีตบนมือถือควรทำในแอป Drive ของ Synology เอง"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "คัดลอกหรือย้ายไฟล์ไปยังไดรฟ์ USB ที่เสียบกับ NAS ได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ ไดรฟ์ภายนอกปรากฏเป็นปลายทางเหมือนโฟลเดอร์ที่แชร์ เพราะ NAS เมานต์มันเป็นแบบนั้น เลือก Copy to หรือ Move to เปิดไดรฟ์แล้วยืนยัน NAS เขียนลงไดรฟ์โดยตรง และไม่มีอะไรผ่านมือถือของคุณ"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "การคัดลอกหรือย้ายผ่านมือถือของฉันไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ NAS ทำงานเองผ่าน SYNO.FileStation.CopyMove มือถือของคุณส่งคำขอแล้วเพียงดูความคืบหน้า การถ่ายโอนหลายร้อยกิกะไบต์จึงไม่แตะแพ็กเกจข้อมูลหรือที่เก็บข้อมูลของมือถือ และยังรันต่อแม้คุณปิดแอป"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; ไฟล์</div>
+      <div class="eyebrow">ไฟล์</div>
+      <h1>โฟลเดอร์แชร์ของคุณ <span class="g">จากที่ไหนก็ได้</span></h1>
+      <p>File Station และโฟลเดอร์ที่แชร์ การคัดลอกและย้ายบน NAS เอง รวมถึงสามแอป DSM ที่เกี่ยวกับเนื้อหาจริง ๆ คือ Note Station, Synology Office และ Contacts หากติดตั้ง Download Station ไว้ก็อยู่ที่นี่ด้วย โดยมี<a href="/th/guide/downloads/">หน้าของตัวเอง</a></p>
+    </div>
+    <div class="hero-shot"><img alt="File Station เรียกดูโฟลเดอร์ที่แชร์" src="/screenshots/files-station.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>ในหน้านี้</b><ul>
+      <li><a href="#file-station">File Station</a></li>
+      <li><a href="#copy-move">คัดลอกและย้าย</a></li>
+      <li><a href="#shares">โฟลเดอร์ที่แชร์</a></li>
+      <li><a href="#notes">Note Station</a></li>
+      <li><a href="#office">Synology Office</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul></div>
+
+    <div class="section-head" id="file-station">
+      <div class="eyebrow">File Station</div>
+      <h2>เรียกดูและดาวน์โหลด</h2>
+      <p class="lead">เริ่มที่ <b>Root</b> ซึ่งคือทุกโฟลเดอร์ที่แชร์ที่บัญชีของคุณเห็นได้ แล้วไล่ลงไป เส้นทางด้านบนแสดงว่าคุณอยู่ที่ไหนและพากลับขึ้นไปได้</p>
+    </div>
+    <ul class="plain">
+      <li><b>โฟลเดอร์และไฟล์</b> พร้อมรายละเอียดที่ DSM เก็บไว้ ได้แก่ ขนาด วันที่สร้างและแก้ไข เจ้าของ และสิทธิ์</li>
+      <li><b>ดาวน์โหลด</b>ไฟล์ใดก็ได้ บน Android และ iOS เมนูแชร์จะเปิดขึ้น คุณจึงบันทึก เปิดที่อื่น หรือส่งต่อได้ บน Windows และ macOS จะได้กล่องโต้ตอบ <b>Save As</b> ของระบบ</li>
+      <li><b>ใช้ได้เมื่ออยู่นอกบ้าน</b> การดาวน์โหลดไปตามเส้นทางใดก็ตามที่เข้าถึง NAS ได้ รวมถึงรีเลย์ของ QuickConnect</li>
+      <li><b>อัปโหลดไฟล์ไปยัง NAS</b>โดยเลือกจากอุปกรณ์ของคุณ</li>
+    </ul>
+    <div class="note"><b>สิ่งที่คุณเห็นคือสิ่งที่ DSM ให้คุณเห็น</b> File Station ที่นี่เคารพสิทธิ์ของบัญชี DSM ของคุณอย่างตรงไปตรงมา โฟลเดอร์ที่บัญชีของคุณอ่านไม่ได้จะไม่ปรากฏ เหมือนกับในเว็บอินเทอร์เฟซ</div>
+  </div>
+</section>
+
+<section id="copy-move">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">File Station</div>
+      <h2>คัดลอกและย้าย บน NAS เอง</h2>
+      <p class="lead">เลือกไฟล์หรือโฟลเดอร์ เลือก <b>Copy to</b> หรือ <b>Move to</b> แล้ว NAS จะทำการถ่ายโอนให้ ไม่ใช่มือถือของคุณ แม้หลายร้อยกิกะไบต์ก็ไม่ผ่านอุปกรณ์ในมือคุณ</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>กดค้างเพื่อเลือก</b>หนึ่งไฟล์หรือโฟลเดอร์ขึ้นไป แถบด้านบนจะเปลี่ยนเป็น <b>Copy to...</b> และ <b>Move to...</b></li>
+          <li><b>เลือกปลายทาง</b>แบบเดียวกับที่เรียกดู File Station คือเปิดโฟลเดอร์ที่แชร์หรือโฟลเดอร์แล้วยืนยัน ทุกโฟลเดอร์ที่แชร์ที่ NAS แสดงเป็นปลายทางได้ <b>รวมถึงไดรฟ์ภายนอกที่เสียบกับ NAS</b> โดยปรากฏเหมือนโฟลเดอร์ที่แชร์ทุกประการ เพราะ NAS เมานต์มันเป็นแบบนั้น</li>
+          <li><b>ชื่อซ้ำจะถามก่อน</b> หากมีรายการอยู่ที่ปลายทางแล้ว คุณเลือก<b>เขียนทับ</b>หรือ<b>ข้ามและเก็บของเดิม</b>ก่อนที่อะไรจะเริ่ม</li>
+          <li><b>การย้ายต้องกดค้างเพื่อยืนยัน</b> การย้ายจะลบต้นฉบับเมื่อสำเนาไปถึง ปุ่มยืนยันจึงต้องกดค้างไม่ใช่แค่แตะ เป็นความฝืดที่ตั้งใจก่อนสิ่งที่ย้อนกลับจากแอปไม่ได้</li>
+        </ul>
+      </div>
+      <img alt="โฟลเดอร์ที่เลือกใน File Station พร้อม Copy to และ Move to ในแถบการทำงาน" src="/screenshots/files-copy-move-select.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="ตัวเลือกปลายทาง Move to แสดงทุกโฟลเดอร์ที่แชร์ที่ NAS มี" src="/screenshots/files-copy-move-destination.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">ตัวเลือกปลายทางคือ File Station อีกครั้ง แต่จำกัดให้เลือกโฟลเดอร์ ไม่ใช่เปิดไฟล์</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>ความคืบหน้าขณะรัน</b> - ไบต์ที่ย้ายแล้วและเปอร์เซ็นต์ อ่านจาก NAS เอง ยอดรวมที่ NAS ยังคำนวณอยู่จะแสดงว่ากำลังวัดขนาด แทนที่จะเป็นตัวเลขที่ยังไม่มีความหมาย และขณะวัดขนาด แบนเนอร์ยังแสดงว่าคัดลอกไปแล้วเท่าไร เช่น "6.82 GB so far" พร้อมแถบที่เคลื่อนไหว ไม่ใช่แถบที่ค้าง</li>
+          <li><b>ความเร็วแสดงทุกครั้งที่ NAS รายงาน</b> หาก NAS เงียบไปพักหนึ่ง ซึ่งพบบ่อยขณะเขียนลงไดรฟ์ USB ที่ช้า แบนเนอร์จะคงปริมาณที่คัดลอกแล้ว ซ่อนความเร็วจนกว่าจะมีค่าใหม่ และตรวจสอบถี่น้อยลงจนกว่า NAS จะตอบอีกครั้ง การคัดลอกเองยังรันต่อบน NAS ตลอดเวลา</li>
+          <li><b>Cancel หยุดการทำงานบน NAS</b> กลางการถ่ายโอน สิ่งที่คัดลอกไปแล้วยังอยู่ที่ปลายทาง ไม่มีอะไรถูกย้อนกลับ</li>
+          <li><b>ปิดแอปแล้วมันยังทำต่อ</b> งานเป็นของ NAS ไม่ใช่หน้าจอที่ต้องเปิดค้างไว้ เปิด File Station อีกครั้งแล้วแอปจะเชื่อมกลับกับงานเดิม ไม่ใช่ทำหาย</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px"><b>ทำไมต้องกดค้างแทนแตะ</b> การคัดลอกทิ้งต้นฉบับไว้ การแตะพลาดจึงไม่เสียอะไร อันนั้นแตะครั้งเดียว ส่วนการย้ายลบต้นฉบับเมื่อสำเนาไปถึง จึงใช้รูปแบบกดค้างเพื่อยืนยันเหมือนปุ่มรีบูตและปิดเครื่องที่อื่นในแอป</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="shares">
+      <div class="eyebrow">โฟลเดอร์ที่แชร์</div>
+      <h2>ตัวโฟลเดอร์ที่แชร์เอง</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">ไม่ใช่ไฟล์ แต่เป็นโฟลเดอร์ที่แชร์ แต่ละรายการแสดงชื่อ วอลุ่มที่อยู่ คำอธิบาย และชิป <b>ACL</b> เมื่อมีสิทธิ์ควบคุมการเข้าถึง</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>สร้างโฟลเดอร์ที่แชร์</b>ด้วยปุ่มที่มุมขวาล่าง</li>
+          <li><b>เมนูเพิ่มเติมในแต่ละแถว</b>มีสิ่งที่ทำกับโฟลเดอร์ที่แชร์นั้นได้</li>
+          <li><b>โฟลเดอร์ที่แชร์ที่เข้ารหัส</b>ถูกระบุไว้ คุณจึงรู้ได้ทันทีว่าอันไหนต้องปลดล็อกหลังรีบูต</li>
+        </ul>
+        <div class="note"><b>ตำแหน่งของโฟลเดอร์ที่แชร์สำคัญ</b> วอลุ่มแสดงในทุกแถว ซึ่งเป็นวิธีที่เร็วที่สุดในการตอบว่า "วอลุ่มไหนกำลังเต็ม" เมื่อคุณกำลังดูอันที่เต็มบนหน้าจอ<a href="/th/guide/storage/">พื้นที่จัดเก็บ</a></div>
+      </div>
+      <img alt="โฟลเดอร์ที่แชร์พร้อมวอลุ่ม คำอธิบาย และชิป ACL" src="/screenshots/files-shared.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="notes">
+      <div class="eyebrow">Note Station</div>
+      <h2>สมุดบันทึกและบันทึก</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="สมุดบันทึกของ Note Station พร้อมจำนวนบันทึก" src="/screenshots/notes.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">สรุปด้านบน คือจำนวนบันทึก สมุดบันทึก และแท็กทั้งหมด จากนั้นเป็น <b>All Notes</b> และแต่ละสมุดบันทึกพร้อมจำนวนของตัวเอง</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>เปิดบันทึกใดก็ได้</b>แล้วอ่านเนื้อหาเต็ม</li>
+          <li><b>รูปภาพแสดงตรงตำแหน่งในบันทึก</b> ระหว่างย่อหน้า ไม่ถูกตัดออกหรือกองไว้ท้ายสุด</li>
+          <li><b>รูปที่ NAS ส่งมาไม่ได้</b>จะแสดง <b>Image could not be loaded</b> แทนที่ แทนที่จะหายไปเฉย ๆ รวมถึงรูปที่ web clipper เพิ่มมาจากหน้าเว็บภายนอก ซึ่ง NAS บางครั้งส่งกลับมาไม่ได้</li>
+          <li><b>สร้างสมุดบันทึก</b>หรือ<b>เพิ่มบันทึก</b>ด้วยสองปุ่มที่มุมขวาล่าง</li>
+          <li><b>ลบสมุดบันทึก</b>จากแถวของมัน</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">ชื่อสมุดบันทึกสามชื่อในภาพหน้าจอนี้ถูกเบลอ เพราะเป็นของ NAS จริง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="office">
+      <div class="eyebrow">Synology Office</div>
+      <h2>ติดตั้งแล้ว และรองรับอะไร</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">หน้าจอสถานะ ไม่ใช่ตัวแก้ไข แสดงเวอร์ชันของ Synology Office ที่ NAS ของคุณรัน และเอกสารประเภทที่รองรับ ได้แก่ <b>Documents</b>, <b>Spreadsheets</b> และ <b>Slides</b> โดยแต่ละอย่างมีเครื่องหมายถูก</p>
+        <div class="note"><b>ทำไมจึงหยุดแค่นั้น</b> เอกสาร Office ถูกเก็บและเปิดผ่าน Synology Drive แทนที่จะสร้างตัวแก้ไขสเปรดชีตครึ่ง ๆ กลาง ๆ ไว้ในแอปตรวจสอบ NAS แอปบอกว่ามี Office อยู่ และชี้ไปที่ Drive ซึ่งเป็นที่ที่เอกสารอยู่จริง</div>
+      </div>
+      <img alt="สถานะ Synology Office พร้อม Documents, Spreadsheets และ Slides" src="/screenshots/office.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contacts">
+      <div class="eyebrow">Contacts</div>
+      <h2>สมุดที่อยู่</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="สมุดที่อยู่ของ Synology Contacts พร้อมจำนวนผู้ติดต่อ" src="/screenshots/contacts.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">ยอดรวมของทุกสมุดที่อยู่ จากนั้นเป็นแต่ละสมุดพร้อมจำนวนของตัวเอง รวมถึงสมุดที่นำเข้าจาก Google ซึ่งปรากฏควบคู่กับสมุดที่สร้างบน NAS</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>ค้นหาข้ามทุกอย่าง</b>จากช่องด้านบน</li>
+          <li><b>ขยายสมุด</b>เพื่อดูผู้ติดต่อในนั้น ส่วนต่าง ๆ ย่อได้ สมุดที่มีสองพันรายการจึงไม่ท่วมสมุดที่มีหกรายการ</li>
+          <li><b>เพิ่มผู้ติดต่อ</b>ในสมุดที่ระบุจากแถวของมัน หรือด้วยปุ่มที่มุมขวาล่าง</li>
+          <li><b>แก้ไขหรือลบ</b>ผู้ติดต่อที่มีอยู่</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">ชื่อสมุดที่อยู่หนึ่งชื่อถูกเบลอ เพราะเป็นที่อยู่จริง</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเรื่องไฟล์</h2>
+    </div>
+    <details open><summary>ดาวน์โหลดไฟล์จาก NAS มายังมือถือได้ไหม</summary><div class="body">ได้ เปิด File Station หาไฟล์แล้วดาวน์โหลด บนมือถือเมนูแชร์จะเข้ามาแทน บน Windows และ macOS จะได้กล่องโต้ตอบ Save As ของระบบ การดาวน์โหลดใช้ได้ผ่าน QuickConnect ด้วย</div></details>
+    <details><summary>คัดลอกหรือย้ายไฟล์ไปยังไดรฟ์ USB ที่เสียบกับ NAS ได้ไหม</summary><div class="body">ได้ ไดรฟ์ภายนอกปรากฏเป็นปลายทางเหมือนโฟลเดอร์ที่แชร์ เพราะ NAS เมานต์มันเป็นแบบนั้น เลือก Copy to หรือ Move to เปิดไดรฟ์แล้วยืนยัน NAS เขียนลงไดรฟ์โดยตรง</div></details>
+    <details><summary>การคัดลอกหรือย้ายผ่านมือถือของฉันไหม</summary><div class="body">ไม่ NAS ทำงานเอง มือถือของคุณส่งคำขอและดูความคืบหน้า การถ่ายโอนหลายร้อยกิกะไบต์จึงไม่แตะแพ็กเกจข้อมูลของคุณ และยังรันต่อแม้คุณปิดแอป</div></details>
+    <details><summary>สร้างโฟลเดอร์ที่แชร์จากแอปได้ไหม</summary><div class="body">ได้ จากมุมมองย่อย Shared Folders โฟลเดอร์ที่แชร์ที่มีอยู่แสดงชื่อ วอลุ่ม คำอธิบาย และว่ามีสิทธิ์ ACL หรือไม่</div></details>
+    <details><summary>อ่านบันทึกใน Note Station ได้ไหม</summary><div class="body">ได้ มุมมองย่อย Notes แสดงสมุดบันทึกพร้อมจำนวนบันทึกและจำนวนแท็ก และเปิดบันทึกใดก็ได้เพื่ออ่านเต็ม ๆ สร้างสมุดบันทึก หรือเพิ่มบันทึก รูปภาพในบันทึกแสดงตรงตำแหน่งที่อยู่ในบันทึก และรูปที่ NAS ส่งมาไม่ได้จะแสดงตัวแทนว่าโหลดไม่ได้ แทนที่จะหายไป</div></details>
+    <details><summary>ทำไม Synology Office จึงแสดงแค่สถานะ</summary><div class="body">เพราะเอกสาร Office ถูกเก็บและเปิดผ่าน Synology Drive แอปรายงานว่าติดตั้ง Office แล้วและรองรับเอกสารประเภทใด การแก้ไขเอกสารควรทำในแอป Drive ของ Synology</div></details>
+    <details><summary>ทำไมฉันจึงไม่เห็นโฟลเดอร์ที่รู้ว่ามีอยู่</summary><div class="body">File Station ที่นี่เคารพสิทธิ์ของบัญชี DSM ของคุณอย่างตรงไปตรงมา โฟลเดอร์ที่บัญชีของคุณอ่านไม่ได้จะไม่ปรากฏ เหมือนกับในเว็บอินเทอร์เฟซ ลงชื่อเข้าใช้ด้วยบัญชีที่เห็นโฟลเดอร์นั้น</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: Download Station</h2>
+    <p class="lead" style="margin:0 auto 24px">เพิ่มด้วยลิงก์ แมกเน็ต หรือ .torrent และเปลี่ยนการตั้งค่าที่ NAS ของคุณรายงาน</p>
+    <p><a class="btn" href="/th/guide/downloads/">Download Station &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

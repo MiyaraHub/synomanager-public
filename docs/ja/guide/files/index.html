@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>モバイルで Synology File Station のコピーと移動 - Syno Manager</title>
+<meta name="description" content="File Station の閲覧、USB ドライブへのコピーや移動を含む NAS 上でのファイルとフォルダのコピーと移動、共有フォルダの管理、Note Station、Office、Contacts の閲覧ができます。" />
+<meta name="keywords" content="Synology File Station app, Synology copy move files, Synology USB drive copy, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/files/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/files/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/files/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/files/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/files/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/files/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/files/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/files/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/files/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/files/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/files/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/files/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/files/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/files/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/files/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/files/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/files/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/files/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/files/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/files/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/files/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/files/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/files/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/files/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/files/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/files/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/files/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/files/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/files/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/files/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/files/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/files/" />
+<!--/hreflang-->
+<meta property="og:title" content="モバイルで Synology File Station のコピーと移動 - Syno Manager" />
+<meta property="og:description" content="File Station の閲覧、USB ドライブへのコピーや移動を含む NAS 上でのファイルとフォルダのコピーと移動、共有フォルダの管理、Note Station、Office、Contacts の閲覧ができます。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/files/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="モバイルで Synology File Station のコピーと移動 - Syno Manager" />
+<meta name="twitter:description" content="File Station の閲覧、USB ドライブへのコピーや移動を含む NAS 上でのファイルとフォルダのコピーと移動、共有フォルダの管理、Note Station、Office、Contacts の閲覧ができます。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ファイル"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "モバイルで Synology File Station のコピーと移動 - Syno Manager",
+  "description": "File Station の閲覧、USB ドライブへのコピーや移動を含む NAS 上でのファイルとフォルダのコピーと移動、共有フォルダの管理、Note Station、Office、Contacts の閲覧ができます。",
+  "image": "https://synomanager.com/screenshots/files-station.webp",
+  "url": "https://synomanager.com/guide/files/",
+  "mainEntityOfPage": "https://synomanager.com/guide/files/",
+  "inLanguage": "ja",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "NAS のファイルをスマートフォンにダウンロードできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。File Station を開き、ファイルを見つけてダウンロードします。モバイルでは共有シートが開くため、保存したり、別のアプリで開いたり、送信したりできます。Windows と macOS では、ネイティブの「名前を付けて保存」ダイアログが開きます。ダウンロードは QuickConnect 経由でも動作するため、外出先でも利用できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アプリから共有フォルダを作成できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。共有フォルダのサブビューから作成できます。既存の共有には、名前、ボリューム、説明、ACL 権限があるかどうかが表示されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Note Station のノートを読めますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ノートのサブビューには、ノートブックがノート数とタグ数とともに表示され、任意のノートを開いて全文を読んだり、ノートブックを作成したり、ノートを追加したりできます。ノート内の画像はノート内の位置に表示され、NAS が送信できない画像は、消える代わりに「読み込めませんでした」のプレースホルダーで表示されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Synology Office にステータスしか表示されないのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Office のドキュメントは Synology Drive に保存され、Synology Drive を通じて開くためです。アプリは Office がインストールされていることと、対応するドキュメントの種類を報告します。スマートフォンでスプレッドシートを編集する作業は、Synology 純正の Drive アプリが適しています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS に接続した USB ドライブにファイルをコピーまたは移動できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。外付けドライブは、NAS が共有フォルダとしてマウントするため、共有フォルダと同じように保存先として表示されます。「コピー先」または「移動先」を選び、ドライブを開いて確定すると、NAS が直接書き込みます。スマートフォンを経由することはありません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "コピーや移動は、スマートフォンを経由しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。SYNO.FileStation.CopyMove を通じて、NAS 自身が処理します。スマートフォンはリクエストを送り、進行状況を見守るだけなので、数百ギガバイトの転送でも、データ通信量やスマートフォンのストレージを消費せず、アプリを閉じても処理は続きます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; ファイル</div>
+      <div class="eyebrow">ファイル</div>
+      <h1>共有フォルダに、<span class="g">どこからでも</span></h1>
+      <p>File Station と共有フォルダ、NAS 上でのコピーと移動、そしてコンテンツに関わる3つの DSM アプリである Note Station、Synology Office、Contacts を利用できます。Download Station がインストールされている場合は、ここにも表示されます。Download Station には<a href="/ja/guide/downloads/">専用のページ</a>があります。</p>
+    </div>
+    <div class="hero-shot"><img alt="共有フォルダを閲覧している File Station" src="/screenshots/files-station.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#file-station">File Station</a></li>
+      <li><a href="#copy-move">コピーと移動</a></li>
+      <li><a href="#shares">共有フォルダ</a></li>
+      <li><a href="#notes">Note Station</a></li>
+      <li><a href="#office">Synology Office</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul></div>
+
+    <div class="section-head" id="file-station">
+      <div class="eyebrow">File Station</div>
+      <h2>閲覧とダウンロード</h2>
+      <p class="lead"><b>ルート</b>（アカウントで見えるすべての共有フォルダ）から始まり、そこから下へ移動します。上部のパンくずリストで現在地を確認でき、上の階層へも戻れます。</p>
+    </div>
+    <ul class="plain">
+      <li><b>フォルダとファイル</b>には、DSM が保持するサイズ、作成日と更新日、所有者、権限などの詳細が表示されます。</li>
+      <li>任意のファイルを<b>ダウンロード</b>できます。Android と iOS では共有シートが開くため、保存したり、別のアプリで開いたり、送信したりできます。Windows と macOS では、ネイティブの<b>名前を付けて保存</b>ダイアログが開きます。</li>
+      <li><b>外出先でも動作します。</b>ダウンロードは、QuickConnect のリレーを含め、NAS に到達できる経路を通じて行われます。</li>
+      <li>デバイスからファイルを選んで、<b>NAS にアップロード</b>できます。</li>
+    </ul>
+    <div class="note"><b>見えるのは、DSM が見ることを許可しているものだけです。</b>ここでの File Station は、DSM アカウントの権限をそのまま反映します。アカウントが読み取れないフォルダは、Web インターフェースと同じように表示されません。</div>
+  </div>
+</section>
+
+<section id="copy-move">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">File Station</div>
+      <h2>NAS 上でのコピーと移動</h2>
+      <p class="lead">ファイルやフォルダを選び、<b>コピー先</b>または<b>移動先</b>を選ぶと、転送はスマートフォンではなく NAS が実行します。数百ギガバイトであっても、お手元のデバイスを経由することはありません。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>長押しで選択</b>して、1つ以上のファイルやフォルダを選びます。上部のバーが<b>コピー先...</b>と<b>移動先...</b>に切り替わります。</li>
+          <li>File Station を閲覧するのと同じ方法で<b>保存先を選び</b>、共有やフォルダを開いて確定します。NAS が一覧表示するすべての共有が保存先になり、<b>NAS に接続された外付けドライブも含まれます</b>。NAS が共有フォルダとしてマウントするため、共有フォルダとまったく同じように表示されます。</li>
+          <li><b>同じ名前がある場合は、先に確認します。</b>保存先に同じ名前の項目がすでに存在する場合は、処理が始まる前に、<b>上書き</b>するか、<b>スキップして既存のものを残す</b>かを選びます。</li>
+          <li><b>移動は、長押しで確定します。</b>移動はコピーが完了すると元のファイルを削除するため、確定ボタンはタップではなく長押しが必要です。アプリからは元に戻せない操作の前に、あえて少し手間を加えています。</li>
+        </ul>
+      </div>
+      <img alt="アクションバーにコピー先と移動先が表示された、File Station で選択中のフォルダ" src="/screenshots/files-copy-move-select.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="NAS が提供するすべての共有を一覧表示した移動先の選択画面" src="/screenshots/files-copy-move-destination.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">保存先の選択画面は、ファイルを開くのではなくフォルダを選ぶことに絞った、File Station そのものです。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>実行中の進行状況</b>として、NAS 自身から読み取った転送済みのバイト数とパーセンテージが表示されます。NAS がまだ合計を計算中の場合は、まだ意味のない数値ではなく「計算中」と表示され、計算中でも、これまでにコピーされた量（例：「これまでに 6.82 GB」）が表示され、バーは止まらずに動き続けます。</li>
+          <li><b>NAS が速度を報告している間は、速度が表示されます。</b>低速な USB ドライブへの書き込み中などに NAS が一時的に応答しなくなると、バナーはコピー済みの量を保持し、新しい値が届くまで速度を非表示にして、NAS が応答するまで確認の頻度を下げます。コピー自体は、その間もずっと NAS 上で続いています。</li>
+          <li><b>キャンセルすると、NAS 上で転送が停止します。</b>転送の途中でもかまいません。すでにコピーされたものは保存先に残り、ロールバックはされません。</li>
+          <li><b>アプリを閉じても処理は続きます。</b>タスクは NAS のものであり、開いたままにしておく必要のある画面のものではありません。File Station を再び開くと、アプリは同じタスクに再接続し、見失うことはありません。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px"><b>タップではなく長押しである理由。</b>コピーは元のファイルをそのまま残すため、誤ってタップしても害はなく、そちらは1回のタップです。移動はコピーが完了すると元のファイルを削除するため、アプリの他の場所にある再起動やシャットダウンの操作と同じ、長押しで確定するパターンを採用しています。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="shares">
+      <div class="eyebrow">共有フォルダ</div>
+      <h2>共有フォルダそのもの</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">ファイルではなく、共有フォルダそのものです。各項目には、名前、配置されているボリューム、説明が表示され、アクセス制御権限がある場合は <b>ACL</b> チップが付きます。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>右下のボタンで<b>共有フォルダを作成</b>できます。</li>
+          <li><b>各行のオーバーフロー</b>に、その共有に対してできる操作があります。</li>
+          <li><b>暗号化された共有</b>はその旨が表示されるため、再起動後にロック解除が必要なものがひと目でわかります。</li>
+        </ul>
+        <div class="note"><b>共有がどこにあるかは重要です。</b>すべての行にボリュームが表示されるため、<a href="/ja/guide/storage/">ストレージ</a>画面で満杯のボリュームを見ているときに「どのボリュームがいっぱいになっているのか」を最も早く確認できます。</div>
+      </div>
+      <img alt="ボリューム、説明、ACL チップを表示した共有フォルダ" src="/screenshots/files-shared.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="notes">
+      <div class="eyebrow">Note Station</div>
+      <h2>ノートブックとノート</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="ノート数を表示した Note Station のノートブック" src="/screenshots/notes.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">上部にノートの合計数、ノートブック数、タグ数のサマリーがあり、その下に<b>すべてのノート</b>と、それぞれ件数を表示した各ノートブックが並びます。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>任意のノートを開いて</b>、全文を読めます。</li>
+          <li><b>画像は、ノート内の位置に表示されます。</b>削除されたり末尾にまとめられたりせず、段落の間に表示されます。</li>
+          <li><b>NAS が送信できない画像</b>は、消える代わりに<b>画像を読み込めませんでした</b>と表示されます。Web クリッパーが外部の Web ページから追加した画像のうち、NAS が返せないものも同様です。</li>
+          <li>右下の2つのボタンで、<b>ノートブックを作成</b>したり<b>ノートを追加</b>したりできます。</li>
+          <li>行から<b>ノートブックを削除</b>できます。</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">このスクリーンショットでは、3つのノートブックのタイトルにぼかしを入れています。実際の NAS のものだからです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="office">
+      <div class="eyebrow">Synology Office</div>
+      <h2>インストール状況と、対応する機能</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">エディタではなくステータス画面です。NAS で動作している Synology Office のバージョンと、対応するドキュメントの種類（<b>ドキュメント</b>、<b>スプレッドシート</b>、<b>スライド</b>）がチェックマークとともに表示されます。</p>
+        <div class="note"><b>ここまでにとどめている理由。</b>Office のドキュメントは Synology Drive に保存され、Synology Drive を通じて開きます。NAS の監視アプリに中途半端なスプレッドシートエディタを組み込む代わりに、アプリは Office があることをお伝えし、ドキュメントが実際にある Drive へご案内します。</div>
+      </div>
+      <img alt="ドキュメント、スプレッドシート、スライドを表示した Synology Office のステータス" src="/screenshots/office.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contacts">
+      <div class="eyebrow">Contacts</div>
+      <h2>アドレス帳</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="連絡先の件数を表示した Synology Contacts のアドレス帳" src="/screenshots/contacts.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">すべてのアドレス帳の合計と、それぞれのアドレス帳の件数が表示されます。Google からインポートしたアドレス帳も、NAS 上で作成したものと並んで表示されます。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>上部のボックスから、<b>すべてを横断して検索</b>できます。</li>
+          <li><b>アドレス帳を展開</b>すると、その中の連絡先が表示されます。セクションは折りたたまれるため、2,000件のアドレス帳が6件のものを埋もれさせることはありません。</li>
+          <li>行から、または右下のボタンで、特定のアドレス帳に<b>連絡先を追加</b>できます。</li>
+          <li>既存の連絡先を<b>編集または削除</b>できます。</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">1つのアドレス帳の名前にぼかしを入れています。実際のアドレスだからです。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>ファイル FAQ</h2>
+    </div>
+    <details open><summary>NAS のファイルをスマートフォンにダウンロードできますか？</summary><div class="body">はい。File Station を開き、ファイルを見つけてダウンロードします。モバイルでは共有シートが開き、Windows と macOS ではネイティブの「名前を付けて保存」ダイアログが開きます。ダウンロードは QuickConnect 経由でも動作します。</div></details>
+    <details><summary>NAS に接続した USB ドライブにファイルをコピーまたは移動できますか？</summary><div class="body">はい。外付けドライブは、NAS が共有フォルダとしてマウントするため、共有フォルダと同じように保存先として表示されます。「コピー先」または「移動先」を選び、ドライブを開いて確定すると、NAS が直接書き込みます。</div></details>
+    <details><summary>コピーや移動は、スマートフォンを経由しますか？</summary><div class="body">いいえ。処理は NAS 自身が行います。スマートフォンはリクエストを送り、進行状況を見守るだけなので、数百ギガバイトの転送でもデータ通信量を消費せず、アプリを閉じても処理は続きます。</div></details>
+    <details><summary>アプリから共有フォルダを作成できますか？</summary><div class="body">はい。共有フォルダのサブビューから作成できます。既存の共有には、名前、ボリューム、説明、ACL 権限があるかどうかが表示されます。</div></details>
+    <details><summary>Note Station のノートを読めますか？</summary><div class="body">はい。ノートのサブビューには、ノートブックがノート数とタグ数とともに表示され、任意のノートを開いて全文を読んだり、ノートブックを作成したり、ノートを追加したりできます。ノート内の画像はノート内の位置に表示され、NAS が送信できない画像は、消える代わりに「読み込めませんでした」のプレースホルダーで表示されます。</div></details>
+    <details><summary>Synology Office にステータスしか表示されないのはなぜですか？</summary><div class="body">Office のドキュメントは Synology Drive に保存され、Synology Drive を通じて開くためです。アプリは Office がインストールされていることと、対応するドキュメントの種類を報告します。ドキュメントの編集は、Synology 純正の Drive アプリが適しています。</div></details>
+    <details><summary>存在するはずのフォルダが見えないのはなぜですか？</summary><div class="body">ここでの File Station は、DSM アカウントの権限をそのまま反映します。アカウントが読み取れないフォルダは、Web インターフェースと同じように表示されません。そのフォルダを見られるアカウントでサインインしてください。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：Download Station</h2>
+    <p class="lead" style="margin:0 auto 24px">リンク、マグネット、.torrent で追加し、NAS が報告した設定を変更します。</p>
+    <p><a class="btn" href="/ja/guide/downloads/">Download Station &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

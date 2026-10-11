@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 연결하기 - Syno Manager 설정</title>
+<meta name="description" content="1분 안에 Synology NAS를 추가하세요. 주소와 포트, HTTPS와 자체 서명 인증서, QuickConnect, 2FA, 그리고 연결되지 않을 때의 대처법까지 안내합니다." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 연결하기 - Syno Manager 설정" />
+<meta property="og:description" content="1분 안에 Synology NAS를 추가하세요. 주소와 포트, HTTPS와 자체 서명 인증서, QuickConnect, 2FA, 그리고 연결되지 않을 때의 대처법까지 안내합니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 연결하기 - Syno Manager 설정" />
+<meta name="twitter:description" content="1분 안에 Synology NAS를 추가하세요. 주소와 포트, HTTPS와 자체 서명 인증서, QuickConnect, 2FA, 그리고 연결되지 않을 때의 대처법까지 안내합니다." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "시작하기"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS 연결하기 - Syno Manager 설정",
+  "description": "1분 안에 Synology NAS를 추가하세요. 주소와 포트, HTTPS와 자체 서명 인증서, QuickConnect, 2FA, 그리고 연결되지 않을 때의 대처법까지 안내합니다.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager를 사용하려면 무엇이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DSM 7.0 이상을 실행하는 Synology NAS, 그 NAS의 DSM 계정, 그리고 Android 7+, iOS 16+, macOS 11+ 또는 Windows가 실행되는 기기가 필요합니다. NAS에 설치할 것은 없습니다. 앱은 이미 NAS에 있는 DSM 자체 API를 사용합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떤 주소와 포트를 입력해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "내 네트워크에서는 NAS의 로컬 IP 주소와 DSM 포트를 입력합니다. HTTPS를 켰다면 5001, 껐다면 5000입니다. 호스트 이름이나 사용자 지정 도메인도 입력할 수 있습니다. 주소를 다루고 싶지 않다면 연결 유형을 QuickConnect로 바꾸고 QuickConnect ID를 입력하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SSL 인증서 확인이 기본적으로 꺼져 있는 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "대부분의 DiskStation은 공인 인증 기관이 서명하지 않은 자체 서명 인증서를 사용하므로, 연결은 암호화되어 있어도 확인에 실패하기 때문입니다. 확인을 꺼 두면 그 인증서를 허용합니다. Let's Encrypt 등에서 발급받은 정식 인증서를 설치했다면 확인을 켜세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "공유기의 포트를 열어야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 내 네트워크에서는 포워딩이 필요 없습니다. 외부에서는 QuickConnect가 연결을 중계해 주며, VPN도 사용할 수 있습니다. 포트 포워딩은 인터넷에서 직접 연결하는 경로가 꼭 필요하거나, 네트워크 밖에서 RTSP로 카메라 라이브 뷰를 보고 싶을 때만 필요합니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "연결 시간 초과라고 나옵니다. 어떻게 해야 하나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "이 메시지는 앱이 응답을 받지 못했다는 뜻이며, 거의 항상 주소, 포트, 또는 휴대폰이 연결된 네트워크가 원인입니다. HTTPS 설정이 포트와 일치하는지, 로컬 IP를 사용한다면 휴대폰이 NAS와 같은 네트워크에 있는지, 그리고 휴대폰 브라우저에서 같은 주소와 포트로 DSM 웹 인터페이스가 열리는지 확인하세요."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용 설명서</a> &rsaquo; 시작하기</div>
+      <div class="eyebrow">시작하기</div>
+      <h1><span class="g">1분 안에</span> 연결</h1>
+      <p>NAS에 설치하는 것은 없습니다. Syno Manager는 이미 실행 중인 DSM 자체 API와 통신하므로, DiskStation의 위치와 사용자 정보만 알려 주면 됩니다.</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager의 NAS 추가 양식" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>이 페이지의 내용</b><ul>
+      <li><a href="#requirements">준비물</a></li>
+      <li><a href="#address">NAS 찾기</a></li>
+      <li><a href="#form">양식의 모든 입력란</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">2단계 인증</a></li>
+      <li><a href="#test">테스트 및 저장</a></li>
+      <li><a href="#next">이후 과정</a></li>
+      <li><a href="#trouble">연결되지 않을 때</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">시작하기 전에</div>
+      <h2>준비물</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>요건</th><th>상세</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td><b>DSM 7.0 이상</b>을 실행하는 모든 모델. NAS에 설치하는 것은 없으며, 앱은 DSM 웹 인터페이스가 쓰는 것과 같은 API를 사용합니다.</td></tr>
+        <tr><td>DSM 계정</td><td>평소 쓰는 DSM 사용자 이름과 비밀번호입니다. 관리자 계정은 모든 것을 볼 수 있고, 일반 계정은 DSM이 허용하는 범위만 볼 수 있으며, 앱은 거부될 컨트롤을 보여 주는 대신 나머지를 숨깁니다.</td></tr>
+        <tr><td>사용 중인 기기</td><td><b>Android 7.0</b> 이상, <b>iOS 16.0</b> 이상, <b>macOS 11.0</b> 이상, 또는 <b>Windows</b>. 네 가지 모두 같은 앱입니다.</td></tr>
+        <tr><td>NAS로 가는 경로</td><td>같은 로컬 네트워크, 그 안으로 들어가는 VPN, 사용자 지정 도메인, 또는 QuickConnect. 이 중 하나면 충분합니다.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>보기만 하는 데는 관리자 계정이 필요 없습니다.</b> 모니터링은 모든 DSM 사용자가 할 수 있습니다. 컨테이너 재시작, 백업 실행, 드라이브 분리 같은 제어 동작에는 DSM 자체가 해당 동작에 요구하는 권한이 필요하며, 앱은 거부되었을 때 성공한 척하지 않고 거부되었다고 보고합니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">어디에 있나요</div>
+      <h2>NAS 주소 찾기</h2>
+      <p class="lead">이미 브라우저로 DSM을 열고 있다면 주소 표시줄에 필요한 정보가 모두 있습니다. 호스트와 포트가 앱이 요구하는 두 값입니다.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>DSM에서 확인하기</h3>
+        <ul class="plain">
+          <li><b>제어판 &rsaquo; 네트워크 &rsaquo; 네트워크 인터페이스</b>에서 각 인터페이스의 NAS IP 주소를 볼 수 있습니다.</li>
+          <li><b>제어판 &rsaquo; 네트워크 &rsaquo; DSM 설정</b>에서 DSM이 수신하는 HTTP 및 HTTPS 포트를 볼 수 있습니다. 누군가 바꾸지 않았다면 5000과 5001입니다.</li>
+        </ul>
+        <h3 style="margin-top:22px">브라우저에서 확인하기</h3>
+        <p style="color:var(--steel)">DSM에 접속하려고 입력하는 주소가 앱이 원하는 값입니다. <code>https://192.168.1.20:5001</code>에서 호스트는 <code>192.168.1.20</code>, 포트는 <code>5001</code>이며, HTTPS가 켜져 있습니다.</p>
+      </div>
+      <div>
+        <h3>공유기에서 확인하기</h3>
+        <p style="color:var(--steel)">대부분의 공유기는 연결된 기기를 이름으로 보여 줍니다. NAS는 <b>제어판 &rsaquo; 정보 센터</b>에 지정된 서버 이름으로 표시됩니다.</p>
+        <div class="note"><b>고정 주소를 지정하세요.</b> 공유기가 재부팅 후 NAS에 다른 IP를 할당하면 앱이 NAS를 찾지 못하게 됩니다. 공유기의 DHCP 예약이나 NAS의 고정 주소로 이를 막을 수 있습니다. 호스트 이름이나 사용자 지정 도메인은 IP가 무엇이든 상관없이 작동합니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS 추가</div>
+      <h2>양식의 모든 입력란</h2>
+      <p class="lead">기기 목록에서 <b>+ NAS 추가</b>를 탭하세요. 양식은 짧으며, 합리적인 기본값이 없는 입력란은 세 개뿐입니다.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>입력란</th><th>입력할 내용</th></tr></thead>
+          <tbody>
+            <tr><td>NAS 별칭</td><td>원하는 이름이면 됩니다. 나에게만 보입니다. NAS가 둘 이상일 때 유용합니다.</td></tr>
+            <tr><td>연결 유형</td><td>직접 입력하는 주소는 <b>Direct IP</b>, QuickConnect ID는 <b>QuickConnect</b>를 선택합니다. <a href="#quickconnect">아래</a>를 참고하세요.</td></tr>
+            <tr><td>호스트 / IP 주소</td><td>NAS의 로컬 IP, 호스트 이름, 또는 NAS를 가리키는 사용자 지정 도메인.</td></tr>
+            <tr><td>포트</td><td>HTTPS를 켰다면 <b>5001</b>, 껐다면 <b>5000</b>입니다. DSM 포트를 변경했다면 그 포트를 사용하세요.</td></tr>
+            <tr><td>HTTPS</td><td>기본적으로 켜져 있으며, 켜 두는 것이 좋습니다. 비밀번호를 포함해 휴대폰과 NAS 사이의 모든 통신이 암호화됩니다.</td></tr>
+            <tr><td>SSL 인증서 확인</td><td>대부분의 DiskStation은 공인 인증 기관으로 확인할 수 없는 <b>자체 서명</b> 인증서를 사용하므로 기본적으로 꺼져 있습니다. 어느 쪽이든 연결은 암호화됩니다. 정식 인증서를 설치한 경우에만 켜세요.</td></tr>
+            <tr><td>사용자 이름</td><td>DSM 계정 이름입니다. <b>공백이 포함된 사용자 이름도 지원됩니다.</b> 앱이 따옴표 처리를 올바르게 하는데, 다른 클라이언트가 실패하는 흔한 이유가 바로 이 부분입니다.</td></tr>
+            <tr><td>비밀번호</td><td>DSM 비밀번호입니다. 눈 아이콘을 누르면 입력하는 동안 표시됩니다. 플랫폼 키체인 또는 키스토어에 기록되며 평문으로 저장되지 않습니다.</td></tr>
+            <tr><td>2단계 인증</td><td>DSM 계정에서 인증 앱을 사용한다면 켜세요. <a href="#twofactor">아래</a>를 참고하세요.</td></tr>
+            <tr><td>DSM 포트를 통해 카메라 라이브 뷰 터널링</td><td>기본적으로 꺼져 있습니다. <b>꺼짐</b>이면 카메라 라이브 뷰가 포트 554의 RTSP에 직접 연결되며, 내 네트워크에서는 더 빠르지만 어디에 있든 그 포트에 접근할 수 있어야 합니다. <b>켜짐</b>이면 이미 사용 중인 DSM HTTPS 포트로 스트림을 터널링하므로, 554를 노출하지 않고도 외부에서 라이브 뷰가 작동합니다. <a href="/ko/guide/media/#cameras">Surveillance Station</a>을 참고하세요.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="NAS 추가 양식" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">주소를 입력할 필요가 없습니다</div>
+      <h2>QuickConnect</h2>
+      <p class="lead"><b>연결 유형</b>을 <b>QuickConnect</b>로 바꾸고 호스트와 포트 대신 QuickConnect ID를 입력하세요. Synology의 릴레이가 NAS가 어디에 있든 찾아 주며, 공유기 설정은 필요 없습니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>ID를 확인하는 곳.</b> DSM의 <b>제어판 &rsaquo; 외부 액세스 &rsaquo; QuickConnect</b>입니다. 먼저 그곳에서 활성화해야 합니다.</li>
+      <li><b>감수할 점.</b> 릴레이로 인해 지연 시간이 늘어나므로 썸네일과 라이브 뷰가 내 네트워크에서보다 느리게 로드됩니다. 모든 기능은 그대로 작동합니다.</li>
+      <li><b>덜어 주는 것.</b> 포트 포워딩도, 계속 갱신해야 하는 동적 DNS도 필요 없고, 내 쪽에서 인터넷에 노출되는 것도 없습니다.</li>
+    </ul>
+    <div class="note"><b>둘 다 쓸 수 있습니다.</b> 같은 NAS를 로컬 IP와 QuickConnect로 두 번 추가하면 집에서는 빠른 항목을, 밖에서는 안정적인 항목을 쓸 수 있습니다. 두 항목은 레이아웃이 별개이므로 더 가까운 쪽을 고르세요.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>2단계 인증</h2>
+      <p class="lead">DSM 계정이 인증 앱으로 보호되고 있다면 저장하기 전에 <b>2단계 인증(2FA)</b>을 켜세요. 비밀번호가 확인된 직후 앱이 여섯 자리 코드를 요청합니다.</p>
+    </div>
+    <ol class="steps">
+      <li>NAS 추가 양식에서 <b>토글을 켭니다</b>.</li>
+      <li><b>저장 &amp; 연결을 탭합니다.</b> 앱이 로그인하면 DSM이 두 번째 인증 요소를 요청합니다.</li>
+      <li>인증 앱의 <b>코드를 입력합니다</b>.</li>
+      <li><b>이 기기를 기억할지 선택합니다.</b> 기억하면 DSM이 기기 토큰을 발급하고, 이 휴대폰은 다시 코드를 요청받지 않습니다. 토큰은 비밀번호와 같은 방식으로 플랫폼 키체인에 저장됩니다.</li>
+    </ol>
+    <div class="note warn"><b>코드가 거부된다면</b> 시계를 확인하세요. 인증 코드는 현재 시각으로 만들어지므로, 시계가 어긋난 휴대폰이나 NAS는 틀린 숫자를 생성하거나 기대하게 됩니다. NAS의 시간 소스는 <a href="/ko/guide/home/">홈 화면</a>의 빠른 통계 줄에 표시됩니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">저장하기 전에</div>
+      <h2>연결 테스트 후 저장</h2>
+      <p class="lead"><b>연결 테스트</b>는 주소, 포트, 자격 증명을 시도해 보고 아무것도 저장하지 않은 채 결과를 알려 줍니다. "NAS에 연결할 수 없음"과 "연결은 됐지만 비밀번호가 틀림"을 구분해 주므로, 오타를 찾는 가장 빠른 방법입니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>표시되는 메시지</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td>연결 시간 초과</td><td>아무 응답이 없습니다. 주소, 포트, 또는 휴대폰이 연결된 네트워크가 원인이며, 시도조차 하지 않은 자격 증명은 아닙니다.</td></tr>
+        <tr><td>잘못된 자격 증명</td><td>NAS가 응답했지만 로그인을 거부했습니다. 주소와 포트는 맞고, 사용자 이름이나 비밀번호가 틀렸습니다.</td></tr>
+        <tr><td>인증서 오류</td><td>HTTPS가 켜져 있고 자체 서명 인증서에 대해 <b>SSL 인증서 확인</b>도 켜져 있습니다. 확인을 끄세요.</td></tr>
+        <tr><td>2FA 필요</td><td>계정이 2단계 인증을 사용하는데 토글이 꺼져 있습니다. 켜고 다시 시도하세요.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>저장 &amp; 연결</b>은 항목을 저장하고 로그인합니다. NAS가 이미 로딩 중인 홈 화면으로 이동합니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">연결되었습니다</div>
+      <h2>처음 연결하면 일어나는 일</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="연결 후 Syno Manager 홈 화면" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>앱이 NAS에 무엇을 할 수 있는지 묻습니다.</b> DSM의 API 카탈로그를 조회해 목록을 저장합니다. Surveillance Station이 없는 NAS에 카메라 탭이 나타나지 않고, 패키지를 설치하면 해당 화면이 나타나는 이유입니다.</li>
+          <li><b>지원되는 모든 카드가 켜진 상태입니다.</b> 새 카드는 숨겨지지 않고 보이는 상태로 추가되므로, NAS가 지원하는 기능은 바로 볼 수 있습니다. <a href="/ko/guide/customizing/">맞춤 설정</a>은 항목을 끄는 곳이지, 항목을 찾으러 가는 곳이 아닙니다.</li>
+          <li><b>NAS의 MAC 주소가 저장</b>되므로 나중에 직접 찾지 않아도 <a href="/ko/guide/wake-on-lan/">Wake-on-LAN</a>이 작동합니다.</li>
+          <li><b>짧은 환영 화면이 한 번 나타납니다.</b> 앱이 하는 일과 설정을 바꾸는 곳을 안내하며, 다시 나타나지 않게 하는 체크박스가 있습니다.</li>
+          <li><b>설명이 필요한 화면에 도움말 카드가 나타납니다.</b> 길게 눌러 닫을 수 있고, <a href="/ko/guide/settings/#help">설정</a>에서 하나씩 복원할 수 있습니다.</li>
+        </ul>
+        <div class="note"><b>연결한 뒤에 패키지를 설치하셨나요?</b> 기능 목록은 연결할 때 읽어 오므로, 그 이후에 설치한 패키지는 아직 탭이 없습니다. 당겨서 새로 고치거나 앱을 다시 열면 새 화면이 나타납니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">연결되지 않을 때</div>
+      <h2>간단한 점검 목록</h2>
+    </div>
+    <ol class="steps">
+      <li>입력한 주소와 포트 그대로 <b>휴대폰 브라우저에서 DSM을 열어 보세요.</b> 브라우저도 접속하지 못한다면 앱이 아니라 네트워크나 주소의 문제입니다.</li>
+      <li><b>HTTPS가 포트와 일치하는지 확인하세요.</b> HTTPS를 끈 상태의 5001 포트, 또는 켠 상태의 5000 포트는 시간 초과가 됩니다. 서로 다른 수신 포트이기 때문입니다.</li>
+      <li>NAS가 출고 시 설치된 인증서를 쓰고 있다면 <b>SSL 인증서 확인을 끄세요.</b></li>
+      <li><b>휴대폰의 네트워크를 확인하세요.</b> 로컬 IP는 모바일 데이터로는 접근할 수 없습니다. Wi-Fi에 연결하거나, QuickConnect, 도메인, VPN을 사용하세요.</li>
+      <li><b>iOS에서는 로컬 네트워크 접근을 허용하세요.</b> 설정 &rsaquo; 앱 &rsaquo; Syno Manager &rsaquo; 로컬 네트워크. 허용하지 않으면 iOS가 내 네트워크 주소로의 연결을 말없이 차단합니다.</li>
+      <li><b>DSM의 방화벽을 확인하세요.</b> 제어판 &rsaquo; 보안 &rsaquo; 방화벽. 특정 주소만 허용하는 규칙이 있으면 해당 주소가 아닌 휴대폰은 차단됩니다.</li>
+      <li><b>자동 차단을 확인하세요.</b> 제어판 &rsaquo; 보안 &rsaquo; 계정. 로그인 실패가 반복되면 휴대폰의 주소가 차단될 수 있으며, 그곳에 표시되므로 제거할 수 있습니다.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/ko/help/">전체 문제 해결 가이드</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>설정 FAQ</h2>
+    </div>
+    <details open><summary>Syno Manager를 사용하려면 무엇이 필요한가요?</summary><div class="body">DSM 7.0 이상을 실행하는 Synology NAS, 그 NAS의 DSM 계정, 그리고 Android 7+, iOS 16+, macOS 11+ 또는 Windows가 실행되는 기기가 필요합니다. NAS에 설치할 것은 없습니다. 앱은 이미 NAS에 있는 DSM 자체 API를 사용합니다.</div></details>
+    <details><summary>어떤 주소와 포트를 입력해야 하나요?</summary><div class="body">내 네트워크에서는 NAS의 로컬 IP 주소와 DSM 포트를 입력합니다. HTTPS를 켰다면 5001, 껐다면 5000입니다. 호스트 이름이나 사용자 지정 도메인도 입력할 수 있습니다. 주소를 다루고 싶지 않다면 연결 유형을 QuickConnect로 바꾸고 QuickConnect ID를 입력하세요.</div></details>
+    <details><summary>SSL 인증서 확인이 기본적으로 꺼져 있는 이유는 무엇인가요?</summary><div class="body">대부분의 DiskStation은 공인 인증 기관이 서명하지 않은 자체 서명 인증서를 사용하므로, 연결은 암호화되어 있어도 확인에 실패하기 때문입니다. 확인을 꺼 두면 그 인증서를 허용합니다. Let's Encrypt 등에서 발급받은 정식 인증서를 설치했다면 확인을 켜세요.</div></details>
+    <details><summary>공유기의 포트를 열어야 하나요?</summary><div class="body">아니요. 내 네트워크에서는 포워딩이 필요 없습니다. 외부에서는 QuickConnect가 연결을 중계해 주며, VPN도 사용할 수 있습니다. 포트 포워딩은 인터넷에서 직접 연결하는 경로가 꼭 필요하거나, 네트워크 밖에서 RTSP로 카메라 라이브 뷰를 보고 싶을 때만 필요합니다.</div></details>
+    <details><summary>연결 시간 초과라고 나옵니다. 어떻게 해야 하나요?</summary><div class="body">이 메시지는 앱이 응답을 받지 못했다는 뜻이며, 거의 항상 주소, 포트, 또는 휴대폰이 연결된 네트워크가 원인입니다. HTTPS 설정이 포트와 일치하는지, 로컬 IP를 사용한다면 휴대폰이 NAS와 같은 네트워크에 있는지, 그리고 휴대폰 브라우저에서 같은 주소와 포트로 DSM 웹 인터페이스가 열리는지 확인하세요.</div></details>
+    <details><summary>NAS를 둘 이상 추가할 수 있나요?</summary><div class="body">네, 원하는 만큼 추가할 수 있습니다. 각 NAS는 자체 자격 증명, 대시보드 레이아웃, 설정을 유지하며, 기기 목록에서 전환할 수 있습니다. <a href="/ko/guide/multi-nas/">여러 대의 NAS</a>를 참고하세요.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 홈 화면</h2>
+    <p class="lead" style="margin:0 auto 24px">각 카드가 보여 주는 내용과 대시보드를 나만의 것으로 만드는 방법.</p>
+    <p><a class="btn" href="/ko/guide/home/">홈 화면 &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

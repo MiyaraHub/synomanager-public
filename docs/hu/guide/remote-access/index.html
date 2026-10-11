@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS elérése távolról - Syno Manager</title>
+<meta name="description" content="Érje el a Synology-ját bárhonnan QuickConnecttel, saját tartománnyal vagy VPN-nel. Mely funkciók működnek melyik útvonalon, beleértve a fotókat és a kamerák élő nézetét." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS elérése távolról - Syno Manager" />
+<meta property="og:description" content="Érje el a Synology-ját bárhonnan QuickConnecttel, saját tartománnyal vagy VPN-nel. Mely funkciók működnek melyik útvonalon, beleértve a fotókat és a kamerák élő nézetét." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS elérése távolról - Syno Manager" />
+<meta name="twitter:description" content="Érje el a Synology-ját bárhonnan QuickConnecttel, saját tartománnyal vagy VPN-nel. Mely funkciók működnek melyik útvonalon, beleértve a fotókat és a kamerák élő nézetét." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Otthonon kívül"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS elérése távolról - Syno Manager",
+  "description": "Érje el a Synology-ját bárhonnan QuickConnecttel, saját tartománnyal vagy VPN-nel. Mely funkciók működnek melyik útvonalon, beleértve a fotókat és a kamerák élő nézetét.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kell portot továbbítanom a NAS távoli használatához?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A QuickConnect a Synology szolgáltatásán keresztül továbbítja a kapcsolatot router-beállítás nélkül, és a hálózatába vezető VPN is működik. Portátirányításra csak akkor van szükség, ha kifejezetten közvetlen útvonalat szeretne az internetről."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Működnek a fotók és a kamerák élő nézete QuickConnecten keresztül?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A miniatűrök, a teljes képek, a kamerák élő nézete, valamint a File Station és a Drive letöltései mind az éppen aktív útvonalon haladnak, a QuickConnect továbbítón is. A továbbító lassabb, mint a saját hálózata, de működik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hozzá kell adnom a NAS-t kétszer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jó megoldás. Egy bejegyzés helyi IP-címmel, amikor otthon van - gyors, közvetlen -, és egy QuickConnecttel, amikor úton van. Külön bejegyzések, külön elrendezéssel, és a váltás egy koppintás."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Biztonságos a QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A kapcsolat végpontok között titkosított, ha HTTPS-t használ, és a Synology továbbítója átengedi a forgalmat, nem tárolja az adatait. A DSM hitelesítő adatai továbbra is érvényesek, és a kétlépcsős azonosítás is működik."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Távol otthonról</div>
+      <div class="eyebrow">Otthonon kívül</div>
+      <h1>Ugyanaz az alkalmazás, <span class="g">más útvonalon</span></h1>
+      <p>A Syno Manager ugyanúgy működik, akár a NAS mellett ül, akár a világ másik végén van. Az változik, hogyan jut el oda a kapcsolat, és minden útvonalnak más-más előnyei és hátrányai vannak, amelyeket érdemes ismerni.</p>
+    </div>
+    <div class="hero-shot"><img alt="A NAS hozzáadása űrlap a Közvetlen IP és a QuickConnect lehetőséggel" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Három útvonal</div>
+      <h2>Válassza ki a Önnek megfelelőt</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Útvonal</th><th>Beállítás</th><th>Sebesség</th><th>Kitesz valamit?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Kapcsolja be a DSM-ben, és adja meg az ID-t. A routeren semmit.</td><td>Lassabb - a forgalom a Synology továbbítóján keresztül megy.</td><td class="yes">Semmit. Nincs nyitott port az Ön oldalán.</td></tr>
+        <tr><td><b>Saját tartomány / DDNS</b></td><td>Egy, a címére mutató állomásnév, valamint egy portátirányítás a routeren.</td><td>Közvetlen, tehát olyan gyors, amilyet a feltöltési sebessége enged.</td><td class="no">Igen - a DSM-port elérhető az internetről.</td></tr>
+        <tr><td><b>VPN</b></td><td>VPN-szerver a routeren vagy a NAS-on, és kliens a telefonon.</td><td>Csatlakozás után közvetlen.</td><td class="yes">Csak a VPN-port. Minden más privát marad.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Ha bizonytalan, használja a QuickConnectet.</b> Ez az az opció, amely nem igényel routerismeretet, és semmit sem nyit meg, és az alkalmazás minden funkciója működik vele.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mi működik távolról</div>
+      <h2>Minden, két lábjegyzettel</h2>
+      <p class="lead">Az alkalmazás funkciói nem szűkülnek, amikor távol van. Két dolog igényel egy kis gondolkodást: a kamerák élő nézete és egy kikapcsolt NAS felébresztése.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Funkció</th><th>Otthonon kívül</th></tr></thead>
+      <tbody>
+        <tr><td>Felügyelet - rendszer, tárhely, hálózat, állapot</td><td class="yes">Bármelyik útvonalon működik.</td></tr>
+        <tr><td>Docker, csomagok, szolgáltatások, feladatok, felhasználók</td><td class="yes">Bármelyik útvonalon működik.</td></tr>
+        <tr><td>Synology Photos - miniatűrök és teljes képek</td><td class="yes">Működik, a továbbítón is.</td></tr>
+        <tr><td>File Station és Drive letöltések</td><td class="yes">Működik, a továbbítón is.</td></tr>
+        <tr><td>Biztonsági mentések - állapot és Futtatás most</td><td class="yes">Bármelyik útvonalon működik.</td></tr>
+        <tr><td>Másik eszköz felébresztése a NAS-on keresztül</td><td class="yes">Működik, amíg maga a NAS be van kapcsolva.</td></tr>
+        <tr><td><b>Kamerák élő nézete</b></td><td>Kapcsolja be a <b>Kamera élő nézetének átvezetése a DSM-porton</b> opciót. Nélküle az élő nézethez RTSP kell a 554-es porton, amely kívülről általában nem érhető el. Lásd: <a href="/hu/guide/media/#streaming">hogyan kapcsolódik az élő nézet</a>.</td></tr>
+        <tr><td><b>Maga a NAS felébresztése, amíg ki van kapcsolva</b></td><td>VPN-re vagy router Wake-on-LAN átirányításra van szükség. A QuickConnect nem éri el a kikapcsolt NAS-t. Lásd: <a href="/hu/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Beállítás</h2>
+    </div>
+    <ol class="steps">
+      <li><b>A DSM-ben:</b> Vezérlőpult &rsaquo; Külső hozzáférés &rsaquo; QuickConnect. Kapcsolja be, és jegyezze fel a QuickConnect ID-t.</li>
+      <li><b>Az alkalmazásban:</b> adjon hozzá egy NAS-t, és állítsa a <b>Kapcsolat típusa</b> mezőt <b>QuickConnect</b> értékre.</li>
+      <li><b>Adja meg az ID-t</b> - ne gazdagépet és portot.</li>
+      <li><b>A DSM hitelesítő adatait</b>, és a 2FA-t, ha a fiók használja.</li>
+      <li><b>Mentés &amp; csatlakozás.</b></li>
+    </ol>
+    <div class="note"><b>Számítson lassabb működésre.</b> A továbbító egy plusz ugrást ad, és a Synology korlátozza a sebességét, így a fotótár kevésbé gördülékenyen görget, mint otthon. Minden továbbra is működik - ez késleltetésbeli, nem képességbeli különbség.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Egy követendő minta</div>
+      <h2>Adja hozzá ugyanazt a NAS-t kétszer</h2>
+      <p class="lead">Egy bejegyzés <b>helyi IP-címmel</b>, egy <b>QuickConnecttel</b>. Nevezze el őket, hogy megkülönböztethesse őket - „NAS (otthon)” és „NAS (távol)”.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Otthon</b> használja a közvetlent: nincs továbbító, teljes sebesség, azonnali miniatűrök.</li>
+      <li><b>Úton</b> váltson a QuickConnectesre.</li>
+      <li><b>Külön elrendezést őriznek</b>, így a távoli bejegyzést leszűkítheti arra a néhány kártyára, amelyet ténylegesen néz mobiladaton.</li>
+      <li><b>A váltás egy koppintás</b> az eszközlistából.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Állítsa az <a href="/hu/guide/settings/#launch">Indítási viselkedés</a> értékét <b>Legutóbb használt NAS</b> értékre, és az alkalmazás azt őrzi meg, amelyiken utoljára volt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Távoli elérés - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Kell portot továbbítanom a NAS távoli használatához?</summary><div class="body">Nem. A QuickConnect router-beállítás nélkül továbbítja a kapcsolatot, és a VPN is működik. Portátirányításra csak akkor van szükség, ha kifejezetten közvetlen útvonalat szeretne az internetről.</div></details>
+    <details><summary>Működnek a fotók és a kamerák élő nézete QuickConnecten keresztül?</summary><div class="body">Igen. A miniatűrök, a teljes képek, a kamerák élő nézete, valamint a File Station és a Drive letöltései mind az éppen aktív útvonalon haladnak, a továbbítón is. A kamerák élő nézetéhez be kell kapcsolni a DSM-portos alagút kapcsolót.</div></details>
+    <details><summary>Hozzá kell adnom a NAS-t kétszer?</summary><div class="body">Jó megoldás - egy bejegyzés helyi IP-címmel otthonra, egy QuickConnecttel távolra, külön elrendezéssel és egykoppintásos váltással.</div></details>
+    <details><summary>Biztonságos a QuickConnect?</summary><div class="body">A kapcsolat végpontok között titkosított, ha HTTPS-t használ, és a továbbító átengedi a forgalmat, nem tárolja az adatait. A DSM hitelesítő adatai és a kétlépcsős azonosítás továbbra is érvényesek.</div></details>
+    <details><summary>Miért nem működik a helyi IP-címes bejegyzésem mobiladaton?</summary><div class="body">Mert egy 192.168.x.x típusú privát cím csak az Ön saját hálózatán létezik. Használja a QuickConnectes bejegyzést, egy tartományt, vagy előbb csatlakozzon a VPN-hez.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: mentés &amp; visszaállítás</h2>
+    <p class="lead" style="margin:0 auto 24px">Vigye át az alkalmazás beállításait egy új telefonra.</p>
+    <p><a class="btn" href="/hu/guide/backup-restore/">Mentés &amp; visszaállítás &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

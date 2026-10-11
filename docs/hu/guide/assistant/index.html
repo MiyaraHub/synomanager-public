@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eszközön futó MI-asszisztens Synology NAS-hoz - Syno Manager</title>
+<meta name="description" content="Kérdezzen a Synology NAS-járól hétköznapi szavakkal, és kapja meg ugyanazt az állapotítéletet, amelyet az irányítópult mutat. A telefonon fut, az értékeléseiből tanul, és kizárólag olvas." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Eszközön futó MI-asszisztens Synology NAS-hoz - Syno Manager" />
+<meta property="og:description" content="Kérdezzen a Synology NAS-járól hétköznapi szavakkal, és kapja meg ugyanazt az állapotítéletet, amelyet az irányítópult mutat. A telefonon fut, az értékeléseiből tanul, és kizárólag olvas." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Eszközön futó MI-asszisztens Synology NAS-hoz - Syno Manager" />
+<meta name="twitter:description" content="Kérdezzen a Synology NAS-járól hétköznapi szavakkal, és kapja meg ugyanazt az állapotítéletet, amelyet az irányítópult mutat. A telefonon fut, az értékeléseiből tanul, és kizárólag olvas." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Az asszisztens"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Eszközön futó MI-asszisztens Synology NAS-hoz - Syno Manager",
+  "description": "Kérdezzen a Synology NAS-járól hétköznapi szavakkal, és kapja meg ugyanazt az állapotítéletet, amelyet az irányítópult mutat. A telefonon fut, az értékeléseiből tanul, és kizárólag olvas.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hol fut az asszisztens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A telefonján. Androidon a Gemini Nano az AICore-on keresztül, iOS-en és macOS-en az Apple Intelligence. Nincs felhős réteg, amelyre visszaeshetne - az alkalmazás buildje megbukik, ha az asszisztensben bárhol felhős gazdagép, felhős SDK vagy API-kulcs jelenik meg, így az ígéretet a build kényszeríti ki, nem az, hogy valaki emlékszik rá."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Elküldik valahová a NAS-adataimat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A kérdése, a NAS adatai és a válasz soha nem hagyják el az eszközt. Kikapcsolt hálózattal is működik. Mivel semmi sem kerül továbbításra, nincs belőle másolat, amelyet tárolni, megosztani vagy tanításra használni lehetne."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit kérdezhetek tőle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nincs rögzített lista. A NAS közzétesz mindent, amit jelenteni tud - egy átlagosnál több mint ezer bejegyzést -, az asszisztens pedig ebben keres, és elolvassa, amiről a kérdése szól. Telepít egy csomagot, és arról is azonnal tud válaszolni, alkalmazásfrissítés nélkül."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Változtathat valamit a NAS-omon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Kizárólag olvas. Nem tud elindítani, leállítani, törölni vagy újraindítani semmit - nem azért, mert a modellnek ezt kell betartania, hanem mert nem kapja meg hozzá az eszközöket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jár valamilyen költséggel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Az eszközébe már beépített modellt használja, így nincs mit fizetni, és fiókot sem kell létrehozni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért nem látom az Asszisztens fület?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mert az eszközön nincs használható, eszközön futó modell. Ahelyett, hogy olyan funkciót mutatna, amely nem működhet, az alkalmazás teljesen elrejti az olyan hardveren, amely nem tudja futtatni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tanul valamit az asszisztens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az értékeléseiből tanul, kizárólag ezen az eszközön. Értékeljen egy választ a alatta lévő hüvelykujjakkal, és a hasonló kérdések onnan indulnak, ahol a választ olvasták, így az asszisztens egyre jobban olvassa a NAS-át, minél többet használja. Az értékelések soha nem hagyják el az eszközt, és a Értékelések elfelejtése ehhez a NAS-hoz törli őket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért írja, hogy a modell foglalt, vagy elfogyott a köre?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az eszközön futó modellt a telefon minden más alkalmazásával közösen használja, és csak akkor fut, amikor a Syno Manager nyitva van a képernyőn. Ha eléri valamelyik korlátot, az asszisztens megnevezi, melyiket, ahelyett, hogy általános hibát mutatna, és nagyjából megmondja, mennyit kell várni."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Kezdőlap</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Az asszisztens</div>
+      <div class="eyebrow">Asszisztens &middot; béta</div>
+      <h1>Kérdezze a NAS-át, <span class="g">hétköznapi szavakkal</span></h1>
+      <p>A „Aggódnom kell valami miatt a tárhelyemmel kapcsolatban?” kérdés máskülönben négy képernyő megnyitását jelenti. Az asszisztens elolvassa, amit a NAS jelentett, és válaszol rá - a telefonján futó modellel, offline, anélkül, hogy bármit is elküldene bárhová.</p>
+    </div>
+    <div class="hero-shot"><img alt="Az asszisztens, javasolt kérdésekkel készen" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#asking">Kérdés feltevése</a></li>
+      <li><a href="#topics">Mit kérdezhet</a></li>
+      <li><a href="#privacy">Hová kerülnek az adatai</a></li>
+      <li><a href="#readonly">Csak olvas</a></li>
+      <li><a href="#wrong">Tévedhet</a></li>
+      <li><a href="#learning">Tanulás az értékelésekből</a></li>
+      <li><a href="#availability">Mely eszközökön érhető el</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Kérdezés</div>
+      <h2>Írja be vagy mondja el</h2>
+      <p class="lead">Az Asszisztens fülnek két részlapja van: <b>Kérdezés</b> és <b>Hogyan működik</b>. A Kérdezés négy javaslattal nyílik meg, amelyek azt mutatják, milyen egy jó kérdés, nem azért vannak, hogy korlátozzák Önt.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Írjon be egy kérdést</b> az alul lévő mezőbe, vagy koppintson az egyik javaslatra.</li>
+      <li><b>Mondja el</b> a mikrofonnal, ha így jobban szereti.</li>
+      <li><b>Olvastassa fel a választ</b> a jobb felső sarokban lévő hangszóró-vezérlővel.</li>
+      <li><b>A választ kiírja, ahogy készül</b>, nem egyszerre jelenik meg - így elkezdheti olvasni, mielőtt elkészülne.</li>
+      <li><b>A Törlés</b> kiüríti a beszélgetést.</li>
+    </ul>
+    <div class="note"><b>A modell a képernyő megnyitásakor töltődik be</b>, nem az első kérdés elküldésekor, így az első válasz nem a leglassabb.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Hatókör</div>
+      <h2>Nincs témalista</h2>
+      <p class="lead">Ez a rész könnyen elkerüli a figyelmet. Az asszisztens nem a tárhelyről és a mentésekről szóló kész válaszok gyűjteménye - arra irányul, amit a NAS ténylegesen közzétesz.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>A NAS közzétesz mindent, amit jelenteni tud</b> - egy átlagosnál több mint ezer bejegyzést -, az asszisztens pedig ebben a katalógusban keres, és elolvassa, amiről a kérdése szól.</li>
+          <li><b>Telepít egy csomagot, és arról is tud válaszolni</b>, azonnal, alkalmazásfrissítés nélkül. A katalógusból semmi sincs az alkalmazásba írva; az eszközéről derül ki.</li>
+          <li><b>Minél többet használja, annál gyorsabb.</b> A DSM egyes részeinek olvasását egyszer kitalálja és megjegyzi, így az ugyanarról szóló későbbi kérdések gyorsabbak.</li>
+          <li><b>A „Hogy van a NAS-om?” kérdésre az állapotítélettel válaszol</b> - ugyanazzal az Egészséges, Figyelmeztetés vagy Kritikus olvasattal, amelyet a kezdőképernyő mutat, az okokkal együtt, nem egy nyers hőmérséklettel vagy összefüggésből kiragadott egyetlen értékkel.</li>
+        </ul>
+        <div class="note"><b>A jó kérdések kérdésnek néznek ki.</b> „Hogy van a NAS-om?”, „Egészségesek a mentéseim?”, „Mi foglalja a legtöbb helyet?”, „Mit lát erről a NAS-ról?” - az utolsót érdemes egyszer megkérdezni, mert a válasz megmondja, mit ér el <em>az Ön</em> NAS-án.</div>
+      </div>
+      <img alt="Az asszisztens a Hogy van a NAS-om? kérdésre az állapotítélettel válaszol" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Adatvédelem</div>
+      <h2>Semmi nem hagyja el a telefont</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">A modell az eszközé. A kérdése, a NAS adatai és a válasz mind a telefonon kerül feldolgozásra, és kikapcsolt hálózattal is működik.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Nincs felhős réteg, amelyre visszaeshetne.</b> Nem az, hogy „úgy döntöttünk, nem használunk ilyet” - az alkalmazás buildje <b>megbukik</b>, ha az asszisztensben bárhol felhős gazdagép, felhős SDK vagy API-kulcs jelenik meg. Az ígéretet a build tartja be, nem az, hogy valaki emlékszik rá.</li>
+          <li><b>Mivel semmi sem kerül továbbításra, nincs másolat</b>, amelyet tárolni, megosztani vagy bármire tanításra használni lehetne.</li>
+          <li><b>Ingyenes, és nem kell hozzá fiók</b>, mert a modell már az eszközén van.</li>
+        </ul>
+      </div>
+      <img alt="A Hogyan működik oldal, amely elmagyarázza, hogy a modell az eszközön van, és semmilyen adat nem hagyja el" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Határok</div>
+      <h2>Kizárólag olvas</h2>
+      <p class="lead">Az asszisztens nem tud elindítani, leállítani, törölni vagy újraindítani semmit. Nem azért, mert szépen megkérték, hogy ne tegye - hanem mert eleve nem kapja meg hozzá az eszközöket.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Ez fontosabb, mint amilyennek hangzik. Azt a modellt, amelynek <em>azt mondják</em>, hogy ne tegyen valamit, rá lehet beszélni, hogy megtegye. Azt, amelynek nincs rá módja, nem. Ha újra szeretne indítani egy konténert, a <a href="/hu/guide/apps/#docker">Docker képernyő</a> három koppintásnyira van, és megerősítést kér.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Őszinteség</div>
+      <h2>Tévedhet, és a képernyő ezt kimondja</h2>
+      <p class="lead">Ez egy kis modell, amely telefonon fut, nem egy nagy egy adatközpontban. Félreolvashat egy számot, vagy a kelleténél magabiztosabbnak tűnhet. Az alkalmazás ezt a képernyőn mondja el, nem egy lábjegyzetben.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ellenőrizzen mindent, ami fontos</b>, azon a képernyőn, amelyhez tartozik. Minden válasz olyasmiről szól, amit az alkalmazás közvetlenül is megmutat Önnek.</li>
+      <li><b>BÉTA jelzést visel</b> a fül fejlécében, pontosan ezért.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Ha most nem tud válaszolni, megmondja, miért</h3>
+      <p class="lead">Nem általános hiba. Három megnevezett ok egyike, és nagyjából az, mennyit kell várni.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ok</th><th>Mit jelent</th></tr></thead>
+      <tbody>
+        <tr><td>Használati korlát</td><td>Ez az alkalmazás egyelőre felhasználta az eszközön futó modellből rá eső részt. Az eszköz egyetlen modellt oszt meg minden alkalmazás között, amely használja; újra válaszol, amint a része megújul, jellemzően egy-két percen belül.</td></tr>
+        <tr><td>Foglalt</td><td>Az eszközön futó modell éppen egy másik kérésre válaszol. Próbálja újra egy pillanat múlva.</td></tr>
+        <tr><td>A háttérben</td><td>Az eszközön futó modell csak akkor válaszol, amikor a Syno Manager nyitva van a képernyőn. Hozza vissza az alkalmazást előtérbe, és kérdezzen újra.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Egyik esetben sem vész el semmi.</b> A kérdése a beszélgetésben marad; tegye fel újra, amint az ok megszűnt.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Egyre jobb</div>
+      <h2>Az értékeléseiből tanul, ezen az eszközön</h2>
+      <p class="lead">Minden válasz alatt található egy hüvelykujj fel vagy le. Értékeljen egyet, és a hasonló kérdések onnan indulnak, ahol a választ olvasták - az asszisztens egyre jobban olvassa <em>az Ön</em> NAS-át, minél többet használja, anélkül, hogy bármi elhagyná a telefont.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Jó válasz</b> vagy <b>Nem jó válasz</b> - a válasz alatti két hüvelykujj, egyszer megérintve.</li>
+          <li><b>NAS-onként tárolva.</b> Az értékeléseket annak a NAS-nak a nevéhez tárolja, amelyik válaszolt, ezen az eszközön, így másik NAS-ra váltva annál újrakezdi.</li>
+          <li><b>Soha nem küldi el sehová.</b> Az értékelések éppoly helyiek, mint maga a modell - nincs fiók, nincs szinkronizálás, nincs feltöltés.</li>
+        </ul>
+      </div>
+      <img alt="Az asszisztens válasza kiválasztott hüvelykujj fel értékeléssel" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="A Mit tanult itt kártya egy értékelt válasszal és az Értékelések elfelejtése ehhez a NAS-hoz gombbal" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Mit tanult itt</b> a Hogyan működik lapon megszámolja, hány választ értékeltek jónak az aktuális NAS-on, és hétköznapi szavakkal visszaolvassa őket.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Ezen a NAS-on még egyetlen választ sem értékeltek jónak</b> - ezt írja az első értékelés előtt, nem nullát, mert a nulla mérésnek tűnne, nem hiánynak.</li>
+          <li><b>Értékelések elfelejtése ehhez a NAS-hoz</b> egy koppintással törli az aktuális NAS-hoz ezen az eszközön tárolt összes értékelést.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Elérhetőség</div>
+      <h2>Mely eszközökön érhető el</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Platform</th><th>Modell</th><th>Követelmény</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>Olyan eszköz, amelyen van <b>AICore</b>, és elérhető számára a Gemini Nano modell.</td></tr>
+        <tr><td>iOS és macOS</td><td>Apple Intelligence</td><td>Olyan eszköz, amelyen az Apple Intelligence támogatott és engedélyezett.</td></tr>
+        <tr><td>Bármi más</td><td>-</td><td>A fül egyáltalán nem jelenik meg.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>A használható modell nélküli eszköz nem mutatja a funkciót.</b> Nem szürkítve, nem kedvcsinálóként - hanem hiányzik. A működésképtelen vezérlő rosszabb, mint a vezérlő hiánya, ezért a fül egyszerűen nincs ott.</div>
+    <p style="color:var(--steel);margin-top:18px">A <b>Hogyan működik</b> részlap megmondja, hogy az Ön eszköze melyik állapotban van, és mit talált.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Asszisztens GYIK</h2>
+    </div>
+    <details open><summary>Hol fut az asszisztens?</summary><div class="body">A telefonján. Androidon a Gemini Nano az AICore-on keresztül, iOS-en és macOS-en az Apple Intelligence. Nincs felhős réteg, amelyre visszaeshetne - az alkalmazás buildje megbukik, ha az asszisztensben bárhol felhős gazdagép, felhős SDK vagy API-kulcs jelenik meg.</div></details>
+    <details><summary>Elküldik valahová a NAS-adataimat?</summary><div class="body">Nem. A kérdése, a NAS adatai és a válasz soha nem hagyják el az eszközt, és kikapcsolt hálózattal is működik. Mivel semmi sem kerül továbbításra, nincs másolat, amelyet tárolni, megosztani vagy tanításra használni lehetne.</div></details>
+    <details><summary>Mit kérdezhetek tőle?</summary><div class="body">Nincs rögzített lista. A NAS közzétesz mindent, amit jelenteni tud - egy átlagosnál több mint ezer bejegyzést -, az asszisztens pedig ebben keres. Telepít egy csomagot, és arról is tud válaszolni, alkalmazásfrissítés nélkül.</div></details>
+    <details><summary>Változtathat valamit a NAS-omon?</summary><div class="body">Nem. Kizárólag olvas. Nem tud elindítani, leállítani, törölni vagy újraindítani semmit - mert nem kapja meg hozzá az eszközöket.</div></details>
+    <details><summary>Jár valamilyen költséggel?</summary><div class="body">Nem. Az eszközébe már beépített modellt használja, így nincs mit fizetni, és fiókot sem kell létrehozni.</div></details>
+    <details><summary>Miért nem látom az Asszisztens fület?</summary><div class="body">Mert az eszközön nincs használható, eszközön futó modell. Ahelyett, hogy olyan funkciót mutatna, amely nem működhet, az alkalmazás teljesen elrejti az olyan hardveren, amely nem tudja futtatni.</div></details>
+    <details><summary>Tanul valamit az asszisztens?</summary><div class="body">Az értékeléseiből tanul, kizárólag ezen az eszközön. Értékeljen egy választ az alatta lévő hüvelykujjakkal, és a hasonló kérdések onnan indulnak, ahol a választ olvasták. Az értékelések soha nem hagyják el az eszközt, és az Értékelések elfelejtése ehhez a NAS-hoz törli őket.</div></details>
+    <details><summary>Miért írja, hogy a modell foglalt, vagy elfogyott a köre?</summary><div class="body">Az eszközön futó modellt a telefon minden más alkalmazásával közösen használja, és csak akkor fut, amikor a Syno Manager nyitva van a képernyőn. Az asszisztens megnevezi, melyiket érte el ezek közül, ahelyett, hogy általános hibát mutatna.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Beállítások</h2>
+    <p class="lead" style="margin:0 auto 24px">Az alkalmazás minden beállítása, és hogy melyik mit változtat.</p>
+    <p><a class="btn" href="/hu/guide/settings/">Beállítások &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

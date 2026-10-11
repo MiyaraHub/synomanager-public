@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS csatlakoztatása - Syno Manager beállítás</title>
+<meta name="description" content="Adja hozzá Synology NAS-át egy percen belül: cím és port, HTTPS és önaláírt tanúsítványok, QuickConnect, 2FA, és mit tegyen, ha nem csatlakozik." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS csatlakoztatása - Syno Manager beállítás" />
+<meta property="og:description" content="Adja hozzá Synology NAS-át egy percen belül: cím és port, HTTPS és önaláírt tanúsítványok, QuickConnect, 2FA, és mit tegyen, ha nem csatlakozik." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS csatlakoztatása - Syno Manager beállítás" />
+<meta name="twitter:description" content="Adja hozzá Synology NAS-át egy percen belül: cím és port, HTTPS és önaláírt tanúsítványok, QuickConnect, 2FA, és mit tegyen, ha nem csatlakozik." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Első lépések"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS csatlakoztatása - Syno Manager beállítás",
+  "description": "Adja hozzá Synology NAS-át egy percen belül: cím és port, HTTPS és önaláírt tanúsítványok, QuickConnect, 2FA, és mit tegyen, ha nem csatlakozik.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "hu",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mi kell a Syno Manager használatához?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DSM 7.0 vagy újabb rendszert futtató Synology NAS, azon egy DSM-fiók, valamint Android 7+, iOS 16+, macOS 11+ vagy Windows rendszerű eszköz. A NAS-ra nem kell semmit telepíteni - az alkalmazás a DSM saját API-it használja, amelyek már ott vannak."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Milyen címet és portot adjak meg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A saját hálózatán a NAS helyi IP-címét és a DSM portját - 5001 bekapcsolt HTTPS mellett, vagy 5000 kikapcsolt HTTPS mellett. Gazdanevet vagy egyéni tartományt is megadhat. Ha egyáltalán nem szeretne címekkel foglalkozni, váltson a Kapcsolat típusa beállítással QuickConnectre, és adja meg a QuickConnect ID-t."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért van alapértelmezetten kikapcsolva az SSL-tanúsítvány ellenőrzése?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mert a legtöbb DiskStation önaláírt tanúsítványt mutat, amelyet nem nyilvános hitelesítésszolgáltató írt alá, ezért az ellenőrzésen elbukik, miközben a kapcsolat továbbra is titkosított. Az ellenőrzés kikapcsolása elfogadja ezt a tanúsítványt. Ha valódi tanúsítványt telepített - például a Let's Encrypttől -, kapcsolja be az ellenőrzést."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kell portot nyitnom az útválasztómon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A saját hálózatán semmit sem kell továbbítani. Kívülről a QuickConnect átjátssza Önnek a kapcsolatot, és a VPN is működik. A portátirányításra csak akkor van szükség, ha kifejezetten közvetlen útvonalat szeretne az internetről, vagy ha a kamerák élő nézetét RTSP-n szeretné a hálózatán kívülről elérni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Azt írja, hogy időtúllépés a kapcsolatban. Mit tegyek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ez az üzenet azt jelenti, hogy az alkalmazás soha nem kapott választ, ami szinte mindig a címen, a porton vagy azon a hálózaton múlik, amelyen a telefon van. Ellenőrizze, hogy a HTTPS megfelel-e a portnak, hogy a telefon ugyanazon a hálózaton van-e, mint a NAS, ha helyi IP-t használ, és hogy a DSM saját webes felülete betöltődik-e a telefon böngészőjében ugyanazon a címen és porton."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Első lépések</div>
+      <div class="eyebrow">Első lépések</div>
+      <h1>Csatlakoztatva <span class="g">egy percen belül</span></h1>
+      <p>A NAS-ra semmi sem települ. A Syno Manager a DSM saját, már futó API-ival kommunikál - csak azt kell megmondania, hol van a DiskStation, és ki Ön.</p>
+    </div>
+    <div class="hero-shot"><img alt="A NAS hozzáadása űrlap a Syno Managerben" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#requirements">Amire szükséged van</a></li>
+      <li><a href="#address">A NAS megkeresése</a></li>
+      <li><a href="#form">Az űrlap minden mezője</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Kétlépcsős hitelesítés</a></li>
+      <li><a href="#test">Teszt és mentés</a></li>
+      <li><a href="#next">Mi történik ezután</a></li>
+      <li><a href="#trouble">Ha nem csatlakozik</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Nulladik lépés</div>
+      <h2>Amire szükséged van</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Követelmény</th><th>Részlet</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td>Bármely <b>DSM 7.0 vagy újabb</b> rendszert futtató modell. Nincs rajta semmi telepítve - az alkalmazás ugyanazokat az API-kat használja, mint a DSM webes felülete.</td></tr>
+        <tr><td>DSM-fiók</td><td>A megszokott DSM-felhasználóneve és jelszava. A rendszergazdai fiók mindent lát; a nem rendszergazda azt látja, amit a DSM engedélyez, és az alkalmazás elrejti a többit, ahelyett, hogy olyan vezérlőket mutatna, amelyeket elutasítanának.</td></tr>
+        <tr><td>Az Ön eszköze</td><td><b>Android 7.0</b> vagy újabb, <b>iOS 16.0</b> vagy újabb, <b>macOS 11.0</b> vagy újabb, illetve <b>Windows</b>. Ugyanaz az alkalmazás mind a négyen.</td></tr>
+        <tr><td>Útvonal a NAS-hoz</td><td>Ugyanaz a helyi hálózat, VPN a hálózatba, egyéni tartomány vagy QuickConnect. Bármelyik elég.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Nincs szüksége rendszergazdai fiókra</b> a puszta megtekintéshez. A monitorozás bármely DSM-felhasználónak működik. A vezérlési műveletekhez - konténer újraindítása, mentés futtatása, meghajtó kiadása - az a jogosultság kell, amelyet maga a DSM megkövetel az adott művelethez, és az alkalmazás elutasítás esetén ezt jelzi, nem tesz úgy, mintha sikerült volna.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Hol van</div>
+      <h2>A NAS címének megkeresése</h2>
+      <p class="lead">Ha már megnyitja a DSM-et böngészőben, a címsor mindent tartalmaz, amire szüksége van: a gazdagép és a port az a két érték, amelyet az alkalmazás kér.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Magából a DSM-ből</h3>
+        <ul class="plain">
+          <li>A <b>Vezérlőpult &rsaquo; Hálózat &rsaquo; Hálózati interfész</b> mutatja a NAS IP-címét az egyes interfészeken.</li>
+          <li>A <b>Vezérlőpult &rsaquo; Hálózat &rsaquo; DSM-beállítások</b> mutatja a HTTP- és HTTPS-portokat, amelyeken a DSM figyel. Ezek 5000 és 5001, hacsak valaki nem változtatta meg őket.</li>
+        </ul>
+        <h3 style="margin-top:22px">A böngészőjéből</h3>
+        <p style="color:var(--steel)">Amit a DSM eléréséhez beír, azt kéri az alkalmazás. A(z) <code>https://192.168.1.20:5001</code> címen a gazdagép <code>192.168.1.20</code>, a port <code>5001</code>, a HTTPS pedig be van kapcsolva.</p>
+      </div>
+      <div>
+        <h3>Az útválasztójából</h3>
+        <p style="color:var(--steel)">A legtöbb útválasztó név szerint listázza a csatlakoztatott eszközöket. A NAS a kiszolgálónevén jelenik meg - azon, amelyet a <b>Vezérlőpult &rsaquo; Információs központ</b> alatt állított be.</p>
+        <div class="note"><b>Adjon neki fix címet.</b> Ha az útválasztó újraindítás után más IP-t oszt ki a NAS-nak, az alkalmazás nem találja meg. Az útválasztón beállított DHCP-foglalás vagy a NAS-on beállított statikus cím ezt megelőzi. A gazdanév vagy az egyéni tartomány is működik, és nem érdekli, mi az IP.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS hozzáadása</div>
+      <h2>Az űrlap minden mezője</h2>
+      <p class="lead">Koppintson a <b>+ NAS hozzáadása</b> gombra az eszközlistán. Az űrlap rövid, és csak három mezőnek nincs észszerű alapértelmezése.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Mező</th><th>Mit írjon bele</th></tr></thead>
+          <tbody>
+            <tr><td>NAS beceneve</td><td>Bármilyen név, amit szeretne - csak Önnek jelenik meg. Hasznos, ha egynél több van.</td></tr>
+            <tr><td>Kapcsolat típusa</td><td><b>Közvetlen IP</b> a beírt címhez, vagy <b>QuickConnect</b> a QuickConnect ID-hez. Lásd <a href="#quickconnect">alább</a>.</td></tr>
+            <tr><td>Gazdagép / IP-cím</td><td>A NAS helyi IP-címe, gazdaneve vagy egy rá mutató egyéni tartomány.</td></tr>
+            <tr><td>Port</td><td><b>5001</b> bekapcsolt HTTPS mellett, <b>5000</b> kikapcsolva - hacsak a DSM-et nem helyezték át más portokra, ebben az esetben azokat használja.</td></tr>
+            <tr><td>HTTPS</td><td>Alapértelmezetten be van kapcsolva, és érdemes úgy hagyni. A telefon és a NAS között minden titkosított, a jelszavát is beleértve.</td></tr>
+            <tr><td>SSL-tanúsítvány ellenőrzése</td><td>Alapértelmezetten ki van kapcsolva, mert a legtöbb DiskStation <b>önaláírt</b> tanúsítványt mutat, amely nem ellenőrizhető nyilvános hitelesítésszolgáltatóval szemben. A kapcsolat mindkét esetben titkosított. Csak akkor kapcsolja be, ha valódi tanúsítványt telepített.</td></tr>
+            <tr><td>Felhasználónév</td><td>A DSM-fiókja neve. <b>A szóközt tartalmazó felhasználónevek támogatottak</b> - az alkalmazás helyesen idézi őket, ami gyakori oka annak, hogy más kliensek hibáznak.</td></tr>
+            <tr><td>Jelszó</td><td>A DSM-jelszava. A szem ikon begépelés közben megjeleníti. A platform kulcstartójába vagy keystore-jába íródik, és soha nem tárolódik egyszerű szövegként.</td></tr>
+            <tr><td>Kétlépcsős hitelesítés</td><td>Kapcsolja be, ha a DSM-fiókja hitelesítő alkalmazást használ. Lásd <a href="#twofactor">alább</a>.</td></tr>
+            <tr><td>Kamerák élő nézetének átvezetése a DSM-porton</td><td>Alapértelmezetten ki van kapcsolva. <b>Kikapcsolva</b> az élő nézet közvetlenül az RTSP-hez csatlakozik az 554-es porton, ami a saját hálózatán gyorsabb, de azt a portot el kell tudni érni onnan, ahol éppen van. <b>Bekapcsolva</b> a streamet a már használt DSM HTTPS-porton vezeti át, így az élő nézet kívülről is működik az 554-es port kitétele nélkül. Lásd <a href="/hu/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="A NAS hozzáadása űrlap" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Nem kell címet beírni</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Váltsa a <b>Kapcsolat típusát</b> <b>QuickConnectre</b>, és gazdagép és port helyett adja meg a QuickConnect ID-jét. A Synology átjátszója megtalálja a NAS-át, bárhol is van, és semmilyen útválasztó-konfigurációra nincs szükség.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hol található az azonosító.</b> A DSM-ben, a <b>Vezérlőpult &rsaquo; Külső hozzáférés &rsaquo; QuickConnect</b> alatt. Ott előbb engedélyezni kell.</li>
+      <li><b>Mibe kerül.</b> Az átjátszó késleltetést ad hozzá, így a miniatűrök és az élő nézet lassabban töltődnek be, mint a saját hálózatán. Minden továbbra is működik.</li>
+      <li><b>Mit spórol meg.</b> Nincs portátirányítás, nincs naprakészen tartandó dinamikus DNS, és az Ön oldalán semmi sincs kitéve az internetnek.</li>
+    </ul>
+    <div class="note"><b>Lehet mindkettő.</b> Ha ugyanazt a NAS-t kétszer adja hozzá - egyszer helyi IP-vel, egyszer QuickConnecttel -, kap egy gyors belépőt otthonra és egy megbízhatót távolra. Külön bejegyzések külön elrendezéssel, így azt válassza, amelyikhez közelebb van.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Kétlépcsős hitelesítés</h2>
+      <p class="lead">Ha a DSM-fiókját hitelesítő alkalmazás védi, mentés előtt kapcsolja be a <b>Kétlépcsős hitelesítést (2FA)</b>. Az alkalmazás közvetlenül a jelszó elfogadása után kéri a hatjegyű kódot.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Kapcsolja be a kapcsolót</b> a NAS hozzáadása űrlapon.</li>
+      <li><b>Mentés &amp; csatlakozás.</b> Az alkalmazás bejelentkezik, és a DSM elkéri a második tényezőt.</li>
+      <li><b>Adja meg a kódot</b> a hitelesítő alkalmazásból.</li>
+      <li><b>Döntse el, megjegyezze-e ezt az eszközt.</b> Ha igen, a DSM eszköztokent állít ki, és ezt a telefont többé nem kéri kódra. A tokent ugyanúgy tárolja, mint a jelszót, a platform kulcstartójában.</li>
+    </ol>
+    <div class="note warn"><b>Ha a kódokat elutasítja</b>, ellenőrizze az órát. A hitelesítő kódok az aktuális időből származnak, így az a telefon vagy NAS, amelynek órája elcsúszott, rossz számot generál vagy vár. A NAS időforrása a <a href="/hu/guide/home/">kezdőképernyő</a> gyorsstatisztikai során látható.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Mielőtt elköteleződik</div>
+      <h2>Kapcsolat tesztelése, majd mentés</h2>
+      <p class="lead"><b>A Kapcsolat tesztelése</b> kipróbálja a címet, a portot és a hitelesítő adatokat, és elmondja, mi történt, bármit is mentene. Ez a leggyorsabb módja egy elgépelés megtalálásának, mert megkülönbözteti a „nem érem el a NAS-t” esetet az „elértem, de a jelszó rossz” esettől.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Mit mond</th><th>Mit jelent</th></tr></thead>
+      <tbody>
+        <tr><td>Kapcsolat időtúllépése</td><td>Semmi nem válaszolt. A cím, a port vagy az a hálózat, amelyen a telefon van - nem a hitelesítő adatok, amelyeket még ki sem próbált.</td></tr>
+        <tr><td>Érvénytelen hitelesítő adatok</td><td>A NAS válaszolt, és elutasította a bejelentkezést. A cím és a port helyes; a felhasználónév vagy a jelszó nem.</td></tr>
+        <tr><td>Tanúsítványhiba</td><td>A HTTPS be van kapcsolva, és az <b>SSL-tanúsítvány ellenőrzése</b> is be van kapcsolva önaláírt tanúsítvánnyal szemben. Kapcsolja ki az ellenőrzést.</td></tr>
+        <tr><td>2FA szükséges</td><td>A fiók kétlépcsős hitelesítést használ, és a kapcsoló ki van kapcsolva. Kapcsolja be, és próbálja újra.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>A Mentés &amp; csatlakozás</b> eltárolja a bejegyzést, és bejelentkezik. A kezdőképernyőre érkezik, ahol a NAS már töltődik.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Bent van</div>
+      <h2>Mi történik az első csatlakozáskor</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="A Syno Manager kezdőképernyője csatlakozás után" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Az alkalmazás megkérdezi, mit tud a NAS.</b> Lekérdezi a DSM API-katalógusát, és megtartja a listát. Ezért nem mutat soha Kamerák fület az a NAS, amelyen nincs Surveillance Station, és ezért jelenik meg egy csomag telepítése után a képernyője.</li>
+          <li><b>Minden támogatott kártya be van kapcsolva.</b> Az új kártyák láthatóan érkeznek, nem elrejtve, így a NAS által támogatott funkciót látni is lehet. A <a href="/hu/guide/customizing/">Testreszabás</a> az a hely, ahol kikapcsol dolgokat, nem az, ahol megkeresi őket.</li>
+          <li><b>A NAS MAC-címét rögzíti</b>, így a <a href="/hu/guide/wake-on-lan/">Wake-on-LAN</a> később működhet anélkül, hogy utána kellene néznie.</li>
+          <li><b>Egy rövid üdvözlés egyszer jelenik meg.</b> Elmondja, mit tud az alkalmazás, és hol módosíthat dolgokat. Van egy jelölőnégyzet, amellyel megakadályozhatja az újbóli megjelenését.</li>
+          <li><b>A magyarázatot igénylő képernyőkön súgókártyák jelennek meg.</b> Hosszan nyomja meg az elvetéshez; egyenként állíthatja vissza a <a href="/hu/guide/settings/#help">Beállításokból</a>.</li>
+        </ul>
+        <div class="note"><b>Csatlakozás után telepített csomagot?</b> A képességlistát csatlakozáskor olvassa be, így az azóta telepített csomaghoz még nincs fül. Húzással frissítsen, vagy nyissa meg újra az alkalmazást, és az új képernyő megjelenik.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Ha nem csatlakozik</div>
+      <h2>A rövid ellenőrzőlista</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Nyissa meg a DSM-et a telefon böngészőjében</b> pontosan azon a címen és porton, amelyet beírt. Ha a böngésző sem éri el, a hiba a hálózatban vagy a címben van, nem az alkalmazásban.</li>
+      <li><b>Ellenőrizze, hogy a HTTPS megfelel-e a portnak.</b> Az 5001-es port kikapcsolt HTTPS-sel, vagy az 5000-es bekapcsolttal időtúllépést ad. Ezek különböző figyelők.</li>
+      <li><b>Kapcsolja ki az SSL-tanúsítvány ellenőrzését</b>, ha a NAS a gyárilag kapott tanúsítványt használja.</li>
+      <li><b>Ellenőrizze a telefon hálózatát.</b> A helyi IP mobiladaton nem érhető el. Csatlakozzon a Wi-Fi-hez, vagy használjon QuickConnectet, tartományt vagy VPN-t.</li>
+      <li><b>iOS-en engedélyezze a helyi hálózati hozzáférést.</b> Beállítások &rsaquo; Alkalmazások &rsaquo; Syno Manager &rsaquo; Helyi hálózat. Enélkül az iOS csendben blokkolja a saját hálózatán lévő címekre irányuló kapcsolatokat.</li>
+      <li><b>Ellenőrizze a DSM tűzfalát.</b> Vezérlőpult &rsaquo; Biztonság &rsaquo; Tűzfal. Az a szabály, amely csak bizonyos címeket enged, blokkolja azt a telefont, amely nem tartozik közéjük.</li>
+      <li><b>Ellenőrizze az automatikus blokkolást.</b> Vezérlőpult &rsaquo; Biztonság &rsaquo; Fiók. Az ismétlődő sikertelen bejelentkezések blokkolhatják a telefon címét; ott szerepelni fog, és eltávolítható.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/hu/help/">Teljes hibaelhárítási útmutató</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Beállítás GYIK</h2>
+    </div>
+    <details open><summary>Mi kell a Syno Manager használatához?</summary><div class="body">DSM 7.0 vagy újabb rendszert futtató Synology NAS, azon egy DSM-fiók, valamint Android 7+, iOS 16+, macOS 11+ vagy Windows rendszerű eszköz. A NAS-ra nem kell semmit telepíteni - az alkalmazás a DSM saját API-it használja, amelyek már ott vannak.</div></details>
+    <details><summary>Milyen címet és portot adjak meg?</summary><div class="body">A saját hálózatán a NAS helyi IP-címét és a DSM portját - 5001 bekapcsolt HTTPS mellett, vagy 5000 kikapcsolt HTTPS mellett. Gazdanevet vagy egyéni tartományt is megadhat. Ha egyáltalán nem szeretne címekkel foglalkozni, váltson a Kapcsolat típusa beállítással QuickConnectre, és adja meg a QuickConnect ID-t.</div></details>
+    <details><summary>Miért van alapértelmezetten kikapcsolva az SSL-tanúsítvány ellenőrzése?</summary><div class="body">Mert a legtöbb DiskStation önaláírt tanúsítványt mutat, amelyet nem nyilvános hitelesítésszolgáltató írt alá, ezért az ellenőrzésen elbukik, miközben a kapcsolat továbbra is titkosított. Az ellenőrzés kikapcsolása elfogadja ezt a tanúsítványt. Ha valódi tanúsítványt telepített - például a Let's Encrypttől -, kapcsolja be az ellenőrzést.</div></details>
+    <details><summary>Kell portot nyitnom az útválasztómon?</summary><div class="body">Nem. A saját hálózatán semmit sem kell továbbítani. Kívülről a QuickConnect átjátssza Önnek a kapcsolatot, és a VPN is működik. A portátirányításra csak akkor van szükség, ha kifejezetten közvetlen útvonalat szeretne az internetről, vagy ha a kamerák élő nézetét RTSP-n szeretné a hálózatán kívülről elérni.</div></details>
+    <details><summary>Azt írja, hogy időtúllépés a kapcsolatban. Mit tegyek?</summary><div class="body">Ez az üzenet azt jelenti, hogy az alkalmazás soha nem kapott választ, ami szinte mindig a címen, a porton vagy azon a hálózaton múlik, amelyen a telefon van. Ellenőrizze, hogy a HTTPS megfelel-e a portnak, hogy a telefon ugyanazon a hálózaton van-e, mint a NAS, ha helyi IP-t használ, és hogy a DSM saját webes felülete betöltődik-e a telefon böngészőjében ugyanazon a címen és porton.</div></details>
+    <details><summary>Hozzáadhatok egynél több NAS-t?</summary><div class="body">Igen, ahányat csak szeretne. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését és beállításait, és az eszközlistán válthat köztük. Lásd a <a href="/hu/guide/multi-nas/">több NAS-eszközt</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: a kezdőképernyő</h2>
+    <p class="lead" style="margin:0 auto 24px">Mit mutat az egyes kártya, és hogyan teheti sajátjává az irányítópultot.</p>
+    <p><a class="btn" href="/hu/guide/home/">A kezdőképernyő &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

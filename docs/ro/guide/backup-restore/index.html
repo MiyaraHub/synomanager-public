@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fă o copie a setărilor aplicației - Syno Manager</title>
+<meta name="description" content="Exportă setările proprii ale Syno Manager într-un fișier și restaurează-le pe un telefon nou. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată, în mod deliberat." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Fă o copie a setărilor aplicației - Syno Manager" />
+<meta property="og:description" content="Exportă setările proprii ale Syno Manager într-un fișier și restaurează-le pe un telefon nou. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată, în mod deliberat." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Fă o copie a setărilor aplicației - Syno Manager" />
+<meta name="twitter:description" content="Exportă setările proprii ale Syno Manager într-un fișier și restaurează-le pe un telefon nou. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată, în mod deliberat." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Backup &amp; restaurare"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Fă o copie a setărilor aplicației - Syno Manager",
+  "description": "Exportă setările proprii ale Syno Manager într-un fișier și restaurează-le pe un telefon nou. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată, în mod deliberat.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "ro",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ce include backupul setărilor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doar setările aplicației: tema, navigarea, aspectul panoului, comportamentul la pornire, categoriile, intervalul de interogare și unitatea de temperatură. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De ce nu se face backup datelor mele de autentificare NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru că un fișier portabil cu parole de NAS este un fișier portabil cu parole de NAS. Datele de autentificare stau în keychain-ul sau keystore-ul dispozitivului, care în mod deliberat nu este un loc la care ajunge un export. Le reintroduci o singură dată pe telefonul nou."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cum trec pe un telefon nou?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exportă pe cel vechi cu Descarcă sau Partajează, du fișierul pe telefonul nou, instalează aplicația, lipește conținutul fișierului în Restaurare și adaugă din nou NAS-ul. Restul revine exact cum îl aveai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce se întâmplă cu setările pe care fișierul nu le cunoaște?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se aplică doar setările cunoscute ale aplicației, iar orice altceva din fișier este ignorat, deci un backup mai vechi restaurat într-o aplicație mai nouă lasă setările noi la valorile implicite, în loc să eșueze."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Backup &amp; restaurare</div>
+      <div class="eyebrow">Backup &amp; restaurare</div>
+      <h1>Configurația ta, <span class="g">pe următorul telefon</span></h1>
+      <p>Un singur fișier conține fiecare preferință setată - tema, bara de jos, aspectul panoului, interogarea, unitățile. În mod deliberat nu conține deloc date de autentificare.</p>
+    </div>
+    <div class="hero-shot"><img alt="Ecranul Backup și restaurare cu Export și Restaurare" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ce se află în fișier</div>
+      <h2>Și ce nu</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Inclus</h3>
+        <ul class="plain">
+          <li>Tema, suprafața, culoarea de accent și dimensiunea textului.</li>
+          <li>Bara de navigare de jos și ordinea ei.</li>
+          <li>Aspectul panoului și ce carduri sunt active.</li>
+          <li>Categoriile panoului.</li>
+          <li>Comportamentul la pornire.</li>
+          <li>Intervalul de interogare.</li>
+          <li>Unitatea de temperatură.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Niciodată incluse</h3>
+        <ul class="plain">
+          <li><b>Conexiunile NAS</b> - adrese, porturi și opțiuni.</li>
+          <li><b>Parolele.</b></li>
+          <li><b>Sesiunile și tokenurile de dispozitiv 2FA.</b></li>
+        </ul>
+        <div class="note stop"><b>Excluderea aceasta este esența.</b> Un fișier pe care ți-l poți trimite pe email și îl poți arunca într-un dosar cloud este un fișier care poate scăpa. Datele de autentificare stau în keychain-ul sau keystore-ul dispozitivului tocmai ca un export să nu le poată atinge, iar aplicația nu face excepții de dragul propriei comodități.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Export</div>
+      <h2>Scoaterea fișierului</h2>
+      <p class="lead"><b>Setări &rsaquo; Backup &amp; restaurare</b>, apoi unul dintre cele două butoane.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Descarcă</b> salvează fișierul JSON direct pe dispozitiv.</li>
+      <li><b>Partajează</b> îl dă panoului de partajare, ca să-l trimiți către Files, Drive, altă aplicație sau către tine.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Restaurare</div>
+      <h2>Punerea lui la loc</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Deschide fișierul de backup</b> și copiază-i conținutul.</li>
+      <li><b>Lipește în caseta Restaurare</b> sau atinge <b>Lipește din clipboard</b>.</li>
+      <li><b>Atinge Restaurează setările.</b></li>
+      <li><b>Adaugă din nou NAS-ul</b> - partea aceea nu a fost niciodată în fișier.</li>
+    </ol>
+    <div class="note"><b>Intrările necunoscute sunt ignorate, nu respinse.</b> Se aplică doar setările pe care aplicația le recunoaște, deci un backup făcut cu o versiune mai veche se restaurează curat într-una mai nouă - setările care nu existau atunci rămân pur și simplu la valorile implicite.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Înrudit</div>
+      <h2>Să nu fie confundat cu</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/ro/guide/backup/">Hyper Backup și Active Backup</a></b> - NAS-ul tău care îți salvează datele. Nu are nicio legătură cu acest ecran.</li>
+      <li><b>Backupul configurației DSM</b> - setările proprii ale NAS-ului, exportate din Panoul de control al DSM.</li>
+      <li><b>Backupurile dispozitivului.</b> Datele de autentificare stocate de Syno Manager sunt în mod deliberat <b>excluse</b> din backupurile dispozitivelor Android și iOS, deci restaurarea unui telefon dintr-un backup de dispozitiv nu va aduce cu ea parolele NAS.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre backup &amp; restaurare</h2>
+    </div>
+    <details open><summary>Ce include backupul setărilor?</summary><div class="body">Doar setările aplicației: tema, navigarea, aspectul panoului, comportamentul la pornire, categoriile, intervalul de interogare și unitatea de temperatură. Conexiunile NAS, parolele și sesiunile nu sunt incluse niciodată.</div></details>
+    <details><summary>De ce nu se face backup datelor mele de autentificare NAS?</summary><div class="body">Pentru că un fișier portabil cu parole de NAS este un fișier portabil cu parole de NAS. Datele de autentificare stau în keychain-ul sau keystore-ul dispozitivului, la care un export nu ajunge în mod deliberat.</div></details>
+    <details><summary>Cum trec pe un telefon nou?</summary><div class="body">Exportă pe cel vechi, mută fișierul, instalează aplicația, lipește conținutul în Restaurare și adaugă din nou NAS-ul.</div></details>
+    <details><summary>Ce se întâmplă cu setările pe care fișierul nu le cunoaște?</summary><div class="body">Se aplică doar setările cunoscute, iar orice altceva este ignorat, deci un backup mai vechi restaurat într-o aplicație mai nouă lasă setările noi la valorile implicite.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Ceva nu funcționează?</h2>
+    <p class="lead" style="margin:0 auto 24px">Ghidul de depanare acoperă eșecurile de conexiune, casetele goale, filele lipsă și widgeturile învechite.</p>
+    <p><a class="btn" href="/ro/help/">Depanare &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

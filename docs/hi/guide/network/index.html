@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology नेटवर्क, VPN और DDNS मॉनिटर - Syno Manager</title>
+<meta name="description" content="हर इंटरफ़ेस का लाइव थ्रूपुट, सक्रिय कनेक्शन और ब्लॉक किए गए IP, टॉगल करने योग्य DSM सर्विस, VPN क्लाइंट प्रोफ़ाइल, और आपके सार्वजनिक पते के साथ DDNS।" />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hi/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology नेटवर्क, VPN और DDNS मॉनिटर - Syno Manager" />
+<meta property="og:description" content="हर इंटरफ़ेस का लाइव थ्रूपुट, सक्रिय कनेक्शन और ब्लॉक किए गए IP, टॉगल करने योग्य DSM सर्विस, VPN क्लाइंट प्रोफ़ाइल, और आपके सार्वजनिक पते के साथ DDNS।" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hi/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology नेटवर्क, VPN और DDNS मॉनिटर - Syno Manager" />
+<meta name="twitter:description" content="हर इंटरफ़ेस का लाइव थ्रूपुट, सक्रिय कनेक्शन और ब्लॉक किए गए IP, टॉगल करने योग्य DSM सर्विस, VPN क्लाइंट प्रोफ़ाइल, और आपके सार्वजनिक पते के साथ DDNS।" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "होम",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "उपयोगकर्ता गाइड",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Network"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology नेटवर्क, VPN और DDNS मॉनिटर - Syno Manager",
+  "description": "हर इंटरफ़ेस का लाइव थ्रूपुट, सक्रिय कनेक्शन और ब्लॉक किए गए IP, टॉगल करने योग्य DSM सर्विस, VPN क्लाइंट प्रोफ़ाइल, और आपके सार्वजनिक पते के साथ DDNS।",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "hi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "क्या मैं देख सकता हूँ कि मेरा NAS अभी कितनी तेज़ी से ट्रांसफ़र कर रहा है?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "हाँ। Network सब-व्यू NAS के हर इंटरफ़ेस का लाइव डाउनलोड और अपलोड दिखाता है, हर एक के अपने चार्ट, लिंक स्पीड और पते के साथ। बॉन्ड किए गए इंटरफ़ेस बॉन्ड के रूप में, कुल स्पीड के साथ दिखते हैं।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं ऐप से DSM सर्विस शुरू और बंद कर सकता हूँ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "हाँ, उन सर्विस के लिए जिन्हें DSM क्लाइंट से नियंत्रित करने देता है - SMB, NFS, FTP, rsync और बाकी सबके लिए एक टॉगल है। कुछ पर system-managed लिखा होता है, यानी DSM उन्हें अपने तरीके से चलाता है और ऐप सिर्फ़ उनकी स्थिति दिखाता है, बदलने का विकल्प नहीं देता।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या ऐप दिखाता है कि कौन-से IP पते ब्लॉक हैं?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "हाँ। Connections सब-व्यू auto-block नीति दिखाता है - कितने समय में कितने असफल प्रयास - और अभी ब्लॉक किए गए पतों की सूची, जो एक गिनती के पीछे समेटी रहती है ताकि सौ एंट्री बाकी स्क्रीन को न दबा दें।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं बता सकता हूँ कि मेरा VPN कनेक्ट है या नहीं?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ऐप आपके NAS की VPN क्लाइंट प्रोफ़ाइल की सूची दिखाता है और आपको किसी को कनेक्ट या डिस्कनेक्ट करने का अनुरोध भेजने देता है। यह दावा नहीं करता कि कौन-सी चालू है, क्योंकि जिस DSM रिकॉर्ड को यह पढ़ता है उसमें स्टेटस फ़ील्ड ही नहीं होती। कुछ और कहना मनगढ़ंत रीडिंग देना होगा।"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hi/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager आइकन" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="मेन्यू" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="गाइड में खोजें..." data-i18n-empty="कोई परिणाम नहीं मिला:" data-i18n-language="भाषा">
+      <a href="/hi/">होम</a>
+      <a href="/hi/guide/" class="active">उपयोगकर्ता गाइड</a>
+      <a href="/hi/#screenshots">स्क्रीनशॉट</a>
+      <a href="/hi/compatible-nas/">संगतता</a>
+      <a href="/hi/best-synology-nas-app/">बदलाव क्यों करें</a>
+      <a href="/hi/help/">सहायता</a>
+      <a href="/hi/#top" class="cta">डाउनलोड करें</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hi/">होम</a> &rsaquo; <a href="/hi/guide/">यूज़र गाइड</a> &rsaquo; नेटवर्क</div>
+      <div class="eyebrow">Network</div>
+      <h1>क्या <span class="g">आ रहा है और जा रहा है</span></h1>
+      <p>पाँच सब-व्यू: लाइव <b>Network</b> थ्रूपुट, auto-block के साथ <b>Connections</b>, टॉगल करने योग्य <b>Services</b>, <b>VPN</b> प्रोफ़ाइल, और आपके सार्वजनिक पते के साथ <b>DDNS</b>।</p>
+    </div>
+    <div class="hero-shot"><img alt="हर इंटरफ़ेस का लाइव नेटवर्क थ्रूपुट" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>इस पेज पर</b><ul>
+      <li><a href="#throughput">थ्रूपुट</a></li>
+      <li><a href="#connections">Connections &amp; auto-block</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; बाहरी IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Network</div>
+      <h2>लाइव, हर इंटरफ़ेस के लिए</h2>
+      <p class="lead">NAS के हर इंटरफ़ेस को अपना कार्ड मिलता है - बॉन्ड और Open vSwitch इंटरफ़ेस भी, जिन्हें कई टूल छोड़ देते हैं।</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>दिखता है</th><th>मतलब</th></tr></thead>
+      <tbody>
+        <tr><td>इंटरफ़ेस का नाम और स्पीड</td><td>DSM जो नाम इस्तेमाल करता है और उसकी तय हुई स्पीड - उदाहरण के लिए दो-पोर्ट एग्रीगेट के लिए <code>bond0 (20 Gbps)</code>।</td></tr>
+        <tr><td>पता</td><td>इंटरफ़ेस के पास इस समय जो IP है।</td></tr>
+        <tr><td>LIVE संकेतक</td><td>आँकड़े अपडेट होने के दौरान हरा।</td></tr>
+        <tr><td>Download / Upload</td><td>मौजूदा थ्रूपुट, हर एक के नीचे एक चलता हुआ चार्ट, ताकि अचानक आया उछाल और लगातार ट्रैफ़िक में फ़र्क दिखे।</td></tr>
+        <tr><td>Network Info</td><td>सर्वर नाम, गेटवे और प्राइमरी DNS - वे तीन मान जो आपको तब चाहिए जब नेटवर्क पर कुछ रिज़ॉल्व नहीं हो रहा।</td></tr>
+        <tr><td>Active Connections</td><td>एक गिनती, और विवरण तक जाने का रास्ता।</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>दिशा NAS के नज़रिए से होती है।</b> "Download" वह ट्रैफ़िक है जो NAS तक आ रहा है; जब आप कोई फ़ाइल NAS <em>पर</em> कॉपी करते हैं, तो वह उसका डाउनलोड है।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Connections</div>
+      <h2>इस पर कौन है, और कौन प्रतिबंधित है</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">तीन चीज़ें, उसी क्रम में जिसमें आप आमतौर पर उन्हें देखना चाहते हैं:</p>
+        <ul class="plain">
+          <li><b>Auto Block</b> - DSM की ब्रूट-फ़ोर्स सुरक्षा चालू है या नहीं, कितने असफल प्रयास उसे चालू करते हैं और किस समय-सीमा में। यही वह सेटिंग है जो कुछ गलत पासवर्ड के बाद फ़ोन को बाहर कर देती है।</li>
+          <li><b>Blocked IPs</b> - अभी प्रतिबंधित हर पता, एक गिनती के पीछे। इंटरनेट से जुड़े NAS पर सौ ब्लॉक किए गए पते सामान्य बात है और स्क्रीन को दबा देंगे, इसलिए आपके खोलने तक यह समेटा रहता है।</li>
+          <li><b>Active Connections</b> - कौन साइन इन है, किस पते से, किस प्रोटोकॉल पर, और सेशन कब शुरू हुआ। HTTP/HTTPS, SMB, NFS, FTP - हर सेशन का नाम दिखता है।</li>
+        </ul>
+        <div class="note"><b>आप सेशन खत्म कर सकते हैं।</b> यहाँ से किसी सक्रिय कनेक्शन को हटाया जा सकता है, जो "कुछ फ़ाइल खोले हुए है" या "वह पता अब भी कनेक्टेड क्यों है" का तेज़ जवाब है।</div>
+      </div>
+      <img alt="auto-block नीति, ब्लॉक किए गए IP और सक्रिय कनेक्शन दिखाता Connections" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Services</div>
+      <h2>DSM क्या चला रहा है</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="चालू स्थिति और टॉगल के साथ DSM सर्विस" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">ऊपर एक गिनती - <b>कुल में से चालू</b> - फिर DSM की हर सर्विस, हर एक के साथ स्थिति का बिंदु और एक स्विच।</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>फ़ाइल और कनेक्शन सर्विस</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI। फ़ोन से किसी को भी चालू या बंद करें।</li>
+          <li><b>डिस्कवरी और प्रिंटिंग</b> - Bonjour Printer Broadcast, WS-Discovery, CUPS प्रिंटर डेमन।</li>
+          <li><b>इन्फ्रास्ट्रक्चर</b> - NTP, KMIP और बाकी।</li>
+          <li><b>सिस्टम द्वारा प्रबंधित सर्विस पर ताला लगा होता है।</b> DSM उन्हें अपने तरीके से चलाता है, इसलिए ऐप उनकी स्थिति दिखाता है और ऐसा स्विच नहीं देता जिसे अस्वीकार कर दिया जाए। जो कंट्रोल काम नहीं कर सकता, वह न होने से बदतर है।</li>
+        </ul>
+        <div class="note warn"><b>SMB बंद करने पर उसका इस्तेमाल करने वाले सभी डिस्कनेक्ट हो जाएँगे।</b> ये चालू सर्वर पर असली स्विच हैं, कोई प्राथमिकता स्क्रीन नहीं।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>क्लाइंट प्रोफ़ाइल</h2>
+      <p class="lead">VPN सब-व्यू आपके NAS पर कॉन्फ़िगर की गई VPN <b>क्लाइंट</b> प्रोफ़ाइल दिखाता है - यानी वे कनेक्शन जो वह कहीं और बनाता है - और आपको किसी को कनेक्ट या डिस्कनेक्ट करने का अनुरोध भेजने देता है।</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>यह दावा नहीं करता कि कौन-सी प्रोफ़ाइल कनेक्ट है, और यह जानबूझकर है।</b> NAS कनेक्ट या डिस्कनेक्ट का अनुरोध स्वीकार कर लेता है, लेकिन ऐप जिस DSM रिकॉर्ड को पढ़ता है उसमें स्टेटस फ़ील्ड नहीं है, इसलिए फ़ैसला पढ़ने के लिए कुछ है ही नहीं। अंदाज़ा लगाकर पूरे भरोसे से गलत होने के बजाय, ऐप यही बताता है और आपको DSM के Network पेज की ओर भेजता है, जो असली जवाब जानता है।</div>
+    <p style="color:var(--steel);margin-top:18px">अगर कोई प्रोफ़ाइल सेट नहीं है, तो स्क्रीन यही बताती है और यह भी कि जोड़ने कहाँ जाना है: DSM में <b>Network &rsaquo; Network Interface</b> के तहत।</p>
+      </div>
+      <img alt="क्लाइंट प्रोफ़ाइल की सूची दिखाता VPN सब-व्यू" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>आपका सार्वजनिक पता, और उसकी ओर इशारा करने वाला नाम</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">एक कार्ड, दो स्वतंत्र हिस्से:</p>
+        <ul class="plain">
+          <li><b>External IP</b> - आपके कनेक्शन का मौजूदा सार्वजनिक पता।</li>
+          <li><b>हर DDNS होस्टनेम</b> जो आपका NAS प्रकाशित करता है, DSM में उसकी स्थिति, पिछली बार कब अपडेट हुआ और अगला अपडेट कब होगा।</li>
+        </ul>
+        <h3 style="margin-top:22px">Refresh और Update</h3>
+        <ul class="plain">
+          <li><b>Refresh</b> DSM के पास जो अभी है, उसे दोबारा पढ़ता है।</li>
+          <li><b>Update now</b> NAS से अपना पता फिर से प्रकाशित करने को कहता है - ठीक वही जो DSM का अपना बटन करता है।</li>
+        </ul>
+        <div class="note"><b>हर हिस्सा अपने आप विफल होता है।</b> DDNS प्रदाता बंद हो तो सार्वजनिक IP की रीडिंग पर असर नहीं पड़ता, और IP न पढ़ा जा सके तो होस्टनेम की स्थिति खाली नहीं होती। दो रीडिंग, दो फ़ैसले।</div>
+        <div class="note" style="margin-top:14px"><b>यह वही बताता है जो DSM ने सहेजा है, कोई लाइव जाँच नहीं।</b> ऐप खुद आपके होस्टनेम को रिज़ॉल्व करके यह नहीं जाँचता कि वह आपकी ओर इशारा करता है या नहीं। अनुरोध का जवाब देने वाला प्रदाता यह नहीं बताता कि आपका रिकॉर्ड सही है, इसलिए ऐप दूसरा फ़ैसला गढ़ने के बजाय DSM का अपना फ़ैसला आगे पहुँचाता है।</div>
+      </div>
+      <img alt="सार्वजनिक पता और होस्टनेम छिपाकर दिखाया गया DDNS और बाहरी IP" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">इस स्क्रीनशॉट में पता और होस्टनेम धुंधले हैं - वे एक असली NAS के हैं।</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">आम सवाल</div>
+      <h2>नेटवर्क FAQ</h2>
+    </div>
+    <details open><summary>क्या मैं देख सकता हूँ कि मेरा NAS अभी कितनी तेज़ी से ट्रांसफ़र कर रहा है?</summary><div class="body">हाँ। Network सब-व्यू NAS के हर इंटरफ़ेस का लाइव डाउनलोड और अपलोड दिखाता है, हर एक के अपने चार्ट, लिंक स्पीड और पते के साथ। बॉन्ड किए गए इंटरफ़ेस बॉन्ड के रूप में, कुल स्पीड के साथ दिखते हैं।</div></details>
+    <details><summary>क्या मैं ऐप से DSM सर्विस शुरू और बंद कर सकता हूँ?</summary><div class="body">हाँ, उन सर्विस के लिए जिन्हें DSM क्लाइंट से नियंत्रित करने देता है - SMB, NFS, FTP, rsync और बाकी सबके लिए एक टॉगल है। कुछ पर system-managed लिखा होता है, यानी DSM उन्हें अपने तरीके से चलाता है और ऐप सिर्फ़ उनकी स्थिति दिखाता है, बदलने का विकल्प नहीं देता।</div></details>
+    <details><summary>क्या ऐप दिखाता है कि कौन-से IP पते ब्लॉक हैं?</summary><div class="body">हाँ। Connections सब-व्यू auto-block नीति और अभी ब्लॉक किए गए पतों की सूची दिखाता है, जो एक गिनती के पीछे समेटी रहती है ताकि सौ एंट्री बाकी स्क्रीन को न दबा दें।</div></details>
+    <details><summary>क्या मैं बता सकता हूँ कि मेरा VPN कनेक्ट है या नहीं?</summary><div class="body">ऐप आपके NAS की VPN क्लाइंट प्रोफ़ाइल की सूची दिखाता है और आपको किसी को कनेक्ट या डिस्कनेक्ट करने का अनुरोध भेजने देता है। यह दावा नहीं करता कि कौन-सी चालू है, क्योंकि जिस DSM रिकॉर्ड को यह पढ़ता है उसमें स्टेटस फ़ील्ड नहीं होती। यह DSM का Network पेज ही जानता है।</div></details>
+    <details><summary>मेरा सार्वजनिक IP किसी वेबसाइट के बताए IP से अलग क्यों है?</summary><div class="body">क्योंकि यह वह पता है जो आपके NAS के कनेक्शन के पास है, जिसे DSM के ज़रिए पढ़ा गया है। अगर आपका फ़ोन मोबाइल डेटा पर है तो उसका पता अलग होगा। वे दो अलग नेटवर्क हैं और दोनों रीडिंग सही हैं।</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>आगे: Files</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, शेयर्ड फ़ोल्डर, नोट्स, दस्तावेज़ और संपर्क।</p>
+    <p><a class="btn" href="/hi/guide/files/">Files &amp; शेयर &rarr;</a> &nbsp; <a class="btn ghost" href="/hi/guide/">गाइड पर वापस जाएँ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hi/">होम</a><a href="/hi/guide/">यूज़र गाइड</a><a href="/hi/guide/getting-started/">शुरू करें</a><a href="/hi/compatible-nas/">संगतता</a><a href="/hi/best-synology-nas-app/">क्यों बदलें</a><a href="/hi/synology-app-for-iphone/">iPhone और iPad</a><a href="/hi/synology-app-for-android/">Android</a><a href="/hi/synology-app-for-mac-windows/">Mac और Windows</a><a href="/hi/ds-finder-alternative/">बनाम DS finder</a><a href="/hi/help/">सहायता</a><a href="/hi/privacy/">गोपनीयता</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">बग रिपोर्ट करें</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager एक स्वतंत्र ऐप है और Synology Inc. से संबद्ध नहीं है, न ही उसके द्वारा समर्थित या प्रायोजित है। Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station और QuickConnect, Synology Inc. के ट्रेडमार्क हैं।</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

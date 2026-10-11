@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology Ağ, VPN ve DDNS İzleme - Syno Manager</title>
+<meta name="description" content="Arayüz başına canlı aktarım hızı, etkin bağlantılar ve engellenen IP'ler, açıp kapatabileceğiniz DSM hizmetleri, VPN istemci profilleri ve genel adresinizle DDNS." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology Ağ, VPN ve DDNS İzleme - Syno Manager" />
+<meta property="og:description" content="Arayüz başına canlı aktarım hızı, etkin bağlantılar ve engellenen IP'ler, açıp kapatabileceğiniz DSM hizmetleri, VPN istemci profilleri ve genel adresinizle DDNS." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology Ağ, VPN ve DDNS İzleme - Syno Manager" />
+<meta name="twitter:description" content="Arayüz başına canlı aktarım hızı, etkin bağlantılar ve engellenen IP'ler, açıp kapatabileceğiniz DSM hizmetleri, VPN istemci profilleri ve genel adresinizle DDNS." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ağ"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology Ağ, VPN ve DDNS İzleme - Syno Manager",
+  "description": "Arayüz başına canlı aktarım hızı, etkin bağlantılar ve engellenen IP'ler, açıp kapatabileceğiniz DSM hizmetleri, VPN istemci profilleri ve genel adresinizle DDNS.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "tr",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "NAS'ımın şu anda ne kadar hızlı aktarım yaptığını görebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Ağ alt görünümü, NAS'ın sahip olduğu her arayüz için canlı indirme ve yüklemeyi; her birinin kendi grafiğini, bağlantı hızını ve adresini gösterir. Birleştirilmiş arayüzler, toplam hızla birlikte tek bir bağ olarak görünür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "DSM hizmetlerini uygulamadan başlatıp durdurabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, DSM'nin istemciye denetim izni verdiği hizmetler için; SMB, NFS, FTP, rsync ve diğerlerinin her birinin bir anahtarı var. Bazıları sistem tarafından yönetilen olarak işaretlidir; yani DSM bunları kendi kurallarıyla çalıştırır ve uygulama durumlarını gösterir ama değiştirme seçeneği sunmaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Uygulama hangi IP adreslerinin engellendiğini gösteriyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Bağlantılar alt görünümü otomatik engelleme ilkesini (ne kadar sürede kaç başarısız deneme) ve şu anda engellenen adreslerin listesini gösterir; yüzlerce kayıt ekranın geri kalanını gömmesin diye liste bir sayacın arkasında daraltılmıştır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VPN'imin bağlı olup olmadığını anlayabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uygulama, NAS'ınızdaki VPN istemci profillerini listeler ve birine bağlanmasını ya da bağlantısını kesmesini isteyebilmenizi sağlar. Hangisinin etkin olduğunu iddia etmez, çünkü okuduğu DSM kaydında durum alanı yoktur. Aksini söylemek, olmayan bir değeri uydurmak olurdu."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Ağ</div>
+      <div class="eyebrow">Ağ</div>
+      <h1><span class="g">Gelen ve giden</span> trafik</h1>
+      <p>Beş alt görünüm: canlı <b>Ağ</b> aktarım hızı, otomatik engellemeli <b>Bağlantılar</b>, açıp kapatabileceğiniz <b>Hizmetler</b>, <b>VPN</b> profilleri ve genel adresinizle <b>DDNS</b>.</p>
+    </div>
+    <div class="hero-shot"><img alt="Arayüz başına canlı ağ aktarım hızı" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Bu sayfada</b><ul>
+      <li><a href="#throughput">Aktarım hızı</a></li>
+      <li><a href="#connections">Bağlantılar &amp; otomatik engelleme</a></li>
+      <li><a href="#services">Hizmetler</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; harici IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Ağ</div>
+      <h2>Canlı, arayüz başına</h2>
+      <p class="lead">NAS'ın sahip olduğu her arayüz kendi kartını alır; birçok aracın atladığı bağlar ve Open vSwitch arayüzleri de buna dahil.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Gösterilen</th><th>Anlamı</th></tr></thead>
+      <tbody>
+        <tr><td>Arayüz adı ve hızı</td><td>DSM'nin kullandığı ad ve müzakere edilen hız; örneğin iki bağlantı noktalı bir birleştirme için <code>bond0 (20 Gbps)</code>.</td></tr>
+        <tr><td>Adres</td><td>Arayüzün şu anda sahip olduğu IP.</td></tr>
+        <tr><td>CANLI göstergesi</td><td>Değerler güncellenirken yeşil yanar.</td></tr>
+        <tr><td>İndirme / Yükleme</td><td>Anlık aktarım hızı; her birinin altında kayan bir grafik bulunur, böylece ani bir sıçrama sürekli trafikten ayırt edilebilir.</td></tr>
+        <tr><td>Ağ Bilgisi</td><td>Sunucu adı, ağ geçidi ve birincil DNS - ağdaki bir şey çözümlenmediğinde ihtiyaç duyacağınız üç değer.</td></tr>
+        <tr><td>Etkin Bağlantılar</td><td>Bir sayı ve ayrıntıya giden bir yol.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Yön, NAS'ın bakış açısındandır.</b> "İndirme", NAS'a gelen trafiktir; NAS'a bir dosya <em>kopyaladığınızda</em> bu, onun indirmesidir.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Bağlantılar</div>
+      <h2>Kimler bağlı, kimler yasaklı</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Genellikle istediğiniz sırayla üç şey:</p>
+        <ul class="plain">
+          <li><b>Otomatik Engelleme</b> - DSM'nin kaba kuvvet korumasının açık olup olmadığı, kaç başarısız denemenin ve hangi süre içinde bunu tetiklediği. Birkaç yanlış parolanın ardından bir telefonu kilitleyen ayar budur.</li>
+          <li><b>Engellenen IP'ler</b> - şu anda yasaklı her adres, bir sayacın arkasında. İnternete açık bir NAS'ta yüzlerce engellenmiş adres normaldir ve ekranı gömerdi; bu yüzden siz açana kadar daraltılmış kalır.</li>
+          <li><b>Etkin Bağlantılar</b> - kimin oturum açtığı, hangi adresten, hangi protokolle ve oturumun ne zaman başladığı. HTTP/HTTPS, SMB, NFS, FTP - her oturum adıyla gösterilir.</li>
+        </ul>
+        <div class="note"><b>Bir oturumu sonlandırabilirsiniz.</b> Etkin bir bağlantı buradan atılabilir; bu, "bir şey bir dosyayı açık tutuyor" ya da "o adres neden hâlâ bağlı" sorularına hızlı yanıttır.</div>
+      </div>
+      <img alt="Otomatik engelleme ilkesini, engellenen IP'leri ve etkin bağlantıları gösteren Bağlantılar" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Hizmetler</div>
+      <h2>DSM'de neler çalışıyor</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Çalışma durumu ve anahtarlarıyla DSM hizmetleri" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">En üstte bir sayı - <b>toplam içinden çalışan</b> - ardından DSM'nin sunduğu her hizmet, her biri bir durum noktası ve bir anahtarla.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Dosya ve bağlantı hizmetleri</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Birini telefondan açıp kapatın.</li>
+          <li><b>Keşif ve yazdırma</b> - Bonjour Yazıcı Yayını, WS-Discovery, CUPS yazıcı hizmeti.</li>
+          <li><b>Altyapı</b> - NTP, KMIP ve diğerleri.</li>
+          <li><b>Sistem tarafından yönetilen hizmetlerde kilit simgesi bulunur.</b> DSM bunları kendi kurallarıyla çalıştırır; uygulama durumlarını gösterir ama reddedilecek bir anahtar sunmaz. Çalışamayacak bir denetim, hiç denetim olmamasından kötüdür.</li>
+        </ul>
+        <div class="note warn"><b>SMB'yi kapatmak onu kullanan herkesin bağlantısını keser.</b> Bunlar çalışan bir sunucudaki canlı anahtarlardır, bir tercihler ekranı değil.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>İstemci profilleri</h2>
+      <p class="lead">VPN alt görünümü, NAS'ınızda yapılandırılmış VPN <b>istemci</b> profillerini - yani NAS'ın başka bir yere kurduğu bağlantıları - listeler ve birine bağlanmasını ya da bağlantısını kesmesini isteyebilmenizi sağlar.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Hangi profilin bağlı olduğunu iddia etmez ve bu bilinçli bir tercihtir.</b> NAS bağlan veya bağlantıyı kes isteğini onaylar ama uygulamanın okuduğu DSM kaydında durum alanı yoktur; dolayısıyla bir sonuç okunacak bir şey yoktur. Çıkarım yapıp kendinden emin biçimde yanılmak yerine uygulama bunu söyler ve sizi bunu bilen yer olan DSM'nin Ağ sayfasına yönlendirir.</div>
+    <p style="color:var(--steel);margin-top:18px">Hiç profil kurulu değilse ekran bunu söyler ve nereden ekleyeceğinizi gösterir: DSM'de <b>Ağ &rsaquo; Ağ Arayüzü</b> altından.</p>
+      </div>
+      <img alt="İstemci profillerini listeleyen VPN alt görünümü" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Genel adresiniz ve ona işaret eden ad</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Tek kart, birbirinden bağımsız iki yarım:</p>
+        <ul class="plain">
+          <li><b>Harici IP</b> - bağlantınızın şu anda sahip olduğu genel adres.</li>
+          <li>NAS'ınızın yayımladığı <b>her DDNS ana makine adı</b>, DSM'nin onun için tuttuğu durum, en son ne zaman güncellendiği ve bir sonraki güncellemenin ne zaman olacağı.</li>
+        </ul>
+        <h3 style="margin-top:22px">Yenile ve Güncelle</h3>
+        <ul class="plain">
+          <li><b>Yenile</b>, DSM'nin şu anda tuttuğu bilgiyi yeniden okur.</li>
+          <li><b>Şimdi güncelle</b>, NAS'tan adresini yeniden yayımlamasını ister - DSM'nin kendi düğmesinin yaptığıyla aynı şey.</li>
+        </ul>
+        <div class="note"><b>Her yarım kendi başına başarısız olur.</b> Çalışmayan bir DDNS sağlayıcısı genel IP okumasını da götürmez, okunamayan bir IP de ana makine adı durumunu boşaltmaz. İki okuma, iki karar.</div>
+        <div class="note" style="margin-top:14px"><b>DSM'nin sakladığını bildirir, canlı bir sınama yapmaz.</b> Uygulama, ana makine adınızın sizi gösterip göstermediğini denetlemek için adı kendisi çözümlemez. Bir isteğe yanıt veren sağlayıcı kaydınızın doğru olduğu hakkında bir şey söylemez; bu yüzden uygulama ikinci bir karar uydurmak yerine DSM'nin kendi kararını aktarır.</div>
+      </div>
+      <img alt="Genel adres ve ana makine adı gizlenmiş DDNS ve harici IP" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Bu ekran görüntüsündeki adres ve ana makine adı bulanıktır - gerçek bir NAS'a aittirler.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Ağ SSS</h2>
+    </div>
+    <details open><summary>NAS'ımın şu anda ne kadar hızlı aktarım yaptığını görebilir miyim?</summary><div class="body">Evet. Ağ alt görünümü, NAS'ın sahip olduğu her arayüz için canlı indirme ve yüklemeyi; her birinin kendi grafiğini, bağlantı hızını ve adresini gösterir. Birleştirilmiş arayüzler, toplam hızla birlikte tek bir bağ olarak görünür.</div></details>
+    <details><summary>DSM hizmetlerini uygulamadan başlatıp durdurabilir miyim?</summary><div class="body">Evet, DSM'nin istemciye denetim izni verdiği hizmetler için; SMB, NFS, FTP, rsync ve diğerlerinin her birinin bir anahtarı var. Bazıları sistem tarafından yönetilen olarak işaretlidir; yani DSM bunları kendi kurallarıyla çalıştırır ve uygulama durumlarını gösterir ama değiştirme seçeneği sunmaz.</div></details>
+    <details><summary>Uygulama hangi IP adreslerinin engellendiğini gösteriyor mu?</summary><div class="body">Evet. Bağlantılar alt görünümü otomatik engelleme ilkesini ve şu anda engellenen adreslerin listesini gösterir; yüzlerce kayıt ekranın geri kalanını gömmesin diye liste bir sayacın arkasında daraltılmıştır.</div></details>
+    <details><summary>VPN'imin bağlı olup olmadığını anlayabilir miyim?</summary><div class="body">Uygulama, NAS'ınızdaki VPN istemci profillerini listeler ve birine bağlanmasını ya da bağlantısını kesmesini isteyebilmenizi sağlar. Hangisinin etkin olduğunu iddia etmez, çünkü okuduğu DSM kaydında durum alanı yoktur. Bunu bilen yer DSM'nin Ağ sayfasıdır.</div></details>
+    <details><summary>Genel IP'm neden bir web sitesinin söylediğinden farklı?</summary><div class="body">Çünkü bu, NAS'ınızın bağlantısının sahip olduğu ve DSM üzerinden okunan adrestir. Telefonunuz mobil veri kullanıyorsa farklı bir adresi vardır. Bunlar iki ayrı ağdır ve her iki okuma da doğrudur.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sıradaki: Dosyalar</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, paylaşımlı klasörler, notlar, belgeler ve kişiler.</p>
+    <p><a class="btn" href="/tr/guide/files/">Dosyalar &amp; paylaşımlar &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Rehbere dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

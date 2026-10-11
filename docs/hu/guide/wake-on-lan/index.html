@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN Synology NAS-hoz - Syno Manager</title>
+<meta name="description" content="Ébresszen fel egy alvó Synology-t, vagy bármelyik gépet a hálózatán keresztül - ami bárhonnan működik. Mi igényel VPN-t vagy router-átirányítást, egyszerűen kimondva." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN Synology NAS-hoz - Syno Manager" />
+<meta property="og:description" content="Ébresszen fel egy alvó Synology-t, vagy bármelyik gépet a hálózatán keresztül - ami bárhonnan működik. Mi igényel VPN-t vagy router-átirányítást, egyszerűen kimondva." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN Synology NAS-hoz - Syno Manager" />
+<meta name="twitter:description" content="Ébresszen fel egy alvó Synology-t, vagy bármelyik gépet a hálózatán keresztül - ami bárhonnan működik. Mi igényel VPN-t vagy router-átirányítást, egyszerűen kimondva." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN Synology NAS-hoz - Syno Manager",
+  "description": "Ébresszen fel egy alvó Synology-t, vagy bármelyik gépet a hálózatán keresztül - ami bárhonnan működik. Mi igényel VPN-t vagy router-átirányítást, egyszerűen kimondva.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Felébreszthetem a NAS-omat bárhonnan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Csak akkor, ha van útvonal a hálózatához, amely nem függ attól, hogy a NAS ébren van-e - VPN a hálózatba, vagy a Wake-on-LAN-t továbbító router. Egy kikapcsolt NAS nem tudja továbbítani a saját ébresztőcsomagját, és a QuickConnect nem éri el a kikapcsolt NAS-t. Ugyanazon a hálózaton egyszerűen működik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Felébreszthetem a PC-met a NAS-on keresztül?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, és ez bárhonnan működik, amíg maga a NAS be van kapcsolva. A NAS-t a megszokott kapcsolaton keresztül kéri meg, a NAS pedig szétsugározza a magic packetet a LAN-on Ön helyett. Ugyanez az útvonal, amelyet a Synology saját DS Router alkalmazása használ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Honnan származik a NAS MAC-címe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az alkalmazás automatikusan rögzíti az első csatlakozáskor, így soha nem kell kikeresnie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mire van szükségem egy másik eszköz hozzáadásához?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Egy névre, amelyet felismer, és a MAC-címére. A MAC-címet általában megtalálja a router eszközlistájában, vagy magán a gépen a hálózati beállításoknál."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Kapcsoljon be dolgokat <span class="g">a kanapéról</span></h1>
+      <p>Egy <b>Felébresztés</b> gomb a Csatlakozás mellett az eszközlistában magához a NAS-hoz, és egy <b>Eszközök ébresztése</b> képernyő mindenhez, ami a hálózatán van. Az egyik bárhonnan működik; a másiknak őszinte kikötése van.</p>
+    </div>
+    <div class="hero-shot"><img alt="Az Eszközök ébresztése képernyő" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Az őszinte táblázat</div>
+      <h2>Mi működik honnan</h2>
+      <p class="lead">A Wake-on-LAN egy helyi hálózaton belüli szórás (broadcast). Minden, ami működik vagy nem működik, ebből az egy tényből következik, ezért itt egyszerűen leírjuk, nem pedig egy lábjegyzetbe temetjük.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Mit szeretne felébreszteni</th><th>Hol van</th><th>Működik?</th><th>Miért</th></tr></thead>
+      <tbody>
+        <tr><td>A NAS</td><td>Ugyanazon a hálózaton</td><td class="yes">Igen</td><td>A telefonja közvetlenül szórja a csomagot. Nincs mit beállítani.</td></tr>
+        <tr><td>Másik eszköz</td><td>Ugyanazon a hálózaton</td><td class="yes">Igen</td><td>Ugyanúgy - a telefonja vagy a NAS is el tudja küldeni.</td></tr>
+        <tr><td>Másik eszköz, a NAS be van kapcsolva</td><td>Bárhol</td><td class="yes">Igen</td><td><b>A NAS továbbítja Ön helyett.</b> A megszokott kapcsolaton éri el a NAS-t, az pedig szórja a LAN-on. Ez a DS Router útvonala.</td></tr>
+        <tr><td>Maga a NAS, amíg ki van kapcsolva</td><td>A hálózatán kívül</td><td class="no">Beállítást igényel</td><td>Egy kikapcsolt NAS nem tudja továbbítani a saját ébresztését, és a QuickConnect nem éri el a kikapcsolt NAS-t. Szüksége van egy <b>VPN</b>-re a hálózatba, vagy egy routerre, amely a <b>9-es UDP-portot</b> a LAN szórási címére továbbítja.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>A középső sor a hasznos.</b> Egy otthoni asztali gép felébresztése vonatról működik, és egyáltalán nem igényel router-beállítást - mert az állandóan bekapcsolt NAS végzi a szórást.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A NAS</div>
+      <h2>A DiskStation felébresztése</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Nincs mit beállítani.</b> Az alkalmazás az első csatlakozáskor rögzíti a NAS MAC-címét, így a gomb készen áll, mielőtt szüksége lenne rá.</li>
+      <li><b>Nyissa meg a Beállítások &rsaquo; NAS eszközök kezelése menüt.</b></li>
+      <li><b>Koppintson a Felébresztésre</b> a NAS mellett.</li>
+      <li><b>Adjon neki egy kis időt</b>, majd koppintson a Csatlakozásra. A NAS indulása eltart egy ideig, és az alkalmazás nem tesz úgy, mintha működne, mielőtt válaszolna.</li>
+    </ol>
+    <div class="note warn"><b>A Wake-on-LAN-t a NAS-on is engedélyezni kell.</b> A DSM-ben a <b>Vezérlőpult &rsaquo; Hardver &amp; áram &rsaquo; Általános</b> alatt. A kikapcsolt Wake-on-LAN-nal rendelkező NAS figyelmen kívül hagyja a csomagot, bárki küldi is.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Minden más</div>
+      <h2>Más eszközök ébresztése a NAS-on keresztül</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Beállítások &rsaquo; Eszközök ébresztése</b>. Adjon hozzá bármelyik gépet a hálózatán névvel és MAC-címmel, és a NAS a hálózaton belülről elküldi Önnek a magic packetet.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Koppintson az Eszköz hozzáadása gombra.</b></li>
+          <li><b>Adjon neki felismerhető nevet</b> - „Asztali gép”, „Games PC”, „Szerver”.</li>
+          <li><b>Adja meg a MAC-címét.</b> A router eszközlistájában általában a legkönnyebb megtalálni.</li>
+          <li><b>Mentés.</b> Megjelenik a listában a saját Felébresztés gombjával.</li>
+        </ol>
+        <div class="note"><b>Mivel a NAS küld, ez akkor is működik, ha távol van</b> - mobiladaton, QuickConnecten, bárhonnan, ahonnan eléri a NAS-t. A Synology saját router-alkalmazása is így csinálja, és ezért érdemes ezt beállítani akkor is, ha soha nem ébreszti fel magát a NAS-t.</div>
+      </div>
+      <img alt="Az Eszközök ébresztése képernyő üres állapottal és egy Eszköz hozzáadása gombbal" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A célgépen</div>
+      <h2>Minek kell teljesülnie, hogy az ébresztés célba érjen</h2>
+      <p class="lead">Ha elküldtek egy csomagot, és nem történik semmi, szinte mindig ezek közül az egyik az ok - amelyeket az alkalmazás kívülről nem lát és nem tud javítani.</p>
+    </div>
+    <ul class="plain">
+      <li><b>A Wake-on-LAN engedélyezve a gép BIOS-ában vagy UEFI-jében</b>, gyakran „Wake on PCIe” vagy „Power on by PCI-E” néven.</li>
+      <li><b>A hálózati kártyán is engedélyezve.</b> Windowson: Eszközkezelő, a kártya tulajdonságai, Energiagazdálkodás, „Az eszköz felébresztheti a számítógépet”.</li>
+      <li><b>A Gyors indítás kikapcsolva Windowson.</b> Bekapcsolva a leállított PC valójában hibernál, és gyakran figyelmen kívül hagyja a csomagot.</li>
+      <li><b>Általában vezetékes kapcsolat.</b> A Wi-Fi-n keresztüli ébresztéshez speciális hardver- és illesztőprogram-támogatás kell; az Ethernet sokkal megbízhatóbb.</li>
+      <li><b>A gép még áram alatt van a fali aljzatnál.</b> A magic packethez a hálózati kártyának készenléti áramra van szüksége.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Wake-on-LAN - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Felébreszthetem a NAS-omat bárhonnan?</summary><div class="body">Csak akkor, ha van útvonal a hálózatához, amely nem függ attól, hogy a NAS ébren van-e - VPN, vagy a Wake-on-LAN-t továbbító router. Egy kikapcsolt NAS nem tudja továbbítani a saját ébresztőcsomagját, és a QuickConnect nem éri el a kikapcsolt NAS-t. Ugyanazon a hálózaton egyszerűen működik.</div></details>
+    <details><summary>Felébreszthetem a PC-met a NAS-on keresztül?</summary><div class="body">Igen, és ez bárhonnan működik, amíg maga a NAS be van kapcsolva. A NAS-t a megszokott kapcsolaton keresztül kéri meg, a NAS pedig szétsugározza a magic packetet a LAN-on Ön helyett.</div></details>
+    <details><summary>Honnan származik a NAS MAC-címe?</summary><div class="body">Az alkalmazás automatikusan rögzíti az első csatlakozáskor, így soha nem kell kikeresnie.</div></details>
+    <details><summary>Mire van szükségem egy másik eszköz hozzáadásához?</summary><div class="body">Egy név, amelyet felismer, és a MAC-címe, amely általában a router eszközlistájában található.</div></details>
+    <details><summary>Elküldtem egy ébresztést, és semmi nem történt.</summary><div class="body">Ellenőrizze, hogy a Wake-on-LAN engedélyezve van-e a célgépen - a BIOS-ában, a hálózati kártyáján, és a Windows Gyors indítás kikapcsolásával. Ellenőrizze azt is, hogy vezetékes Ethernetre van-e kötve, és hogy a NAS-on engedélyezve van-e a Wake-on-LAN a Vezérlőpulton, ha a NAS-t ébreszti.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: widgetek</h2>
+    <p class="lead" style="margin:0 auto 24px">A NAS-a a kezdőképernyőn, őszinte időbélyeggel.</p>
+    <p><a class="btn" href="/hu/guide/widgets/">Kezdőképernyő-widgetek &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

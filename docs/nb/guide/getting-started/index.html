@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Koble til Synology NAS-en din - oppsett av Syno Manager</title>
+<meta name="description" content="Legg til Synology NAS-en din på under ett minutt: adresse og port, HTTPS og selvsignerte sertifikater, QuickConnect, 2FA, og hva du gjør når den ikke vil koble til." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nb/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Koble til Synology NAS-en din - oppsett av Syno Manager" />
+<meta property="og:description" content="Legg til Synology NAS-en din på under ett minutt: adresse og port, HTTPS og selvsignerte sertifikater, QuickConnect, 2FA, og hva du gjør når den ikke vil koble til." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nb/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Koble til Synology NAS-en din - oppsett av Syno Manager" />
+<meta name="twitter:description" content="Legg til Synology NAS-en din på under ett minutt: adresse og port, HTTPS og selvsignerte sertifikater, QuickConnect, 2FA, og hva du gjør når den ikke vil koble til." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nb",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brukerguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kom i gang"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Koble til Synology NAS-en din - oppsett av Syno Manager",
+  "description": "Legg til Synology NAS-en din på under ett minutt: adresse og port, HTTPS og selvsignerte sertifikater, QuickConnect, 2FA, og hva du gjør når den ikke vil koble til.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "nb",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hva trenger jeg for å bruke Syno Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "En Synology NAS med DSM 7.0 eller nyere, en DSM-konto på den, og en enhet med Android 7+, iOS 16+, macOS 11+ eller Windows. Ingenting må installeres på NAS-en - appen bruker DSMs egne API-er, som allerede finnes der."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilken adresse og port skal jeg skrive inn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "På ditt eget nettverk: NAS-ens lokale IP-adresse og DSMs port - 5001 med HTTPS på, eller 5000 med HTTPS av. Du kan også skrive inn et vertsnavn eller et eget domene. Hvis du helst slipper adresser helt, bytter du Tilkoblingstype til QuickConnect og skriver inn QuickConnect-ID-en din."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor er Verifiser SSL-sertifikat slått av som standard?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fordi de fleste DiskStation-enheter bruker et selvsignert sertifikat, som ikke er signert av en offentlig utsteder og derfor feiler verifiseringen selv om tilkoblingen fortsatt er kryptert. Å la verifiseringen stå av godtar det sertifikatet. Hvis du har installert et ekte sertifikat - fra Let's Encrypt, for eksempel - slår du verifiseringen på."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Må jeg åpne porter på ruteren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. På ditt eget nettverk trenger ingenting å videresendes. Utenfra videresender QuickConnect tilkoblingen for deg, og en VPN fungerer også. Portvideresending trengs bare hvis du spesifikt vil ha en direkte rute fra internett, eller hvis du vil ha direkte kameravisning over RTSP utenfra nettverket ditt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Det står tidsavbrudd for tilkoblingen. Hva nå?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Den meldingen betyr at appen aldri fikk svar, noe som nesten alltid skyldes adressen, porten eller nettverket telefonen er på. Sjekk at HTTPS stemmer med porten, at telefonen er på samme nettverk som NAS-en hvis du bruker en lokal IP, og at DSMs eget nettgrensesnitt lastes i nettleseren på telefonen på samme adresse og port."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nb/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søk i guiden..." data-i18n-empty="Ingen treff for" data-i18n-language="Språk">
+      <a href="/nb/">Hjem</a>
+      <a href="/nb/guide/" class="active">Brukerguide</a>
+      <a href="/nb/#screenshots">Skjermbilder</a>
+      <a href="/nb/compatible-nas/">Kompatibilitet</a>
+      <a href="/nb/best-synology-nas-app/">Hvorfor bytte</a>
+      <a href="/nb/help/">Hjelp</a>
+      <a href="/nb/#top" class="cta">Last ned</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nb/">Hjem</a> &rsaquo; <a href="/nb/guide/">Brukerveiledning</a> &rsaquo; Kom i gang</div>
+      <div class="eyebrow">Kom i gang</div>
+      <h1>Tilkoblet på <span class="g">under ett minutt</span></h1>
+      <p>Ingenting installeres på NAS-en. Syno Manager snakker med DSMs egne API-er, som allerede kjører - du sier bare hvor DiskStation-en din er og hvem du er.</p>
+    </div>
+    <div class="hero-shot"><img alt="Skjemaet Legg til NAS i Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På denne siden</b><ul>
+      <li><a href="#requirements">Hva du trenger</a></li>
+      <li><a href="#address">Finne NAS-en din</a></li>
+      <li><a href="#form">Hvert felt i skjemaet</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Tofaktorautentisering</a></li>
+      <li><a href="#test">Test og lagre</a></li>
+      <li><a href="#next">Hva som skjer videre</a></li>
+      <li><a href="#trouble">Når den ikke vil koble til</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Steg null</div>
+      <h2>Hva du trenger</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Krav</th><th>Detaljer</th></tr></thead>
+      <tbody>
+        <tr><td>En Synology NAS</td><td>Hvilken som helst modell med <b>DSM 7.0 eller nyere</b>. Ingenting installeres på den - appen bruker de samme API-ene som DSMs nettgrensesnitt.</td></tr>
+        <tr><td>En DSM-konto</td><td>Ditt vanlige DSM-brukernavn og passord. En administratorkonto ser alt; en ikke-administrator ser det DSM lar den se, og appen skjuler resten i stedet for å vise kontroller som blir avvist.</td></tr>
+        <tr><td>Enheten din</td><td><b>Android 7.0</b> eller nyere, <b>iOS 16.0</b> eller nyere, <b>macOS 11.0</b> eller nyere, eller <b>Windows</b>. Samme app på alle fire.</td></tr>
+        <tr><td>En rute til NAS-en</td><td>Samme lokale nettverk, en VPN inn til det, et eget domene eller QuickConnect. Hvilken som helst av dem er nok.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Du trenger ikke en administratorkonto</b> bare for å se. Overvåking fungerer for alle DSM-brukere. Styringshandlinger - å starte en container på nytt, kjøre en sikkerhetskopi, løse ut en disk - trenger den tillatelsen DSM selv krever for den handlingen, og appen rapporterer et avslag i stedet for å late som om det fungerte.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Hvor er den</div>
+      <h2>Finne NAS-adressen din</h2>
+      <p class="lead">Hvis du allerede åpner DSM i en nettleser, har adressefeltet alt du trenger: verten og porten er de to verdiene appen ber om.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Fra DSM selv</h3>
+        <ul class="plain">
+          <li><b>Kontrollpanel &rsaquo; Nettverk &rsaquo; Nettverksgrensesnitt</b> viser NAS-ens IP-adresse på hvert grensesnitt.</li>
+          <li><b>Kontrollpanel &rsaquo; Nettverk &rsaquo; DSM-innstillinger</b> viser HTTP- og HTTPS-portene DSM lytter på. De er 5000 og 5001 med mindre noen har endret dem.</li>
+        </ul>
+        <h3 style="margin-top:22px">Fra nettleseren din</h3>
+        <p style="color:var(--steel)">Det du skriver for å nå DSM er det appen vil ha. I <code>https://192.168.1.20:5001</code> er verten <code>192.168.1.20</code>, porten er <code>5001</code>, og HTTPS er på.</p>
+      </div>
+      <div>
+        <h3>Fra ruteren din</h3>
+        <p style="color:var(--steel)">De fleste rutere lister tilkoblede enheter med navn. NAS-en vises under servernavnet sitt - det som er satt i <b>Kontrollpanel &rsaquo; Infosenter</b>.</p>
+        <div class="note"><b>Gi den en fast adresse.</b> Hvis ruteren gir NAS-en en annen IP etter en omstart, slutter appen å finne den. En DHCP-reservasjon på ruteren, eller en statisk adresse på NAS-en, forhindrer det. Et vertsnavn eller et eget domene fungerer også og bryr seg ikke om hva IP-en er.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Legg til NAS</div>
+      <h2>Hvert felt i skjemaet</h2>
+      <p class="lead">Trykk på <b>+ Legg til NAS</b> i enhetslisten. Skjemaet er kort, og bare tre felt har ingen fornuftig standardverdi.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Felt</th><th>Hva du skal skrive</th></tr></thead>
+          <tbody>
+            <tr><td>NAS-kallenavn</td><td>Hvilket som helst navn du vil - det vises bare for deg. Nyttig når du har mer enn én.</td></tr>
+            <tr><td>Tilkoblingstype</td><td><b>Direkte IP</b> for en adresse du skriver, eller <b>QuickConnect</b> for en QuickConnect-ID. Se <a href="#quickconnect">nedenfor</a>.</td></tr>
+            <tr><td>Vert / IP-adresse</td><td>NAS-ens lokale IP, vertsnavnet eller et eget domene som peker til den.</td></tr>
+            <tr><td>Port</td><td><b>5001</b> med HTTPS på, <b>5000</b> med det av - med mindre DSM er flyttet til andre porter, og da bruker du de.</td></tr>
+            <tr><td>HTTPS</td><td>På som standard, og verdt å la stå på. Alt mellom telefonen og NAS-en er kryptert, også passordet ditt.</td></tr>
+            <tr><td>Verifiser SSL-sertifikat</td><td>Av som standard, fordi de fleste DiskStation-enheter bruker et <b>selvsignert</b> sertifikat som ikke kan verifiseres mot en offentlig utsteder. Tilkoblingen er kryptert uansett. Slå dette på bare hvis du har installert et ekte sertifikat.</td></tr>
+            <tr><td>Brukernavn</td><td>DSM-kontonavnet ditt. <b>Brukernavn med mellomrom støttes</b> - appen siterer dem riktig, som er en vanlig grunn til at andre klienter feiler.</td></tr>
+            <tr><td>Passord</td><td>DSM-passordet ditt. Øyet viser det mens du skriver. Det skrives til plattformens nøkkelring eller nøkkellager og lagres aldri i klartekst.</td></tr>
+            <tr><td>Tofaktorautentisering</td><td>Slå på hvis DSM-kontoen din bruker en autentiseringsapp. Se <a href="#twofactor">nedenfor</a>.</td></tr>
+            <tr><td>Tunnelér direkte kameravisning gjennom DSM-porten</td><td>Av som standard. <b>Av</b> betyr at direkte kameravisning kobler seg rett til RTSP på port 554, som er raskere på ditt eget nettverk, men krever at porten er nåbar fra der du er. <b>På</b> tunnelerer strømmen gjennom DSM HTTPS-porten du allerede bruker, så direkte visning fungerer utenfra uten å eksponere 554. Se <a href="/nb/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Skjemaet Legg til NAS" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Ingen adresse å skrive</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Bytt <b>Tilkoblingstype</b> til <b>QuickConnect</b> og skriv inn QuickConnect-ID-en din i stedet for vert og port. Synologys relé finner NAS-en din uansett hvor den er, og ingen ruterkonfigurasjon er involvert.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hvor ID-en din finnes.</b> DSM, under <b>Kontrollpanel &rsaquo; Ekstern tilgang &rsaquo; QuickConnect</b>. Den må slås på der først.</li>
+      <li><b>Hva det koster deg.</b> Reléet legger til forsinkelse, så miniatyrbilder og direkte visning laster tregere enn på ditt eget nettverk. Alt fungerer fortsatt.</li>
+      <li><b>Hva det sparer deg for.</b> Ingen portvideresending, ingen dynamisk DNS som må holdes oppdatert, og ingenting eksponert mot internett på din side.</li>
+    </ul>
+    <div class="note"><b>Du kan ha begge.</b> Å legge til samme NAS to ganger - én gang med lokal IP, én gang med QuickConnect - gir deg en rask oppføring for hjemme og en pålitelig for borte. De er separate oppføringer med separate oppsett, så velg den du er nærmest.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Tofaktorautentisering</h2>
+      <p class="lead">Hvis DSM-kontoen din er beskyttet av en autentiseringsapp, slår du på <b>Tofaktorautentisering (2FA)</b> før du lagrer. Appen ber om den sekssifrede koden din like etter at passordet er godtatt.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Slå på bryteren</b> i skjemaet Legg til NAS.</li>
+      <li><b>Lagre &amp; koble til.</b> Appen logger inn, og DSM ber om den andre faktoren.</li>
+      <li><b>Skriv inn koden</b> fra autentiseringsappen din.</li>
+      <li><b>Velg om denne enheten skal huskes.</b> Hvis du gjør det, utsteder DSM et enhetstoken, og denne telefonen blir ikke bedt om kode igjen. Tokenet lagres på samme måte som passordet, i plattformens nøkkelring.</li>
+    </ol>
+    <div class="note warn"><b>Hvis koder avvises</b>, sjekk klokken. Autentiseringskoder utledes fra gjeldende tid, så en telefon eller NAS med avvikende klokke genererer eller forventer feil tall. NAS-ens tidskilde vises i hurtigstatistikklinjen på <a href="/nb/guide/home/">startskjermen</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Før du bestemmer deg</div>
+      <h2>Test tilkoblingen, og lagre så</h2>
+      <p class="lead"><b>Test tilkobling</b> prøver adressen, porten og påloggingen og forteller deg hva som skjedde uten å lagre noe. Det er den raskeste måten å finne en skrivefeil på, fordi den skiller «kommer ikke til NAS-en» fra «kom til den, men passordet er feil».</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hva den sier</th><th>Hva det betyr</th></tr></thead>
+      <tbody>
+        <tr><td>Tidsavbrudd for tilkobling</td><td>Ingenting svarte. Adressen, porten eller nettverket telefonen er på - ikke påloggingen, som aldri ble prøvd.</td></tr>
+        <tr><td>Ugyldig pålogging</td><td>NAS-en svarte og avviste innloggingen. Adressen og porten er riktige; brukernavnet eller passordet er det ikke.</td></tr>
+        <tr><td>Sertifikatfeil</td><td>HTTPS er på og <b>Verifiser SSL-sertifikat</b> er også på mot et selvsignert sertifikat. Slå verifiseringen av.</td></tr>
+        <tr><td>2FA kreves</td><td>Kontoen bruker tofaktorautentisering og bryteren er av. Slå den på og prøv igjen.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Lagre &amp; koble til</b> lagrer oppføringen og logger inn. Du lander på startskjermen med NAS-en din allerede i ferd med å lastes.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Du er inne</div>
+      <h2>Hva som skjer ved første tilkobling</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Startskjermen i Syno Manager etter tilkobling" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Appen spør hva NAS-en din kan gjøre.</b> Den spør DSMs API-katalog og beholder listen. Derfor viser en NAS uten Surveillance Station aldri en Kameraer-fane, og derfor får en skjerm plass når du installerer en pakke.</li>
+          <li><b>Alle støttede kort er slått på.</b> Nye kort kommer synlige i stedet for skjulte, så en funksjon NAS-en din støtter er en du kan se. <a href="/nb/guide/customizing/">Tilpass</a> er der du slår ting av, ikke der du går for å finne dem.</li>
+          <li><b>NAS-ens MAC-adresse hentes</b> slik at <a href="/nb/guide/wake-on-lan/">Wake-on-LAN</a> kan fungere senere uten at du må slå den opp.</li>
+          <li><b>En kort velkomst vises én gang.</b> Den sier hva appen gjør og hvor du endrer ting. Det er en avmerkingsboks for å hindre at den vises igjen.</li>
+          <li><b>Hjelpekort vises på skjermer som trenger forklaring.</b> Trykk og hold på ett for å lukke det; gjenopprett dem enkeltvis fra <a href="/nb/guide/settings/#help">Innstillinger</a>.</li>
+        </ul>
+        <div class="note"><b>Installerte du en pakke etter at du koblet til?</b> Funksjonslisten leses ved tilkobling, så en pakke installert siden da har ingen fane ennå. Trekk ned for å oppdatere, eller åpne appen på nytt, så dukker den nye skjermen opp.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Når den ikke vil koble til</div>
+      <h2>Den korte sjekklisten</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Åpne DSM i nettleseren på telefonen</b> på nøyaktig den adressen og porten du skrev. Hvis nettleseren heller ikke kommer til den, er problemet nettverket eller adressen, ikke appen.</li>
+      <li><b>Sjekk at HTTPS stemmer med porten.</b> Port 5001 med HTTPS av, eller 5000 med det på, gir tidsavbrudd. De er ulike lyttere.</li>
+      <li><b>Slå av Verifiser SSL-sertifikat</b> hvis NAS-en bruker sertifikatet den ble levert med.</li>
+      <li><b>Sjekk telefonens nettverk.</b> En lokal IP er ikke nåbar over mobildata. Enten koble til Wi-Fi, eller bruk QuickConnect, et domene eller en VPN.</li>
+      <li><b>På iOS: tillat tilgang til lokalt nettverk.</b> Innstillinger &rsaquo; Apper &rsaquo; Syno Manager &rsaquo; Lokalt nettverk. Uten det blokkerer iOS stille tilkoblinger til adresser på ditt eget nettverk.</li>
+      <li><b>Sjekk DSMs brannmur.</b> Kontrollpanel &rsaquo; Sikkerhet &rsaquo; Brannmur. En regel som bare tillater bestemte adresser blokkerer en telefon som ikke er blant dem.</li>
+      <li><b>Sjekk autoblokkering.</b> Kontrollpanel &rsaquo; Sikkerhet &rsaquo; Konto. Gjentatte mislykkede innloggingsforsøk kan blokkere telefonens adresse; den vil stå oppført der og kan fjernes.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/nb/help/">Fullstendig feilsøkingsveiledning</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanlige spørsmål</div>
+      <h2>FAQ om oppsett</h2>
+    </div>
+    <details open><summary>Hva trenger jeg for å bruke Syno Manager?</summary><div class="body">En Synology NAS med DSM 7.0 eller nyere, en DSM-konto på den, og en enhet med Android 7+, iOS 16+, macOS 11+ eller Windows. Ingenting må installeres på NAS-en - appen bruker DSMs egne API-er, som allerede finnes der.</div></details>
+    <details><summary>Hvilken adresse og port skal jeg skrive inn?</summary><div class="body">På ditt eget nettverk: NAS-ens lokale IP-adresse og DSMs port - 5001 med HTTPS på, eller 5000 med HTTPS av. Du kan også skrive inn et vertsnavn eller et eget domene. Hvis du helst slipper adresser helt, bytter du Tilkoblingstype til QuickConnect og skriver inn QuickConnect-ID-en din.</div></details>
+    <details><summary>Hvorfor er Verifiser SSL-sertifikat slått av som standard?</summary><div class="body">Fordi de fleste DiskStation-enheter bruker et selvsignert sertifikat, som ikke er signert av en offentlig utsteder og derfor feiler verifiseringen selv om tilkoblingen fortsatt er kryptert. Å la verifiseringen stå av godtar det sertifikatet. Hvis du har installert et ekte sertifikat - fra Let's Encrypt, for eksempel - slår du verifiseringen på.</div></details>
+    <details><summary>Må jeg åpne porter på ruteren?</summary><div class="body">Nei. På ditt eget nettverk trenger ingenting å videresendes. Utenfra videresender QuickConnect tilkoblingen for deg, og en VPN fungerer også. Portvideresending trengs bare hvis du spesifikt vil ha en direkte rute fra internett, eller hvis du vil ha direkte kameravisning over RTSP utenfra nettverket ditt.</div></details>
+    <details><summary>Det står tidsavbrudd for tilkoblingen. Hva nå?</summary><div class="body">Den meldingen betyr at appen aldri fikk svar, noe som nesten alltid skyldes adressen, porten eller nettverket telefonen er på. Sjekk at HTTPS stemmer med porten, at telefonen er på samme nettverk som NAS-en hvis du bruker en lokal IP, og at DSMs eget nettgrensesnitt lastes i nettleseren på telefonen på samme adresse og port.</div></details>
+    <details><summary>Kan jeg legge til mer enn én NAS?</summary><div class="body">Ja, så mange du vil. Hver beholder sin egen pålogging, sitt eget dashbordoppsett og sine egne innstillinger, og du bytter mellom dem fra enhetslisten. Se <a href="/nb/guide/multi-nas/">flere NAS-enheter</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Neste: startskjermen</h2>
+    <p class="lead" style="margin:0 auto 24px">Hva hvert kort viser, og hvordan du gjør dashbordet til ditt.</p>
+    <p><a class="btn" href="/nb/guide/home/">Startskjermen &rarr;</a> &nbsp; <a class="btn ghost" href="/nb/guide/">Tilbake til veiledningen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nb/">Hjem</a><a href="/nb/guide/">Brukerveiledning</a><a href="/nb/guide/getting-started/">Kom i gang</a><a href="/nb/compatible-nas/">Kompatibilitet</a><a href="/nb/best-synology-nas-app/">Hvorfor bytte</a><a href="/nb/synology-app-for-iphone/">iPhone & iPad</a><a href="/nb/synology-app-for-android/">Android</a><a href="/nb/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nb/ds-finder-alternative/">vs DS finder</a><a href="/nb/help/">Hjelp</a><a href="/nb/privacy/">Personvern</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Meld fra om feil</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uavhengig app og er ikke tilknyttet, godkjent av eller sponset av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemerker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

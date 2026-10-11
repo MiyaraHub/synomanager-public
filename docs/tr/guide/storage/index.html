@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology Depolama, RAID ve SMART Sağlığı - Syno Manager</title>
+<meta name="description" content="RAID türü ve boş alanla Synology birimleri ve havuzları, sürücü başına SMART durumu ve sıcaklık, Hızlı SMART Testi, USB ve eSATA için güvenli çıkarma." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology Depolama, RAID ve SMART Sağlığı - Syno Manager" />
+<meta property="og:description" content="RAID türü ve boş alanla Synology birimleri ve havuzları, sürücü başına SMART durumu ve sıcaklık, Hızlı SMART Testi, USB ve eSATA için güvenli çıkarma." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology Depolama, RAID ve SMART Sağlığı - Syno Manager" />
+<meta name="twitter:description" content="RAID türü ve boş alanla Synology birimleri ve havuzları, sürücü başına SMART durumu ve sıcaklık, Hızlı SMART Testi, USB ve eSATA için güvenli çıkarma." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Depolama"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology Depolama, RAID ve SMART Sağlığı - Syno Manager",
+  "description": "RAID türü ve boş alanla Synology birimleri ve havuzları, sürücü başına SMART durumu ve sıcaklık, Hızlı SMART Testi, USB ve eSATA için güvenli çıkarma.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "tr",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Her sürücünün SMART durumunu görebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Disk Sağlığı alt görünümü her sürücüyü modeli, HDD ya da SSD olduğu, kapasitesi, sıcaklığı ve SMART kararıyla listeler. Ayrıca telefondan herhangi bir sürücüde Hızlı SMART Testi başlatabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir NAS sürücüsü için hangi sıcaklık çok sıcaktır?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uygulama bir sürücüyü 45 °C üzerinde kehribar, 55 °C üzerinde kırmızı; sistem sıcaklığını ise 50 üzerinde kehribar, 60 üzerinde kırmızı renklendirir. Bu eşikler ana ekrandaki sağlık rozetini de besler; yani sıcak bir sürücü, aramanıza gerek kalmadan orada görünür."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir USB sürücüyü uygulamadan güvenle çıkarabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, Harici alt görünümünden. Çıkarma, isteğin kabul edilmesiyle değil, sürücünün gerçekten cihaz listesinden kaybolmasıyla doğrulanır - yani çıkarıldığını söyleyen sürücü gerçekten çıkarılmıştır. Biçimlendirilen ya da başlatılan bir sürücü çıkarılamaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Uygulamadan bir birim oluşturabilir veya genişletebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Birim ve havuz oluşturma, genişletme ve onarma DSM'nin Depolama Yöneticisi'nde yapılır. Uygulama depolamanızın ne yaptığını bildirir ve sürücüler üzerinde işlem yapmanıza izin verir; dizinizi bir telefondan yeniden yapılandırmaz."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Depolama</div>
+      <div class="eyebrow">Depolama</div>
+      <h1>Her birim, <span class="g">her sürücü</span></h1>
+      <p>Üç alt görünüm: kapasite ve RAID için <b>Birimler &amp; Havuzlar</b>, sürücü başına SMART ve sıcaklık için <b>Disk Sağlığı</b> ve arkaya takılan her şey için <b>Harici</b>.</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager'da depolama birimleri ve sürücüler" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Bu sayfada</b><ul>
+      <li><a href="#volumes">Birimler &amp; Havuzlar</a></li>
+      <li><a href="#drives">Sürücü listesi</a></li>
+      <li><a href="#disk-health">Disk Sağlığı &amp; SMART</a></li>
+      <li><a href="#thresholds">Sıcaklık eşikleri</a></li>
+      <li><a href="#external">Harici &amp; güvenli çıkarma</a></li>
+      <li><a href="#limits">Yapmayacakları</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Birimler &amp; Havuzlar</div>
+      <h2>Kapasite, tek bakışta</h2>
+      <p class="lead">Her birim; adı, RAID türü, durumu ve kaç sürücünün onu desteklediğiyle birlikte bir kart alır; altında kullanılan, yüzde, toplam ve boş değerlerini gösteren bir kullanım çubuğu bulunur.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Gösterilen</th><th>Anlamı</th></tr></thead>
+      <tbody>
+        <tr><td>Birim adı</td><td>DSM'nin adlandırdığı gibi - <code>VOLUME_1</code> ve benzeri.</td></tr>
+        <tr><td>RAID türü</td><td>RAID 5, SHR, RAID 1, Basic - alttaki havuz gerçekte neyse o.</td></tr>
+        <tr><td>Durum</td><td>Birimin kendi durumu: <b>normal</b>, bozulmuş, çökmüş. Bozulmuş bir dizi, bu ekranda bugün harekete geçmeye değer tek şeydir.</td></tr>
+        <tr><td>Sürücü sayısı</td><td>Birimin kaç fiziksel sürücüye yayıldığı.</td></tr>
+        <tr><td>Kullanım çubuğu</td><td>Normalde yeşil, %80 üzerinde kehribar, %90 üzerinde kırmızı. Bunlar <a href="/tr/guide/home/#header">sağlık rozetinin</a> kullandığı eşiklerle aynıdır.</td></tr>
+        <tr><td>Kullanılan / Toplam / Boş</td><td>Üçü de, çünkü "%70 dolu" ve "13 TB boş" farklı soruları yanıtlar.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Her yuvada ne var</h2>
+      <p class="lead">Birimlerin altında, yuva numarasına göre her fiziksel sürücü.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Yuva</b> - Disk 1, Disk 2 ve benzeri; kasadaki etiketlerle eşleşir.</li>
+      <li><b>Model</b> - sürücünün kendi model dizesi.</li>
+      <li><b>Üretici ve tür</b> - üretici ve HDD ya da SSD olduğu. NAS'ın üreticisini belirleyemediği bir sürücü tahmin edilmek yerine <b>Bilinmiyor</b> olarak gösterilir.</li>
+      <li><b>Sıcaklık</b>, aşağıdaki eşiklere göre renklendirilir.</li>
+      <li><b>SMART kararı</b> - sürücünün kendi öz değerlendirmesi sağlıklıysa <b>SMART OK</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Disk Sağlığı</div>
+      <h2>SMART ve başlatabileceğiniz bir test</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Disk Sağlığı alt görünümü aynı sürücülerdir, ama daha geniş yerle: kapasite, tür, sıcaklık ve SMART durumu kendi etiketlerini alır ve her sürücüde bir <b>Hızlı SMART Testi</b> düğmesi bulunur.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Hızlı SMART Testi</b>, sürücüden kendi kısa öz değerlendirmesini çalıştırmasını ister. Birkaç dakika sürer ve birimi kullanan hiçbir şeyi kesintiye uğratmaz.</li>
+          <li><b>Karar bizim değil, sürücünündür.</b> SMART, sürücünün kendisi hakkında rapor vermesidir; uygulama bunu aktarır. İyi olduğunu söyleyip sonra bozulan bir sürücü, okumanın değil SMART'ın sınırlamasıdır.</li>
+          <li><b>Okunamayan bir SMART durumu bilinmiyor olarak gösterilir</b>, asla sağlıklı olarak değil. Eksik bir okuma ile iyi bir okuma farklı şeylerdir ve asla birleştirilmez.</li>
+        </ul>
+      </div>
+      <img alt="SMART durumu, sıcaklık ve Hızlı SMART Testi düğmesiyle her sürücüyü gösteren Disk Sağlığı" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Renklerin ardındaki sayılar</div>
+      <h2>Eşikler</h2>
+      <p class="lead">Buradaki hiçbir şey donanımınız hakkında bir tahmin değildir - bunlar uygulamanın bir rengi ve ilgili olduğunda ana ekranın sağlık rozetini değiştirdiği noktalardır.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Okuma</th><th>Kehribar:</th><th>Kırmızı:</th></tr></thead>
+      <tbody>
+        <tr><td>Sürücü sıcaklığı</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Sistem sıcaklığı</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Birim kullanımı</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS şarjı</td><td>%50'nin altı</td><td>%20'nin altı</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><a href="/tr/guide/settings/#preferences">Ayarlar &rsaquo; Sıcaklık Birimi</a> altından &deg;C ile &deg;F arasında geçiş yapın. Ana ekrandakiler ve widget'lardakiler dahil uygulamadaki her sıcaklık anında buna uyar.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Harici</div>
+      <h2>USB, eSATA ve güvenli çıkarma</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Hiçbir şey takılı değilken ve bir UPS listelenmişken harici depolama ve USB cihazlar" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">İki bölüm: bağlayıp çıkarabileceğiniz sürücüler için <b>Harici Depolama</b> ve takılı diğer her şey için - bir UPS, bir yazıcı, bir dongle - <b>USB Cihazlar</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Çıkarma, sürücünün ayrılmasıyla doğrulanır.</b> Uygulama, istek tamam döndü diye başarı bildirmez; cihaz listesini yeniden okur ve sürücü gerçekten gittikten sonra çıkarıldığını söyler. "Güvenle çıkarılabilir" ile "muhtemelen güvenle çıkarılabilir" arasındaki fark budur.</li>
+          <li><b>Meşgul bir sürücü çıkarılamaz.</b> Biçimlendirilen ya da başlatılan bir sürücü, yazma sırasında çekip alınmak yerine nedeniyle birlikte reddedilir.</li>
+          <li><b>Hiçbir şey takılı değilse bunu açıkça söyler.</b> Boş bir liste, yorumlamanız gereken boş bir kutu değil, "Harici sürücü takılı değil" yazar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Sınırlar</div>
+      <h2>Bu ekranın yapmayacağı şeyler</h2>
+      <p class="lead">Depolama, yanlış bir dokunuşun geri alınamadığı tek yerdir; bu yüzden uygulama yazdığından çok daha fazlasını okur.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bir birim veya havuz oluşturmaz, genişletmez ya da silmez.</b> Bunlar DSM'nin Depolama Yöneticisi'nde, ne yapmak üzere olduğunuzu gösterecek kadar büyük bir ekranda yapılır.</li>
+      <li><b>Bozulmuş bir diziyi onarmaz.</b> Bir dizinin bozulduğunu size ana ekranda net biçimde söyler.</li>
+      <li><b>Hiçbir şeyi biçimlendirmez.</b></li>
+      <li><b>Tam SMART testi çalıştırmaz</b> - yalnızca hızlı olanı. Tam yüzey taraması saatler sürer ve başından ayrılmayacağınız bir yere aittir.</li>
+    </ul>
+    <div class="note"><b>Temizleme, yeniden oluşturma ve eşlik denetimleri</b> sürerken çalışan işlemler olarak görünür; böylece DSM'de başlatmış olsanız bile birinin bitişini uygulamadan izleyebilirsiniz.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Depolama SSS</h2>
+    </div>
+    <details open><summary>Her sürücünün SMART durumunu görebilir miyim?</summary><div class="body">Evet. Disk Sağlığı alt görünümü her sürücüyü modeli, HDD ya da SSD olduğu, kapasitesi, sıcaklığı ve SMART kararıyla listeler. Ayrıca telefondan herhangi bir sürücüde Hızlı SMART Testi başlatabilirsiniz.</div></details>
+    <details><summary>Bir NAS sürücüsü için hangi sıcaklık çok sıcaktır?</summary><div class="body">Uygulama bir sürücüyü 45&deg;C üzerinde kehribar, 55&deg;C üzerinde kırmızı; sistem sıcaklığını ise 50&deg;C üzerinde kehribar, 60&deg;C üzerinde kırmızı renklendirir. Bu eşikler ana ekrandaki sağlık rozetini de besler.</div></details>
+    <details><summary>Bir USB sürücüyü uygulamadan güvenle çıkarabilir miyim?</summary><div class="body">Evet, Harici alt görünümünden. Çıkarma, isteğin kabul edilmesiyle değil, sürücünün gerçekten cihaz listesinden kaybolmasıyla doğrulanır. Biçimlendirilen ya da başlatılan bir sürücü çıkarılamaz.</div></details>
+    <details><summary>Uygulamadan bir birim oluşturabilir veya genişletebilir miyim?</summary><div class="body">Hayır. Birim ve havuz oluşturma, genişletme ve onarma DSM'nin Depolama Yöneticisi'nde yapılır. Uygulama depolamanızın ne yaptığını bildirir ve sürücüler üzerinde işlem yapmanıza izin verir; dizinizi bir telefondan yeniden yapılandırmaz.</div></details>
+    <details><summary>Bir sürücünün üreticisi neden Bilinmiyor yazıyor?</summary><div class="body">Çünkü NAS bir üretici bildirmedi. Uygulama, model dizesinden bir üretici çıkarmak yerine kendisine söyleneni gösterir; çıkarım, gerçek olarak sunulan bir tahmin olurdu.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sıradaki: Ağ</h2>
+    <p class="lead" style="margin:0 auto 24px">Aktarım hızı, bağlantılar, hizmetler, VPN ve DDNS.</p>
+    <p><a class="btn" href="/tr/guide/network/">Ağ &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Rehbere dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

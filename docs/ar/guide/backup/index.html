@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>مراقبة Synology Hyper Backup على هاتفك - Syno Manager</title>
+<meta name="description" content="كل مهمة Hyper Backup مع المساحة التي تشغلها فعلاً في وجهتها، إضافة إلى أجهزة Active Backup for Business والحجم بعد إزالة التكرار حسب نوع الحمل." />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ar/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="مراقبة Synology Hyper Backup على هاتفك - Syno Manager" />
+<meta property="og:description" content="كل مهمة Hyper Backup مع المساحة التي تشغلها فعلاً في وجهتها، إضافة إلى أجهزة Active Backup for Business والحجم بعد إزالة التكرار حسب نوع الحمل." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ar/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="مراقبة Synology Hyper Backup على هاتفك - Syno Manager" />
+<meta name="twitter:description" content="كل مهمة Hyper Backup مع المساحة التي تشغلها فعلاً في وجهتها، إضافة إلى أجهزة Active Backup for Business والحجم بعد إزالة التكرار حسب نوع الحمل." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ar",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "دليل المستخدم",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "النسخ الاحتياطي"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "مراقبة Synology Hyper Backup على هاتفك - Syno Manager",
+  "description": "كل مهمة Hyper Backup مع المساحة التي تشغلها فعلاً في وجهتها، إضافة إلى أجهزة Active Backup for Business والحجم بعد إزالة التكرار حسب نوع الحمل.",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "ar",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل أستطيع بدء نسخ احتياطي من هاتفي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. لكل مهمة Hyper Backup زر Run Now، وتعرض المهمة الجارية شريط تقدم مباشراً يمكنك إلغاؤها منه."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما الفرق بين حجم النسخة الاحتياطية وحجم المصدر؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "حجم المصدر هو كمية البيانات التي تنسخها المهمة. وحجم النسخة الاحتياطية هو المساحة التي تشغلها فعلاً في الوجهة بعد إزالة التكرار والضغط. رؤيتهما معاً هي ما يكشف كم يوفّر لك هذان - وهل تمتلئ الوجهة أسرع مما ينمو المصدر."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يعرض Active Backup for Business؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. تعرض البطاقة وعرض تفاصيلها الحجم الكلي بعد إزالة التكرار لمستودع النسخ الاحتياطي، مقسماً حسب نوع الحمل - PCs والخوادم والأجهزة الافتراضية وأجهزة DSM - مع عدد أجهزة كل نوع، إضافة إلى كل جهاز محمي مع وقت آخر نسخة احتياطية وزر Backup Now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل سيخبرني إذا فشل نسخ احتياطي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. تُعرض حالة كل مهمة، وتؤدي المهمة الفاشلة أيضاً إلى رفع شارة الحالة الصحية في الشاشة الرئيسية، فتعرف دون أن تبحث."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ar/"><img src="/assets/syno-manager-icon.png" alt="أيقونة Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة">
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/guide/" class="active">دليل المستخدم</a>
+      <a href="/ar/#screenshots">لقطات الشاشة</a>
+      <a href="/ar/compatible-nas/">التوافق</a>
+      <a href="/ar/best-synology-nas-app/">لماذا تنتقل إليه</a>
+      <a href="/ar/help/">المساعدة</a>
+      <a href="/ar/#top" class="cta">تنزيل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; النسخ الاحتياطي</div>
+      <div class="eyebrow">النسخ الاحتياطي</div>
+      <h1>هل عمل النسخ الاحتياطي <span class="g">فعلاً؟</span></h1>
+      <p>السؤال الذي يسأله مالك NAS أكثر من غيره، يُجاب عنه في شاشة واحدة. يغطي <b>Backup</b> أداة Hyper Backup؛ ويغطي <b>Active Backup</b> أداة Active Backup for Business.</p>
+    </div>
+    <div class="hero-shot"><img alt="مهام Hyper Backup مع حجم النسخة وحجم المصدر والتشغيل القادم" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>في هذه الصفحة</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">حجم النسخة الاحتياطية مقابل حجم المصدر</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">عندما يفشل شيء</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>كل مهمة، وما تفعله</h2>
+      <p class="lead">ملخص في الأعلى - كم مهمة، وكم منها سليمة، وكم منها متعثرة - ثم بطاقة لكل مهمة.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>المعروض</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>اسم المهمة</td><td>كما سميتها في Hyper Backup.</td></tr>
+        <tr><td>الوجهة</td><td>المكان الذي تُنسخ إليه - Synology C2 أو NAS بعيد أو مجلد محلي أو مزود سحابي.</td></tr>
+        <tr><td>الحالة</td><td><b>خاملة</b> أو قيد التشغيل أو فاشلة. وتعرض المهمة الجارية شريط تقدم مباشراً.</td></tr>
+        <tr><td>حجم النسخة الاحتياطية</td><td>المساحة التي تشغلها المهمة <b>في وجهتها</b>.</td></tr>
+        <tr><td>حجم المصدر</td><td>كمية البيانات التي تنسخها.</td></tr>
+        <tr><td>آخر نسخة احتياطية</td><td>منذ متى انتهى آخر تشغيل.</td></tr>
+        <tr><td>النسخة القادمة</td><td>متى يحين موعد الجدول التالي.</td></tr>
+        <tr><td>Run Now</td><td>يبدأ المهمة فوراً. ويمكن إلغاء المهمة الجارية.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">رقمان، عن قصد</div>
+      <h2>حجم النسخة الاحتياطية بجانب حجم المصدر</h2>
+      <p class="lead">تعرض معظم الأدوات أحدهما فقط. أما معروضين معاً فيجيبان عن أسئلة لا يجيب عنها أي منهما وحده.</p>
+    </div>
+    <ul class="plain">
+      <li><b>كم توفّر لك إزالة التكرار والضغط.</b> مصدر بحجم 758 GB يشغل 814 GB في الوجهة يخبرك بشيء مختلف تماماً عن مصدر يشغل 300 GB - ولا يكشف ذلك إلا الزوج معاً.</li>
+      <li><b>هل توشك الوجهة على الامتلاء.</b> نمو المصدر ونمو الوجهة ليسا المنحنى نفسه، والذي يهم في سؤال «هل سيفشل هذا الشهر القادم» هو الوجهة.</li>
+      <li><b>هل يخرج الإصدار المتعدد عن السيطرة.</b> وجهة تنمو أسرع بكثير من مصدرها تعني عادة سياسة احتفاظ تحتفظ بأكثر مما قصدت.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">رأس يعرض عدد الأجهزة والمهام، ثم حجم المستودع، ثم الأجهزة نفسها.</p>
+        <h3 style="margin-top:20px">حجم النسخة الاحتياطية</h3>
+        <ul class="plain">
+          <li><b>الحجم الكلي بعد إزالة التكرار</b> للمستودع، لكل وحدة تخزين.</li>
+          <li><b>مقسماً حسب نوع الحمل</b> - PCs والخوادم والأجهزة الافتراضية وأجهزة DSM - مع عدد الأجهزة وحجم كل نوع.</li>
+          <li><b>مسمّى بما هو عليه:</b> الحجم بعد إزالة التكرار في الوجهة، كما يبلغ عنه Active Backup. وليس مجموع أحجام المصادر متنكراً في هيئته.</li>
+        </ul>
+        <h3 style="margin-top:22px">الأجهزة</h3>
+        <ul class="plain">
+          <li><b>كل جهاز محمي</b> مع عنوانه ونظام تشغيله.</li>
+          <li><b>آخر نسخة احتياطية</b>، أو <b>Never</b> حين لم يجرِ أي تشغيل - وهذا هو البند الذي يستحق الانتباه.</li>
+          <li><b>Backup Now</b> لكل جهاز.</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business مع حجم المستودع حسب نوع الحمل والأجهزة المحمية" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">عندما يفشل شيء</div>
+      <h2>تعرف دون أن تبحث</h2>
+    </div>
+    <ul class="plain">
+      <li><b>تقول المهمة ذلك</b> على بطاقتها، مع الحالة التي أبلغ عنها NAS.</li>
+      <li><b>تعكس شارة الحالة الصحية في الشاشة الرئيسية</b> ذلك، فيظهر النسخ الاحتياطي الفاشل في أول شاشة تراها لا بعد ثلاث لمسات.</li>
+      <li><b>الجهاز الذي لم يُنسخ احتياطياً قط</b> يُعرض بـ <b>Never</b> لا فراغاً ولا صفراً - فهذان سيُقرآن على أنه «بخير».</li>
+    </ul>
+    <div class="note"><b>ما لن يفعله التطبيق:</b> إنشاء مهمة نسخ احتياطي أو تعديلها، أو تغيير سياسة احتفاظ، أو الاستعادة من نسخة احتياطية. هذه مهمة Hyper Backup نفسه، والاستعادة تحديداً ليست شيئاً تبدأه عن طريق الخطأ على الهاتف.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أسئلة شائعة</div>
+      <h2>الأسئلة الشائعة (FAQ) حول النسخ الاحتياطي</h2>
+    </div>
+    <details open><summary>هل أستطيع بدء نسخ احتياطي من هاتفي؟</summary><div class="body">نعم. لكل مهمة Hyper Backup زر Run Now، وتعرض المهمة الجارية شريط تقدم مباشراً يمكنك إلغاؤها منه.</div></details>
+    <details><summary>ما الفرق بين حجم النسخة الاحتياطية وحجم المصدر؟</summary><div class="body">حجم المصدر هو كمية البيانات التي تنسخها المهمة. وحجم النسخة الاحتياطية هو المساحة التي تشغلها فعلاً في الوجهة بعد إزالة التكرار والضغط. رؤيتهما معاً تُظهر كم توفّر لك هذه، وهل تمتلئ الوجهة أسرع مما ينمو مصدرها.</div></details>
+    <details><summary>هل يعرض Active Backup for Business؟</summary><div class="body">نعم - حجم المستودع بعد إزالة التكرار مقسماً حسب نوع الحمل، مع عدد أجهزة كل نوع، إضافة إلى كل جهاز محمي مع وقت آخر نسخة احتياطية وزر Backup Now.</div></details>
+    <details><summary>هل سيخبرني إذا فشل نسخ احتياطي؟</summary><div class="body">نعم. تُعرض حالة كل مهمة، وتؤدي المهمة الفاشلة أيضاً إلى رفع شارة الحالة الصحية في الشاشة الرئيسية.</div></details>
+    <details><summary>هل أستطيع الاستعادة من نسخة احتياطية في التطبيق؟</summary><div class="body">لا. تتم الاستعادة في Hyper Backup أو Active Backup حيث يوجد منتقي الإصدارات واختيار الوجهة. يراقب التطبيق النسخ الاحتياطية ويطلقها؛ لكنه لا يعيد البيانات.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>التالي: لوحة التحكم</h2>
+    <p class="lead" style="margin:0 auto 24px">المستخدمون والمهام المجدولة وUPS وإعدادات التطبيق نفسه.</p>
+    <p><a class="btn" href="/ar/guide/control-panel/">لوحة التحكم &rarr;</a> &nbsp; <a class="btn ghost" href="/ar/guide/">العودة إلى الدليل</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ar/">الرئيسية</a><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/compatible-nas/">التوافق</a><a href="/ar/best-synology-nas-app/">لماذا التحويل</a><a href="/ar/synology-app-for-iphone/">iPhone وiPad</a><a href="/ar/synology-app-for-android/">Android</a><a href="/ar/synology-app-for-mac-windows/">Mac وWindows</a><a href="/ar/ds-finder-alternative/">مقابل DS finder</a><a href="/ar/help/">المساعدة</a><a href="/ar/privacy/">الخصوصية</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">أبلغ عن خلل</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. تطبيق Syno Manager تطبيق مستقل وليس تابعاً لشركة Synology Inc. ولا معتمداً منها ولا برعايتها. Synology وDSM وDiskStation وRackStation وHyper Backup وActive Backup وSurveillance Station وQuickConnect علامات تجارية مملوكة لشركة Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

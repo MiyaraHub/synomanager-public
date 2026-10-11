@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology CPU, RAM, temperatur og blæsere - Syno Manager</title>
+<meta name="description" content="Følg CPU, RAM, belastning, disk-I/O og temperatur, skift blæserens hastighedstilstand, tjek for DSM-opdateringer, og genstart eller luk din Synology ned fra telefonen." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/da/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology CPU, RAM, temperatur og blæsere - Syno Manager" />
+<meta property="og:description" content="Følg CPU, RAM, belastning, disk-I/O og temperatur, skift blæserens hastighedstilstand, tjek for DSM-opdateringer, og genstart eller luk din Synology ned fra telefonen." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/da/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="da_DK" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology CPU, RAM, temperatur og blæsere - Syno Manager" />
+<meta name="twitter:description" content="Følg CPU, RAM, belastning, disk-I/O og temperatur, skift blæserens hastighedstilstand, tjek for DSM-opdateringer, og genstart eller luk din Synology ned fra telefonen." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "da",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brugervejledning",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "System"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology CPU, RAM, temperatur og blæsere - Syno Manager",
+  "description": "Følg CPU, RAM, belastning, disk-I/O og temperatur, skift blæserens hastighedstilstand, tjek for DSM-opdateringer, og genstart eller luk din Synology ned fra telefonen.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "da",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jeg ændre blæserhastigheden fra appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Systemhelbred har et Køling-kort med Fuld hastighed, Kølig og Stille. Appen læser den tilstand, NAS'en er i, skriver dit valg og læser det tilbage for at bekræfte. En NAS, der melder en tilstand uden for de tre, beholder en skrivebeskyttet visning i stedet for at blive misvist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg genstarte eller lukke min NAS ned fra telefonen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, fra kortet Strømkontrol nederst i Systemhelbred. Begge bekræftes, før de kører, fordi de påvirker alle tilsluttede brugere. Det er værd at tænke sig om to gange, før du lukker ned udefra - en slukket NAS kan ikke vækkes over internettet uden en VPN eller en router sat op til Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvad er Identificér NAS til?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Den blinker NAS'ens statuslys, så du kan se, hvilken boks i et rack eller et skab du kigger på. Sluk bip stopper alarmsummeren uden at fjerne den tilstand, der udløste den - ret også årsagen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Opdateres logs af sig selv?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej, og det er med vilje. En log blev før genlæst på en timer, uanset om du læste i den, hvilket kostede batteri og netværk for ingenting. Nu indlæses den én gang og står stille. Tryk på afspil for at følge den live, tryk igen for at sætte på pause, og den holder selv op med at følge, når du forlader skærmen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg eksportere eller kopiere den log, jeg kigger på?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Tryk længe på en linje for systemets linje med Kopiér / Markér alt / Del, eller brug eksportknappen ved siden af live-kontakten på fanen System eller over listen på fanen Forbindelse. Den åbner et ark med Gem i en fil, Del eller send som e-mail og Kopiér til udklipsholder, og den eksporterer præcis de poster, der er på skærmen efter niveaufilteret og søgningen - én post pr. linje, med tid, niveau, bruger og beskrivelse adskilt af tabulatorer."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/da/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søg i guiden..." data-i18n-empty="Ingen resultater for" data-i18n-language="Sprog">
+      <a href="/da/">Hjem</a>
+      <a href="/da/guide/" class="active">Brugervejledning</a>
+      <a href="/da/#screenshots">Skærmbilleder</a>
+      <a href="/da/compatible-nas/">Kompatibilitet</a>
+      <a href="/da/best-synology-nas-app/">Hvorfor skifte</a>
+      <a href="/da/help/">Hjælp</a>
+      <a href="/da/#top" class="cta">Download</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/da/">Forside</a> &rsaquo; <a href="/da/guide/">Brugerguide</a> &rsaquo; System</div>
+      <div class="eyebrow">System</div>
+      <h1>Hvad boksen <span class="g">egentlig laver</span></h1>
+      <p>Tre undersider: <b>Systemhelbred</b> til maskinens tilstand, <b>Ressourcer</b> til live-diagrammer og <b>Logs</b> til det, DSM har registreret. Plus de kontroller, der ændrer noget - blæsertilstand, identifikationslyset, DSM-opdateringer, genstart og nedlukning.</p>
+    </div>
+    <div class="hero-shot"><img alt="Systemhelbred med CPU- og RAM-målere, gennemsnitlig belastning, disk-I/O og temperaturhistorik" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På denne side</b><ul>
+      <li><a href="#health">Systemsundhed</a></li>
+      <li><a href="#cooling">Køling &amp; blæsertilstand</a></li>
+      <li><a href="#identify">Identificér &amp; alarmer</a></li>
+      <li><a href="#dsm-update">DSM-opdatering</a></li>
+      <li><a href="#power">Strømkontrol</a></li>
+      <li><a href="#resources">Ressourcer</a></li>
+      <li><a href="#logs">Logs</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Systemsundhed</div>
+      <h2>Målingerne</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Kort</th><th>Hvad det viser</th></tr></thead>
+      <tbody>
+        <tr><td>CPU &amp; RAM-målere</td><td>Samlet CPU som en ring, med <b>bruger</b>-andelen fremhævet nedenunder, så du kan skelne din egen belastning fra systemets overhead. RAM viser procenten og de absolutte tal.</td></tr>
+        <tr><td>Hukommelse</td><td>Brugt i forhold til total, som en bjælke. Grøn, indtil det betyder noget.</td></tr>
+        <tr><td>Gennemsnitlig CPU-belastning</td><td>Tal for et, fem og femten minutter - processer, der venter på CPU-tid, ikke en procent. Vurderet mod dit antal kerner, så et sundt tal på en otte-kernet rackmodel er et travlt tal på en med to slots.</td></tr>
+        <tr><td>Disk-I/O</td><td>Læse- og skrivegennemstrømning plus udnyttelsesprocenten - hvor stor en del af tiden diskene var optaget, hvilket ofte er det rigtige svar, når en NAS føles langsom, mens CPU'en ser ledig ud.</td></tr>
+        <tr><td>Temperaturhistorik</td><td>Et rullende diagram med det aktuelle tal. I &deg;C eller &deg;F efter din <a href="/da/guide/settings/#preferences">præference</a>.</td></tr>
+        <tr><td>Processer</td><td>Hvor mange processer NAS'en kører.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Køling</div>
+      <h2>Blæserens hastighedstilstand, ændret fra din telefon</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Køling-kortet viser blæserstatus og den tilstand, NAS'en er i, som en kontakt med tre valg:</p>
+        <ul class="plain">
+          <li><b>Fuld hastighed</b> - maksimal luftstrøm, maksimal støj. Rigtigt til et rack eller et skab.</li>
+          <li><b>Kølig</b> - den afbalancerede standard.</li>
+          <li><b>Stille</b> - lavere hastighed, højere temperaturer. Rigtigt til en NAS i en stue, hvis drevene kan klare det.</li>
+        </ul>
+        <div class="note"><b>Bekræftet, ikke antaget.</b> Appen læser den aktuelle tilstand fra NAS'en, skriver dit valg og <b>læser det tilbage</b>. En tilstand, som NAS'en stille afviste, meldes som afvist, i stedet for at stå på skærmen, som om den var anvendt.</div>
+        <div class="note" style="margin-top:14px"><b>En ukendt tilstand forbliver skrivebeskyttet.</b> Hvis din NAS melder en kølingstilstand uden for de tre, viser kortet, hvad den meldte, og tilbyder ikke at ændre den - i stedet for at fejlbetegne den som en af de tre, det kender.</div>
+      </div>
+      <img alt="Køling-kortet med Fuld hastighed, Kølig og Stille, plus Identificér og Strømkontrol" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identificér &amp; alarmer</div>
+      <h2>Find boksen, tys på summeren</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Identificér</b> blinker NAS'ens statuslys, så du kan se, hvilken enhed du står foran. <b>Stop</b> afslutter det.</li>
+      <li><b>Sluk bip</b> stopper alarmsummeren. Det dæmper lyden, ikke tilstanden - det, der udløste alarmen, er stadig sandt, og helbredsoverskriften vil stadig sige det.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM-opdatering</div>
+      <h2>Findes der en firmwareopdatering</h2>
+      <p class="lead">Kortet DSM-opdatering melder, hvilken version du kører, og om Synology har noget nyere. <b>Søg efter opdatering</b> beder NAS'en om at kigge igen.</p>
+    </div>
+    <div class="note"><b>Det er din NAS' firmware, ikke appen.</b> Syno Manager opdaterer sig selv via App Store eller Google Play som enhver anden app. Dette kort er DSM's egen opdateringsflade, den samme som i Kontrolpanel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Strømkontrol</div>
+      <h2>Genstart og nedlukning</h2>
+      <p class="lead">Nederst i Systemhelbred og markeret med rødt, fordi de påvirker alle tilsluttede brugere - også ham, der er midt i en filkopiering.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Genstart NAS</b> - en ren genstart. Bekræftes, før den kører.</li>
+      <li><b>Luk NAS ned</b> - en ren slukning. Bekræftes, før den kører.</li>
+    </ul>
+    <div class="note stop"><b>Tænk dig om, før du lukker ned udefra.</b> En slukket NAS kan ikke videresende sin egen opvågningspakke. At få den tilbage fra uden for dit netværk kræver en VPN ind til den eller en router sat op til at videresende Wake-on-LAN. Se <a href="/da/guide/wake-on-lan/">Wake-on-LAN</a> for, hvad der virker hvorfra.</div>
+    <div class="note" style="margin-top:14px"><b>Genveje springer ikke bekræftelsen over.</b> <a href="/da/guide/shortcuts/">Linkene</a> <code>synomanager://reboot</code> og <code>synomanager://shutdown</code> <em>åbner med vilje kun appen</em> på denne skærm. En destruktiv handling bliver ikke et enkelt tryk, fordi den blev udløst fra en launcher.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Ressourcer</div>
+      <h2>Live-diagrammer</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Ressourcediagrammer for CPU, hukommelse, disklæsning og diskskrivning" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Undersiden Ressourcer er de samme data som en rullende graf, hvilket er det, du vil have, når spørgsmålet er »er det en spids, eller er det konstant?«</p>
+        <ul class="plain">
+          <li><b>CPU-forbrug</b> med opdeling i bruger og system.</li>
+          <li><b>Hukommelsesforbrug</b> med brugt i forhold til total.</li>
+          <li><b>Disklæsning</b> og <b>Diskskrivning</b>, hver med sit eget diagram, plus samlet diskudnyttelse.</li>
+          <li><b>Gennemsnitlig belastning</b> over et, fem og femten minutter.</li>
+        </ul>
+        <div class="note">Diagrammerne udfyldes med <a href="/da/guide/settings/#preferences">opdateringsintervallet</a>. Et kortere interval giver finere detaljer og koster mere batteri; et længere er mildere og grovere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Logs</div>
+      <h2>Hvad DSM har registreret</h2>
+      <p class="lead">To faner: <b>System</b> til DSM's egen log og <b>Forbindelse</b> til logins og filadgang. Begge læses, når du beder om det.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Den indlæses én gang og står stille.</b> En log, der genlæses på en timer, mens du prøver at læse en linje, er ubrugelig og koster batteri og netværk for ingenting.</li>
+      <li><b>Tryk på afspil for at følge live.</b> Tryk igen for at sætte på pause. Følgningen stopper af sig selv, når du forlader skærmen eller sender appen i baggrunden, så en glemt logfane ikke i det stille henter data i din lomme.</li>
+      <li><b>Der er et søgefelt</b> til at finde en enkelt linje i en lang log.</li>
+      <li><b>Container- og stack-logs fungerer på samme måde</b> - se <a href="/da/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Teksten kan markeres.</b> Tryk længe på en linje, så kommer systemets linje med Kopiér / Markér alt / Del frem, ligesom alle andre steder, hvor der står tekst på skærmen.</li>
+      <li><b>Eksportér det, du kigger på.</b> En eksportknap sidder ved siden af live-kontakten på fanen System og over listen på fanen Forbindelse. Den åbner et ark med tre veje ud: <b>Gem i en fil</b>, <b>Del</b> for at sende den eller maile den, eller <b>Kopiér til udklipsholder</b>.</li>
+    </ul>
+    <div class="note"><b>Den eksporterer det, der er på skærmen, ikke hele loggen.</b> Det, som niveaufilteret og søgefeltet har indsnævret listen til, er det, der kommer ud - intet, du allerede har filtreret væk, kommer tilbage i eksporten. Filen er ren tekst, én post pr. linje, med tid, niveau, bruger og beskrivelse adskilt af tabulatorer.</div>
+    <div class="note warn"><b>Hvis loggen ikke vil indlæses</b> og melder timeout på forbindelsen, mens resten af appen er fin, er det Log Center-tjenesten på NAS'en, der ikke svarer, ikke din forbindelse. Tjek, at Log Center er installeret og kører i DSM's Pakkecenter - system-log-API'et er en del af den.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ofte stillede spørgsmål</div>
+      <h2>FAQ om system</h2>
+    </div>
+    <details open><summary>Kan jeg ændre blæserhastigheden fra appen?</summary><div class="body">Ja. Systemhelbred har et Køling-kort med Fuld hastighed, Kølig og Stille. Appen læser den tilstand, NAS'en er i, skriver dit valg og læser det tilbage for at bekræfte. En NAS, der melder en tilstand uden for de tre, beholder en skrivebeskyttet visning i stedet for at blive misvist.</div></details>
+    <details><summary>Kan jeg genstarte eller lukke min NAS ned fra telefonen?</summary><div class="body">Ja, fra Strømkontrol nederst i Systemhelbred. Begge bekræftes, før de kører. Det er værd at tænke sig om to gange, før du lukker ned udefra - en slukket NAS kan ikke vækkes over internettet uden en VPN eller en router sat op til Wake-on-LAN.</div></details>
+    <details><summary>Hvad er Identificér NAS til?</summary><div class="body">Den blinker NAS'ens statuslys, så du kan se, hvilken boks i et rack eller et skab du kigger på. Sluk bip stopper alarmsummeren uden at fjerne den tilstand, der udløste den.</div></details>
+    <details><summary>Opdateres logs af sig selv?</summary><div class="body">Nej, og det er med vilje. En log indlæses én gang og står stille, så du kan læse den. Tryk på afspil for at følge den live, tryk igen for at sætte på pause, og den holder selv op med at følge, når du forlader skærmen eller sender appen i baggrunden.</div></details>
+    <details><summary>Kan jeg eksportere eller kopiere den log, jeg kigger på?</summary><div class="body">Ja. Tryk længe på en linje for systemets linje med Kopiér / Markér alt / Del, eller brug eksportknappen ved siden af live-kontakten på fanen System eller over listen på fanen Forbindelse. Den åbner et ark med Gem i en fil, Del eller send som e-mail og Kopiér til udklipsholder, og den eksporterer præcis de poster, der er på skærmen efter niveaufilteret og søgningen - én post pr. linje, med tid, niveau, bruger og beskrivelse adskilt af tabulatorer.</div></details>
+    <details><summary>Hvorfor er min gennemsnitlige belastning høj, når CPU'en ser fin ud?</summary><div class="body">Gennemsnitlig belastning tæller processer, der venter, og de venter ofte på diske frem for CPU. Tjek disk-I/O-udnyttelsen på samme skærm - en høj udnyttelsesprocent med lav CPU er den sædvanlige forklaring.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Næste: Lager</h2>
+    <p class="lead" style="margin:0 auto 24px">Diske, puljer, SMART-helbred pr. drev og sikker udskubning.</p>
+    <p><a class="btn" href="/da/guide/storage/">Lager &amp; drev &rarr;</a> &nbsp; <a class="btn ghost" href="/da/guide/">Tilbage til guiden</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/da/">Hjem</a><a href="/da/guide/">Brugervejledning</a><a href="/da/guide/getting-started/">Kom i gang</a><a href="/da/compatible-nas/">Kompatibilitet</a><a href="/da/best-synology-nas-app/">Hvorfor skifte</a><a href="/da/synology-app-for-iphone/">iPhone & iPad</a><a href="/da/synology-app-for-android/">Android</a><a href="/da/synology-app-for-mac-windows/">Mac & Windows</a><a href="/da/ds-finder-alternative/">vs DS finder</a><a href="/da/help/">Hjælp</a><a href="/da/privacy/">Privatliv</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportér en fejl</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uafhængig app og er ikke tilknyttet, godkendt eller sponsoreret af Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemærker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

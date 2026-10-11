@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gerir utilizadores, tarefas e UPS do Synology - Syno Manager</title>
+<meta name="description" content="Gira contas de utilizador do Synology com contas do sistema protegidas, execute e ative tarefas agendadas e leia a carga da UPS e a autonomia estimada no telemóvel." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/pt/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Gerir utilizadores, tarefas e UPS do Synology - Syno Manager" />
+<meta property="og:description" content="Gira contas de utilizador do Synology com contas do sistema protegidas, execute e ative tarefas agendadas e leia a carga da UPS e a autonomia estimada no telemóvel." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/pt/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="pt_PT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gerir utilizadores, tarefas e UPS do Synology - Syno Manager" />
+<meta name="twitter:description" content="Gira contas de utilizador do Synology com contas do sistema protegidas, execute e ative tarefas agendadas e leia a carga da UPS e a autonomia estimada no telemóvel." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "pt",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Início",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guia do utilizador",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Painel de controlo"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Gerir utilizadores, tarefas e UPS do Synology - Syno Manager",
+  "description": "Gira contas de utilizador do Synology com contas do sistema protegidas, execute e ative tarefas agendadas e leia a carga da UPS e a autonomia estimada no telemóvel.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "pt",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posso adicionar ou editar utilizadores do DSM a partir da aplicação?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Adicione um utilizador, edite os seus dados, mude uma palavra-passe ou elimine uma conta. As contas do sistema - admin, guest e as contas de serviço que o DSM cria - são detetadas e protegidas contra eliminação, porque remover uma estraga o NAS de formas tediosas de desfazer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso executar manualmente uma tarefa agendada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim, nas tarefas que o DSM permite disparar - cada uma tem um Executar agora. Também pode ativar ou desativar qualquer tarefa sem abrir o DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que mostra o ecrã da UPS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O modelo da UPS, se está ligada à rede ou a bateria, a carga em percentagem e numa barra, como está ligada, a autonomia estimada restante e se o suporte de UPS está ativado no NAS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso alterar quanto tempo o NAS espera antes de se desligar com a bateria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. A aplicação comunica o estado da UPS; a política de encerramento define-se no DSM em Hardware e Energia, onde as consequências da definição estão explicadas."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/pt/"><img src="/assets/syno-manager-icon.png" alt="Ícone do Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Pesquisar no guia..." data-i18n-empty="Sem resultados para" data-i18n-language="Idioma">
+      <a href="/pt/">Início</a>
+      <a href="/pt/guide/" class="active">Guia do utilizador</a>
+      <a href="/pt/#screenshots">Capturas de ecrã</a>
+      <a href="/pt/compatible-nas/">Compatibilidade</a>
+      <a href="/pt/best-synology-nas-app/">Porquê mudar</a>
+      <a href="/pt/help/">Ajuda</a>
+      <a href="/pt/#top" class="cta">Transferir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/pt/">Início</a> &rsaquo; <a href="/pt/guide/">Guia do utilizador</a> &rsaquo; Painel de controlo</div>
+      <div class="eyebrow">Painel de controlo</div>
+      <h1>Contas, horários <span class="g">e energia</span></h1>
+      <p>Quatro sub-vistas: <b>Utilizadores</b>, <b>Tarefas</b>, <b>Energia</b> para a UPS e <b>Definições</b> - as preferências da própria aplicação, acessíveis sem sair do separador em que está.</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler com tarefas agendadas, interruptores e Executar agora" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Nesta página</b><ul>
+      <li><a href="#users">Utilizadores</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Definições</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Utilizadores</div>
+      <h2>Contas do DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Todas as contas do NAS, com o nome a apresentar, a descrição e o endereço de email quando definido. Uma etiqueta <b>Expirada</b> assinala as contas que o DSM desativou.</p>
+        <h3 style="margin-top:20px">O que pode fazer</h3>
+        <ul class="plain">
+          <li><b>Adicionar um utilizador</b> com os dados que o DSM pede.</li>
+          <li><b>Editar</b> uma conta existente.</li>
+          <li><b>Mudar uma palavra-passe.</b></li>
+          <li><b>Eliminar</b> uma conta que tenha criado.</li>
+        </ul>
+        <div class="note"><b>As contas do sistema não podem ser eliminadas.</b> <code>admin</code>, <code>guest</code> e as contas de serviço que o DSM cria para os seus próprios pacotes são detetadas e protegidas. Remover uma delas estraga o NAS de formas tediosas de desfazer, e um telemóvel não é o lugar para o descobrir.</div>
+      </div>
+      <img alt="Contas de utilizador do DSM, com dois nomes e endereços ocultados" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Duas contas nesta captura de ecrã estão desfocadas - são nomes e endereços de pessoas reais.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>O que está agendado e o que corre a seguir</h2>
+      <p class="lead">Cada tarefa que o DSM tem, se está ativada, o que faz e quando dispara a seguir.</p>
+    </div>
+    <ul class="plain">
+      <li><b>O nome da tarefa e o seu tipo</b> - uma tarefa do Hyper Backup, um script definido pelo utilizador, uma limpeza da reciclagem - cada uma identificada com o tipo de coisa que é.</li>
+      <li><b>O que realmente faz.</b> Uma tarefa de script mostra o comando que executa; uma tarefa de cópia mostra a sua descrição.</li>
+      <li><b>Próxima execução</b>, como data e hora.</li>
+      <li><b>Um interruptor por tarefa</b> para a ativar ou desativar sem abrir o DSM.</li>
+      <li><b>Executar agora</b> nas tarefas que o DSM permite disparar a pedido.</li>
+    </ul>
+    <div class="note warn"><b>Executar agora executa agora.</b> Um script agendado que espera correr às 3h num NAS parado comportar-se-á de forma diferente às 18h durante uma cópia de ficheiros. O botão faz o que diz.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Alimentação</div>
+      <h2>A UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Estado da UPS com modelo, carga, modo de ligação e autonomia estimada" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Presente quando há uma UPS ligada. Um cartão, com tudo.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Mostrado</th><th>Significado</th></tr></thead>
+          <tbody>
+            <tr><td>Fabricante e modelo</td><td>Tal como a UPS se identifica.</td></tr>
+            <tr><td>Estado</td><td><b>Online</b> na rede elétrica, ou a bateria.</td></tr>
+            <tr><td>Carga</td><td>Percentagem e uma barra. Âmbar abaixo de 50%, vermelho abaixo de 20%.</td></tr>
+            <tr><td>Modo</td><td>Como o NAS comunica com ela - USB ou pela rede.</td></tr>
+            <tr><td>Autonomia</td><td>Durante quanto tempo a UPS estima conseguir suportar a carga.</td></tr>
+            <tr><td>Ativada</td><td>Se o suporte de UPS está ligado no DSM, afinal.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>A carga alimenta o indicador de estado.</b> Uma UPS que se está a descarregar aparece no <a href="/pt/guide/home/#header">ecrã inicial</a> sem abrir este separador - o que é o essencial, porque quando pensar em verificar, pode já não ter muito tempo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Definições</div>
+      <h2>As preferências da própria aplicação</h2>
+      <p class="lead">A quarta sub-vista é Definições, incorporada aqui para poder mudar o intervalo de consulta ou a cor de destaque sem sair do separador. É o mesmo ecrã que o ícone da engrenagem abre.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/pt/guide/settings/">Todas as definições, explicadas</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Perguntas frequentes</div>
+      <h2>Perguntas frequentes sobre o Painel de controlo</h2>
+    </div>
+    <details open><summary>Posso adicionar ou editar utilizadores do DSM a partir da aplicação?</summary><div class="body">Sim. Adicione um utilizador, edite os seus dados, mude uma palavra-passe ou elimine uma conta. As contas do sistema - admin, guest e as contas de serviço que o DSM cria - são detetadas e protegidas contra eliminação.</div></details>
+    <details><summary>Posso executar manualmente uma tarefa agendada?</summary><div class="body">Sim, nas tarefas que o DSM permite disparar. Também pode ativar ou desativar qualquer tarefa sem abrir o DSM.</div></details>
+    <details><summary>O que mostra o ecrã da UPS?</summary><div class="body">O modelo da UPS, se está ligada à rede ou a bateria, a carga em percentagem e numa barra, como está ligada, a autonomia estimada restante e se o suporte de UPS está ativado no NAS.</div></details>
+    <details><summary>Posso alterar a política de encerramento com a bateria?</summary><div class="body">Não. A aplicação comunica o estado da UPS; a política define-se no DSM em Hardware e Energia, onde as consequências estão explicadas.</div></details>
+    <details><summary>Porque falta a sub-vista Energia?</summary><div class="body">Porque não há UPS ligada, ou o suporte de UPS está desativado no DSM. A aplicação oculta ecrãs de hardware que não existe.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seguinte: o Assistente</h2>
+    <p class="lead" style="margin:0 auto 24px">Faça uma pergunta ao seu NAS, com resposta de um modelo no seu telemóvel.</p>
+    <p><a class="btn" href="/pt/guide/assistant/">O Assistente &rarr;</a> &nbsp; <a class="btn ghost" href="/pt/guide/">Voltar ao guia</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/pt/">Início</a><a href="/pt/guide/">Guia do utilizador</a><a href="/pt/guide/getting-started/">Primeiros passos</a><a href="/pt/compatible-nas/">Compatibilidade</a><a href="/pt/best-synology-nas-app/">Porquê mudar</a><a href="/pt/synology-app-for-iphone/">iPhone & iPad</a><a href="/pt/synology-app-for-android/">Android</a><a href="/pt/synology-app-for-mac-windows/">Mac & Windows</a><a href="/pt/ds-finder-alternative/">vs DS finder</a><a href="/pt/help/">Ajuda</a><a href="/pt/privacy/">Privacidade</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Comunicar um erro</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. O Syno Manager é uma aplicação independente e não é afiliado, aprovado nem patrocinado pela Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station e QuickConnect são marcas comerciais da Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

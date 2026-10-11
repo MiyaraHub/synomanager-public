@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SynologyのCPU、RAM、温度、ファン - Syno Manager</title>
+<meta name="description" content="CPU、RAM、負荷、ディスクI/O、温度を監視し、ファン速度モードの変更、DSMのアップデート確認、Synologyの再起動やシャットダウンをスマートフォンから行えます。" />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="SynologyのCPU、RAM、温度、ファン - Syno Manager" />
+<meta property="og:description" content="CPU、RAM、負荷、ディスクI/O、温度を監視し、ファン速度モードの変更、DSMのアップデート確認、Synologyの再起動やシャットダウンをスマートフォンから行えます。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="SynologyのCPU、RAM、温度、ファン - Syno Manager" />
+<meta name="twitter:description" content="CPU、RAM、負荷、ディスクI/O、温度を監視し、ファン速度モードの変更、DSMのアップデート確認、Synologyの再起動やシャットダウンをスマートフォンから行えます。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "システム"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "SynologyのCPU、RAM、温度、ファン - Syno Manager",
+  "description": "CPU、RAM、負荷、ディスクI/O、温度を監視し、ファン速度モードの変更、DSMのアップデート確認、Synologyの再起動やシャットダウンをスマートフォンから行えます。",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "ja",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "アプリからファン速度を変更できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。システムヘルスの冷却カードに、フルスピード、クール、静音の3つのモードがあります。アプリはNASの現在のモードを読み取り、選択内容を書き込み、読み戻して確認します。この3つ以外のモードをNASが報告した場合は、誤って表示せず、読み取り専用の表示のままになります。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スマートフォンからNASを再起動・シャットダウンできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。システムヘルスの下部にある電源コントロールカードから可能です。どちらも接続中のすべてのユーザーに影響するため、実行前に確認が表示されます。リモートでのシャットダウンはよく考えてください。電源が切れたNASは、VPNかWake-on-LAN対応のルーター設定がなければ、インターネット経由で起動できません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「NASを識別」は何のためのものですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NASのステータスランプを点滅させるので、ラックや戸棚の中で目の前にあるのがどのNASかわかります。「ビープ音を消す」はアラームのブザーを止めますが、鳴らした原因が解消されるわけではないので、原因にも対処してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ログは自動的に更新されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。これは意図的な仕様です。以前のログは、読んでいるかどうかに関係なくタイマーで再読み込みされ、バッテリーと通信を無駄に消費していました。現在は一度だけ読み込まれ、そのまま止まっています。再生を押すとリアルタイムで追従し、もう一度押すと一時停止します。画面を離れると自動的に追従を停止します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "表示しているログを書き出したりコピーしたりできますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。任意の行を長押しすると、システムの「コピー / すべて選択 / 共有」バーが表示されます。または、システムタブのライブ切り替えの横、接続タブのリストの上にあるエクスポートボタンも使えます。ファイルに保存、共有またはメール、クリップボードにコピーを選べるシートが開き、レベルフィルターと検索で絞り込んだ後の画面上のエントリがそのまま書き出されます。1行に1エントリで、時刻、レベル、ユーザー、説明がタブで区切られます。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; システム</div>
+      <div class="eyebrow">システム</div>
+      <h1>NASが<span class="g">実際に何をしているか</span></h1>
+      <p>3つのサブビュー：マシンの状態を確認する<b>システムヘルス</b>、リアルタイムチャートの<b>リソース</b>、DSMが記録した内容を確認する<b>ログ</b>。さらに、ファンモード、識別ライト、DSMのアップデート、再起動、シャットダウンなど、実際に何かを変える操作も備えています。</p>
+    </div>
+    <div class="hero-shot"><img alt="CPUとRAMのゲージ、負荷平均、ディスクI/O、温度履歴を表示したシステムヘルス" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#health">システムの状態</a></li>
+      <li><a href="#cooling">冷却 &amp; ファンモード</a></li>
+      <li><a href="#identify">識別 &amp; アラート</a></li>
+      <li><a href="#dsm-update">DSMのアップデート</a></li>
+      <li><a href="#power">電源コントロール</a></li>
+      <li><a href="#resources">リソース</a></li>
+      <li><a href="#logs">ログ</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">システムの状態</div>
+      <h2>測定値</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>カード</th><th>表示内容</th></tr></thead>
+      <tbody>
+        <tr><td>CPU &amp; RAMのゲージ</td><td>CPU全体をリングで表示し、その下に<b>ユーザー</b>の割合も表示するので、自分のワークロードとシステムのオーバーヘッドを区別できます。RAMはパーセンテージと実際の数値を表示します。</td></tr>
+        <tr><td>メモリ</td><td>使用量を合計に対するバーで表示します。問題になるまでは緑です。</td></tr>
+        <tr><td>CPU負荷平均</td><td>1分、5分、15分の値で、CPU時間を待っているプロセスの数であり、パーセンテージではありません。コア数と照らして判断するため、8コアのラックマウント機では健全な値が、2ベイ機では高負荷になります。</td></tr>
+        <tr><td>ディスクI/O</td><td>読み取りと書き込みのスループットと使用率のパーセンテージ。ディスクがどれだけの時間ビジー状態だったかを示し、CPUは空いているのにNASが遅く感じられるときの本当の原因であることがよくあります。</td></tr>
+        <tr><td>温度履歴</td><td>現在の値付きの推移チャート。<a href="/ja/guide/settings/#preferences">設定</a>に従い、&deg;Cまたは&deg;Fで表示されます。</td></tr>
+        <tr><td>プロセス</td><td>NASで実行中のプロセスの数です。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">冷却</div>
+      <h2>スマートフォンから変更できるファン速度モード</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">冷却カードには、ファンの状態とNASの現在のモードが3段階の切り替えで表示されます。</p>
+        <ul class="plain">
+          <li><b>フルスピード</b> - 最大の風量で、騒音も最大。ラックや戸棚の中に向いています。</li>
+          <li><b>クール</b> - バランスの取れたデフォルトです。</li>
+          <li><b>静音</b> - 速度を抑え、温度は高め。ドライブが耐えられるなら、リビングに置くNASに向いています。</li>
+        </ul>
+        <div class="note"><b>想定ではなく確認します。</b>アプリはNASから現在のモードを読み取り、選択内容を書き込んだあと、<b>読み戻します</b>。NASが黙って拒否したモードは、適用されたように画面に残るのではなく、拒否されたと報告されます。</div>
+        <div class="note" style="margin-top:14px"><b>認識できないモードは読み取り専用のままです。</b>この3つ以外の冷却モードをNASが報告した場合、カードは報告された内容を表示するだけで変更は提示しません。知っている3つのどれかに誤って当てはめることはありません。</div>
+      </div>
+      <img alt="フルスピード、クール、静音に加え、識別と電源コントロールを備えた冷却カード" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">識別 &amp; アラート</div>
+      <h2>NASを見つけて、ブザーを止める</h2>
+    </div>
+    <ul class="plain">
+      <li><b>識別</b>はNASのステータスランプを点滅させるので、目の前にあるのがどのNASかわかります。<b>停止</b>で終了します。</li>
+      <li><b>ビープ音を消す</b>はアラームのブザーを止めます。止まるのは音であって、状態ではありません。アラームを鳴らした原因は残ったままで、ヘルスのヘッダーにもそのとおり表示されます。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSMのアップデート</div>
+      <h2>ファームウェアのアップデートはあるか</h2>
+      <p class="lead">DSMアップデートカードには、現在のバージョンと、Synologyから新しいものが出ているかどうかが表示されます。<b>アップデートを確認</b>でNASにもう一度確認させます。</p>
+    </div>
+    <div class="note"><b>これはNASのファームウェアであり、アプリではありません。</b>Syno Manager は、他のアプリと同じくApp StoreまたはGoogle Playから更新します。このカードはDSM自身のアップデート画面で、コントロールパネルにあるものと同じです。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">電源コントロール</div>
+      <h2>再起動とシャットダウン</h2>
+      <p class="lead">システムヘルスの下部にあり、赤で示されています。ファイルのコピー中のユーザーを含め、接続中のすべてのユーザーに影響するためです。</p>
+    </div>
+    <ul class="plain">
+      <li><b>NASを再起動</b> - 正常な再起動です。実行前に確認が表示されます。</li>
+      <li><b>NASをシャットダウン</b> - 正常な電源オフです。実行前に確認が表示されます。</li>
+    </ul>
+    <div class="note stop"><b>リモートでのシャットダウンは慎重に。</b>電源が切れたNASは、自分のWakeパケットを中継できません。ネットワークの外から復帰させるには、NASへのVPN接続か、Wake-on-LANを転送するよう設定したルーターが必要です。どこから何ができるかは<a href="/ja/guide/wake-on-lan/">Wake-on-LAN</a>をご覧ください。</div>
+    <div class="note" style="margin-top:14px"><b>ショートカットでも確認は省略されません。</b><code>synomanager://reboot</code>と<code>synomanager://shutdown</code>の<a href="/ja/guide/shortcuts/">リンク</a>は、意図的にこの画面で<em>アプリを開くだけ</em>です。ランチャーから実行したからといって、破壊的な操作がワンタップになることはありません。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">リソース</div>
+      <h2>リアルタイムチャート</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="CPU、メモリ、ディスク読み取り、ディスク書き込みのリソースモニターチャート" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">リソースサブビューは同じデータを推移グラフで表示するもので、「これは一時的なスパイクか、それとも継続しているのか」を知りたいときに役立ちます。</p>
+        <ul class="plain">
+          <li><b>CPU使用率</b>。ユーザーとシステムの内訳付き。</li>
+          <li><b>メモリ使用率</b>。使用量と合計の比較付き。</li>
+          <li><b>ディスク読み取り</b>と<b>ディスク書き込み</b>。それぞれ専用のチャートと、ディスク全体の使用率付き。</li>
+          <li><b>負荷平均</b>。1分、5分、15分。</li>
+        </ul>
+        <div class="note">チャートは<a href="/ja/guide/settings/#preferences">ポーリング間隔</a>ごとに更新されます。間隔を短くすると細かくなりバッテリー消費は増え、長くすると負担は軽くなりますが粗くなります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">ログ</div>
+      <h2>DSMが記録した内容</h2>
+      <p class="lead">2つのタブ：DSM自身のログを見る<b>システム</b>と、サインインやファイルアクセスを見る<b>接続</b>。どちらも、要求したときに読み込まれます。</p>
+    </div>
+    <ul class="plain">
+      <li><b>一度だけ読み込まれ、そのまま止まっています。</b>1行を読もうとしているときにタイマーで再読み込みされるログは役に立たず、バッテリーと通信も無駄に消費します。</li>
+      <li><b>再生を押すとリアルタイムで追従します。</b>もう一度押すと一時停止します。画面を離れたりアプリをバックグラウンドにしたりすると自動的に追従を停止するので、開きっぱなしのログタブがポケットの中で黙ってポーリングを続けることはありません。</li>
+      <li><b>検索ボックス</b>があり、長いログの中から1行を探せます。</li>
+      <li><b>コンテナーとスタックのログも同じ仕組みです。</b><a href="/ja/guide/apps/#docker">Docker</a>をご覧ください。</li>
+      <li><b>テキストは選択できます。</b>行を長押しすると、システムの「コピー / すべて選択 / 共有」バーが表示されます。画面上の他のテキストと同じです。</li>
+      <li><b>表示している内容を書き出せます。</b>システムタブのライブ切り替えの横、接続タブのリストの上にエクスポートボタンがあります。3つの出力方法のシートが開きます：<b>ファイルに保存</b>、送信やメールのための<b>共有</b>、<b>クリップボードにコピー</b>。</li>
+    </ul>
+    <div class="note"><b>書き出されるのは画面上の内容で、ログ全体ではありません。</b>レベルフィルターのチップと検索ボックスで絞り込んだリストがそのまま書き出され、すでに除外した内容がエクスポートに戻ってくることはありません。ファイルはプレーンテキストで、1行に1エントリ、時刻、レベル、ユーザー、説明がタブで区切られます。</div>
+    <div class="note warn"><b>ログが読み込まれず</b>、アプリの他の部分は問題ないのに接続タイムアウトと表示される場合、応答していないのは接続ではなく、NAS上のログセンターサービスです。DSMのパッケージセンターで、ログセンターがインストールされ実行中か確認してください。システムログAPIはその一部です。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>システムに関するよくある質問</h2>
+    </div>
+    <details open><summary>アプリからファン速度を変更できますか？</summary><div class="body">はい。システムヘルスの冷却カードに、フルスピード、クール、静音の3つのモードがあります。アプリはNASの現在のモードを読み取り、選択内容を書き込み、読み戻して確認します。この3つ以外のモードをNASが報告した場合は、誤って表示せず、読み取り専用の表示のままになります。</div></details>
+    <details><summary>スマートフォンからNASを再起動・シャットダウンできますか？</summary><div class="body">はい、システムヘルスの下部にある電源コントロールから可能です。どちらも実行前に確認が表示されます。リモートでのシャットダウンはよく考えてください。電源が切れたNASは、VPNかWake-on-LAN対応のルーター設定がなければ、インターネット経由で起動できません。</div></details>
+    <details><summary>「NASを識別」は何のためのものですか？</summary><div class="body">NASのステータスランプを点滅させるので、ラックや戸棚の中で目の前にあるのがどのNASかわかります。「ビープ音を消す」はアラームのブザーを止めますが、鳴らした原因が解消されるわけではありません。</div></details>
+    <details><summary>ログは自動的に更新されますか？</summary><div class="body">いいえ。これは意図的な仕様です。ログは一度だけ読み込まれ、読めるようにそのまま止まっています。再生を押すとリアルタイムで追従し、もう一度押すと一時停止します。画面を離れたりアプリをバックグラウンドにしたりすると、自動的に追従を停止します。</div></details>
+    <details><summary>表示しているログを書き出したりコピーしたりできますか？</summary><div class="body">はい。任意の行を長押しすると、システムの「コピー / すべて選択 / 共有」バーが表示されます。または、システムタブのライブ切り替えの横、接続タブのリストの上にあるエクスポートボタンも使えます。ファイルに保存、共有またはメール、クリップボードにコピーを選べるシートが開き、レベルフィルターと検索で絞り込んだ後の画面上のエントリがそのまま書き出されます。1行に1エントリで、時刻、レベル、ユーザー、説明がタブで区切られます。</div></details>
+    <details><summary>CPUは問題なさそうなのに、負荷平均が高いのはなぜですか？</summary><div class="body">負荷平均は待機中のプロセスを数えたもので、その多くはCPUではなくディスクを待っています。同じ画面でディスクI/Oの使用率を確認してください。CPUが低いのに使用率のパーセンテージが高ければ、それが通常の原因です。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：ストレージ</h2>
+    <p class="lead" style="margin:0 auto 24px">ボリューム、プール、ドライブごとのSMARTヘルス、安全な取り外し。</p>
+    <p><a class="btn" href="/ja/guide/storage/">ストレージ &amp; ドライブ &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

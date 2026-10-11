@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>אחסון, RAID ובריאות SMART של Synology - Syno Manager</title>
+<meta name="description" content="נפחים ובריכות של Synology עם סוג RAID ומקום פנוי, מצב SMART וטמפרטורה לכל כונן, בדיקת SMART מהירה, והוצאה בטוחה של USB ושל eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="אחסון, RAID ובריאות SMART של Synology - Syno Manager" />
+<meta property="og:description" content="נפחים ובריכות של Synology עם סוג RAID ומקום פנוי, מצב SMART וטמפרטורה לכל כונן, בדיקת SMART מהירה, והוצאה בטוחה של USB ושל eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="אחסון, RAID ובריאות SMART של Synology - Syno Manager" />
+<meta name="twitter:description" content="נפחים ובריכות של Synology עם סוג RAID ומקום פנוי, מצב SMART וטמפרטורה לכל כונן, בדיקת SMART מהירה, והוצאה בטוחה של USB ושל eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Storage"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "אחסון, RAID ובריאות SMART של Synology - Syno Manager",
+  "description": "נפחים ובריכות של Synology עם סוג RAID ומקום פנוי, מצב SMART וטמפרטורה לכל כונן, בדיקת SMART מהירה, והוצאה בטוחה של USB ושל eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם אפשר לראות את מצב ה-SMART של כל כונן?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. תצוגת המשנה בריאות כוננים מציגה כל כונן עם הדגם שלו, אם הוא HDD או SSD, הקיבולת, הטמפרטורה ופסק ה-SMART שלו. אפשר גם להתחיל בדיקת SMART מהירה בכל כונן מהטלפון."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "איזו טמפרטורה חמה מדי לכונן NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "האפליקציה צובעת כונן בענבר מעל 45 מעלות צלזיוס ובאדום מעל 55 מעלות צלזיוס, ואת טמפרטורת המערכת בענבר מעל 50 ובאדום מעל 60. הספים האלה מזינים גם את תג הבריאות במסך הבית, כך שכונן חם מופיע שם בלי שתצטרך לחפש."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר להוציא כונן USB בבטחה מהאפליקציה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן, מתצוגת המשנה חיצוני. ההוצאה מאושרת לפי כך שהכונן באמת עוזב את רשימת ההתקנים, ולא לפי כך שהבקשה התקבלה - כך שכונן שאומר שהוצא באמת הוצא. אי אפשר להוציא כונן שמתפרמט או מאותחל."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר ליצור או להרחיב נפח מהאפליקציה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא. יצירה, הרחבה ותיקון של נפחים ובריכות נעשים במנהל האחסון של DSM. האפליקציה מדווחת מה האחסון שלך עושה ומאפשרת לפעול על כוננים; היא לא משנה את מבנה המערך שלך מטלפון."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; אחסון</div>
+      <div class="eyebrow">Storage</div>
+      <h1>כל נפח, <span class="g">כל כונן</span></h1>
+      <p>שלוש תצוגות משנה: <b>נפחים &amp; בריכות</b> לקיבולת ול-RAID, <b>בריאות כוננים</b> ל-SMART ולטמפרטורה לכל כונן, ו-<b>חיצוני</b> לכל מה שמחובר מאחור.</p>
+    </div>
+    <div class="hero-shot"><img alt="נפחי אחסון וכוננים ב-Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>בדף הזה</b><ul>
+      <li><a href="#volumes">Volumes &amp; Pools</a></li>
+      <li><a href="#drives">רשימת הכוננים</a></li>
+      <li><a href="#disk-health">בריאות כוננים  &amp; SMART</a></li>
+      <li><a href="#thresholds">ספי טמפרטורה</a></li>
+      <li><a href="#external">חיצוני &amp; הוצאה בטוחה</a></li>
+      <li><a href="#limits">מה הוא לא יעשה</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; Pools</div>
+      <h2>קיבולת, במבט אחד</h2>
+      <p class="lead">כל נפח מקבל כרטיס עם שמו, סוג ה-RAID שלו, מצבו וכמה כוננים תומכים בו, מעל סרגל שימוש עם בשימוש, אחוז, סך הכל ופנוי.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>מוצג</th><th>משמעות</th></tr></thead>
+      <tbody>
+        <tr><td>שם הנפח</td><td>כפי ש-DSM קורא לו - <code>VOLUME_1</code>, וכן הלאה.</td></tr>
+        <tr><td>סוג RAID</td><td>RAID 5, SHR, RAID 1, Basic - מה שהבריכה שמתחתיו באמת.</td></tr>
+        <tr><td>מצב</td><td>המצב של הנפח עצמו: <b>תקין</b>, פגום, קרס. מערך פגום הוא הדבר היחיד במסך הזה ששווה לטפל בו היום.</td></tr>
+        <tr><td>מספר כוננים</td><td>על כמה כוננים פיזיים הנפח משתרע.</td></tr>
+        <tr><td>סרגל שימוש</td><td>ירוק בדרך כלל, ענבר מעל 80% ואדום מעל 90%. אלה אותם ספים ש<a href="/he/guide/home/#header">תג הבריאות</a> משתמש בהם.</td></tr>
+        <tr><td>בשימוש / סך הכל / פנוי</td><td>כל שלושתם, כי ״70% מלא״ ו-״13 TB פנויים״ עונים על שאלות שונות.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>מה יש בכל תא</h2>
+      <p class="lead">מתחת לנפחים, כל כונן פיזי לפי מספר התא.</p>
+    </div>
+    <ul class="plain">
+      <li><b>תא</b> - Disk 1, Disk 2 וכן הלאה, בהתאם לתוויות על המארז.</li>
+      <li><b>דגם</b> - מחרוזת הדגם של הכונן עצמו.</li>
+      <li><b>יצרן וסוג</b> - היצרן והאם זה HDD או SSD. כונן שה-NAS לא הצליח לזהות את היצרן שלו מוצג כ<b>לא ידוע</b> ולא מנחשים.</li>
+      <li><b>טמפרטורה</b>, צבועה לפי הספים שלהלן.</li>
+      <li><b>פסק SMART</b> - <b>SMART OK</b> כשההערכה העצמית של הכונן תקינה.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Disk Health</div>
+      <h2>SMART, ובדיקה שאפשר להתחיל</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">תצוגת המשנה בריאות כוננים היא אותם כוננים עם יותר מקום: קיבולת, סוג, טמפרטורה ומצב SMART מקבלים כל אחד שבב משלו, ולכל כונן יש כפתור <b>בדיקת SMART מהירה</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>בדיקת SMART מהירה</b> מבקשת מהכונן להריץ הערכה עצמית קצרה משלו. היא נמשכת כמה דקות ואינה מפריעה לשום דבר שמשתמש בנפח.</li>
+          <li><b>פסק הדין הוא של הכונן, לא שלנו.</b> SMART הוא הכונן שמדווח על עצמו; האפליקציה מעבירה זאת הלאה. כונן שאומר שהוא תקין ואז נכשל הוא מגבלה של SMART, לא של הקריאה.</li>
+          <li><b>מצב SMART שלא ניתן לקרוא מוצג כלא ידוע</b>, אף פעם לא כתקין. קריאה חסרה וקריאה תקינה הן שני דברים שונים ולעולם לא ממזגים אותם.</li>
+        </ul>
+      </div>
+      <img alt="בריאות כוננים מציגה כל כונן עם מצב SMART, טמפרטורה וכפתור בדיקת SMART מהירה" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">המספרים שמאחורי הצבעים</div>
+      <h2>ספים</h2>
+      <p class="lead">אין כאן שום ניחוש לגבי החומרה שלך - אלה הנקודות שבהן האפליקציה משנה צבע, ובמקום הרלוונטי גם את תג הבריאות של מסך הבית.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>קריאה</th><th>ענבר ב</th><th>אדום ב</th></tr></thead>
+      <tbody>
+        <tr><td>טמפרטורת כונן</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>טמפרטורת מערכת</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>שימוש בנפח</td><td>80%</td><td>90%</td></tr>
+        <tr><td>טעינת UPS</td><td>מתחת ל-50%</td><td>מתחת ל-20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">עבור בין &deg;C ל-&deg;F ב<a href="/he/guide/settings/#preferences">הגדרות &rsaquo; יחידת טמפרטורה</a>. כל טמפרטורה באפליקציה עוקבת אחריה מיד, כולל אלה שבמסך הבית ובווידג׳טים.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">External</div>
+      <h2>USB, eSATA והוצאה בטוחה</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="אחסון חיצוני והתקני USB, כשדבר לא מחובר ו-UPS ברשימה" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">שני מקטעים: <b>אחסון חיצוני</b> לכוננים שאפשר לטעון ולהוציא, ו-<b>התקני USB</b> לכל השאר שמחובר - UPS, מדפסת, דונגל.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>ההוצאה מאושרת לפי עזיבת הכונן.</b> האפליקציה לא מדווחת הצלחה רק כי הבקשה חזרה OK; היא קוראת מחדש את רשימת ההתקנים ואומרת שהכונן הוצא רק כשהוא באמת נעלם. זה ההבדל בין ״בטוח לנתק״ ל-״כנראה בטוח לנתק״.</li>
+          <li><b>אי אפשר להוציא כונן עסוק.</b> כונן שמתפרמט או מאותחל נדחה, עם הסיבה, ולא נתלש באמצע כתיבה.</li>
+          <li><b>כשדבר לא מחובר, זה כתוב בפשטות.</b> רשימה ריקה כותבת ״אין כוננים חיצוניים מחוברים״ - ולא ריבוע ריק שצריך לפרש.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">גבולות</div>
+      <h2>מה המסך הזה לא יעשה</h2>
+      <p class="lead">אחסון הוא המקום היחיד שבו הקשה שגויה אינה הפיכה, ולכן האפליקציה קוראת הרבה יותר ממה שהיא כותבת.</p>
+    </div>
+    <ul class="plain">
+      <li><b>היא לא תיצור, תרחיב או תמחק נפח או בריכה.</b> אלה נמצאים במנהל האחסון של DSM, במסך גדול מספיק כדי להראות מה אתה עומד לעשות.</li>
+      <li><b>היא לא תתקן מערך פגום.</b> היא תגיד לך, בבירור ובמסך הבית, שאחד פגום.</li>
+      <li><b>היא לא תפרמט דבר.</b></li>
+      <li><b>היא לא תריץ בדיקת SMART מלאה</b> - רק את המהירה. סריקת משטח מלאה לוקחת שעות ושייכת למקום שממנו לא תלך.</li>
+    </ul>
+    <div class="note"><b>ניקוי, בנייה מחדש ובדיקות זוגיות</b> מופיעים כפעולות רצות בזמן שהן מתבצעות, כך שאפשר לראות אחת מסתיימת מהאפליקציה גם אם התחלת אותה ב-DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על אחסון (FAQ)</h2>
+    </div>
+    <details open><summary>האם אפשר לראות את מצב ה-SMART של כל כונן?</summary><div class="body">כן. תצוגת המשנה בריאות כוננים מציגה כל כונן עם הדגם שלו, אם הוא HDD או SSD, הקיבולת, הטמפרטורה ופסק ה-SMART שלו. אפשר גם להתחיל בדיקת SMART מהירה בכל כונן מהטלפון.</div></details>
+    <details><summary>איזו טמפרטורה חמה מדי לכונן NAS?</summary><div class="body">האפליקציה צובעת כונן בענבר מעל 45&deg;C ובאדום מעל 55&deg;C, ואת טמפרטורת המערכת בענבר מעל 50&deg;C ובאדום מעל 60&deg;C. הספים האלה מזינים גם את תג הבריאות במסך הבית.</div></details>
+    <details><summary>האם אפשר להוציא כונן USB בבטחה מהאפליקציה?</summary><div class="body">כן, מתצוגת המשנה חיצוני. ההוצאה מאושרת לפי כך שהכונן באמת עוזב את רשימת ההתקנים, ולא לפי כך שהבקשה התקבלה. אי אפשר להוציא כונן שמתפרמט או מאותחל.</div></details>
+    <details><summary>האם אפשר ליצור או להרחיב נפח מהאפליקציה?</summary><div class="body">לא. יצירה, הרחבה ותיקון של נפחים ובריכות נעשים במנהל האחסון של DSM. האפליקציה מדווחת מה האחסון שלך עושה ומאפשרת לפעול על כוננים; היא לא משנה את מבנה המערך שלך מטלפון.</div></details>
+    <details><summary>למה כונן מציג לא ידוע ביצרן?</summary><div class="body">כי ה-NAS לא דיווח על יצרן. האפליקציה מציגה את מה שנאמר לה ולא מסיקה יצרן ממחרוזת הדגם, מה שהיה ניחוש שמוצג כעובדה.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: רשת</h2>
+    <p class="lead" style="margin:0 auto 24px">תפוקה, חיבורים, שירותים, VPN ו-DDNS.</p>
+    <p><a class="btn" href="/he/guide/network/">רשת &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

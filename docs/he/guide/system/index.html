@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU, RAM, טמפרטורה ומאווררים של Synology - Syno Manager</title>
+<meta name="description" content="עקוב אחר CPU, RAM, עומס, קלט/פלט של דיסק וטמפרטורה, שנה את מצב מהירות המאוורר, בדוק עדכוני DSM, והפעל מחדש או כבה את ה-Synology שלך מהטלפון." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU, RAM, טמפרטורה ומאווררים של Synology - Syno Manager" />
+<meta property="og:description" content="עקוב אחר CPU, RAM, עומס, קלט/פלט של דיסק וטמפרטורה, שנה את מצב מהירות המאוורר, בדוק עדכוני DSM, והפעל מחדש או כבה את ה-Synology שלך מהטלפון." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU, RAM, טמפרטורה ומאווררים של Synology - Syno Manager" />
+<meta name="twitter:description" content="עקוב אחר CPU, RAM, עומס, קלט/פלט של דיסק וטמפרטורה, שנה את מצב מהירות המאוורר, בדוק עדכוני DSM, והפעל מחדש או כבה את ה-Synology שלך מהטלפון." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "System"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU, RAM, טמפרטורה ומאווררים של Synology - Syno Manager",
+  "description": "עקוב אחר CPU, RAM, עומס, קלט/פלט של דיסק וטמפרטורה, שנה את מצב מהירות המאוורר, בדוק עדכוני DSM, והפעל מחדש או כבה את ה-Synology שלך מהטלפון.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם אפשר לשנות את מהירות המאוורר מהאפליקציה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. ב״בריאות המערכת״ יש כרטיס קירור עם מהירות מלאה, קריר ושקט. האפליקציה קוראת את המצב שבו ה-NAS נמצא כעת, כותבת את בחירתך וקוראת אותה חזרה לאישור. NAS שמדווח על מצב מחוץ לשלושת אלה שומר על תצוגה לקריאה בלבד ולא מוצג בצורה שגויה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר להפעיל מחדש או לכבות את ה-NAS מהטלפון?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן, מכרטיס בקרות ההפעלה בתחתית ״בריאות המערכת״. שניהם מאושרים לפני שהם רצים, כי הם משפיעים על כל המשתמשים המחוברים. כדאי לחשוב פעמיים על כיבוי מרחוק - NAS כבוי אי אפשר להעיר דרך האינטרנט בלי VPN או נתב שמוגדר ל-Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "למה משמש ״זהה NAS״?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "הוא מהבהב את נורת המצב של ה-NAS כדי שתדע איזו קופסה במדף או בארון אתה מסתכל עליה. ״השתק צפצוף״ עוצר את זמזם האזעקה בלי להשתיק את המצב שהפעיל אותו - תקן גם את הסיבה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם היומנים מתרעננים מעצמם?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "לא, ובכוונה. יומן נהג לקרוא מחדש בטיימר בין אם קראת אותו ובין אם לא, מה שעלה בסוללה וברשת בלי סיבה. עכשיו הוא נטען פעם אחת ונשאר במקום. לחץ על play כדי לעקוב אחריו חי, לחץ שוב להשהיה, והוא מפסיק לעקוב מעצמו כשאתה עוזב את המסך."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר לייצא או להעתיק את היומן שאני מסתכל עליו?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. לחיצה ארוכה על שורה כלשהי מעלה את סרגל המערכת העתק / בחר הכול / שתף, או שאפשר להשתמש בכפתור הייצוא לצד המתג החי בלשונית מערכת, או מעל הרשימה בלשונית חיבור. הוא פותח גיליון עם שמירה לקובץ, שיתוף או שליחה באימייל, והעתקה ללוח, ומייצא בדיוק את הרשומות שעל המסך אחרי מסנן הרמה והחיפוש - רשומה אחת בכל שורה, עם זמן, רמה, משתמש ותיאור מופרדים בטאבים."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; מערכת</div>
+      <div class="eyebrow">System</div>
+      <h1>מה הקופסה <span class="g">עושה באמת</span></h1>
+      <p>שלוש תצוגות משנה: <b>בריאות המערכת</b> למצב המכונה, <b>משאבים</b> לתרשימים חיים, ו-<b>יומנים</b> למה ש-DSM תיעד. ועוד הבקרות ששינו משהו - מצב מאוורר, נורת הזיהוי, עדכוני DSM, הפעלה מחדש וכיבוי.</p>
+    </div>
+    <div class="hero-shot"><img alt="בריאות המערכת עם מדי CPU ו-RAM, ממוצע עומס, קלט/פלט של דיסק והיסטוריית טמפרטורה" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>בדף הזה</b><ul>
+      <li><a href="#health">System Health</a></li>
+      <li><a href="#cooling">קירור &amp; מצב מאוורר</a></li>
+      <li><a href="#identify">זיהוי &amp; התראות</a></li>
+      <li><a href="#dsm-update">עדכון DSM</a></li>
+      <li><a href="#power">בקרות הפעלה</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#logs">יומנים</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">System Health</div>
+      <h2>הקריאות</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>כרטיס</th><th>מה הוא מציג</th></tr></thead>
+      <tbody>
+        <tr><td>מדי CPU &amp; RAM</td><td>סך ה-CPU כטבעת, עם חלק ה<b>משתמש</b> מסומן מתחתיה, כדי להבחין בין עומס העבודה שלך לבין תקורת המערכת. ה-RAM מציג את האחוז ואת המספרים המוחלטים.</td></tr>
+        <tr><td>זיכרון</td><td>בשימוש מול הסך הכל, כסרגל. ירוק עד שזה משנה.</td></tr>
+        <tr><td>ממוצע עומס CPU</td><td>נתונים של דקה, חמש וחמש עשרה דקות - תהליכים שממתינים לזמן CPU, לא אחוז. נשפט מול מספר הליבות שלך, כך שנתון תקין בשרת ראק של שמונה ליבות הוא עסוק בשרת של שני תאים.</td></tr>
+        <tr><td>קלט/פלט של דיסק</td><td>תפוקת קריאה וכתיבה ועוד אחוז הניצול - כמה מהזמן הדיסקים היו עסוקים, מה שהוא לרוב התשובה האמיתית כש-NAS מרגיש איטי וה-CPU נראה בטל.</td></tr>
+        <tr><td>היסטוריית טמפרטורה</td><td>תרשים נע עם הנתון הנוכחי. ב-&deg;C או ב-&deg;F לפי <a href="/he/guide/settings/#preferences">ההעדפה</a> שלך.</td></tr>
+        <tr><td>תהליכים</td><td>כמה תהליכים ה-NAS מריץ.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Cooling</div>
+      <h2>מצב מהירות מאוורר, משתנה מהטלפון</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">כרטיס הקירור מציג את מצב המאוורר ואת המצב שבו ה-NAS נמצא, כפקד תלת-מצבי:</p>
+        <ul class="plain">
+          <li><b>מהירות מלאה</b> - זרימת אוויר מקסימלית, רעש מקסימלי. מתאים לראק או לארון.</li>
+          <li><b>קריר</b> - ברירת המחדל המאוזנת.</li>
+          <li><b>שקט</b> - מהירות נמוכה יותר, טמפרטורות גבוהות יותר. מתאים ל-NAS בסלון, אם הכוננים עומדים בזה.</li>
+        </ul>
+        <div class="note"><b>מאושר, לא מניחים.</b> האפליקציה קוראת את המצב הנוכחי מה-NAS, כותבת את בחירתך, ואז <b>קוראת אותו חזרה</b>. מצב שה-NAS דחה בשקט מדווח כנדחה, ולא נשאר על המסך כאילו הוחל.</div>
+        <div class="note" style="margin-top:14px"><b>מצב שלא מזוהה נשאר לקריאה בלבד.</b> אם ה-NAS שלך מדווח על מצב קירור מחוץ לשלושת אלה, הכרטיס מציג מה שדווח ואינו מציע לשנות אותו - ולא מסמן אותו בטעות כאחד משלושת אלה שהוא מכיר.</div>
+      </div>
+      <img alt="כרטיס הקירור עם מהירות מלאה, קריר ושקט, ועוד זיהוי ובקרות הפעלה" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">זיהוי &amp; התראות</div>
+      <h2>מצא את הקופסה, השתק את הזמזם</h2>
+    </div>
+    <ul class="plain">
+      <li><b>זיהוי</b> מהבהב את נורת המצב של ה-NAS כדי שתדע מול איזו יחידה אתה עומד. <b>עצור</b> מסיים זאת.</li>
+      <li><b>השתק צפצוף</b> עוצר את זמזם האזעקה. הוא משתיק את הרעש, לא את המצב - מה שהפעיל את האזעקה עדיין נכון, וכותרת הבריאות עדיין תגיד זאת.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">עדכון DSM</div>
+      <h2>האם יש עדכון קושחה</h2>
+      <p class="lead">כרטיס עדכון DSM מדווח על הגרסה שלך ועל אם ל-Synology יש משהו חדש יותר. <b>בדוק אם יש עדכון</b> מבקש מה-NAS לבדוק שוב.</p>
+    </div>
+    <div class="note"><b>זו הקושחה של ה-NAS שלך, לא של האפליקציה.</b> Syno Manager מתעדכנת דרך App Store או Google Play כמו כל אפליקציה אחרת. הכרטיס הזה הוא משטח העדכון של DSM עצמה, אותו אחד שבלוח הבקרה.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">בקרות הפעלה</div>
+      <h2>הפעלה מחדש וכיבוי</h2>
+      <p class="lead">בתחתית ״בריאות המערכת״, ומסומנות באדום, כי הן משפיעות על כל המשתמשים המחוברים - כולל מי שבאמצע העתקת קובץ.</p>
+    </div>
+    <ul class="plain">
+      <li><b>הפעל מחדש NAS</b> - הפעלה מחדש נקייה. מאושרת לפני שהיא רצה.</li>
+      <li><b>כבה NAS</b> - כיבוי נקי. מאושר לפני שהוא רץ.</li>
+    </ul>
+    <div class="note stop"><b>חשוב לפני כיבוי מרחוק.</b> NAS כבוי לא יכול להעביר את חבילת ההערה של עצמו. להחזיר אותו מבחוץ לרשת שלך דורש VPN אליו, או נתב שמוגדר להעביר Wake-on-LAN. ראה <a href="/he/guide/wake-on-lan/">Wake-on-LAN</a> לגבי מה עובד מאיפה.</div>
+    <div class="note" style="margin-top:14px"><b>קיצורי דרך לא מדלגים על האישור.</b> הקישורים <code>synomanager://reboot</code> ו-<code>synomanager://shutdown</code> <a href="/he/guide/shortcuts/">בכוונה</a> רק <em>פותחים את האפליקציה</em> במסך הזה. פעולה הרסנית לא הופכת להקשה אחת רק משום שהופעלה ממפעיל.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Resources</div>
+      <h2>תרשימים חיים</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="תרשימי מוניטור משאבים ל-CPU, זיכרון, קריאת דיסק וכתיבת דיסק" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">תצוגת המשנה משאבים היא אותם נתונים כגרף נע, וזה מה שאתה רוצה כשהשאלה היא ״האם זה שיא רגעי או קבוע?״</p>
+        <ul class="plain">
+          <li><b>שימוש ב-CPU</b> עם פיצול בין משתמש למערכת.</li>
+          <li><b>שימוש בזיכרון</b> עם בשימוש מול סך הכל.</li>
+          <li><b>קריאת דיסק</b> ו-<b>כתיבת דיסק</b>, כל אחת עם תרשים משלה, ועוד ניצול דיסק כולל.</li>
+          <li><b>ממוצעי עומס</b> לדקה, לחמש ולחמש עשרה דקות.</li>
+        </ul>
+        <div class="note">התרשימים מתמלאים לפי <a href="/he/guide/settings/#preferences">מרווח הדגימה</a>. מרווח קצר יותר נותן פירוט עדין יותר ועולה יותר בסוללה; ארוך יותר הוא עדין יותר לסוללה וגס יותר.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">יומנים</div>
+      <h2>מה DSM תיעד</h2>
+      <p class="lead">שתי לשוניות: <b>מערכת</b> ליומן של DSM עצמה, ו-<b>חיבור</b> להתחברויות ולגישה לקבצים. שתיהן נקראות כשאתה מבקש אותן.</p>
+    </div>
+    <ul class="plain">
+      <li><b>הוא נטען פעם אחת ונשאר במקום.</b> יומן שנקרא מחדש בטיימר בזמן שאתה מנסה לקרוא שורה הוא חסר תועלת, והוא עולה בסוללה וברשת בלי סיבה.</li>
+      <li><b>לחץ על play כדי לעקוב חי.</b> לחץ שוב להשהיה. המעקב נעצר מעצמו כשאתה עוזב את המסך או שולח את האפליקציה לרקע, כך שלשונית יומן ששכחת לא דוגמת בשקט בכיס שלך.</li>
+      <li><b>יש תיבת חיפוש</b> למציאת שורה אחת ביומן ארוך.</li>
+      <li><b>יומני קונטיינרים וסטאקים עובדים באותו אופן</b> - ראה <a href="/he/guide/apps/#docker">Docker</a>.</li>
+      <li><b>הטקסט ניתן לבחירה.</b> לחיצה ארוכה על שורה מעלה את סרגל המערכת העתק / בחר הכול / שתף, בדיוק כמו בכל מקום אחר שבו טקסט נמצא על המסך.</li>
+      <li><b>ייצא את מה שאתה רואה.</b> כפתור ייצוא נמצא לצד המתג החי בלשונית מערכת, ומעל הרשימה בלשונית חיבור. הוא פותח גיליון עם שלוש דרכים החוצה: <b>שמירה לקובץ</b>, <b>שיתוף</b> לשליחה או לאימייל, או <b>העתקה ללוח</b>.</li>
+    </ul>
+    <div class="note"><b>הוא מייצא את מה שעל המסך, לא את כל היומן.</b> מה שצמצמו אליו שבב מסנן הרמה ותיבת החיפוש הוא מה שיוצא - דבר שכבר סיננת החוצה לא חוזר לייצוא. הקובץ הוא טקסט פשוט, רשומה אחת בכל שורה, עם זמן, רמה, משתמש ותיאור מופרדים בטאבים.</div>
+    <div class="note warn"><b>אם היומן לא נטען</b> ומדווח על פסק זמן בחיבור בזמן שבשאר האפליקציה הכול תקין, השירות Log Center ב-NAS הוא שלא עונה, לא החיבור שלך. בדוק ש-Log Center מותקן ופועל במרכז החבילות של DSM - ה-API של יומן המערכת הוא חלק ממנו.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על המערכת (FAQ)</h2>
+    </div>
+    <details open><summary>האם אפשר לשנות את מהירות המאוורר מהאפליקציה?</summary><div class="body">כן. ב״בריאות המערכת״ יש כרטיס קירור עם מהירות מלאה, קריר ושקט. האפליקציה קוראת את המצב שבו ה-NAS נמצא כעת, כותבת את בחירתך וקוראת אותה חזרה לאישור. NAS שמדווח על מצב מחוץ לשלושת אלה שומר על תצוגה לקריאה בלבד ולא מוצג בצורה שגויה.</div></details>
+    <details><summary>האם אפשר להפעיל מחדש או לכבות את ה-NAS מהטלפון?</summary><div class="body">כן, מבקרות ההפעלה בתחתית ״בריאות המערכת״. שתיהן מאושרות לפני שהן רצות. כדאי לחשוב פעמיים על כיבוי מרחוק - NAS כבוי אי אפשר להעיר דרך האינטרנט בלי VPN או נתב שמוגדר ל-Wake-on-LAN.</div></details>
+    <details><summary>למה משמש ״זהה NAS״?</summary><div class="body">הוא מהבהב את נורת המצב של ה-NAS כדי שתדע איזו קופסה במדף או בארון אתה מסתכל עליה. ״השתק צפצוף״ עוצר את זמזם האזעקה בלי להשתיק את המצב שהפעיל אותו.</div></details>
+    <details><summary>האם היומנים מתרעננים מעצמם?</summary><div class="body">לא, ובכוונה. יומן נטען פעם אחת ונשאר במקום כדי שתוכל לקרוא אותו. לחץ על play כדי לעקוב אחריו חי, לחץ שוב להשהיה, והוא מפסיק לעקוב מעצמו כשאתה עוזב את המסך או שולח את האפליקציה לרקע.</div></details>
+    <details><summary>האם אפשר לייצא או להעתיק את היומן שאני מסתכל עליו?</summary><div class="body">כן. לחיצה ארוכה על שורה כלשהי מעלה את סרגל המערכת העתק / בחר הכול / שתף, או שאפשר להשתמש בכפתור הייצוא לצד המתג החי בלשונית מערכת, או מעל הרשימה בלשונית חיבור. הוא פותח גיליון עם שמירה לקובץ, שיתוף או שליחה באימייל, והעתקה ללוח, ומייצא בדיוק את הרשומות שעל המסך אחרי מסנן הרמה והחיפוש - רשומה אחת בכל שורה, עם זמן, רמה, משתמש ותיאור מופרדים בטאבים.</div></details>
+    <details><summary>למה ממוצע העומס שלי גבוה כש-CPU נראה בסדר?</summary><div class="body">ממוצע עומס סופר תהליכים שממתינים, ולעתים קרובות הם ממתינים לדיסקים ולא ל-CPU. בדוק את ניצול קלט/פלט של הדיסק באותו מסך - אחוז ניצול גבוה עם CPU נמוך הוא ההסבר הרגיל.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: אחסון</h2>
+    <p class="lead" style="margin:0 auto 24px">נפחים, בריכות, בריאות SMART לכל כונן והוצאה בטוחה.</p>
+    <p><a class="btn" href="/he/guide/storage/">אחסון &amp; כוננים &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

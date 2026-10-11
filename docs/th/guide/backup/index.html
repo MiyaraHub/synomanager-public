@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ตรวจสอบ Synology Hyper Backup บนมือถือ - Syno Manager</title>
+<meta name="description" content="ทุกงาน Hyper Backup พร้อมพื้นที่ที่ใช้จริงที่ปลายทาง รวมถึงอุปกรณ์ Active Backup for Business และขนาดหลังขจัดข้อมูลซ้ำแยกตามปริมาณงาน" />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="ตรวจสอบ Synology Hyper Backup บนมือถือ - Syno Manager" />
+<meta property="og:description" content="ทุกงาน Hyper Backup พร้อมพื้นที่ที่ใช้จริงที่ปลายทาง รวมถึงอุปกรณ์ Active Backup for Business และขนาดหลังขจัดข้อมูลซ้ำแยกตามปริมาณงาน" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ตรวจสอบ Synology Hyper Backup บนมือถือ - Syno Manager" />
+<meta name="twitter:description" content="ทุกงาน Hyper Backup พร้อมพื้นที่ที่ใช้จริงที่ปลายทาง รวมถึงอุปกรณ์ Active Backup for Business และขนาดหลังขจัดข้อมูลซ้ำแยกตามปริมาณงาน" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "สำรองข้อมูล"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ตรวจสอบ Synology Hyper Backup บนมือถือ - Syno Manager",
+  "description": "ทุกงาน Hyper Backup พร้อมพื้นที่ที่ใช้จริงที่ปลายทาง รวมถึงอุปกรณ์ Active Backup for Business และขนาดหลังขจัดข้อมูลซ้ำแยกตามปริมาณงาน",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "th",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "เริ่มการสำรองข้อมูลจากมือถือได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ ทุกงาน Hyper Backup มีปุ่ม Run Now และงานที่กำลังทำงานจะแสดงแถบความคืบหน้าสดที่ยกเลิกได้"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ขนาดข้อมูลสำรองกับขนาดต้นทางต่างกันอย่างไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ขนาดต้นทางคือปริมาณข้อมูลที่งานกำลังสำรอง ขนาดข้อมูลสำรองคือพื้นที่ที่ใช้จริงที่ปลายทาง หลังขจัดข้อมูลซ้ำและบีบอัด การดูทั้งสองค่าด้วยกันบอกได้ว่าทั้งสองกระบวนการประหยัดให้คุณเท่าไร และปลายทางกำลังเต็มเร็วกว่าที่ต้นทางโตหรือไม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "แสดง Active Backup for Business ด้วยไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "แสดง การ์ดและมุมมองรายละเอียดแสดงขนาดรวมหลังขจัดข้อมูลซ้ำของที่เก็บข้อมูลสำรอง แยกตามปริมาณงาน ได้แก่ พีซี เซิร์ฟเวอร์ เครื่องเสมือน และอุปกรณ์ DSM พร้อมจำนวนอุปกรณ์ของแต่ละประเภท รวมถึงทุกอุปกรณ์ที่ได้รับการป้องกันพร้อมเวลาสำรองล่าสุดและปุ่ม Backup Now"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "จะบอกไหมถ้าการสำรองข้อมูลล้มเหลว",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "บอก สถานะของงานแสดงแยกรายงาน และงานที่ล้มเหลวจะทำให้ป้ายสถานะสุขภาพบนหน้าจอหลักเตือนด้วย คุณจึงรู้โดยไม่ต้องไปหา"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; การสำรองข้อมูล</div>
+      <div class="eyebrow">สำรองข้อมูล</div>
+      <h1>การสำรองข้อมูล<span class="g">ทำงานจริงหรือเปล่า</span></h1>
+      <p>คำถามที่เจ้าของ NAS ถามบ่อยที่สุด ตอบในหน้าจอเดียว <b>Backup</b> ครอบคลุม Hyper Backup ส่วน <b>Active Backup</b> ครอบคลุม Active Backup for Business</p>
+    </div>
+    <div class="hero-shot"><img alt="งาน Hyper Backup พร้อมขนาดข้อมูลสำรอง ขนาดต้นทาง และรอบถัดไป" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>ในหน้านี้</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">ขนาดข้อมูลสำรองเทียบกับขนาดต้นทาง</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">เมื่อมีบางอย่างล้มเหลว</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>ทุกงาน และกำลังทำอะไรอยู่</h2>
+      <p class="lead">สรุปด้านบน มีกี่งาน กี่งานปกติ กี่งานมีปัญหา จากนั้นเป็นการ์ดต่องาน</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>ที่แสดง</th><th>ความหมาย</th></tr></thead>
+      <tbody>
+        <tr><td>ชื่องาน</td><td>ตามที่คุณตั้งชื่อใน Hyper Backup</td></tr>
+        <tr><td>ปลายทาง</td><td>สำรองไปที่ไหน เช่น Synology C2, NAS ระยะไกล, โฟลเดอร์ในเครื่อง, ผู้ให้บริการคลาวด์</td></tr>
+        <tr><td>สถานะ</td><td><b>ว่าง</b> กำลังทำงาน หรือล้มเหลว งานที่กำลังทำงานจะแสดงแถบความคืบหน้าสด</td></tr>
+        <tr><td>ขนาดข้อมูลสำรอง</td><td>พื้นที่ที่งานใช้<b>ที่ปลายทาง</b></td></tr>
+        <tr><td>ขนาดต้นทาง</td><td>ปริมาณข้อมูลที่กำลังสำรอง</td></tr>
+        <tr><td>สำรองล่าสุด</td><td>รอบล่าสุดเสร็จเมื่อนานเท่าไรแล้ว</td></tr>
+        <tr><td>สำรองครั้งถัดไป</td><td>ตารางเวลาจะทำงานครั้งถัดไปเมื่อใด</td></tr>
+        <tr><td>Run Now</td><td>เริ่มงานทันที งานที่กำลังทำงานสามารถยกเลิกได้</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">สองตัวเลข โดยตั้งใจ</div>
+      <h2>ขนาดข้อมูลสำรองข้างขนาดต้นทาง</h2>
+      <p class="lead">เครื่องมือส่วนใหญ่แสดงให้คุณเห็นเพียงอย่างใดอย่างหนึ่ง แต่เมื่อแสดงคู่กันจะตอบคำถามที่ค่าใดค่าหนึ่งตอบไม่ได้</p>
+    </div>
+    <ul class="plain">
+      <li><b>การขจัดข้อมูลซ้ำและการบีบอัดประหยัดให้คุณเท่าไร</b> ต้นทาง 758 GB ที่ใช้พื้นที่ปลายทาง 814 GB บอกเรื่องที่ต่างจากที่ใช้ 300 GB มาก และมีเพียงคู่ตัวเลขนี้เท่านั้นที่เผยให้เห็น</li>
+      <li><b>ปลายทางกำลังจะเต็มหรือไม่</b> การเติบโตของต้นทางกับปลายทางไม่ใช่เส้นโค้งเดียวกัน และสำหรับคำถามว่า "เดือนหน้าจะล้มเหลวไหม" สิ่งที่สำคัญคือปลายทาง</li>
+      <li><b>การเก็บเวอร์ชันบานปลายหรือไม่</b> ปลายทางที่โตเร็วกว่าต้นทางมากมักหมายความว่านโยบายการเก็บรักษาเก็บไว้มากกว่าที่ตั้งใจ</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">ส่วนหัวแสดงจำนวนอุปกรณ์และงาน จากนั้นเป็นขนาดที่เก็บข้อมูล แล้วจึงเป็นตัวอุปกรณ์</p>
+        <h3 style="margin-top:20px">ขนาดข้อมูลสำรอง</h3>
+        <ul class="plain">
+          <li><b>ขนาดรวมหลังขจัดข้อมูลซ้ำ</b>ของที่เก็บข้อมูล แยกตามวอลุ่ม</li>
+          <li><b>แยกตามปริมาณงาน</b> ได้แก่ พีซี เซิร์ฟเวอร์ เครื่องเสมือน และอุปกรณ์ DSM พร้อมจำนวนอุปกรณ์และขนาดของแต่ละประเภท</li>
+          <li><b>ระบุตามที่เป็นจริง:</b> ขนาดหลังขจัดข้อมูลซ้ำที่ปลายทาง ตามที่ Active Backup รายงาน ไม่ใช่ผลรวมของขนาดต้นทางที่แต่งตัวมาให้ดูเหมือน</li>
+        </ul>
+        <h3 style="margin-top:22px">อุปกรณ์</h3>
+        <ul class="plain">
+          <li><b>แต่ละอุปกรณ์ที่ได้รับการป้องกัน</b> พร้อมที่อยู่และระบบปฏิบัติการ</li>
+          <li><b>สำรองล่าสุด</b> หรือ <b>ไม่เคย</b> เมื่อยังไม่เคยทำงาน ซึ่งเป็นรายการที่ควรสังเกต</li>
+          <li><b>Backup Now</b> ต่ออุปกรณ์</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business แสดงขนาดที่เก็บข้อมูลแยกตามปริมาณงานและอุปกรณ์ที่ได้รับการป้องกัน" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">เมื่อมีบางอย่างล้มเหลว</div>
+      <h2>รู้โดยไม่ต้องไปหา</h2>
+    </div>
+    <ul class="plain">
+      <li><b>งานบอกเอง</b>บนการ์ด พร้อมสถานะที่ NAS รายงาน</li>
+      <li><b>ป้ายสถานะสุขภาพบนหน้าจอหลัก</b>สะท้อนเรื่องนี้ การสำรองข้อมูลที่ล้มเหลวจึงปรากฏบนหน้าจอแรกที่คุณเห็น ไม่ใช่ต้องแตะเข้าไปสามชั้น</li>
+      <li><b>อุปกรณ์ที่ไม่เคยถูกสำรองข้อมูล</b>จะแสดงเป็น<b>ไม่เคย</b> ไม่ใช่ช่องว่างหรือศูนย์ เพราะสองอย่างนั้นจะดูเหมือน "ปกติดี"</li>
+    </ul>
+    <div class="note"><b>สิ่งที่แอปจะไม่ทำ:</b> สร้างหรือแก้ไขงานสำรองข้อมูล เปลี่ยนนโยบายการเก็บรักษา หรือกู้คืนจากข้อมูลสำรอง สิ่งเหล่านั้นเป็นหน้าที่ของ Hyper Backup และโดยเฉพาะการกู้คืนไม่ใช่สิ่งที่ควรเผลอเริ่มบนมือถือ</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับการสำรองข้อมูล</h2>
+    </div>
+    <details open><summary>เริ่มการสำรองข้อมูลจากมือถือได้ไหม</summary><div class="body">ได้ ทุกงาน Hyper Backup มีปุ่ม Run Now และงานที่กำลังทำงานจะแสดงแถบความคืบหน้าสดที่ยกเลิกได้</div></details>
+    <details><summary>ขนาดข้อมูลสำรองกับขนาดต้นทางต่างกันอย่างไร</summary><div class="body">ขนาดต้นทางคือปริมาณข้อมูลที่งานกำลังสำรอง ขนาดข้อมูลสำรองคือพื้นที่ที่ใช้จริงที่ปลายทาง หลังขจัดข้อมูลซ้ำและบีบอัด การดูทั้งสองค่าด้วยกันบอกได้ว่าทั้งสองกระบวนการประหยัดให้คุณเท่าไร และปลายทางกำลังเต็มเร็วกว่าที่ต้นทางโตหรือไม่</div></details>
+    <details><summary>แสดง Active Backup for Business ด้วยไหม</summary><div class="body">แสดง ขนาดที่เก็บข้อมูลหลังขจัดข้อมูลซ้ำแยกตามปริมาณงาน พร้อมจำนวนอุปกรณ์ของแต่ละประเภท รวมถึงทุกอุปกรณ์ที่ได้รับการป้องกันพร้อมเวลาสำรองล่าสุดและปุ่ม Backup Now</div></details>
+    <details><summary>จะบอกไหมถ้าการสำรองข้อมูลล้มเหลว</summary><div class="body">บอก สถานะของงานแสดงแยกรายงาน และงานที่ล้มเหลวจะทำให้ป้ายสถานะสุขภาพบนหน้าจอหลักเตือนด้วย</div></details>
+    <details><summary>กู้คืนจากข้อมูลสำรองในแอปได้ไหม</summary><div class="body">ไม่ได้ การกู้คืนทำใน Hyper Backup หรือ Active Backup ซึ่งมีตัวเลือกเวอร์ชันและการเลือกเป้าหมาย แอปตรวจสอบและสั่งเริ่มการสำรองข้อมูล แต่ไม่คืนข้อมูลกลับ</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: แผงควบคุม</h2>
+    <p class="lead" style="margin:0 auto 24px">ผู้ใช้ งานตามกำหนดเวลา UPS และการตั้งค่าของแอปเอง</p>
+    <p><a class="btn" href="/th/guide/control-panel/">แผงควบคุม &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

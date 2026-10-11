@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 說明與疑難排解 - Syno Manager</title>
+<meta name="description" content="連線逾時、憑證錯誤、雙重驗證、找不到分頁、相片空白方塊、外出時攝影機失效，以及過期的小工具 - 各自代表什麼意思。" />
+<meta name="keywords" content="Syno Manager not connecting, Synology app connection timeout, Synology app certificate error, Synology app 2FA, Synology app blank photos, Synology camera not working remotely" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/help/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/help/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/help/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/help/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/help/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/help/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/help/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/help/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/help/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/help/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/help/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/help/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/help/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/help/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/help/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/help/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/help/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/help/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/help/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/help/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/help/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/help/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/help/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/help/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/help/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/help/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/help/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/help/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/help/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/help/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/help/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/help/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 說明與疑難排解 - Syno Manager" />
+<meta property="og:description" content="連線逾時、憑證錯誤、雙重驗證、找不到分頁、相片空白方塊、外出時攝影機失效，以及過期的小工具 - 各自代表什麼意思。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/help/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 說明與疑難排解 - Syno Manager" />
+<meta name="twitter:description" content="連線逾時、憑證錯誤、雙重驗證、找不到分頁、相片空白方塊、外出時攝影機失效，以及過期的小工具 - 各自代表什麼意思。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "說明"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager 顯示連線逾時。這是什麼意思？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "表示在你輸入的位址與連接埠上沒有任何回應，憑證根本還沒被嘗試。請檢查 HTTPS 與連接埠是否相符 - 開啟 HTTPS 用 5001，關閉則用 5000 - 檢查手機是否在能連到 NAS 的網路上，並確認 DSM 自己的網頁介面在手機瀏覽器中、以相同的位址能夠載入。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼我的密碼明明正確，App 卻說憑證無效？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為 NAS 有回應，並拒絕了登入。請檢查是否打錯字，檢查帳號是否使用雙重驗證 - 雙重驗證開關必須開啟 - 並檢查 DSM 在控制台、安全性、帳號下的自動封鎖清單，看看是否因為重複嘗試而封鎖了你手機的位址。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼我看不到預期中的分頁？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不是該 NAS 上沒有安裝背後的套件，就是子檢視被隱藏了。App 會在連線時讀取你的 NAS 能做什麼，所以在那之後才安裝的套件需要重新整理 - 下拉重新整理，或重新開啟 App。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的攝影機在家能用，出門就不行。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "請在 NAS 的設定中開啟「透過 DSM 連接埠以通道傳送攝影機即時檢視」。關閉時，即時檢視會直接連到連接埠 554 上的 RTSP，而這通常無法從你的網路外部連到。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的相片顯示為空白方塊。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在 DSM 7.2.2 及更新版本中，NAS 不再為 HEIC 檔案建立預覽圖，Syno Manager 會改在裝置上解碼。如果較舊的非 HEIC 相片也是空白，代表 NAS 的縮圖確實遺失了 - 請在相片畫面使用重新建立索引，讓 NAS 重新建立。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼我的小工具顯示舊數字？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為決定小工具何時可以重新整理的是 Android 與 iOS，而且兩者為了省電都會限制更新。每個小工具都會顯示資料擷取的時間，正是為了這個原因。開啟 App 是最可靠的重新整理方式。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/" class="active">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; 說明</div>
+    <div class="eyebrow">說明</div>
+    <h1>當事情<span class="g">不太對勁</span>時</h1>
+    <p>大多數問題都屬於少數幾種類型。下方每一項都會說明症狀實際代表什麼，這通常是找到解法最快的路徑。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>快速跳到</b><ul>
+      <li><a href="#connecting">無法連線</a></li>
+      <li><a href="#credentials">登入遭拒</a></li>
+      <li><a href="#missing">缺少分頁或卡片</a></li>
+      <li><a href="#photos">相片空白方塊</a></li>
+      <li><a href="#cameras">外出時的攝影機</a></li>
+      <li><a href="#logs">記錄無法載入</a></li>
+      <li><a href="#widgets">過期的小工具</a></li>
+      <li><a href="#assistant">沒有助理分頁</a></li>
+      <li><a href="#contact">仍然無法解決</a></li>
+    </ul></div>
+
+    <div class="section-head" id="connecting">
+      <div class="eyebrow">連線</div>
+      <h2>「連線逾時」</h2>
+      <p class="lead">這表示<b>沒有任何回應</b>。你的憑證根本還沒被嘗試，所以問題出在位址、連接埠或網路 - 絕不是密碼。</p>
+    </div>
+    <ol class="steps">
+      <li><b>在手機的瀏覽器中開啟 DSM</b>，使用與你輸入的完全相同的位址與連接埠。如果瀏覽器也連不上，問題就不在 App。</li>
+      <li><b>檢查 HTTPS 與連接埠是否相符。</b>5001 是 HTTPS 的監聽連接埠，5000 是 HTTP 的。搞混了就會逾時。</li>
+      <li><b>檢查手機的網路。</b>像 <code>192.168.1.20</code> 這樣的區域位址在行動數據下並不存在。請連上 Wi-Fi，或使用 <a href="/zh-hant/guide/remote-access/">QuickConnect、網域或 VPN</a>。</li>
+      <li><b>在 iOS 上，請允許區域網路存取。</b>設定 &rsaquo; App &rsaquo; Syno Manager &rsaquo; 區域網路。沒有開啟的話，iOS 會默默封鎖對你自己網路的連線，而症狀就是看起來像網路故障的逾時。</li>
+      <li><b>檢查 DSM 的防火牆。</b>控制台 &rsaquo; 安全性 &rsaquo; 防火牆 - 只允許特定位址的規則，會封鎖不在其中的手機。</li>
+      <li><b>檢查 NAS 是否醒著。</b>休眠中的 NAS 不會回應。請先<a href="/zh-hant/guide/wake-on-lan/">喚醒它</a>。</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="credentials">
+      <div class="eyebrow">登入</div>
+      <h2>「憑證無效」或憑證錯誤</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>訊息</th><th>意思</th><th>解決方法</th></tr></thead>
+      <tbody>
+        <tr><td>憑證無效</td><td>NAS 有回應，但拒絕了登入。位址與連接埠是正確的。</td><td>請檢查使用者名稱與密碼。檢查帳號是否使用雙重驗證 - 該開關必須開啟。檢查 DSM 在<b>控制台 &rsaquo; 安全性 &rsaquo; 帳號</b>下的自動封鎖清單，看看是否因為失敗的嘗試而封鎖了你的位址。</td></tr>
+        <tr><td>憑證錯誤</td><td>已啟用 HTTPS，並且也啟用了憑證驗證，但對方使用的是自簽憑證。</td><td>請將<b>驗證 SSL 憑證</b>關閉。大多數 DiskStation 提供的是自簽憑證；不論哪種方式，連線都保持加密。</td></tr>
+        <tr><td>需要 2FA</td><td>帳號使用雙重驗證，但開關是關閉的。</td><td>請在 NAS 的設定中開啟<b>雙重驗證 (2FA)</b>，然後重新連線。</td></tr>
+        <tr><td>雙重驗證碼遭拒</td><td>通常是時鐘的問題，而不是驗證碼。</td><td>驗證碼是依據目前時間產生的。請檢查手機的時鐘和 NAS 的時鐘 - NAS 的時間來源顯示在主畫面的快速統計列上。</td></tr>
+        <tr><td>原本正常，現在卻要求重新登入</td><td>儲存的憑證變得無法讀取 - 在將 App 還原到新手機之後可能會發生。</td><td>App 會清除它無法讀取的內容，並要求你重新登入。重新輸入一次密碼即可。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>使用者名稱中有空格？</b>沒問題。App 會正確地加上引號，這正是其他用戶端在像 <code>John Smith</code> 這類帳號上失敗的常見原因。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="missing">
+      <div class="eyebrow">找不到東西</div>
+      <h2>缺少分頁、子檢視或卡片</h2>
+      <p class="lead">原因剛好只有三種，各有不同的解法。</p>
+    </div>
+    <ol class="steps">
+      <li><b>沒有安裝該套件。</b>App 會讀取你的 NAS 能做什麼，並隱藏所有它做不到的東西。沒有 Download Station 套件，就沒有 Download Station 分頁。請從<a href="/zh-hant/guide/apps/#package-center">套件中心</a>安裝。</li>
+      <li><b>在你連線之後才安裝。</b>功能清單是在連線時讀取的。下拉重新整理，或重新開啟 App，它就會出現。</li>
+      <li><b>被隱藏了。</b>請檢查分頁的 <b>&#8942; 選單 &rsaquo; 自訂檢視</b>，卡片則檢查<b>設定 &rsaquo; 儀表板類別</b>。請參閱<a href="/zh-hant/guide/customizing/">自訂</a>。</li>
+    </ol>
+    <div class="note"><b>點選檢視已被隱藏的卡片時，會告訴你這件事</b>，並提供自訂按鈕。如果訊息說你的 NAS 沒有提供該檢視，代表套件確實不在那裡。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="photos">
+      <div class="eyebrow">Photos</div>
+      <h2>相簿中的空白方塊</h2>
+    </div>
+    <ul class="plain">
+      <li><b>最近的 iPhone 相片：</b>這些是 HEIC 格式，在 DSM 7.2.2 及更新版本中，NAS 不再為它們建立預覽圖。Syno Manager 改在裝置上解碼，所以它們應該能顯示。如果沒有，請確認你使用的是 App 的最新版本。</li>
+      <li><b>較舊的相片也空白：</b>NAS 的縮圖確實遺失了。請在相片畫面使用<b>重新建立索引</b>，讓 NAS 重新建立。大型相簿需要一段時間，而且是在 NAS 上執行，所以你可以關閉 App。</li>
+      <li><b>透過 QuickConnect 時全部空白且很慢：</b>轉送服務有速率限制。請多給它一些時間，或在家時改用直接連線的項目。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cameras">
+      <div class="eyebrow">攝影機</div>
+      <h2>即時檢視在家能用，出門就不行</h2>
+      <p class="lead">有一個設定可以解決這個問題：NAS 設定中的<b>透過 DSM 連接埠以通道傳送攝影機即時檢視</b>。</p>
+    </div>
+    <ul class="plain">
+      <li><b>關閉</b> - 即時檢視直接連到連接埠 554 上的 RTSP。在你自己的網路上速度很快，但幾乎無法從外部連到那個連接埠。</li>
+      <li><b>開啟</b> - 串流會透過你原本連線的 DSM HTTPS 連接埠建立通道。不需要額外開放任何東西，只要連得到 DSM 的地方都能使用。</li>
+      <li><b>顯示「點一下即可檢視」的攝影機並沒有壞。</b>它是 H.265，而 DSM 不會為這類攝影機產生靜態快照。點一下，串流就會開啟。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">記錄檔</div>
+      <h2>系統記錄無法載入</h2>
+      <p class="lead">如果記錄回報連線逾時，而 App 的其他部分都正常，那麼沒有回應的是 NAS 上的 Log Center 服務，而不是你的連線。</p>
+    </div>
+    <ul class="plain">
+      <li><b>檢查 Log Center 是否已安裝並正在執行</b>，位置在 DSM 的套件中心。系統記錄 API 屬於它的一部分。</li>
+      <li><b>檢查帳號的權限。</b>在大多數 DSM 設定下，讀取系統記錄需要管理員權限。</li>
+      <li><b>容器與堆疊記錄是獨立的</b>，來自 Docker，所以系統記錄無法使用時，這些仍可能正常。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="widgets">
+      <div class="eyebrow">小工具</div>
+      <h2>主畫面小工具已過期</h2>
+      <p class="lead">決定小工具何時可以重新整理的是 Android 與 iOS，而且兩者為了省電都會嚴格限制。沒有任何 App 能強制要求 - 這就是為什麼每個小工具都標示數字取得的時間，而不是給你一個承諾。</p>
+    </div>
+    <ul class="plain">
+      <li><b>開啟 App</b> - 最可靠的重新整理方式。</li>
+      <li><b>Android：</b>將 Syno Manager 排除在電池最佳化之外。</li>
+      <li><b>iOS：</b>確認該 App 的背景 App 重新整理已開啟。</li>
+      <li><b>檢查連線能力：</b>小工具無法讀取手機連不到的 NAS。在行動數據下，如果只有區域網路 IP 的項目，要等你回到家才會更新。</li>
+      <li><b>「從未更新」</b>表示尚未成功讀取 - 剛加入，或加入後 App 還沒執行過。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="assistant">
+      <div class="eyebrow">助理</div>
+      <h2>沒有助理分頁</h2>
+      <p class="lead">助理需要裝置端模型，在沒有的硬體上，這個分頁會完全隱藏 - 無法運作的控制項比沒有控制項更糟。</p>
+    </div>
+    <ul class="plain">
+      <li><b>Android</b> 需要 AICore，且可使用 Gemini Nano 模型。</li>
+      <li><b>iOS 與 macOS</b> 需要支援並啟用 Apple Intelligence。</li>
+      <li><b>在<b>設定 &rsaquo; 裝置端 AI</b> 中查看你的裝置回報的內容</b>，那裡會寫出它偵測到的狀態。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contact">
+      <div class="eyebrow">仍然無法解決</div>
+      <h2>回報問題</h2>
+      <p class="lead">錯誤與功能建議請提交到公開的追蹤器，在那裡它們會有編號和討論串，而不是消失在收件匣裡。</p>
+    </div>
+    <p style="margin-top:8px"><a class="btn" href="https://github.com/MiyaraHub/synomanager-public/issues">回報錯誤或提出功能建議</a></p>
+    <div class="note" style="margin-top:22px"><b>請附上：</b>App 版本（設定中直接顯示，「關於」中有組建編號）、你的 DSM 版本、NAS 型號、你當時是在自己的網路還是在外面，以及你原本預期的結果。附上一張已裁掉隱私內容的截圖，比文字描述更有幫助。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>疑難排解常見問題</h2>
+    </div>
+    <details open><summary>它顯示連線逾時。這是什麼意思？</summary><div class="body">表示在你輸入的位址與連接埠上沒有任何回應 - 憑證根本還沒被嘗試。請檢查 HTTPS 與連接埠是否相符，手機是否在能連到 NAS 的網路上，並確認 DSM 自己的網頁介面在手機瀏覽器中、以相同的位址能夠載入。</div></details>
+    <details><summary>為什麼我的密碼明明正確，卻顯示憑證無效？</summary><div class="body">因為 NAS 有回應，並拒絕了登入。請檢查是否打錯字，檢查帳號是否使用雙重驗證，並檢查 DSM 的自動封鎖清單，看看是否因為重複嘗試而封鎖了你手機的位址。</div></details>
+    <details><summary>為什麼我看不到預期中的分頁？</summary><div class="body">不是沒有安裝背後的套件，就是子檢視被隱藏了。在你連線之後才安裝的套件需要重新整理 - 下拉重新整理，或重新開啟 App。</div></details>
+    <details><summary>我的攝影機在家能用，出門就不行。</summary><div class="body">請開啟「透過 DSM 連接埠以通道傳送攝影機即時檢視」。關閉時，即時檢視需要連接埠 554 上的 RTSP，而這通常無法從外部連到。</div></details>
+    <details><summary>我的相片顯示為空白方塊。</summary><div class="body">HEIC 相片會在裝置上解碼，因為 DSM 7.2.2 以上版本不再為它們建立預覽圖。如果較舊的相片也是空白，請在相片畫面使用重新建立索引。</div></details>
+    <details><summary>為什麼我的小工具顯示舊數字？</summary><div class="body">因為決定小工具何時可以重新整理的是作業系統。每個小工具都會顯示資料擷取的時間，正是為了這個原因；開啟 App 是最可靠的重新整理方式。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>完整手冊</h2>
+    <p class="lead" style="margin:0 auto 24px">每個畫面、每個控制項，以及每一個不會做的事。</p>
+    <p><a class="btn" href="/zh-hant/guide/">閱讀使用指南 &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

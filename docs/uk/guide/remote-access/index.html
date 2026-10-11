@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Віддалений доступ до Synology NAS - Syno Manager</title>
+<meta name="description" content="Заходьте на свій Synology звідусіль через QuickConnect, власний домен або VPN. Які функції працюють на якому маршруті, зокрема фото та перегляд камер наживо." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/uk/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Віддалений доступ до Synology NAS - Syno Manager" />
+<meta property="og:description" content="Заходьте на свій Synology звідусіль через QuickConnect, власний домен або VPN. Які функції працюють на якому маршруті, зокрема фото та перегляд камер наживо." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/uk/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Віддалений доступ до Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Заходьте на свій Synology звідусіль через QuickConnect, власний домен або VPN. Які функції працюють на якому маршруті, зокрема фото та перегляд камер наживо." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Головна",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Посібник користувача",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Поза домом"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Віддалений доступ до Synology NAS - Syno Manager",
+  "description": "Заходьте на свій Synology звідусіль через QuickConnect, власний домен або VPN. Які функції працюють на якому маршруті, зокрема фото та перегляд камер наживо.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "uk",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чи потрібно пробрасувати порти для віддаленого доступу до NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. QuickConnect передає з'єднання через сервіс Synology без жодного налаштування роутера, а VPN у вашу мережу теж працює. Переспрямування портів потрібне, лише якщо вам конче потрібен прямий маршрут з інтернету."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи працюють фото й перегляд камер наживо через QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Мініатюри, повні зображення, перегляд камер наживо та завантаження з File Station і Drive йдуть будь-яким активним маршрутом, зокрема через ретранслятор QuickConnect. Ретранслятор повільніший за вашу мережу, але працює."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи варто додати NAS двічі?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Це хороший підхід. Один запис за локальною IP для дому - швидкий, прямий, і один через QuickConnect для поїздок. Це окремі записи з окремими розташуваннями, а перемикання займає один дотик."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи безпечний QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "З'єднання наскрізно зашифроване, коли ви використовуєте HTTPS, а ретранслятор Synology лише пропускає трафік, не зберігаючи ваші дані. Ваші облікові дані DSM, як і раніше, діють, і двофакторна автентифікація також працює."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/uk/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова">
+      <a href="/uk/">Головна</a>
+      <a href="/uk/guide/" class="active">Посібник користувача</a>
+      <a href="/uk/#screenshots">Знімки екрана</a>
+      <a href="/uk/compatible-nas/">Сумісність</a>
+      <a href="/uk/best-synology-nas-app/">Чому варто перейти</a>
+      <a href="/uk/help/">Допомога</a>
+      <a href="/uk/#top" class="cta">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Поза домом</div>
+      <div class="eyebrow">Поза домом</div>
+      <h1>Той самий застосунок, <span class="g">інший маршрут</span></h1>
+      <p>Syno Manager працює однаково, чи ви поруч із NAS, чи на іншому кінці світу. Змінюється лише те, як з'єднання туди потрапляє, і в кожного маршруту є свої компроміси, які варто знати.</p>
+    </div>
+    <div class="hero-shot"><img alt="Форма додавання NAS із варіантами «Пряма IP» та QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Три маршрути</div>
+      <h2>Оберіть той, що вам підходить</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Маршрут</th><th>Налаштування</th><th>Швидкість</th><th>Щось відкриває?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Увімкніть у DSM і введіть ID. На роутері нічого не потрібно.</td><td>Повільніше: трафік іде через ретранслятор Synology.</td><td class="yes">Нічого. На вашому боці немає відкритих портів.</td></tr>
+        <tr><td><b>Власний домен / DDNS</b></td><td>Ім'я хоста, що вказує на вашу адресу, плюс переспрямування порту на роутері.</td><td>Напряму, тож настільки швидко, наскільки дозволяє ваш канал вивантаження.</td><td class="no">Так - порт DSM доступний з інтернету.</td></tr>
+        <tr><td><b>VPN</b></td><td>VPN-сервер на роутері чи NAS і клієнт на телефоні.</td><td>Напряму після підключення.</td><td class="yes">Лише порт VPN. Усе решта лишається приватним.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Якщо не впевнені, обирайте QuickConnect.</b> Це варіант, який не вимагає знань про роутер і нічого не відкриває, а всі функції застосунку працюють через нього.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Що працює віддалено</div>
+      <h2>Усе, з двома примітками</h2>
+      <p class="lead">Поза домом застосунок не втрачає функцій. Лише дві речі потребують уваги: перегляд камер наживо та пробудження вимкненого NAS.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Функція</th><th>Поза домом</th></tr></thead>
+      <tbody>
+        <tr><td>Моніторинг - система, сховище, мережа, стан</td><td class="yes">Працює на будь-якому маршруті.</td></tr>
+        <tr><td>Docker, пакети, служби, завдання, користувачі</td><td class="yes">Працює на будь-якому маршруті.</td></tr>
+        <tr><td>Synology Photos - мініатюри та повні зображення</td><td class="yes">Працює, зокрема через ретранслятор.</td></tr>
+        <tr><td>Завантаження з File Station і Drive</td><td class="yes">Працює, зокрема через ретранслятор.</td></tr>
+        <tr><td>Резервні копії - стан і «Запустити зараз»</td><td class="yes">Працює на будь-якому маршруті.</td></tr>
+        <tr><td>Пробудження іншого пристрою через NAS</td><td class="yes">Працює, доки сам NAS увімкнений.</td></tr>
+        <tr><td><b>Перегляд камер наживо</b></td><td>Увімкніть <b>Тунелювати перегляд камер через порт DSM</b>. Без цього для перегляду наживо потрібен RTSP на порту 554, який зазвичай недоступний ззовні. Дивіться, <a href="/uk/guide/media/#streaming">як підключається перегляд наживо</a>.</td></tr>
+        <tr><td><b>Пробудження самого NAS, коли він вимкнений</b></td><td>Потрібен VPN або переспрямування Wake-on-LAN на роутері. QuickConnect не може досягти вимкненого NAS. Дивіться <a href="/uk/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Налаштування</h2>
+    </div>
+    <ol class="steps">
+      <li><b>У DSM:</b> Панель керування &rsaquo; Зовнішній доступ &rsaquo; QuickConnect. Увімкніть його й запишіть ID QuickConnect.</li>
+      <li><b>У застосунку:</b> додайте NAS і змініть <b>Тип підключення</b> на <b>QuickConnect</b>.</li>
+      <li><b>Введіть ID</b>, а не хост і порт.</li>
+      <li><b>Ваші облікові дані DSM</b> і 2FA, якщо обліковий запис її використовує.</li>
+      <li><b>Зберегти &amp; підключити.</b></li>
+    </ol>
+    <div class="note"><b>Очікуйте, що буде повільніше.</b> Ретранслятор додає ще одну ланку, а Synology обмежує його швидкість, тож фотобібліотека прокручується менш плавно, ніж удома. Усе працює, різниця лише в затримці, а не в можливостях.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Підхід, який варто повторити</div>
+      <h2>Додайте той самий NAS двічі</h2>
+      <p class="lead">Один запис за <b>локальною IP</b>, інший через <b>QuickConnect</b>. Назвіть їх так, щоб відрізняти: «NAS (дім)» і «NAS (поза домом)».</p>
+    </div>
+    <ul class="plain">
+      <li><b>Вдома</b> користуйтеся прямим: без ретранслятора, повна швидкість, миттєві мініатюри.</li>
+      <li><b>Поза домом</b> перемкніться на QuickConnect.</li>
+      <li><b>Вони мають окремі розташування</b>, тож запис для поїздок можна скоротити до кількох карток, які ви справді перевіряєте на мобільному інтернеті.</li>
+      <li><b>Перемикання - один дотик</b> зі списку пристроїв.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Встановіть для <a href="/uk/guide/settings/#launch">Поведінки під час запуску</a> значення <b>Останній використаний NAS</b>, і застосунок запам'ятовуватиме той, на якому ви були.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Поширені запитання</div>
+      <h2>Поширені запитання про віддалений доступ</h2>
+    </div>
+    <details open><summary>Чи потрібно пробрасувати порти для віддаленого доступу до NAS?</summary><div class="body">Ні. QuickConnect передає з'єднання без жодного налаштування роутера, а VPN теж працює. Переспрямування портів потрібне, лише якщо вам конче потрібен прямий маршрут з інтернету.</div></details>
+    <details><summary>Чи працюють фото й перегляд камер наживо через QuickConnect?</summary><div class="body">Так. Мініатюри, повні зображення, перегляд камер наживо та завантаження з File Station і Drive йдуть будь-яким активним маршрутом, зокрема через ретранслятор. Для перегляду камер потрібен увімкнений перемикач тунелю через порт DSM.</div></details>
+    <details><summary>Чи варто додати NAS двічі?</summary><div class="body">Це хороший підхід: один запис за локальною IP для дому й один через QuickConnect для поїздок, з окремими розташуваннями та перемиканням одним дотиком.</div></details>
+    <details><summary>Чи безпечний QuickConnect?</summary><div class="body">З'єднання наскрізно зашифроване, коли ви використовуєте HTTPS, а ретранслятор лише пропускає трафік, не зберігаючи ваші дані. Ваші облікові дані DSM і двофакторна автентифікація, як і раніше, діють.</div></details>
+    <details><summary>Чому мій запис із локальною IP не працює на мобільному інтернеті?</summary><div class="body">Бо приватна адреса на кшталт 192.168.x.x існує лише у вашій власній мережі. Використайте запис QuickConnect, домен або спершу підключіться до VPN.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далі: резервне копіювання &amp; відновлення</h2>
+    <p class="lead" style="margin:0 auto 24px">Перенесіть налаштування застосунку на новий телефон.</p>
+    <p><a class="btn" href="/uk/guide/backup-restore/">Резервне копіювання &amp; відновлення &rarr;</a> &nbsp; <a class="btn ghost" href="/uk/guide/">Назад до посібника</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/uk/">Головна</a><a href="/uk/guide/">Посібник користувача</a><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/compatible-nas/">Сумісність</a><a href="/uk/best-synology-nas-app/">Чому варто перейти</a><a href="/uk/synology-app-for-iphone/">iPhone та iPad</a><a href="/uk/synology-app-for-android/">Android</a><a href="/uk/synology-app-for-mac-windows/">Mac та Windows</a><a href="/uk/ds-finder-alternative/">Порівняння з DS finder</a><a href="/uk/help/">Допомога</a><a href="/uk/privacy/">Конфіденційність</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Повідомити про помилку</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - незалежний застосунок, який не пов'язаний із Synology Inc., не схвалений і не спонсорований нею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station і QuickConnect є торговельними марками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

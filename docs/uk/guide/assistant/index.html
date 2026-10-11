@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Асистент з AI на пристрої для Synology NAS - Syno Manager</title>
+<meta name="description" content="Питайте про свій Synology NAS простими словами й отримуйте той самий висновок про стан, що й на панелі. Працює на вашому телефоні, вчиться на ваших оцінках, лише читає." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/uk/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Асистент з AI на пристрої для Synology NAS - Syno Manager" />
+<meta property="og:description" content="Питайте про свій Synology NAS простими словами й отримуйте той самий висновок про стан, що й на панелі. Працює на вашому телефоні, вчиться на ваших оцінках, лише читає." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/uk/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Асистент з AI на пристрої для Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Питайте про свій Synology NAS простими словами й отримуйте той самий висновок про стан, що й на панелі. Працює на вашому телефоні, вчиться на ваших оцінках, лише читає." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Головна",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Посібник користувача",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Асистент"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Асистент з AI на пристрої для Synology NAS - Syno Manager",
+  "description": "Питайте про свій Synology NAS простими словами й отримуйте той самий висновок про стан, що й на панелі. Працює на вашому телефоні, вчиться на ваших оцінках, лише читає.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "uk",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Де працює асистент?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "На вашому телефоні. Gemini Nano через AICore на Android, Apple Intelligence на iOS і macOS. Хмарного рівня, на який можна було б перейти, немає - збірка застосунку завершується помилкою, якщо де-небудь в асистенті з'являється хмарний хост, хмарний SDK або ключ API, тож обіцянку забезпечує збірка, а не чиясь пам'ять."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи надсилаються дані мого NAS кудись?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. Ваше запитання, дані вашого NAS і відповідь ніколи не залишають пристрій. Це працює й за вимкненої мережі. Оскільки нічого не передається, немає жодної копії, яку можна було б зберігати, ділитися нею чи навчатися на ній."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Про що можна питати?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Фіксованого списку немає. Ваш NAS публікує все, про що може повідомити, - понад тисячу записів на типовому, - а асистент шукає в цьому й читає те, чого стосується ваше запитання. Встановіть пакет - і він одразу зможе відповідати і про нього, без оновлення застосунку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи може він щось змінити на моєму NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. Він лише читає. Він не може нічого запустити, зупинити, видалити чи перезапустити - не через правило, якого модель просять дотримуватися, а тому, що йому просто не дають таких інструментів."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Це щось коштує?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. Використовується модель, яка вже вбудована у ваш пристрій, тож платити не потрібно і створювати обліковий запис теж."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чому я не бачу вкладки «Асистент»?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Бо на пристрої немає придатної моделі. Замість того щоб показувати функцію, яка не може працювати, застосунок повністю ховає її на пристроях, що її не потягнуть."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи асистент чомусь навчається?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Він вчиться на ваших оцінках, лише на цьому пристрої. Оцініть відповідь великими пальцями під нею - і схожі запитання починатимуться з того місця, звідки було прочитано цю відповідь, тож асистент дедалі краще читає ваш NAS. Оцінки ніколи не залишають пристрій, а «Забути оцінки для цього NAS» їх очищає."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чому він пише, що модель зайнята або вичерпала ходи?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Модель на пристрої ділять усі інші застосунки на вашому телефоні, і вона працює, лише поки Syno Manager відкрито на екрані. Коли ви впираєтеся в одне з цих обмежень, асистент називає, в яке саме, а не показує загальну помилку, і приблизно підказує, скільки чекати."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/uk/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова">
+      <a href="/uk/">Головна</a>
+      <a href="/uk/guide/" class="active">Посібник користувача</a>
+      <a href="/uk/#screenshots">Знімки екрана</a>
+      <a href="/uk/compatible-nas/">Сумісність</a>
+      <a href="/uk/best-synology-nas-app/">Чому варто перейти</a>
+      <a href="/uk/help/">Допомога</a>
+      <a href="/uk/#top" class="cta">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Асистент</div>
+      <div class="eyebrow">Асистент &middot; бета</div>
+      <h1>Питайте свій NAS <span class="g">простими словами</span></h1>
+      <p>«Чи є в моєму сховищі щось, через що варто хвилюватися?» - запитання, що інакше означає відкрити чотири екрани. Асистент читає те, що повідомив ваш NAS, і відповідає - моделлю, що працює на вашому телефоні офлайн і нічого нікуди не надсилає.</p>
+    </div>
+    <div class="hero-shot"><img alt="Асистент із підготовленими запитаннями-підказками" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>На цій сторінці</b><ul>
+      <li><a href="#asking">Як поставити запитання</a></li>
+      <li><a href="#topics">Про що можна питати</a></li>
+      <li><a href="#privacy">Куди йдуть ваші дані</a></li>
+      <li><a href="#readonly">Він лише читає</a></li>
+      <li><a href="#wrong">Він може помилятися</a></li>
+      <li><a href="#learning">Навчання на ваших оцінках</a></li>
+      <li><a href="#availability">На яких пристроях він є</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Запитання</div>
+      <h2>Наберіть або скажіть</h2>
+      <p class="lead">Вкладка «Асистент» має два підрозділи: <b>Запитати</b> і <b>Як це працює</b>. «Запитати» відкривається з чотирма підказками, які показують, яким буває добре запитання, а не обмежують вас.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Введіть запитання</b> у поле внизу або торкніться однієї з підказок.</li>
+      <li><b>Скажіть його</b> через мікрофон, якщо так зручніше.</li>
+      <li><b>Нехай відповідь озвучать</b> за допомогою елемента з динаміком угорі праворуч.</li>
+      <li><b>Відповідь виводиться по мірі створення</b>, а не з'являється одразу вся, тож читати можна ще до її завершення.</li>
+      <li><b>Очистити</b> видаляє розмову.</li>
+    </ul>
+    <div class="note"><b>Модель завантажується, коли ви відкриваєте екран</b>, а не коли надсилаєте перше запитання, тож перша відповідь не найповільніша.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Межі</div>
+      <h2>Списку тем немає</h2>
+      <p class="lead">Цю частину легко пропустити. Асистент - це не набір готових відповідей про сховище та резервні копії, а інструмент, спрямований на все, що насправді публікує ваш NAS.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Ваш NAS публікує все, про що може повідомити</b> - понад тисячу записів на типовому, - а асистент шукає в цьому каталозі й читає те, чого стосується ваше запитання.</li>
+          <li><b>Встановіть пакет - і він зможе відповідати і про нього</b> одразу, без оновлення застосунку. Нічого з каталогу не вписано в застосунок; усе виявляється з вашого пристрою.</li>
+          <li><b>Чим більше користуєтеся, тим він швидший.</b> Як читати кожну частину DSM, визначається один раз і запам'ятовується, тож наступні запитання про те саме відпрацьовуються швидше.</li>
+          <li><b>На «Як справи в мого NAS?» відповідає висновком про стан</b> - тим самим «Справний», «Попередження» чи «Критичний», що й на головному екрані, з причинами, а не голою температурою чи окремим показником, вирваним із контексту.</li>
+        </ul>
+        <div class="note"><b>Добрі запитання схожі на запитання.</b> «Як справи в мого NAS?», «Чи справні мої резервні копії?», «Що займає найбільше місця?», «Що ти бачиш про цей NAS?» - останнє варто запитати один раз, бо відповідь покаже, до чого він має доступ на <em>вашому</em> NAS.</div>
+      </div>
+      <img alt="Асистент відповідає на «Як справи в мого NAS?» висновком про стан" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Конфіденційність</div>
+      <h2>Нічого не залишає телефон</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Модель належить пристрою. Ваше запитання, дані вашого NAS і відповідь обробляються на телефоні, і все працює за вимкненої мережі.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Хмарного рівня, на який можна було б перейти, немає.</b> Не «ми вирішили його не використовувати» - збірка застосунку <b>завершується помилкою</b>, якщо де-небудь в асистенті з'являється хмарний хост, хмарний SDK або ключ API. Обіцянку дотримує збірка, а не чиясь пам'ять.</li>
+          <li><b>Оскільки нічого не передається, немає й копії</b>, яку можна було б зберігати, ділитися нею чи навчатися на ній.</li>
+          <li><b>Це безкоштовно й не потребує облікового запису</b>, бо модель уже на вашому пристрої.</li>
+        </ul>
+      </div>
+      <img alt="Розділ «Як це працює»: модель на пристрої, дані його не залишають" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Межі можливого</div>
+      <h2>Він лише читає</h2>
+      <p class="lead">Асистент не може нічого запустити, зупинити, видалити чи перезапустити. Не тому, що його чемно попросили цього не робити, а тому, що йому спочатку не дали таких інструментів.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Це важливіше, ніж здається. Модель, якій <em>наказано</em> чогось не робити, можна умовити це зробити. Модель, що не має для цього засобів, - ні. Якщо хочете перезапустити контейнер, <a href="/uk/guide/apps/#docker">екран Docker</a> за три торкання, і він попросить підтвердження.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Чесність</div>
+      <h2>Він може помилятися, і екран про це каже</h2>
+      <p class="lead">Це невелика модель, що працює на телефоні, а не велика в дата-центрі. Вона може неправильно прочитати число або звучати певніше, ніж слід. Застосунок говорить про це на екрані, а не в примітці дрібним шрифтом.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Перевіряйте все важливе</b> на екрані, якому це належить. Кожна відповідь стосується того, що застосунок також показує вам напряму.</li>
+      <li><b>Він позначений BETA</b> у заголовку вкладки саме з цієї причини.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Коли він не може відповісти зараз, він каже чому</h3>
+      <p class="lead">Не загальна помилка. Одна з трьох названих причин і приблизний час очікування.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Причина</th><th>Що це означає</th></tr></thead>
+      <tbody>
+        <tr><td>Ліміт використання</td><td>Цей застосунок наразі вичерпав свою частку моделі на пристрої. Пристрій ділить одну модель між усіма застосунками, що її використовують; вона знову відповідатиме, коли ваша частка оновиться, зазвичай за хвилину-кілька.</td></tr>
+        <tr><td>Зайнято</td><td>Модель на пристрої саме відповідає на інший запит. Спробуйте за мить.</td></tr>
+        <tr><td>У фоновому режимі</td><td>Модель на пристрої відповідає, лише поки Syno Manager відкрито на екрані. Поверніть застосунок на передній план і запитайте ще раз.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Нічого не втрачається, коли таке стається.</b> Ваше запитання залишається в розмові; поставте його знову, щойно причина зникне.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Стає кращим</div>
+      <h2>Він вчиться на ваших оцінках, на цьому пристрої</h2>
+      <p class="lead">Під кожною відповіддю є великий палець угору або вниз. Оцініть одну - і схожі запитання починатимуться з того місця, звідки було прочитано цю відповідь: асистент дедалі краще читає <em>ваш</em> NAS, а дані при цьому не залишають телефон.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Хороша відповідь</b> або <b>Погана відповідь</b> - два великі пальці під відповіддю, одне торкання.</li>
+          <li><b>Зберігається окремо для кожного NAS.</b> Оцінки зберігаються для того NAS, що відповідав, на цьому пристрої, тож перехід на інший NAS починає все заново.</li>
+          <li><b>Нікуди не надсилається.</b> Оцінки такі ж локальні, як і сама модель - без облікового запису, без синхронізації, без вивантаження.</li>
+        </ul>
+      </div>
+      <img alt="Відповідь асистента з вибраною оцінкою «подобається»" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Картка «Чого він тут навчився» з однією оціненою відповіддю та кнопкою «Забути оцінки для цього NAS»" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Чого він тут навчився</b> на вкладці «Як це працює» рахує, скільки відповідей на поточному NAS було оцінено як хороші, і переказує їх простими словами.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Жодну відповідь на цьому NAS ще не оцінено як хорошу</b> - ось що написано до вашої першої оцінки: не нуль, бо нуль виглядав би як вимірювання, а не як відсутність.</li>
+          <li><b>Забути оцінки для цього NAS</b> одним торканням видаляє всі оцінки, що зберігаються для поточного NAS на цьому пристрої.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Доступність</div>
+      <h2>На яких пристроях він є</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Платформа</th><th>Модель</th><th>Вимога</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>Пристрій із <b>AICore</b> і доступною йому моделлю Gemini Nano.</td></tr>
+        <tr><td>iOS і macOS</td><td>Apple Intelligence</td><td>Пристрій, де Apple Intelligence підтримується й увімкнено.</td></tr>
+        <tr><td>Усе інше</td><td>-</td><td>Вкладку взагалі не показано.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Пристрій без придатної моделі функцію не показує.</b> Не сірою, не як заманка - її просто немає. Елемент, що не може працювати, гірший за його відсутність, тож вкладки просто немає.</div>
+    <p style="color:var(--steel);margin-top:18px">Підрозділ <b>Як це працює</b> показує, в якому стані ваш пристрій і що було виявлено.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Поширені запитання</div>
+      <h2>FAQ: поширені запитання про асистента</h2>
+    </div>
+    <details open><summary>Де працює асистент?</summary><div class="body">На вашому телефоні. Gemini Nano через AICore на Android, Apple Intelligence на iOS і macOS. Хмарного рівня, на який можна було б перейти, немає - збірка застосунку завершується помилкою, якщо де-небудь в асистенті з'являється хмарний хост, хмарний SDK або ключ API.</div></details>
+    <details><summary>Чи надсилаються дані мого NAS кудись?</summary><div class="body">Ні. Ваше запитання, дані вашого NAS і відповідь ніколи не залишають пристрій, і це працює за вимкненої мережі. Оскільки нічого не передається, немає копії, яку можна зберігати, ділитися нею чи навчатися на ній.</div></details>
+    <details><summary>Про що можна питати?</summary><div class="body">Фіксованого списку немає. Ваш NAS публікує все, про що може повідомити, - понад тисячу записів на типовому, - а асистент шукає в цьому. Встановіть пакет - і він зможе відповідати і про нього, без оновлення застосунку.</div></details>
+    <details><summary>Чи може він щось змінити на моєму NAS?</summary><div class="body">Ні. Він лише читає. Він не може нічого запустити, зупинити, видалити чи перезапустити - бо йому не дають таких інструментів.</div></details>
+    <details><summary>Це щось коштує?</summary><div class="body">Ні. Використовується модель, яка вже вбудована у ваш пристрій, тож платити не потрібно і створювати обліковий запис теж.</div></details>
+    <details><summary>Чому я не бачу вкладки «Асистент»?</summary><div class="body">Бо на пристрої немає придатної моделі. Замість того щоб показувати функцію, яка не може працювати, застосунок повністю ховає її на пристроях, що її не потягнуть.</div></details>
+    <details><summary>Чи асистент чомусь навчається?</summary><div class="body">Він вчиться на ваших оцінках, лише на цьому пристрої. Оцініть відповідь великими пальцями під нею - і схожі запитання починатимуться з того місця, звідки було прочитано цю відповідь. Оцінки ніколи не залишають пристрій, а «Забути оцінки для цього NAS» їх очищає.</div></details>
+    <details><summary>Чому він пише, що модель зайнята або вичерпала ходи?</summary><div class="body">Модель на пристрої ділять усі інші застосунки на вашому телефоні, і вона працює, лише поки Syno Manager відкрито на екрані. Асистент називає, на яке саме обмеження він наштовхнувся, а не показує загальну помилку.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далі: Налаштування</h2>
+    <p class="lead" style="margin:0 auto 24px">Усі параметри застосунку й що кожен змінює.</p>
+    <p><a class="btn" href="/uk/guide/settings/">Налаштування &rarr;</a> &nbsp; <a class="btn ghost" href="/uk/guide/">Назад до посібника</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/uk/">Головна</a><a href="/uk/guide/">Посібник користувача</a><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/compatible-nas/">Сумісність</a><a href="/uk/best-synology-nas-app/">Чому варто перейти</a><a href="/uk/synology-app-for-iphone/">iPhone та iPad</a><a href="/uk/synology-app-for-android/">Android</a><a href="/uk/synology-app-for-mac-windows/">Mac та Windows</a><a href="/uk/ds-finder-alternative/">Порівняння з DS finder</a><a href="/uk/help/">Допомога</a><a href="/uk/privacy/">Конфіденційність</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Повідомити про помилку</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - незалежний застосунок, який не пов'язаний із Synology Inc., не схвалений і не спонсорований нею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station і QuickConnect є торговельними марками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, pachete și mașini virtuale pentru Synology NAS - Syno Manager</title>
+<meta name="description" content="Instalează pachete DSM din Package Center, pornește, oprește și repornește containere Docker, citește-le jurnalele, rulează stack-uri Compose și controlează mașini virtuale." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, pachete și mașini virtuale pentru Synology NAS - Syno Manager" />
+<meta property="og:description" content="Instalează pachete DSM din Package Center, pornește, oprește și repornește containere Docker, citește-le jurnalele, rulează stack-uri Compose și controlează mașini virtuale." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, pachete și mașini virtuale pentru Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Instalează pachete DSM din Package Center, pornește, oprește și repornește containere Docker, citește-le jurnalele, rulează stack-uri Compose și controlează mașini virtuale." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aplicații"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, pachete și mașini virtuale pentru Synology NAS - Syno Manager",
+  "description": "Instalează pachete DSM din Package Center, pornește, oprește și repornește containere Docker, citește-le jurnalele, rulează stack-uri Compose și controlează mașini virtuale.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot instala un pachet DSM de pe telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Package Center din aplicație are același catalog ca DSM - Instalate, Toate pachetele, Beta și Comunitate - cu o casetă de căutare. Alegi un pachet, alegi volumul și instalezi. Actualizarea și dezinstalarea funcționează la fel, iar fiecare acțiune este confirmată prin recitirea listei de pachete, nu prin simplul răspuns OK al cererii."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot reporni un container Docker din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Fiecare container are pornire, oprire și repornire, plus un buton care deschide jurnalele. Un container oprit afișează un buton de pornire, nu o oprire pe care n-ar putea-o executa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot controla stack-urile Docker Compose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Sub-vizualizarea Proiecte listează proiectele tale Compose și pornește sau oprește tot stack-ul, fără să fii nevoit să cauți fiecare container. Jurnalele stack-ului se deschid la fel ca cele ale containerelor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot porni și opri mașini virtuale?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, dacă Virtual Machine Manager este instalat. Pornești, oprești normal sau forțezi oprirea oricărei mașini. Oprirea forțată cere apăsare lungă pentru confirmare, pentru că echivalează cu scoaterea din priză. O mașină aflată într-o stare pe care NAS-ul n-o numește nici pornită, nici oprită este afișată exact așa și primește comanda de recuperare, nu un Start care nu poate funcționa."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Aplicații</div>
+      <div class="eyebrow">Aplicații</div>
+      <h1>Tot ce <span class="g">rulează NAS-ul tău</span></h1>
+      <p>Patru sub-vizualizări: <b>Package Center</b> pentru pachete DSM, <b>Docker</b> pentru containere, <b>Proiecte</b> pentru stack-uri Compose și <b>Mașini virtuale</b> când VMM este instalat.</p>
+    </div>
+    <div class="hero-shot"><img alt="Containere Docker cu stare și comenzi" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Instalarea unui pachet</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Jurnalele containerelor</a></li>
+      <li><a href="#projects">Proiecte Compose</a></li>
+      <li><a href="#virtual-machines">Mașini virtuale</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Tot catalogul, cu căutare</h2>
+      <p class="lead">Aceleași patru filtre ca în DSM și o casetă de căutare peste toate.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Filtru</th><th>Ce listează</th></tr></thead>
+          <tbody>
+            <tr><td>Instalate</td><td>Ce se află acum pe NAS, cu versiunea, dimensiunea și un indicator de rulare.</td></tr>
+            <tr><td>Toate pachetele</td><td>Catalogul complet Synology pentru modelul tău.</td></tr>
+            <tr><td>Beta</td><td>Pachete în pre-lansare.</td></tr>
+            <tr><td>Comunitate</td><td>Pachete din surse terțe pe care le-ai adăugat în DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Fiecare intrare arată versiunea și dimensiunea descărcării, descrierea și orice dependență necesară - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - ca o a doua instalare neașteptată să nu fie o surpriză.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Căutare în catalogul complet de pachete, cu butoane de instalare" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Căutare în <b>Toate pachetele</b> a unui pachet care nu este încă instalat.</p>
+      </div>
+      <img alt="Package Center cu pachetele instalate și starea de rulare" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Instalare, actualizare, dezinstalare</div>
+      <h2>Ce se întâmplă când atingi Instalare</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Caută sau filtrează</b> până la pachetul dorit.</li>
+          <li><b>Instalează.</b> O fereastră numește pachetul, listează orice dependență și întreabă pe ce volum să instaleze - arătând spațiul liber al fiecărui volum, ca să nu alegi pe pipăite.</li>
+          <li><b>Confirmă.</b> NAS-ul îl instalează, cu tot cu dependențe.</li>
+          <li><b>Lista se reciteste singură.</b> Butonul se schimbă în <b>Dezinstalare</b> pentru că lista de pachete spune acum că e instalat - nu pentru că cererea a răspuns OK.</li>
+        </ol>
+        <div class="note"><b>Ultimul pas este esențial.</b> O cerere reușită și o instalare terminată sunt evenimente diferite. Aplicația o așteaptă pe a doua.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Fereastra de instalare cu numele pachetului, dependența și volumul de destinație" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Instalarea unui pachet adaugă ecrane în aplicație.</b> Lista de file este construită din ce raportează NAS-ul la conectare, așa că după instalarea unui pachet precum Download Station, trage pentru reîmprospătare sau redeschide aplicația și sub-vizualizarea apare.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Fiecare container, cu comenzile importante</h2>
+      <p class="lead">Un antet de stare - <b>câte rulează din total</b> - apoi fiecare container al NAS-ului, într-o singură listă.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nume și tag de imagine</b> pe fiecare rând, ca două containere din aceeași imagine să rămână distincte.</li>
+      <li><b>Starea</b> ca un chip: <b>Rulează</b>, <b>Ieșit</b> și orice altceva raportează Docker. Un container pe care Docker îl consideră sănătos spune asta - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Timpul de funcționare</b> pentru tot ce rulează.</li>
+      <li><b>Pornire, oprire și repornire</b>, cu comanda potrivită stării: unui container oprit i se oferă pornirea, nu o oprire care n-ar face nimic.</li>
+      <li><b>Jurnale</b> din butonul de pe fiecare rând.</li>
+      <li><b>Extinde un rând</b> pentru detalii - printre ele, cifrele de memorie și rețea.</li>
+      <li><b>Restrânge întreaga listă</b> cu comanda din partea de sus când vrei doar numărul.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Jurnale</div>
+      <h2>Citești o dată, urmărești când vrei</h2>
+      <p class="lead">Jurnalele containerelor și ale stack-urilor se comportă la fel ca <a href="/ro/guide/system/#logs">jurnalul de sistem</a>, din același motiv.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se încarcă o dată și rămâne pe loc</b>, ca o linie să nu fugă în timp ce o citești.</li>
+      <li><b>Apasă play pentru urmărire live</b>, apasă din nou pentru pauză.</li>
+      <li><b>Urmărirea se oprește singură</b> când părăsești ecranul sau trimiți aplicația în fundal - fără file uitate care interoghează în buzunarul tău.</li>
+      <li><b>Caută</b> o singură linie într-un jurnal lung.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Proiecte</div>
+      <h2>Stack-uri Compose, ca stack-uri</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Proiecte Docker Compose, niciunul configurat" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Un proiect Compose înseamnă mai multe containere care merg împreună. Sub-vizualizarea Proiecte le tratează astfel: pornești sau oprești <b>tot stack-ul</b>, în loc să cauți fiecare container în lista Docker sperând că nu ai uitat vreunul.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Fiecare proiect</b> arată numele și câte dintre containerele sale sunt pornite.</li>
+          <li><b>Pornește sau oprește proiectul</b> ca pe un tot.</li>
+          <li><b>Jurnalele stack-ului</b> se deschid ca jurnalele containerelor.</li>
+          <li><b>Dacă nu există proiecte, spune asta</b> - „Proiectele Docker Compose vor apărea aici” - în loc să afișeze un ecran gol.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Mașini virtuale</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Apare când VMM este instalat. Fiecare mașină virtuală de pe NAS, ce face în acel moment și cele trei acțiuni de alimentare.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Acțiune</th><th>Ce face</th></tr></thead>
+      <tbody>
+        <tr><td>Pornire</td><td>Pornește mașina.</td></tr>
+        <tr><td>Oprire</td><td>Cere sistemului de operare invitat să se oprească corect.</td></tr>
+        <tr><td>Oprire forțată</td><td>Taie alimentarea. <b>Ține apăsat pentru confirmare</b>, pentru că echivalează cu scoaterea din priză a unui calculator care rulează - o simplă atingere e prea ieftină pentru asta.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>O mașină într-o stare intermediară este descrisă ca atare.</b> Dacă NAS-ul raportează o stare pe care n-o numește nici pornită, nici oprită - pornește, se suspendă, s-a blocat - aplicația afișează exact acel cuvânt și oferă comanda de recuperare, nu un buton Start care nu poate funcționa sau o bifă verde care nu e adevărată.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre aplicații</h2>
+    </div>
+    <details open><summary>Pot instala un pachet DSM de pe telefon?</summary><div class="body">Da. Package Center din aplicație are același catalog ca DSM - Instalate, Toate pachetele, Beta și Comunitate - cu o casetă de căutare. Alegi un pachet, alegi volumul și instalezi. Actualizarea și dezinstalarea funcționează la fel, iar fiecare acțiune este confirmată prin recitirea listei de pachete.</div></details>
+    <details><summary>Pot reporni un container Docker din aplicație?</summary><div class="body">Da. Fiecare container are pornire, oprire și repornire, plus un buton care deschide jurnalele. Un container oprit afișează un buton de pornire, nu o oprire pe care n-ar putea-o executa.</div></details>
+    <details><summary>Pot controla stack-urile Docker Compose?</summary><div class="body">Da. Sub-vizualizarea Proiecte listează proiectele tale Compose și pornește sau oprește tot stack-ul. Jurnalele stack-ului se deschid la fel ca cele ale containerelor.</div></details>
+    <details><summary>Pot porni și opri mașini virtuale?</summary><div class="body">Da, dacă Virtual Machine Manager este instalat. Pornești, oprești normal sau forțezi oprirea oricărei mașini. Oprirea forțată cere apăsare lungă pentru confirmare, pentru că echivalează cu scoaterea din priză.</div></details>
+    <details><summary>Pot crea un container nou din aplicație?</summary><div class="body">Nu. Crearea unui container înseamnă alegerea imaginii, maparea porturilor, montarea volumelor și variabile de mediu - un formular care are loc pe un ecran unde le vezi pe toate odată. Aplicația rulează și monitorizează ce ai creat în DSM sau Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Media</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos, Drive și vizualizarea live Surveillance Station.</p>
+    <p><a class="btn" href="/ro/guide/media/">Photos, Drive &amp; camere &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

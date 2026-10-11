@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology-netwerk, VPN en DDNS bewaken - Syno Manager</title>
+<meta name="description" content="Live doorvoer per interface, actieve verbindingen en geblokkeerde IP's, DSM-services die je kunt schakelen, VPN-clientprofielen en DDNS met je openbare adres." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology-netwerk, VPN en DDNS bewaken - Syno Manager" />
+<meta property="og:description" content="Live doorvoer per interface, actieve verbindingen en geblokkeerde IP's, DSM-services die je kunt schakelen, VPN-clientprofielen en DDNS met je openbare adres." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology-netwerk, VPN en DDNS bewaken - Syno Manager" />
+<meta name="twitter:description" content="Live doorvoer per interface, actieve verbindingen en geblokkeerde IP's, DSM-services die je kunt schakelen, VPN-clientprofielen en DDNS met je openbare adres." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Netwerk"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology-netwerk, VPN en DDNS bewaken - Syno Manager",
+  "description": "Live doorvoer per interface, actieve verbindingen en geblokkeerde IP's, DSM-services die je kunt schakelen, VPN-clientprofielen en DDNS met je openbare adres.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik zien hoe snel mijn NAS nu gegevens overdraagt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De subweergave Netwerk toont live download en upload voor elke interface van de NAS, elk met een eigen grafiek, de linksnelheid en het adres. Gebundelde interfaces verschijnen als de bundel, met de totale snelheid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik DSM-services vanuit de app starten en stoppen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, voor services die DSM aan een client toevertrouwt: SMB, NFS, FTP, rsync en de rest hebben elk een schakelaar. Sommige zijn als door het systeem beheerd gemarkeerd. Dat betekent dat DSM ze op eigen voorwaarden draait en de app alleen hun status toont zonder aan te bieden die te wijzigen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Toont de app welke IP-adressen geblokkeerd zijn?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De subweergave Verbindingen toont het automatische blokkeerbeleid, hoeveel mislukte pogingen binnen welke tijd, en de lijst met momenteel geblokkeerde adressen, ingeklapt achter een aantal zodat honderd items de rest van het scherm niet bedelven."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik zien of mijn VPN verbonden is?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De app toont de VPN-clientprofielen van je NAS en laat je er een laten verbinden of verbreken. Hij beweert niet welke actief is, omdat het DSM-record dat hij leest geen statusveld bevat. Anders doen zou een meting verzinnen."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Handleiding</a> &rsaquo; Netwerk</div>
+      <div class="eyebrow">Netwerk</div>
+      <h1>Wat er <span class="g">in en uit</span> gaat</h1>
+      <p>Vijf subweergaven: live <b>Netwerk</b>-doorvoer, <b>Verbindingen</b> met automatisch blokkeren, <b>Services</b> die je kunt schakelen, <b>VPN</b>-profielen en <b>DDNS</b> met je openbare adres.</p>
+    </div>
+    <div class="hero-shot"><img alt="Live netwerkdoorvoer per interface" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Op deze pagina</b><ul>
+      <li><a href="#throughput">Doorvoer</a></li>
+      <li><a href="#connections">Verbindingen &amp; automatisch blokkeren</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; extern IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Netwerk</div>
+      <h2>Live, per interface</h2>
+      <p class="lead">Elke interface van de NAS krijgt een eigen kaart, ook bundels en Open vSwitch-interfaces, die veel tools overslaan.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Getoond</th><th>Betekenis</th></tr></thead>
+      <tbody>
+        <tr><td>Interfacenaam en snelheid</td><td>De naam die DSM gebruikt en de onderhandelde snelheid, bijvoorbeeld <code>bond0 (20 Gbps)</code> voor een bundel van twee poorten.</td></tr>
+        <tr><td>Adres</td><td>Het IP dat de interface op dit moment heeft.</td></tr>
+        <tr><td>LIVE-indicator</td><td>Groen zolang de cijfers worden bijgewerkt.</td></tr>
+        <tr><td>Download / Upload</td><td>De huidige doorvoer, elk met een doorlopende grafiek eronder zodat een piek te onderscheiden is van aanhoudend verkeer.</td></tr>
+        <tr><td>Netwerkinfo</td><td>Servernaam, gateway en primaire DNS: de drie waarden die je nodig hebt wanneer iets op het netwerk niet wordt omgezet.</td></tr>
+        <tr><td>Actieve verbindingen</td><td>Een aantal, met een weg naar de details.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>De richting is vanuit het standpunt van de NAS.</b> "Download" is verkeer dat bij de NAS aankomt; als je een bestand <em>naar</em> de NAS kopieert, is dat zijn download.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Verbindingen</div>
+      <h2>Wie er op zit en wie er verbannen is</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Drie dingen, in de volgorde waarin je ze meestal wilt:</p>
+        <ul class="plain">
+          <li><b>Automatisch blokkeren</b> - of de brute-forcebeveiliging van DSM aan staat, hoeveel mislukte pogingen haar activeren en binnen welke periode. Dit is de instelling die een telefoon buitensluit na een paar verkeerde wachtwoorden.</li>
+          <li><b>Geblokkeerde IP's</b> - elk adres dat nu verbannen is, achter een aantal. Honderd geblokkeerde adressen is normaal voor een NAS die aan internet hangt en zou het scherm anders bedelven, dus het blijft ingeklapt tot je het opent.</li>
+          <li><b>Actieve verbindingen</b> - wie er is ingelogd, vanaf welk adres, via welk protocol en wanneer de sessie begon. HTTP/HTTPS, SMB, NFS, FTP: elke sessie wordt benoemd.</li>
+        </ul>
+        <div class="note"><b>Je kunt een sessie beëindigen.</b> Een actieve verbinding kun je hier eruit gooien, het snelle antwoord op "er houdt iets een bestand open" of "waarom is dat adres nog verbonden".</div>
+      </div>
+      <img alt="Verbindingen met het automatische blokkeerbeleid, geblokkeerde IP's en actieve verbindingen" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Services</div>
+      <h2>Wat DSM draait</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="DSM-services met draaistatus en schakelaars" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Bovenaan een aantal - <b>actief van totaal</b> - daaronder elke service die DSM aanbiedt, elk met een statusstip en een schakelaar.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Bestands- en verbindingsservices</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Zet er een aan of uit vanaf je telefoon.</li>
+          <li><b>Detectie en printen</b> - Bonjour Printer Broadcast, WS-Discovery, de CUPS-printerdaemon.</li>
+          <li><b>Infrastructuur</b> - NTP, KMIP en de rest.</li>
+          <li><b>Door het systeem beheerde services hebben een slotje.</b> DSM draait die op eigen voorwaarden, dus de app toont hun status en biedt geen schakelaar aan die toch geweigerd zou worden. Een bediening die niet kan werken is erger dan geen bediening.</li>
+        </ul>
+        <div class="note warn"><b>SMB uitschakelen verbreekt iedereen die het gebruikt.</b> Dit zijn echte schakelaars op een draaiende server, geen voorkeurenscherm.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Clientprofielen</h2>
+      <p class="lead">De subweergave VPN toont de VPN-<b>client</b>profielen die op je NAS zijn ingesteld - de verbindingen die hij zelf naar elders opzet - en laat je er een laten verbinden of verbreken.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Hij beweert niet welk profiel verbonden is, en dat is bewust.</b> De NAS bevestigt een verzoek om te verbinden of te verbreken, maar het DSM-record dat de app leest bevat geen statusveld, dus er valt geen oordeel uit af te leiden. In plaats van er een te gokken en stellig ernaast te zitten, zegt de app dat eerlijk en wijst hij je naar de Netwerkpagina van DSM, die het wel weet.</div>
+    <p style="color:var(--steel);margin-top:18px">Zonder ingestelde profielen zegt het scherm dat en vertelt het waar je er een toevoegt: DSM, onder <b>Netwerk &rsaquo; Netwerkinterface</b>.</p>
+      </div>
+      <img alt="De subweergave VPN met clientprofielen" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Je openbare adres en de naam die ernaar wijst</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Eén kaart, twee onafhankelijke helften:</p>
+        <ul class="plain">
+          <li><b>Extern IP</b> - het openbare adres dat je verbinding nu heeft.</li>
+          <li><b>Elke DDNS-hostnaam</b> die je NAS publiceert, de status die DSM ervan bijhoudt, wanneer die voor het laatst werd bijgewerkt en wanneer de volgende update komt.</li>
+        </ul>
+        <h3 style="margin-top:22px">Vernieuwen en bijwerken</h3>
+        <ul class="plain">
+          <li><b>Vernieuwen</b> leest opnieuw uit wat DSM nu heeft.</li>
+          <li><b>Nu bijwerken</b> vraagt de NAS zijn adres opnieuw te publiceren - hetzelfde als de eigen knop van DSM.</li>
+        </ul>
+        <div class="note"><b>Elke helft faalt los van de andere.</b> Een DDNS-provider die uitvalt neemt de meting van het openbare IP niet mee, en een onleesbaar IP wist de status van de hostnaam niet. Twee metingen, twee oordelen.</div>
+        <div class="note" style="margin-top:14px"><b>Het meldt wat DSM opslaat, geen live test.</b> De app zoekt je hostnaam zelf niet op om te controleren of die naar jou wijst. Een provider die op een verzoek antwoordt zegt niets over of je record klopt, dus de app geeft het oordeel van DSM door in plaats van een tweede te verzinnen.</div>
+      </div>
+      <img alt="DDNS en extern IP, met het openbare adres en de hostnaam onleesbaar gemaakt" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Het adres en de hostnaam in deze schermafbeelding zijn vervaagd - ze zijn van een echte NAS.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Netwerk-FAQ</h2>
+    </div>
+    <details open><summary>Kan ik zien hoe snel mijn NAS nu gegevens overdraagt?</summary><div class="body">Ja. De subweergave Netwerk toont live download en upload voor elke interface van de NAS, elk met een eigen grafiek, de linksnelheid en het adres. Gebundelde interfaces verschijnen als de bundel, met de totale snelheid.</div></details>
+    <details><summary>Kan ik DSM-services vanuit de app starten en stoppen?</summary><div class="body">Ja, voor services die DSM aan een client toevertrouwt: SMB, NFS, FTP, rsync en de rest hebben elk een schakelaar. Sommige zijn als door het systeem beheerd gemarkeerd. Dat betekent dat DSM ze op eigen voorwaarden draait en de app alleen hun status toont zonder aan te bieden die te wijzigen.</div></details>
+    <details><summary>Toont de app welke IP-adressen geblokkeerd zijn?</summary><div class="body">Ja. De subweergave Verbindingen toont het automatische blokkeerbeleid en de lijst met momenteel geblokkeerde adressen, ingeklapt achter een aantal zodat honderd items de rest van het scherm niet bedelven.</div></details>
+    <details><summary>Kan ik zien of mijn VPN verbonden is?</summary><div class="body">De app toont de VPN-clientprofielen van je NAS en laat je er een laten verbinden of verbreken. Hij beweert niet welke actief is, omdat het DSM-record dat hij leest geen statusveld bevat. De Netwerkpagina van DSM is de plek die het weet.</div></details>
+    <details><summary>Waarom wijkt mijn openbare IP af van wat een website mij toont?</summary><div class="body">Omdat dit het adres is dat de verbinding van je NAS heeft, uitgelezen via DSM. Zit je telefoon op mobiele data, dan heeft die een ander adres. Het zijn twee verschillende netwerken en beide metingen kloppen.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: Bestanden</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, gedeelde mappen, notities, documenten en contacten.</p>
+    <p><a class="btn" href="/nl/guide/files/">Bestanden &amp; shares &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

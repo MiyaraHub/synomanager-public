@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sauvegarder les réglages de l'application - Syno Manager</title>
+<meta name="description" content="Exportez les réglages propres de Syno Manager dans un fichier et restaurez-les sur un nouveau téléphone. Les connexions au NAS, les mots de passe et les sessions n'y figurent volontairement jamais." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fr/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Sauvegarder les réglages de l'application - Syno Manager" />
+<meta property="og:description" content="Exportez les réglages propres de Syno Manager dans un fichier et restaurez-les sur un nouveau téléphone. Les connexions au NAS, les mots de passe et les sessions n'y figurent volontairement jamais." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fr/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fr_FR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sauvegarder les réglages de l'application - Syno Manager" />
+<meta name="twitter:description" content="Exportez les réglages propres de Syno Manager dans un fichier et restaurez-les sur un nouveau téléphone. Les connexions au NAS, les mots de passe et les sessions n'y figurent volontairement jamais." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Accueil",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guide de l'utilisateur",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sauvegarde &amp; restauration"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Sauvegarder les réglages de l'application - Syno Manager",
+  "description": "Exportez les réglages propres de Syno Manager dans un fichier et restaurez-les sur un nouveau téléphone. Les connexions au NAS, les mots de passe et les sessions n'y figurent volontairement jamais.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "fr",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Que contient la sauvegarde des réglages ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Uniquement les réglages de l'application : thème, navigation, disposition du tableau de bord, comportement au lancement, catégories, intervalle d'interrogation et unité de température. Les connexions au NAS, les mots de passe et les sessions n'y figurent jamais."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pourquoi mes identifiants NAS ne sont-ils pas sauvegardés ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Parce qu'un fichier portable contenant des mots de passe de NAS est un fichier portable contenant des mots de passe de NAS. Les identifiants se trouvent dans le trousseau ou le keystore de l'appareil, qu'un export ne peut volontairement pas atteindre. Vous les saisissez de nouveau une fois sur le nouveau téléphone."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Comment passer à un nouveau téléphone ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exportez sur l'ancien avec Télécharger ou Partager, transférez le fichier sur le nouveau téléphone, installez l'application, collez le contenu du fichier dans Restaurer, puis ajoutez de nouveau votre NAS. Tout le reste revient comme vous l'aviez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il pour les réglages que le fichier ne connaît pas ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Seuls les réglages connus de l'application sont appliqués et tout le reste du fichier est ignoré : une ancienne sauvegarde restaurée dans une application plus récente laisse donc les nouveaux réglages à leurs valeurs par défaut au lieu d'échouer."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fr/"><img src="/assets/syno-manager-icon.png" alt="Icône de Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Rechercher dans le guide..." data-i18n-empty="Aucun résultat pour" data-i18n-language="Langue">
+      <a href="/fr/">Accueil</a>
+      <a href="/fr/guide/" class="active">Guide de l'utilisateur</a>
+      <a href="/fr/#screenshots">Captures d'écran</a>
+      <a href="/fr/compatible-nas/">Compatibilité</a>
+      <a href="/fr/best-synology-nas-app/">Pourquoi changer</a>
+      <a href="/fr/help/">Aide</a>
+      <a href="/fr/#top" class="cta">Télécharger</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fr/">Accueil</a> &rsaquo; <a href="/fr/guide/">Guide d'utilisation</a> &rsaquo; Sauvegarde &amp; restauration</div>
+      <div class="eyebrow">Sauvegarde &amp; restauration</div>
+      <h1>Votre configuration, <span class="g">sur le prochain téléphone</span></h1>
+      <p>Un fichier contient toutes les préférences que vous avez définies - thème, barre du bas, disposition du tableau de bord, interrogation, unités. Il ne contient volontairement aucun identifiant.</p>
+    </div>
+    <div class="hero-shot"><img alt="L'écran Sauvegarde et restauration avec Exporter et Restaurer" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ce que contient le fichier</div>
+      <h2>Et ce qu'il ne contient pas</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Inclus</h3>
+        <ul class="plain">
+          <li>Thème, surface, couleur d'accentuation et taille du texte.</li>
+          <li>La barre de navigation du bas et son ordre.</li>
+          <li>La disposition du tableau de bord et les cartes activées.</li>
+          <li>Les catégories du tableau de bord.</li>
+          <li>Le comportement au lancement.</li>
+          <li>L'intervalle d'interrogation.</li>
+          <li>L'unité de température.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Jamais inclus</h3>
+        <ul class="plain">
+          <li><b>Connexions au NAS</b> - adresses, ports et options.</li>
+          <li><b>Mots de passe.</b></li>
+          <li><b>Sessions et jetons d'appareil 2FA.</b></li>
+        </ul>
+        <div class="note stop"><b>Cette exclusion est le but.</b> Un fichier que l'on peut s'envoyer par e-mail et déposer dans un dossier cloud est un fichier qui peut fuiter. Les identifiants se trouvent dans le trousseau ou le keystore de l'appareil précisément pour qu'un export ne puisse pas les atteindre, et l'application ne fait pas d'exception pour sa propre commodité.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Exporter</div>
+      <h2>Sortir le fichier</h2>
+      <p class="lead"><b>Réglages &rsaquo; Sauvegarde &amp; restauration</b>, puis l'un des deux boutons.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Télécharger</b> enregistre le fichier JSON directement sur l'appareil.</li>
+      <li><b>Partager</b> le confie à la feuille de partage, pour l'envoyer vers Fichiers, Drive, une autre application ou vous-même.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Restaurer</div>
+      <h2>Le remettre en place</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Ouvrez le fichier de sauvegarde</b> et copiez son contenu.</li>
+      <li><b>Collez-le dans la zone Restaurer</b>, ou touchez <b>Coller depuis le presse-papiers</b>.</li>
+      <li><b>Touchez Restaurer les réglages.</b></li>
+      <li><b>Ajoutez de nouveau votre NAS</b> - cette partie n'a jamais été dans le fichier.</li>
+    </ol>
+    <div class="note"><b>Les entrées inconnues sont ignorées, pas rejetées.</b> Seuls les réglages que l'application reconnaît sont appliqués : une sauvegarde d'une version plus ancienne se restaure donc proprement dans une version plus récente - les réglages qui n'existaient pas alors restent simplement à leurs valeurs par défaut.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Voir aussi</div>
+      <h2>À ne pas confondre avec</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/fr/guide/backup/">Hyper Backup et Active Backup</a></b> - votre NAS qui sauvegarde vos données. Rien à voir avec cet écran.</li>
+      <li><b>Sauvegarde de la configuration DSM</b> - les réglages propres du NAS, exportés depuis le Panneau de configuration de DSM.</li>
+      <li><b>Sauvegardes de l'appareil.</b> Les identifiants enregistrés de Syno Manager sont volontairement <b>exclus</b> des sauvegardes d'appareil Android et iOS : restaurer un téléphone depuis une sauvegarde d'appareil n'emportera donc pas les mots de passe du NAS.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Questions fréquentes</div>
+      <h2>FAQ sur la sauvegarde &amp; restauration</h2>
+    </div>
+    <details open><summary>Que contient la sauvegarde des réglages ?</summary><div class="body">Uniquement les réglages de l'application : thème, navigation, disposition du tableau de bord, comportement au lancement, catégories, intervalle d'interrogation et unité de température. Les connexions au NAS, les mots de passe et les sessions n'y figurent jamais.</div></details>
+    <details><summary>Pourquoi mes identifiants NAS ne sont-ils pas sauvegardés ?</summary><div class="body">Parce qu'un fichier portable contenant des mots de passe de NAS est un fichier portable contenant des mots de passe de NAS. Les identifiants se trouvent dans le trousseau ou le keystore de l'appareil, qu'un export ne peut volontairement pas atteindre.</div></details>
+    <details><summary>Comment passer à un nouveau téléphone ?</summary><div class="body">Exportez sur l'ancien, transférez le fichier, installez l'application, collez le contenu dans Restaurer, puis ajoutez de nouveau votre NAS.</div></details>
+    <details><summary>Que se passe-t-il pour les réglages que le fichier ne connaît pas ?</summary><div class="body">Seuls les réglages connus sont appliqués et tout le reste est ignoré : une ancienne sauvegarde restaurée dans une application plus récente laisse donc les nouveaux réglages à leurs valeurs par défaut.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Quelque chose ne fonctionne pas ?</h2>
+    <p class="lead" style="margin:0 auto 24px">Le guide de dépannage couvre les échecs de connexion, les tuiles vides, les onglets manquants et les widgets périmés.</p>
+    <p><a class="btn" href="/fr/help/">Dépannage &rarr;</a> &nbsp; <a class="btn ghost" href="/fr/guide/">Retour au guide</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fr/">Accueil</a><a href="/fr/guide/">Guide d'utilisation</a><a href="/fr/guide/getting-started/">Premiers pas</a><a href="/fr/compatible-nas/">Compatibilité</a><a href="/fr/best-synology-nas-app/">Pourquoi changer</a><a href="/fr/synology-app-for-iphone/">iPhone et iPad</a><a href="/fr/synology-app-for-android/">Android</a><a href="/fr/synology-app-for-mac-windows/">Mac et Windows</a><a href="/fr/ds-finder-alternative/">vs DS finder</a><a href="/fr/help/">Aide</a><a href="/fr/privacy/">Confidentialité</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Signaler un bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager est une application indépendante, sans affiliation, approbation ni parrainage de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station et QuickConnect sont des marques de Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

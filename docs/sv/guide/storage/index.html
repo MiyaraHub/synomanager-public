@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lagring, RAID och SMART-hälsa på Synology - Syno Manager</title>
+<meta name="description" content="Synology-volymer och pooler med RAID-typ och ledigt utrymme, SMART-status och temperatur per disk, ett snabbt SMART-test och säker utmatning av USB och eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/sv/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Lagring, RAID och SMART-hälsa på Synology - Syno Manager" />
+<meta property="og:description" content="Synology-volymer och pooler med RAID-typ och ledigt utrymme, SMART-status och temperatur per disk, ett snabbt SMART-test och säker utmatning av USB och eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/sv/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lagring, RAID och SMART-hälsa på Synology - Syno Manager" />
+<meta name="twitter:description" content="Synology-volymer och pooler med RAID-typ och ledigt utrymme, SMART-status och temperatur per disk, ett snabbt SMART-test och säker utmatning av USB och eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "sv",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Användarguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lagring"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Lagring, RAID och SMART-hälsa på Synology - Syno Manager",
+  "description": "Synology-volymer och pooler med RAID-typ och ledigt utrymme, SMART-status och temperatur per disk, ett snabbt SMART-test och säker utmatning av USB och eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "sv",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jag se SMART-status för varje disk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Delvyn Diskhälsa listar varje disk med modell, om det är en HDD eller SSD, kapacitet, temperatur och SMART-utlåtande. Du kan också starta ett snabbt SMART-test på valfri disk från telefonen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vilken temperatur är för varm för en NAS-disk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appen färgar en disk bärnstensgul över 45 grader C och röd över 55 grader C, och systemtemperaturen bärnstensgul över 50 och röd över 60. Gränserna matar också hälsomärket på startskärmen, så en het disk syns där utan att du behöver leta efter den."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag mata ut en USB-disk på ett säkert sätt från appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, från delvyn Extern. Utmatningen bekräftas av att disken faktiskt försvinner från enhetslistan, inte av att begäran godtogs - så en disk som säger att den matats ut har verkligen gjort det. En disk som formateras eller initieras kan inte matas ut."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jag skapa eller utöka en volym från appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Att skapa, utöka och reparera volymer och pooler görs i DSM:s Lagringshanterare. Appen rapporterar vad din lagring gör och låter dig agera på diskar; den bygger inte om ditt diskarray från en telefon."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/sv/"><img src="/assets/syno-manager-icon.png" alt="Ikon för Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Sök i guiden..." data-i18n-empty="Inga träffar för" data-i18n-language="Språk">
+      <a href="/sv/">Hem</a>
+      <a href="/sv/guide/" class="active">Användarguide</a>
+      <a href="/sv/#screenshots">Skärmbilder</a>
+      <a href="/sv/compatible-nas/">Kompatibilitet</a>
+      <a href="/sv/best-synology-nas-app/">Därför byter man</a>
+      <a href="/sv/help/">Hjälp</a>
+      <a href="/sv/#top" class="cta">Ladda ner</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/sv/">Hem</a> &rsaquo; <a href="/sv/guide/">Användarguide</a> &rsaquo; Lagring</div>
+      <div class="eyebrow">Lagring</div>
+      <h1>Varje volym, <span class="g">varje disk</span></h1>
+      <p>Tre delvyer: <b>Volymer &amp; pooler</b> för kapacitet och RAID, <b>Diskhälsa</b> för SMART och temperatur per disk, och <b>Extern</b> för allt som sitter i baksidan.</p>
+    </div>
+    <div class="hero-shot"><img alt="Lagringsvolymer och diskar i Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På den här sidan</b><ul>
+      <li><a href="#volumes">Volymer &amp; pooler</a></li>
+      <li><a href="#drives">Disklistan</a></li>
+      <li><a href="#disk-health">Diskhälsa &amp; SMART</a></li>
+      <li><a href="#thresholds">Temperaturgränser</a></li>
+      <li><a href="#external">Extern lagring &amp; säker utmatning</a></li>
+      <li><a href="#limits">Vad den inte gör</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volymer &amp; pooler</div>
+      <h2>Kapacitet, med en blick</h2>
+      <p class="lead">Varje volym får ett kort med sitt namn, sin RAID-typ, sin status och hur många diskar som ligger bakom, över ett användningsfält med använt, procent, totalt och ledigt.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Visas</th><th>Betydelse</th></tr></thead>
+      <tbody>
+        <tr><td>Volymnamn</td><td>Så som DSM namnger den - <code>VOLUME_1</code>, och så vidare.</td></tr>
+        <tr><td>RAID-typ</td><td>RAID 5, SHR, RAID 1, Basic - vad poolen under än faktiskt är.</td></tr>
+        <tr><td>Status</td><td>Volymens eget tillstånd: <b>normal</b>, degraderad, havererad. Ett degraderat array är det enda på den här skärmen som är värt att agera på idag.</td></tr>
+        <tr><td>Antal diskar</td><td>Hur många fysiska diskar volymen sträcker sig över.</td></tr>
+        <tr><td>Användningsfält</td><td>Grönt normalt, bärnstensgult över 80% och rött över 90%. Det är samma gränser som <a href="/sv/guide/home/#header">hälsomärket</a> använder.</td></tr>
+        <tr><td>Använt / Totalt / Ledigt</td><td>Alla tre, eftersom ”70% fullt” och ”13 TB ledigt” besvarar olika frågor.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Vad som finns i varje plats</h2>
+      <p class="lead">Under volymerna visas varje fysisk disk efter platsnummer.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Plats</b> - Disk 1, Disk 2 och så vidare, i enlighet med etiketterna på chassit.</li>
+      <li><b>Modell</b> - diskens egen modellsträng.</li>
+      <li><b>Tillverkare och typ</b> - tillverkaren och om det är en HDD eller en SSD. En disk vars tillverkare NAS-enheten inte kunde identifiera visas som <b>Okänd</b> i stället för att gissas.</li>
+      <li><b>Temperatur</b>, färgad efter gränserna nedan.</li>
+      <li><b>SMART-utlåtande</b> - <b>SMART OK</b> när diskens egen självbedömning är frisk.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Diskhälsa</div>
+      <h2>SMART, och ett test du kan starta</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Delvyn Diskhälsa visar samma diskar med mer utrymme: kapacitet, typ, temperatur och SMART-tillstånd får var sitt märke, och varje disk har en knapp för <b>Snabbt SMART-test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Snabbt SMART-test</b> ber disken köra sin egen korta självbedömning. Det tar ett par minuter och avbryter inget som använder volymen.</li>
+          <li><b>Utlåtandet är diskens, inte vårt.</b> SMART är disken som rapporterar om sig själv; appen förmedlar det. En disk som säger att den är frisk och sedan havererar är en begränsning hos SMART, inte hos avläsningen.</li>
+          <li><b>Ett oläsbart SMART-tillstånd visas som okänt</b>, aldrig som friskt. En saknad avläsning och en bra avläsning är olika saker och slås aldrig ihop.</li>
+        </ul>
+      </div>
+      <img alt="Diskhälsa som visar varje disk med SMART-status, temperatur och en knapp för Snabbt SMART-test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Siffrorna bakom färgerna</div>
+      <h2>Gränser</h2>
+      <p class="lead">Inget här är en gissning om din hårdvara - det här är de punkter där appen byter färg och, där det är relevant, startskärmens hälsomärke.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Avläsning</th><th>Bärnsten vid</th><th>Röd vid</th></tr></thead>
+      <tbody>
+        <tr><td>Disktemperatur</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Systemtemperatur</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Volymanvändning</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS-laddning</td><td>under 50%</td><td>under 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Växla mellan &deg;C och &deg;F i <a href="/sv/guide/settings/#preferences">Inställningar &rsaquo; Temperaturenhet</a>. Varje temperatur i appen följer det direkt, även de på startskärmen och i widgetarna.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Extern</div>
+      <h2>USB, eSATA och säker utmatning</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Extern lagring och USB-enheter, utan något anslutet och med en UPS listad" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Två avsnitt: <b>Extern lagring</b> för diskar du kan montera och mata ut, och <b>USB-enheter</b> för allt annat som är inkopplat - en UPS, en skrivare, en dongel.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Utmatningen bekräftas av att disken försvinner.</b> Appen rapporterar inte lyckat resultat bara för att begäran kom tillbaka OK; den läser om enhetslistan och säger att disken är utmatad först när den verkligen är borta. Det är skillnaden mellan ”säkert att dra ur” och ”förmodligen säkert att dra ur”.</li>
+          <li><b>En upptagen disk kan inte matas ut.</b> En som formateras eller initieras nekas, med orsaken, i stället för att slitas ut mitt i en skrivning.</li>
+          <li><b>Inget anslutet säger appen rakt ut.</b> En tom lista lyder ”Inga externa diskar anslutna” - inte en tom ruta som du måste tolka.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Gränser</div>
+      <h2>Vad den här skärmen inte gör</h2>
+      <p class="lead">Lagring är det enda stället där ett felaktigt tryck inte går att ångra, så appen läser mycket mer än den skriver.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Den skapar, utökar eller raderar inte en volym eller pool.</b> Det görs i DSM:s Lagringshanterare, på en skärm som är stor nog att visa vad du är på väg att göra.</li>
+      <li><b>Den reparerar inte ett degraderat array.</b> Den talar om, tydligt och på startskärmen, att ett är degraderat.</li>
+      <li><b>Den formaterar ingenting.</b></li>
+      <li><b>Den kör inget fullständigt SMART-test</b> - bara det snabba. En fullständig ytskanning tar timmar och hör hemma någonstans där du inte går ifrån den.</li>
+    </ul>
+    <div class="note"><b>Skrubbning, ombyggnader och paritetskontroller</b> visas som pågående åtgärder medan de pågår, så du kan se en bli klar i appen även om du startade den i DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanliga frågor</div>
+      <h2>FAQ om lagring</h2>
+    </div>
+    <details open><summary>Kan jag se SMART-status för varje disk?</summary><div class="body">Ja. Delvyn Diskhälsa listar varje disk med modell, om det är en HDD eller SSD, kapacitet, temperatur och SMART-utlåtande. Du kan också starta ett snabbt SMART-test på valfri disk från telefonen.</div></details>
+    <details><summary>Vilken temperatur är för varm för en NAS-disk?</summary><div class="body">Appen färgar en disk bärnstensgul över 45&deg;C och röd över 55&deg;C, och systemtemperaturen bärnstensgul över 50&deg;C och röd över 60&deg;C. Gränserna matar också hälsomärket på startskärmen.</div></details>
+    <details><summary>Kan jag mata ut en USB-disk på ett säkert sätt från appen?</summary><div class="body">Ja, från delvyn Extern. Utmatningen bekräftas av att disken faktiskt försvinner från enhetslistan, inte av att begäran godtogs. En disk som formateras eller initieras kan inte matas ut.</div></details>
+    <details><summary>Kan jag skapa eller utöka en volym från appen?</summary><div class="body">Nej. Att skapa, utöka och reparera volymer och pooler görs i DSM:s Lagringshanterare. Appen rapporterar vad din lagring gör och låter dig agera på diskar; den bygger inte om ditt diskarray från en telefon.</div></details>
+    <details><summary>Varför står det Okänd som tillverkare för en disk?</summary><div class="body">För att NAS-enheten inte rapporterade någon. Appen visar det den fick veta i stället för att sluta sig till en tillverkare från modellsträngen, vilket vore en gissning som presenteras som ett faktum.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Nästa: Nätverk</h2>
+    <p class="lead" style="margin:0 auto 24px">Genomströmning, anslutningar, tjänster, VPN och DDNS.</p>
+    <p><a class="btn" href="/sv/guide/network/">Nätverk &rarr;</a> &nbsp; <a class="btn ghost" href="/sv/guide/">Tillbaka till guiden</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/sv/">Hem</a><a href="/sv/guide/">Användarguide</a><a href="/sv/guide/getting-started/">Kom igång</a><a href="/sv/compatible-nas/">Kompatibilitet</a><a href="/sv/best-synology-nas-app/">Varför byta</a><a href="/sv/synology-app-for-iphone/">iPhone & iPad</a><a href="/sv/synology-app-for-android/">Android</a><a href="/sv/synology-app-for-mac-windows/">Mac & Windows</a><a href="/sv/ds-finder-alternative/">mot DS finder</a><a href="/sv/help/">Hjälp</a><a href="/sv/privacy/">Integritet</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportera en bugg</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager är en oberoende app och är inte knuten till, godkänd av eller sponsrad av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station och QuickConnect är varumärken som tillhör Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

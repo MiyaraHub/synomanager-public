@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS용 Wake-on-LAN - Syno Manager</title>
+<meta name="description" content="절전 중인 Synology나 NAS를 통해 네트워크의 다른 기기를 깨우세요. 어디서든 가능한 것과 VPN이나 공유기 포워딩이 필요한 것을 솔직하게 알려 드립니다." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS용 Wake-on-LAN - Syno Manager" />
+<meta property="og:description" content="절전 중인 Synology나 NAS를 통해 네트워크의 다른 기기를 깨우세요. 어디서든 가능한 것과 VPN이나 공유기 포워딩이 필요한 것을 솔직하게 알려 드립니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS용 Wake-on-LAN - Syno Manager" />
+<meta name="twitter:description" content="절전 중인 Synology나 NAS를 통해 네트워크의 다른 기기를 깨우세요. 어디서든 가능한 것과 VPN이나 공유기 포워딩이 필요한 것을 솔직하게 알려 드립니다." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS용 Wake-on-LAN - Syno Manager",
+  "description": "절전 중인 Synology나 NAS를 통해 네트워크의 다른 기기를 깨우세요. 어디서든 가능한 것과 VPN이나 공유기 포워딩이 필요한 것을 솔직하게 알려 드립니다.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "ko",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "어디서든 NAS를 깨울 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NAS가 켜져 있는지와 상관없이 내 네트워크에 도달할 수 있는 경로가 있을 때만 가능합니다. 네트워크로 들어가는 VPN이나 Wake-on-LAN을 포워딩하도록 설정한 공유기가 그런 경로입니다. 전원이 꺼진 NAS는 스스로 깨우기 패킷을 중계할 수 없고, QuickConnect로는 꺼져 있는 NAS에 접근할 수 없습니다. 같은 네트워크 안에서는 그냥 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS를 통해 PC를 깨울 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 이 방법은 NAS 자체가 켜져 있기만 하면 어디서든 됩니다. 평소처럼 연결해서 NAS에 요청하면 NAS가 LAN에 매직 패킷을 대신 브로드캐스트합니다. Synology의 DS Router 앱이 쓰는 방식과 같습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS의 MAC 주소는 어디서 가져오나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "처음 연결할 때 앱이 자동으로 가져오므로 직접 찾아볼 필요가 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "다른 기기를 추가하려면 무엇이 필요한가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "알아보기 쉬운 이름과 MAC 주소가 필요합니다. MAC 주소는 보통 공유기의 기기 목록이나 해당 컴퓨터의 네트워크 설정에서 찾을 수 있습니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용자 가이드</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1><span class="g">소파에서</span> 기기 켜기</h1>
+      <p>기기 목록의 연결 옆에는 NAS 자체를 깨우는 <b>깨우기</b> 버튼이, 네트워크의 나머지 기기를 위해서는 <b>기기 깨우기</b> 화면이 있습니다. 둘 중 하나는 어디서든 동작하고, 다른 하나에는 솔직하게 말씀드릴 조건이 있습니다.</p>
+    </div>
+    <div class="hero-shot"><img alt="기기 깨우기 화면" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">솔직한 표</div>
+      <h2>어디서 무엇이 되는지</h2>
+      <p class="lead">Wake-on-LAN은 로컬 네트워크에서의 브로드캐스트입니다. 되는 것과 안 되는 것은 모두 이 한 가지 사실에서 비롯되므로, 각주에 숨기지 않고 그대로 보여 드립니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>깨우려는 대상</th><th>현재 위치</th><th>가능 여부</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td>NAS</td><td>같은 네트워크</td><td class="yes">예</td><td>휴대폰이 패킷을 직접 브로드캐스트합니다. 따로 설정할 것이 없습니다.</td></tr>
+        <tr><td>다른 기기</td><td>같은 네트워크</td><td class="yes">예</td><td>동일합니다. 휴대폰이나 NAS 중 어느 쪽이든 보낼 수 있습니다.</td></tr>
+        <tr><td>다른 기기, NAS가 켜져 있을 때</td><td>어디서나</td><td class="yes">예</td><td><b>NAS가 대신 중계해 줍니다.</b> 평소 연결로 NAS에 접속하면 NAS가 LAN에 브로드캐스트합니다. DS Router와 같은 방식입니다.</td></tr>
+        <tr><td>꺼져 있는 NAS 자체</td><td>네트워크 밖</td><td class="no">설정 필요</td><td>전원이 꺼진 NAS는 스스로 깨우기 패킷을 중계할 수 없고, QuickConnect로는 꺼져 있는 NAS에 접근할 수 없습니다. 네트워크로 들어가는 <b>VPN</b>이나, <b>UDP 포트 9</b>를 LAN 브로드캐스트 주소로 포워딩하는 공유기가 필요합니다.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>가운데 줄이 가장 유용합니다.</b> 기차 안에서 집에 있는 데스크톱을 깨우는 것이 되며, 공유기 설정이 전혀 필요 없습니다. 항상 켜져 있는 NAS가 브로드캐스트를 대신 해 주기 때문입니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS</div>
+      <h2>DiskStation 깨우기</h2>
+    </div>
+    <ol class="steps">
+      <li><b>따로 설정할 것은 없습니다.</b> 처음 연결할 때 앱이 NAS의 MAC 주소를 자동으로 가져오므로, 필요할 때 버튼이 이미 준비되어 있습니다.</li>
+      <li><b>설정 &rsaquo; NAS 기기 관리를 엽니다.</b></li>
+      <li>NAS 옆의 <b>깨우기를 탭</b>합니다.</li>
+      <li><b>잠시 기다린 뒤</b> 연결을 탭하세요. NAS는 부팅하는 데 시간이 걸리며, 앱은 NAS가 응답하기 전에 켜진 것처럼 행동하지 않습니다.</li>
+    </ol>
+    <div class="note warn"><b>NAS에서도 Wake-on-LAN이 켜져 있어야 합니다.</b> DSM의 <b>제어판 &rsaquo; 하드웨어 &amp; 전원 &rsaquo; 일반</b>에서 설정합니다. 꺼져 있는 NAS는 누가 보내든 패킷을 무시합니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">그 밖의 모든 것</div>
+      <h2>NAS를 통해 다른 기기 깨우기</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>설정 &rsaquo; 기기 깨우기</b>. 네트워크의 모든 컴퓨터를 이름과 MAC 주소로 추가하면, NAS가 네트워크 안에서 매직 패킷을 대신 보내 줍니다.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>기기 추가를 탭합니다.</b></li>
+          <li>알아보기 쉬운 <b>이름</b>을 붙이세요. 예: “데스크톱”, “게임용 PC”, “서버”.</li>
+          <li><b>MAC 주소를 입력하세요.</b> 공유기의 기기 목록에서 찾는 것이 보통 가장 쉽습니다.</li>
+          <li><b>저장합니다.</b> 목록에 나타나며 기기마다 깨우기 버튼이 있습니다.</li>
+        </ol>
+        <div class="note"><b>NAS가 대신 보내므로 외출 중에도 동작합니다.</b> 모바일 데이터나 QuickConnect 등 NAS에 접속할 수 있는 곳이면 어디서든 가능합니다. Synology 자체 라우터 앱과 같은 방식이며, NAS 자체를 깨울 일이 없더라도 설정해 둘 만한 이유입니다.</div>
+      </div>
+      <img alt="비어 있는 상태와 기기 추가 버튼이 있는 기기 깨우기 화면" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">대상 컴퓨터에서</div>
+      <h2>깨우기가 성공하려면 필요한 조건</h2>
+      <p class="lead">패킷을 보냈는데 아무 일도 일어나지 않는다면 거의 항상 아래 중 하나가 원인입니다. 앱이 외부에서 확인하거나 고칠 수 있는 것은 하나도 없습니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>컴퓨터의 BIOS 또는 UEFI에서 Wake-on-LAN 활성화.</b> “Wake on PCIe”나 “Power on by PCI-E” 같은 이름인 경우가 많습니다.</li>
+      <li><b>네트워크 어댑터에서도 활성화.</b> Windows에서는 장치 관리자, 어댑터 속성, 전원 관리, “이 장치를 사용하여 컴퓨터의 대기 모드를 해제할 수 있음”에서 설정합니다.</li>
+      <li><b>Windows에서는 빠른 시작을 끄세요.</b> 켜 두면 종료한 PC가 실제로는 최대 절전 상태여서 패킷을 무시하는 경우가 많습니다.</li>
+      <li><b>보통은 유선 연결.</b> Wi-Fi를 통한 깨우기는 특정 하드웨어와 드라이버 지원이 필요하며, 이더넷이 훨씬 안정적입니다.</li>
+      <li><b>벽면 전원이 계속 연결되어 있을 것.</b> 매직 패킷을 받으려면 네트워크 어댑터에 대기 전력이 공급되어야 합니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>Wake-on-LAN FAQ</h2>
+    </div>
+    <details open><summary>어디서든 NAS를 깨울 수 있나요?</summary><div class="body">NAS가 켜져 있는지와 상관없이 내 네트워크에 도달할 수 있는 경로가 있을 때만 가능합니다. VPN이나 Wake-on-LAN을 포워딩하도록 설정한 공유기가 그런 경로입니다. 전원이 꺼진 NAS는 스스로 깨우기 패킷을 중계할 수 없고, QuickConnect로는 꺼져 있는 NAS에 접근할 수 없습니다. 같은 네트워크 안에서는 그냥 됩니다.</div></details>
+    <details><summary>NAS를 통해 PC를 깨울 수 있나요?</summary><div class="body">네, 이 방법은 NAS 자체가 켜져 있기만 하면 어디서든 됩니다. 평소처럼 연결해서 NAS에 요청하면 NAS가 LAN에 매직 패킷을 대신 브로드캐스트합니다.</div></details>
+    <details><summary>NAS의 MAC 주소는 어디서 가져오나요?</summary><div class="body">처음 연결할 때 앱이 자동으로 가져오므로 직접 찾아볼 필요가 없습니다.</div></details>
+    <details><summary>다른 기기를 추가하려면 무엇이 필요한가요?</summary><div class="body">알아보기 쉬운 이름과 MAC 주소가 필요하며, MAC 주소는 보통 공유기의 기기 목록에 있습니다.</div></details>
+    <details><summary>깨우기를 보냈는데 아무 일도 일어나지 않아요.</summary><div class="body">대상 컴퓨터에서 Wake-on-LAN이 켜져 있는지 확인하세요. BIOS, 네트워크 어댑터, 그리고 Windows 빠른 시작이 꺼져 있는지 살펴보세요. 또한 유선 이더넷으로 연결되어 있는지, 그리고 NAS를 깨우는 경우라면 제어판에서 NAS의 Wake-on-LAN이 켜져 있는지도 확인하세요.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 위젯</h2>
+    <p class="lead" style="margin:0 auto 24px">홈 화면에서 NAS를 확인하세요. 정확한 시각 표시와 함께합니다.</p>
+    <p><a class="btn" href="/ko/guide/widgets/">홈 화면 위젯 &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

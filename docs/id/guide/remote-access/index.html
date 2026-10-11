@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Akses NAS Synology Anda dari Jarak Jauh - Syno Manager</title>
+<meta name="description" content="Jangkau Synology Anda dari mana saja dengan QuickConnect, domain khusus, atau VPN. Fitur mana yang berfungsi lewat jalur mana, termasuk foto dan tampilan langsung kamera." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Akses NAS Synology Anda dari Jarak Jauh - Syno Manager" />
+<meta property="og:description" content="Jangkau Synology Anda dari mana saja dengan QuickConnect, domain khusus, atau VPN. Fitur mana yang berfungsi lewat jalur mana, termasuk foto dan tampilan langsung kamera." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Akses NAS Synology Anda dari Jarak Jauh - Syno Manager" />
+<meta name="twitter:description" content="Jangkau Synology Anda dari mana saja dengan QuickConnect, domain khusus, atau VPN. Fitur mana yang berfungsi lewat jalur mana, termasuk foto dan tampilan langsung kamera." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Jauh dari rumah"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Akses NAS Synology Anda dari Jarak Jauh - Syno Manager",
+  "description": "Jangkau Synology Anda dari mana saja dengan QuickConnect, domain khusus, atau VPN. Fitur mana yang berfungsi lewat jalur mana, termasuk foto dan tampilan langsung kamera.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "id",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apakah saya perlu meneruskan port untuk menggunakan NAS dari jarak jauh?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. QuickConnect menyalurkan koneksi lewat layanan Synology tanpa konfigurasi router apa pun, dan VPN ke jaringan Anda juga bisa. Penerusan port hanya diperlukan jika Anda memang menginginkan jalur langsung dari internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah foto dan tampilan langsung kamera berfungsi lewat QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ya. Thumbnail, gambar penuh, tampilan langsung kamera, serta unduhan File Station dan Drive semuanya melewati jalur apa pun yang sedang aktif, termasuk relay QuickConnect. Relay lebih lambat daripada jaringan Anda sendiri, tetapi berfungsi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Haruskah saya menambahkan NAS saya dua kali?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Itu pola yang bagus. Satu entri lewat IP lokal saat Anda di rumah - cepat dan langsung - dan satu lewat QuickConnect saat Anda di luar. Keduanya entri terpisah dengan tata letak terpisah dan beralih cukup dengan sekali ketuk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah QuickConnect aman?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Koneksi dienkripsi ujung ke ujung saat Anda menggunakan HTTPS, dan relay Synology hanya meneruskan lalu lintas tanpa menyimpan data Anda. Kredensial DSM Anda tetap berlaku, dan autentikasi dua faktor tetap berfungsi."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Saat di luar rumah</div>
+      <div class="eyebrow">Jauh dari rumah</div>
+      <h1>Aplikasi yang sama, <span class="g">jalur yang berbeda</span></h1>
+      <p>Syno Manager bekerja sama baiknya, baik Anda berada di samping NAS maupun di belahan dunia lain. Yang berubah hanyalah cara koneksi sampai ke sana, dan setiap jalur punya kelebihan dan kekurangan yang perlu diketahui.</p>
+    </div>
+    <div class="hero-shot"><img alt="Formulir Tambah NAS yang menampilkan IP Langsung dan QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tiga jalur</div>
+      <h2>Pilih yang paling cocok</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Jalur</th><th>Penyiapan</th><th>Kecepatan</th><th>Membuka sesuatu?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Aktifkan di DSM dan masukkan ID-nya. Tidak ada yang perlu diatur di router.</td><td>Lebih lambat - lalu lintas lewat relay Synology.</td><td class="yes">Tidak ada. Tidak ada port terbuka di sisi Anda.</td></tr>
+        <tr><td><b>Domain khusus / DDNS</b></td><td>Hostname yang mengarah ke alamat Anda, ditambah penerusan port di router.</td><td>Langsung, jadi secepat yang diizinkan kecepatan unggah Anda.</td><td class="no">Ya - port DSM dapat dijangkau dari internet.</td></tr>
+        <tr><td><b>VPN</b></td><td>Server VPN di router atau NAS Anda, dan klien di ponsel.</td><td>Langsung setelah terhubung.</td><td class="yes">Hanya port VPN. Yang lainnya tetap privat.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Jika Anda ragu, gunakan QuickConnect.</b> Ini pilihan yang tidak memerlukan pengetahuan tentang router dan tidak membuka apa pun, dan setiap fitur di aplikasi berfungsi lewat jalur ini.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Yang berfungsi dari jarak jauh</div>
+      <h2>Semuanya, dengan dua catatan kaki</h2>
+      <p class="lead">Aplikasi tidak memiliki fitur yang dikurangi saat Anda di luar. Dua hal yang perlu dipikirkan sejenak adalah tampilan langsung kamera dan membangunkan NAS yang mati.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Fitur</th><th>Jauh dari rumah</th></tr></thead>
+      <tbody>
+        <tr><td>Pemantauan - sistem, penyimpanan, jaringan, kesehatan</td><td class="yes">Berfungsi di jalur mana pun.</td></tr>
+        <tr><td>Docker, paket, layanan, tugas, pengguna</td><td class="yes">Berfungsi di jalur mana pun.</td></tr>
+        <tr><td>Synology Photos - thumbnail dan gambar penuh</td><td class="yes">Berfungsi, termasuk lewat relay.</td></tr>
+        <tr><td>Unduhan File Station dan Drive</td><td class="yes">Berfungsi, termasuk lewat relay.</td></tr>
+        <tr><td>Pencadangan - status dan Jalankan Sekarang</td><td class="yes">Berfungsi di jalur mana pun.</td></tr>
+        <tr><td>Membangunkan perangkat lain melalui NAS</td><td class="yes">Berfungsi, selama NAS itu sendiri menyala.</td></tr>
+        <tr><td><b>Tampilan langsung kamera</b></td><td>Aktifkan <b>Tunnel camera live view through DSM port</b>. Tanpanya, tampilan langsung membutuhkan RTSP di port 554, yang biasanya tidak dapat dijangkau dari luar. Lihat <a href="/id/guide/media/#streaming">cara tampilan langsung terhubung</a>.</td></tr>
+        <tr><td><b>Membangunkan NAS itu sendiri saat mati</b></td><td>Membutuhkan VPN atau penerusan Wake-on-LAN di router. QuickConnect tidak bisa menjangkau NAS yang mati. Lihat <a href="/id/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Cara menyiapkannya</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Di DSM:</b> Control Panel &rsaquo; External Access &rsaquo; QuickConnect. Aktifkan lalu catat ID QuickConnect.</li>
+      <li><b>Di aplikasi:</b> tambahkan NAS dan ubah <b>Jenis Koneksi</b> menjadi <b>QuickConnect</b>.</li>
+      <li><b>Masukkan ID</b> - bukan host dan port.</li>
+      <li><b>Kredensial DSM Anda</b>, dan 2FA jika akun menggunakannya.</li>
+      <li><b>Simpan &amp; Hubungkan.</b></li>
+    </ol>
+    <div class="note"><b>Siap-siap lebih lambat.</b> Relay menambah satu lompatan dan Synology membatasi lajunya, jadi pustaka foto tidak semulus saat di rumah. Semuanya tetap berfungsi - bedanya hanya pada latensi, bukan kemampuan.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pola yang layak ditiru</div>
+      <h2>Tambahkan NAS yang sama dua kali</h2>
+      <p class="lead">Satu entri lewat <b>IP lokal</b>, satu lewat <b>QuickConnect</b>. Beri nama agar mudah dibedakan - “NAS (rumah)” dan “NAS (luar)”.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Di rumah</b>, gunakan yang langsung: tanpa relay, kecepatan penuh, thumbnail instan.</li>
+      <li><b>Saat di luar</b>, beralih ke yang QuickConnect.</li>
+      <li><b>Keduanya punya tata letak terpisah</b>, jadi Anda bisa memangkas entri luar menjadi beberapa kartu yang benar-benar Anda cek lewat data seluler.</li>
+      <li><b>Beralih cukup sekali ketuk</b> dari daftar perangkat.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Atur <a href="/id/guide/settings/#launch">Perilaku Peluncuran</a> ke <b>NAS terakhir yang saya gunakan</b> dan aplikasi akan tetap memakai mana pun yang terakhir Anda pakai.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ akses jarak jauh</h2>
+    </div>
+    <details open><summary>Apakah saya perlu meneruskan port untuk menggunakan NAS dari jarak jauh?</summary><div class="body">Tidak. QuickConnect menyalurkan koneksi tanpa konfigurasi router apa pun, dan VPN juga bisa. Penerusan port hanya diperlukan jika Anda memang menginginkan jalur langsung dari internet.</div></details>
+    <details><summary>Apakah foto dan tampilan langsung kamera berfungsi lewat QuickConnect?</summary><div class="body">Ya. Thumbnail, gambar penuh, tampilan langsung kamera, serta unduhan File Station dan Drive semuanya melewati jalur apa pun yang sedang aktif, termasuk relay. Tampilan langsung kamera memerlukan sakelar tunnel port DSM dalam keadaan aktif.</div></details>
+    <details><summary>Haruskah saya menambahkan NAS saya dua kali?</summary><div class="body">Itu pola yang bagus - satu entri lewat IP lokal untuk di rumah dan satu lewat QuickConnect untuk di luar, dengan tata letak terpisah dan peralihan sekali ketuk.</div></details>
+    <details><summary>Apakah QuickConnect aman?</summary><div class="body">Koneksi dienkripsi ujung ke ujung saat Anda menggunakan HTTPS, dan relay hanya meneruskan lalu lintas tanpa menyimpan data Anda. Kredensial DSM dan autentikasi dua faktor Anda tetap berlaku.</div></details>
+    <details><summary>Mengapa entri IP lokal saya tidak berfungsi di data seluler?</summary><div class="body">Karena alamat privat seperti 192.168.x.x hanya ada di jaringan Anda sendiri. Gunakan entri QuickConnect, sebuah domain, atau hubungkan ke VPN Anda terlebih dahulu.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: pencadangan &amp; pemulihan</h2>
+    <p class="lead" style="margin:0 auto 24px">Pindahkan pengaturan aplikasi Anda ke ponsel baru.</p>
+    <p><a class="btn" href="/id/guide/backup-restore/">Pencadangan &amp; pemulihan &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

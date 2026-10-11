@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology 네트워크, VPN 및 DDNS 모니터 - Syno Manager</title>
+<meta name="description" content="인터페이스별 실시간 처리량, 활성 연결과 차단된 IP, 켜고 끌 수 있는 DSM 서비스, VPN 클라이언트 프로필, 공인 주소가 표시되는 DDNS까지 확인하세요." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology 네트워크, VPN 및 DDNS 모니터 - Syno Manager" />
+<meta property="og:description" content="인터페이스별 실시간 처리량, 활성 연결과 차단된 IP, 켜고 끌 수 있는 DSM 서비스, VPN 클라이언트 프로필, 공인 주소가 표시되는 DDNS까지 확인하세요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology 네트워크, VPN 및 DDNS 모니터 - Syno Manager" />
+<meta name="twitter:description" content="인터페이스별 실시간 처리량, 활성 연결과 차단된 IP, 켜고 끌 수 있는 DSM 서비스, VPN 클라이언트 프로필, 공인 주소가 표시되는 DDNS까지 확인하세요." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "네트워크"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology 네트워크, VPN 및 DDNS 모니터 - Syno Manager",
+  "description": "인터페이스별 실시간 처리량, 활성 연결과 차단된 IP, 켜고 끌 수 있는 DSM 서비스, VPN 클라이언트 프로필, 공인 주소가 표시되는 DDNS까지 확인하세요.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "ko",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "지금 NAS의 전송 속도가 얼마나 되는지 볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 네트워크 하위 보기에서 NAS가 가진 모든 인터페이스의 실시간 다운로드와 업로드를 확인할 수 있으며, 인터페이스마다 차트, 링크 속도, 주소가 표시됩니다. 본딩된 인터페이스는 하나의 본드로 표시되고 합산 속도가 나타납니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "앱에서 DSM 서비스를 시작하고 중지할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. DSM이 클라이언트의 제어를 허용하는 서비스라면 가능합니다. SMB, NFS, FTP, rsync 등에 각각 토글이 있습니다. 일부는 시스템 관리 서비스로 표시되는데, DSM이 자체 방식으로 운영하는 서비스라서 앱은 상태만 보여 주고 변경 기능은 제공하지 않습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "어떤 IP 주소가 차단되었는지 앱에서 볼 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 연결 하위 보기에서 자동 차단 정책(일정 시간 안에 몇 번 실패하면 차단하는지)과 현재 차단된 주소 목록을 볼 수 있습니다. 항목이 백 개가 되어도 화면이 가려지지 않도록 개수 뒤에 접혀 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "VPN이 연결되어 있는지 알 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "앱은 NAS에 있는 VPN 클라이언트 프로필을 목록으로 보여 주고, 프로필별로 연결 또는 해제를 요청할 수 있습니다. 하지만 어느 프로필이 연결 중인지는 표시하지 않습니다. 앱이 읽는 DSM 기록에 상태 필드가 없기 때문이며, 그렇지 않다고 말하면 없는 수치를 지어내는 셈입니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용자 가이드</a> &rsaquo; 네트워크</div>
+      <div class="eyebrow">네트워크</div>
+      <h1><span class="g">들어오고 나가는</span> 트래픽 확인</h1>
+      <p>다섯 가지 하위 보기: 실시간 <b>네트워크</b> 처리량, 자동 차단이 있는 <b>연결</b>, 토글할 수 있는 <b>서비스</b>, <b>VPN</b> 프로필, 공인 주소가 표시되는 <b>DDNS</b>.</p>
+    </div>
+    <div class="hero-shot"><img alt="인터페이스별 실시간 네트워크 처리량" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>이 페이지의 내용</b><ul>
+      <li><a href="#throughput">처리량</a></li>
+      <li><a href="#connections">연결 &amp; 자동 차단</a></li>
+      <li><a href="#services">서비스</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; 외부 IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">네트워크</div>
+      <h2>인터페이스별 실시간 정보</h2>
+      <p class="lead">NAS의 모든 인터페이스에 각각 카드가 만들어집니다. 많은 도구가 건너뛰는 본드와 Open vSwitch 인터페이스도 포함됩니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>표시 항목</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td>인터페이스 이름과 속도</td><td>DSM이 사용하는 이름과 협상된 속도입니다. 예를 들어 포트 두 개를 묶은 경우 합산 속도가 표시됩니다. <code>bond0 (20 Gbps)</code></td></tr>
+        <tr><td>주소</td><td>인터페이스가 현재 사용 중인 IP입니다.</td></tr>
+        <tr><td>LIVE 표시</td><td>수치가 갱신되는 동안 녹색으로 표시됩니다.</td></tr>
+        <tr><td>다운로드 / 업로드</td><td>현재 처리량이며, 아래의 실시간 차트로 순간적인 급증과 지속적인 트래픽을 구분할 수 있습니다.</td></tr>
+        <tr><td>네트워크 정보</td><td>서버 이름, 게이트웨이, 기본 DNS - 네트워크에서 이름 확인이 되지 않을 때 필요한 세 가지 값입니다.</td></tr>
+        <tr><td>활성 연결</td><td>개수와 함께 상세 내용으로 들어가는 길이 표시됩니다.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>방향은 NAS의 관점입니다.</b> “다운로드”는 NAS로 들어오는 트래픽이므로, 파일을 NAS<em>로</em> 복사하면 NAS 입장에서는 다운로드입니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">연결</div>
+      <h2>누가 접속해 있고, 누가 차단되었는지</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">보통 확인하고 싶은 순서대로 세 가지를 보여 드립니다.</p>
+        <ul class="plain">
+          <li><b>자동 차단</b> - DSM의 무차별 대입 공격 방어 기능이 켜져 있는지, 몇 번 실패하면 작동하는지, 어느 기간 안의 횟수인지 보여 줍니다. 비밀번호를 몇 번 틀린 휴대폰이 차단되는 것도 이 설정 때문입니다.</li>
+          <li><b>차단된 IP</b> - 현재 차단된 모든 주소가 개수 뒤에 표시됩니다. 인터넷에 노출된 NAS라면 차단된 주소가 백 개쯤 되는 것도 흔한 일이라 화면을 덮어 버리기 때문에, 열기 전까지는 접혀 있습니다.</li>
+          <li><b>활성 연결</b> - 누가 어느 주소에서 어떤 프로토콜로 로그인했는지, 세션이 언제 시작되었는지 보여 줍니다. HTTP/HTTPS, SMB, NFS, FTP 등 세션마다 이름이 표시됩니다.</li>
+        </ul>
+        <div class="note"><b>세션을 종료할 수 있습니다.</b> 활성 연결을 여기서 끊을 수 있으므로 “파일이 열린 채 잡혀 있다”거나 “저 주소는 왜 아직 연결되어 있지” 같은 상황을 빠르게 해결할 수 있습니다.</div>
+      </div>
+      <img alt="자동 차단 정책, 차단된 IP, 활성 연결을 보여 주는 연결 화면" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">서비스</div>
+      <h2>DSM에서 실행 중인 것</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="실행 상태와 토글이 있는 DSM 서비스" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">상단에 <b>전체 중 실행 중인 서비스 수</b>가 표시되고, 그 아래에 DSM이 제공하는 모든 서비스가 상태 표시등과 스위치와 함께 나타납니다.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>파일 및 연결 서비스</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. 휴대폰에서 켜고 끌 수 있습니다.</li>
+          <li><b>검색 및 인쇄</b> - Bonjour 프린터 브로드캐스트, WS-Discovery, CUPS 프린터 데몬.</li>
+          <li><b>인프라</b> - NTP, KMIP 등.</li>
+          <li><b>시스템 관리 서비스에는 잠금 표시가 있습니다.</b> DSM이 자체 방식으로 운영하는 서비스라서, 앱은 상태만 보여 주고 어차피 거부될 스위치는 제공하지 않습니다. 작동하지 않는 컨트롤은 없는 것보다 나쁩니다.</li>
+        </ul>
+        <div class="note warn"><b>SMB를 끄면 사용 중인 모든 사람의 연결이 끊어집니다.</b> 여기 있는 것은 설정 화면이 아니라 운영 중인 서버를 직접 조작하는 스위치입니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>클라이언트 프로필</h2>
+      <p class="lead">VPN 하위 보기에는 NAS에 설정된 VPN <b>클라이언트</b> 프로필, 즉 NAS가 다른 곳으로 거는 연결이 나열되며, 각 프로필에 연결 또는 해제를 요청할 수 있습니다.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>어느 프로필이 연결되어 있는지는 일부러 표시하지 않습니다.</b> NAS는 연결 및 해제 요청을 받았다고 응답하지만, 앱이 읽는 DSM 기록에는 상태 필드가 없어 판단할 근거가 없습니다. 추측해서 자신 있게 틀린 정보를 보여 주는 대신, 앱은 그 사실을 알리고 정확히 아는 DSM의 네트워크 페이지를 안내합니다.</div>
+    <p style="color:var(--steel);margin-top:18px">프로필이 없으면 화면에 그렇게 안내하고 추가할 위치도 알려 줍니다. DSM의 <b>네트워크 &rsaquo; 네트워크 인터페이스</b>입니다.</p>
+      </div>
+      <img alt="클라이언트 프로필이 나열된 VPN 하위 보기" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>내 공인 주소와 그 주소를 가리키는 이름</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">카드 하나에 서로 독립적인 두 부분이 있습니다.</p>
+        <ul class="plain">
+          <li><b>외부 IP</b> - 현재 연결이 가진 공인 주소입니다.</li>
+          <li><b>각 DDNS 호스트 이름</b> - NAS가 게시하는 호스트 이름별로 DSM에 저장된 상태, 마지막 업데이트 시각, 다음 업데이트 예정 시각이 표시됩니다.</li>
+        </ul>
+        <h3 style="margin-top:22px">새로 고침과 업데이트</h3>
+        <ul class="plain">
+          <li><b>새로 고침</b>은 DSM이 현재 가지고 있는 정보를 다시 읽습니다.</li>
+          <li><b>지금 업데이트</b>는 NAS가 주소를 다시 게시하도록 요청합니다. DSM의 자체 버튼과 같은 동작입니다.</li>
+        </ul>
+        <div class="note"><b>두 부분은 각자 따로 실패합니다.</b> DDNS 제공업체가 다운되어도 공인 IP 확인은 영향을 받지 않고, IP를 읽지 못해도 호스트 이름 상태가 지워지지 않습니다. 두 가지 확인, 두 가지 결과입니다.</div>
+        <div class="note" style="margin-top:14px"><b>DSM에 저장된 정보를 보여 줄 뿐, 실시간 테스트가 아닙니다.</b> 앱이 호스트 이름을 직접 조회해서 내 주소를 가리키는지 확인하지는 않습니다. 제공업체가 요청에 응답한다고 해서 레코드가 올바르다는 뜻은 아니므로, 앱은 두 번째 판단을 지어내는 대신 DSM 자체의 판단을 그대로 전달합니다.</div>
+      </div>
+      <img alt="공인 주소와 호스트 이름을 가린 DDNS 및 외부 IP 화면" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">이 스크린샷의 주소와 호스트 이름은 실제 NAS의 것이라 블러 처리했습니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>네트워크 FAQ</h2>
+    </div>
+    <details open><summary>지금 NAS의 전송 속도가 얼마나 되는지 볼 수 있나요?</summary><div class="body">네. 네트워크 하위 보기에서 NAS가 가진 모든 인터페이스의 실시간 다운로드와 업로드를 확인할 수 있으며, 인터페이스마다 차트, 링크 속도, 주소가 표시됩니다. 본딩된 인터페이스는 하나의 본드로 표시되고 합산 속도가 나타납니다.</div></details>
+    <details><summary>앱에서 DSM 서비스를 시작하고 중지할 수 있나요?</summary><div class="body">네. DSM이 클라이언트의 제어를 허용하는 서비스라면 가능합니다. SMB, NFS, FTP, rsync 등에 각각 토글이 있습니다. 일부는 시스템 관리 서비스로 표시되는데, DSM이 자체 방식으로 운영하는 서비스라서 앱은 상태만 보여 주고 변경 기능은 제공하지 않습니다.</div></details>
+    <details><summary>어떤 IP 주소가 차단되었는지 앱에서 볼 수 있나요?</summary><div class="body">네. 연결 하위 보기에서 자동 차단 정책과 현재 차단된 주소 목록을 볼 수 있습니다. 항목이 백 개가 되어도 화면이 가려지지 않도록 개수 뒤에 접혀 있습니다.</div></details>
+    <details><summary>VPN이 연결되어 있는지 알 수 있나요?</summary><div class="body">앱은 NAS에 있는 VPN 클라이언트 프로필을 목록으로 보여 주고, 프로필별로 연결 또는 해제를 요청할 수 있습니다. 하지만 어느 프로필이 연결 중인지는 표시하지 않습니다. 앱이 읽는 DSM 기록에 상태 필드가 없기 때문입니다. 정확히 아는 곳은 DSM의 네트워크 페이지입니다.</div></details>
+    <details><summary>제 공인 IP가 웹사이트에서 알려 주는 IP와 왜 다른가요?</summary><div class="body">이 주소는 DSM을 통해 읽은 NAS 연결의 주소이기 때문입니다. 휴대폰이 모바일 데이터를 쓰고 있다면 다른 주소를 갖습니다. 서로 다른 두 네트워크이므로 두 값 모두 맞습니다.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 파일</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, 공유 폴더, 노트, 문서, 연락처.</p>
+    <p><a class="btn" href="/ko/guide/files/">파일 &amp; 공유 &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Backup delle impostazioni dell'app - Syno Manager</title>
+<meta name="description" content="Esporta le impostazioni di Syno Manager in un file e ripristinale su un nuovo telefono. Connessioni al NAS, password e sessioni non sono mai incluse, di proposito." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/it/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Backup delle impostazioni dell'app - Syno Manager" />
+<meta property="og:description" content="Esporta le impostazioni di Syno Manager in un file e ripristinale su un nuovo telefono. Connessioni al NAS, password e sessioni non sono mai incluse, di proposito." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/it/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Backup delle impostazioni dell'app - Syno Manager" />
+<meta name="twitter:description" content="Esporta le impostazioni di Syno Manager in un file e ripristinale su un nuovo telefono. Connessioni al NAS, password e sessioni non sono mai incluse, di proposito." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "it",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guida utente",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Backup &amp; ripristino"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Backup delle impostazioni dell'app - Syno Manager",
+  "description": "Esporta le impostazioni di Syno Manager in un file e ripristinale su un nuovo telefono. Connessioni al NAS, password e sessioni non sono mai incluse, di proposito.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "it",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Cosa include il backup delle impostazioni?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo le impostazioni dell'app: tema, navigazione, layout della dashboard, comportamento all'avvio, categorie, intervallo di polling e unità di temperatura. Connessioni al NAS, password e sessioni non sono mai incluse."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Perché le credenziali del mio NAS non sono nel backup?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Perché un file portatile che contiene le password del NAS è un file portatile che contiene le password del NAS. Le credenziali stanno nel portachiavi o keystore del dispositivo, che di proposito non è raggiungibile da un'esportazione. Le reinserisci una volta sul nuovo telefono."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Come passo a un nuovo telefono?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Esporta sul vecchio con Scarica o Condividi, porta il file sul nuovo telefono, installa l'app, incolla il contenuto del file in Ripristina e aggiungi di nuovo il tuo NAS. Tutto il resto torna come lo avevi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa succede alle impostazioni che il file non conosce?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vengono applicate solo le impostazioni note dell'app e tutto il resto nel file viene ignorato, così un vecchio backup ripristinato in un'app più recente lascia le nuove impostazioni ai valori predefiniti invece di fallire."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/it/"><img src="/assets/syno-manager-icon.png" alt="Icona di Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cerca nella guida..." data-i18n-empty="Nessun risultato per" data-i18n-language="Lingua">
+      <a href="/it/">Home</a>
+      <a href="/it/guide/" class="active">Guida utente</a>
+      <a href="/it/#screenshots">Screenshot</a>
+      <a href="/it/compatible-nas/">Compatibilità</a>
+      <a href="/it/best-synology-nas-app/">Perché cambiare</a>
+      <a href="/it/help/">Aiuto</a>
+      <a href="/it/#top" class="cta">Scarica</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/it/">Home</a> &rsaquo; <a href="/it/guide/">Guida utente</a> &rsaquo; Backup &amp; ripristino</div>
+      <div class="eyebrow">Backup &amp; ripristino</div>
+      <h1>La tua configurazione, <span class="g">sul prossimo telefono</span></h1>
+      <p>Un solo file contiene ogni preferenza che hai impostato - tema, barra inferiore, layout della dashboard, polling, unità. Di proposito non contiene alcuna credenziale.</p>
+    </div>
+    <div class="hero-shot"><img alt="La schermata Backup e ripristino con Esporta e Ripristina" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cosa c'è nel file</div>
+      <h2>E cosa non c'è</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Incluso</h3>
+        <ul class="plain">
+          <li>Tema, superficie, colore d'accento e dimensione del testo.</li>
+          <li>La barra di navigazione inferiore e il suo ordine.</li>
+          <li>Il layout della dashboard e quali schede sono attive.</li>
+          <li>Le categorie della dashboard.</li>
+          <li>Il comportamento all'avvio.</li>
+          <li>L'intervallo di polling.</li>
+          <li>L'unità di temperatura.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Mai incluso</h3>
+        <ul class="plain">
+          <li><b>Connessioni al NAS</b> - indirizzi, porte e opzioni.</li>
+          <li><b>Password.</b></li>
+          <li><b>Sessioni e token dei dispositivi 2FA.</b></li>
+        </ul>
+        <div class="note stop"><b>Questa esclusione è il punto.</b> Un file che puoi inviarti per email e mettere in una cartella cloud è un file che può trapelare. Le credenziali stanno nel portachiavi o keystore del dispositivo proprio perché un'esportazione non possa raggiungerle, e l'app non fa eccezioni per la propria comodità.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Esporta</div>
+      <h2>Estrarre il file</h2>
+      <p class="lead"><b>Impostazioni &rsaquo; Backup &amp; ripristino</b>, poi uno dei due pulsanti.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Scarica</b> salva il file JSON direttamente sul dispositivo.</li>
+      <li><b>Condividi</b> lo passa al foglio di condivisione, così puoi inviarlo a File, Drive, un'altra app o a te stesso.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ripristina</div>
+      <h2>Rimetterlo a posto</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Apri il file di backup</b> e copiane il contenuto.</li>
+      <li><b>Incolla nella casella Ripristina</b>, oppure tocca <b>Incolla dagli appunti</b>.</li>
+      <li><b>Tocca Ripristina impostazioni.</b></li>
+      <li><b>Aggiungi di nuovo il tuo NAS</b> - quella parte non è mai stata nel file.</li>
+    </ol>
+    <div class="note"><b>Le voci sconosciute vengono ignorate, non rifiutate.</b> Vengono applicate solo le impostazioni che l'app riconosce, così un backup di una versione più vecchia si ripristina senza problemi in una più recente - le impostazioni che allora non esistevano restano semplicemente ai valori predefiniti.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Correlati</div>
+      <h2>Da non confondere con</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/it/guide/backup/">Hyper Backup e Active Backup</a></b> - il tuo NAS che fa il backup dei tuoi dati. Non c'entra nulla con questa schermata.</li>
+      <li><b>Backup della configurazione di DSM</b> - le impostazioni del NAS stesso, esportate dal Pannello di controllo di DSM.</li>
+      <li><b>Backup del dispositivo.</b> Le credenziali salvate di Syno Manager sono <b>escluse</b> di proposito dai backup dei dispositivi Android e iOS, quindi ripristinare un telefono da un backup del dispositivo non porta con sé le password del NAS.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Domande frequenti</div>
+      <h2>Domande frequenti su backup &amp; ripristino</h2>
+    </div>
+    <details open><summary>Cosa include il backup delle impostazioni?</summary><div class="body">Solo le impostazioni dell'app: tema, navigazione, layout della dashboard, comportamento all'avvio, categorie, intervallo di polling e unità di temperatura. Connessioni al NAS, password e sessioni non sono mai incluse.</div></details>
+    <details><summary>Perché le credenziali del mio NAS non sono nel backup?</summary><div class="body">Perché un file portatile che contiene le password del NAS è un file portatile che contiene le password del NAS. Le credenziali stanno nel portachiavi o keystore del dispositivo, che un'esportazione di proposito non può raggiungere.</div></details>
+    <details><summary>Come passo a un nuovo telefono?</summary><div class="body">Esporta sul vecchio, porta il file sul nuovo, installa l'app, incolla il contenuto in Ripristina e aggiungi di nuovo il tuo NAS.</div></details>
+    <details><summary>Cosa succede alle impostazioni che il file non conosce?</summary><div class="body">Vengono applicate solo le impostazioni note e tutto il resto è ignorato, così un vecchio backup ripristinato in un'app più recente lascia le nuove impostazioni ai valori predefiniti.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Qualcosa non funziona?</h2>
+    <p class="lead" style="margin:0 auto 24px">La guida alla risoluzione dei problemi copre errori di connessione, riquadri vuoti, schede mancanti e widget non aggiornati.</p>
+    <p><a class="btn" href="/it/help/">Risoluzione dei problemi &rarr;</a> &nbsp; <a class="btn ghost" href="/it/guide/">Torna alla guida</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/it/">Home</a><a href="/it/guide/">Guida utente</a><a href="/it/guide/getting-started/">Per iniziare</a><a href="/it/compatible-nas/">Compatibilità</a><a href="/it/best-synology-nas-app/">Perché passare</a><a href="/it/synology-app-for-iphone/">iPhone e iPad</a><a href="/it/synology-app-for-android/">Android</a><a href="/it/synology-app-for-mac-windows/">Mac e Windows</a><a href="/it/ds-finder-alternative/">vs DS finder</a><a href="/it/help/">Aiuto</a><a href="/it/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Segnala un bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager è un'app indipendente e non è affiliata, approvata o sponsorizzata da Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station e QuickConnect sono marchi di Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

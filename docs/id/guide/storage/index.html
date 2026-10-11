@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Penyimpanan, RAID & Kesehatan SMART Synology - Syno Manager</title>
+<meta name="description" content="Volume dan pool Synology dengan jenis RAID dan ruang kosong, status SMART dan suhu per drive, Quick SMART Test, serta eject aman untuk USB dan eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Penyimpanan, RAID &amp; Kesehatan SMART Synology - Syno Manager" />
+<meta property="og:description" content="Volume dan pool Synology dengan jenis RAID dan ruang kosong, status SMART dan suhu per drive, Quick SMART Test, serta eject aman untuk USB dan eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Penyimpanan, RAID &amp; Kesehatan SMART Synology - Syno Manager" />
+<meta name="twitter:description" content="Volume dan pool Synology dengan jenis RAID dan ruang kosong, status SMART dan suhu per drive, Quick SMART Test, serta eject aman untuk USB dan eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Penyimpanan"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Penyimpanan, RAID & Kesehatan SMART Synology - Syno Manager",
+  "description": "Volume dan pool Synology dengan jenis RAID dan ruang kosong, status SMART dan suhu per drive, Quick SMART Test, serta eject aman untuk USB dan eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "id",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bisakah saya melihat status SMART untuk setiap drive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Sub-tampilan Kesehatan Disk mencantumkan setiap drive beserta modelnya, apakah HDD atau SSD, kapasitas, suhu, dan vonis SMART-nya. Anda juga bisa memulai Quick SMART Test pada drive mana pun dari ponsel."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Suhu berapa yang terlalu panas untuk drive NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplikasi mewarnai drive amber di atas 45 derajat C dan merah di atas 55 derajat C, dan suhu sistem amber di atas 50 dan merah di atas 60. Ambang batas itu juga memengaruhi lencana kesehatan di layar beranda, sehingga drive yang panas muncul di sana tanpa perlu Anda cari."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya mengeluarkan drive USB dengan aman dari aplikasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa, dari sub-tampilan Eksternal. Eject dikonfirmasi oleh drive yang benar-benar hilang dari daftar perangkat, bukan oleh permintaan yang diterima - jadi drive yang dinyatakan sudah dikeluarkan memang sudah dikeluarkan. Drive yang sedang diformat atau diinisialisasi tidak bisa dikeluarkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya membuat atau memperluas volume dari aplikasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Membuat, memperluas, dan memperbaiki volume serta pool dilakukan di Storage Manager DSM. Aplikasi melaporkan apa yang dilakukan penyimpanan Anda dan memungkinkan Anda menindak drive; aplikasi tidak menyusun ulang array Anda dari ponsel."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Penyimpanan</div>
+      <div class="eyebrow">Penyimpanan</div>
+      <h1>Setiap volume, <span class="g">setiap drive</span></h1>
+      <p>Tiga sub-tampilan: <b>Volume &amp; Pool</b> untuk kapasitas dan RAID, <b>Kesehatan Disk</b> untuk SMART dan suhu per drive, dan <b>Eksternal</b> untuk apa pun yang dicolokkan di bagian belakang.</p>
+    </div>
+    <div class="hero-shot"><img alt="Volume dan drive penyimpanan di Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Di halaman ini</b><ul>
+      <li><a href="#volumes">Volume &amp; Pool</a></li>
+      <li><a href="#drives">Daftar drive</a></li>
+      <li><a href="#disk-health">Kesehatan Disk &amp; SMART</a></li>
+      <li><a href="#thresholds">Ambang batas suhu</a></li>
+      <li><a href="#external">Eksternal &amp; eject aman</a></li>
+      <li><a href="#limits">Yang tidak akan dilakukannya</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volume &amp; Pool</div>
+      <h2>Kapasitas, sekilas</h2>
+      <p class="lead">Setiap volume mendapat kartu dengan nama, jenis RAID, status, dan jumlah drive yang menopangnya, di atas bilah penggunaan dengan terpakai, persentase, total, dan kosong.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ditampilkan</th><th>Arti</th></tr></thead>
+      <tbody>
+        <tr><td>Nama volume</td><td>Sesuai penamaan DSM - <code>VOLUME_1</code>, dan seterusnya.</td></tr>
+        <tr><td>Jenis RAID</td><td>RAID 5, SHR, RAID 1, Basic - apa pun jenis pool yang sebenarnya ada di bawahnya.</td></tr>
+        <tr><td>Status</td><td>Status volume itu sendiri: <b>normal</b>, terdegradasi, crash. Array yang terdegradasi adalah satu-satunya hal di layar ini yang layak ditangani hari ini.</td></tr>
+        <tr><td>Jumlah drive</td><td>Berapa banyak drive fisik yang dicakup volume.</td></tr>
+        <tr><td>Bilah penggunaan</td><td>Hijau secara normal, amber di atas 80% dan merah di atas 90%. Itu ambang batas yang sama dengan yang dipakai <a href="/id/guide/home/#header">lencana kesehatan</a>.</td></tr>
+        <tr><td>Terpakai / Total / Kosong</td><td>Ketiganya, karena “70% penuh” dan “13 TB kosong” menjawab pertanyaan yang berbeda.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Isi setiap bay</h2>
+      <p class="lead">Di bawah volume, setiap drive fisik berdasarkan nomor bay.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bay</b> - Disk 1, Disk 2, dan seterusnya, sesuai label pada sasis.</li>
+      <li><b>Model</b> - string model drive itu sendiri.</li>
+      <li><b>Vendor dan jenis</b> - produsen dan apakah HDD atau SSD. Drive yang vendornya tidak dapat dikenali NAS ditampilkan sebagai <b>Tidak diketahui</b>, bukan ditebak.</li>
+      <li><b>Suhu</b>, diberi warna sesuai ambang batas di bawah.</li>
+      <li><b>Vonis SMART</b> - <b>SMART OK</b> saat penilaian mandiri drive itu sehat.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Kesehatan Disk</div>
+      <h2>SMART, dan tes yang bisa Anda mulai</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Sub-tampilan Kesehatan Disk adalah drive yang sama dengan ruang lebih luas: kapasitas, jenis, suhu, dan status SMART masing-masing mendapat chip sendiri, dan setiap drive memiliki tombol <b>Quick SMART Test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Quick SMART Test</b> meminta drive menjalankan penilaian mandiri singkatnya sendiri. Prosesnya makan waktu beberapa menit dan tidak mengganggu apa pun yang memakai volume.</li>
+          <li><b>Vonisnya milik drive, bukan milik kami.</b> SMART adalah drive yang melaporkan dirinya sendiri; aplikasi meneruskannya. Drive yang menyatakan baik-baik saja lalu rusak adalah keterbatasan SMART, bukan pembacaannya.</li>
+          <li><b>Status SMART yang tidak terbaca ditampilkan sebagai tidak diketahui</b>, tidak pernah sebagai sehat. Pembacaan yang hilang dan pembacaan yang baik adalah hal berbeda dan tidak pernah digabung.</li>
+        </ul>
+      </div>
+      <img alt="Kesehatan Disk yang menampilkan setiap drive dengan status SMART, suhu, dan tombol Quick SMART Test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Angka di balik warna</div>
+      <h2>Ambang batas</h2>
+      <p class="lead">Tidak ada yang di sini berupa tebakan tentang perangkat keras Anda - ini adalah titik tempat aplikasi mengubah warna dan, jika relevan, lencana kesehatan di layar beranda.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Pembacaan</th><th>Amber pada</th><th>Merah pada</th></tr></thead>
+      <tbody>
+        <tr><td>Suhu drive</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Suhu sistem</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Penggunaan volume</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Daya UPS</td><td>di bawah 50%</td><td>di bawah 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Beralih antara &deg;C dan &deg;F di <a href="/id/guide/settings/#preferences">Pengaturan &rsaquo; Satuan Suhu</a>. Setiap suhu di aplikasi langsung mengikutinya, termasuk yang ada di layar beranda dan di widget.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Eksternal</div>
+      <h2>USB, eSATA, dan eject aman</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Penyimpanan eksternal dan perangkat USB, tanpa perangkat terpasang dan dengan UPS tercantum" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Dua bagian: <b>Penyimpanan Eksternal</b> untuk drive yang bisa Anda mount dan eject, dan <b>Perangkat USB</b> untuk semua yang lain yang terpasang - UPS, printer, dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Eject dikonfirmasi oleh hilangnya drive.</b> Aplikasi tidak melaporkan berhasil hanya karena permintaan kembali dengan OK; aplikasi membaca ulang daftar perangkat dan baru menyatakan drive dikeluarkan setelah benar-benar hilang. Itulah beda antara “aman dicabut” dan “mungkin aman dicabut”.</li>
+          <li><b>Drive yang sedang sibuk tidak bisa dikeluarkan.</b> Drive yang sedang diformat atau diinisialisasi ditolak, lengkap dengan alasannya, bukan dicabut di tengah penulisan.</li>
+          <li><b>Tidak ada perangkat terpasang dinyatakan dengan jelas.</b> Daftar kosong berbunyi “Tidak ada drive eksternal terpasang” - bukan kotak kosong yang harus Anda tafsirkan.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Batasan</div>
+      <h2>Yang tidak akan dilakukan layar ini</h2>
+      <p class="lead">Penyimpanan adalah satu-satunya tempat ketukan yang keliru tidak bisa dipulihkan, jadi aplikasi jauh lebih banyak membaca daripada menulis.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Aplikasi tidak akan membuat, memperluas, atau menghapus volume atau pool.</b> Itu semua ada di Storage Manager DSM, pada layar yang cukup besar untuk menunjukkan apa yang akan Anda lakukan.</li>
+      <li><b>Aplikasi tidak akan memperbaiki array yang terdegradasi.</b> Aplikasi akan memberi tahu Anda, dengan jelas dan di layar beranda, bahwa ada yang terdegradasi.</li>
+      <li><b>Aplikasi tidak akan memformat apa pun.</b></li>
+      <li><b>Aplikasi tidak akan menjalankan tes SMART penuh</b> - hanya yang cepat. Pemindaian permukaan penuh memakan waktu berjam-jam dan sebaiknya dilakukan di tempat yang tidak Anda tinggalkan.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, rebuild, dan pemeriksaan paritas</b> muncul sebagai operasi yang sedang berjalan selama prosesnya, sehingga Anda bisa menyaksikannya selesai dari aplikasi meskipun Anda memulainya di DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ Penyimpanan</h2>
+    </div>
+    <details open><summary>Bisakah saya melihat status SMART untuk setiap drive?</summary><div class="body">Bisa. Sub-tampilan Kesehatan Disk mencantumkan setiap drive beserta modelnya, apakah HDD atau SSD, kapasitas, suhu, dan vonis SMART-nya. Anda juga bisa memulai Quick SMART Test pada drive mana pun dari ponsel.</div></details>
+    <details><summary>Suhu berapa yang terlalu panas untuk drive NAS?</summary><div class="body">Aplikasi mewarnai drive amber di atas 45&deg;C dan merah di atas 55&deg;C, dan suhu sistem amber di atas 50&deg;C dan merah di atas 60&deg;C. Ambang batas itu juga memengaruhi lencana kesehatan di layar beranda.</div></details>
+    <details><summary>Bisakah saya mengeluarkan drive USB dengan aman dari aplikasi?</summary><div class="body">Ya, dari sub-tampilan Eksternal. Eject dikonfirmasi oleh drive yang benar-benar hilang dari daftar perangkat, bukan oleh permintaan yang diterima. Drive yang sedang diformat atau diinisialisasi tidak bisa dikeluarkan.</div></details>
+    <details><summary>Bisakah saya membuat atau memperluas volume dari aplikasi?</summary><div class="body">Tidak. Membuat, memperluas, dan memperbaiki volume serta pool dilakukan di Storage Manager DSM. Aplikasi melaporkan apa yang dilakukan penyimpanan Anda dan memungkinkan Anda menindak drive; aplikasi tidak menyusun ulang array Anda dari ponsel.</div></details>
+    <details><summary>Mengapa vendor sebuah drive tertulis Tidak diketahui?</summary><div class="body">Karena NAS tidak melaporkannya. Aplikasi menampilkan apa yang diberitahukan, bukan menyimpulkan produsen dari string model, yang berarti tebakan yang disajikan sebagai fakta.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: Jaringan</h2>
+    <p class="lead" style="margin:0 auto 24px">Throughput, koneksi, layanan, VPN, dan DDNS.</p>
+    <p><a class="btn" href="/id/guide/network/">Jaringan &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

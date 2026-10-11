@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kelola Pengguna, Tugas & UPS Synology - Syno Manager</title>
+<meta name="description" content="Kelola akun pengguna Synology dengan akun sistem terlindungi, jalankan dan aktifkan tugas terjadwal, dan baca muatan UPS serta perkiraan waktu operasi dari ponsel Anda." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Kelola Pengguna, Tugas &amp; UPS Synology - Syno Manager" />
+<meta property="og:description" content="Kelola akun pengguna Synology dengan akun sistem terlindungi, jalankan dan aktifkan tugas terjadwal, dan baca muatan UPS serta perkiraan waktu operasi dari ponsel Anda." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kelola Pengguna, Tugas &amp; UPS Synology - Syno Manager" />
+<meta name="twitter:description" content="Kelola akun pengguna Synology dengan akun sistem terlindungi, jalankan dan aktifkan tugas terjadwal, dan baca muatan UPS serta perkiraan waktu operasi dari ponsel Anda." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Panel Kontrol"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Kelola Pengguna, Tugas & UPS Synology - Syno Manager",
+  "description": "Kelola akun pengguna Synology dengan akun sistem terlindungi, jalankan dan aktifkan tugas terjadwal, dan baca muatan UPS serta perkiraan waktu operasi dari ponsel Anda.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "id",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bisakah saya menambah atau mengedit pengguna DSM dari aplikasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Tambah pengguna, edit detailnya, ubah kata sandi, atau hapus akun. Akun sistem - admin, guest, dan akun layanan yang dibuat DSM - terdeteksi dan dilindungi dari penghapusan, karena menghapusnya merusak NAS dengan cara yang merepotkan untuk dipulihkan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya menjalankan tugas terjadwal secara manual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa, untuk tugas yang boleh dipicu DSM - masing-masing memiliki Jalankan Sekarang. Anda juga bisa mengaktifkan atau menonaktifkan tugas apa pun tanpa membuka DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa yang ditampilkan layar UPS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Model UPS, apakah online atau memakai baterai, muatannya sebagai persentase dan bilah, cara terhubungnya, perkiraan waktu operasi yang tersisa, dan apakah dukungan UPS aktif di NAS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya mengubah berapa lama NAS menunggu sebelum mati saat memakai baterai?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Aplikasi melaporkan status UPS; kebijakan pematian diatur di DSM pada Perangkat Keras dan Daya, tempat konsekuensi pengaturannya dijelaskan."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Panel Kontrol</div>
+      <div class="eyebrow">Panel Kontrol</div>
+      <h1>Akun, jadwal <span class="g">dan daya</span></h1>
+      <p>Empat sub-tampilan: <b>Pengguna</b>, <b>Tugas</b>, <b>Daya</b> untuk UPS, dan <b>Pengaturan</b> - preferensi aplikasi sendiri, bisa dijangkau tanpa meninggalkan tab yang sedang Anda buka.</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler menampilkan tugas terjadwal dengan sakelar dan Jalankan Sekarang" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Di halaman ini</b><ul>
+      <li><a href="#users">Pengguna</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Pengaturan</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Pengguna</div>
+      <h2>Akun DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Setiap akun di NAS, dengan nama tampilan, deskripsi, dan alamat emailnya jika ada. Chip <b>Kedaluwarsa</b> menandai akun yang dinonaktifkan DSM.</p>
+        <h3 style="margin-top:20px">Yang bisa Anda lakukan</h3>
+        <ul class="plain">
+          <li><b>Tambah pengguna</b> dengan detail yang diminta DSM.</li>
+          <li><b>Edit</b> akun yang ada.</li>
+          <li><b>Ubah kata sandi.</b></li>
+          <li><b>Hapus</b> akun yang Anda buat.</li>
+        </ul>
+        <div class="note"><b>Akun sistem tidak bisa dihapus.</b> <code>admin</code>, <code>guest</code>, dan akun layanan yang dibuat DSM untuk paketnya sendiri terdeteksi dan dilindungi. Menghapus salah satunya merusak NAS dengan cara yang merepotkan untuk dipulihkan, dan ponsel bukan tempat untuk mengetahuinya.</div>
+      </div>
+      <img alt="Akun pengguna DSM, dengan dua nama dan alamat dikaburkan" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Dua akun di tangkapan layar ini dikaburkan - itu nama dan alamat orang sungguhan.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>Yang dijadwalkan, dan yang berjalan berikutnya</h2>
+      <p class="lead">Setiap tugas yang dimiliki DSM, apakah aktif, apa yang dikerjakannya, dan kapan berjalan berikutnya.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nama tugas dan jenisnya</b> - tugas Hyper Backup, skrip buatan pengguna, pembersihan recycle bin - masing-masing dilabeli jenisnya.</li>
+      <li><b>Apa yang sebenarnya dikerjakan.</b> Tugas skrip menampilkan perintah yang dijalankannya; tugas pencadangan menampilkan deskripsinya.</li>
+      <li><b>Proses berikutnya</b>, sebagai tanggal dan waktu.</li>
+      <li><b>Satu sakelar per tugas</b> untuk mengaktifkan atau menonaktifkannya tanpa membuka DSM.</li>
+      <li><b>Jalankan Sekarang</b> pada tugas yang boleh dipicu DSM sesuai permintaan.</li>
+    </ul>
+    <div class="note warn"><b>Jalankan Sekarang berarti menjalankannya sekarang.</b> Skrip terjadwal yang mengharapkan berjalan pukul 3 pagi di NAS yang menganggur akan berperilaku berbeda pukul 6 sore saat penyalinan file. Tombolnya melakukan apa yang tertulis.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Daya</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Status UPS dengan model, muatan, mode koneksi, dan perkiraan waktu operasi" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Muncul saat UPS terpasang. Satu kartu, semuanya di situ.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Ditampilkan</th><th>Arti</th></tr></thead>
+          <tbody>
+            <tr><td>Produsen dan model</td><td>Seperti yang dilaporkan UPS tentang dirinya.</td></tr>
+            <tr><td>Status</td><td><b>Online</b> dengan listrik jaringan, atau memakai baterai.</td></tr>
+            <tr><td>Muatan</td><td>Persentase dan bilah. Kuning di bawah 50%, merah di bawah 20%.</td></tr>
+            <tr><td>Mode</td><td>Cara NAS berbicara dengannya - USB, atau lewat jaringan.</td></tr>
+            <tr><td>Waktu operasi</td><td>Berapa lama UPS memperkirakan bisa menopang beban.</td></tr>
+            <tr><td>Aktif</td><td>Apakah dukungan UPS dinyalakan di DSM sama sekali.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Muatan memengaruhi lencana kesehatan.</b> UPS yang sedang terkuras muncul di <a href="/id/guide/home/#header">layar beranda</a> tanpa Anda membuka tab ini - dan itulah intinya, karena saat Anda terpikir untuk memeriksa, mungkin waktunya tidak banyak lagi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Pengaturan</div>
+      <h2>Preferensi aplikasi sendiri</h2>
+      <p class="lead">Sub-tampilan keempat adalah Pengaturan, disematkan di sini agar Anda bisa mengubah interval polling atau warna aksen tanpa meninggalkan tab. Ini layar yang sama dengan yang dibuka ikon roda gigi.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/id/guide/settings/">Setiap pengaturan, dijelaskan</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ Panel Kontrol</h2>
+    </div>
+    <details open><summary>Bisakah saya menambah atau mengedit pengguna DSM dari aplikasi?</summary><div class="body">Bisa. Tambah pengguna, edit detailnya, ubah kata sandi, atau hapus akun. Akun sistem - admin, guest, dan akun layanan yang dibuat DSM - terdeteksi dan dilindungi dari penghapusan.</div></details>
+    <details><summary>Bisakah saya menjalankan tugas terjadwal secara manual?</summary><div class="body">Bisa, untuk tugas yang boleh dipicu DSM. Anda juga bisa mengaktifkan atau menonaktifkan tugas apa pun tanpa membuka DSM.</div></details>
+    <details><summary>Apa yang ditampilkan layar UPS?</summary><div class="body">Model UPS, apakah online atau memakai baterai, muatannya sebagai persentase dan bilah, cara terhubungnya, perkiraan waktu operasi yang tersisa, dan apakah dukungan UPS aktif di NAS.</div></details>
+    <details><summary>Bisakah saya mengubah kebijakan mati saat memakai baterai?</summary><div class="body">Tidak. Aplikasi melaporkan status UPS; kebijakannya diatur di DSM pada Perangkat Keras dan Daya, tempat konsekuensinya dijelaskan.</div></details>
+    <details><summary>Mengapa sub-tampilan Daya tidak ada?</summary><div class="body">Karena tidak ada UPS yang terpasang, atau dukungan UPS dimatikan di DSM. Aplikasi menyembunyikan layar untuk perangkat keras yang tidak ada.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: Asisten</h2>
+    <p class="lead" style="margin:0 auto 24px">Ajukan pertanyaan ke NAS Anda, dijawab oleh model di ponsel Anda.</p>
+    <p><a class="btn" href="/id/guide/assistant/">Asisten &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

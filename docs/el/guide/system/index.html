@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU, RAM, θερμοκρασία και ανεμιστήρες του Synology - Syno Manager</title>
+<meta name="description" content="Παρακολουθήστε CPU, RAM, φορτίο, I/O δίσκων και θερμοκρασία, αλλάξτε τη λειτουργία ταχύτητας ανεμιστήρα, ελέγξτε για ενημερώσεις DSM και επανεκκινήστε ή τερματίστε το Synology σας από το κινητό." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/el/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU, RAM, θερμοκρασία και ανεμιστήρες του Synology - Syno Manager" />
+<meta property="og:description" content="Παρακολουθήστε CPU, RAM, φορτίο, I/O δίσκων και θερμοκρασία, αλλάξτε τη λειτουργία ταχύτητας ανεμιστήρα, ελέγξτε για ενημερώσεις DSM και επανεκκινήστε ή τερματίστε το Synology σας από το κινητό." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/el/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU, RAM, θερμοκρασία και ανεμιστήρες του Synology - Syno Manager" />
+<meta name="twitter:description" content="Παρακολουθήστε CPU, RAM, φορτίο, I/O δίσκων και θερμοκρασία, αλλάξτε τη λειτουργία ταχύτητας ανεμιστήρα, ελέγξτε για ενημερώσεις DSM και επανεκκινήστε ή τερματίστε το Synology σας από το κινητό." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "el",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Αρχική",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Οδηγός Χρήσης",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Σύστημα"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU, RAM, θερμοκρασία και ανεμιστήρες του Synology - Syno Manager",
+  "description": "Παρακολουθήστε CPU, RAM, φορτίο, I/O δίσκων και θερμοκρασία, αλλάξτε τη λειτουργία ταχύτητας ανεμιστήρα, ελέγξτε για ενημερώσεις DSM και επανεκκινήστε ή τερματίστε το Synology σας από το κινητό.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "el",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Μπορώ να αλλάξω την ταχύτητα του ανεμιστήρα από την εφαρμογή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Η Υγεία συστήματος έχει μια κάρτα Ψύξη με Πλήρης ταχύτητα, Δροσερό και Αθόρυβο. Η εφαρμογή διαβάζει τη λειτουργία στην οποία βρίσκεται το NAS, γράφει την επιλογή σας και τη διαβάζει ξανά για επιβεβαίωση. Ένα NAS που αναφέρει λειτουργία εκτός αυτών των τριών κρατά μια εμφάνιση μόνο ανάγνωσης αντί να παραποιείται."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να επανεκκινήσω ή να τερματίσω το NAS από το κινητό;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι, από την κάρτα Έλεγχοι τροφοδοσίας στο κάτω μέρος της Υγείας συστήματος. Και τα δύο επιβεβαιώνονται πριν εκτελεστούν, γιατί επηρεάζουν κάθε συνδεδεμένο χρήστη. Ο απομακρυσμένος τερματισμός θέλει σκέψη - ένα NAS που είναι κλειστό δεν μπορεί να ξυπνήσει μέσω διαδικτύου χωρίς VPN ή router ρυθμισμένο για Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Σε τι χρησιμεύει το Εντοπισμός NAS;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Αναβοσβήνει το φωτάκι κατάστασης του NAS ώστε να καταλάβετε ποιο κουτί σε ένα ράφι ή ντουλάπι κοιτάτε. Η Σίγαση ηχητικού σταματά το βομβητή συναγερμού χωρίς να σιγάσει την αιτία που τον ενεργοποίησε - διορθώστε και την αιτία."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ανανεώνονται μόνα τους τα αρχεία καταγραφής;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Όχι, και σκόπιμα. Ένα αρχείο καταγραφής διαβαζόταν ξανά με χρονόμετρο είτε το διαβάζατε είτε όχι, κάτι που κόστιζε μπαταρία και δίκτυο χωρίς λόγο. Τώρα φορτώνει μία φορά και μένει ακίνητο. Πατήστε αναπαραγωγή για να το ακολουθήσετε ζωντανά, πατήστε ξανά για παύση, και σταματά να ακολουθεί μόνο του όταν φύγετε από την οθόνη."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να εξαγάγω ή να αντιγράψω το αρχείο καταγραφής που βλέπω;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Πατήστε παρατεταμένα οποιαδήποτε γραμμή για τη γραμμή Αντιγραφή / Επιλογή όλων / Κοινοποίηση του συστήματος, ή χρησιμοποιήστε το κουμπί εξαγωγής δίπλα στον ζωντανό διακόπτη στην καρτέλα Σύστημα, ή πάνω από τη λίστα στην καρτέλα Σύνδεση. Ανοίγει ένα φύλλο με Αποθήκευση σε αρχείο, Κοινοποίηση ή email και Αντιγραφή στο πρόχειρο, και εξάγει ακριβώς τις καταχωρίσεις που βλέπετε στην οθόνη μετά το φίλτρο επιπέδου και την αναζήτηση - μία καταχώριση ανά γραμμή, με ώρα, επίπεδο, χρήστη και περιγραφή χωρισμένα με tab."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/el/"><img src="/assets/syno-manager-icon.png" alt="Εικονίδιο Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα">
+      <a href="/el/">Αρχική</a>
+      <a href="/el/guide/" class="active">Οδηγός Χρήσης</a>
+      <a href="/el/#screenshots">Στιγμιότυπα οθόνης</a>
+      <a href="/el/compatible-nas/">Συμβατότητα</a>
+      <a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a>
+      <a href="/el/help/">Βοήθεια</a>
+      <a href="/el/#top" class="cta">Λήψη</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός χρήσης</a> &rsaquo; Σύστημα</div>
+      <div class="eyebrow">Σύστημα</div>
+      <h1>Τι κάνει <span class="g">πραγματικά</span> το κουτί</h1>
+      <p>Τρεις υποπροβολές: <b>Υγεία συστήματος</b> για την κατάσταση του μηχανήματος, <b>Πόροι</b> για ζωντανά γραφήματα και <b>Αρχεία καταγραφής</b> για ό,τι έχει καταγράψει το DSM. Συν οι έλεγχοι που αλλάζουν κάτι - λειτουργία ανεμιστήρα, φωτάκι εντοπισμού, ενημερώσεις DSM, επανεκκίνηση και τερματισμός.</p>
+    </div>
+    <div class="hero-shot"><img alt="Υγεία συστήματος με μετρητές CPU και RAM, μέσο φορτίο, I/O δίσκων και ιστορικό θερμοκρασίας" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Σε αυτή τη σελίδα</b><ul>
+      <li><a href="#health">Υγεία συστήματος</a></li>
+      <li><a href="#cooling">Ψύξη &amp; λειτουργία ανεμιστήρα</a></li>
+      <li><a href="#identify">Εντοπισμός &amp; ειδοποιήσεις</a></li>
+      <li><a href="#dsm-update">Ενημέρωση DSM</a></li>
+      <li><a href="#power">Έλεγχοι τροφοδοσίας</a></li>
+      <li><a href="#resources">Πόροι</a></li>
+      <li><a href="#logs">Αρχεία καταγραφής</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Υγεία συστήματος</div>
+      <h2>Οι μετρήσεις</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Κάρτα</th><th>Τι δείχνει</th></tr></thead>
+      <tbody>
+        <tr><td>Μετρητές CPU &amp; RAM</td><td>Η συνολική CPU ως δακτύλιος, με το μερίδιο του <b>χρήστη</b> να τονίζεται από κάτω ώστε να ξεχωρίζετε τον δικό σας φόρτο από το επιβάρυνση του συστήματος. Η RAM δείχνει το ποσοστό και τις απόλυτες τιμές.</td></tr>
+        <tr><td>Μνήμη</td><td>Χρησιμοποιημένη προς συνολική, ως μπάρα. Πράσινη μέχρι να έχει σημασία.</td></tr>
+        <tr><td>Μέσο φορτίο CPU</td><td>Τιμές ενός, πέντε και δεκαπέντε λεπτών - διεργασίες που περιμένουν χρόνο CPU, όχι ποσοστό. Κρίνεται με βάση τον αριθμό των πυρήνων σας, οπότε μια υγιής τιμή σε rackmount οκτώ πυρήνων είναι φορτωμένη σε ένα NAS δύο θέσεων.</td></tr>
+        <tr><td>I/O δίσκων</td><td>Ταχύτητα ανάγνωσης και εγγραφής συν το ποσοστό χρήσης - πόσο χρόνο ήταν απασχολημένοι οι δίσκοι, που συχνά είναι η πραγματική απάντηση όταν ένα NAS φαίνεται αργό ενώ η CPU δείχνει αδρανής.</td></tr>
+        <tr><td>Ιστορικό θερμοκρασίας</td><td>Ένα κυλιόμενο γράφημα με την τρέχουσα τιμή. Σε &deg;C ή &deg;F ανάλογα με την <a href="/el/guide/settings/#preferences">προτίμησή</a> σας.</td></tr>
+        <tr><td>Διεργασίες</td><td>Πόσες διεργασίες τρέχει το NAS.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Ψύξη</div>
+      <h2>Λειτουργία ταχύτητας ανεμιστήρα, από το κινητό σας</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Η κάρτα Ψύξη δείχνει την κατάσταση των ανεμιστήρων και τη λειτουργία στην οποία βρίσκεται το NAS, ως έλεγχο τριών θέσεων:</p>
+        <ul class="plain">
+          <li><b>Πλήρης ταχύτητα</b> - μέγιστη ροή αέρα, μέγιστος θόρυβος. Σωστό για rack ή ντουλάπι.</li>
+          <li><b>Δροσερό</b> - η ισορροπημένη προεπιλογή.</li>
+          <li><b>Αθόρυβο</b> - χαμηλότερη ταχύτητα, υψηλότερες θερμοκρασίες. Σωστό για NAS σε σαλόνι, αν το αντέχουν οι δίσκοι.</li>
+        </ul>
+        <div class="note"><b>Επιβεβαιωμένο, όχι υποτιθέμενο.</b> Η εφαρμογή διαβάζει την τρέχουσα λειτουργία από το NAS, γράφει την επιλογή σας και μετά την <b>ξαναδιαβάζει</b>. Μια λειτουργία που το NAS αθόρυβα απέρριψε αναφέρεται ως απορριφθείσα, αντί να μένει στην οθόνη σαν να εφαρμόστηκε.</div>
+        <div class="note" style="margin-top:14px"><b>Μια άγνωστη λειτουργία μένει μόνο για ανάγνωση.</b> Αν το NAS αναφέρει λειτουργία ψύξης εκτός αυτών των τριών, η κάρτα δείχνει ό,τι αναφέρθηκε και δεν προσφέρει αλλαγή - αντί να την παρουσιάσει λανθασμένα ως μία από τις τρεις που γνωρίζει.</div>
+      </div>
+      <img alt="Η κάρτα Ψύξη με Πλήρης ταχύτητα, Δροσερό και Αθόρυβο, συν Εντοπισμός και Έλεγχοι τροφοδοσίας" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Εντοπισμός &amp; ειδοποιήσεις</div>
+      <h2>Βρείτε το κουτί, σιγάστε το βομβητή</h2>
+    </div>
+    <ul class="plain">
+      <li>Ο <b>Εντοπισμός</b> αναβοσβήνει το φωτάκι κατάστασης του NAS ώστε να καταλάβετε μπροστά σε ποια μονάδα βρίσκεστε. Το <b>Διακοπή</b> τον τερματίζει.</li>
+      <li>Η <b>Σίγαση ηχητικού</b> σταματά το βομβητή συναγερμού. Σιγάζει τον θόρυβο, όχι την αιτία - ό,τι ενεργοποίησε τον συναγερμό εξακολουθεί να ισχύει και η επικεφαλίδα υγείας θα το δείχνει.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">Ενημέρωση DSM</div>
+      <h2>Υπάρχει ενημέρωση υλικολογισμικού</h2>
+      <p class="lead">Η κάρτα Ενημέρωση DSM αναφέρει την έκδοση που έχετε και αν η Synology έχει κάτι νεότερο. Το <b>Έλεγχος για ενημέρωση</b> ζητά από το NAS να ψάξει ξανά.</p>
+    </div>
+    <div class="note"><b>Αυτό είναι το υλικολογισμικό του NAS σας, όχι η εφαρμογή.</b> Το Syno Manager ενημερώνεται μέσω του App Store ή του Google Play όπως κάθε άλλη εφαρμογή. Αυτή η κάρτα είναι η δική του επιφάνεια ενημέρωσης του DSM, η ίδια με αυτή του Πίνακα Ελέγχου.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Έλεγχοι τροφοδοσίας</div>
+      <h2>Επανεκκίνηση και τερματισμός</h2>
+      <p class="lead">Στο κάτω μέρος της Υγείας συστήματος και σημειωμένα με κόκκινο, γιατί επηρεάζουν κάθε συνδεδεμένο χρήστη - συμπεριλαμβανομένου αυτού που είναι στη μέση μιας αντιγραφής αρχείου.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Επανεκκίνηση NAS</b> - μια καθαρή επανεκκίνηση. Επιβεβαιώνεται πριν εκτελεστεί.</li>
+      <li><b>Τερματισμός NAS</b> - ένας καθαρός τερματισμός. Επιβεβαιώνεται πριν εκτελεστεί.</li>
+    </ul>
+    <div class="note stop"><b>Σκεφτείτε πριν τερματίσετε απομακρυσμένα.</b> Ένα NAS που είναι κλειστό δεν μπορεί να αναμεταδώσει το δικό του πακέτο αφύπνισης. Για να το επαναφέρετε από έξω από το δίκτυό σας χρειάζεστε VPN προς αυτό ή router ρυθμισμένο να προωθεί Wake-on-LAN. Δείτε <a href="/el/guide/wake-on-lan/">Wake-on-LAN</a> για το τι δουλεύει από πού.</div>
+    <div class="note" style="margin-top:14px"><b>Οι συντομεύσεις δεν παρακάμπτουν την επιβεβαίωση.</b> Οι <a href="/el/guide/shortcuts/">σύνδεσμοι</a> <code>synomanager://reboot</code> και <code>synomanager://shutdown</code> σκόπιμα απλώς <em>ανοίγουν την εφαρμογή</em> σε αυτή την οθόνη. Μια καταστροφική ενέργεια δεν γίνεται ενός πατήματος επειδή ενεργοποιήθηκε από launcher.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Πόροι</div>
+      <h2>Ζωντανά γραφήματα</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Γραφήματα παρακολούθησης πόρων για CPU, μνήμη, ανάγνωση δίσκου και εγγραφή δίσκου" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Η υποπροβολή Πόροι είναι τα ίδια δεδομένα ως κυλιόμενο γράφημα, που είναι αυτό που θέλετε όταν η ερώτηση είναι «είναι στιγμιαία έξαρση ή σταθερό;»</p>
+        <ul class="plain">
+          <li><b>Χρήση CPU</b> με διαχωρισμό χρήστη και συστήματος.</li>
+          <li><b>Χρήση μνήμης</b> με χρησιμοποιημένη προς συνολική.</li>
+          <li><b>Ανάγνωση δίσκου</b> και <b>Εγγραφή δίσκου</b>, με δικό γράφημα η καθεμία, συν τη συνολική χρήση των δίσκων.</li>
+          <li><b>Μέσα φορτία</b> ενός, πέντε και δεκαπέντε λεπτών.</li>
+        </ul>
+        <div class="note">Τα γραφήματα γεμίζουν με το <a href="/el/guide/settings/#preferences">διάστημα ανανέωσης</a>. Ένα μικρότερο διάστημα δίνει λεπτομερέστερη εικόνα και κοστίζει περισσότερη μπαταρία· ένα μεγαλύτερο είναι πιο ήπιο και πιο αδρό.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Αρχεία καταγραφής</div>
+      <h2>Τι κατέγραψε το DSM</h2>
+      <p class="lead">Δύο καρτέλες: <b>Σύστημα</b> για το δικό του αρχείο καταγραφής του DSM και <b>Σύνδεση</b> για συνδέσεις και πρόσβαση σε αρχεία. Και οι δύο διαβάζονται όταν τις ζητήσετε.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Φορτώνει μία φορά και μένει ακίνητο.</b> Ένα αρχείο που ξαναδιαβάζεται με χρονόμετρο ενώ προσπαθείτε να διαβάσετε μια γραμμή είναι άχρηστο και κοστίζει μπαταρία και δίκτυο χωρίς λόγο.</li>
+      <li><b>Πατήστε αναπαραγωγή για να το ακολουθήσετε ζωντανά.</b> Πατήστε ξανά για παύση. Η παρακολούθηση σταματά μόνη της όταν φύγετε από την οθόνη ή στείλετε την εφαρμογή στο παρασκήνιο, ώστε μια ξεχασμένη καρτέλα αρχείου να μην κάνει αθόρυβα ανανέωση στην τσέπη σας.</li>
+      <li><b>Υπάρχει πλαίσιο αναζήτησης</b> για να βρείτε μία γραμμή σε ένα μεγάλο αρχείο.</li>
+      <li><b>Τα αρχεία καταγραφής container και stack λειτουργούν με τον ίδιο τρόπο</b> - δείτε <a href="/el/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Το κείμενο επιλέγεται.</b> Πατήστε παρατεταμένα μια γραμμή και εμφανίζεται η γραμμή Αντιγραφή / Επιλογή όλων / Κοινοποίηση του συστήματος, όπως οπουδήποτε αλλού υπάρχει κείμενο στην οθόνη.</li>
+      <li><b>Εξαγάγετε αυτό που βλέπετε.</b> Ένα κουμπί εξαγωγής βρίσκεται δίπλα στον ζωντανό διακόπτη στην καρτέλα Σύστημα και πάνω από τη λίστα στην καρτέλα Σύνδεση. Ανοίγει ένα φύλλο με τρεις διεξόδους: <b>Αποθήκευση σε αρχείο</b>, <b>Κοινοποίηση</b> για αποστολή ή email, ή <b>Αντιγραφή στο πρόχειρο</b>.</li>
+    </ul>
+    <div class="note"><b>Εξάγει ό,τι είναι στην οθόνη, όχι ολόκληρο το αρχείο.</b> Ό,τι έχουν περιορίσει το φίλτρο επιπέδου και το πλαίσιο αναζήτησης είναι αυτό που βγαίνει - τίποτα από ό,τι έχετε ήδη φιλτράρει δεν επιστρέφει στην εξαγωγή. Το αρχείο είναι απλό κείμενο, μία καταχώριση ανά γραμμή, με ώρα, επίπεδο, χρήστη και περιγραφή χωρισμένα με tab.</div>
+    <div class="note warn"><b>Αν το αρχείο δεν φορτώνει</b> και αναφέρει λήξη χρόνου σύνδεσης ενώ η υπόλοιπη εφαρμογή είναι εντάξει, το Log Center του NAS είναι αυτό που δεν απαντά, όχι η σύνδεσή σας. Ελέγξτε ότι το Log Center είναι εγκατεστημένο και τρέχει στο Κέντρο πακέτων του DSM - το API αρχείου συστήματος είναι μέρος του.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Συχνές ερωτήσεις</div>
+      <h2>Συχνές ερωτήσεις για το σύστημα</h2>
+    </div>
+    <details open><summary>Μπορώ να αλλάξω την ταχύτητα του ανεμιστήρα από την εφαρμογή;</summary><div class="body">Ναι. Η Υγεία συστήματος έχει μια κάρτα Ψύξη με Πλήρης ταχύτητα, Δροσερό και Αθόρυβο. Η εφαρμογή διαβάζει τη λειτουργία στην οποία βρίσκεται το NAS, γράφει την επιλογή σας και τη διαβάζει ξανά για επιβεβαίωση. Ένα NAS που αναφέρει λειτουργία εκτός αυτών των τριών κρατά μια εμφάνιση μόνο ανάγνωσης αντί να παραποιείται.</div></details>
+    <details><summary>Μπορώ να επανεκκινήσω ή να τερματίσω το NAS από το κινητό;</summary><div class="body">Ναι, από τους Ελέγχους τροφοδοσίας στο κάτω μέρος της Υγείας συστήματος. Και τα δύο επιβεβαιώνονται πριν εκτελεστούν. Ο απομακρυσμένος τερματισμός θέλει σκέψη - ένα NAS που είναι κλειστό δεν μπορεί να ξυπνήσει μέσω διαδικτύου χωρίς VPN ή router ρυθμισμένο για Wake-on-LAN.</div></details>
+    <details><summary>Σε τι χρησιμεύει το Εντοπισμός NAS;</summary><div class="body">Αναβοσβήνει το φωτάκι κατάστασης του NAS ώστε να καταλάβετε ποιο κουτί σε ένα ράφι ή ντουλάπι κοιτάτε. Η Σίγαση ηχητικού σταματά το βομβητή συναγερμού χωρίς να σιγάσει την αιτία που τον ενεργοποίησε.</div></details>
+    <details><summary>Ανανεώνονται μόνα τους τα αρχεία καταγραφής;</summary><div class="body">Όχι, και σκόπιμα. Ένα αρχείο φορτώνει μία φορά και μένει ακίνητο ώστε να το διαβάσετε. Πατήστε αναπαραγωγή για να το ακολουθήσετε ζωντανά, πατήστε ξανά για παύση, και σταματά να ακολουθεί μόνο του όταν φύγετε από την οθόνη ή στείλετε την εφαρμογή στο παρασκήνιο.</div></details>
+    <details><summary>Μπορώ να εξαγάγω ή να αντιγράψω το αρχείο καταγραφής που βλέπω;</summary><div class="body">Ναι. Πατήστε παρατεταμένα οποιαδήποτε γραμμή για τη γραμμή Αντιγραφή / Επιλογή όλων / Κοινοποίηση του συστήματος, ή χρησιμοποιήστε το κουμπί εξαγωγής δίπλα στον ζωντανό διακόπτη στην καρτέλα Σύστημα, ή πάνω από τη λίστα στην καρτέλα Σύνδεση. Ανοίγει ένα φύλλο με Αποθήκευση σε αρχείο, Κοινοποίηση ή email και Αντιγραφή στο πρόχειρο, και εξάγει ακριβώς τις καταχωρίσεις που βλέπετε στην οθόνη μετά το φίλτρο επιπέδου και την αναζήτηση - μία καταχώριση ανά γραμμή, με ώρα, επίπεδο, χρήστη και περιγραφή χωρισμένα με tab.</div></details>
+    <details><summary>Γιατί το μέσο φορτίο μου είναι υψηλό ενώ η CPU φαίνεται εντάξει;</summary><div class="body">Το μέσο φορτίο μετρά διεργασίες που περιμένουν, και συχνά περιμένουν δίσκους και όχι CPU. Ελέγξτε τη χρήση I/O δίσκων στην ίδια οθόνη - υψηλό ποσοστό χρήσης με χαμηλή CPU είναι η συνήθης εξήγηση.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Επόμενο: Αποθήκευση</h2>
+    <p class="lead" style="margin:0 auto 24px">Τόμοι, pools, υγεία SMART ανά δίσκο και ασφαλής αφαίρεση.</p>
+    <p><a class="btn" href="/el/guide/storage/">Αποθήκευση &amp; δίσκοι &rarr;</a> &nbsp; <a class="btn ghost" href="/el/guide/">Πίσω στον οδηγό</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/el/">Αρχική</a><a href="/el/guide/">Οδηγός χρήσης</a><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/compatible-nas/">Συμβατότητα</a><a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a><a href="/el/synology-app-for-iphone/">iPhone & iPad</a><a href="/el/synology-app-for-android/">Android</a><a href="/el/synology-app-for-mac-windows/">Mac & Windows</a><a href="/el/ds-finder-alternative/">έναντι DS finder</a><a href="/el/help/">Βοήθεια</a><a href="/el/privacy/">Απόρρητο</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Αναφορά σφάλματος</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Το Syno Manager είναι ανεξάρτητη εφαρμογή και δεν σχετίζεται με τη Synology Inc., ούτε εγκρίνεται ή χορηγείται από αυτήν. Τα Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station και QuickConnect είναι εμπορικά σήματα της Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

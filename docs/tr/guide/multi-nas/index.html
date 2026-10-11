@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Birden Fazla Synology NAS'ı Yönetin - Syno Manager</title>
+<meta name="description" content="İstediğiniz kadar Synology cihazı ekleyin ve tek dokunuşla geçiş yapın. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu saklar." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="Birden Fazla Synology NAS'ı Yönetin - Syno Manager" />
+<meta property="og:description" content="İstediğiniz kadar Synology cihazı ekleyin ve tek dokunuşla geçiş yapın. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu saklar." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Birden Fazla Synology NAS'ı Yönetin - Syno Manager" />
+<meta name="twitter:description" content="İstediğiniz kadar Synology cihazı ekleyin ve tek dokunuşla geçiş yapın. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu saklar." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Birden fazla NAS cihazı"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Birden Fazla Synology NAS'ı Yönetin - Syno Manager",
+  "description": "İstediğiniz kadar Synology cihazı ekleyin ve tek dokunuşla geçiş yapın. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu saklar.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "tr",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kaç NAS cihazı ekleyebilirim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "İstediğiniz kadar. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu ayrı tutar; yani bir medya sunucusu ile bir yedekleme hedefinin aynı görünmesi gerekmez."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir NAS'ı yeniden adlandırmak NAS'ın kendisinde bir şeyi değiştirir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Yeniden adlandırma yalnızca uygulamadaki görünen adı değiştirir. NAS'ın kendi sunucu adını değiştirmek için DSM'nin Denetim Masası'nı kullanın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IP Değiştir ile Yapılandırmayı Düzenle arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IP Değiştir, en sık değişen alan olan adres ve bağlantı noktası için bir kısayoldur. Yapılandırmayı Düzenle ise HTTPS, sertifika doğrulama, kimlik bilgileri, 2FA ve kamera tüneli anahtarı dahil tüm formu açar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bir NAS'ı kaldırırsam ne olur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kayıt ve saklanan kimlik bilgileri uygulamadan silinir. NAS'ta hiçbir şeye dokunulmaz; başka yerlerdeki oturumları kapatılmaz ve hiçbir veri etkilenmez."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Birden fazla NAS cihazı</div>
+      <div class="eyebrow">Birden fazla NAS cihazı</div>
+      <h1>Tek uygulama, <span class="g">tüm DiskStation'lar</span></h1>
+      <p>İstediğiniz kadar ekleyin. Her biri kendi kimlik bilgilerini, pano düzenini ve ayarlarını saklar; garajdaki yedekleme hedefinin salondaki medya sunucusuyla aynı görünmesi gerekmez.</p>
+    </div>
+    <div class="hero-shot"><img alt="Bağlan ve Uyandır seçenekleriyle NAS cihaz listesi" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Cihaz listesi</div>
+      <h2>Her kayıtta neler görünür</h2>
+      <p class="lead"><b>Ayarlar &rsaquo; NAS Cihazlarını Yönet</b> yolundan ulaşılır; birden fazla cihazınız varsa ve uygulamanın sormasını seçtiyseniz uygulamanın açıldığı ekran da budur.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Takma ad ve adres</b> - ona verdiğiniz ad, bağlandığı ana makine ve bağlantı noktası.</li>
+      <li>Formu açmadan görmeye değer şeyler için <b>etiketler</b>: <b>HTTPS</b> olup olmadığı, hangi <b>bağlantı noktası</b> ve hangi <b>hesapla</b> oturum açtığı.</li>
+      <li>Etkin olan cihazda <b>Bağlı</b> yazar.</li>
+      <li>Ona geçmek için <b>Bağlan</b>, uyuyorsa sihirli paket göndermek için <b>Uyandır</b>.</li>
+      <li><b>Sürükleme tutacağı</b> - en çok kullandığınız cihaz en üstte olsun diye listeyi yeniden sıralayın.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Taşma menüsü</div>
+      <h2>Bir kayıtla yapabileceğiniz beş şey</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>İşlem</th><th>Ne yapar</th></tr></thead>
+          <tbody>
+            <tr><td>Yeniden adlandır</td><td>Yalnızca <b>görünen adı</b> değiştirir; yani uygulamanın ona verdiği etiketi. NAS'ın kendi sunucu adına dokunulmaz; o DSM'nin Denetim Masası'nda durur.</td></tr>
+            <tr><td>IP Değiştir</td><td>En sık değişen alan olan adres ve bağlantı noktası için kısayol; tüm formu gezmeniz gerekmez.</td></tr>
+            <tr><td>Yapılandırmayı Düzenle</td><td>Tam form: HTTPS, sertifika doğrulama, kimlik bilgileri, iki adımlı kimlik doğrulama ve kamera canlı görünüm tüneli.</td></tr>
+            <tr><td>Bağlantıyı Sına</td><td>Hiçbir şeyi değiştirmeden erişilebilirliği denetler ve "ulaşılamıyor" ile "ulaşıldı ama kimlik bilgileri reddedildi" durumlarını birbirinden ayırır.</td></tr>
+            <tr><td>NAS'ı Kaldır</td><td>Kaydı ve saklanan kimlik bilgilerini <b>uygulamadan</b> siler. NAS'ta hiçbir şeye dokunulmaz.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Yeniden Adlandır, IP Değiştir, Yapılandırmayı Düzenle, Bağlantıyı Sına ve Kaldır seçenekleriyle NAS başına menü" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS'a özel olanlar</div>
+      <h2>Her cihazın kendi başına hatırladıkları</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>NAS başına</h3>
+        <ul class="plain">
+          <li>Kimlik bilgileri ve 2FA cihaz belirteci.</li>
+          <li>Hangi pano kartlarının açık olduğu ve sıraları.</li>
+          <li>Hangi kartların daraltıldığı.</li>
+          <li>Her sekmede hangi alt görünümlerin gizlendiği ve sıraları.</li>
+          <li>Kamera canlı görünüm tüneli ayarı.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Uygulama genelinde</h3>
+        <ul class="plain">
+          <li>Tema, yüzey, vurgu rengi ve metin boyutu.</li>
+          <li>Alt gezinme çubuğu.</li>
+          <li>Yoklama aralığı ve sıcaklık birimi.</li>
+          <li>Açılış davranışı.</li>
+          <li>Hangi yardım kartlarını kapattığınız.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Aynı NAS'ı iki kez eklemek geçerli bir kurulumdur.</b> Evde için yerel IP ile bir kayıt, dışarıda için QuickConnect ile bir kayıt. Bunlar ayrı düzenlere sahip ayrı kayıtlardır ve geçiş tek dokunuştur.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Çoklu NAS SSS</h2>
+    </div>
+    <details open><summary>Kaç NAS cihazı ekleyebilirim?</summary><div class="body">İstediğiniz kadar. Her biri kendi kimlik bilgilerini, pano düzenini, kart sırasını ve daraltma durumunu saklar.</div></details>
+    <details><summary>Bir NAS'ı yeniden adlandırmak NAS'ın kendisinde bir şeyi değiştirir mi?</summary><div class="body">Hayır. Yeniden adlandırma yalnızca uygulamadaki görünen adı değiştirir. NAS'ın kendi sunucu adını değiştirmek için DSM'nin Denetim Masası'nı kullanın.</div></details>
+    <details><summary>IP Değiştir ile Yapılandırmayı Düzenle arasındaki fark nedir?</summary><div class="body">IP Değiştir, adres ve bağlantı noktası için bir kısayoldur. Yapılandırmayı Düzenle ise HTTPS, sertifika doğrulama, kimlik bilgileri, 2FA ve kamera tüneli anahtarı dahil tüm formu açar.</div></details>
+    <details><summary>Bir NAS'ı kaldırırsam ne olur?</summary><div class="body">Kayıt ve saklanan kimlik bilgileri uygulamadan silinir. NAS'ta hiçbir şeye dokunulmaz.</div></details>
+    <details><summary>Uygulama hangisiyle açılır?</summary><div class="body"><a href="/tr/guide/settings/#launch">Açılış Davranışı</a> bölümünde ne ayarladıysanız: cihaz seçici, en son kullandığınız ya da her zaman belirli bir cihaz.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sıradaki: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS'ı ya da ağınızdaki başka herhangi bir cihazı onun üzerinden uyandırın.</p>
+    <p><a class="btn" href="/tr/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Rehbere dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

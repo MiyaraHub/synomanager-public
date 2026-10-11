@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN voor Synology NAS - Syno Manager</title>
+<meta name="description" content="Maak een slapende Synology wakker, of elke machine op je netwerk via de NAS - wat overal werkt. Wat een VPN of routerdoorsturing nodig heeft, helder uitgelegd." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN voor Synology NAS - Syno Manager" />
+<meta property="og:description" content="Maak een slapende Synology wakker, of elke machine op je netwerk via de NAS - wat overal werkt. Wat een VPN of routerdoorsturing nodig heeft, helder uitgelegd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN voor Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Maak een slapende Synology wakker, of elke machine op je netwerk via de NAS - wat overal werkt. Wat een VPN of routerdoorsturing nodig heeft, helder uitgelegd." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN voor Synology NAS - Syno Manager",
+  "description": "Maak een slapende Synology wakker, of elke machine op je netwerk via de NAS - wat overal werkt. Wat een VPN of routerdoorsturing nodig heeft, helder uitgelegd.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik mijn NAS van overal wekken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alleen als er een route naar je netwerk is die niet afhangt van de NAS die wakker is - een VPN naar het netwerk, of een router die Wake-on-LAN doorstuurt. Een uitgeschakelde NAS kan zijn eigen wekpakket niet doorsturen en QuickConnect kan een NAS die uit staat niet bereiken. Op hetzelfde netwerk werkt het gewoon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik mijn pc wekken via de NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, en dit werkt wel overal, zolang de NAS zelf aan staat. Je vraagt het aan de NAS via je gewone verbinding en de NAS zendt het magic packet voor je uit op het LAN. Het is hetzelfde pad dat de eigen DS Router-app van Synology gebruikt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waar komt het MAC-adres van de NAS vandaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De app legt het automatisch vast de eerste keer dat je verbindt, dus je hoeft het nooit op te zoeken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat heb ik nodig om een ander apparaat toe te voegen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een naam die je herkent en het MAC-adres. Het MAC-adres vind je meestal in de apparatenlijst van je router, of op de machine zelf onder de netwerkinstellingen."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Handleiding</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Zet dingen aan <span class="g">vanaf de bank</span></h1>
+      <p>Een knop <b>Wekken</b> naast Verbinden in de apparatenlijst voor de NAS zelf, en een scherm <b>Apparaten wekken</b> voor al het andere op je netwerk. De ene werkt overal; de andere heeft een eerlijk voorbehoud.</p>
+    </div>
+    <div class="hero-shot"><img alt="Het scherm Apparaten wekken" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">De eerlijke tabel</div>
+      <h2>Wat van waar werkt</h2>
+      <p class="lead">Wake-on-LAN is een broadcast op een lokaal netwerk. Alles over wat wel en niet werkt volgt uit dat ene feit, dus hier staat het gewoon duidelijk in plaats van begraven in een voetnoot.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Wat je wilt wekken</th><th>Waar je bent</th><th>Werkt het?</th><th>Waarom</th></tr></thead>
+      <tbody>
+        <tr><td>De NAS</td><td>Op hetzelfde netwerk</td><td class="yes">Ja</td><td>Je telefoon zendt het pakket rechtstreeks uit. Niets in te stellen.</td></tr>
+        <tr><td>Een ander apparaat</td><td>Op hetzelfde netwerk</td><td class="yes">Ja</td><td>Hetzelfde - je telefoon of de NAS kan het sturen.</td></tr>
+        <tr><td>Een ander apparaat, NAS staat aan</td><td>Overal</td><td class="yes">Ja</td><td><b>De NAS stuurt het voor je door.</b> Je bereikt de NAS via je gewone verbinding en hij zendt uit op het LAN. Dit is het pad van DS Router.</td></tr>
+        <tr><td>De NAS zelf, terwijl hij uit staat</td><td>Buiten je netwerk</td><td class="no">Instellen nodig</td><td>Een uitgeschakelde NAS kan zijn eigen wekpakket niet doorsturen en QuickConnect kan een NAS die uit staat niet bereiken. Je hebt een <b>VPN</b> naar het netwerk nodig, of een router die <b>UDP-poort 9</b> doorstuurt naar het broadcastadres van het LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>De middelste rij is de nuttige.</b> Een desktop thuis wekken vanuit de trein werkt, en vergt helemaal geen routerconfiguratie - omdat de altijd aanstaande NAS het uitzenden doet.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">De NAS</div>
+      <h2>Je DiskStation wekken</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Niets in te stellen.</b> De app legt het MAC-adres van de NAS vast de eerste keer dat je verbindt, dus de knop is klaar voordat je hem nodig hebt.</li>
+      <li><b>Open Instellingen &rsaquo; NAS-apparaten beheren.</b></li>
+      <li><b>Tik op Wekken</b> naast de NAS.</li>
+      <li><b>Geef hem even de tijd</b> en tik op Verbinden. Een NAS heeft tijd nodig om op te starten, en de app doet niet alsof hij aan staat voordat hij antwoordt.</li>
+    </ol>
+    <div class="note warn"><b>Wake-on-LAN moet ook op de NAS zijn ingeschakeld.</b> In DSM onder <b>Configuratiescherm &rsaquo; Hardware &amp; stroom &rsaquo; Algemeen</b>. Een NAS waarop het uit staat negeert het pakket, wie het ook stuurt.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Al het andere</div>
+      <h2>Andere apparaten wekken via de NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Instellingen &rsaquo; Apparaten wekken</b>. Voeg elke machine op je netwerk toe met naam en MAC-adres, en de NAS stuurt het magic packet voor je vanuit het netwerk.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Tik op Apparaat toevoegen.</b></li>
+          <li><b>Geef het een naam</b> die je herkent - "Desktop", "Game-pc", "Server".</li>
+          <li><b>Voer het MAC-adres in.</b> De apparatenlijst van je router is meestal de makkelijkste plek om het te vinden.</li>
+          <li><b>Opslaan.</b> Het verschijnt in de lijst met een eigen knop Wekken.</li>
+        </ol>
+        <div class="note"><b>Omdat de NAS het verstuurt, werkt dit ook als je weg bent</b> - via mobiele data, via QuickConnect, vanaf overal waar je de NAS kunt bereiken. Zo doet de eigen router-app van Synology het ook, en daarom loont het de moeite dit in te stellen, ook als je de NAS zelf nooit wekt.</div>
+      </div>
+      <img alt="Het scherm Apparaten wekken met de lege staat en een knop Apparaat toevoegen" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Op de doelmachine</div>
+      <h2>Wat er waar moet zijn om een wekactie te laten slagen</h2>
+      <p class="lead">Wordt er een pakket verstuurd en gebeurt er niets, dan is het bijna altijd een van deze dingen - en de app kan er van buitenaf geen enkel zien of oplossen.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN ingeschakeld in het BIOS of UEFI van de machine</b>, vaak "Wake on PCIe" of "Power on by PCI-E" genoemd.</li>
+      <li><b>Ook ingeschakeld op de netwerkadapter.</b> In Windows: Apparaatbeheer, de eigenschappen van de adapter, Energiebeheer, "Dit apparaat mag de computer uit slaapstand halen".</li>
+      <li><b>Snel opstarten uit in Windows.</b> Als het aan staat, is een uitgeschakelde pc eigenlijk in sluimerstand en negeert hij het pakket vaak.</li>
+      <li><b>Meestal bedraad.</b> Wekken via wifi vraagt specifieke hardware- en driverondersteuning; ethernet is veel betrouwbaarder.</li>
+      <li><b>De machine moet nog stroom hebben uit het stopcontact.</b> Een magic packet vereist dat de netwerkadapter standby-stroom heeft.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Wake-on-LAN-FAQ</h2>
+    </div>
+    <details open><summary>Kan ik mijn NAS van overal wekken?</summary><div class="body">Alleen als er een route naar je netwerk is die niet afhangt van de NAS die wakker is - een VPN, of een router die Wake-on-LAN doorstuurt. Een uitgeschakelde NAS kan zijn eigen wekpakket niet doorsturen en QuickConnect kan een NAS die uit staat niet bereiken. Op hetzelfde netwerk werkt het gewoon.</div></details>
+    <details><summary>Kan ik mijn pc wekken via de NAS?</summary><div class="body">Ja, en dit werkt wel overal zolang de NAS zelf aan staat. Je vraagt het aan de NAS via je gewone verbinding en die zendt het magic packet voor je uit op het LAN.</div></details>
+    <details><summary>Waar komt het MAC-adres van de NAS vandaan?</summary><div class="body">De app legt het automatisch vast de eerste keer dat je verbindt, dus je hoeft het nooit op te zoeken.</div></details>
+    <details><summary>Wat heb ik nodig om een ander apparaat toe te voegen?</summary><div class="body">Een naam die je herkent en het MAC-adres, dat meestal in de apparatenlijst van je router staat.</div></details>
+    <details><summary>Ik heb een wekopdracht gestuurd en er gebeurde niets.</summary><div class="body">Controleer of Wake-on-LAN is ingeschakeld op de doelmachine - in het BIOS, op de netwerkadapter en met Snel opstarten van Windows uit. Controleer ook of hij op bedraad ethernet zit, en of op de NAS Wake-on-LAN is ingeschakeld in het Configuratiescherm als je de NAS zelf wekt.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: widgets</h2>
+    <p class="lead" style="margin:0 auto 24px">Je NAS op het startscherm, met een eerlijke tijdstempel.</p>
+    <p><a class="btn" href="/nl/guide/widgets/">Widgets voor het startscherm &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

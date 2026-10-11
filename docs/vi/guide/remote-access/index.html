@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Truy cập Synology NAS từ xa - Syno Manager</title>
+<meta name="description" content="Truy cập Synology của bạn từ mọi nơi bằng QuickConnect, tên miền riêng hoặc VPN. Tính năng nào chạy được qua đường nào, gồm cả ảnh và xem trực tiếp camera." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Truy cập Synology NAS từ xa - Syno Manager" />
+<meta property="og:description" content="Truy cập Synology của bạn từ mọi nơi bằng QuickConnect, tên miền riêng hoặc VPN. Tính năng nào chạy được qua đường nào, gồm cả ảnh và xem trực tiếp camera." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Truy cập Synology NAS từ xa - Syno Manager" />
+<meta name="twitter:description" content="Truy cập Synology của bạn từ mọi nơi bằng QuickConnect, tên miền riêng hoặc VPN. Tính năng nào chạy được qua đường nào, gồm cả ảnh và xem trực tiếp camera." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Khi ở xa nhà"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Truy cập Synology NAS từ xa - Syno Manager",
+  "description": "Truy cập Synology của bạn từ mọi nơi bằng QuickConnect, tên miền riêng hoặc VPN. Tính năng nào chạy được qua đường nào, gồm cả ảnh và xem trực tiếp camera.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có cần chuyển tiếp cổng để dùng NAS từ xa không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. QuickConnect chuyển tiếp kết nối qua dịch vụ của Synology mà không cần cấu hình router, và VPN vào mạng của bạn cũng dùng được. Chỉ cần chuyển tiếp cổng khi bạn muốn một đường trực tiếp từ internet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ảnh và xem trực tiếp camera có chạy qua QuickConnect không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Ảnh thu nhỏ, ảnh đầy đủ, xem trực tiếp camera, và tải xuống từ File Station và Drive đều đi qua bất kỳ đường nào đang hoạt động, kể cả relay của QuickConnect. Relay chậm hơn mạng của riêng bạn, nhưng vẫn chạy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có nên thêm NAS của mình hai lần không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Đó là cách làm hay. Một mục theo IP nội bộ khi bạn ở nhà - nhanh, trực tiếp - và một mục theo QuickConnect khi ở ngoài. Chúng là hai mục riêng với bố cục riêng và chuyển đổi chỉ cần một chạm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "QuickConnect có an toàn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kết nối được mã hóa đầu cuối khi bạn dùng HTTPS, và relay của Synology chỉ chuyển tiếp lưu lượng chứ không lưu dữ liệu của bạn. Thông tin đăng nhập DSM vẫn được áp dụng, và xác thực hai yếu tố vẫn hoạt động."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Khi ở xa nhà</div>
+      <div class="eyebrow">Khi ở xa nhà</div>
+      <h1>Cùng một ứng dụng, <span class="g">một đường đi khác</span></h1>
+      <p>Syno Manager hoạt động như nhau dù bạn ngồi cạnh NAS hay ở bên kia thế giới. Điều thay đổi là cách kết nối đi tới đích, và mỗi đường đi có những đánh đổi khác nhau đáng biết.</p>
+    </div>
+    <div class="hero-shot"><img alt="Biểu mẫu Add NAS hiển thị Direct IP và QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ba đường đi</div>
+      <h2>Chọn đường phù hợp với bạn</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Đường đi</th><th>Thiết lập</th><th>Tốc độ</th><th>Có mở ra thứ gì không?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Bật trong DSM và nhập ID. Không cần đụng đến router.</td><td>Chậm hơn - lưu lượng đi qua relay của Synology.</td><td class="yes">Không gì cả. Không có cổng nào được mở ở phía bạn.</td></tr>
+        <tr><td><b>Tên miền riêng / DDNS</b></td><td>Một tên miền trỏ tới địa chỉ của bạn, cộng với chuyển tiếp cổng trên router.</td><td>Trực tiếp, nên nhanh bằng tốc độ tải lên của bạn cho phép.</td><td class="no">Có - cổng DSM có thể truy cập được từ internet.</td></tr>
+        <tr><td><b>VPN</b></td><td>Một máy chủ VPN trên router hoặc NAS, và một ứng dụng client trên điện thoại.</td><td>Trực tiếp sau khi đã kết nối.</td><td class="yes">Chỉ cổng VPN. Mọi thứ khác vẫn riêng tư.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Nếu chưa chắc, hãy dùng QuickConnect.</b> Đây là lựa chọn không đòi hỏi hiểu biết về router và không mở gì cả, và mọi tính năng trong ứng dụng đều chạy được qua nó.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Những gì chạy được từ xa</div>
+      <h2>Tất cả, với hai chú thích</h2>
+      <p class="lead">Ứng dụng không bị giảm tính năng khi bạn ở xa. Hai thứ cần suy nghĩ một chút là xem trực tiếp camera và đánh thức một NAS đang tắt.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Tính năng</th><th>Khi ở xa nhà</th></tr></thead>
+      <tbody>
+        <tr><td>Giám sát - hệ thống, lưu trữ, mạng, tình trạng</td><td class="yes">Chạy trên mọi đường đi.</td></tr>
+        <tr><td>Docker, gói ứng dụng, dịch vụ, tác vụ, người dùng</td><td class="yes">Chạy trên mọi đường đi.</td></tr>
+        <tr><td>Synology Photos - ảnh thu nhỏ và ảnh đầy đủ</td><td class="yes">Chạy được, kể cả qua relay.</td></tr>
+        <tr><td>Tải xuống từ File Station và Drive</td><td class="yes">Chạy được, kể cả qua relay.</td></tr>
+        <tr><td>Sao lưu - trạng thái và Run Now</td><td class="yes">Chạy trên mọi đường đi.</td></tr>
+        <tr><td>Đánh thức thiết bị khác thông qua NAS</td><td class="yes">Chạy được, miễn là chính NAS đang bật.</td></tr>
+        <tr><td><b>Xem trực tiếp camera</b></td><td>Bật <b>Tunnel camera live view through DSM port</b>. Nếu không, xem trực tiếp cần RTSP trên cổng 554, thường không truy cập được từ bên ngoài. Xem <a href="/vi/guide/media/#streaming">cách xem trực tiếp kết nối</a>.</td></tr>
+        <tr><td><b>Đánh thức chính NAS khi nó đang tắt</b></td><td>Cần VPN hoặc chuyển tiếp Wake-on-LAN trên router. QuickConnect không thể kết nối tới NAS đang tắt. Xem <a href="/vi/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Thiết lập</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Trong DSM:</b> Control Panel &rsaquo; External Access &rsaquo; QuickConnect. Bật nó lên và ghi lại QuickConnect ID.</li>
+      <li><b>Trong ứng dụng:</b> thêm một NAS và chuyển <b>Connection Type</b> sang <b>QuickConnect</b>.</li>
+      <li><b>Nhập ID</b> - không phải máy chủ và cổng.</li>
+      <li><b>Thông tin đăng nhập DSM của bạn</b>, và 2FA nếu tài khoản có dùng.</li>
+      <li><b>Save &amp; Connect.</b></li>
+    </ol>
+    <div class="note"><b>Hãy chuẩn bị tinh thần là sẽ chậm hơn.</b> Relay thêm một chặng và Synology giới hạn tốc độ của nó, nên thư viện ảnh cuộn kém mượt hơn so với ở nhà. Mọi thứ vẫn chạy - đó là khác biệt về độ trễ, không phải về khả năng.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Một cách làm đáng bắt chước</div>
+      <h2>Thêm cùng một NAS hai lần</h2>
+      <p class="lead">Một mục theo <b>IP nội bộ</b>, một mục theo <b>QuickConnect</b>. Hãy đặt tên để phân biệt - "NAS (home)" và "NAS (away)".</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ở nhà</b>, dùng mục trực tiếp: không relay, tốc độ tối đa, ảnh thu nhỏ hiện tức thì.</li>
+      <li><b>Khi ra ngoài</b>, chuyển sang mục QuickConnect.</li>
+      <li><b>Chúng giữ bố cục riêng</b>, nên bạn có thể rút gọn mục khi ở xa chỉ còn vài thẻ bạn thực sự xem trên dữ liệu di động.</li>
+      <li><b>Chuyển đổi chỉ một chạm</b> từ danh sách thiết bị.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Đặt <a href="/vi/guide/settings/#launch">Launch Behavior</a> thành <b>Last NAS I used</b> và ứng dụng sẽ giữ lại NAS nào bạn đang dùng.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về truy cập từ xa</h2>
+    </div>
+    <details open><summary>Tôi có cần chuyển tiếp cổng để dùng NAS từ xa không?</summary><div class="body">Không. QuickConnect chuyển tiếp kết nối mà không cần cấu hình router, và VPN cũng dùng được. Chỉ cần chuyển tiếp cổng khi bạn muốn một đường trực tiếp từ internet.</div></details>
+    <details><summary>Ảnh và xem trực tiếp camera có chạy qua QuickConnect không?</summary><div class="body">Có. Ảnh thu nhỏ, ảnh đầy đủ, xem trực tiếp camera, và tải xuống từ File Station và Drive đều đi qua bất kỳ đường nào đang hoạt động, kể cả relay. Xem trực tiếp camera cần bật công tắc đường hầm qua cổng DSM.</div></details>
+    <details><summary>Tôi có nên thêm NAS của mình hai lần không?</summary><div class="body">Đó là cách làm hay - một mục theo IP nội bộ cho khi ở nhà và một mục theo QuickConnect cho khi ở ngoài, với bố cục riêng và chuyển đổi chỉ một chạm.</div></details>
+    <details><summary>QuickConnect có an toàn không?</summary><div class="body">Kết nối được mã hóa đầu cuối khi bạn dùng HTTPS, và relay chỉ chuyển tiếp lưu lượng chứ không lưu dữ liệu của bạn. Thông tin đăng nhập DSM và xác thực hai yếu tố vẫn được áp dụng.</div></details>
+    <details><summary>Vì sao mục IP nội bộ của tôi không chạy trên dữ liệu di động?</summary><div class="body">Vì địa chỉ riêng như 192.168.x.x chỉ tồn tại trong mạng của chính bạn. Hãy dùng mục QuickConnect, một tên miền, hoặc kết nối VPN trước.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: sao lưu &amp; khôi phục</h2>
+    <p class="lead" style="margin:0 auto 24px">Chuyển cài đặt ứng dụng sang điện thoại mới.</p>
+    <p><a class="btn" href="/vi/guide/backup-restore/">Sao lưu &amp; khôi phục &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

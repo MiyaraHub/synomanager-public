@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS に接続 - Syno Manager のセットアップ</title>
+<meta name="description" content="1分以内に Synology NAS を追加できます。アドレスとポート、HTTPS と自己署名証明書、QuickConnect、2FA、接続できないときの対処法を解説します。" />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS に接続 - Syno Manager のセットアップ" />
+<meta property="og:description" content="1分以内に Synology NAS を追加できます。アドレスとポート、HTTPS と自己署名証明書、QuickConnect、2FA、接続できないときの対処法を解説します。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS に接続 - Syno Manager のセットアップ" />
+<meta name="twitter:description" content="1分以内に Synology NAS を追加できます。アドレスとポート、HTTPS と自己署名証明書、QuickConnect、2FA、接続できないときの対処法を解説します。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "はじめに"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS に接続 - Syno Manager のセットアップ",
+  "description": "1分以内に Synology NAS を追加できます。アドレスとポート、HTTPS と自己署名証明書、QuickConnect、2FA、接続できないときの対処法を解説します。",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "ja",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager を使うには何が必要ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DSM 7.0 以降を実行している Synology NAS と、その DSM アカウント、そして Android 7+、iOS 16+、macOS 11+、または Windows が動作するデバイスです。NAS には何もインストールする必要はありません。アプリは、すでに存在する DSM 自身の APIs を使用します。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "どのアドレスとポートを入力すればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "自宅のネットワーク内では、NAS のローカル IP アドレスと DSM のポート（HTTPS オンなら 5001、オフなら 5000）を入力します。ホスト名やカスタムドメインも使えます。アドレスを扱いたくない場合は、接続タイプを QuickConnect に切り替えて、QuickConnect ID を入力してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「SSL 証明書を検証」が既定でオフなのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ほとんどの DiskStation は自己署名証明書を提示します。これは公的な認証局による署名がないため、接続自体は暗号化されていても検証に失敗します。検証をオフにしておくと、その証明書を受け入れます。Let's Encrypt などの正規の証明書をインストールしている場合は、検証をオンにしてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ルーターのポートを開放する必要はありますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。自宅のネットワーク内では、転送の設定は不要です。外部からは、QuickConnect が接続を中継するほか、VPN も利用できます。ポート転送が必要なのは、インターネットからの直接経路が特に必要な場合や、ネットワーク外から RTSP でカメラのライブビューを見たい場合だけです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "「接続タイムアウト」と表示されます。どうすればよいですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "このメッセージは、アプリが応答を得られなかったことを意味し、原因はほとんどの場合、アドレス、ポート、またはスマートフォンが接続しているネットワークです。HTTPS の設定がポートと一致しているか、ローカル IP を使っている場合はスマートフォンが NAS と同じネットワークにあるか、そしてスマートフォンのブラウザで同じアドレスとポートの DSM の Web インターフェースが表示されるかを確認してください。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; はじめに</div>
+      <div class="eyebrow">はじめに</div>
+      <h1><span class="g">1分以内に</span>接続できます</h1>
+      <p>NAS には何もインストールされません。Syno Manager は、すでに動作している DSM 自身の APIs と通信します。DiskStation の場所と、あなたが誰かを伝えるだけです。</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager の NAS 追加フォーム" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#requirements">必要なもの</a></li>
+      <li><a href="#address">NAS を見つける</a></li>
+      <li><a href="#form">フォームのすべての入力欄</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">2段階認証</a></li>
+      <li><a href="#test">テストして保存</a></li>
+      <li><a href="#next">このあとの流れ</a></li>
+      <li><a href="#trouble">接続できないとき</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">ステップ0</div>
+      <h2>必要なもの</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>要件</th><th>詳細</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td><b>DSM 7.0 以降</b>を実行しているモデルであれば、どれでも構いません。NAS には何もインストールされません。アプリは、DSM の Web インターフェースが使うのと同じ APIs を使います。</td></tr>
+        <tr><td>DSM アカウント</td><td>いつもお使いの DSM のユーザー名とパスワードです。管理者アカウントではすべてが表示され、管理者以外のアカウントでは DSM が許可する範囲が表示されます。アプリは、拒否される操作を表示する代わりに、それ以外を非表示にします。</td></tr>
+        <tr><td>お使いのデバイス</td><td><b>Android 7.0</b> 以降、<b>iOS 16.0</b> 以降、<b>macOS 11.0</b> 以降、または <b>Windows</b>。4つとも同じアプリです。</td></tr>
+        <tr><td>NAS への経路</td><td>同じローカルネットワーク、そこへの VPN、カスタムドメイン、または QuickConnect のいずれかです。どれか1つで十分です。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>見るだけなら、管理者アカウントは不要です。</b>監視はどの DSM ユーザーでも行えます。コンテナの再起動、バックアップの実行、ドライブの取り外しなどの操作には、DSM 自体がその操作に必要とする権限が必要で、拒否された場合、アプリは成功したふりをせず、拒否されたことを報告します。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">どこにあるか</div>
+      <h2>NAS のアドレスを調べる</h2>
+      <p class="lead">すでにブラウザで DSM を開いている場合は、アドレスバーに必要なものがすべてあります。ホストとポートが、アプリが求める2つの値です。</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>DSM から</h3>
+        <ul class="plain">
+          <li><b>コントロールパネル &rsaquo; ネットワーク &rsaquo; ネットワークインターフェース</b>に、各インターフェースの NAS の IP アドレスが表示されます。</li>
+          <li><b>コントロールパネル &rsaquo; ネットワーク &rsaquo; DSM 設定</b>に、DSM が待ち受けている HTTP と HTTPS のポートが表示されます。変更していなければ、5000 と 5001 です。</li>
+        </ul>
+        <h3 style="margin-top:22px">ブラウザから</h3>
+        <p style="color:var(--steel)">DSM にアクセスするために入力しているものが、そのままアプリに必要な情報です。<code>https://192.168.1.20:5001</code> では、ホストは <code>192.168.1.20</code>、ポートは <code>5001</code>、HTTPS はオンです。</p>
+      </div>
+      <div>
+        <h3>ルーターから</h3>
+        <p style="color:var(--steel)">ほとんどのルーターは、接続中のデバイスを名前で一覧表示します。NAS は、<b>コントロールパネル &rsaquo; 情報センター</b>で設定したサーバー名で表示されます。</p>
+        <div class="note"><b>固定のアドレスを割り当ててください。</b>ルーターが再起動後に NAS に別の IP を割り当てると、アプリは NAS を見つけられなくなります。ルーターでの DHCP 予約か、NAS での固定アドレスの設定で防げます。ホスト名やカスタムドメインなら、IP が何であっても問題ありません。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS を追加</div>
+      <h2>フォームのすべての入力欄</h2>
+      <p class="lead">デバイス一覧で <b>+ NAS を追加</b>をタップします。フォームは短く、既定値のない入力欄は3つだけです。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>入力欄</th><th>入力する内容</th></tr></thead>
+          <tbody>
+            <tr><td>NAS のニックネーム</td><td>お好きな名前で構いません。表示されるのはあなたにだけです。複数台になったときに便利です。</td></tr>
+            <tr><td>接続タイプ</td><td>入力したアドレスを使う場合は<b>直接 IP</b>、QuickConnect ID を使う場合は <b>QuickConnect</b> を選びます。<a href="#quickconnect">下記</a>をご覧ください。</td></tr>
+            <tr><td>ホスト / IP アドレス</td><td>NAS のローカル IP、ホスト名、またはそれを指すカスタムドメインです。</td></tr>
+            <tr><td>ポート</td><td>HTTPS オンなら <b>5001</b>、オフなら <b>5000</b> です。DSM が別のポートに変更されている場合は、そのポートを使ってください。</td></tr>
+            <tr><td>HTTPS</td><td>既定でオンになっており、オンのままにしておくことをおすすめします。パスワードを含め、スマートフォンと NAS の間のすべての通信が暗号化されます。</td></tr>
+            <tr><td>SSL 証明書を検証</td><td>既定ではオフです。ほとんどの DiskStation は、公的な認証局に対して検証できない<b>自己署名</b>証明書を提示するためです。どちらの設定でも、接続は暗号化されます。正規の証明書をインストールしている場合にのみ、オンにしてください。</td></tr>
+            <tr><td>ユーザー名</td><td>DSM のアカウント名です。<b>スペースを含むユーザー名にも対応しています。</b>アプリは正しく引用符で囲んで処理しますが、ほかのクライアントが失敗する原因としてよくあることです。</td></tr>
+            <tr><td>パスワード</td><td>DSM のパスワードです。目のアイコンで、入力中に表示できます。プラットフォームのキーチェーンまたはキーストアに保存され、平文で保存されることはありません。</td></tr>
+            <tr><td>2段階認証</td><td>DSM アカウントで認証アプリを使っている場合はオンにします。<a href="#twofactor">下記</a>をご覧ください。</td></tr>
+            <tr><td>カメラのライブビューを DSM ポート経由でトンネリング</td><td>既定ではオフです。<b>オフ</b>の場合、カメラのライブビューはポート 554 の RTSP に直接接続します。自宅のネットワークでは高速ですが、どこにいてもそのポートに到達できる必要があります。<b>オン</b>の場合、すでに使用している DSM の HTTPS ポートを通じてストリームをトンネリングするため、554 を公開しなくても、外出先からライブビューが使えます。<a href="/ja/guide/media/#cameras">Surveillance Station</a> をご覧ください。</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="NAS の追加フォーム" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">アドレスを入力する必要はありません</div>
+      <h2>QuickConnect</h2>
+      <p class="lead"><b>接続タイプ</b>を <b>QuickConnect</b> に切り替えて、ホストとポートの代わりに QuickConnect ID を入力します。Synology のリレーが、NAS がどこにあっても見つけてくれるため、ルーターの設定は不要です。</p>
+    </div>
+    <ul class="plain">
+      <li><b>ID の場所。</b>DSM の<b>コントロールパネル &rsaquo; 外部アクセス &rsaquo; QuickConnect</b> にあります。先にそこで有効にしておく必要があります。</li>
+      <li><b>代償。</b>リレーを経由するため遅延が増え、サムネイルやライブビューの読み込みは、自宅のネットワークより遅くなります。それでもすべて動作します。</li>
+      <li><b>得られるもの。</b>ポート転送も、最新に保つ必要のあるダイナミック DNS も不要で、こちら側でインターネットに公開するものもありません。</li>
+    </ul>
+    <div class="note"><b>両方を使うこともできます。</b>同じ NAS をローカル IP と QuickConnect の2通りで追加すると、自宅用の高速なエントリと、外出先用の確実なエントリが手に入ります。別々のエントリで、レイアウトも別々なので、今いる場所に近いほうを選んでください。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>2段階認証</h2>
+      <p class="lead">DSM アカウントが認証アプリで保護されている場合は、保存する前に<b>2段階認証(2FA)</b>をオンにしてください。パスワードが受け付けられた直後に、アプリが6桁のコードを求めます。</p>
+    </div>
+    <ol class="steps">
+      <li>NAS の追加フォームで<b>トグルをオン</b>にします。</li>
+      <li><b>保存 &amp; 接続</b>をタップします。アプリがサインインし、DSM が第2要素を求めます。</li>
+      <li>認証アプリの<b>コードを入力</b>します。</li>
+      <li><b>このデバイスを記憶するかどうかを選びます。</b>記憶すると、DSM がデバイストークンを発行し、このスマートフォンではコードを再度求められません。トークンは、パスワードと同じようにプラットフォームのキーチェーンに保存されます。</li>
+    </ol>
+    <div class="note warn"><b>コードが拒否される場合</b>は、時計を確認してください。認証コードは現在時刻から生成されるため、スマートフォンまたは NAS の時計がずれていると、誤った数字が生成または要求されます。NAS の時刻ソースは、<a href="/ja/guide/home/">ホーム画面</a>のクイック統計行に表示されます。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">確定する前に</div>
+      <h2>接続をテストして、保存</h2>
+      <p class="lead"><b>接続をテスト</b>は、何も保存せずに、アドレス、ポート、認証情報を試して結果をお伝えします。「NAS に到達できない」のか、「到達したがパスワードが違う」のかを区別できるため、入力ミスを見つける最速の方法です。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>表示される内容</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>接続タイムアウト</td><td>何も応答がありませんでした。原因は、アドレス、ポート、またはスマートフォンのネットワークです。認証情報はまだ試されていません。</td></tr>
+        <tr><td>認証情報が無効</td><td>NAS が応答し、サインインを拒否しました。アドレスとポートは正しく、ユーザー名またはパスワードが誤っています。</td></tr>
+        <tr><td>証明書エラー</td><td>HTTPS がオンで、自己署名証明書に対して<b>SSL 証明書を検証</b>もオンになっています。検証をオフにしてください。</td></tr>
+        <tr><td>2FA が必要</td><td>アカウントが2段階認証を使っていますが、トグルがオフです。オンにして、もう一度お試しください。</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>保存 &amp; 接続</b>は、エントリを保存してサインインします。ホーム画面に移動し、NAS の読み込みがすでに始まっています。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">接続完了</div>
+      <h2>初回接続時に起こること</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="接続後の Syno Manager のホーム画面" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>アプリが NAS にできることを問い合わせます。</b>DSM の API カタログを照会し、その一覧を保持します。これが、Surveillance Station のない NAS にカメラのタブが表示されない理由であり、パッケージをインストールするとその画面が現れる理由です。</li>
+          <li><b>対応するすべてのカードがオンになります。</b>新しいカードは非表示ではなく表示された状態で追加されるため、NAS が対応する機能は目に見えます。<a href="/ja/guide/customizing/">カスタマイズ</a>は何かをオフにする場所であり、探す場所ではありません。</li>
+          <li><b>NAS の MAC アドレスを取得します。</b>これにより、あとで調べなくても<a href="/ja/guide/wake-on-lan/">Wake-on-LAN</a> が使えます。</li>
+          <li><b>短いウェルカム画面が1回だけ表示されます。</b>アプリの機能と設定を変更できる場所を説明します。次回から表示しないためのチェックボックスもあります。</li>
+          <li><b>説明が必要な画面には、ヘルプカードが表示されます。</b>長押しすると閉じられます。<a href="/ja/guide/settings/#help">設定</a>から、個別に元に戻せます。</li>
+        </ul>
+        <div class="note"><b>接続後にパッケージをインストールしましたか？</b>機能の一覧は接続時に読み取られるため、その後にインストールしたパッケージには、まだタブがありません。プルして更新するか、アプリを開き直すと、新しい画面が表示されます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">接続できないとき</div>
+      <h2>簡単なチェックリスト</h2>
+    </div>
+    <ol class="steps">
+      <li><b>スマートフォンのブラウザで DSM を開き</b>、入力したのとまったく同じアドレスとポートにアクセスします。ブラウザでも到達できない場合、問題はアプリではなく、ネットワークまたはアドレスにあります。</li>
+      <li><b>HTTPS の設定がポートと一致しているか確認します。</b>HTTPS オフでポート 5001、またはオンでポート 5000 を使うと、タイムアウトします。待ち受けているポートが別だからです。</li>
+      <li>NAS が出荷時の証明書を使っている場合は、<b>SSL 証明書を検証をオフにします。</b></li>
+      <li><b>スマートフォンのネットワークを確認します。</b>ローカル IP には、モバイルデータ通信からは到達できません。Wi-Fi に接続するか、QuickConnect、ドメイン、VPN を使ってください。</li>
+      <li><b>iOS では、ローカルネットワークへのアクセスを許可します。</b>設定 &rsaquo; アプリ &rsaquo; Syno Manager &rsaquo; ローカルネットワーク。これを許可しないと、iOS は同じネットワーク上のアドレスへの接続を黙ってブロックします。</li>
+      <li><b>DSM のファイアウォールを確認します。</b>コントロールパネル &rsaquo; セキュリティ &rsaquo; ファイアウォール。特定のアドレスだけを許可するルールがあると、それに該当しないスマートフォンはブロックされます。</li>
+      <li><b>自動ブロックを確認します。</b>コントロールパネル &rsaquo; セキュリティ &rsaquo; アカウント。サインインの失敗が繰り返されると、スマートフォンのアドレスがブロックされることがあります。そこに一覧表示されており、削除できます。</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/ja/help/">トラブルシューティングガイド全文</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>セットアップ FAQ</h2>
+    </div>
+    <details open><summary>Syno Manager を使うには何が必要ですか？</summary><div class="body">DSM 7.0 以降を実行している Synology NAS と、その DSM アカウント、そして Android 7+、iOS 16+、macOS 11+、または Windows が動作するデバイスです。NAS には何もインストールする必要はありません。アプリは、すでに存在する DSM 自身の APIs を使用します。</div></details>
+    <details><summary>どのアドレスとポートを入力すればよいですか？</summary><div class="body">自宅のネットワーク内では、NAS のローカル IP アドレスと DSM のポート（HTTPS オンなら 5001、オフなら 5000）を入力します。ホスト名やカスタムドメインも使えます。アドレスを扱いたくない場合は、接続タイプを QuickConnect に切り替えて、QuickConnect ID を入力してください。</div></details>
+    <details><summary>「SSL 証明書を検証」が既定でオフなのはなぜですか？</summary><div class="body">ほとんどの DiskStation は自己署名証明書を提示します。これは公的な認証局による署名がないため、接続自体は暗号化されていても検証に失敗します。検証をオフにしておくと、その証明書を受け入れます。Let's Encrypt などの正規の証明書をインストールしている場合は、検証をオンにしてください。</div></details>
+    <details><summary>ルーターのポートを開放する必要はありますか？</summary><div class="body">いいえ。自宅のネットワーク内では、転送の設定は不要です。外部からは、QuickConnect が接続を中継するほか、VPN も利用できます。ポート転送が必要なのは、インターネットからの直接経路が特に必要な場合や、ネットワーク外から RTSP でカメラのライブビューを見たい場合だけです。</div></details>
+    <details><summary>「接続タイムアウト」と表示されます。どうすればよいですか？</summary><div class="body">このメッセージは、アプリが応答を得られなかったことを意味し、原因はほとんどの場合、アドレス、ポート、またはスマートフォンが接続しているネットワークです。HTTPS の設定がポートと一致しているか、ローカル IP を使っている場合はスマートフォンが NAS と同じネットワークにあるか、そしてスマートフォンのブラウザで同じアドレスとポートの DSM の Web インターフェースが表示されるかを確認してください。</div></details>
+    <details><summary>複数の NAS を追加できますか？</summary><div class="body">はい、いくつでも追加できます。それぞれが独自の認証情報、ダッシュボードのレイアウト、設定を保持し、デバイス一覧から切り替えられます。<a href="/ja/guide/multi-nas/">複数の NAS デバイス</a>をご覧ください。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：ホーム画面</h2>
+    <p class="lead" style="margin:0 auto 24px">各カードの表示内容と、ダッシュボードを自分好みにする方法。</p>
+    <p><a class="btn" href="/ja/guide/home/">ホーム画面 &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

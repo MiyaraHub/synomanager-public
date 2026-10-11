@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yhdistä Synology NAS - Syno Managerin käyttöönotto</title>
+<meta name="description" content="Lisää Synology NAS alle minuutissa: osoite ja portti, HTTPS ja itse allekirjoitetut varmenteet, QuickConnect, 2FA ja mitä tehdä, kun se ei yhdistä." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Yhdistä Synology NAS - Syno Managerin käyttöönotto" />
+<meta property="og:description" content="Lisää Synology NAS alle minuutissa: osoite ja portti, HTTPS ja itse allekirjoitetut varmenteet, QuickConnect, 2FA ja mitä tehdä, kun se ei yhdistä." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Yhdistä Synology NAS - Syno Managerin käyttöönotto" />
+<meta name="twitter:description" content="Lisää Synology NAS alle minuutissa: osoite ja portti, HTTPS ja itse allekirjoitetut varmenteet, QuickConnect, 2FA ja mitä tehdä, kun se ei yhdistä." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aloitus"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Yhdistä Synology NAS - Syno Managerin käyttöönotto",
+  "description": "Lisää Synology NAS alle minuutissa: osoite ja portti, HTTPS ja itse allekirjoitetut varmenteet, QuickConnect, 2FA ja mitä tehdä, kun se ei yhdistä.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "fi",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mitä tarvitsen Syno Managerin käyttöön?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Synology NAS, jossa on DSM 7.0 tai uudempi, DSM-tili siinä sekä laite, jossa on Android 7+, iOS 16+, macOS 11+ tai Windows. NAS:iin ei tarvitse asentaa mitään - sovellus käyttää DSM:n omia API:ja, jotka ovat jo siellä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mikä osoite ja portti syötetään?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Omassa verkossasi NAS:in paikallinen IP-osoite ja DSM:n portti - 5001 HTTPS päällä tai 5000 HTTPS pois. Voit myös syöttää isäntänimen tai oman verkkotunnuksen. Jos et halua käsitellä osoitteita lainkaan, vaihda yhteystyypiksi QuickConnect ja syötä QuickConnect-tunnuksesi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miksi Vahvista SSL-varmenne on oletuksena pois?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Koska useimmat DiskStationit esittävät itse allekirjoitetun varmenteen, jota julkinen taho ei ole allekirjoittanut ja joka siksi ei läpäise vahvistusta, vaikka yhteys on silti salattu. Vahvistuksen jättäminen pois hyväksyy sen varmenteen. Jos olet asentanut oikean varmenteen - esimerkiksi Let's Encryptistä - kytke vahvistus päälle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tarvitseeko minun avata portteja reitittimestä?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Omassa verkossasi mitään ei tarvitse ohjata edelleen. Ulkopuolelta QuickConnect välittää yhteyden puolestasi, ja VPN toimii myös. Porttien edelleenohjaus tarvitaan vain, jos haluat nimenomaan suoran reitin internetistä tai jos haluat kameran reaaliaikaisen kuvan RTSP:llä verkkosi ulkopuolelta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se sanoo yhteyden aikakatkaisu. Mitä nyt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se viesti tarkoittaa, ettei sovellus koskaan saanut vastausta, mikä on lähes aina osoite, portti tai verkko, jossa puhelin on. Tarkista, että HTTPS vastaa porttia, että puhelin on samassa verkossa NAS:in kanssa, jos käytät paikallista IP-osoitetta, ja että DSM:n oma verkkokäyttöliittymä latautuu puhelimen selaimessa samalla osoitteella ja portilla."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Aloitus</div>
+      <div class="eyebrow">Aloitus</div>
+      <h1>Yhdistetty <span class="g">alle minuutissa</span></h1>
+      <p>NAS:iin ei asenneta mitään. Syno Manager puhuu DSM:n omille API:lle, jotka ovat jo käynnissä - kerrot vain, missä DiskStationisi on ja kuka olet.</p>
+    </div>
+    <div class="hero-shot"><img alt="Lisää NAS -lomake Syno Managerissa" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#requirements">Mitä tarvitset</a></li>
+      <li><a href="#address">NAS:in löytäminen</a></li>
+      <li><a href="#form">Lomakkeen jokainen kenttä</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Kaksivaiheinen tunnistautuminen</a></li>
+      <li><a href="#test">Testaa ja tallenna</a></li>
+      <li><a href="#next">Mitä seuraavaksi tapahtuu</a></li>
+      <li><a href="#trouble">Kun se ei yhdistä</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Vaihe nolla</div>
+      <h2>Mitä tarvitset</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Vaatimus</th><th>Tiedot</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td>Mikä tahansa malli, jossa on <b>DSM 7.0 tai uudempi</b>. Siihen ei asenneta mitään - sovellus käyttää samoja API:ja kuin DSM:n verkkokäyttöliittymä.</td></tr>
+        <tr><td>DSM-tili</td><td>Tavallinen DSM-käyttäjätunnuksesi ja salasanasi. Pääkäyttäjätili näkee kaiken; ei-pääkäyttäjä näkee sen, minkä DSM sallii, ja sovellus piilottaa loput sen sijaan, että näyttäisi ohjaimia, jotka hylätään.</td></tr>
+        <tr><td>Laitteesi</td><td><b>Android 7.0</b> tai uudempi, <b>iOS 16.0</b> tai uudempi, <b>macOS 11.0</b> tai uudempi, tai <b>Windows</b>. Sama sovellus kaikilla neljällä.</td></tr>
+        <tr><td>Reitti NAS:iin</td><td>Sama paikallinen verkko, VPN sinne, oma verkkotunnus tai QuickConnect. Mikä tahansa niistä riittää.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Et tarvitse pääkäyttäjätiliä</b> pelkkään katseluun. Valvonta toimii kenelle tahansa DSM-käyttäjälle. Hallintatoiminnot - kontin uudelleenkäynnistys, varmuuskopion ajo, aseman turvallinen poisto - vaativat sen oikeuden, jota DSM itse vaatii kyseiseen toimintoon, ja sovellus ilmoittaa hylkäyksen eikä teeskentele sen onnistuneen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Missä se on</div>
+      <h2>NAS-osoitteen löytäminen</h2>
+      <p class="lead">Jos avaat DSM:n jo selaimessa, osoiterivillä on kaikki tarvitsemasi: isäntä ja portti ovat ne kaksi arvoa, joita sovellus kysyy.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>DSM:stä itsestään</h3>
+        <ul class="plain">
+          <li><b>Ohjauspaneeli &rsaquo; Verkko &rsaquo; Verkkoliitäntä</b> näyttää NAS:in IP-osoitteen jokaisella liitännällä.</li>
+          <li><b>Ohjauspaneeli &rsaquo; Verkko &rsaquo; DSM-asetukset</b> näyttää HTTP- ja HTTPS-portit, joita DSM kuuntelee. Ne ovat 5000 ja 5001, ellei joku ole muuttanut niitä.</li>
+        </ul>
+        <h3 style="margin-top:22px">Selaimestasi</h3>
+        <p style="color:var(--steel)">Mitä tahansa kirjoitat päästäksesi DSM:ään, sitä sovellus haluaa. Osoitteessa <code>https://192.168.1.20:5001</code> isäntä on <code>192.168.1.20</code>, portti on <code>5001</code> ja HTTPS on päällä.</p>
+      </div>
+      <div>
+        <h3>Reitittimestäsi</h3>
+        <p style="color:var(--steel)">Useimmat reitittimet listaavat yhdistetyt laitteet nimellä. NAS näkyy palvelimen nimellään - sillä, joka on asetettu kohdassa <b>Ohjauspaneeli &rsaquo; Tietokeskus</b>.</p>
+        <div class="note"><b>Anna sille kiinteä osoite.</b> Jos reitittimesi antaa NAS:ille eri IP-osoitteen uudelleenkäynnistyksen jälkeen, sovellus ei enää löydä sitä. DHCP-varaus reitittimessä tai kiinteä osoite NAS:issa estää sen. Isäntänimi tai oma verkkotunnus toimii myös eikä välitä IP-osoitteesta.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Lisää NAS</div>
+      <h2>Lomakkeen jokainen kenttä</h2>
+      <p class="lead">Napauta <b>+ Lisää NAS</b> laiteluettelossa. Lomake on lyhyt, ja vain kolmella kentällä ei ole järkevää oletusta.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Kenttä</th><th>Mitä siihen laitetaan</th></tr></thead>
+          <tbody>
+            <tr><td>NAS:in lempinimi</td><td>Mikä tahansa nimi - se näytetään vain sinulle. Hyödyllinen, kun sinulla on useampi kuin yksi.</td></tr>
+            <tr><td>Yhteystyyppi</td><td><b>Suora IP</b> kirjoittamallesi osoitteelle tai <b>QuickConnect</b> QuickConnect-tunnukselle. Katso <a href="#quickconnect">alla</a>.</td></tr>
+            <tr><td>Isäntä / IP-osoite</td><td>NAS:in paikallinen IP, sen isäntänimi tai oma verkkotunnus, joka osoittaa siihen.</td></tr>
+            <tr><td>Portti</td><td><b>5001</b> HTTPS päällä, <b>5000</b> pois - ellei DSM:ää ole siirretty eri portteihin, jolloin käytä niitä.</td></tr>
+            <tr><td>HTTPS</td><td>Oletuksena päällä, ja kannattaa jättää päälle. Kaikki puhelimen ja NAS:in välillä on salattua, salasanasi mukaan lukien.</td></tr>
+            <tr><td>Vahvista SSL-varmenne</td><td>Oletuksena pois, koska useimmat DiskStationit esittävät <b>itse allekirjoitetun</b> varmenteen, jota ei voi vahvistaa julkista tahoa vasten. Yhteys on silti salattu kummassakin tapauksessa. Kytke tämä päälle vain, jos olet asentanut oikean varmenteen.</td></tr>
+            <tr><td>Käyttäjätunnus</td><td>DSM-tilisi nimi. <b>Välilyöntejä sisältävät käyttäjätunnukset tuetaan</b> - sovellus lainaa ne oikein, mikä on yleinen syy muiden asiakkaiden epäonnistumiseen.</td></tr>
+            <tr><td>Salasana</td><td>DSM-salasanasi. Silmä paljastaa sen kirjoittaessasi. Se kirjoitetaan alustan avainnippuun tai avainsäilöön eikä koskaan tallenneta selkotekstinä.</td></tr>
+            <tr><td>Kaksivaiheinen tunnistautuminen</td><td>Kytke päälle, jos DSM-tilisi käyttää todennussovellusta. Katso <a href="#twofactor">alla</a>.</td></tr>
+            <tr><td>Tunneloi kameran reaaliaikainen kuva DSM-portin kautta</td><td>Oletuksena pois. <b>Pois</b> tarkoittaa, että kameran reaaliaikainen kuva yhdistää suoraan RTSP:hen portissa 554, mikä on nopeampaa omassa verkossasi mutta vaatii, että portti on tavoitettavissa sieltä, missä olet. <b>Päällä</b> tunneloi virran jo käyttämäsi DSM:n HTTPS-portin kautta, joten reaaliaikainen kuva toimii ulkopuolelta paljastamatta porttia 554. Katso <a href="/fi/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Lisää NAS -lomake" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Ei osoitetta kirjoitettavaksi</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Vaihda <b>Yhteystyypiksi</b> <b>QuickConnect</b> ja syötä QuickConnect-tunnuksesi isännän ja portin sijaan. Synologyn välityspalvelu löytää NAS:isi missä tahansa, eikä reitittimen määrityksiä tarvita.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Missä tunnuksesi on.</b> DSM:ssä kohdassa <b>Ohjauspaneeli &rsaquo; Ulkoinen käyttö &rsaquo; QuickConnect</b>. Sen on oltava otettu siellä käyttöön ensin.</li>
+      <li><b>Mitä se maksaa.</b> Välitys lisää viivettä, joten pikkukuvat ja reaaliaikainen kuva latautuvat hitaammin kuin omassa verkossasi. Kaikki toimii silti.</li>
+      <li><b>Mitä se säästää.</b> Ei porttien edelleenohjausta, ei dynaamista DNS:ää pidettäväksi ajan tasalla eikä mitään paljastettuna internetiin sinun puolellasi.</li>
+    </ul>
+    <div class="note"><b>Voit pitää molemmat.</b> Saman NAS:in lisääminen kahdesti - kerran paikallisella IP:llä, kerran QuickConnectilla - antaa nopean kohteen kotiin ja luotettavan poissaoloon. Ne ovat erillisiä kohteita erillisin asettelun kanssa, joten valitse se, jota lähempänä olet.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Kaksivaiheinen tunnistautuminen</h2>
+      <p class="lead">Jos DSM-tilisi on suojattu todennussovelluksella, kytke <b>Kaksivaiheinen tunnistautuminen (2FA)</b> päälle ennen tallennusta. Sovellus pyytää kuusinumeroista koodiasi heti salasanan hyväksymisen jälkeen.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Kytke valitsin päälle</b> Lisää NAS -lomakkeessa.</li>
+      <li><b>Tallenna &amp; yhdistä.</b> Sovellus kirjautuu sisään, ja DSM pyytää toisen tekijän.</li>
+      <li><b>Syötä koodi</b> todennussovelluksestasi.</li>
+      <li><b>Valitse, muistetaanko tämä laite.</b> Jos muistetaan, DSM myöntää laitetunnisteen, eikä tältä puhelimelta pyydetä koodia uudelleen. Tunniste tallennetaan samalla tavalla kuin salasana, alustan avainnippuun.</li>
+    </ol>
+    <div class="note warn"><b>Jos koodit hylätään</b>, tarkista kello. Todennuskoodit johdetaan nykyisestä ajasta, joten puhelin tai NAS, jonka kello on mennyt väärin, tuottaa tai odottaa väärää numeroa. NAS:in aikalähde näkyy <a href="/fi/guide/home/">aloitusnäytön</a> pikatilastorivillä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Ennen kuin sitoudut</div>
+      <h2>Testaa yhteys, sitten tallenna</h2>
+      <p class="lead"><b>Testaa yhteys</b> kokeilee osoitetta, porttia ja tunnuksia ja kertoo, mitä tapahtui, tallentamatta mitään. Se on nopein tapa löytää kirjoitusvirhe, koska se erottaa tilanteen ”NAS:iin ei saada yhteyttä” tilanteesta ”yhteys saatiin, mutta salasana on väärä”.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Mitä se sanoo</th><th>Mitä se tarkoittaa</th></tr></thead>
+      <tbody>
+        <tr><td>Yhteyden aikakatkaisu</td><td>Mikään ei vastannut. Osoite, portti tai verkko, jossa puhelin on - ei tunnukset, joita ei koskaan kokeiltu.</td></tr>
+        <tr><td>Virheelliset tunnukset</td><td>NAS vastasi ja hylkäsi kirjautumisen. Osoite ja portti ovat oikein; käyttäjätunnus tai salasana ei ole.</td></tr>
+        <tr><td>Varmennevirhe</td><td>HTTPS on päällä ja <b>Vahvista SSL-varmenne</b> on myös päällä itse allekirjoitettua varmennetta vasten. Kytke vahvistus pois.</td></tr>
+        <tr><td>2FA vaaditaan</td><td>Tili käyttää kaksivaiheista tunnistautumista ja valitsin on pois. Kytke se päälle ja yritä uudelleen.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Tallenna &amp; yhdistä</b> tallentaa kohteen ja kirjautuu sisään. Päädyt aloitusnäytölle, jossa NAS:isi on jo latautumassa.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Olet sisällä</div>
+      <h2>Mitä tapahtuu ensimmäisessä yhteydessä</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Syno Managerin aloitusnäyttö yhdistämisen jälkeen" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Sovellus kysyy, mitä NAS osaa.</b> Se kysyy DSM:n API-luettelon ja säilyttää listan. Siksi NAS ilman Surveillance Stationia ei koskaan näytä Kamerat-välilehteä, ja siksi paketin asentaminen saa sen näkymän ilmestymään.</li>
+          <li><b>Jokainen tuettu kortti kytketään päälle.</b> Uudet kortit tulevat näkyviin eikä piiloon, joten NAS:isi tukema ominaisuus on sellainen, jonka näet. <a href="/fi/guide/customizing/">Mukauta</a> on paikka, jossa kytket asioita pois, ei paikka, josta etsit niitä.</li>
+          <li><b>NAS:in MAC-osoite tallennetaan</b>, jotta <a href="/fi/guide/wake-on-lan/">Wake-on-LAN</a> toimii myöhemmin ilman että etsit sitä.</li>
+          <li><b>Lyhyt tervetuloviesti ilmestyy kerran.</b> Se kertoo, mitä sovellus tekee ja mistä asioita muutetaan. Siinä on valintaruutu, jolla estät sen ilmestymisen uudelleen.</li>
+          <li><b>Ohjekortit ilmestyvät näytöille, jotka vaativat selitystä.</b> Hylkää kortti pitkällä painalluksella; palauta ne yksitellen kohdasta <a href="/fi/guide/settings/#help">Asetukset</a>.</li>
+        </ul>
+        <div class="note"><b>Asensitko paketin yhdistämisen jälkeen?</b> Ominaisuusluettelo luetaan yhteyttä muodostettaessa, joten sen jälkeen asennetulla paketilla ei ole vielä välilehteä. Vedä päivittääksesi tai avaa sovellus uudelleen, niin uusi näkymä ilmestyy.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Kun se ei yhdistä</div>
+      <h2>Lyhyt tarkistuslista</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Avaa DSM puhelimen selaimessa</b> täsmälleen kirjoittamallasi osoitteella ja portilla. Jos selain ei tavoita sitä myöskään, ongelma on verkko tai osoite, ei sovellus.</li>
+      <li><b>Tarkista, että HTTPS vastaa porttia.</b> Portti 5001 HTTPS pois päältä tai 5000 sen ollessa päällä aiheuttaa aikakatkaisun. Ne ovat eri kuuntelijoita.</li>
+      <li><b>Kytke Vahvista SSL-varmenne pois</b>, jos NAS käyttää varmennetta, jonka mukana se tuli.</li>
+      <li><b>Tarkista puhelimen verkko.</b> Paikallinen IP ei ole tavoitettavissa mobiilidatalla. Liity joko Wi-Fiin tai käytä QuickConnectia, verkkotunnusta tai VPN:ää.</li>
+      <li><b>iOS:llä salli paikallisverkon käyttö.</b> Asetukset &rsaquo; Sovellukset &rsaquo; Syno Manager &rsaquo; Paikallisverkko. Ilman sitä iOS estää hiljaa yhteydet oman verkkosi osoitteisiin.</li>
+      <li><b>Tarkista DSM:n palomuuri.</b> Ohjauspaneeli &rsaquo; Suojaus &rsaquo; Palomuuri. Sääntö, joka sallii vain tietyt osoitteet, estää puhelimen, joka ei ole yksi niistä.</li>
+      <li><b>Tarkista automaattinen esto.</b> Ohjauspaneeli &rsaquo; Suojaus &rsaquo; Tili. Toistuvat epäonnistuneet kirjautumiset voivat estää puhelimesi osoitteen; se on listattu siellä ja sen voi poistaa.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/fi/help/">Täydellinen vianmääritysopas</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Käyttöönoton UKK</h2>
+    </div>
+    <details open><summary>Mitä tarvitsen Syno Managerin käyttöön?</summary><div class="body">Synology NAS, jossa on DSM 7.0 tai uudempi, DSM-tili siinä sekä laite, jossa on Android 7+, iOS 16+, macOS 11+ tai Windows. NAS:iin ei tarvitse asentaa mitään - sovellus käyttää DSM:n omia API:ja, jotka ovat jo siellä.</div></details>
+    <details><summary>Mikä osoite ja portti syötetään?</summary><div class="body">Omassa verkossasi NAS:in paikallinen IP-osoite ja DSM:n portti - 5001 HTTPS päällä tai 5000 HTTPS pois. Voit myös syöttää isäntänimen tai oman verkkotunnuksen. Jos et halua käsitellä osoitteita lainkaan, vaihda yhteystyypiksi QuickConnect ja syötä QuickConnect-tunnuksesi.</div></details>
+    <details><summary>Miksi Vahvista SSL-varmenne on oletuksena pois?</summary><div class="body">Koska useimmat DiskStationit esittävät itse allekirjoitetun varmenteen, jota julkinen taho ei ole allekirjoittanut ja joka siksi ei läpäise vahvistusta, vaikka yhteys on silti salattu. Vahvistuksen jättäminen pois hyväksyy sen varmenteen. Jos olet asentanut oikean varmenteen - esimerkiksi Let's Encryptistä - kytke vahvistus päälle.</div></details>
+    <details><summary>Tarvitseeko minun avata portteja reitittimestä?</summary><div class="body">Ei. Omassa verkossasi mitään ei tarvitse ohjata edelleen. Ulkopuolelta QuickConnect välittää yhteyden puolestasi, ja VPN toimii myös. Porttien edelleenohjaus tarvitaan vain, jos haluat nimenomaan suoran reitin internetistä tai jos haluat kameran reaaliaikaisen kuvan RTSP:llä verkkosi ulkopuolelta.</div></details>
+    <details><summary>Se sanoo yhteyden aikakatkaisu. Mitä nyt?</summary><div class="body">Se viesti tarkoittaa, ettei sovellus koskaan saanut vastausta, mikä on lähes aina osoite, portti tai verkko, jossa puhelin on. Tarkista, että HTTPS vastaa porttia, että puhelin on samassa verkossa NAS:in kanssa, jos käytät paikallista IP-osoitetta, ja että DSM:n oma verkkokäyttöliittymä latautuu puhelimen selaimessa samalla osoitteella ja portilla.</div></details>
+    <details><summary>Voinko lisätä useamman kuin yhden NAS:in?</summary><div class="body">Kyllä, niin monta kuin haluat. Kullakin on omat tunnuksensa, kojelaudan asettelunsa ja asetuksensa, ja vaihdat niiden välillä laiteluettelosta. Katso <a href="/fi/guide/multi-nas/">useat NAS-laitteet</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: aloitusnäyttö</h2>
+    <p class="lead" style="margin:0 auto 24px">Mitä kukin kortti näyttää ja miten kojelaudasta tehdään omasi.</p>
+    <p><a class="btn" href="/fi/guide/home/">Aloitusnäyttö &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

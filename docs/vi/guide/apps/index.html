@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, gói và máy ảo cho Synology NAS - Syno Manager</title>
+<meta name="description" content="Cài gói DSM từ Package Center, khởi động, dừng và khởi động lại container Docker, đọc nhật ký, chạy stack Compose và điều khiển máy ảo." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, gói và máy ảo cho Synology NAS - Syno Manager" />
+<meta property="og:description" content="Cài gói DSM từ Package Center, khởi động, dừng và khởi động lại container Docker, đọc nhật ký, chạy stack Compose và điều khiển máy ảo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, gói và máy ảo cho Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Cài gói DSM từ Package Center, khởi động, dừng và khởi động lại container Docker, đọc nhật ký, chạy stack Compose và điều khiển máy ảo." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ứng dụng"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, gói và máy ảo cho Synology NAS - Syno Manager",
+  "description": "Cài gói DSM từ Package Center, khởi động, dừng và khởi động lại container Docker, đọc nhật ký, chạy stack Compose và điều khiển máy ảo.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể cài gói DSM từ điện thoại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Package Center trong ứng dụng có cùng danh mục như DSM - Đã cài đặt, Tất cả gói, Beta và Cộng đồng - kèm ô tìm kiếm. Chọn một gói, chọn volume rồi cài đặt. Cập nhật và gỡ cài đặt cũng làm theo cách tương tự, và mỗi thao tác đều được xác nhận bằng cách đọc lại danh sách gói chứ không phải bằng việc yêu cầu trả về OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể khởi động lại container Docker từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Mỗi container có nút khởi động, dừng và khởi động lại, cùng một nút mở nhật ký của nó. Container đã thoát sẽ hiện nút khởi động chứ không phải nút dừng không thể thực hiện."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể điều khiển stack Docker Compose không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Chế độ xem Projects liệt kê các dự án Compose của bạn và khởi động hoặc dừng cả stack, thay vì bắt bạn đi tìm từng container. Nhật ký stack mở theo cách giống như nhật ký container."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể khởi động và dừng máy ảo không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, nếu đã cài Virtual Machine Manager. Khởi động, tắt hoặc ngắt nguồn bất kỳ máy nào. Ngắt nguồn cần giữ để xác nhận vì nó tương đương với việc rút phích cắm. Một máy ở trạng thái mà NAS không gọi là đang chạy hay đã tắt sẽ được hiển thị đúng như vậy, và được cung cấp nút khôi phục thay vì nút Bắt đầu không thể thực hiện."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Ứng dụng</div>
+      <div class="eyebrow">Ứng dụng</div>
+      <h1>Mọi thứ <span class="g">NAS của bạn đang chạy</span></h1>
+      <p>Bốn chế độ xem con: <b>Package Center</b> cho các gói DSM, <b>Docker</b> cho container, <b>Projects</b> cho stack Compose, và <b>Máy ảo</b> khi đã cài VMM.</p>
+    </div>
+    <div class="hero-shot"><img alt="Container Docker với trạng thái và các nút điều khiển" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Cài đặt một gói</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Nhật ký container</a></li>
+      <li><a href="#projects">Dự án Compose</a></li>
+      <li><a href="#virtual-machines">Máy ảo</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Toàn bộ danh mục, có thể tìm kiếm</h2>
+      <p class="lead">Bốn bộ lọc giống như DSM, cùng một ô tìm kiếm trên tất cả.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Bộ lọc</th><th>Liệt kê gì</th></tr></thead>
+          <tbody>
+            <tr><td>Đã cài đặt</td><td>Những gì hiện có trên NAS của bạn, kèm phiên bản, dung lượng và chỉ báo đang chạy.</td></tr>
+            <tr><td>Tất cả gói</td><td>Toàn bộ danh mục của Synology cho mẫu máy của bạn.</td></tr>
+            <tr><td>Beta</td><td>Các gói phát hành thử.</td></tr>
+            <tr><td>Cộng đồng</td><td>Các gói từ nguồn bên thứ ba mà bạn đã thêm trong DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Mỗi mục đều ghi phiên bản và dung lượng tải về, mô tả, và mọi phần phụ thuộc cần có - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - để lần cài đặt thứ hai bất ngờ không còn là bất ngờ.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Tìm kiếm trong toàn bộ danh mục gói, kèm các nút Cài đặt" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Tìm trong <b>Tất cả gói</b> một gói chưa được cài.</p>
+      </div>
+      <img alt="Package Center hiển thị các gói đã cài kèm trạng thái đang chạy" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Cài đặt, cập nhật, gỡ cài đặt</div>
+      <h2>Chuyện gì xảy ra khi bạn chạm Cài đặt</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Tìm kiếm hoặc lọc</b> đến gói bạn muốn.</li>
+          <li><b>Cài đặt.</b> Một hộp thoại nêu tên gói, liệt kê mọi phần phụ thuộc và hỏi cài vào volume nào - kèm dung lượng trống của từng volume để bạn không phải chọn mò.</li>
+          <li><b>Xác nhận.</b> NAS cài đặt gói, bao gồm cả các phần phụ thuộc.</li>
+          <li><b>Danh sách tự đọc lại.</b> Nút chuyển thành <b>Gỡ cài đặt</b> vì danh sách gói giờ cho biết gói đã được cài - chứ không phải vì yêu cầu trả về OK.</li>
+        </ol>
+        <div class="note"><b>Bước cuối cùng đó mới là điểm mấu chốt.</b> Một yêu cầu thành công và một lần cài đặt hoàn tất là hai sự kiện khác nhau. Ứng dụng chờ sự kiện thứ hai.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Hộp thoại cài đặt nêu tên gói, phần phụ thuộc và volume đích" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Cài một gói sẽ thêm màn hình vào ứng dụng.</b> Danh sách tab được xây dựng từ những gì NAS báo cáo khi kết nối, nên sau khi cài thứ như Download Station, hãy kéo để làm mới hoặc mở lại ứng dụng, và chế độ xem con của nó sẽ xuất hiện.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Mọi container, với những nút điều khiển quan trọng</h2>
+      <p class="lead">Một đầu trang trạng thái - <b>đang chạy trên tổng số</b> - rồi mọi container mà NAS có, trong một danh sách.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Tên và thẻ image</b> trên mỗi hàng, nên hai container từ cùng một image vẫn phân biệt được.</li>
+      <li><b>Trạng thái</b> dưới dạng nhãn: <b>Đang chạy</b>, <b>Đã thoát</b>, và bất cứ gì Docker báo cáo. Container mà Docker coi là khỏe mạnh sẽ cho biết như vậy - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Thời gian hoạt động</b> cho mọi container đang chạy.</li>
+      <li><b>Khởi động, dừng và khởi động lại</b>, với nút phù hợp với trạng thái: container đã dừng được cung cấp nút khởi động, không phải nút dừng vô nghĩa.</li>
+      <li><b>Nhật ký</b> từ nút trên mỗi hàng.</li>
+      <li><b>Mở rộng một hàng</b> để xem chi tiết - trong đó có số liệu bộ nhớ và mạng.</li>
+      <li><b>Thu gọn toàn bộ danh sách</b> bằng nút ở trên cùng khi bạn chỉ cần xem số lượng.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Nhật ký</div>
+      <h2>Đọc một lần, theo dõi khi bạn muốn</h2>
+      <p class="lead">Nhật ký container và stack hoạt động giống như <a href="/vi/guide/system/#logs">nhật ký hệ thống</a>, và vì cùng một lý do.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nó tải một lần rồi đứng yên</b>, nên dòng chữ không cuộn mất khi bạn đang đọc.</li>
+      <li><b>Nhấn phát để theo dõi trực tiếp</b>, nhấn lần nữa để tạm dừng.</li>
+      <li><b>Việc theo dõi tự dừng</b> khi bạn rời màn hình hoặc đưa ứng dụng xuống nền - không có tab bị quên cứ liên tục truy vấn trong túi bạn.</li>
+      <li><b>Tìm kiếm</b> một dòng trong nhật ký dài.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projects</div>
+      <h2>Stack Compose, được xem như một stack</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Các dự án Docker Compose, khi chưa cấu hình dự án nào" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Một dự án Compose là nhiều container thuộc về nhau. Chế độ xem Projects đối xử với chúng đúng như vậy: khởi động hoặc dừng <b>cả stack</b> thay vì đi tìm từng container trong danh sách Docker và hy vọng mình không bỏ sót cái nào.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Mỗi dự án</b> hiển thị tên và số container của nó đang chạy.</li>
+          <li><b>Khởi động hoặc dừng dự án</b> như một khối thống nhất.</li>
+          <li><b>Nhật ký stack</b> mở giống như nhật ký container.</li>
+          <li><b>Khi không có dự án nào, ứng dụng sẽ nói rõ</b> - “Các dự án Docker Compose sẽ xuất hiện ở đây” - thay vì để một màn hình trống.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Máy ảo</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Có mặt khi đã cài VMM. Mọi máy ảo trên NAS, chúng đang làm gì, và ba thao tác nguồn điện.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hành động</th><th>Chức năng</th></tr></thead>
+      <tbody>
+        <tr><td>Bắt đầu</td><td>Bật nguồn máy.</td></tr>
+        <tr><td>Tắt máy</td><td>Yêu cầu hệ điều hành khách tắt máy một cách êm ái.</td></tr>
+        <tr><td>Ngắt nguồn</td><td>Cắt nguồn điện. <b>Giữ để xác nhận</b>, vì nó tương đương với việc rút phích cắm một máy tính đang chạy - một cú chạm là quá dễ dàng cho việc đó.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Một máy ở trạng thái chuyển tiếp sẽ được mô tả đúng như vậy.</b> Nếu NAS báo một trạng thái mà nó không gọi là đang chạy hay đã tắt - đang khởi động, đang tạm ngưng, bị lỗi - ứng dụng sẽ hiển thị đúng từ đó và cung cấp nút khôi phục, thay vì một nút Bắt đầu không thể thực hiện hay một dấu tích xanh không đúng sự thật.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về Ứng dụng</h2>
+    </div>
+    <details open><summary>Tôi có thể cài gói DSM từ điện thoại không?</summary><div class="body">Có. Package Center trong ứng dụng có cùng danh mục như DSM - Đã cài đặt, Tất cả gói, Beta và Cộng đồng - kèm ô tìm kiếm. Chọn một gói, chọn volume rồi cài đặt. Cập nhật và gỡ cài đặt cũng làm theo cách tương tự, và mỗi thao tác đều được xác nhận bằng cách đọc lại danh sách gói.</div></details>
+    <details><summary>Tôi có thể khởi động lại container Docker từ ứng dụng không?</summary><div class="body">Có. Mỗi container có nút khởi động, dừng và khởi động lại, cùng một nút mở nhật ký của nó. Container đã thoát sẽ hiện nút khởi động chứ không phải nút dừng không thể thực hiện.</div></details>
+    <details><summary>Tôi có thể điều khiển stack Docker Compose không?</summary><div class="body">Có. Chế độ xem Projects liệt kê các dự án Compose của bạn và khởi động hoặc dừng cả stack. Nhật ký stack mở theo cách giống như nhật ký container.</div></details>
+    <details><summary>Tôi có thể khởi động và dừng máy ảo không?</summary><div class="body">Có, nếu đã cài Virtual Machine Manager. Khởi động, tắt hoặc ngắt nguồn bất kỳ máy nào. Ngắt nguồn cần giữ để xác nhận vì nó tương đương với việc rút phích cắm.</div></details>
+    <details><summary>Tôi có thể tạo container mới từ ứng dụng không?</summary><div class="body">Không. Tạo container nghĩa là chọn image, ánh xạ cổng, gắn volume và đặt biến môi trường - một biểu mẫu nên nằm trên màn hình mà bạn có thể thấy toàn bộ cùng lúc. Ứng dụng chạy và giám sát những gì bạn đã tạo trong DSM hoặc Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Phương tiện</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos, Drive và xem trực tiếp Surveillance Station.</p>
+    <p><a class="btn" href="/vi/guide/media/">Photos, Drive &amp; camera &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

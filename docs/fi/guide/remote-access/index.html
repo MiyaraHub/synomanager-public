@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS -laitteen etäkäyttö - Syno Manager</title>
+<meta name="description" content="Tavoita Synologysi mistä tahansa QuickConnectilla, omalla verkkotunnuksella tai VPN:llä. Mitkä ominaisuudet toimivat millä reitillä, kuvat ja kameran live-kuva mukaan lukien." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS -laitteen etäkäyttö - Syno Manager" />
+<meta property="og:description" content="Tavoita Synologysi mistä tahansa QuickConnectilla, omalla verkkotunnuksella tai VPN:llä. Mitkä ominaisuudet toimivat millä reitillä, kuvat ja kameran live-kuva mukaan lukien." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS -laitteen etäkäyttö - Syno Manager" />
+<meta name="twitter:description" content="Tavoita Synologysi mistä tahansa QuickConnectilla, omalla verkkotunnuksella tai VPN:llä. Mitkä ominaisuudet toimivat millä reitillä, kuvat ja kameran live-kuva mukaan lukien." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Poissa kotoa"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS -laitteen etäkäyttö - Syno Manager",
+  "description": "Tavoita Synologysi mistä tahansa QuickConnectilla, omalla verkkotunnuksella tai VPN:llä. Mitkä ominaisuudet toimivat millä reitillä, kuvat ja kameran live-kuva mukaan lukien.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tarvitseeko portteja avata reitittimestä NAS-laitteen etäkäyttöön?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. QuickConnect välittää yhteyden Synologyn palvelun kautta ilman reitittimen asetuksia, ja VPN-yhteys verkkoosi toimii myös. Porttien välitystä tarvitaan vain, jos haluat nimenomaan suoran reitin internetistä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Toimivatko kuvat ja kameran live-kuva QuickConnectin kautta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Pikkukuvat, täysikokoiset kuvat, kameran live-kuva sekä File Stationin ja Driven lataukset kulkevat kaikki sen reitin kautta, joka on käytössä, QuickConnect-välitys mukaan lukien. Välitys on hitaampi kuin oma verkkosi, mutta se toimii."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pitäisikö NAS lisätä kahdesti?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se on hyvä tapa. Yksi merkintä paikallisella IP-osoitteella kotona oloon - nopea ja suora - ja yksi QuickConnectilla liikkeellä oloon. Ne ovat erillisiä merkintöjä erillisine asetteluineen, ja vaihtaminen vie yhden napautuksen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Onko QuickConnect turvallinen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yhteys on salattu päästä päähän, kun käytät HTTPS:ää, ja Synologyn välitys vain päästää liikenteen läpi eikä säilytä tietojasi. DSM-tunnuksesi ovat edelleen voimassa, ja kaksivaiheinen tunnistautuminen toimii yhä."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Kodin ulkopuolella</div>
+      <div class="eyebrow">Poissa kotoa</div>
+      <h1>Sama sovellus, <span class="g">eri reitti</span></h1>
+      <p>Syno Manager toimii samoin, olitpa NAS-laitteesi vieressä tai maailman toisella puolella. Muuttuu vain se, miten yhteys sinne kulkee, ja jokaisella reitillä on omat kompromissinsa, jotka kannattaa tuntea.</p>
+    </div>
+    <div class="hero-shot"><img alt="NAS:n lisäyslomake, jossa Suora IP ja QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kolme reittiä</div>
+      <h2>Valitse sopivin</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Reitti</th><th>Käyttöönotto</th><th>Nopeus</th><th>Avaako jotain?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Ota käyttöön DSM:ssä ja syötä tunnus. Reitittimeen ei tarvitse koskea.</td><td>Hitaampi - liikenne kulkee Synologyn välityksen kautta.</td><td class="yes">Ei mitään. Ei avoimia portteja sinun päässäsi.</td></tr>
+        <tr><td><b>Oma verkkotunnus / DDNS</b></td><td>Osoitteeseesi osoittava isäntänimi sekä portinvälitys reitittimessä.</td><td>Suora, joten niin nopea kuin lähetysnopeutesi sallii.</td><td class="no">Kyllä - DSM-portti on tavoitettavissa internetistä.</td></tr>
+        <tr><td><b>VPN</b></td><td>VPN-palvelin reitittimessä tai NAS-laitteessa ja asiakas puhelimessa.</td><td>Suora yhteyden muodostuttua.</td><td class="yes">Vain VPN-portti. Kaikki muu pysyy yksityisenä.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Jos olet epävarma, käytä QuickConnectia.</b> Se on vaihtoehto, joka ei vaadi reititintuntemusta eikä avaa mitään, ja kaikki sovelluksen ominaisuudet toimivat sen kautta.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mikä toimii etänä</div>
+      <h2>Kaikki, kahdella alaviitteellä</h2>
+      <p class="lead">Sovelluksen ominaisuudet eivät ole supistetut, kun olet poissa. Kaksi asiaa vaatii hetken ajattelua: kameran live-kuva ja sammutetun NAS-laitteen herättäminen.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ominaisuus</th><th>Poissa kotoa</th></tr></thead>
+      <tbody>
+        <tr><td>Valvonta - järjestelmä, tallennustila, verkko, kunto</td><td class="yes">Toimii millä tahansa reitillä.</td></tr>
+        <tr><td>Docker, paketit, palvelut, tehtävät, käyttäjät</td><td class="yes">Toimii millä tahansa reitillä.</td></tr>
+        <tr><td>Synology Photos - pikkukuvat ja täysikokoiset kuvat</td><td class="yes">Toimii, myös välityksen kautta.</td></tr>
+        <tr><td>File Stationin ja Driven lataukset</td><td class="yes">Toimii, myös välityksen kautta.</td></tr>
+        <tr><td>Varmuuskopiot - tila ja Suorita nyt</td><td class="yes">Toimii millä tahansa reitillä.</td></tr>
+        <tr><td>Toisen laitteen herättäminen NAS-laitteen kautta</td><td class="yes">Toimii, kunhan NAS itse on päällä.</td></tr>
+        <tr><td><b>Kameran live-kuva</b></td><td>Kytke päälle <b>Tunneloi kameran live-kuva DSM-portin kautta</b>. Ilman sitä live-kuva tarvitsee RTSP:n portissa 554, joka ei yleensä ole tavoitettavissa ulkopuolelta. Katso <a href="/fi/guide/media/#streaming">miten live-kuva yhdistää</a>.</td></tr>
+        <tr><td><b>Itse NAS-laitteen herättäminen sen ollessa sammutettuna</b></td><td>Tarvitsee VPN:n tai reitittimen Wake-on-LAN-välityksen. QuickConnect ei tavoita sammutettua NAS-laitetta. Katso <a href="/fi/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Käyttöönotto</h2>
+    </div>
+    <ol class="steps">
+      <li><b>DSM:ssä:</b> Control Panel &rsaquo; External Access &rsaquo; QuickConnect. Ota se käyttöön ja merkitse muistiin QuickConnect-tunnus.</li>
+      <li><b>Sovelluksessa:</b> lisää NAS ja vaihda <b>Yhteystyypiksi</b> <b>QuickConnect</b>.</li>
+      <li><b>Syötä tunnus</b> - ei isäntää ja porttia.</li>
+      <li><b>DSM-tunnuksesi</b> sekä 2FA, jos tili käyttää sitä.</li>
+      <li><b>Tallenna &amp; yhdistä.</b></li>
+    </ol>
+    <div class="note"><b>Varaudu hitaampaan.</b> Välitys lisää yhden välivaiheen ja Synology rajoittaa sen nopeutta, joten kuvakirjasto vierii vähemmän sulavasti kuin kotona. Kaikki toimii silti - kyse on viiveestä, ei kyvyistä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Kopioimisen arvoinen tapa</div>
+      <h2>Lisää sama NAS kahdesti</h2>
+      <p class="lead">Yksi merkintä <b>paikallisella IP-osoitteella</b>, toinen <b>QuickConnectilla</b>. Nimeä ne, jotta erotat ne - ”NAS (koti)” ja ”NAS (matkalla)”.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Kotona</b> käytä suoraa: ei välitystä, täysi nopeus, pikkukuvat heti.</li>
+      <li><b>Liikkeellä</b> vaihda QuickConnect-merkintään.</li>
+      <li><b>Niillä on erilliset asettelut</b>, joten voit karsia matkamerkinnän vain niihin muutamaan korttiin, joita todella katsot mobiilidatalla.</li>
+      <li><b>Vaihtaminen vie yhden napautuksen</b> laiteluettelosta.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Aseta <a href="/fi/guide/settings/#launch">Käynnistystavaksi</a> <b>Viimeksi käyttämäni NAS</b>, niin sovellus pysyy siinä, jolla olit viimeksi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Usein kysyttyä etäkäytöstä</h2>
+    </div>
+    <details open><summary>Tarvitseeko portteja avata reitittimestä NAS-laitteen etäkäyttöön?</summary><div class="body">Ei. QuickConnect välittää yhteyden ilman reitittimen asetuksia, ja VPN toimii myös. Porttien välitystä tarvitaan vain, jos haluat nimenomaan suoran reitin internetistä.</div></details>
+    <details><summary>Toimivatko kuvat ja kameran live-kuva QuickConnectin kautta?</summary><div class="body">Kyllä. Pikkukuvat, täysikokoiset kuvat, kameran live-kuva sekä File Stationin ja Driven lataukset kulkevat kaikki käytössä olevan reitin kautta, välitys mukaan lukien. Kameran live-kuva vaatii, että DSM-porttitunnelin kytkin on päällä.</div></details>
+    <details><summary>Pitäisikö NAS lisätä kahdesti?</summary><div class="body">Se on hyvä tapa - yksi merkintä paikallisella IP-osoitteella kotiin ja yksi QuickConnectilla kodin ulkopuolelle, erillisine asetteluineen ja yhden napautuksen vaihdolla.</div></details>
+    <details><summary>Onko QuickConnect turvallinen?</summary><div class="body">Yhteys on salattu päästä päähän, kun käytät HTTPS:ää, ja välitys vain päästää liikenteen läpi eikä säilytä tietojasi. DSM-tunnuksesi ja kaksivaiheinen tunnistautuminen ovat edelleen voimassa.</div></details>
+    <details><summary>Miksi paikallisen IP-osoitteen merkintä ei toimi mobiilidatalla?</summary><div class="body">Koska yksityinen osoite kuten 192.168.x.x on olemassa vain omassa verkossasi. Käytä QuickConnect-merkintää, verkkotunnusta tai yhdistä ensin VPN:ään.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: varmuuskopiointi &amp; palautus</h2>
+    <p class="lead" style="margin:0 auto 24px">Siirrä sovelluksen asetukset uuteen puhelimeen.</p>
+    <p><a class="btn" href="/fi/guide/backup-restore/">Varmuuskopiointi &amp; palautus &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

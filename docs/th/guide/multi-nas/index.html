@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>จัดการ Synology NAS หลายเครื่อง - Syno Manager</title>
+<meta name="description" content="เพิ่มอุปกรณ์ Synology ได้ไม่จำกัดและสลับได้ในแตะเดียว แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง" />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="จัดการ Synology NAS หลายเครื่อง - Syno Manager" />
+<meta property="og:description" content="เพิ่มอุปกรณ์ Synology ได้ไม่จำกัดและสลับได้ในแตะเดียว แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="จัดการ Synology NAS หลายเครื่อง - Syno Manager" />
+<meta name="twitter:description" content="เพิ่มอุปกรณ์ Synology ได้ไม่จำกัดและสลับได้ในแตะเดียว แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "การใช้ NAS หลายเครื่อง"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "จัดการ Synology NAS หลายเครื่อง - Syno Manager",
+  "description": "เพิ่มอุปกรณ์ Synology ได้ไม่จำกัดและสลับได้ในแตะเดียว แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "th",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "เพิ่มอุปกรณ์ NAS ได้กี่เครื่อง",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ไม่จำกัด แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง เซิร์ฟเวอร์สื่อกับที่เก็บข้อมูลสำรองจึงไม่จำเป็นต้องหน้าตาเหมือนกัน"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "การเปลี่ยนชื่อ NAS มีผลกับตัว NAS ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ การเปลี่ยนชื่อมีผลกับชื่อที่แสดงในแอปเท่านั้น หากต้องการเปลี่ยนชื่อเซิร์ฟเวอร์ของ NAS เอง ให้ใช้แผงควบคุมของ DSM"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "เปลี่ยน IP กับแก้ไขการกำหนดค่าต่างกันอย่างไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เปลี่ยน IP เป็นทางลัดสำหรับช่องที่เปลี่ยนบ่อยที่สุด คือที่อยู่และพอร์ต ส่วนแก้ไขการกำหนดค่าจะเปิดแบบฟอร์มทั้งหมด รวมถึง HTTPS การตรวจสอบใบรับรอง ข้อมูลเข้าสู่ระบบ 2FA และสวิตช์อุโมงค์กล้อง"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "จะเกิดอะไรขึ้นเมื่อฉันลบ NAS",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "รายการและข้อมูลเข้าสู่ระบบที่เก็บไว้จะถูกลบออกจากแอป ไม่มีอะไรบน NAS ถูกแตะต้อง ไม่ถูกออกจากระบบที่อื่น และไม่กระทบข้อมูลใด ๆ"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; อุปกรณ์ NAS หลายเครื่อง</div>
+      <div class="eyebrow">การใช้ NAS หลายเครื่อง</div>
+      <h1>แอปเดียว <span class="g">ทุก DiskStation</span></h1>
+      <p>เพิ่มได้ไม่จำกัด แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด และการตั้งค่าของตัวเอง ที่เก็บข้อมูลสำรองในโรงรถจึงไม่ต้องหน้าตาเหมือนเซิร์ฟเวอร์สื่อในห้องนั่งเล่น</p>
+    </div>
+    <div class="hero-shot"><img alt="รายการอุปกรณ์ NAS พร้อมปุ่มเชื่อมต่อและปลุก" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">รายการอุปกรณ์</div>
+      <h2>สิ่งที่แต่ละรายการแสดง</h2>
+      <p class="lead">เข้าได้จาก <b>การตั้งค่า &rsaquo; จัดการอุปกรณ์ NAS</b> หรือเป็นหน้าจอที่แอปเปิดขึ้นมาเมื่อคุณมีมากกว่าหนึ่งเครื่องและตั้งให้ถาม</p>
+    </div>
+    <ul class="plain">
+      <li><b>ชื่อเล่นและที่อยู่</b> - ชื่อที่คุณตั้งให้ รวมถึงโฮสต์และพอร์ตที่ใช้เชื่อมต่อ</li>
+      <li><b>ชิป</b> แสดงสิ่งที่ควรเห็นโดยไม่ต้องเปิดแบบฟอร์ม ได้แก่ ว่าใช้ <b>HTTPS</b> หรือไม่ ใช้<b>พอร์ต</b>ใด และลงชื่อเข้าใช้ด้วย<b>บัญชี</b>ใด</li>
+      <li><b>เชื่อมต่อแล้ว</b> เมื่อเป็นเครื่องที่ใช้งานอยู่</li>
+      <li><b>เชื่อมต่อ</b> เพื่อสลับไปยังเครื่องนั้น และ <b>ปลุก</b> เพื่อส่งแพ็กเก็ตมายากลหากเครื่องหลับอยู่</li>
+      <li><b>จุดจับลาก</b> - จัดลำดับรายการใหม่เพื่อให้เครื่องที่ใช้บ่อยที่สุดอยู่ด้านบน</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">เมนูเพิ่มเติม</div>
+      <h2>ห้าอย่างที่ทำกับแต่ละรายการได้</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>การทำงาน</th><th>ทำอะไรได้</th></tr></thead>
+          <tbody>
+            <tr><td>เปลี่ยนชื่อ</td><td>เปลี่ยน<b>เฉพาะชื่อที่แสดง</b> ซึ่งเป็นป้ายชื่อของแอป ชื่อเซิร์ฟเวอร์ของ NAS เองไม่เปลี่ยน ซึ่งอยู่ในแผงควบคุมของ DSM</td></tr>
+            <tr><td>เปลี่ยน IP</td><td>ทางลัดสำหรับช่องที่เปลี่ยนบ่อยที่สุด คือที่อยู่และพอร์ต โดยไม่ต้องเดินผ่านแบบฟอร์มทั้งหมด</td></tr>
+            <tr><td>แก้ไขการกำหนดค่า</td><td>แบบฟอร์มเต็ม: HTTPS การตรวจสอบใบรับรอง ข้อมูลเข้าสู่ระบบ การยืนยันตัวตนสองขั้นตอน และอุโมงค์ภาพสดจากกล้อง</td></tr>
+            <tr><td>ทดสอบการเชื่อมต่อ</td><td>ตรวจสอบว่าเข้าถึงได้หรือไม่โดยไม่เปลี่ยนแปลงอะไร และแยกให้เห็นว่า “เข้าไม่ถึง” ต่างจาก “เข้าถึงแล้วแต่ข้อมูลเข้าสู่ระบบถูกปฏิเสธ”</td></tr>
+            <tr><td>ลบ NAS</td><td>ลบรายการและข้อมูลเข้าสู่ระบบที่เก็บไว้<b>ออกจากแอป</b> ไม่มีอะไรบน NAS ถูกแตะต้อง</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="เมนูประจำ NAS พร้อมเปลี่ยนชื่อ เปลี่ยน IP แก้ไขการกำหนดค่า ทดสอบการเชื่อมต่อ และลบ" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">สิ่งที่แยกตาม NAS</div>
+      <h2>สิ่งที่แต่ละเครื่องจำไว้เอง</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>แยกตาม NAS</h3>
+        <ul class="plain">
+          <li>ข้อมูลเข้าสู่ระบบและโทเคนอุปกรณ์ 2FA</li>
+          <li>การ์ดแดชบอร์ดที่เปิดอยู่ และลำดับของการ์ด</li>
+          <li>การ์ดที่ถูกย่อไว้</li>
+          <li>มุมมองย่อยที่ซ่อนในแต่ละแท็บ และลำดับของมุมมอง</li>
+          <li>การตั้งค่าอุโมงค์ภาพสดจากกล้อง</li>
+        </ul>
+      </div>
+      <div>
+        <h3>ทั้งแอป</h3>
+        <ul class="plain">
+          <li>ธีม พื้นผิว สีเน้น และขนาดตัวอักษร</li>
+          <li>แถบนำทางด้านล่าง</li>
+          <li>ช่วงเวลาการสำรวจข้อมูลและหน่วยอุณหภูมิ</li>
+          <li>พฤติกรรมตอนเปิดแอป</li>
+          <li>การ์ดช่วยเหลือที่คุณปิดไปแล้ว</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>การเพิ่ม NAS เครื่องเดียวกันสองครั้งเป็นวิธีที่ใช้ได้จริง</b> รายการหนึ่งใช้ IP ในเครือข่ายสำหรับที่บ้าน อีกรายการใช้ QuickConnect สำหรับนอกบ้าน แยกเป็นคนละรายการ มีเลย์เอาต์ต่างกัน และสลับได้ในแตะเดียว</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับ NAS หลายเครื่อง</h2>
+    </div>
+    <details open><summary>เพิ่มอุปกรณ์ NAS ได้กี่เครื่อง</summary><div class="body">ได้ไม่จำกัด แต่ละเครื่องมีข้อมูลเข้าสู่ระบบ เลย์เอาต์แดชบอร์ด ลำดับการ์ด และสถานะการย่อของตัวเอง</div></details>
+    <details><summary>การเปลี่ยนชื่อ NAS มีผลกับตัว NAS ไหม</summary><div class="body">ไม่ การเปลี่ยนชื่อมีผลกับชื่อที่แสดงในแอปเท่านั้น หากต้องการเปลี่ยนชื่อเซิร์ฟเวอร์ของ NAS เอง ให้ใช้แผงควบคุมของ DSM</div></details>
+    <details><summary>เปลี่ยน IP กับแก้ไขการกำหนดค่าต่างกันอย่างไร</summary><div class="body">เปลี่ยน IP เป็นทางลัดสำหรับที่อยู่และพอร์ต ส่วนแก้ไขการกำหนดค่าจะเปิดแบบฟอร์มทั้งหมด รวมถึง HTTPS การตรวจสอบใบรับรอง ข้อมูลเข้าสู่ระบบ 2FA และสวิตช์อุโมงค์กล้อง</div></details>
+    <details><summary>จะเกิดอะไรขึ้นเมื่อฉันลบ NAS</summary><div class="body">รายการและข้อมูลเข้าสู่ระบบที่เก็บไว้จะถูกลบออกจากแอป ไม่มีอะไรบน NAS ถูกแตะต้อง</div></details>
+    <details><summary>แอปจะเปิดเครื่องไหนเป็นอันดับแรก</summary><div class="body">ตามที่คุณตั้งไว้ใน<a href="/th/guide/settings/#launch">พฤติกรรมการเปิดแอป</a> ได้แก่ ตัวเลือกอุปกรณ์ เครื่องล่าสุดที่ใช้ หรือเครื่องที่กำหนดไว้เสมอ</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">ปลุก NAS หรือเครื่องอื่นในเครือข่ายของคุณผ่าน NAS</p>
+    <p><a class="btn" href="/th/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Súgó és hibaelhárítás Synology NAS-hoz - Syno Manager</title>
+<meta name="description" content="Kapcsolat-időtúllépések, tanúsítványhibák, 2FA, hiányzó lapok, üres fotócsempék, otthonon kívül nem működő kamerák és elavult widgetek - mit jelent mindegyik." />
+<meta name="keywords" content="Syno Manager not connecting, Synology app connection timeout, Synology app certificate error, Synology app 2FA, Synology app blank photos, Synology camera not working remotely" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/help/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/help/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/help/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/help/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/help/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/help/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/help/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/help/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/help/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/help/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/help/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/help/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/help/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/help/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/help/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/help/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/help/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/help/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/help/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/help/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/help/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/help/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/help/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/help/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/help/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/help/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/help/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/help/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/help/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/help/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/help/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/help/" />
+<!--/hreflang-->
+<meta property="og:title" content="Súgó és hibaelhárítás Synology NAS-hoz - Syno Manager" />
+<meta property="og:description" content="Kapcsolat-időtúllépések, tanúsítványhibák, 2FA, hiányzó lapok, üres fotócsempék, otthonon kívül nem működő kamerák és elavult widgetek - mit jelent mindegyik." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/help/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Súgó és hibaelhárítás Synology NAS-hoz - Syno Manager" />
+<meta name="twitter:description" content="Kapcsolat-időtúllépések, tanúsítványhibák, 2FA, hiányzó lapok, üres fotócsempék, otthonon kívül nem működő kamerák és elavult widgetek - mit jelent mindegyik." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Súgó"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A Syno Manager kapcsolat-időtúllépést jelez. Ez mit jelent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Azt, hogy semmi sem válaszolt a megadott címen és porton. A hitelesítő adatokat meg sem próbálták. Ellenőrizze, hogy a HTTPS egyezik-e a porttal - 5001 bekapcsolt HTTPS-sel, 5000 kikapcsolttal -, hogy a telefon olyan hálózaton van-e, amely eléri a NAS-t, és hogy a DSM saját webes felülete betöltődik-e a telefon böngészőjében ugyanazon a címen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért írja az alkalmazás, hogy érvénytelen hitelesítő adatok, ha a jelszavam helyes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mert a NAS válaszolt, és elutasította a bejelentkezést. Ellenőrizze, nincs-e elírás, használ-e a fiók kétlépcsős azonosítást - a 2FA kapcsolónak bekapcsolva kell lennie -, és nézze meg a DSM automatikus letiltási listáját a Vezérlőpult, Biztonság, Fiók alatt, hátha az ismételt próbálkozások letiltották a telefonja címét."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért nem látok egy lapot, amelyet várnék?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vagy a mögötte lévő csomag nincs telepítve az adott NAS-on, vagy az almenü el van rejtve. Az alkalmazás csatlakozáskor olvassa ki, mit tud a NAS, így az azóta telepített csomag frissítést igényel - húzza le, vagy nyissa meg újra az alkalmazást."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A kameráim otthon működnek, de távol nem.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kapcsolja be a Kamera élő nézetének átvezetése a DSM-porton opciót a NAS konfigurációjában. Kikapcsolva az élő nézet közvetlenül az RTSP 554-es portjára kapcsolódik, amely a hálózatán kívülről általában nem érhető el."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A fotóim üres csempékként jelennek meg.",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A DSM 7.2.2-től kezdve a NAS nem készít előnézeteket a HEIC fájlokhoz, és a Syno Manager ezeket az eszközön dekódolja. Ha a régebbi, nem HEIC fotók is üresek, a NAS miniatűrei valóban hiányoznak - használja az újraindexelést a Fotók képernyőn, és hagyja, hogy a NAS újraépítse őket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért mutat a widgetem régi számokat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mert az Android és az iOS dönti el, mikor frissülhet egy widget, és mindkettő korlátozza az akkumulátor kímélésére. Minden widget pontosan ezért mutatja, mikor rögzítették az adatait. Az alkalmazás megnyitása a legbiztosabb módja a frissítésnek."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/" class="active">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; Súgó</div>
+    <div class="eyebrow">Súgó</div>
+    <h1>Amikor valami <span class="g">nincs rendben</span></h1>
+    <p>A legtöbb probléma néhány jellegzetes formába sorolható. Az alábbiak mindegyike elmondja, mit jelent valójában a tünet, ami általában a leggyorsabb út a megoldáshoz.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ugrás ide</b><ul>
+      <li><a href="#connecting">Nem tud csatlakozni</a></li>
+      <li><a href="#credentials">Bejelentkezés elutasítva</a></li>
+      <li><a href="#missing">Hiányzó lapok vagy kártyák</a></li>
+      <li><a href="#photos">Üres fotócsempék</a></li>
+      <li><a href="#cameras">Kamerák otthonon kívül</a></li>
+      <li><a href="#logs">A naplók nem töltődnek be</a></li>
+      <li><a href="#widgets">Elavult widgetek</a></li>
+      <li><a href="#assistant">Nincs Asszisztens lap</a></li>
+      <li><a href="#contact">Még mindig elakadt</a></li>
+    </ul></div>
+
+    <div class="section-head" id="connecting">
+      <div class="eyebrow">Kapcsolat</div>
+      <h2>„Kapcsolat-időtúllépés”</h2>
+      <p class="lead">Ez azt jelenti, hogy <b>semmi sem válaszolt</b>. A hitelesítő adatokat meg sem próbálták, tehát a hiba a címben, a portban vagy a hálózatban van - soha nem a jelszóban.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Nyissa meg a DSM-et a telefon böngészőjében</b> pontosan azon a címen és porton, amelyet beírt. Ha a böngésző sem éri el, nem az alkalmazás a hibás.</li>
+      <li><b>Ellenőrizze, hogy a HTTPS egyezik-e a porttal.</b> Az 5001 a HTTPS-figyelő, az 5000 a HTTP-é. Ha felcseréli őket, időtúllépés lesz.</li>
+      <li><b>Ellenőrizze a telefon hálózatát.</b> Egy olyan helyi cím, mint a <code>192.168.1.20</code>, mobiladaton nem létezik. Csatlakozzon a Wi-Fi-hez, vagy használjon <a href="/hu/guide/remote-access/">QuickConnectet, tartományt vagy VPN-t</a>.</li>
+      <li><b>iOS-en engedélyezze a helyi hálózati hozzáférést.</b> Beállítások &rsaquo; Alkalmazások &rsaquo; Syno Manager &rsaquo; Helyi hálózat. Nélküle az iOS csendben blokkolja a saját hálózatára irányuló kapcsolatokat, és a tünet egy hálózati hibának tűnő időtúllépés.</li>
+      <li><b>Ellenőrizze a DSM tűzfalát.</b> Vezérlőpult &rsaquo; Biztonság &rsaquo; Tűzfal - az a szabály, amely csak bizonyos címeket enged, blokkolja azt a telefont, amely nem tartozik közéjük.</li>
+      <li><b>Ellenőrizze, hogy a NAS ébren van-e.</b> Az alvó NAS nem válaszol. <a href="/hu/guide/wake-on-lan/">Ébressze fel</a> előbb.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="credentials">
+      <div class="eyebrow">Bejelentkezés</div>
+      <h2>„Érvénytelen hitelesítő adatok” vagy tanúsítványhiba</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Üzenet</th><th>Mit jelent</th><th>Megoldás</th></tr></thead>
+      <tbody>
+        <tr><td>Érvénytelen hitelesítő adatok</td><td>A NAS válaszolt, és elutasította a bejelentkezést. A cím és a port helyes.</td><td>Ellenőrizze a felhasználónevet és a jelszót. Ellenőrizze, használ-e a fiók 2FA-t - a kapcsolónak bekapcsolva kell lennie. Nézze meg a DSM automatikus letiltási listáját a <b>Vezérlőpult &rsaquo; Biztonság &rsaquo; Fiók</b> alatt, hátha a sikertelen próbálkozások letiltották a címét.</td></tr>
+        <tr><td>Tanúsítványhiba</td><td>A HTTPS be van kapcsolva, és a tanúsítvány-ellenőrzés is be van kapcsolva egy önaláírt tanúsítvánnyal szemben.</td><td>Kapcsolja ki az <b>SSL-tanúsítvány ellenőrzése</b> opciót. A legtöbb DiskStation önaláírt tanúsítványt mutat; a kapcsolat mindkét esetben titkosított marad.</td></tr>
+        <tr><td>2FA szükséges</td><td>A fiók kétlépcsős azonosítást használ, és a kapcsoló ki van kapcsolva.</td><td>Kapcsolja be a <b>Kétlépcsős azonosítás (2FA)</b> opciót a NAS konfigurációjában, és csatlakozzon újra.</td></tr>
+        <tr><td>A 2FA-kódokat elutasítják</td><td>Általában az óra a hibás, nem a kód.</td><td>A kódok az aktuális időből származnak. Ellenőrizze a telefon és a NAS óráját - a NAS időforrása a kezdőképernyő gyorsstatisztikai sorában látható.</td></tr>
+        <tr><td>Működött, most bejelentkezést kér</td><td>A tárolt hitelesítő adatok olvashatatlanná váltak - ez megtörténhet, ha az alkalmazást új telefonra állítja vissza.</td><td>Az alkalmazás törli, amit nem tud olvasni, és újra bejelentkezést kér. Adja meg újra egyszer a jelszót.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Szóközt tartalmazó felhasználónév?</b> Az működik. Az alkalmazás helyesen idézőjelezi, ami gyakori oka annak, hogy más kliensek hibáznak az olyan fiókokkal, mint a <code>John Smith</code>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="missing">
+      <div class="eyebrow">Hiányzó dolgok</div>
+      <h2>Egy lap, almenü vagy kártya hiányzik</h2>
+      <p class="lead">Pontosan három oka lehet, és mindegyiknek más a megoldása.</p>
+    </div>
+    <ol class="steps">
+      <li><b>A csomag nincs telepítve.</b> Az alkalmazás kiolvassa, mit tud a NAS, és elrejt mindent, amit nem. Nincs Download Station csomag, nincs Download Station lap. Telepítse a <a href="/hu/guide/apps/#package-center">Csomagközpontból</a>.</li>
+      <li><b>A csatlakozás után telepítették.</b> A képességlista csatlakozáskor olvasódik be. Húzza le a frissítéshez, vagy nyissa meg újra az alkalmazást, és megjelenik.</li>
+      <li><b>El van rejtve.</b> Nézze meg a lap <b>&#8942; menü &rsaquo; Nézetek testreszabása</b> pontját, kártyák esetén pedig a <b>Beállítások &rsaquo; Irányítópult-kategóriák</b> oldalt. Lásd: <a href="/hu/guide/customizing/">testreszabás</a>.</li>
+    </ol>
+    <div class="note"><b>Ha olyan kártyára koppint, amelynek nézete el van rejtve, az közli ezt</b>, és felkínál egy Testreszabás gombot. Ha azt írja, hogy a NAS nem kínálja azt a nézetet, a csomag valóban nincs ott.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="photos">
+      <div class="eyebrow">Photos</div>
+      <h2>Üres csempék a fotótárban</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Friss iPhone-fotók:</b> ezek HEIC formátumúak, és a DSM 7.2.2-től kezdve a NAS már nem készít hozzájuk előnézetet. A Syno Manager ezeket az eszközön dekódolja, így meg kell jelenniük. Ha mégsem, győződjön meg róla, hogy az alkalmazás aktuális verzióját használja.</li>
+      <li><b>A régebbi fotók is üresek:</b> a NAS miniatűrei valóban hiányoznak. Használja az <b>újraindexelést</b> a Fotók képernyőn, és hagyja, hogy a NAS újraépítse őket. Nagy fotótárnál eltart egy ideig, és a NAS-on fut, így bezárhatja az alkalmazást.</li>
+      <li><b>Minden üres és lassú QuickConnecten:</b> a továbbító sebessége korlátozott. Adjon neki több időt, vagy használjon közvetlen bejegyzést, amikor otthon van.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cameras">
+      <div class="eyebrow">Kamerák</div>
+      <h2>Az élő nézet otthon működik, de távol nem</h2>
+      <p class="lead">Egyetlen beállítás megoldja: a <b>Kamera élő nézetének átvezetése a DSM-porton</b>, a NAS konfigurációjában.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Kikapcsolva</b> - az élő nézet közvetlenül az RTSP 554-es portjára kapcsolódik. Gyors a saját hálózatán, de ez a port kívülről szinte soha nem érhető el.</li>
+      <li><b>Bekapcsolva</b> - a stream a DSM HTTPS-porton halad, amelyen már amúgy is csatlakozik. Nem kell semmi extrát kitenni, és bárhonnan működik, ahonnan eléri a DSM-et.</li>
+      <li><b>A „Koppintson a megtekintéshez” feliratú kamera nem elromlott.</b> H.265 formátumú, és a DSM ezekhez nem készít állóképet. Koppintson rá, és megnyílik a stream.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Naplók</div>
+      <h2>A rendszernapló nem töltődik be</h2>
+      <p class="lead">Ha a napló kapcsolat-időtúllépést jelez, miközben az alkalmazás többi része rendben működik, a NAS Log Center szolgáltatása az, amelyik nem válaszol, nem az Ön kapcsolata.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ellenőrizze, hogy a Log Center telepítve van-e és fut-e</b> a DSM Csomagközpontjában. A rendszernapló API ennek része.</li>
+      <li><b>Ellenőrizze a fiók jogosultságait.</b> A rendszernaplók olvasásához a legtöbb DSM-konfiguráción rendszergazdai jogosultság kell.</li>
+      <li><b>A konténer- és stacknaplók különállóak</b>, és a Dockertől származnak, így azok működhetnek, miközben a rendszernapló nem.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="widgets">
+      <div class="eyebrow">Widgetek</div>
+      <h2>A kezdőképernyő-widget elavult</h2>
+      <p class="lead">Az Android és az iOS dönti el, mikor frissülhet egy widget, és mindkettő erősen korlátozza az akkumulátor kímélésére. Egyetlen alkalmazás sem kényszerítheti ki - ezért írja ki minden widget, mikor készültek a számai, ígéret helyett.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nyissa meg az alkalmazást</b> - a legbiztosabb frissítés.</li>
+      <li><b>Android:</b> vegye ki a Syno Managert az akkumulátor-optimalizálásból.</li>
+      <li><b>iOS:</b> győződjön meg róla, hogy az Alkalmazások háttérben történő frissítése be van kapcsolva az alkalmazáshoz.</li>
+      <li><b>Ellenőrizze az elérhetőséget:</b> a widget nem tud olyan NAS-t olvasni, amelyet a telefon nem ér el. Mobiladaton, csak helyi IP-s bejegyzéssel nem frissül, amíg haza nem ér.</li>
+      <li><b>„még nem frissült”</b> azt jelenti, hogy még nincs sikeres leolvasás - frissen hozzáadva, vagy az alkalmazás azóta nem futott.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="assistant">
+      <div class="eyebrow">Asszisztens</div>
+      <h2>Nincs Asszisztens lap</h2>
+      <p class="lead">Az asszisztenshez eszközön futó modell kell, és a lap teljesen el van rejtve az olyan hardveren, amelyen nincs ilyen - egy működésképtelen vezérlő rosszabb, mint a vezérlő hiánya.</p>
+    </div>
+    <ul class="plain">
+      <li>Az <b>Android</b>hoz AICore kell, rendelkezésre álló Gemini Nano modellel.</li>
+      <li>Az <b>iOS-hez és a macOS-hez</b> támogatott és engedélyezett Apple Intelligence kell.</li>
+      <li><b>Nézze meg, mit jelent az eszköze</b> a <b>Beállítások &rsaquo; Eszközön futó AI</b> alatt, amely megnevezi a talált állapotot.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contact">
+      <div class="eyebrow">Még mindig elakadt</div>
+      <h2>Jelentse be</h2>
+      <p class="lead">A hibákat és funkciókérelmeket a nyilvános követőbe várjuk, ahol számot és beszélgetési szálat kapnak, nem pedig eltűnnek egy postaládában.</p>
+    </div>
+    <p style="margin-top:8px"><a class="btn" href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése vagy funkció kérése</a></p>
+    <div class="note" style="margin-top:22px"><b>Mit érdemes megadni:</b> az alkalmazás verzióját (a Beállítások sorban mutatja, a Névjegy pedig a buildszámot), a DSM verzióját, a NAS típusát, hogy a saját hálózatán van-e vagy távol, és hogy mit várt helyette. Egy képernyőkép, amelyről levágta a privát részeket, többet segít, mint a leírás.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Hibaelhárítás - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Azt írja, kapcsolat-időtúllépés. Ez mit jelent?</summary><div class="body">Azt, hogy semmi sem válaszolt a megadott címen és porton - a hitelesítő adatokat meg sem próbálták. Ellenőrizze, hogy a HTTPS egyezik-e a porttal, hogy a telefon olyan hálózaton van-e, amely eléri a NAS-t, és hogy a DSM saját webes felülete betöltődik-e a telefon böngészőjében ugyanazon a címen.</div></details>
+    <details><summary>Miért írja, hogy érvénytelen hitelesítő adatok, ha a jelszavam helyes?</summary><div class="body">Mert a NAS válaszolt, és elutasította a bejelentkezést. Ellenőrizze, nincs-e elírás, használ-e a fiók 2FA-t, és nézze meg a DSM automatikus letiltási listáját, hátha az ismételt próbálkozások letiltották a telefonja címét.</div></details>
+    <details><summary>Miért nem látok egy lapot, amelyet várnék?</summary><div class="body">Vagy a mögötte lévő csomag nincs telepítve, vagy az almenü el van rejtve. A csatlakozás óta telepített csomag frissítést igényel - húzza le, vagy nyissa meg újra az alkalmazást.</div></details>
+    <details><summary>A kameráim otthon működnek, de távol nem.</summary><div class="body">Kapcsolja be a Kamera élő nézetének átvezetése a DSM-porton opciót. Kikapcsolva az élő nézethez RTSP kell a 554-es porton, amely kívülről általában nem érhető el.</div></details>
+    <details><summary>A fotóim üres csempékként jelennek meg.</summary><div class="body">A HEIC fotókat az eszköz dekódolja, mert a DSM 7.2.2+ már nem készít hozzájuk előnézetet. Ha a régebbi fotók is üresek, használja az újraindexelést a Fotók képernyőn.</div></details>
+    <details><summary>Miért mutat a widgetem régi számokat?</summary><div class="body">Mert az operációs rendszer dönti el, mikor frissülhet egy widget. Minden widget pontosan ezért mutatja, mikor rögzítették az adatait; az alkalmazás megnyitása a legbiztosabb frissítés.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>A teljes kézikönyv</h2>
+    <p class="lead" style="margin:0 auto 24px">Minden képernyő, minden vezérlő, és hogy mit nem tesz meg az egyes.</p>
+    <p><a class="btn" href="/hu/guide/">Olvassa el a Felhasználói útmutatót &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

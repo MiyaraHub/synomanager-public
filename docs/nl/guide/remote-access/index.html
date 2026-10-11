@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Je Synology NAS op afstand bereiken - Syno Manager</title>
+<meta name="description" content="Bereik je Synology overal via QuickConnect, een eigen domein of een VPN. Welke functies via welke route werken, inclusief foto's en live camerabeeld." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Je Synology NAS op afstand bereiken - Syno Manager" />
+<meta property="og:description" content="Bereik je Synology overal via QuickConnect, een eigen domein of een VPN. Welke functies via welke route werken, inclusief foto's en live camerabeeld." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Je Synology NAS op afstand bereiken - Syno Manager" />
+<meta name="twitter:description" content="Bereik je Synology overal via QuickConnect, een eigen domein of een VPN. Welke functies via welke route werken, inclusief foto's en live camerabeeld." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Onderweg"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Je Synology NAS op afstand bereiken - Syno Manager",
+  "description": "Bereik je Synology overal via QuickConnect, een eigen domein of een VPN. Welke functies via welke route werken, inclusief foto's en live camerabeeld.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Moet ik poorten doorsturen om mijn NAS op afstand te gebruiken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. QuickConnect laat de verbinding via de dienst van Synology lopen zonder routerconfiguratie, en een VPN naar je netwerk werkt ook. Poortdoorsturing is alleen nodig als je specifiek een directe route vanaf het internet wilt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Werken foto's en live camerabeeld via QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Miniaturen, volledige afbeeldingen, live camerabeeld en downloads uit File Station en Drive lopen allemaal via de actieve route, ook het QuickConnect-relay. Het relay is trager dan je eigen netwerk, maar het werkt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik mijn NAS twee keer toevoegen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dat is een goede aanpak. Eén item via het lokale IP voor als je thuis bent - snel en direct - en één via QuickConnect voor onderweg. Het zijn aparte items met aparte indelingen en wisselen kost één tik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is QuickConnect veilig?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De verbinding is end-to-end versleuteld wanneer je HTTPS gebruikt, en het relay van Synology leidt verkeer door zonder je gegevens vast te houden. Je DSM-inloggegevens blijven gelden en tweestapsverificatie werkt gewoon."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Handleiding</a> &rsaquo; Onderweg</div>
+      <div class="eyebrow">Onderweg</div>
+      <h1>Dezelfde app, <span class="g">een andere route</span></h1>
+      <p>Syno Manager werkt hetzelfde of je nu naast je NAS zit of aan de andere kant van de wereld. Wat verandert is hoe de verbinding daar komt, en elke route heeft andere afwegingen die je moet kennen.</p>
+    </div>
+    <div class="hero-shot"><img alt="Het formulier NAS toevoegen met Direct IP en QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Drie routes</div>
+      <h2>Kies wat bij je past</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Route</th><th>Installatie</th><th>Snelheid</th><th>Maakt iets zichtbaar?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Schakel het in bij DSM en voer de ID in. Niets aan de router.</td><td>Trager - het verkeer loopt via het relay van Synology.</td><td class="yes">Niets. Geen open poorten aan jouw kant.</td></tr>
+        <tr><td><b>Eigen domein / DDNS</b></td><td>Een hostnaam die naar je adres wijst, plus een poortdoorsturing op de router.</td><td>Direct, dus zo snel als je upload toelaat.</td><td class="no">Ja - de DSM-poort is bereikbaar vanaf het internet.</td></tr>
+        <tr><td><b>VPN</b></td><td>Een VPN-server op je router of NAS en een client op je telefoon.</td><td>Direct zodra je verbonden bent.</td><td class="yes">Alleen de VPN-poort. Al het andere blijft privé.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Twijfel je, kies dan QuickConnect.</b> Het is de optie die geen routerkennis vraagt en niets openzet, en elke functie van de app werkt erover.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Wat werkt op afstand</div>
+      <h2>Alles, met twee kanttekeningen</h2>
+      <p class="lead">De app heeft geen beperkter functieaanbod wanneer je weg bent. Twee dingen vragen even nadenken: live camerabeeld en het wekken van een NAS die uit staat.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Functie</th><th>Onderweg</th></tr></thead>
+      <tbody>
+        <tr><td>Bewaking - systeem, opslag, netwerk, gezondheid</td><td class="yes">Werkt via elke route.</td></tr>
+        <tr><td>Docker, pakketten, services, taken, gebruikers</td><td class="yes">Werkt via elke route.</td></tr>
+        <tr><td>Synology Photos - miniaturen en volledige afbeeldingen</td><td class="yes">Werkt, ook via het relay.</td></tr>
+        <tr><td>Downloads uit File Station en Drive</td><td class="yes">Werkt, ook via het relay.</td></tr>
+        <tr><td>Back-ups - status en Nu uitvoeren</td><td class="yes">Werkt via elke route.</td></tr>
+        <tr><td>Een ander apparaat wekken via de NAS</td><td class="yes">Werkt, zolang de NAS zelf aan staat.</td></tr>
+        <tr><td><b>Live camerabeeld</b></td><td>Zet <b>Live camerabeeld tunnelen via DSM-poort</b> aan. Zonder dat wil live beeld RTSP op poort 554, en die is van buitenaf meestal niet bereikbaar. Zie <a href="/nl/guide/media/#streaming">hoe live beeld verbindt</a>.</td></tr>
+        <tr><td><b>De NAS zelf wekken terwijl hij uit staat</b></td><td>Vereist een VPN of een Wake-on-LAN-doorsturing op de router. QuickConnect kan een uitgeschakelde NAS niet bereiken. Zie <a href="/nl/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Instellen</h2>
+    </div>
+    <ol class="steps">
+      <li><b>In DSM:</b> Configuratiescherm &rsaquo; Externe toegang &rsaquo; QuickConnect. Schakel het in en noteer de QuickConnect-ID.</li>
+      <li><b>In de app:</b> voeg een NAS toe en zet <b>Verbindingstype</b> op <b>QuickConnect</b>.</li>
+      <li><b>Voer de ID in</b> - geen host en poort.</li>
+      <li><b>Je DSM-inloggegevens</b> en 2FA als het account die gebruikt.</li>
+      <li><b>Opslaan &amp; verbinden.</b></li>
+    </ol>
+    <div class="note"><b>Reken op een lagere snelheid.</b> Het relay voegt een tussenstop toe en Synology beperkt de snelheid ervan, dus een fotobibliotheek scrolt minder soepel dan thuis. Alles werkt nog steeds - het is een verschil in vertraging, niet in mogelijkheden.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Een aanpak om over te nemen</div>
+      <h2>Voeg dezelfde NAS twee keer toe</h2>
+      <p class="lead">Eén item via <b>lokaal IP</b>, één via <b>QuickConnect</b>. Geef ze namen waaraan je ze herkent - "NAS (thuis)" en "NAS (onderweg)".</p>
+    </div>
+    <ul class="plain">
+      <li><b>Thuis</b> gebruik je de directe: geen relay, volle snelheid, directe miniaturen.</li>
+      <li><b>Onderweg</b> schakel je over naar die van QuickConnect.</li>
+      <li><b>Ze houden aparte indelingen</b>, dus je kunt het item voor onderweg terugbrengen tot de paar kaarten die je op mobiele data echt bekijkt.</li>
+      <li><b>Wisselen kost één tik</b> in de apparatenlijst.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Zet <a href="/nl/guide/settings/#launch">Startgedrag</a> op <b>Laatst gebruikte NAS</b> en de app onthoudt welke je gebruikte.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>FAQ over toegang op afstand</h2>
+    </div>
+    <details open><summary>Moet ik poorten doorsturen om mijn NAS op afstand te gebruiken?</summary><div class="body">Nee. QuickConnect laat de verbinding lopen zonder routerconfiguratie en een VPN werkt ook. Poortdoorsturing is alleen nodig als je specifiek een directe route vanaf het internet wilt.</div></details>
+    <details><summary>Werken foto's en live camerabeeld via QuickConnect?</summary><div class="body">Ja. Miniaturen, volledige afbeeldingen, live camerabeeld en downloads uit File Station en Drive lopen allemaal via de actieve route, ook het relay. Voor live camerabeeld moet de DSM-poorttunnel aan staan.</div></details>
+    <details><summary>Moet ik mijn NAS twee keer toevoegen?</summary><div class="body">Het is een goede aanpak - één item via lokaal IP voor thuis en één via QuickConnect voor onderweg, met aparte indelingen en wisselen met één tik.</div></details>
+    <details><summary>Is QuickConnect veilig?</summary><div class="body">De verbinding is end-to-end versleuteld wanneer je HTTPS gebruikt, en het relay leidt verkeer door zonder je gegevens vast te houden. Je DSM-inloggegevens en tweestapsverificatie blijven gelden.</div></details>
+    <details><summary>Waarom werkt mijn item met lokaal IP niet op mobiele data?</summary><div class="body">Omdat een privéadres als 192.168.x.x alleen op je eigen netwerk bestaat. Gebruik het QuickConnect-item, een domein, of maak eerst verbinding met je VPN.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: back-up &amp; herstel</h2>
+    <p class="lead" style="margin:0 auto 24px">Neem je app-instellingen mee naar een nieuwe telefoon.</p>
+    <p><a class="btn" href="/nl/guide/backup-restore/">Back-up &amp; herstel &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

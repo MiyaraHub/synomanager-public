@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology CPU、内存、温度与风扇 - Syno Manager</title>
+<meta name="description" content="监控 CPU、内存、负载、磁盘 I/O 和温度，切换风扇速度模式，检查 DSM 更新，还能直接用手机重启或关闭你的 Synology。" />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hans/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology CPU、内存、温度与风扇 - Syno Manager" />
+<meta property="og:description" content="监控 CPU、内存、负载、磁盘 I/O 和温度，切换风扇速度模式，检查 DSM 更新，还能直接用手机重启或关闭你的 Synology。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hans/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology CPU、内存、温度与风扇 - Syno Manager" />
+<meta name="twitter:description" content="监控 CPU、内存、负载、磁盘 I/O 和温度，切换风扇速度模式，检查 DSM 更新，还能直接用手机重启或关闭你的 Synology。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hans",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "主页",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "用户指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "系统"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology CPU、内存、温度与风扇 - Syno Manager",
+  "description": "监控 CPU、内存、负载、磁盘 I/O 和温度，切换风扇速度模式，检查 DSM 更新，还能直接用手机重启或关闭你的 Synology。",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "zh-Hans",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以在应用中调节风扇转速吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。“系统健康”中有一张散热卡片，提供全速、凉爽和静音三种模式。应用会读取 NAS 当前所处的模式，写入你的选择，然后再读回确认。如果 NAS 报告的模式不在这三种之内，则保持只读显示，而不是错误地呈现。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以用手机重启或关闭我的 NAS 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，在“系统健康”底部的“电源控制”卡片中操作。两者在执行前都会要求确认，因为它们会影响所有已连接的用户。远程关机需要三思 - 关机后的 NAS 无法通过互联网唤醒，除非有 VPN，或路由器已配置Wake-on-LAN。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "“识别 NAS”有什么用？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "它会让 NAS 的状态灯闪烁，方便你在机架或柜子里分辨眼前是哪一台。“静音蜂鸣”会停止警报蜂鸣器，但不会消除触发警报的情况 - 同时也要解决原因。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "日志会自动刷新吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不会，而且是有意为之。以前日志会按定时器重新读取，不管你是否在看，白白消耗电量和网络。现在它只加载一次并保持不动。点按播放键可实时跟随，再点一次暂停，离开界面时它会自行停止跟随。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以导出或复制我正在看的日志吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。长按任意一行会出现系统的复制 / 全选 / 分享栏，也可以使用“系统”标签页中实时开关旁边的导出按钮，或“连接”标签页中列表上方的导出按钮。它会打开一个面板，提供保存到文件、分享或发送邮件、复制到剪贴板三种方式，导出的内容正是经过级别筛选和搜索后屏幕上显示的条目 - 每条一行，时间、级别、用户和描述以制表符分隔。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 图标" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="/zh-hans/">主页</a>
+      <a href="/zh-hans/guide/" class="active">用户指南</a>
+      <a href="/zh-hans/#screenshots">截图</a>
+      <a href="/zh-hans/compatible-nas/">兼容性</a>
+      <a href="/zh-hans/best-synology-nas-app/">为什么要换</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a href="/zh-hans/#top" class="cta">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; 系统</div>
+      <div class="eyebrow">系统</div>
+      <h1>这台设备<span class="g">究竟在做什么</span></h1>
+      <p>三个子视图：<b>系统健康</b>查看机器状态，<b>资源</b>查看实时图表，<b>日志</b>查看 DSM 的记录。另有会改变设置的控制项 - 风扇模式、识别灯、DSM 更新、重启和关机。</p>
+    </div>
+    <div class="hero-shot"><img alt="包含 CPU 和RAM仪表、平均负载、磁盘 I/O 和温度历史的“系统健康”" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本页内容</b><ul>
+      <li><a href="#health">系统健康</a></li>
+      <li><a href="#cooling">散热 &amp; 风扇模式</a></li>
+      <li><a href="#identify">识别 &amp; 警报</a></li>
+      <li><a href="#dsm-update">DSM 更新</a></li>
+      <li><a href="#power">电源控制</a></li>
+      <li><a href="#resources">资源</a></li>
+      <li><a href="#logs">日志</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">系统健康</div>
+      <h2>各项读数</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>卡片</th><th>显示内容</th></tr></thead>
+      <tbody>
+        <tr><td>CPU &amp; RAM仪表</td><td>总 CPU 以圆环显示，下方单独标出<b>用户</b>占比，让你分清自己的工作负载和系统开销。RAM显示百分比和绝对数值。</td></tr>
+        <tr><td>内存</td><td>以条形显示已用与总量。在需要关注之前都是绿色。</td></tr>
+        <tr><td>CPU 平均负载</td><td>一分钟、五分钟和十五分钟的数值 - 等待 CPU 时间的进程数，而不是百分比。需结合核心数来判断，所以八核机架式设备上的健康数值，对双盘位设备来说就是繁忙。</td></tr>
+        <tr><td>磁盘 I/O</td><td>读写吞吐量以及使用率百分比 - 即磁盘有多少时间处于繁忙状态；当 NAS 感觉很慢而 CPU 看起来很空闲时，这往往才是真正的答案。</td></tr>
+        <tr><td>温度历史</td><td>带当前数值的滚动图表。单位为 &deg;C 或 &deg;F，取决于你的<a href="/zh-hans/guide/settings/#preferences">偏好设置</a>。</td></tr>
+        <tr><td>进程</td><td>NAS 正在运行多少个进程。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">散热</div>
+      <h2>用手机更改风扇转速模式</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">散热卡片显示风扇状态和 NAS 所处的模式，以三选一的控件呈现：</p>
+        <ul class="plain">
+          <li><b>全速</b> - 最大风量，最大噪音。适合机架或柜子。</li>
+          <li><b>凉爽</b> - 均衡的默认模式。</li>
+          <li><b>静音</b> - 转速较低，温度较高。适合放在客厅里的 NAS，前提是硬盘承受得住。</li>
+        </ul>
+        <div class="note"><b>经过确认，而非想当然。</b>应用从 NAS 读取当前模式，写入你的选择，然后<b>读回确认</b>。NAS 悄悄拒绝的模式会被报告为已拒绝，而不是停留在屏幕上假装已生效。</div>
+        <div class="note" style="margin-top:14px"><b>无法识别的模式保持只读。</b>如果你的 NAS 报告的散热模式不在这三种之内，卡片会显示它报告的内容，而不提供更改选项 - 而不是错误地把它标成已知的三种之一。</div>
+      </div>
+      <img alt="包含全速、凉爽和静音，以及识别和电源控制的散热卡片" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">识别 &amp; 警报</div>
+      <h2>找到设备，关掉蜂鸣</h2>
+    </div>
+    <ul class="plain">
+      <li><b>识别</b>会让 NAS 的状态灯闪烁，方便你分辨眼前是哪一台。<b>停止</b>可结束闪烁。</li>
+      <li><b>静音蜂鸣</b>会停止警报蜂鸣器。它消除的是噪音，而不是问题本身 - 触发警报的原因依然存在，健康状况标题栏仍会如实显示。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM 更新</div>
+      <h2>是否有固件更新</h2>
+      <p class="lead">“DSM 更新”卡片会显示你当前使用的版本，以及 Synology 是否有更新的版本。<b>检查更新</b>会让 NAS 重新查询一次。</p>
+    </div>
+    <div class="note"><b>这是你 NAS 的固件，而不是应用。</b>Syno Manager 像其他应用一样，通过 App Store 或 Google Play 更新自己。这张卡片是 DSM 自己的更新入口，与控制面板中的相同。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">电源控制</div>
+      <h2>重启与关机</h2>
+      <p class="lead">位于“系统健康”底部，以红色标注，因为它们会影响所有已连接的用户 - 包括正在复制文件的人。</p>
+    </div>
+    <ul class="plain">
+      <li><b>重启 NAS</b> - 正常重启。执行前会要求确认。</li>
+      <li><b>关闭 NAS</b> - 正常关机。执行前会要求确认。</li>
+    </ul>
+    <div class="note stop"><b>远程关机前请三思。</b>关机后的 NAS 无法自己转发唤醒数据包。要在你的网络之外让它重新开机，需要通过 VPN 接入，或使用已设置转发Wake-on-LAN的路由器。请参阅<a href="/zh-hans/guide/wake-on-lan/">Wake-on-LAN</a>，了解在何处可行。</div>
+    <div class="note" style="margin-top:14px"><b>快捷方式不会跳过确认。</b><code>synomanager://reboot</code> 和 <code>synomanager://shutdown</code> <a href="/zh-hans/guide/shortcuts/">链接</a>有意只会<em>打开应用</em>到这个界面。破坏性操作不会因为是从启动器触发的就变成一键完成。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">资源</div>
+      <h2>实时图表</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="CPU、内存、磁盘读取和磁盘写入的资源监视图表" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">“资源”子视图是同样的数据，以滚动图表形式呈现，当你想知道“这是突发峰值还是持续如此”时就该用它。</p>
+        <ul class="plain">
+          <li><b>CPU 使用率</b>，区分用户和系统占比。</li>
+          <li><b>内存使用率</b>，显示已用与总量。</li>
+          <li><b>磁盘读取</b>和<b>磁盘写入</b>，各有自己的图表，另有整体磁盘使用率。</li>
+          <li><b>平均负载</b>，涵盖一分钟、五分钟和十五分钟。</li>
+        </ul>
+        <div class="note">图表按<a href="/zh-hans/guide/settings/#preferences">轮询间隔</a>填充。间隔越短，细节越精细，也越耗电；间隔越长则越省电，但更粗略。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">日志</div>
+      <h2>DSM 记录了什么</h2>
+      <p class="lead">两个标签页：<b>系统</b>显示 DSM 自己的日志，<b>连接</b>显示登录和文件访问。两者都在你请求时才读取。</p>
+    </div>
+    <ul class="plain">
+      <li><b>只加载一次并保持不动。</b>你想看某一行时日志却按定时器重新读取，那就毫无用处，还白白消耗电量和网络。</li>
+      <li><b>点按播放键可实时跟随。</b>再点一次暂停。离开界面或把应用切到后台时，跟随会自动停止，所以被遗忘的日志标签页不会在你口袋里悄悄轮询。</li>
+      <li><b>有搜索框</b>，可在冗长的日志中找到某一行。</li>
+      <li><b>容器和堆栈日志的工作方式相同</b> - 请参阅 <a href="/zh-hans/guide/apps/#docker">Docker</a>。</li>
+      <li><b>文字可以选择。</b>长按某一行会出现系统的复制 / 全选 / 分享栏，与屏幕上其他任何文字的操作一样。</li>
+      <li><b>导出你正在看的内容。</b>“系统”标签页中实时开关旁边，以及“连接”标签页中列表上方，各有一个导出按钮。它会打开一个面板，提供三种方式：<b>保存到文件</b>、通过<b>分享</b>发送或发邮件，或<b>复制到剪贴板</b>。</li>
+    </ul>
+    <div class="note"><b>导出的是屏幕上的内容，而不是整份日志。</b>级别筛选标签和搜索框筛选出的结果就是导出的内容 - 你已经筛掉的条目不会重新出现在导出中。文件为纯文本，每条一行，时间、级别、用户和描述以制表符分隔。</div>
+    <div class="note warn"><b>如果日志无法加载</b>并提示连接超时，而应用的其他部分正常，那么没有响应的是 NAS 上的日志中心服务，而不是你的连接。请在 DSM 的套件中心检查日志中心是否已安装并正在运行 - 系统日志 API 属于它。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>系统 FAQ</h2>
+    </div>
+    <details open><summary>可以在应用中调节风扇转速吗？</summary><div class="body">可以。“系统健康”中有一张散热卡片，提供全速、凉爽和静音三种模式。应用会读取 NAS 当前所处的模式，写入你的选择，然后再读回确认。如果 NAS 报告的模式不在这三种之内，则保持只读显示，而不是错误地呈现。</div></details>
+    <details><summary>可以用手机重启或关闭我的 NAS 吗？</summary><div class="body">可以，在“系统健康”底部的“电源控制”中操作。两者在执行前都会要求确认。远程关机需要三思 - 关机后的 NAS 无法通过互联网唤醒，除非有 VPN，或路由器已配置Wake-on-LAN。</div></details>
+    <details><summary>“识别 NAS”有什么用？</summary><div class="body">它会让 NAS 的状态灯闪烁，方便你在机架或柜子里分辨眼前是哪一台。“静音蜂鸣”会停止警报蜂鸣器，但不会消除触发警报的情况。</div></details>
+    <details><summary>日志会自动刷新吗？</summary><div class="body">不会，而且是有意为之。日志只加载一次并保持不动，方便你阅读。点按播放键可实时跟随，再点一次暂停，离开界面或把应用切到后台时它会自行停止跟随。</div></details>
+    <details><summary>可以导出或复制我正在看的日志吗？</summary><div class="body">可以。长按任意一行会出现系统的复制 / 全选 / 分享栏，也可以使用“系统”标签页中实时开关旁边的导出按钮，或“连接”标签页中列表上方的导出按钮。它会打开一个面板，提供保存到文件、分享或发送邮件、复制到剪贴板三种方式，导出的内容正是经过级别筛选和搜索后屏幕上显示的条目 - 每条一行，时间、级别、用户和描述以制表符分隔。</div></details>
+    <details><summary>为什么 CPU 看起来正常，平均负载却很高？</summary><div class="body">平均负载统计的是等待中的进程，而它们往往是在等磁盘而不是 CPU。请查看同一界面上的磁盘 I/O 使用率 - 使用率百分比很高而 CPU 很低，通常就是原因所在。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一篇：存储</h2>
+    <p class="lead" style="margin:0 auto 24px">存储卷、存储池、每块硬盘的 SMART 健康状况和安全弹出。</p>
+    <p><a class="btn" href="/zh-hans/guide/storage/">存储 &amp; 硬盘 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hans/guide/">返回指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hans/">首页</a><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/compatible-nas/">兼容性</a><a href="/zh-hans/best-synology-nas-app/">为何换用</a><a href="/zh-hans/synology-app-for-iphone/">iPhone & iPad</a><a href="/zh-hans/synology-app-for-android/">Android</a><a href="/zh-hans/synology-app-for-mac-windows/">Mac & Windows</a><a href="/zh-hans/ds-finder-alternative/">对比 DS finder</a><a href="/zh-hans/help/">帮助</a><a href="/zh-hans/privacy/">隐私</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">报告问题</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 是一款独立应用，与 Synology Inc. 没有隶属、认可或赞助关系。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 和 QuickConnect 均为 Synology Inc. 的商标。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

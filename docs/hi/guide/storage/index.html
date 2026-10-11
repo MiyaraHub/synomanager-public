@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology स्टोरेज, RAID और SMART हेल्थ - Syno Manager</title>
+<meta name="description" content="RAID प्रकार और खाली जगह के साथ Synology वॉल्यूम और पूल, हर ड्राइव की SMART स्थिति और तापमान, Quick SMART Test, और USB तथा eSATA के लिए सुरक्षित eject।" />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hi/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology स्टोरेज, RAID और SMART हेल्थ - Syno Manager" />
+<meta property="og:description" content="RAID प्रकार और खाली जगह के साथ Synology वॉल्यूम और पूल, हर ड्राइव की SMART स्थिति और तापमान, Quick SMART Test, और USB तथा eSATA के लिए सुरक्षित eject।" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hi/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology स्टोरेज, RAID और SMART हेल्थ - Syno Manager" />
+<meta name="twitter:description" content="RAID प्रकार और खाली जगह के साथ Synology वॉल्यूम और पूल, हर ड्राइव की SMART स्थिति और तापमान, Quick SMART Test, और USB तथा eSATA के लिए सुरक्षित eject।" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "होम",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "उपयोगकर्ता गाइड",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Storage"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology स्टोरेज, RAID और SMART हेल्थ - Syno Manager",
+  "description": "RAID प्रकार और खाली जगह के साथ Synology वॉल्यूम और पूल, हर ड्राइव की SMART स्थिति और तापमान, Quick SMART Test, और USB तथा eSATA के लिए सुरक्षित eject।",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "hi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "क्या मैं हर ड्राइव की SMART स्थिति देख सकता हूँ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "हाँ। Disk Health सब-व्यू हर ड्राइव को उसके मॉडल, HDD या SSD होने, क्षमता, तापमान और SMART फ़ैसले के साथ सूचीबद्ध करता है। आप फ़ोन से किसी भी ड्राइव पर Quick SMART Test भी शुरू कर सकते हैं।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS ड्राइव के लिए कितना तापमान ज़्यादा गर्म है?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ऐप ड्राइव को 45 डिग्री C के बाद एम्बर और 55 डिग्री C के बाद लाल रंग देता है, और सिस्टम तापमान को 50 के बाद एम्बर और 60 के बाद लाल। ये सीमाएँ होम स्क्रीन के हेल्थ बैज को भी चलाती हैं, इसलिए गर्म ड्राइव आपके ढूँढे बिना वहाँ दिख जाती है।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं ऐप से USB ड्राइव सुरक्षित रूप से eject कर सकता हूँ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "हाँ, External सब-व्यू से। eject की पुष्टि इस बात से होती है कि ड्राइव असल में डिवाइस सूची से गायब हुई, इस बात से नहीं कि अनुरोध स्वीकार हुआ - इसलिए जो ड्राइव कहती है कि eject हो गई, वह सच में हुई है। फ़ॉर्मैट या इनिशियलाइज़ हो रही ड्राइव eject नहीं की जा सकती।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "क्या मैं ऐप से वॉल्यूम बना या बढ़ा सकता हूँ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "नहीं। वॉल्यूम और पूल बनाना, बढ़ाना और मरम्मत करना DSM के Storage Manager में होता है। ऐप बताता है कि आपका स्टोरेज क्या कर रहा है और आपको ड्राइव पर कार्रवाई करने देता है; यह फ़ोन से आपके ऐरे का ढाँचा नहीं बदलता।"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hi/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager आइकन" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="मेन्यू" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="गाइड में खोजें..." data-i18n-empty="कोई परिणाम नहीं मिला:" data-i18n-language="भाषा">
+      <a href="/hi/">होम</a>
+      <a href="/hi/guide/" class="active">उपयोगकर्ता गाइड</a>
+      <a href="/hi/#screenshots">स्क्रीनशॉट</a>
+      <a href="/hi/compatible-nas/">संगतता</a>
+      <a href="/hi/best-synology-nas-app/">बदलाव क्यों करें</a>
+      <a href="/hi/help/">सहायता</a>
+      <a href="/hi/#top" class="cta">डाउनलोड करें</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hi/">होम</a> &rsaquo; <a href="/hi/guide/">यूज़र गाइड</a> &rsaquo; स्टोरेज</div>
+      <div class="eyebrow">Storage</div>
+      <h1>हर वॉल्यूम, <span class="g">हर ड्राइव</span></h1>
+      <p>तीन सब-व्यू: क्षमता और RAID के लिए <b>Volumes &amp; Pools</b>, हर ड्राइव के SMART और तापमान के लिए <b>Disk Health</b>, और पीछे लगी किसी भी चीज़ के लिए <b>External</b>।</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager में स्टोरेज वॉल्यूम और ड्राइव" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>इस पेज पर</b><ul>
+      <li><a href="#volumes">Volumes &amp; Pools</a></li>
+      <li><a href="#drives">ड्राइव सूची</a></li>
+      <li><a href="#disk-health">Disk Health &amp; SMART</a></li>
+      <li><a href="#thresholds">तापमान की सीमाएँ</a></li>
+      <li><a href="#external">बाहरी &amp; सुरक्षित eject</a></li>
+      <li><a href="#limits">यह क्या नहीं करेगा</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; Pools</div>
+      <h2>क्षमता, एक नज़र में</h2>
+      <p class="lead">हर वॉल्यूम को एक कार्ड मिलता है जिसमें उसका नाम, RAID प्रकार, स्थिति और उसे सहारा देने वाली ड्राइव की संख्या होती है, और नीचे उपयोग बार जिसमें इस्तेमाल, प्रतिशत, कुल और खाली दिखता है।</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>दिखता है</th><th>मतलब</th></tr></thead>
+      <tbody>
+        <tr><td>वॉल्यूम का नाम</td><td>जैसा DSM उसे नाम देता है - <code>VOLUME_1</code>, और इसी तरह।</td></tr>
+        <tr><td>RAID प्रकार</td><td>RAID 5, SHR, RAID 1, Basic - नीचे का पूल असल में जो भी हो।</td></tr>
+        <tr><td>स्थिति</td><td>वॉल्यूम की अपनी स्थिति: <b>normal</b>, degraded, crashed। degraded ऐरे इस स्क्रीन की इकलौती चीज़ है जिस पर आज ही कार्रवाई करनी चाहिए।</td></tr>
+        <tr><td>ड्राइव संख्या</td><td>वॉल्यूम कितनी भौतिक ड्राइव पर फैला है।</td></tr>
+        <tr><td>उपयोग बार</td><td>सामान्य रूप से हरा, 80% के बाद एम्बर और 90% के बाद लाल। यही सीमाएँ <a href="/hi/guide/home/#header">हेल्थ बैज</a> भी इस्तेमाल करता है।</td></tr>
+        <tr><td>इस्तेमाल / कुल / खाली</td><td>तीनों, क्योंकि "70% भरा" और "13 TB खाली" अलग-अलग सवालों के जवाब हैं।</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>हर बे में क्या है</h2>
+      <p class="lead">वॉल्यूम के नीचे, बे नंबर के हिसाब से हर भौतिक ड्राइव।</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bay</b> - Disk 1, Disk 2, और इसी तरह, चेसिस पर लगे लेबल से मेल खाते हुए।</li>
+      <li><b>Model</b> - ड्राइव की अपनी मॉडल स्ट्रिंग।</li>
+      <li><b>Vendor और type</b> - निर्माता और HDD या SSD होना। जिस ड्राइव का वेंडर NAS पहचान न सका उसे अंदाज़े से भरने के बजाय <b>Unknown</b> दिखाया जाता है।</li>
+      <li><b>तापमान</b>, नीचे दी गई सीमाओं के हिसाब से रंगा हुआ।</li>
+      <li><b>SMART फ़ैसला</b> - ड्राइव का अपना आकलन स्वस्थ होने पर <b>SMART OK</b>।</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Disk Health</div>
+      <h2>SMART, और एक टेस्ट जो आप शुरू कर सकते हैं</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Disk Health सब-व्यू वही ड्राइव हैं पर ज़्यादा जगह के साथ: क्षमता, प्रकार, तापमान और SMART स्थिति, हर एक को अपना चिप मिलता है, और हर ड्राइव पर एक <b>Quick SMART Test</b> बटन होता है।</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Quick SMART Test</b> ड्राइव से अपना छोटा स्व-आकलन चलाने को कहता है। इसमें कुछ मिनट लगते हैं और वॉल्यूम इस्तेमाल करने वाली किसी चीज़ में रुकावट नहीं आती।</li>
+          <li><b>फ़ैसला ड्राइव का है, हमारा नहीं।</b> SMART ड्राइव की अपने बारे में रिपोर्ट है; ऐप उसे आगे पहुँचाता है। जो ड्राइव ठीक होने की बात कहकर फेल हो जाए, वह SMART की सीमा है, रीडिंग की नहीं।</li>
+          <li><b>न पढ़ी जा सकने वाली SMART स्थिति unknown दिखाई जाती है</b>, कभी स्वस्थ नहीं। रीडिंग का न होना और अच्छी रीडिंग अलग चीज़ें हैं और कभी मिलाई नहीं जातीं।</li>
+        </ul>
+      </div>
+      <img alt="हर ड्राइव की SMART स्थिति, तापमान और Quick SMART Test बटन दिखाता Disk Health" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">रंगों के पीछे के आँकड़े</div>
+      <h2>सीमाएँ</h2>
+      <p class="lead">यहाँ कुछ भी आपके हार्डवेयर के बारे में अंदाज़ा नहीं है - ये वे बिंदु हैं जहाँ ऐप रंग बदलता है और, जहाँ लागू हो, होम स्क्रीन का हेल्थ बैज।</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>रीडिंग</th><th>एम्बर पर</th><th>लाल पर</th></tr></thead>
+      <tbody>
+        <tr><td>ड्राइव तापमान</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>सिस्टम तापमान</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>वॉल्यूम उपयोग</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS चार्ज</td><td>50% से नीचे</td><td>20% से नीचे</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><a href="/hi/guide/settings/#preferences">Settings &rsaquo; Temperature Unit</a> में &deg;C और &deg;F के बीच बदलें। ऐप का हर तापमान तुरंत उसका अनुसरण करता है, होम स्क्रीन और विजेट वाले भी।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">External</div>
+      <h2>USB, eSATA और सुरक्षित eject</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="कुछ भी जुड़ा नहीं और एक UPS सूचीबद्ध, बाहरी स्टोरेज और USB डिवाइस" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">दो सेक्शन: माउंट और eject की जा सकने वाली ड्राइव के लिए <b>External Storage</b>, और बाकी सब जुड़ी चीज़ों के लिए <b>USB Devices</b> - UPS, प्रिंटर, डोंगल।</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Eject की पुष्टि ड्राइव के हटने से होती है।</b> ऐप इसलिए सफलता नहीं बताता कि अनुरोध OK लौटा; यह डिवाइस सूची दोबारा पढ़ता है और तभी कहता है कि ड्राइव eject हो गई जब वह सचमुच चली जाए। "निकालना सुरक्षित है" और "शायद निकालना सुरक्षित है" में यही फ़र्क है।</li>
+          <li><b>व्यस्त ड्राइव eject नहीं हो सकती।</b> फ़ॉर्मैट या इनिशियलाइज़ हो रही ड्राइव को लिखने के बीच में खींच लेने के बजाय कारण के साथ मना कर दिया जाता है।</li>
+          <li><b>कुछ जुड़ा न हो तो साफ़ कहा जाता है।</b> खाली सूची में "No external drives attached" लिखा आता है - कोई खाली डिब्बा नहीं जिसका मतलब आपको निकालना पड़े।</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">सीमाएँ</div>
+      <h2>यह स्क्रीन क्या नहीं करेगी</h2>
+      <p class="lead">स्टोरेज वह इकलौती जगह है जहाँ गलत टैप वापस नहीं हो सकता, इसलिए ऐप लिखता कम है और पढ़ता कहीं ज़्यादा।</p>
+    </div>
+    <ul class="plain">
+      <li><b>यह वॉल्यूम या पूल बनाएगा, बढ़ाएगा या हटाएगा नहीं।</b> वे DSM के Storage Manager में हैं, ऐसी स्क्रीन पर जो इतनी बड़ी हो कि दिखा सके आप क्या करने वाले हैं।</li>
+      <li><b>यह degraded ऐरे की मरम्मत नहीं करेगा।</b> यह आपको साफ़ और होम स्क्रीन पर बताएगा कि कोई degraded है।</li>
+      <li><b>यह कुछ भी फ़ॉर्मैट नहीं करेगा।</b></li>
+      <li><b>यह पूरा SMART टेस्ट नहीं चलाएगा</b> - केवल क्विक वाला। पूरा सरफ़ेस स्कैन घंटों लेता है और ऐसी जगह का है जहाँ से आप उठकर नहीं जाएँगे।</li>
+    </ul>
+    <div class="note"><b>स्क्रबिंग, रीबिल्ड और पैरिटी जाँच</b> चलते समय चालू ऑपरेशन के रूप में दिखते हैं, इसलिए आप ऐप से किसी को पूरा होते देख सकते हैं भले ही आपने उसे DSM में शुरू किया हो।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">आम सवाल</div>
+      <h2>स्टोरेज FAQ</h2>
+    </div>
+    <details open><summary>क्या मैं हर ड्राइव की SMART स्थिति देख सकता हूँ?</summary><div class="body">हाँ। Disk Health सब-व्यू हर ड्राइव को उसके मॉडल, HDD या SSD होने, क्षमता, तापमान और SMART फ़ैसले के साथ सूचीबद्ध करता है। आप फ़ोन से किसी भी ड्राइव पर Quick SMART Test भी शुरू कर सकते हैं।</div></details>
+    <details><summary>NAS ड्राइव के लिए कितना तापमान ज़्यादा गर्म है?</summary><div class="body">ऐप ड्राइव को 45&deg;C के बाद एम्बर और 55&deg;C के बाद लाल रंग देता है, और सिस्टम तापमान को 50&deg;C के बाद एम्बर और 60&deg;C के बाद लाल। ये सीमाएँ होम स्क्रीन के हेल्थ बैज को भी चलाती हैं।</div></details>
+    <details><summary>क्या मैं ऐप से USB ड्राइव सुरक्षित रूप से eject कर सकता हूँ?</summary><div class="body">हाँ, External सब-व्यू से। eject की पुष्टि इस बात से होती है कि ड्राइव असल में डिवाइस सूची से गायब हुई, इस बात से नहीं कि अनुरोध स्वीकार हुआ। फ़ॉर्मैट या इनिशियलाइज़ हो रही ड्राइव eject नहीं की जा सकती।</div></details>
+    <details><summary>क्या मैं ऐप से वॉल्यूम बना या बढ़ा सकता हूँ?</summary><div class="body">नहीं। वॉल्यूम और पूल बनाना, बढ़ाना और मरम्मत करना DSM के Storage Manager में होता है। ऐप बताता है कि आपका स्टोरेज क्या कर रहा है और आपको ड्राइव पर कार्रवाई करने देता है; यह फ़ोन से आपके ऐरे का ढाँचा नहीं बदलता।</div></details>
+    <details><summary>ड्राइव के वेंडर की जगह Unknown क्यों लिखा है?</summary><div class="body">क्योंकि NAS ने कोई वेंडर नहीं बताया। ऐप वही दिखाता है जो उसे बताया गया, मॉडल स्ट्रिंग से निर्माता का अनुमान नहीं लगाता, जो अंदाज़े को तथ्य बनाकर पेश करना होगा।</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>आगे: Network</h2>
+    <p class="lead" style="margin:0 auto 24px">थ्रूपुट, कनेक्शन, सर्विस, VPN और DDNS।</p>
+    <p><a class="btn" href="/hi/guide/network/">Network &rarr;</a> &nbsp; <a class="btn ghost" href="/hi/guide/">गाइड पर वापस जाएँ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hi/">होम</a><a href="/hi/guide/">यूज़र गाइड</a><a href="/hi/guide/getting-started/">शुरू करें</a><a href="/hi/compatible-nas/">संगतता</a><a href="/hi/best-synology-nas-app/">क्यों बदलें</a><a href="/hi/synology-app-for-iphone/">iPhone और iPad</a><a href="/hi/synology-app-for-android/">Android</a><a href="/hi/synology-app-for-mac-windows/">Mac और Windows</a><a href="/hi/ds-finder-alternative/">बनाम DS finder</a><a href="/hi/help/">सहायता</a><a href="/hi/privacy/">गोपनीयता</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">बग रिपोर्ट करें</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager एक स्वतंत्र ऐप है और Synology Inc. से संबद्ध नहीं है, न ही उसके द्वारा समर्थित या प्रायोजित है। Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station और QuickConnect, Synology Inc. के ट्रेडमार्क हैं।</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

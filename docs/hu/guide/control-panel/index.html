@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology-felhasználók, feladatok és UPS kezelése - Syno Manager</title>
+<meta name="description" content="Kezelje a Synology felhasználói fiókokat védett rendszerfiókokkal, futtassa és kapcsolja az ütemezett feladatokat, és olvassa le az UPS töltöttségét és a becsült üzemidőt a telefonjáról." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology-felhasználók, feladatok és UPS kezelése - Syno Manager" />
+<meta property="og:description" content="Kezelje a Synology felhasználói fiókokat védett rendszerfiókokkal, futtassa és kapcsolja az ütemezett feladatokat, és olvassa le az UPS töltöttségét és a becsült üzemidőt a telefonjáról." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology-felhasználók, feladatok és UPS kezelése - Syno Manager" />
+<meta name="twitter:description" content="Kezelje a Synology felhasználói fiókokat védett rendszerfiókokkal, futtassa és kapcsolja az ütemezett feladatokat, és olvassa le az UPS töltöttségét és a becsült üzemidőt a telefonjáról." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Vezérlőpult"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology-felhasználók, feladatok és UPS kezelése - Syno Manager",
+  "description": "Kezelje a Synology felhasználói fiókokat védett rendszerfiókokkal, futtassa és kapcsolja az ütemezett feladatokat, és olvassa le az UPS töltöttségét és a becsült üzemidőt a telefonjáról.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hozzáadhatok vagy szerkeszthetek DSM-felhasználókat az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Hozzáadhat felhasználót, szerkesztheti az adatait, módosíthat jelszót vagy törölhet fiókot. A rendszerfiókok - az admin, a guest és a DSM által létrehozott szolgáltatásfiókok - felismerésre és törlés elleni védelemre kerülnek, mert egy eltávolításuk olyan módon töri meg a NAS-t, amelyet fárasztó visszacsinálni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Futtathatok ütemezett feladatot kézzel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, azoknál a feladatoknál, amelyeket a DSM engedélyez kézi indításra - mindegyiknél van Futtatás most. Bármely feladatot engedélyezhet vagy letilthat a DSM megnyitása nélkül is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit mutat az UPS képernyő?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az UPS modelljét, hogy hálózati árammal vagy akkumulátorról működik-e, a töltöttségét százalékban és sávval, a csatlakozás módját, a hátralévő becsült üzemidőt, és azt, hogy engedélyezve van-e az UPS-támogatás a NAS-on."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Módosíthatom, mennyit vár a NAS a leállással akkumulátoros működéskor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Az alkalmazás az UPS állapotát jelenti; a leállítási szabályt a DSM-ben, a Hardver és áramellátás alatt kell beállítani, ahol a beállítás következményei ki vannak fejtve."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Kezdőlap</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Vezérlőpult</div>
+      <div class="eyebrow">Vezérlőpult</div>
+      <h1>Fiókok, ütemezések <span class="g">és áramellátás</span></h1>
+      <p>Négy részlap: <b>Felhasználók</b>, <b>Feladatok</b>, <b>Áramellátás</b> az UPS-hez, és <b>Beállítások</b> - az alkalmazás saját beállításai, amelyek anélkül érhetők el, hogy elhagyná a fület.</p>
+    </div>
+    <div class="hero-shot"><img alt="A Feladatütemező ütemezett feladatokkal, kapcsolókkal és Futtatás most gombbal" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#users">Felhasználók</a></li>
+      <li><a href="#tasks">Feladatütemező</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Beállítások</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Felhasználók</div>
+      <h2>DSM-fiókok</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">A NAS minden fiókja a megjelenített nevével, leírásával és az e-mail-címével, ahol van megadva. A <b>Lejárt</b> címke a DSM által letiltott fiókokat jelöli.</p>
+        <h3 style="margin-top:20px">Mit tehet</h3>
+        <ul class="plain">
+          <li><b>Felhasználó hozzáadása</b> a DSM által kért adatokkal.</li>
+          <li><b>Meglévő fiók</b> szerkesztése.</li>
+          <li><b>Jelszó módosítása.</b></li>
+          <li><b>Az Ön által létrehozott fiók</b> törlése.</li>
+        </ul>
+        <div class="note"><b>A rendszerfiókok nem törölhetők.</b> Az <code>admin</code>, a <code>guest</code> és a DSM által saját csomagjaihoz létrehozott szolgáltatásfiókok felismerésre és védelemre kerülnek. Ezek eltávolítása olyan módon töri meg a NAS-t, amelyet fárasztó visszacsinálni, és ezt nem telefonon kell kideríteni.</div>
+      </div>
+      <img alt="DSM-felhasználói fiókok, két név és cím elmosva" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Ezen a képernyőképen két fiók el van mosva - valódi emberek nevei és címei.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Feladatütemező</div>
+      <h2>Mi van ütemezve, és mi fut legközelebb</h2>
+      <p class="lead">A DSM minden feladata, hogy engedélyezve van-e, mit csinál, és mikor indul legközelebb.</p>
+    </div>
+    <ul class="plain">
+      <li><b>A feladat neve és típusa</b> - Hyper Backup feladat, felhasználó által definiált szkript, lomtár-takarítás - mindegyik megjelölve, hogy milyen jellegű.</li>
+      <li><b>Mit csinál valójában.</b> A szkriptfeladat megmutatja a futtatott parancsot; a mentési feladat a leírását.</li>
+      <li><b>Következő futás</b> dátummal és időponttal.</li>
+      <li><b>Feladatonként egy kapcsoló</b> az engedélyezéséhez vagy letiltásához a DSM megnyitása nélkül.</li>
+      <li><b>Futtatás most</b> azoknál a feladatoknál, amelyeket a DSM engedélyez igény szerinti indításra.</li>
+    </ul>
+    <div class="note warn"><b>A Futtatás most most futtatja.</b> Az a szkript, amely hajnali 3-kor, tétlen NAS-on futna, délután 6-kor, fájlmásolás közben másképp viselkedik. A gomb azt teszi, amit mond.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Tápellátás</div>
+      <h2>Az UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="UPS-állapot modellel, töltöttséggel, csatlakozási móddal és becsült üzemidővel" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Akkor érhető el, ha UPS csatlakozik. Egyetlen kártya, rajta minden.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Megjelenik</th><th>Jelentés</th></tr></thead>
+          <tbody>
+            <tr><td>Gyártó és modell</td><td>Ahogy az UPS bemutatkozik.</td></tr>
+            <tr><td>Állapot</td><td><b>Online</b> hálózati áramon, vagy akkumulátoron.</td></tr>
+            <tr><td>Töltöttség</td><td>Százalék és sáv. Borostyánsárga 50% alatt, piros 20% alatt.</td></tr>
+            <tr><td>Mód</td><td>Hogyan kommunikál vele a NAS - USB-n vagy hálózaton keresztül.</td></tr>
+            <tr><td>Üzemidő</td><td>Mennyi ideig tudja az UPS becslése szerint tartani a terhelést.</td></tr>
+            <tr><td>Engedélyezve</td><td>Be van-e egyáltalán kapcsolva az UPS-támogatás a DSM-ben.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>A töltöttség beleszámít az állapotjelzőbe.</b> A kisülő UPS megjelenik a <a href="/hu/guide/home/#header">kezdőképernyőn</a> anélkül, hogy megnyitná ezt a fület - és ez a lényeg, mert mire eszébe jut ellenőrizni, lehet, hogy már nincs sok ideje.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Beállítások</div>
+      <h2>Az alkalmazás saját beállításai</h2>
+      <p class="lead">A negyedik részlap a Beállítások, ide beágyazva, így a lekérdezési időközt vagy a kiemelőszínt a fül elhagyása nélkül módosíthatja. Ugyanaz a képernyő, amelyet a fogaskerék ikon nyit meg.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/hu/guide/settings/">Minden beállítás, elmagyarázva</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Vezérlőpult GYIK</h2>
+    </div>
+    <details open><summary>Hozzáadhatok vagy szerkeszthetek DSM-felhasználókat az alkalmazásból?</summary><div class="body">Igen. Hozzáadhat felhasználót, szerkesztheti az adatait, módosíthat jelszót vagy törölhet fiókot. A rendszerfiókok - az admin, a guest és a DSM által létrehozott szolgáltatásfiókok - felismerésre és törlés elleni védelemre kerülnek.</div></details>
+    <details><summary>Futtathatok ütemezett feladatot kézzel?</summary><div class="body">Igen, azoknál a feladatoknál, amelyeket a DSM engedélyez kézi indításra. Bármely feladatot engedélyezhet vagy letilthat a DSM megnyitása nélkül is.</div></details>
+    <details><summary>Mit mutat az UPS képernyő?</summary><div class="body">Az UPS modelljét, hogy hálózati árammal vagy akkumulátorról működik-e, a töltöttségét százalékban és sávval, a csatlakozás módját, a hátralévő becsült üzemidőt, és azt, hogy engedélyezve van-e az UPS-támogatás a NAS-on.</div></details>
+    <details><summary>Módosíthatom az akkumulátoros leállítási szabályt?</summary><div class="body">Nem. Az alkalmazás az UPS állapotát jelenti; a szabályt a DSM-ben, a Hardver és áramellátás alatt kell beállítani, ahol a következmények ki vannak fejtve.</div></details>
+    <details><summary>Miért hiányzik az Áramellátás részlap?</summary><div class="body">Mert nincs UPS csatlakoztatva, vagy az UPS-támogatás ki van kapcsolva a DSM-ben. Az alkalmazás elrejti a nem létező hardverhez tartozó képernyőket.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: az Asszisztens</h2>
+    <p class="lead" style="margin:0 auto 24px">Tegyen fel kérdést a NAS-ának, a választ a telefonján futó modell adja.</p>
+    <p><a class="btn" href="/hu/guide/assistant/">Az Asszisztens &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

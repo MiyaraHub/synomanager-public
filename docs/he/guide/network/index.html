@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ניטור רשת, VPN ו-DDNS של Synology - Syno Manager</title>
+<meta name="description" content="תפוקה חיה לכל ממשק, חיבורים פעילים וIPs חסומות, שירותי DSM שאפשר להפעיל ולכבות, פרופילי לקוח VPN, ו-DDNS עם הכתובת הציבורית שלך." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="ניטור רשת, VPN ו-DDNS של Synology - Syno Manager" />
+<meta property="og:description" content="תפוקה חיה לכל ממשק, חיבורים פעילים וIPs חסומות, שירותי DSM שאפשר להפעיל ולכבות, פרופילי לקוח VPN, ו-DDNS עם הכתובת הציבורית שלך." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ניטור רשת, VPN ו-DDNS של Synology - Syno Manager" />
+<meta name="twitter:description" content="תפוקה חיה לכל ממשק, חיבורים פעילים וIPs חסומות, שירותי DSM שאפשר להפעיל ולכבות, פרופילי לקוח VPN, ו-DDNS עם הכתובת הציבורית שלך." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Network"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ניטור רשת, VPN ו-DDNS של Synology - Syno Manager",
+  "description": "תפוקה חיה לכל ממשק, חיבורים פעילים וIPs חסומות, שירותי DSM שאפשר להפעיל ולכבות, פרופילי לקוח VPN, ו-DDNS עם הכתובת הציבורית שלך.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם אפשר לראות באיזו מהירות ה-NAS מעביר נתונים כרגע?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. תצוגת המשנה רשת מציגה הורדה והעלאה חיות לכל ממשק שיש ל-NAS, כל אחד עם תרשים משלו, מהירות הקישור והכתובת שלו. ממשקים מאוגדים מופיעים כאגד, עם המהירות המצטברת."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר להפעיל ולעצור שירותי DSM מהאפליקציה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן, עבור שירותים ש-DSM מאפשר ללקוח לשלוט בהם - ל-SMB, NFS, FTP, rsync ושאר השירותים יש מתג לכל אחד. חלקם מסומנים כמנוהלי מערכת, כלומר DSM מפעיל אותם בתנאים שלו והאפליקציה מציגה את מצבם בלי להציע לשנות אותו."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם האפליקציה מציגה אילו כתובות IP חסומות?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. תצוגת המשנה חיבורים מציגה את מדיניות החסימה האוטומטית - כמה ניסיונות כושלים בתוך כמה זמן - ואת רשימת הכתובות החסומות כעת, מכווצת מאחורי מונה כדי שמאה רשומות לא יקברו את שאר המסך."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר לדעת אם ה-VPN שלי מחובר?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "האפליקציה מציגה את פרופילי לקוח ה-VPN שיש ב-NAS ומאפשרת לבקש ממנו להתחבר או להתנתק מאחד מהם. היא לא טוענת איזה מהם פעיל, כי רשומת DSM שהיא קוראת אינה כוללת שדה מצב. לומר אחרת היה בגדר המצאת קריאה."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; רשת</div>
+      <div class="eyebrow">Network</div>
+      <h1>מה <span class="g">נכנס ויוצא</span></h1>
+      <p>חמש תצוגות משנה: תפוקת <b>רשת</b> חיה, <b>חיבורים</b> עם חסימה אוטומטית, <b>שירותים</b> שאפשר להפעיל ולכבות, פרופילי <b>VPN</b>, ו-<b>DDNS</b> עם הכתובת הציבורית שלך.</p>
+    </div>
+    <div class="hero-shot"><img alt="תפוקת רשת חיה לכל ממשק" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>בדף הזה</b><ul>
+      <li><a href="#throughput">תפוקה</a></li>
+      <li><a href="#connections">חיבורים &amp; חסימה אוטומטית</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; כתובת IP חיצונית</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Network</div>
+      <h2>חי, לכל ממשק</h2>
+      <p class="lead">כל ממשק ב-NAS מקבל כרטיס משלו - כולל אגדים וממשקי Open vSwitch, שכלים רבים מדלגים עליהם.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>מוצג</th><th>משמעות</th></tr></thead>
+      <tbody>
+        <tr><td>שם הממשק ומהירותו</td><td>השם ש-DSM משתמש בו והמהירות שנסחרה - <code>bond0 (20 Gbps)</code> עבור אגד של שתי יציאות, לדוגמה.</td></tr>
+        <tr><td>כתובת</td><td>כתובת ה-IP שהממשק מחזיק כעת.</td></tr>
+        <tr><td>חיווי LIVE</td><td>ירוק כל עוד הנתונים מתעדכנים.</td></tr>
+        <tr><td>הורדה / העלאה</td><td>התפוקה הנוכחית, ומתחתיה תרשים נע לכל אחת, כדי להבחין בין פרץ קצר לתעבורה מתמשכת.</td></tr>
+        <tr><td>פרטי רשת</td><td>שם השרת, שער ו-DNS ראשי - שלושת הערכים שאתה צריך כשמשהו ברשת לא מצליח להתפענח.</td></tr>
+        <tr><td>Active Connections</td><td>מונה, עם דרך להיכנס לפרטים.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>הכיוון הוא מנקודת המבט של ה-NAS.</b> ״הורדה״ היא תעבורה שמגיעה ל-NAS; כשאתה מעתיק קובץ <em>אל</em> ה-NAS, זו ההורדה שלו.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Connections</div>
+      <h2>מי מחובר, ומי חסום</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">שלושה דברים, בסדר שבו בדרך כלל תרצה אותם:</p>
+        <ul class="plain">
+          <li><b>חסימה אוטומטית</b> - האם ההגנה של DSM מפני ניחוש סיסמאות פעילה, כמה ניסיונות כושלים מפעילים אותה ובאיזה פרק זמן. זו ההגדרה שננעלת בה טלפון אחרי כמה סיסמאות שגויות.</li>
+          <li><b>IPs חסומות</b> - כל כתובת שחסומה כעת, מאחורי מונה. מאה כתובות חסומות זה דבר רגיל ב-NAS שחשוף לאינטרנט, והן היו קוברות את המסך, ולכן הרשימה נשארת מכווצת עד שתפתח אותה.</li>
+          <li><b>חיבורים פעילים</b> - מי מחובר, מאיזו כתובת, באיזה פרוטוקול, ומתי התחיל הסשן. HTTP/HTTPS, SMB, NFS, FTP - כל סשן מופיע בשמו.</li>
+        </ul>
+        <div class="note"><b>אפשר לסיים סשן.</b> אפשר לנתק חיבור פעיל מכאן, וזו התשובה המהירה ל״משהו מחזיק קובץ פתוח״ או ל״למה הכתובת הזאת עדיין מחוברת״.</div>
+      </div>
+      <img alt="חיבורים עם מדיניות החסימה האוטומטית, IPs חסומות וחיבורים פעילים" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Services</div>
+      <h2>מה DSM מריץ</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="שירותי DSM עם מצב הפעלה ומתגים" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">מונה בראש המסך - <b>פועלים מתוך סך הכל</b> - ואחריו כל שירות ש-DSM חושף, כל אחד עם נקודת מצב ומתג.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>שירותי קבצים וחיבור</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. הפעל או כבה כל אחד מהטלפון.</li>
+          <li><b>גילוי והדפסה</b> - Bonjour Printer Broadcast, WS-Discovery, דימון ההדפסה CUPS.</li>
+          <li><b>תשתית</b> - NTP, KMIP ועוד.</li>
+          <li><b>שירותים בניהול המערכת מסומנים בנעילה.</b> DSM מפעיל אותם בתנאים שלו, ולכן האפליקציה מציגה את מצבם ולא מציעה מתג שיידחה. פקד שאינו יכול לעבוד גרוע מהיעדר פקד.</li>
+        </ul>
+        <div class="note warn"><b>כיבוי SMB ינתק את כל מי שמשתמש בו.</b> אלה מתגים חיים על שרת פעיל, לא מסך העדפות.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>פרופילי לקוח</h2>
+      <p class="lead">תצוגת המשנה VPN מציגה את פרופילי <b>לקוח</b> ה-VPN שהוגדרו ב-NAS - החיבורים שהוא יוצר החוצה, למקום אחר - ומאפשרת לבקש ממנו להתחבר או להתנתק מאחד מהם.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>היא לא טוענת איזה פרופיל מחובר, וזה בכוונה.</b> ה-NAS מאשר בקשת התחברות או ניתוק, אבל רשומת DSM שהאפליקציה קוראת אינה כוללת שדה מצב, ולכן אין ממה להסיק פסק דין. במקום להסיק ולטעות בביטחון, האפליקציה אומרת זאת ומפנה אותך לדף הרשת של DSM, שהוא המקום שיודע.</div>
+    <p style="color:var(--steel);margin-top:18px">כשלא הוגדרו פרופילים, המסך אומר זאת ומסביר איפה להוסיף אחד: ב-DSM, תחת <b>רשת &rsaquo; ממשק רשת</b>.</p>
+      </div>
+      <img alt="תצוגת המשנה VPN עם רשימת פרופילי לקוח" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>הכתובת הציבורית שלך, והשם שמצביע עליה</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">כרטיס אחד, שני חצאים עצמאיים:</p>
+        <ul class="plain">
+          <li><b>כתובת IP חיצונית</b> - הכתובת הציבורית שיש כעת לחיבור שלך.</li>
+          <li><b>כל שם מארח DDNS</b> שה-NAS מפרסם, המצב ש-DSM מחזיק עבורו, מתי עודכן לאחרונה ומתי יתעדכן שוב.</li>
+        </ul>
+        <h3 style="margin-top:22px">רענון ועדכון</h3>
+        <ul class="plain">
+          <li><b>רענון</b> קורא מחדש את מה ש-DSM מחזיק כעת.</li>
+          <li><b>עדכן עכשיו</b> מבקש מה-NAS לפרסם שוב את הכתובת שלו - בדיוק מה שהכפתור של DSM עצמו עושה.</li>
+        </ul>
+        <div class="note"><b>כל חצי נכשל בנפרד.</b> ספק DDNS שאינו זמין לא מפיל איתו את קריאת ה-IP הציבורי, וכתובת IP שלא ניתן לקרוא לא מרוקנת את מצב שם המארח. שתי קריאות, שני פסקי דין.</div>
+        <div class="note" style="margin-top:14px"><b>היא מדווחת מה ש-DSM שומר, לא בדיקה חיה.</b> האפליקציה לא מפענחת בעצמה את שם המארח כדי לבדוק שהוא מצביע אליך. ספק שעונה לבקשה לא אומר דבר על נכונות הרשומה שלך, ולכן האפליקציה מעבירה את פסק הדין של DSM ולא ממציאה פסק דין שני.</div>
+      </div>
+      <img alt="DDNS וכתובת IP חיצונית, כשהכתובת הציבורית ושם המארח מוסתרים" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">הכתובת ושם המארח בצילום המסך הזה מטושטשים - הם של NAS אמיתי.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על רשת (FAQ)</h2>
+    </div>
+    <details open><summary>האם אפשר לראות באיזו מהירות ה-NAS מעביר נתונים כרגע?</summary><div class="body">כן. תצוגת המשנה רשת מציגה הורדה והעלאה חיות לכל ממשק שיש ל-NAS, כל אחד עם תרשים משלו, מהירות הקישור והכתובת שלו. ממשקים מאוגדים מופיעים כאגד, עם המהירות המצטברת.</div></details>
+    <details><summary>האם אפשר להפעיל ולעצור שירותי DSM מהאפליקציה?</summary><div class="body">כן, עבור שירותים ש-DSM מאפשר ללקוח לשלוט בהם - ל-SMB, NFS, FTP, rsync ושאר השירותים יש מתג לכל אחד. חלקם מסומנים כמנוהלי מערכת, כלומר DSM מפעיל אותם בתנאים שלו והאפליקציה מציגה את מצבם בלי להציע לשנות אותו.</div></details>
+    <details><summary>האם האפליקציה מציגה אילו כתובות IP חסומות?</summary><div class="body">כן. תצוגת המשנה חיבורים מציגה את מדיניות החסימה האוטומטית ואת רשימת הכתובות החסומות כעת, מכווצת מאחורי מונה כדי שמאה רשומות לא יקברו את שאר המסך.</div></details>
+    <details><summary>האם אפשר לדעת אם ה-VPN שלי מחובר?</summary><div class="body">האפליקציה מציגה את פרופילי לקוח ה-VPN שיש ב-NAS ומאפשרת לבקש ממנו להתחבר או להתנתק מאחד מהם. היא לא טוענת איזה מהם פעיל, כי רשומת DSM שהיא קוראת אינה כוללת שדה מצב. דף הרשת של DSM הוא המקום שיודע.</div></details>
+    <details><summary>למה כתובת ה-IP הציבורית שלי שונה ממה שאתר אינטרנט אומר לי?</summary><div class="body">כי זו הכתובת שיש לחיבור של ה-NAS שלך, כפי שהיא נקראת דרך DSM. אם הטלפון שלך בנתוני סלולר, יש לו כתובת אחרת. אלה שתי רשתות שונות ושתי הקריאות נכונות.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: קבצים</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, תיקיות משותפות, הערות, מסמכים ואנשי קשר.</p>
+    <p><a class="btn" href="/he/guide/files/">קבצים &amp; שיתופים &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

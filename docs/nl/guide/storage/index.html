@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology-opslag, RAID en SMART-gezondheid - Syno Manager</title>
+<meta name="description" content="Synology-volumes en -pools met RAID-type en vrije ruimte, SMART-status en temperatuur per schijf, een snelle SMART-test en veilig uitwerpen voor USB en eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology-opslag, RAID en SMART-gezondheid - Syno Manager" />
+<meta property="og:description" content="Synology-volumes en -pools met RAID-type en vrije ruimte, SMART-status en temperatuur per schijf, een snelle SMART-test en veilig uitwerpen voor USB en eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology-opslag, RAID en SMART-gezondheid - Syno Manager" />
+<meta name="twitter:description" content="Synology-volumes en -pools met RAID-type en vrije ruimte, SMART-status en temperatuur per schijf, een snelle SMART-test en veilig uitwerpen voor USB en eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Opslag"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology-opslag, RAID en SMART-gezondheid - Syno Manager",
+  "description": "Synology-volumes en -pools met RAID-type en vrije ruimte, SMART-status en temperatuur per schijf, een snelle SMART-test en veilig uitwerpen voor USB en eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik de SMART-status van elke schijf zien?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. De subweergave Schijfgezondheid toont elke schijf met model, of het een HDD of SSD is, capaciteit, temperatuur en SMART-oordeel. Je kunt ook vanaf je telefoon een snelle SMART-test starten op elke schijf."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welke temperatuur is te heet voor een NAS-schijf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "De app kleurt een schijf amber boven 45 graden C en rood boven 55 graden C, en de systeemtemperatuur amber boven 50 en rood boven 60. Die drempels voeden ook de gezondheidsbadge op het startscherm, dus een hete schijf valt daar op zonder dat je ernaar hoeft te zoeken."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik een USB-schijf veilig uitwerpen vanuit de app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, vanuit de subweergave Extern. Het uitwerpen wordt bevestigd doordat de schijf echt uit de apparatenlijst verdwijnt, niet doordat het verzoek is geaccepteerd - dus een schijf die zegt uitgeworpen te zijn, is dat ook echt. Een schijf die wordt geformatteerd of geïnitialiseerd kan niet worden uitgeworpen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik vanuit de app een volume maken of uitbreiden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Volumes en pools maken, uitbreiden en repareren doe je in Opslagbeheer van DSM. De app meldt wat je opslag doet en laat je op schijven ingrijpen; hij herstructureert je array niet vanaf een telefoon."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Handleiding</a> &rsaquo; Opslag</div>
+      <div class="eyebrow">Opslag</div>
+      <h1>Elk volume, <span class="g">elke schijf</span></h1>
+      <p>Drie subweergaven: <b>Volumes &amp; pools</b> voor capaciteit en RAID, <b>Schijfgezondheid</b> voor SMART en temperatuur per schijf en <b>Extern</b> voor alles wat achterop is aangesloten.</p>
+    </div>
+    <div class="hero-shot"><img alt="Opslagvolumes en -schijven in Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Op deze pagina</b><ul>
+      <li><a href="#volumes">Volumes &amp; pools</a></li>
+      <li><a href="#drives">De schijvenlijst</a></li>
+      <li><a href="#disk-health">Schijfgezondheid &amp; SMART</a></li>
+      <li><a href="#thresholds">Temperatuurdrempels</a></li>
+      <li><a href="#external">Extern &amp; veilig uitwerpen</a></li>
+      <li><a href="#limits">Wat hij niet doet</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; pools</div>
+      <h2>Capaciteit in één oogopslag</h2>
+      <p class="lead">Elk volume krijgt een kaart met zijn naam, RAID-type, status en het aantal schijven erachter, boven een gebruiksbalk met gebruikt, percentage, totaal en vrij.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Getoond</th><th>Betekenis</th></tr></thead>
+      <tbody>
+        <tr><td>Volumenaam</td><td>Zoals DSM het noemt - <code>VOLUME_1</code>, enzovoort.</td></tr>
+        <tr><td>RAID-type</td><td>RAID 5, SHR, RAID 1, Basic - wat de onderliggende pool ook werkelijk is.</td></tr>
+        <tr><td>Status</td><td>De eigen status van het volume: <b>normaal</b>, gedegradeerd, gecrasht. Een gedegradeerde array is het enige op dit scherm waar je vandaag nog op moet handelen.</td></tr>
+        <tr><td>Aantal schijven</td><td>Over hoeveel fysieke schijven het volume loopt.</td></tr>
+        <tr><td>Gebruiksbalk</td><td>Normaal groen, amber boven 80% en rood boven 90%. Dat zijn dezelfde drempels die de <a href="/nl/guide/home/#header">gezondheidsbadge</a> gebruikt.</td></tr>
+        <tr><td>Gebruikt / Totaal / Vrij</td><td>Alle drie, want "70% vol" en "13 TB vrij" beantwoorden verschillende vragen.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Wat er in elke bay zit</h2>
+      <p class="lead">Onder de volumes staat elke fysieke schijf op baynummer.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bay</b> - Schijf 1, Schijf 2, enzovoort, overeenkomend met de labels op de behuizing.</li>
+      <li><b>Model</b> - de modelaanduiding van de schijf zelf.</li>
+      <li><b>Fabrikant en type</b> - de fabrikant en of het een HDD of een SSD is. Een schijf waarvan de NAS de fabrikant niet kon bepalen, wordt als <b>Onbekend</b> getoond in plaats van te worden geraden.</li>
+      <li><b>Temperatuur</b>, gekleurd volgens de drempels hieronder.</li>
+      <li><b>SMART-oordeel</b> - <b>SMART OK</b> wanneer de eigen zelfbeoordeling van de schijf gezond is.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Schijfgezondheid</div>
+      <h2>SMART, en een test die je kunt starten</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">De subweergave Schijfgezondheid toont dezelfde schijven met meer ruimte: capaciteit, type, temperatuur en SMART-status krijgen elk een eigen chip en elke schijf heeft een knop <b>Snelle SMART-test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Snelle SMART-test</b> vraagt de schijf zijn eigen korte zelfbeoordeling uit te voeren. Dat duurt een paar minuten en onderbreekt niets wat het volume gebruikt.</li>
+          <li><b>Het oordeel is van de schijf, niet van ons.</b> SMART is de schijf die over zichzelf rapporteert; de app geeft het door. Een schijf die zegt dat hij in orde is en daarna uitvalt, is een beperking van SMART, niet van de uitlezing.</li>
+          <li><b>Een onleesbare SMART-status wordt als onbekend getoond</b>, nooit als gezond. Een ontbrekende meting en een goede meting zijn verschillende dingen en worden nooit samengevoegd.</li>
+        </ul>
+      </div>
+      <img alt="Schijfgezondheid met elke schijf, SMART-status, temperatuur en een knop Snelle SMART-test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">De getallen achter de kleuren</div>
+      <h2>Drempels</h2>
+      <p class="lead">Niets hier is een gok over jouw hardware - dit zijn de punten waarop de app van kleur verandert en, waar relevant, de gezondheidsbadge op het startscherm.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Waarde</th><th>Amber bij</th><th>Rood bij</th></tr></thead>
+      <tbody>
+        <tr><td>Schijftemperatuur</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Systeemtemperatuur</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Volumegebruik</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS-lading</td><td>onder 50%</td><td>onder 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Wissel tussen &deg;C en &deg;F in <a href="/nl/guide/settings/#preferences">Instellingen &rsaquo; Temperatuureenheid</a>. Elke temperatuur in de app volgt direct, ook die op het startscherm en in de widgets.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Extern</div>
+      <h2>USB, eSATA en veilig uitwerpen</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Externe opslag en USB-apparaten, met niets aangesloten en een UPS in de lijst" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Twee secties: <b>Externe opslag</b> voor schijven die je kunt koppelen en uitwerpen en <b>USB-apparaten</b> voor al het andere dat is aangesloten - een UPS, een printer, een dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Uitwerpen wordt bevestigd doordat de schijf verdwijnt.</b> De app meldt geen succes omdat het verzoek OK terugkwam; hij leest de apparatenlijst opnieuw uit en zegt pas dat de schijf is uitgeworpen als hij echt weg is. Dat is het verschil tussen "veilig om los te koppelen" en "waarschijnlijk veilig om los te koppelen".</li>
+          <li><b>Een bezige schijf kan niet worden uitgeworpen.</b> Eén die wordt geformatteerd of geïnitialiseerd wordt geweigerd, met de reden, in plaats van midden in een schrijfactie eruit getrokken te worden.</li>
+          <li><b>Niets aangesloten zegt dat duidelijk.</b> Een lege lijst meldt "Geen externe schijven aangesloten" - geen leeg vak dat je moet interpreteren.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Grenzen</div>
+      <h2>Wat dit scherm niet doet</h2>
+      <p class="lead">Opslag is de enige plek waar een verkeerde tik niet te herstellen is, dus de app leest veel meer dan hij schrijft.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hij maakt, vergroot of verwijdert geen volume of pool.</b> Dat doe je in Opslagbeheer van DSM, op een scherm dat groot genoeg is om te tonen wat je gaat doen.</li>
+      <li><b>Hij repareert geen gedegradeerde array.</b> Hij vertelt je wel duidelijk en op het startscherm dat er een gedegradeerd is.</li>
+      <li><b>Hij formatteert niets.</b></li>
+      <li><b>Hij voert geen volledige SMART-test uit</b> - alleen de snelle. Een volledige oppervlaktescan duurt uren en hoort thuis op een plek waar je niet wegloopt.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, herbouwen en pariteitscontroles</b> verschijnen als lopende bewerkingen zolang ze bezig zijn, zodat je er een kunt zien eindigen vanuit de app, ook al heb je hem in DSM gestart.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Opslag-FAQ</h2>
+    </div>
+    <details open><summary>Kan ik de SMART-status van elke schijf zien?</summary><div class="body">Ja. De subweergave Schijfgezondheid toont elke schijf met model, of het een HDD of SSD is, capaciteit, temperatuur en SMART-oordeel. Je kunt ook vanaf je telefoon een snelle SMART-test starten op elke schijf.</div></details>
+    <details><summary>Welke temperatuur is te heet voor een NAS-schijf?</summary><div class="body">De app kleurt een schijf amber boven 45&deg;C en rood boven 55&deg;C, en de systeemtemperatuur amber boven 50&deg;C en rood boven 60&deg;C. Die drempels voeden ook de gezondheidsbadge op het startscherm.</div></details>
+    <details><summary>Kan ik een USB-schijf veilig uitwerpen vanuit de app?</summary><div class="body">Ja, vanuit de subweergave Extern. Het uitwerpen wordt bevestigd doordat de schijf echt uit de apparatenlijst verdwijnt, niet doordat het verzoek is geaccepteerd. Een schijf die wordt geformatteerd of geïnitialiseerd kan niet worden uitgeworpen.</div></details>
+    <details><summary>Kan ik vanuit de app een volume maken of uitbreiden?</summary><div class="body">Nee. Volumes en pools maken, uitbreiden en repareren doe je in Opslagbeheer van DSM. De app meldt wat je opslag doet en laat je op schijven ingrijpen; hij herstructureert je array niet vanaf een telefoon.</div></details>
+    <details><summary>Waarom staat bij een schijf Onbekend als fabrikant?</summary><div class="body">Omdat de NAS er geen heeft opgegeven. De app toont wat hem is verteld in plaats van een fabrikant af te leiden uit de modelaanduiding, wat een gok zou zijn die als feit wordt gepresenteerd.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: Netwerk</h2>
+    <p class="lead" style="margin:0 auto 24px">Doorvoer, verbindingen, services, VPN en DDNS.</p>
+    <p><a class="btn" href="/nl/guide/network/">Netwerk &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

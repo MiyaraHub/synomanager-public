@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mehrere Synology-NAS verwalten - Syno Manager</title>
+<meta name="description" content="Füge beliebig viele Synology-Geräte hinzu und wechsle mit einem Tipp. Jedes behält eigene Zugangsdaten, Dashboard-Layout, Kartenreihenfolge und Einklappstatus." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/de/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="Mehrere Synology-NAS verwalten - Syno Manager" />
+<meta property="og:description" content="Füge beliebig viele Synology-Geräte hinzu und wechsle mit einem Tipp. Jedes behält eigene Zugangsdaten, Dashboard-Layout, Kartenreihenfolge und Einklappstatus." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/de/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mehrere Synology-NAS verwalten - Syno Manager" />
+<meta name="twitter:description" content="Füge beliebig viele Synology-Geräte hinzu und wechsle mit einem Tipp. Jedes behält eigene Zugangsdaten, Dashboard-Layout, Kartenreihenfolge und Einklappstatus." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "de",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Benutzerhandbuch",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mehrere NAS-Geräte"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Mehrere Synology-NAS verwalten - Syno Manager",
+  "description": "Füge beliebig viele Synology-Geräte hinzu und wechsle mit einem Tipp. Jedes behält eigene Zugangsdaten, Dashboard-Layout, Kartenreihenfolge und Einklappstatus.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "de",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie viele NAS-Geräte kann ich hinzufügen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "So viele du willst. Jedes behält eigene Zugangsdaten, ein eigenes Dashboard-Layout, eine eigene Kartenreihenfolge und einen eigenen Einklappstatus, damit ein Medienserver und ein Backup-Ziel nicht gleich aussehen müssen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ändert das Umbenennen eines NAS etwas am NAS selbst?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Umbenennen ändert nur den Anzeigenamen in der App. Den Servernamen des NAS änderst du in der DSM-Systemsteuerung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen „IP ändern“ und „Konfiguration bearbeiten“?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "„IP ändern“ ist eine Abkürzung für das Feld, das sich am häufigsten ändert: Adresse und Port. „Konfiguration bearbeiten“ öffnet das gesamte Formular, einschließlich HTTPS, Zertifikatsprüfung, Zugangsdaten, 2FA und dem Kamera-Tunnel-Schalter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert, wenn ich ein NAS entferne?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Eintrag und die gespeicherten Zugangsdaten werden aus der App gelöscht. Auf dem NAS wird nichts angetastet - es wird nirgendwo sonst abgemeldet, und es sind keine Daten betroffen."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/de/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager Symbol" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Handbuch durchsuchen..." data-i18n-empty="Keine Treffer für" data-i18n-language="Sprache">
+      <a href="/de/">Start</a>
+      <a href="/de/guide/" class="active">Benutzerhandbuch</a>
+      <a href="/de/#screenshots">Screenshots</a>
+      <a href="/de/compatible-nas/">Kompatibilität</a>
+      <a href="/de/best-synology-nas-app/">Warum wechseln</a>
+      <a href="/de/help/">Hilfe</a>
+      <a href="/de/#top" class="cta">Herunterladen</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/de/">Start</a> &rsaquo; <a href="/de/guide/">Benutzerhandbuch</a> &rsaquo; Mehrere NAS-Geräte</div>
+      <div class="eyebrow">Mehrere NAS-Geräte</div>
+      <h1>Eine App, <span class="g">jede DiskStation</span></h1>
+      <p>Füge so viele hinzu, wie du willst. Jede behält eigene Zugangsdaten, ein eigenes Dashboard-Layout und eigene Einstellungen, damit das Backup-Ziel in der Garage nicht aussehen muss wie der Medienserver im Wohnzimmer.</p>
+    </div>
+    <div class="hero-shot"><img alt="Die NAS-Geräteliste mit Verbinden und Aufwecken" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Die Geräteliste</div>
+      <h2>Was jeder Eintrag zeigt</h2>
+      <p class="lead">Erreichbar über <b>Einstellungen &rsaquo; NAS-Geräte verwalten</b> oder als Startbildschirm der App, wenn du mehrere hast und eingestellt hast, dass sie nachfragt.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Spitzname und Adresse</b> - dein Name dafür sowie Host und Port, über die die Verbindung läuft.</li>
+      <li><b>Chips</b> für alles, was du sehen willst, ohne das Formular zu öffnen: ob <b>HTTPS</b> aktiv ist, welcher <b>Port</b> verwendet wird und mit welchem <b>Konto</b> die Anmeldung erfolgt.</li>
+      <li><b>Verbunden</b>, wenn es das aktive Gerät ist.</li>
+      <li><b>Verbinden</b>, um dorthin zu wechseln, und <b>Aufwecken</b>, um ein Magic Packet zu senden, falls es schläft.</li>
+      <li><b>Ein Ziehgriff</b> - sortiere die Liste um, damit das am häufigsten genutzte Gerät ganz oben steht.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Das Überlaufmenü</div>
+      <h2>Fünf Dinge, die du mit einem Eintrag tun kannst</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Aktion</th><th>Was es tut</th></tr></thead>
+          <tbody>
+            <tr><td>Umbenennen</td><td>Ändert <b>nur den Anzeigenamen</b> - die Bezeichnung in der App. Der Servername des NAS bleibt unberührt, er steckt in der DSM-Systemsteuerung.</td></tr>
+            <tr><td>IP ändern</td><td>Eine Abkürzung für das Feld, das sich am häufigsten ändert - Adresse und Port - ohne das ganze Formular durchzugehen.</td></tr>
+            <tr><td>Konfiguration bearbeiten</td><td>Das vollständige Formular: HTTPS, Zertifikatsprüfung, Zugangsdaten, Zwei-Faktor-Authentifizierung und der Tunnel für die Kamera-Live-Ansicht.</td></tr>
+            <tr><td>Verbindung testen</td><td>Prüft die Erreichbarkeit, ohne etwas zu ändern, und unterscheidet zwischen „nicht erreichbar“ und „erreicht, aber Zugangsdaten abgelehnt“.</td></tr>
+            <tr><td>NAS entfernen</td><td>Löscht den Eintrag und die gespeicherten Zugangsdaten <b>aus der App</b>. Auf dem NAS wird nichts angetastet.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Das Menü pro NAS mit Umbenennen, IP ändern, Konfiguration bearbeiten, Verbindung testen und Entfernen" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Was gilt pro NAS</div>
+      <h2>Was sich jedes Gerät selbst merkt</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Pro NAS</h3>
+        <ul class="plain">
+          <li>Zugangsdaten und das 2FA-Gerätetoken.</li>
+          <li>Welche Dashboard-Karten aktiv sind, und ihre Reihenfolge.</li>
+          <li>Welche Karten eingeklappt sind.</li>
+          <li>Welche Unteransichten in jedem Tab ausgeblendet sind, und ihre Reihenfolge.</li>
+          <li>Die Einstellung für den Tunnel der Kamera-Live-Ansicht.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>App-weit</h3>
+        <ul class="plain">
+          <li>Design, Oberfläche, Akzentfarbe und Textgröße.</li>
+          <li>Die untere Navigationsleiste.</li>
+          <li>Abfrageintervall und Temperatureinheit.</li>
+          <li>Startverhalten.</li>
+          <li>Welche Hilfekarten du ausgeblendet hast.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Dasselbe NAS zweimal ist ein völlig legitimes Setup.</b> Ein Eintrag über die lokale IP für zu Hause, einer über QuickConnect für unterwegs. Es sind getrennte Einträge mit getrennten Layouts, und das Wechseln dauert einen Tipp.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2>FAQ zu mehreren NAS</h2>
+    </div>
+    <details open><summary>Wie viele NAS-Geräte kann ich hinzufügen?</summary><div class="body">So viele du willst. Jedes behält eigene Zugangsdaten, Dashboard-Layout, Kartenreihenfolge und Einklappstatus.</div></details>
+    <details><summary>Ändert das Umbenennen eines NAS etwas am NAS selbst?</summary><div class="body">Nein. Umbenennen ändert nur den Anzeigenamen in der App. Den Servernamen des NAS änderst du in der DSM-Systemsteuerung.</div></details>
+    <details><summary>Was ist der Unterschied zwischen „IP ändern“ und „Konfiguration bearbeiten“?</summary><div class="body">„IP ändern“ ist eine Abkürzung für Adresse und Port. „Konfiguration bearbeiten“ öffnet das gesamte Formular, einschließlich HTTPS, Zertifikatsprüfung, Zugangsdaten, 2FA und dem Kamera-Tunnel-Schalter.</div></details>
+    <details><summary>Was passiert, wenn ich ein NAS entferne?</summary><div class="body">Der Eintrag und die gespeicherten Zugangsdaten werden aus der App gelöscht. Auf dem NAS wird nichts angetastet.</div></details>
+    <details><summary>Welches öffnet die App zuerst?</summary><div class="body">Das, was du unter <a href="/de/guide/settings/#launch">Startverhalten</a> festlegst - die Geräteauswahl, das zuletzt verwendete oder immer ein bestimmtes.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Weiter: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">Wecke das NAS oder alles andere in deinem Netzwerk über das NAS auf.</p>
+    <p><a class="btn" href="/de/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/de/guide/">Zurück zur Anleitung</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/de/">Start</a><a href="/de/guide/">Anleitung</a><a href="/de/guide/getting-started/">Erste Schritte</a><a href="/de/compatible-nas/">Kompatibilität</a><a href="/de/best-synology-nas-app/">Warum wechseln</a><a href="/de/synology-app-for-iphone/">iPhone & iPad</a><a href="/de/synology-app-for-android/">Android</a><a href="/de/synology-app-for-mac-windows/">Mac & Windows</a><a href="/de/ds-finder-alternative/">vs. DS finder</a><a href="/de/help/">Hilfe</a><a href="/de/privacy/">Datenschutz</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Fehler melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager ist eine unabhängige App und steht in keiner Verbindung zu Synology Inc., wird weder von Synology Inc. unterstützt noch gesponsert. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station und QuickConnect sind Marken von Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>在行動裝置上使用 Synology File Station、複製與移動 - Syno Manager</title>
+<meta name="description" content="瀏覽 File Station、在 NAS 上直接複製或移動檔案與資料夾（包括複製到 USB 隨身碟）、管理共用資料夾，並閱讀 Note Station、Office 與聯絡人。" />
+<meta name="keywords" content="Synology File Station app, Synology copy move files, Synology USB drive copy, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/files/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/files/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/files/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/files/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/files/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/files/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/files/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/files/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/files/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/files/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/files/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/files/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/files/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/files/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/files/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/files/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/files/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/files/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/files/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/files/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/files/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/files/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/files/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/files/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/files/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/files/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/files/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/files/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/files/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/files/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/files/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/files/" />
+<!--/hreflang-->
+<meta property="og:title" content="在行動裝置上使用 Synology File Station、複製與移動 - Syno Manager" />
+<meta property="og:description" content="瀏覽 File Station、在 NAS 上直接複製或移動檔案與資料夾（包括複製到 USB 隨身碟）、管理共用資料夾，並閱讀 Note Station、Office 與聯絡人。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/files/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在行動裝置上使用 Synology File Station、複製與移動 - Syno Manager" />
+<meta name="twitter:description" content="瀏覽 File Station、在 NAS 上直接複製或移動檔案與資料夾（包括複製到 USB 隨身碟）、管理共用資料夾，並閱讀 Note Station、Office 與聯絡人。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "檔案"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "在行動裝置上使用 Synology File Station、複製與移動 - Syno Manager",
+  "description": "瀏覽 File Station、在 NAS 上直接複製或移動檔案與資料夾（包括複製到 USB 隨身碟）、管理共用資料夾，並閱讀 Note Station、Office 與聯絡人。",
+  "image": "https://synomanager.com/screenshots/files-station.webp",
+  "url": "https://synomanager.com/guide/files/",
+  "mainEntityOfPage": "https://synomanager.com/guide/files/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以把 NAS 上的檔案下載到手機嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。開啟 File Station、找到檔案並下載。在行動裝置上會交由分享選單處理，你可以儲存、用其他 App 開啟或轉傳。在 Windows 與 macOS 上則會出現原生的另存新檔對話框。下載也能透過 QuickConnect 進行，所以離開家也不受影響。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以在 App 裡建立共用資料夾嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，在「共用資料夾」子檢視中進行。現有的共用資料夾會顯示名稱、所在磁碟區、說明，以及是否具備 ACL 權限。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以閱讀我的 Note Station 筆記嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。「筆記」子檢視會顯示你的筆記本，並附上筆記數量與標籤數量，你可以開啟任何一則筆記閱讀完整內容、建立筆記本或新增筆記。筆記中的圖片會顯示在筆記裡原本的位置，NAS 無法傳送的圖片則會顯示「無法載入」的替代圖示，而不是直接消失。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼 Synology Office 只顯示狀態？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為 Office 文件是儲存在 Synology Drive 中，並透過 Synology Drive 開啟。App 會回報 Office 是否已安裝，以及它支援哪些文件類型；在手機上編輯試算表，應該交給 Synology 自家的 Drive App。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以把檔案複製或移動到插在 NAS 上的 USB 隨身碟嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。外接硬碟會像共用資料夾一樣出現在目的地清單中，因為 NAS 是把它當作共用資料夾掛載的。選擇「複製到」或「移動到」，開啟該硬碟並確認 - NAS 會直接寫入，資料完全不會經過你的手機。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "複製或移動時，資料會經過我的手機嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不會。NAS 會透過 SYNO.FileStation.CopyMove 自行完成工作。你的手機只負責送出請求，然後觀看進度，所以數百 GB 的傳輸既不會動用你的行動數據，也不會佔用手機儲存空間，而且關閉 App 後仍會繼續執行。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 檔案</div>
+      <div class="eyebrow">檔案</div>
+      <h1>你的共用資料夾，<span class="g">隨時隨地</span></h1>
+      <p>File Station 與共用資料夾、在 NAS 上直接複製與移動，再加上三個真正以內容為主的 DSM 應用：Note Station、Synology Office 與聯絡人。若已安裝 Download Station，它也在這裡 - 它有<a href="/zh-hant/guide/downloads/">自己的專頁</a>。</p>
+    </div>
+    <div class="hero-shot"><img alt="File Station 瀏覽共用資料夾" src="/screenshots/files-station.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#file-station">File Station</a></li>
+      <li><a href="#copy-move">複製與移動</a></li>
+      <li><a href="#shares">共用資料夾</a></li>
+      <li><a href="#notes">Note Station</a></li>
+      <li><a href="#office">Synology Office</a></li>
+      <li><a href="#contacts">聯絡人</a></li>
+    </ul></div>
+
+    <div class="section-head" id="file-station">
+      <div class="eyebrow">File Station</div>
+      <h2>瀏覽與下載</h2>
+      <p class="lead">從<b>根目錄</b>開始 - 你的帳號看得到的每個共用資料夾 - 再往下層層瀏覽。頂端的導覽路徑會顯示你在哪裡，也能帶你回到上一層。</p>
+    </div>
+    <ul class="plain">
+      <li><b>資料夾與檔案</b>，各附 DSM 掌握的詳細資料：大小、建立與修改日期、擁有者與權限。</li>
+      <li>可以<b>下載</b>任何檔案。在 Android 與 iOS 上會開啟分享選單，你可以儲存、用其他 App 開啟或轉傳。在 Windows 與 macOS 上則會出現原生的<b>另存新檔</b>對話框。</li>
+      <li><b>離開家也能用。</b>下載會走 NAS 目前可連到的任何路徑，包括 QuickConnect 中繼。</li>
+      <li>從你的裝置選取檔案，<b>上傳到 NAS</b>。</li>
+    </ul>
+    <div class="note"><b>你看得到的，就是 DSM 允許你看的。</b>這裡的 File Station 完全遵守你 DSM 帳號的權限 - 你的帳號無法讀取的資料夾不會出現，與網頁介面相同。</div>
+  </div>
+</section>
+
+<section id="copy-move">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">File Station</div>
+      <h2>在 NAS 上直接複製與移動</h2>
+      <p class="lead">選取檔案或資料夾，選擇<b>複製到</b>或<b>移動到</b>，傳輸由 NAS 執行 - 不是你的手機。即使是數百 GB，也完全不會經過你手上的裝置。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>長按選取</b>一個或多個檔案與資料夾。頂端列會切換為<b>複製到...</b>與<b>移動到...</b>。</li>
+          <li><b>選擇目的地</b>的方式與瀏覽 File Station 相同 - 開啟共用資料夾或資料夾並確認。NAS 列出的每個共用資料夾都可作為目的地，<b>包括插在 NAS 上的外接硬碟</b>：它的呈現方式與共用資料夾完全相同，因為 NAS 是把它當作共用資料夾掛載的。</li>
+          <li><b>檔名衝突時會先詢問。</b>如果目的地已有同名項目，在任何動作開始前，你可以選擇<b>覆寫</b>或<b>略過並保留現有的</b>。</li>
+          <li><b>移動需要長按確認。</b>移動會在複製完成後刪除原始檔案，因此確認按鈕必須按住，而不是輕點 - 這是刻意設下的一點阻力，因為這項操作在 App 裡無法復原。</li>
+        </ul>
+      </div>
+      <img alt="在 File Station 中選取資料夾，動作列顯示「複製到」與「移動到」" src="/screenshots/files-copy-move-select.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="「移動到」目的地選擇器，列出 NAS 提供的每個共用資料夾" src="/screenshots/files-copy-move-destination.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">目的地選擇器其實還是 File Station，只是範圍限定在選擇資料夾，而不是開啟檔案。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>執行時顯示進度</b> - 已移動的位元組數與百分比，直接從 NAS 讀取。NAS 仍在計算的總量會顯示為計算中，而不是一個暫時沒有意義的數字；計算期間，橫幅仍會顯示目前已複製多少，例如「目前 6.82 GB」，並搭配會移動的進度列，而不是一條停住的進度列。</li>
+          <li><b>只要 NAS 回報了速度就會顯示。</b>如果 NAS 有一段時間沒有回應 - 寫入速度較慢的 USB 隨身碟時很常見 - 橫幅會保留已複製的量，在收到新讀數前先隱藏速度，並降低查詢頻率，直到 NAS 再次回應。複製本身在 NAS 上全程持續進行。</li>
+          <li><b>取消會在 NAS 上中止</b>傳輸，即使傳到一半。已複製到目的地的內容會保留，不會被復原。</li>
+          <li><b>關閉 App，傳輸仍會繼續。</b>這項工作屬於 NAS，而不是你得一直開著的畫面。重新開啟 File Station，App 會重新連上同一項工作，而不是失去追蹤。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px"><b>為什麼要長按，而不是輕點。</b>複製會保留原始檔案，所以誤觸也沒有代價 - 那個只要輕點一下。移動則會在複製完成後刪除原始檔案，所以採用與 App 其他地方的重新啟動和關機控制相同的長按確認模式。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="shares">
+      <div class="eyebrow">共用資料夾</div>
+      <h2>共用資料夾本身</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">不是檔案，而是共用資料夾。每個項目都會顯示名稱、所在磁碟區、說明，以及具備存取控制權限時的 <b>ACL</b> 標籤。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>用右下角的按鈕<b>建立共用資料夾</b>。</li>
+          <li><b>每一列的更多選單</b>收納了你可以對該共用資料夾執行的操作。</li>
+          <li><b>加密的共用資料夾</b>會被標示出來，讓你一眼看出重新開機後哪些需要解鎖。</li>
+        </ul>
+        <div class="note"><b>共用資料夾放在哪裡很重要。</b>每一列都會顯示磁碟區，當你在<a href="/zh-hant/guide/storage/">儲存空間</a>畫面看到某個磁碟區快滿時，這是回答「哪個磁碟區快滿了」最快的方式。</div>
+      </div>
+      <img alt="共用資料夾，顯示磁碟區、說明與 ACL 標籤" src="/screenshots/files-shared.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="notes">
+      <div class="eyebrow">Note Station</div>
+      <h2>筆記本與筆記</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Note Station 筆記本，附筆記數量" src="/screenshots/notes.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">頂端有摘要 - 筆記、筆記本與標籤的總數 - 接著是<b>所有筆記</b>與各個筆記本，各附自己的數量。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>開啟任何一則筆記</b>閱讀完整內容。</li>
+          <li><b>圖片會顯示在筆記中原本的位置</b>，位於段落之間，而不是被移除或全擠在最後。</li>
+          <li><b>NAS 無法傳送的圖片</b>會在原處顯示<b>無法載入圖片</b>，而不是直接消失 - 包括網頁剪輯工具從外部網頁加入的圖片，NAS 有時無法回傳這類圖片。</li>
+          <li>用右下角的兩個按鈕<b>建立筆記本</b>或<b>新增筆記</b>。</li>
+          <li>從筆記本所在列<b>刪除筆記本</b>。</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">這張截圖中有三個筆記本標題已模糊處理 - 它們是真實 NAS 上的內容。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="office">
+      <div class="eyebrow">Synology Office</div>
+      <h2>已安裝，以及支援哪些功能</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">這是狀態畫面，不是編輯器：顯示你的 NAS 執行的 Synology Office 版本，以及它支援的文件類型 - <b>文件</b>、<b>試算表</b>與<b>投影片</b> - 各附一個勾號。</p>
+        <div class="note"><b>為什麼只到這裡。</b>Office 文件是儲存在 Synology Drive 中，並透過 Synology Drive 開啟。與其在 NAS 監控 App 中做一個只有一半功能的試算表編輯器，App 選擇告訴你 Office 就在那裡，並引導你前往文件實際所在的 Drive。</div>
+      </div>
+      <img alt="Synology Office 狀態，顯示文件、試算表與投影片" src="/screenshots/office.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contacts">
+      <div class="eyebrow">聯絡人</div>
+      <h2>通訊錄</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Synology 聯絡人通訊錄，附聯絡人數量" src="/screenshots/contacts.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">所有通訊錄的總數，接著是各個通訊錄與其各自的數量 - 包括從 Google 匯入的通訊錄，與 NAS 上建立的通訊錄並列顯示。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>從頂端的搜尋框<b>搜尋所有內容</b>。</li>
+          <li><b>展開通訊錄</b>即可查看其中的聯絡人；各區段可以收合，因此有兩千筆資料的通訊錄不會淹沒只有六筆的通訊錄。</li>
+          <li>從通訊錄所在列，或用右下角的按鈕，<b>新增聯絡人</b>到特定通訊錄。</li>
+          <li><b>編輯或刪除</b>現有的聯絡人。</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">有一個通訊錄名稱已模糊處理 - 那是真實的地址。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>檔案常見問題</h2>
+    </div>
+    <details open><summary>可以把 NAS 上的檔案下載到手機嗎？</summary><div class="body">可以。開啟 File Station、找到檔案並下載。在行動裝置上會交由分享選單處理；在 Windows 與 macOS 上則會出現原生的另存新檔對話框。下載也能透過 QuickConnect 進行。</div></details>
+    <details><summary>可以把檔案複製或移動到插在 NAS 上的 USB 隨身碟嗎？</summary><div class="body">可以。外接硬碟會像共用資料夾一樣出現在目的地清單中，因為 NAS 是把它當作共用資料夾掛載的。選擇「複製到」或「移動到」，開啟該硬碟並確認 - NAS 會直接寫入。</div></details>
+    <details><summary>複製或移動時，資料會經過我的手機嗎？</summary><div class="body">不會。NAS 會自行完成工作。你的手機只負責送出請求並觀看進度，所以數百 GB 的傳輸不會動用你的行動數據，而且關閉 App 後仍會繼續執行。</div></details>
+    <details><summary>可以在 App 裡建立共用資料夾嗎？</summary><div class="body">可以，在「共用資料夾」子檢視中進行。現有的共用資料夾會顯示名稱、所在磁碟區、說明，以及是否具備 ACL 權限。</div></details>
+    <details><summary>可以閱讀我的 Note Station 筆記嗎？</summary><div class="body">可以。「筆記」子檢視會顯示你的筆記本，並附上筆記數量與標籤數量，你可以開啟任何一則筆記閱讀完整內容、建立筆記本或新增筆記。筆記中的圖片會顯示在筆記裡原本的位置，NAS 無法傳送的圖片則會顯示「無法載入」的替代圖示，而不是直接消失。</div></details>
+    <details><summary>為什麼 Synology Office 只顯示狀態？</summary><div class="body">因為 Office 文件是儲存在 Synology Drive 中，並透過 Synology Drive 開啟。App 會回報 Office 是否已安裝，以及它支援哪些文件類型；編輯文件應該交給 Synology 的 Drive App。</div></details>
+    <details><summary>為什麼看不到我明明知道存在的資料夾？</summary><div class="body">這裡的 File Station 完全遵守你 DSM 帳號的權限。你的帳號無法讀取的資料夾不會出現，與網頁介面相同。請改用看得到它的帳號登入。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：Download Station</h2>
+    <p class="lead" style="margin:0 auto 24px">用連結、磁力連結或 .torrent 新增，並變更你的 NAS 回報的設定。</p>
+    <p><a class="btn" href="/zh-hant/guide/downloads/">Download Station &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

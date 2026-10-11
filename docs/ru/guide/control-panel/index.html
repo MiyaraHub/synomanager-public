@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Управление пользователями, задачами и ИБП Synology - Syno Manager</title>
+<meta name="description" content="Управляйте учётными записями пользователей Synology с защитой системных, запускайте и включайте запланированные задачи и смотрите заряд ИБП и расчётное время работы с телефона." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ru/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Управление пользователями, задачами и ИБП Synology - Syno Manager" />
+<meta property="og:description" content="Управляйте учётными записями пользователей Synology с защитой системных, запускайте и включайте запланированные задачи и смотрите заряд ИБП и расчётное время работы с телефона." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ru/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Управление пользователями, задачами и ИБП Synology - Syno Manager" />
+<meta name="twitter:description" content="Управляйте учётными записями пользователей Synology с защитой системных, запускайте и включайте запланированные задачи и смотрите заряд ИБП и расчётное время работы с телефона." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ru",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Руководство пользователя",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Панель управления"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Управление пользователями, задачами и ИБП Synology - Syno Manager",
+  "description": "Управляйте учётными записями пользователей Synology с защитой системных, запускайте и включайте запланированные задачи и смотрите заряд ИБП и расчётное время работы с телефона.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "ru",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли добавлять и редактировать пользователей DSM из приложения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Добавляйте пользователя, правьте его данные, меняйте пароль или удаляйте учётную запись. Системные учётные записи - admin, guest и служебные учётные записи, которые создаёт DSM, - распознаются и защищены от удаления, потому что их удаление ломает NAS так, что исправлять утомительно."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли запустить запланированную задачу вручную?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, для задач, которые DSM позволяет запускать, - у каждой из них есть «Запустить сейчас». Любую задачу также можно включить или отключить, не открывая DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Что показывает экран ИБП?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Модель ИБП, работает ли он от сети или от батареи, его заряд в процентах и полосой, способ подключения, расчётное оставшееся время работы и включена ли на NAS поддержка ИБП."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли изменить, как долго NAS ждёт перед выключением при работе от батареи?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Приложение сообщает состояние ИБП; политика выключения задаётся в DSM в разделе «Оборудование и питание», где последствия настройки расписаны подробно."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ru/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Поиск по руководству..." data-i18n-empty="Нет совпадений для" data-i18n-language="Язык">
+      <a href="/ru/">Главная</a>
+      <a href="/ru/guide/" class="active">Руководство пользователя</a>
+      <a href="/ru/#screenshots">Скриншоты</a>
+      <a href="/ru/compatible-nas/">Совместимость</a>
+      <a href="/ru/best-synology-nas-app/">Зачем переходить</a>
+      <a href="/ru/help/">Справка</a>
+      <a href="/ru/#top" class="cta">Скачать</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ru/">Главная</a> &rsaquo; <a href="/ru/guide/">Руководство</a> &rsaquo; Панель управления</div>
+      <div class="eyebrow">Панель управления</div>
+      <h1>Учётные записи, расписания <span class="g">и питание</span></h1>
+      <p>Четыре подраздела: <b>Пользователи</b>, <b>Задачи</b>, <b>Питание</b> для ИБП и <b>Настройки</b> - собственные параметры приложения, доступные, не покидая текущую вкладку.</p>
+    </div>
+    <div class="hero-shot"><img alt="Планировщик задач с запланированными задачами, переключателями и «Запустить сейчас»" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>На этой странице</b><ul>
+      <li><a href="#users">Пользователи</a></li>
+      <li><a href="#tasks">Планировщик задач</a></li>
+      <li><a href="#ups">ИБП</a></li>
+      <li><a href="#settings">Настройки</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Пользователи</div>
+      <h2>Учётные записи DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Каждая учётная запись на NAS с отображаемым именем, описанием и адресом электронной почты, если он указан. Метка <b>Истекла</b> отмечает учётные записи, отключённые DSM.</p>
+        <h3 style="margin-top:20px">Что можно делать</h3>
+        <ul class="plain">
+          <li><b>Добавить пользователя</b> с данными, которые запрашивает DSM.</li>
+          <li><b>Изменить</b> существующую учётную запись.</li>
+          <li><b>Сменить пароль.</b></li>
+          <li><b>Удалить</b> созданную вами учётную запись.</li>
+        </ul>
+        <div class="note"><b>Системные учётные записи удалить нельзя.</b> <code>admin</code>, <code>guest</code> и служебные учётные записи, которые DSM создаёт для собственных пакетов, распознаются и защищены. Удаление любой из них ломает NAS так, что исправлять утомительно, а телефон - не то место, где стоит это выяснять.</div>
+      </div>
+      <img alt="Учётные записи пользователей DSM, два имени и адреса скрыты" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Две учётные записи на этом скриншоте размыты - это имена и адреса реальных людей.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Планировщик задач</div>
+      <h2>Что запланировано и что запустится следующим</h2>
+      <p class="lead">Каждая задача DSM, включена ли она, что делает и когда сработает в следующий раз.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Название задачи и её тип</b> - задача Hyper Backup, пользовательский скрипт, очистка корзины - каждая подписана тем, что это за вид задачи.</li>
+      <li><b>Что она на самом деле делает.</b> У задачи-скрипта показана команда, которую она запускает; у задачи резервного копирования - её описание.</li>
+      <li><b>Следующий запуск</b> - датой и временем.</li>
+      <li><b>Переключатель на каждую задачу</b>, чтобы включать и отключать её, не открывая DSM.</li>
+      <li><b>Запустить сейчас</b> у задач, которые DSM позволяет запускать по требованию.</li>
+    </ul>
+    <div class="note warn"><b>«Запустить сейчас» запускает сейчас.</b> Запланированный скрипт, рассчитанный на выполнение в 3 часа ночи на простаивающем NAS, поведёт себя иначе в 6 вечера во время копирования файлов. Кнопка делает то, что написано.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Питание</div>
+      <h2>ИБП</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Состояние ИБП с моделью, зарядом, режимом подключения и расчётным временем работы" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Доступно при подключённом ИБП. Одна карточка, всё на ней.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Показано</th><th>Значение</th></tr></thead>
+          <tbody>
+            <tr><td>Производитель и модель</td><td>Как ИБП представляется сам.</td></tr>
+            <tr><td>Состояние</td><td><b>В сети</b> от розетки или от батареи.</td></tr>
+            <tr><td>Заряд</td><td>Проценты и полоса. Жёлтая ниже 50%, красная ниже 20%.</td></tr>
+            <tr><td>Режим</td><td>Как NAS общается с ним - по USB или по сети.</td></tr>
+            <tr><td>Время работы</td><td>Сколько ИБП, по его оценке, может держать нагрузку.</td></tr>
+            <tr><td>Включено</td><td>Включена ли вообще поддержка ИБП в DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Заряд влияет на индикатор состояния.</b> ИБП, который разряжается, виден на <a href="/ru/guide/home/#header">главном экране</a>, и открывать эту вкладку не нужно - в этом и смысл, потому что к тому моменту, когда вы подумаете проверить, времени может остаться немного.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Настройки</div>
+      <h2>Собственные параметры приложения</h2>
+      <p class="lead">Четвёртый подраздел - «Настройки», встроенный сюда, чтобы вы могли менять интервал опроса или цвет акцента, не покидая вкладку. Это тот же экран, что открывает значок шестерёнки.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/ru/guide/settings/">Каждая настройка с объяснением</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Частые вопросы</div>
+      <h2>Вопросы о панели управления</h2>
+    </div>
+    <details open><summary>Можно ли добавлять и редактировать пользователей DSM из приложения?</summary><div class="body">Да. Добавляйте пользователя, правьте его данные, меняйте пароль или удаляйте учётную запись. Системные учётные записи - admin, guest и служебные учётные записи, которые создаёт DSM, - распознаются и защищены от удаления.</div></details>
+    <details><summary>Можно ли запустить запланированную задачу вручную?</summary><div class="body">Да, для задач, которые DSM позволяет запускать. Любую задачу также можно включить или отключить, не открывая DSM.</div></details>
+    <details><summary>Что показывает экран ИБП?</summary><div class="body">Модель ИБП, работает ли он от сети или от батареи, его заряд в процентах и полосой, способ подключения, расчётное оставшееся время работы и включена ли на NAS поддержка ИБП.</div></details>
+    <details><summary>Можно ли изменить политику выключения при работе от батареи?</summary><div class="body">Нет. Приложение сообщает состояние ИБП; политика задаётся в DSM в разделе «Оборудование и питание», где последствия расписаны подробно.</div></details>
+    <details><summary>Почему нет подраздела «Питание»?</summary><div class="body">Потому что ИБП не подключён или поддержка ИБП отключена в DSM. Приложение скрывает экраны для оборудования, которого нет.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далее: Ассистент</h2>
+    <p class="lead" style="margin:0 auto 24px">Задайте вопрос своему NAS - отвечает модель на вашем телефоне.</p>
+    <p><a class="btn" href="/ru/guide/assistant/">Ассистент &rarr;</a> &nbsp; <a class="btn ghost" href="/ru/guide/">Назад к руководству</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ru/">Главная</a><a href="/ru/guide/">Руководство</a><a href="/ru/guide/getting-started/">Начало работы</a><a href="/ru/compatible-nas/">Совместимость</a><a href="/ru/best-synology-nas-app/">Почему стоит перейти</a><a href="/ru/synology-app-for-iphone/">iPhone и iPad</a><a href="/ru/synology-app-for-android/">Android</a><a href="/ru/synology-app-for-mac-windows/">Mac и Windows</a><a href="/ru/ds-finder-alternative/">vs DS finder</a><a href="/ru/help/">Помощь</a><a href="/ru/privacy/">Конфиденциальность</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Сообщить об ошибке</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - независимое приложение, не связанное с Synology Inc., не одобренное и не спонсируемое ею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station и QuickConnect являются товарными знаками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

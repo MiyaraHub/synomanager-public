@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="pl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Procesor, RAM, temperatura i wentylatory Synology - Syno Manager</title>
+<meta name="description" content="Obserwuj procesor, RAM, obciążenie, operacje dyskowe i temperaturę, zmieniaj tryb prędkości wentylatorów, sprawdzaj aktualizacje DSM oraz restartuj lub wyłączaj Synology z telefonu." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/pl/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Procesor, RAM, temperatura i wentylatory Synology - Syno Manager" />
+<meta property="og:description" content="Obserwuj procesor, RAM, obciążenie, operacje dyskowe i temperaturę, zmieniaj tryb prędkości wentylatorów, sprawdzaj aktualizacje DSM oraz restartuj lub wyłączaj Synology z telefonu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/pl/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="pl_PL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Procesor, RAM, temperatura i wentylatory Synology - Syno Manager" />
+<meta name="twitter:description" content="Obserwuj procesor, RAM, obciążenie, operacje dyskowe i temperaturę, zmieniaj tryb prędkości wentylatorów, sprawdzaj aktualizacje DSM oraz restartuj lub wyłączaj Synology z telefonu." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "pl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Strona główna",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Przewodnik użytkownika",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "System"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Procesor, RAM, temperatura i wentylatory Synology - Syno Manager",
+  "description": "Obserwuj procesor, RAM, obciążenie, operacje dyskowe i temperaturę, zmieniaj tryb prędkości wentylatorów, sprawdzaj aktualizacje DSM oraz restartuj lub wyłączaj Synology z telefonu.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "pl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Czy mogę zmienić prędkość wentylatora z aplikacji?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Kondycja systemu ma kartę Chłodzenie z trybami Pełna prędkość, Chłodny i Cichy. Aplikacja odczytuje tryb, w którym aktualnie jest NAS, zapisuje Twój wybór i odczytuje go ponownie, by potwierdzić. NAS zgłaszający tryb spoza tych trzech zachowuje wyświetlanie tylko do odczytu, zamiast być błędnie przedstawiany."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy mogę zrestartować lub wyłączyć NAS z telefonu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak, z karty Kontrolki zasilania na dole Kondycji systemu. Obie akcje są potwierdzane przed wykonaniem, bo dotyczą wszystkich podłączonych użytkowników. Zdalne wyłączenie warto przemyśleć dwa razy - wyłączonego NAS nie da się wybudzić przez internet bez VPN lub routera skonfigurowanego pod Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do czego służy Zidentyfikuj NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Miga wskaźnikiem stanu NAS, abyś wiedział, na którą skrzynkę w szafie rack lub w szafce patrzysz. Wycisz sygnał zatrzymuje brzęczyk alarmu, nie wyciszając warunku, który go wywołał - napraw też przyczynę."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy dzienniki odświeżają się same?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nie, i to celowo. Dziennik odczytywał się kiedyś ponownie według zegara, niezależnie od tego, czy go czytałeś, co kosztowało baterię i transfer bez sensu. Teraz ładuje się raz i stoi w miejscu. Naciśnij play, aby śledzić go na żywo, naciśnij ponownie, aby wstrzymać, a przestaje śledzić samoczynnie, gdy opuścisz ekran."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Czy mogę wyeksportować lub skopiować dziennik, który oglądam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tak. Przytrzymaj dowolną linię, aby wyświetlić systemowy pasek Kopiuj / Zaznacz wszystko / Udostępnij, albo użyj przycisku eksportu obok przełącznika na żywo na karcie System lub nad listą na karcie Połączenia. Otwiera on arkusz z opcjami Zapisz do pliku, Udostępnij lub wyślij e-mailem i Kopiuj do schowka, i eksportuje dokładnie te wpisy, które widać na ekranie po filtrze poziomu i wyszukiwaniu - jeden wpis na linię, z czasem, poziomem, użytkownikiem i opisem rozdzielonymi tabulatorami."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/pl/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Przeszukaj przewodnik..." data-i18n-empty="Brak wyników dla" data-i18n-language="Język">
+      <a href="/pl/">Strona główna</a>
+      <a href="/pl/guide/" class="active">Przewodnik użytkownika</a>
+      <a href="/pl/#screenshots">Zrzuty ekranu</a>
+      <a href="/pl/compatible-nas/">Zgodność</a>
+      <a href="/pl/best-synology-nas-app/">Dlaczego warto przejść</a>
+      <a href="/pl/help/">Pomoc</a>
+      <a href="/pl/#top" class="cta">Pobierz</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/pl/">Strona główna</a> &rsaquo; <a href="/pl/guide/">Przewodnik użytkownika</a> &rsaquo; System</div>
+      <div class="eyebrow">System</div>
+      <h1>Co ta skrzynka <span class="g">naprawdę robi</span></h1>
+      <p>Trzy podwidoki: <b>Kondycja systemu</b> dla stanu maszyny, <b>Zasoby</b> dla wykresów na żywo i <b>Dzienniki</b> dla tego, co zapisał DSM. Do tego kontrolki, które coś zmieniają - tryb wentylatorów, światło identyfikacji, aktualizacje DSM, restart i wyłączenie.</p>
+    </div>
+    <div class="hero-shot"><img alt="Kondycja systemu z miernikami procesora i RAM, średnim obciążeniem, operacjami dyskowymi i historią temperatury" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na tej stronie</b><ul>
+      <li><a href="#health">Kondycja systemu</a></li>
+      <li><a href="#cooling">Chłodzenie &amp; tryb wentylatorów</a></li>
+      <li><a href="#identify">Identyfikacja &amp; alerty</a></li>
+      <li><a href="#dsm-update">Aktualizacja DSM</a></li>
+      <li><a href="#power">Kontrolki zasilania</a></li>
+      <li><a href="#resources">Zasoby</a></li>
+      <li><a href="#logs">Logi</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Kondycja systemu</div>
+      <h2>Odczyty</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Karta</th><th>Co pokazuje</th></tr></thead>
+      <tbody>
+        <tr><td>Mierniki procesora &amp; RAM</td><td>Całkowite obciążenie procesora jako pierścień, z wyróżnionym udziałem <b>użytkownika</b> pod spodem, abyś odróżnił własne obciążenie od narzutu systemu. RAM pokazuje procent i wartości bezwzględne.</td></tr>
+        <tr><td>Pamięć</td><td>Użyta w stosunku do całości, jako pasek. Zielony, dopóki ma to znaczenie.</td></tr>
+        <tr><td>Średnie obciążenie procesora</td><td>Wartości z jednej, pięciu i piętnastu minut - procesy czekające na czas procesora, a nie procent. Oceniane względem liczby rdzeni, więc dobry wynik na ośmiordzeniowym serwerze rack to wysokie obciążenie na urządzeniu dwuzatokowym.</td></tr>
+        <tr><td>Operacje dyskowe</td><td>Przepustowość odczytu i zapisu oraz procent wykorzystania - jak długo dyski były zajęte, co często jest prawdziwą odpowiedzią, gdy NAS działa wolno, a procesor wygląda na bezczynny.</td></tr>
+        <tr><td>Historia temperatury</td><td>Ruchomy wykres z bieżącą wartością. W &deg;C lub &deg;F według Twojej <a href="/pl/guide/settings/#preferences">preferencji</a>.</td></tr>
+        <tr><td>Procesy</td><td>Ile procesów uruchomił NAS.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Chłodzenie</div>
+      <h2>Tryb prędkości wentylatora, zmieniany z telefonu</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Karta Chłodzenie pokazuje stan wentylatorów i tryb, w którym jest NAS, jako trójpozycyjną kontrolkę:</p>
+        <ul class="plain">
+          <li><b>Pełna prędkość</b> - maksymalny przepływ powietrza, maksymalny hałas. Dobra dla szafy rack lub szafki.</li>
+          <li><b>Chłodny</b> - zrównoważone ustawienie domyślne.</li>
+          <li><b>Cichy</b> - niższa prędkość, wyższe temperatury. Dobry dla NAS w salonie, o ile dyski to zniosą.</li>
+        </ul>
+        <div class="note"><b>Potwierdzone, a nie założone.</b> Aplikacja odczytuje bieżący tryb z NAS, zapisuje Twój wybór, a potem <b>odczytuje go ponownie</b>. Tryb, który NAS po cichu odrzucił, jest zgłaszany jako odrzucony, zamiast wisieć na ekranie, jakby został zastosowany.</div>
+        <div class="note" style="margin-top:14px"><b>Nierozpoznany tryb pozostaje tylko do odczytu.</b> Jeśli Twój NAS zgłasza tryb chłodzenia spoza tych trzech, karta pokazuje to, co zgłoszono, i nie oferuje zmiany - zamiast błędnie podpisać go jednym ze znanych trzech.</div>
+      </div>
+      <img alt="Karta Chłodzenie z trybami Pełna prędkość, Chłodny i Cichy oraz Identyfikacja i Kontrolki zasilania" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identyfikacja &amp; alerty</div>
+      <h2>Znajdź skrzynkę, wycisz brzęczyk</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Zidentyfikuj</b> miga wskaźnikiem stanu NAS, abyś wiedział, przed którym urządzeniem stoisz. <b>Zatrzymaj</b> to kończy.</li>
+      <li><b>Wycisz sygnał</b> zatrzymuje brzęczyk alarmu. Wycisza hałas, a nie przyczynę - to, co wywołało alarm, nadal jest prawdą, a nagłówek kondycji nadal o tym powie.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">Aktualizacja DSM</div>
+      <h2>Czy jest aktualizacja oprogramowania sprzętowego</h2>
+      <p class="lead">Karta Aktualizacja DSM raportuje używaną wersję i to, czy Synology ma coś nowszego. <b>Sprawdź aktualizacje</b> prosi NAS o ponowne sprawdzenie.</p>
+    </div>
+    <div class="note"><b>To oprogramowanie sprzętowe Twojego NAS, a nie aplikacja.</b> Syno Manager aktualizuje się przez App Store lub Google Play jak każda inna aplikacja. Ta karta to własna powierzchnia aktualizacji DSM, ta sama, która jest w Panelu sterowania.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Kontrolki zasilania</div>
+      <h2>Restart i wyłączenie</h2>
+      <p class="lead">Na dole Kondycji systemu i oznaczone na czerwono, bo dotyczą wszystkich podłączonych użytkowników - także osoby w trakcie kopiowania pliku.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Uruchom ponownie NAS</b> - czysty restart. Potwierdzany przed wykonaniem.</li>
+      <li><b>Wyłącz NAS</b> - czyste wyłączenie zasilania. Potwierdzane przed wykonaniem.</li>
+    </ul>
+    <div class="note stop"><b>Przemyśl zdalne wyłączenie.</b> Wyłączony NAS nie może przekazać własnego pakietu wybudzenia. Przywrócenie go spoza Twojej sieci wymaga VPN do niego lub routera skonfigurowanego do przekierowania Wake-on-LAN. Zobacz <a href="/pl/guide/wake-on-lan/">Wake-on-LAN</a>, by dowiedzieć się, co działa skąd.</div>
+    <div class="note" style="margin-top:14px"><b>Skróty nie pomijają potwierdzenia.</b> <a href="/pl/guide/shortcuts/">Linki</a> <code>synomanager://reboot</code> i <code>synomanager://shutdown</code> celowo tylko <em>otwierają aplikację</em> na tym ekranie. Działanie destrukcyjne nie staje się jednodotykowe dlatego, że uruchomiono je z launchera.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Zasoby</div>
+      <h2>Wykresy na żywo</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Wykresy monitora zasobów dla procesora, pamięci, odczytu i zapisu dysku" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Podwidok Zasoby to te same dane jako ruchomy wykres, czyli to, czego potrzebujesz, gdy pytanie brzmi „czy to skok, czy stan stały?”</p>
+        <ul class="plain">
+          <li><b>Użycie procesora</b> z podziałem na użytkownika i system.</li>
+          <li><b>Użycie pamięci</b> z wartością użytą względem całości.</li>
+          <li><b>Odczyt dysku</b> i <b>zapis dysku</b>, każdy z własnym wykresem, oraz ogólne wykorzystanie dysku.</li>
+          <li><b>Średnie obciążenie</b> z jednej, pięciu i piętnastu minut.</li>
+        </ul>
+        <div class="note">Wykresy wypełniają się z <a href="/pl/guide/settings/#preferences">interwałem odpytywania</a>. Krótszy interwał daje większą dokładność i kosztuje więcej baterii; dłuższy jest łagodniejszy i mniej dokładny.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Logi</div>
+      <h2>Co zapisał DSM</h2>
+      <p class="lead">Dwie karty: <b>System</b> dla własnego dziennika DSM i <b>Połączenia</b> dla logowań i dostępu do plików. Obie są odczytywane na Twoje żądanie.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ładuje się raz i stoi w miejscu.</b> Dziennik, który odczytuje się ponownie według zegara, gdy próbujesz przeczytać linię, jest bezużyteczny i kosztuje baterię oraz transfer bez sensu.</li>
+      <li><b>Naciśnij play, aby śledzić na żywo.</b> Naciśnij ponownie, aby wstrzymać. Śledzenie zatrzymuje się samoczynnie, gdy opuścisz ekran lub wyślesz aplikację w tło, więc zapomniana karta dziennika nie odpytuje po cichu w Twojej kieszeni.</li>
+      <li><b>Jest pole wyszukiwania</b> do znalezienia jednej linii w długim dzienniku.</li>
+      <li><b>Dzienniki kontenerów i stosów działają tak samo</b> - zobacz <a href="/pl/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Tekst można zaznaczać.</b> Przytrzymaj linię, a pojawi się systemowy pasek Kopiuj / Zaznacz wszystko / Udostępnij, tak jak wszędzie indziej, gdzie na ekranie jest tekst.</li>
+      <li><b>Eksportuj to, na co patrzysz.</b> Przycisk eksportu znajduje się obok przełącznika na żywo na karcie System i nad listą na karcie Połączenia. Otwiera arkusz z trzema wyjściami: <b>Zapisz do pliku</b>, <b>Udostępnij</b>, aby wysłać lub przesłać e-mailem, albo <b>Kopiuj do schowka</b>.</li>
+    </ul>
+    <div class="note"><b>Eksportuje to, co jest na ekranie, a nie cały dziennik.</b> Wychodzi to, do czego zawęziły listę znacznik filtra poziomu i pole wyszukiwania - nic, co już odfiltrowałeś, nie wraca do eksportu. Plik jest zwykłym tekstem, jeden wpis na linię, z czasem, poziomem, użytkownikiem i opisem rozdzielonymi tabulatorami.</div>
+    <div class="note warn"><b>Jeśli dziennik się nie ładuje</b> i zgłasza przekroczenie czasu połączenia, gdy reszta aplikacji działa, to usługa Log Center na NAS nie odpowiada, a nie Twoje połączenie. Sprawdź, czy Log Center jest zainstalowany i działa w Centrum pakietów DSM - API dziennika systemowego jest jego częścią.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Częste pytania</div>
+      <h2>Najczęstsze pytania o system</h2>
+    </div>
+    <details open><summary>Czy mogę zmienić prędkość wentylatora z aplikacji?</summary><div class="body">Tak. Kondycja systemu ma kartę Chłodzenie z trybami Pełna prędkość, Chłodny i Cichy. Aplikacja odczytuje tryb, w którym aktualnie jest NAS, zapisuje Twój wybór i odczytuje go ponownie, by potwierdzić. NAS zgłaszający tryb spoza tych trzech zachowuje wyświetlanie tylko do odczytu, zamiast być błędnie przedstawiany.</div></details>
+    <details><summary>Czy mogę zrestartować lub wyłączyć NAS z telefonu?</summary><div class="body">Tak, z Kontrolek zasilania na dole Kondycji systemu. Obie akcje są potwierdzane przed wykonaniem. Zdalne wyłączenie warto przemyśleć dwa razy - wyłączonego NAS nie da się wybudzić przez internet bez VPN lub routera skonfigurowanego pod Wake-on-LAN.</div></details>
+    <details><summary>Do czego służy Zidentyfikuj NAS?</summary><div class="body">Miga wskaźnikiem stanu NAS, abyś wiedział, na którą skrzynkę w szafie rack lub w szafce patrzysz. Wycisz sygnał zatrzymuje brzęczyk alarmu, nie wyciszając warunku, który go wywołał.</div></details>
+    <details><summary>Czy dzienniki odświeżają się same?</summary><div class="body">Nie, i to celowo. Dziennik ładuje się raz i stoi w miejscu, byś mógł go przeczytać. Naciśnij play, aby śledzić go na żywo, naciśnij ponownie, aby wstrzymać, a przestaje śledzić samoczynnie, gdy opuścisz ekran lub wyślesz aplikację w tło.</div></details>
+    <details><summary>Czy mogę wyeksportować lub skopiować dziennik, który oglądam?</summary><div class="body">Tak. Przytrzymaj dowolną linię, aby wyświetlić systemowy pasek Kopiuj / Zaznacz wszystko / Udostępnij, albo użyj przycisku eksportu obok przełącznika na żywo na karcie System lub nad listą na karcie Połączenia. Otwiera on arkusz z opcjami Zapisz do pliku, Udostępnij lub wyślij e-mailem i Kopiuj do schowka, i eksportuje dokładnie te wpisy, które widać na ekranie po filtrze poziomu i wyszukiwaniu - jeden wpis na linię, z czasem, poziomem, użytkownikiem i opisem rozdzielonymi tabulatorami.</div></details>
+    <details><summary>Dlaczego moje średnie obciążenie jest wysokie, skoro procesor wygląda dobrze?</summary><div class="body">Średnie obciążenie liczy procesy czekające, a często czekają one na dyski, a nie na procesor. Sprawdź wykorzystanie operacji dyskowych na tym samym ekranie - wysoki procent wykorzystania przy niskim obciążeniu procesora to zwykłe wyjaśnienie.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Dalej: Pamięć masowa</h2>
+    <p class="lead" style="margin:0 auto 24px">Woluminy, pule, kondycja SMART każdego dysku i bezpieczne wysuwanie.</p>
+    <p><a class="btn" href="/pl/guide/storage/">Pamięć masowa &amp; dyski &rarr;</a> &nbsp; <a class="btn ghost" href="/pl/guide/">Powrót do przewodnika</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/pl/">Start</a><a href="/pl/guide/">Przewodnik</a><a href="/pl/guide/getting-started/">Pierwsze kroki</a><a href="/pl/compatible-nas/">Zgodność</a><a href="/pl/best-synology-nas-app/">Dlaczego warto</a><a href="/pl/synology-app-for-iphone/">iPhone & iPad</a><a href="/pl/synology-app-for-android/">Android</a><a href="/pl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/pl/ds-finder-alternative/">vs DS finder</a><a href="/pl/help/">Pomoc</a><a href="/pl/privacy/">Prywatność</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Zgłoś błąd</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager jest niezależną aplikacją i nie jest powiązany z firmą Synology Inc., przez nią zatwierdzony ani sponsorowany. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station i QuickConnect są znakami towarowymi firmy Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

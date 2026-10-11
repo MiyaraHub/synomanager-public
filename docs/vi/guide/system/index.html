@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU, RAM, nhiệt độ & quạt của Synology - Syno Manager</title>
+<meta name="description" content="Theo dõi CPU, RAM, tải, I/O đĩa và nhiệt độ, đổi chế độ tốc độ quạt, kiểm tra bản cập nhật DSM, và khởi động lại hoặc tắt Synology của bạn từ điện thoại." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU, RAM, nhiệt độ &amp; quạt của Synology - Syno Manager" />
+<meta property="og:description" content="Theo dõi CPU, RAM, tải, I/O đĩa và nhiệt độ, đổi chế độ tốc độ quạt, kiểm tra bản cập nhật DSM, và khởi động lại hoặc tắt Synology của bạn từ điện thoại." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU, RAM, nhiệt độ &amp; quạt của Synology - Syno Manager" />
+<meta name="twitter:description" content="Theo dõi CPU, RAM, tải, I/O đĩa và nhiệt độ, đổi chế độ tốc độ quạt, kiểm tra bản cập nhật DSM, và khởi động lại hoặc tắt Synology của bạn từ điện thoại." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hệ thống"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU, RAM, nhiệt độ & quạt của Synology - Syno Manager",
+  "description": "Theo dõi CPU, RAM, tải, I/O đĩa và nhiệt độ, đổi chế độ tốc độ quạt, kiểm tra bản cập nhật DSM, và khởi động lại hoặc tắt Synology của bạn từ điện thoại.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể đổi tốc độ quạt từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. System Health có thẻ Cooling với Full Speed, Cool và Quiet. Ứng dụng đọc chế độ NAS đang dùng, ghi lựa chọn của bạn, rồi đọc lại để xác nhận. NAS báo một chế độ ngoài ba chế độ đó sẽ được giữ ở dạng hiển thị chỉ đọc thay vì bị diễn giải sai."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể khởi động lại hoặc tắt NAS từ điện thoại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, từ thẻ Power Controls ở cuối System Health. Cả hai đều được xác nhận trước khi chạy, vì chúng ảnh hưởng đến mọi người dùng đang kết nối. Tắt máy từ xa đáng cân nhắc kỹ - NAS đã tắt nguồn không thể được đánh thức qua internet nếu không có VPN hoặc router được cấu hình cho Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Identify NAS dùng để làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nó nhấp nháy đèn trạng thái của NAS để bạn biết mình đang nhìn vào chiếc nào trong tủ rack hay tủ đồ. Silence beep tắt còi báo động mà không xử lý điều kiện đã kích hoạt nó - hãy khắc phục cả nguyên nhân nữa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nhật ký có tự làm mới không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không, và đó là chủ ý. Trước đây nhật ký đọc lại theo bộ hẹn giờ dù bạn có đang đọc hay không, tốn pin và mạng vô ích. Giờ nó tải một lần và đứng yên. Nhấn phát để theo dõi trực tiếp, nhấn lần nữa để tạm dừng, và nó tự ngừng theo dõi khi bạn rời màn hình."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể xuất hoặc sao chép nhật ký đang xem không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Nhấn giữ bất kỳ dòng nào để hiện thanh Copy / Select all / Share của hệ thống, hoặc dùng nút xuất bên cạnh công tắc trực tiếp trên tab System, hoặc phía trên danh sách trên tab Connection. Nó mở một bảng với Save to a file, Share or email và Copy to clipboard, và xuất đúng các mục đang hiển thị sau bộ lọc mức độ và tìm kiếm - mỗi mục một dòng, với thời gian, mức độ, người dùng và mô tả ngăn cách bằng tab."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Hệ thống</div>
+      <div class="eyebrow">Hệ thống</div>
+      <h1>Chiếc máy <span class="g">thực sự đang làm gì</span></h1>
+      <p>Ba chế độ xem phụ: <b>System Health</b> cho trạng thái máy, <b>Resources</b> cho biểu đồ trực tiếp, và <b>Logs</b> cho những gì DSM đã ghi lại. Cộng thêm các điều khiển thay đổi điều gì đó - chế độ quạt, đèn nhận diện, cập nhật DSM, khởi động lại và tắt máy.</p>
+    </div>
+    <div class="hero-shot"><img alt="System Health với đồng hồ CPU và RAM, tải trung bình, I/O đĩa và lịch sử nhiệt độ" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#health">System Health</a></li>
+      <li><a href="#cooling">Cooling &amp; chế độ quạt</a></li>
+      <li><a href="#identify">Identify &amp; cảnh báo</a></li>
+      <li><a href="#dsm-update">Cập nhật DSM</a></li>
+      <li><a href="#power">Điều khiển nguồn</a></li>
+      <li><a href="#resources">Tài nguyên</a></li>
+      <li><a href="#logs">Nhật ký</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">System Health</div>
+      <h2>Các số liệu</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Thẻ</th><th>Nó hiển thị gì</th></tr></thead>
+      <tbody>
+        <tr><td>Đồng hồ CPU &amp; RAM</td><td>Tổng CPU dạng vòng, với phần <b>user</b> được tách ra bên dưới để bạn phân biệt khối lượng công việc của mình với chi phí hệ thống. RAM hiển thị phần trăm và các con số tuyệt đối.</td></tr>
+        <tr><td>Bộ nhớ</td><td>Đã dùng so với tổng, dạng thanh. Màu xanh lá cho đến khi có vấn đề.</td></tr>
+        <tr><td>CPU Load Average</td><td>Các giá trị một, năm và mười lăm phút - số tiến trình đang chờ thời gian CPU, không phải phần trăm. Được đánh giá theo số lõi của bạn, nên một mức khỏe mạnh trên máy rackmount tám lõi lại là bận rộn trên máy hai khay.</td></tr>
+        <tr><td>Disk I/O</td><td>Thông lượng đọc và ghi cùng phần trăm sử dụng - tỷ lệ thời gian ổ đĩa bận, thường là câu trả lời thật khi NAS có vẻ chậm mà CPU lại rảnh.</td></tr>
+        <tr><td>Temperature History</td><td>Một biểu đồ cuộn kèm giá trị hiện tại. Theo &deg;C hoặc &deg;F tùy <a href="/vi/guide/settings/#preferences">tùy chọn</a> của bạn.</td></tr>
+        <tr><td>Tiến trình</td><td>NAS đang chạy bao nhiêu tiến trình.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Làm mát</div>
+      <h2>Chế độ tốc độ quạt, đổi từ điện thoại của bạn</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Thẻ Cooling hiển thị trạng thái quạt và chế độ NAS đang dùng, dưới dạng điều khiển ba lựa chọn:</p>
+        <ul class="plain">
+          <li><b>Full Speed</b> - luồng gió tối đa, tiếng ồn tối đa. Phù hợp cho tủ rack hoặc tủ đồ.</li>
+          <li><b>Cool</b> - mặc định cân bằng.</li>
+          <li><b>Quiet</b> - tốc độ thấp hơn, nhiệt độ cao hơn. Phù hợp cho NAS trong phòng khách, nếu ổ đĩa chịu được.</li>
+        </ul>
+        <div class="note"><b>Được xác nhận, không phải giả định.</b> Ứng dụng đọc chế độ hiện tại từ NAS, ghi lựa chọn của bạn, rồi <b>đọc lại</b>. Chế độ mà NAS âm thầm từ chối sẽ được báo là bị từ chối, thay vì nằm trên màn hình trông như đã được áp dụng.</div>
+        <div class="note" style="margin-top:14px"><b>Chế độ không nhận ra sẽ ở dạng chỉ đọc.</b> Nếu NAS của bạn báo một chế độ làm mát ngoài ba chế độ đó, thẻ hiển thị những gì nó báo và không đưa ra thay đổi - thay vì gán nhầm nó thành một trong ba chế độ đã biết.</div>
+      </div>
+      <img alt="Thẻ Cooling với Full Speed, Cool và Quiet, cùng Identify và Power Controls" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identify &amp; Alerts</div>
+      <h2>Tìm chiếc máy, tắt tiếng còi</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Identify</b> nhấp nháy đèn trạng thái của NAS để bạn biết mình đang đứng trước chiếc nào. <b>Stop</b> kết thúc nó.</li>
+      <li><b>Silence beep</b> tắt còi báo động. Nó tắt tiếng ồn, không xử lý điều kiện - thứ gì đã kích hoạt báo động vẫn còn đó, và phần đầu trang tình trạng vẫn sẽ cho bạn biết.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM Update</div>
+      <h2>Có bản cập nhật firmware không</h2>
+      <p class="lead">Thẻ DSM Update báo phiên bản bạn đang dùng và liệu Synology có bản mới hơn không. <b>Check for update</b> yêu cầu NAS kiểm tra lại.</p>
+    </div>
+    <div class="note"><b>Đây là firmware của NAS, không phải của ứng dụng.</b> Syno Manager tự cập nhật qua App Store hoặc Google Play như mọi ứng dụng khác. Thẻ này là nơi cập nhật của chính DSM, giống hệt nơi trong Control Panel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Power Controls</div>
+      <h2>Khởi động lại và tắt máy</h2>
+      <p class="lead">Nằm ở cuối System Health và được đánh dấu đỏ, vì chúng ảnh hưởng đến mọi người dùng đang kết nối - kể cả người đang sao chép dở một tệp.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Restart NAS</b> - khởi động lại sạch sẽ. Được xác nhận trước khi chạy.</li>
+      <li><b>Shutdown NAS</b> - tắt nguồn sạch sẽ. Được xác nhận trước khi chạy.</li>
+    </ul>
+    <div class="note stop"><b>Hãy suy nghĩ trước khi tắt máy từ xa.</b> NAS đã tắt nguồn không thể tự chuyển tiếp gói đánh thức của chính nó. Bật lại từ bên ngoài mạng của bạn cần VPN vào mạng, hoặc router được thiết lập chuyển tiếp Wake-on-LAN. Xem <a href="/vi/guide/wake-on-lan/">Wake-on-LAN</a> để biết cái gì chạy được từ đâu.</div>
+    <div class="note" style="margin-top:14px"><b>Phím tắt không bỏ qua bước xác nhận.</b> Các <a href="/vi/guide/shortcuts/">liên kết</a> <code>synomanager://reboot</code> và <code>synomanager://shutdown</code> cố ý chỉ <em>mở ứng dụng</em> tại màn hình này. Một hành động có tính phá hủy không trở thành một chạm chỉ vì được kích hoạt từ launcher.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Tài nguyên</div>
+      <h2>Biểu đồ trực tiếp</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Biểu đồ giám sát tài nguyên cho CPU, bộ nhớ, đọc đĩa và ghi đĩa" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Chế độ xem phụ Resources là cùng dữ liệu đó dưới dạng đồ thị cuộn, thứ bạn cần khi câu hỏi là "đây là đột biến hay liên tục?"</p>
+        <ul class="plain">
+          <li><b>CPU Usage</b> với phần user và system được tách riêng.</li>
+          <li><b>Memory Usage</b> với đã dùng so với tổng.</li>
+          <li><b>Disk Read</b> và <b>Disk Write</b>, mỗi loại có biểu đồ riêng, cùng mức sử dụng đĩa tổng thể.</li>
+          <li><b>Load Averages</b> trong một, năm và mười lăm phút.</li>
+        </ul>
+        <div class="note">Biểu đồ được cập nhật theo <a href="/vi/guide/settings/#preferences">khoảng thời gian thăm dò</a>. Khoảng ngắn hơn cho chi tiết mịn hơn và tốn pin hơn; khoảng dài hơn thì nhẹ nhàng hơn nhưng thô hơn.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Nhật ký</div>
+      <h2>DSM đã ghi lại gì</h2>
+      <p class="lead">Hai tab: <b>System</b> cho nhật ký của chính DSM, và <b>Connection</b> cho đăng nhập và truy cập tệp. Cả hai chỉ được đọc khi bạn yêu cầu.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nó tải một lần và đứng yên.</b> Nhật ký đọc lại theo bộ hẹn giờ trong khi bạn đang cố đọc một dòng thì vô dụng, và tốn pin cùng mạng vô ích.</li>
+      <li><b>Nhấn phát để theo dõi trực tiếp.</b> Nhấn lần nữa để tạm dừng. Việc theo dõi tự ngừng khi bạn rời màn hình hoặc đưa ứng dụng xuống nền, nên một tab nhật ký bị quên sẽ không âm thầm thăm dò trong túi bạn.</li>
+      <li><b>Có ô tìm kiếm</b> để tìm một dòng trong nhật ký dài.</li>
+      <li><b>Nhật ký container và stack hoạt động tương tự</b> - xem <a href="/vi/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Văn bản có thể chọn được.</b> Nhấn giữ một dòng và thanh Copy / Select all / Share của hệ thống hiện lên, giống như ở mọi nơi khác có văn bản trên màn hình.</li>
+      <li><b>Xuất những gì bạn đang xem.</b> Một nút xuất nằm cạnh công tắc trực tiếp trên tab System, và phía trên danh sách trên tab Connection. Nó mở một bảng với ba cách xuất: <b>Save to a file</b>, <b>Share</b> để gửi hoặc gửi email, hoặc <b>Copy to clipboard</b>.</li>
+    </ul>
+    <div class="note"><b>Nó xuất những gì đang hiển thị, không phải toàn bộ nhật ký.</b> Những gì chip lọc mức độ và ô tìm kiếm đã thu hẹp danh sách thành là những gì được xuất ra - không có gì bạn đã lọc bỏ quay lại trong bản xuất. Tệp là văn bản thuần, mỗi mục một dòng, với thời gian, mức độ, người dùng và mô tả ngăn cách bằng tab.</div>
+    <div class="note warn"><b>Nếu nhật ký không tải được</b> và báo hết thời gian kết nối trong khi phần còn lại của ứng dụng vẫn ổn, thì dịch vụ Log Center trên NAS mới là thứ không phản hồi, không phải kết nối của bạn. Hãy kiểm tra Log Center đã được cài và đang chạy trong Package Center của DSM - API nhật ký hệ thống là một phần của nó.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về hệ thống</h2>
+    </div>
+    <details open><summary>Tôi có thể đổi tốc độ quạt từ ứng dụng không?</summary><div class="body">Có. System Health có thẻ Cooling với Full Speed, Cool và Quiet. Ứng dụng đọc chế độ NAS đang dùng, ghi lựa chọn của bạn, rồi đọc lại để xác nhận. NAS báo một chế độ ngoài ba chế độ đó sẽ được giữ ở dạng hiển thị chỉ đọc thay vì bị diễn giải sai.</div></details>
+    <details><summary>Tôi có thể khởi động lại hoặc tắt NAS từ điện thoại không?</summary><div class="body">Có, từ Power Controls ở cuối System Health. Cả hai đều được xác nhận trước khi chạy. Tắt máy từ xa đáng cân nhắc kỹ - NAS đã tắt nguồn không thể được đánh thức qua internet nếu không có VPN hoặc router được cấu hình cho Wake-on-LAN.</div></details>
+    <details><summary>Identify NAS dùng để làm gì?</summary><div class="body">Nó nhấp nháy đèn trạng thái của NAS để bạn biết mình đang nhìn vào chiếc nào trong tủ rack hay tủ đồ. Silence beep tắt còi báo động mà không xử lý điều kiện đã kích hoạt nó.</div></details>
+    <details><summary>Nhật ký có tự làm mới không?</summary><div class="body">Không, và đó là chủ ý. Nhật ký tải một lần và đứng yên để bạn đọc. Nhấn phát để theo dõi trực tiếp, nhấn lần nữa để tạm dừng, và nó tự ngừng theo dõi khi bạn rời màn hình hoặc đưa ứng dụng xuống nền.</div></details>
+    <details><summary>Tôi có thể xuất hoặc sao chép nhật ký đang xem không?</summary><div class="body">Có. Nhấn giữ bất kỳ dòng nào để hiện thanh Copy / Select all / Share của hệ thống, hoặc dùng nút xuất bên cạnh công tắc trực tiếp trên tab System, hoặc phía trên danh sách trên tab Connection. Nó mở một bảng với Save to a file, Share or email và Copy to clipboard, và xuất đúng các mục đang hiển thị sau bộ lọc mức độ và tìm kiếm - mỗi mục một dòng, với thời gian, mức độ, người dùng và mô tả ngăn cách bằng tab.</div></details>
+    <details><summary>Vì sao tải trung bình của tôi cao trong khi CPU có vẻ ổn?</summary><div class="body">Tải trung bình đếm các tiến trình đang chờ, và chúng thường chờ ổ đĩa chứ không phải CPU. Hãy kiểm tra mức sử dụng Disk I/O trên cùng màn hình - phần trăm sử dụng cao trong khi CPU thấp là lời giải thích thường gặp.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Lưu trữ</h2>
+    <p class="lead" style="margin:0 auto 24px">Volume, pool, tình trạng SMART từng ổ và tháo an toàn.</p>
+    <p><a class="btn" href="/vi/guide/storage/">Lưu trữ &amp; ổ đĩa &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

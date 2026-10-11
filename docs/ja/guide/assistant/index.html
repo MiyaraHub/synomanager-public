@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 向けのデバイス上 AI アシスタント - Syno Manager</title>
+<meta name="description" content="Synology NAS についてふだんの言葉で質問すると、ダッシュボードと同じ健全性の判定が返ってきます。スマートフォン上で動作し、あなたの評価から学習し、読み取りしか行いません。" />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 向けのデバイス上 AI アシスタント - Syno Manager" />
+<meta property="og:description" content="Synology NAS についてふだんの言葉で質問すると、ダッシュボードと同じ健全性の判定が返ってきます。スマートフォン上で動作し、あなたの評価から学習し、読み取りしか行いません。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 向けのデバイス上 AI アシスタント - Syno Manager" />
+<meta name="twitter:description" content="Synology NAS についてふだんの言葉で質問すると、ダッシュボードと同じ健全性の判定が返ってきます。スマートフォン上で動作し、あなたの評価から学習し、読み取りしか行いません。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "アシスタント"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS 向けのデバイス上 AI アシスタント - Syno Manager",
+  "description": "Synology NAS についてふだんの言葉で質問すると、ダッシュボードと同じ健全性の判定が返ってきます。スマートフォン上で動作し、あなたの評価から学習し、読み取りしか行いません。",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "ja",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "アシスタントはどこで動作しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "お使いのスマートフォン上です。Android では AICore 経由の Gemini Nano、iOS と macOS では Apple Intelligence を使用します。フォールバック先のクラウドは存在しません。アシスタント内にクラウドホスト、クラウド SDK、API キーが少しでも含まれるとアプリのビルドが失敗するため、この約束は誰かの注意ではなくビルドによって守られています。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS のデータはどこかに送信されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。質問、NAS のデータ、回答がデバイスの外に出ることはありません。ネットワークをオフにしても動作します。何も送信されないため、保存、共有、学習に使われるコピーも存在しません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "何を質問できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "決まった一覧はありません。NAS は報告可能なすべての項目（一般的な NAS で1,000件以上）を公開しており、アシスタントはそれを検索して、質問に関係する内容を読み取ります。パッケージをインストールすれば、アプリを更新しなくても、そのパッケージについてもすぐに答えられます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS の設定を変更できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。読み取りしか行いません。起動、停止、削除、再起動は一切できません。これは、モデルにそうしないよう指示しているからではなく、そのためのツールが与えられていないからです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "費用はかかりますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。デバイスにすでに組み込まれているモデルを使うため、支払いもアカウント作成も不要です。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アシスタントのタブが表示されないのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "お使いのデバイスに、利用できるデバイス上モデルがないためです。動作しない機能を見せる代わりに、実行できないハードウェアではアプリがこの機能を完全に非表示にします。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アシスタントは学習しますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "あなたの評価から、このデバイス上だけで学習します。回答の下にある親指ボタンで評価すると、似た質問ではその回答を読み取った場所から始めるようになり、使うほど NAS を読み取るのが上手になります。評価がデバイスの外に出ることはなく、「この NAS の評価を消去」で削除できます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "モデルがビジー、または回数制限と表示されるのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "デバイス上のモデルはスマートフォン上のほかのすべてのアプリと共有されており、Syno Manager が画面に表示されている間だけ動作します。これらの制限に達した場合、アシスタントは一般的なエラーではなく、どの制限かを明示し、おおよその待ち時間もお伝えします。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; アシスタント</div>
+      <div class="eyebrow">アシスタント &middot; ベータ</div>
+      <h1>NAS に、<span class="g">ふだんの言葉で</span>聞く</h1>
+      <p>「ストレージで気にすべきことはある？」という質問は、本来なら4つの画面を開かないと答えが出ません。アシスタントは NAS が報告した内容を読み取って答えます。スマートフォン上で動くモデルがオフラインで処理し、どこにもデータを送りません。</p>
+    </div>
+    <div class="hero-shot"><img alt="おすすめの質問を表示したアシスタント" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#asking">質問する</a></li>
+      <li><a href="#topics">質問できること</a></li>
+      <li><a href="#privacy">データの行き先</a></li>
+      <li><a href="#readonly">読み取りのみ</a></li>
+      <li><a href="#wrong">間違うこともあります</a></li>
+      <li><a href="#learning">評価からの学習</a></li>
+      <li><a href="#availability">対応デバイス</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">質問する</div>
+      <h2>入力でも、音声でも</h2>
+      <p class="lead">アシスタントのタブには、<b>質問</b>と<b>しくみ</b>の2つのサブビューがあります。「質問」を開くと4つの提案が表示されますが、これは良い質問のかたちを示すためのもので、質問を制限するものではありません。</p>
+    </div>
+    <ul class="plain">
+      <li>下部のボックスに<b>質問を入力</b>するか、提案のひとつをタップします。</li>
+      <li>お好みで、マイクを使って<b>声で質問</b>することもできます。</li>
+      <li>右上のスピーカー操作で、<b>回答を読み上げ</b>させられます。</li>
+      <li><b>回答は生成されながら表示</b>されるため、すべてが出そろう前から読み始められます。</li>
+      <li><b>クリア</b>で会話を空にします。</li>
+    </ul>
+    <div class="note"><b>モデルは画面を開いたときに読み込まれる</b>ため、最初の質問を送ったときではなく、最初の回答が最も遅くなることはありません。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">対象範囲</div>
+      <h2>話題の一覧はありません</h2>
+      <p class="lead">見落としやすい点です。アシスタントは、ストレージやバックアップに関する決まった回答の集まりではなく、NAS が実際に公開しているあらゆる情報を対象にしています。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>NAS は報告可能なすべての項目を公開</b>しており（一般的な NAS で1,000件以上）、アシスタントはそのカタログを検索して、質問に関係する内容を読み取ります。</li>
+          <li><b>パッケージをインストールすれば、そのパッケージについても</b>アプリを更新しなくてもすぐに答えられます。カタログの内容はアプリに書き込まれておらず、お使いのデバイスから検出されます。</li>
+          <li><b>使うほど速くなります。</b>DSM の各部分の読み取り方は一度見つけて記憶されるため、同じ内容に関する以降の質問は速くなります。</li>
+          <li><b>「NAS の調子はどう？」には、健全性の判定で答えます。</b>ホーム画面と同じ「正常」「警告」「重大」の判定を、その理由とともに示します。文脈から切り離した温度や単独の数値ではありません。</li>
+        </ul>
+        <div class="note"><b>良い質問は、質問のかたちをしています。</b>「NAS の調子はどう？」「バックアップは正常？」「最も容量を使っているものは？」「この NAS について何がわかる？」。最後の質問は一度試す価値があります。<em>お使いの</em> NAS で何に到達できるかがわかるからです。</div>
+      </div>
+      <img alt="「NAS の調子はどう？」に健全性の判定で答えるアシスタント" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">プライバシー</div>
+      <h2>スマートフォンの外には何も出ません</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">モデルはデバイスに属しています。質問、NAS のデータ、回答はすべてスマートフォン上で処理され、ネットワークをオフにしても動作します。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>フォールバック先のクラウドはありません。</b>「使わないことにしている」のではなく、アシスタント内にクラウドホスト、クラウド SDK、API キーが少しでも含まれるとアプリのビルドが<b>失敗</b>します。この約束は、誰かの注意ではなくビルドによって守られています。</li>
+          <li><b>何も送信されないため、保存、共有、学習に使われるコピーは存在しません</b>。</li>
+          <li><b>無料でアカウントも不要です。</b>モデルはすでにデバイスの中にあるためです。</li>
+        </ul>
+      </div>
+      <img alt="モデルがデバイス上にあり、データが外に出ないことを説明するしくみの画面" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">できないこと</div>
+      <h2>読み取りしか行いません</h2>
+      <p class="lead">アシスタントは、起動、停止、削除、再起動を一切行えません。「しないでください」とお願いしているからではなく、そのためのツールがそもそも与えられていないからです。</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">これは見た目以上に重要です。何かをしないよう<em>指示</em>されたモデルは、言いくるめられてしまうことがあります。実行する手段を持たないモデルには、それができません。コンテナを再起動したいときは、<a href="/ja/guide/apps/#docker">Docker 画面</a>から3タップで、確認のうえ実行できます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">誠実さ</div>
+      <h2>間違うことがあり、画面でもそう伝えています</h2>
+      <p class="lead">これはデータセンターの大型モデルではなく、スマートフォン上で動く小型モデルです。数値を読み違えたり、必要以上に断定的な言い方をしたりすることがあります。アプリは、脚注ではなく画面上でこのことをお伝えしています。</p>
+    </div>
+    <ul class="plain">
+      <li><b>重要なことは、その情報を担当する画面で確認してください。</b>すべての回答は、アプリが直接表示している内容に関するものです。</li>
+      <li>まさにこの理由から、タブのヘッダーに<b>BETA</b>と表示されています。</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>今は答えられない場合、その理由をお伝えします</h3>
+      <p class="lead">一般的なエラーではなく、3つの理由のいずれかと、おおよその待ち時間をお知らせします。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>理由</th><th>意味</th></tr></thead>
+      <tbody>
+        <tr><td>利用制限</td><td>このアプリは、デバイス上のモデルの割り当て分を一時的に使い切りました。デバイスは、モデルを使うすべてのアプリで1つのモデルを共有しています。割り当てが更新されると、通常は1分から数分以内に再び回答します。</td></tr>
+        <tr><td>ビジー</td><td>デバイス上のモデルは、現在ほかのリクエストに回答中です。しばらくしてからもう一度お試しください。</td></tr>
+        <tr><td>バックグラウンド</td><td>デバイス上のモデルは、Syno Manager が画面に表示されている間だけ回答します。アプリを前面に戻して、もう一度質問してください。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>これらのいずれが起きても、何も失われません。</b>質問は会話に残るため、理由が解消されたらもう一度質問してください。</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">より良くなる</div>
+      <h2>このデバイス上で、あなたの評価から学習します</h2>
+      <p class="lead">すべての回答の下に、高評価と低評価の親指ボタンがあります。評価すると、似た質問ではその回答を読み取った場所から始めるようになり、使うほど<em>あなたの</em> NAS を読み取るのが上手になります。その間、何もスマートフォンの外には出ません。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>良い回答</b>または<b>良くない回答</b>。回答の下の2つの親指ボタンを、1回タップするだけです。</li>
+          <li><b>NAS ごとに保存されます。</b>評価は、回答した NAS に紐づけてこのデバイスに保存されるため、別の NAS に切り替えると、その NAS はゼロから始まります。</li>
+          <li><b>どこにも送信されません。</b>評価はモデルと同じようにデバイス内で完結し、アカウント、同期、アップロードは一切ありません。</li>
+        </ul>
+      </div>
+      <img alt="高評価が選択されたアシスタントの回答" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="評価された回答が1件表示された「ここで学習した内容」カードと、「この NAS の評価を消去」" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">しくみタブの<b>ここで学習した内容</b>は、現在の NAS で良いと評価された回答の数を数え、ふだんの言葉で読み上げます。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>最初の評価をする前は、ゼロではなく<b>この NAS では、まだ良いと評価された回答はありません</b>と表示されます。ゼロは測定値のように読めてしまい、「ない」という状態を表さないからです。</li>
+          <li><b>この NAS の評価を消去</b>すると、現在の NAS についてこのデバイスに保存されたすべての評価を、1タップで削除します。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">対応状況</div>
+      <h2>対応デバイス</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>プラットフォーム</th><th>モデル</th><th>要件</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td><b>AICore</b> と、利用可能な Gemini Nano モデルを備えたデバイス。</td></tr>
+        <tr><td>iOS と macOS</td><td>Apple Intelligence</td><td>Apple Intelligence に対応し、有効になっているデバイス。</td></tr>
+        <tr><td>それ以外</td><td>-</td><td>タブはまったく表示されません。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>利用できるモデルがないデバイスには、この機能を表示しません。</b>グレーアウトでも予告でもなく、存在しません。動作しない操作は、操作がないよりも悪いため、タブそのものを出しません。</div>
+    <p style="color:var(--steel);margin-top:18px"><b>しくみ</b>のサブビューでは、お使いのデバイスがどの状態にあり、何が見つかったかを確認できます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>アシスタント FAQ</h2>
+    </div>
+    <details open><summary>アシスタントはどこで動作しますか？</summary><div class="body">お使いのスマートフォン上です。Android では AICore 経由の Gemini Nano、iOS と macOS では Apple Intelligence を使用します。フォールバック先のクラウドは存在しません。アシスタント内にクラウドホスト、クラウド SDK、API キーが少しでも含まれると、アプリのビルドが失敗します。</div></details>
+    <details><summary>NAS のデータはどこかに送信されますか？</summary><div class="body">いいえ。質問、NAS のデータ、回答がデバイスの外に出ることはなく、ネットワークをオフにしても動作します。何も送信されないため、保存、共有、学習に使われるコピーも存在しません。</div></details>
+    <details><summary>何を質問できますか？</summary><div class="body">決まった一覧はありません。NAS は報告可能なすべての項目（一般的な NAS で1,000件以上）を公開しており、アシスタントはそれを検索します。パッケージをインストールすれば、アプリを更新しなくても、そのパッケージについても答えられます。</div></details>
+    <details><summary>NAS の設定を変更できますか？</summary><div class="body">いいえ。読み取りしか行いません。そのためのツールが与えられていないため、起動、停止、削除、再起動は一切できません。</div></details>
+    <details><summary>費用はかかりますか？</summary><div class="body">いいえ。デバイスにすでに組み込まれているモデルを使うため、支払いもアカウント作成も不要です。</div></details>
+    <details><summary>アシスタントのタブが表示されないのはなぜですか？</summary><div class="body">お使いのデバイスに、利用できるデバイス上モデルがないためです。動作しない機能を見せる代わりに、実行できないハードウェアではアプリがこの機能を完全に非表示にします。</div></details>
+    <details><summary>アシスタントは学習しますか？</summary><div class="body">あなたの評価から、このデバイス上だけで学習します。回答の下にある親指ボタンで評価すると、似た質問ではその回答を読み取った場所から始めるようになります。評価がデバイスの外に出ることはなく、「この NAS の評価を消去」で削除できます。</div></details>
+    <details><summary>モデルがビジー、または回数制限と表示されるのはなぜですか？</summary><div class="body">デバイス上のモデルはスマートフォン上のほかのすべてのアプリと共有されており、Syno Manager が画面に表示されている間だけ動作します。アシスタントは、一般的なエラーではなく、そのうちのどれに該当したかをお伝えします。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：設定</h2>
+    <p class="lead" style="margin:0 auto 24px">アプリのすべての設定項目と、それぞれが何を変えるか。</p>
+    <p><a class="btn" href="/ja/guide/settings/">設定 &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

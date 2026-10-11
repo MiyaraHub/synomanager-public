@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Αποθήκευση, RAID και υγεία SMART του Synology - Syno Manager</title>
+<meta name="description" content="Τόμοι και pools του Synology με τύπο RAID και ελεύθερο χώρο, κατάσταση SMART και θερμοκρασία ανά δίσκο, Quick SMART Test και ασφαλής αφαίρεση για USB και eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/el/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Αποθήκευση, RAID και υγεία SMART του Synology - Syno Manager" />
+<meta property="og:description" content="Τόμοι και pools του Synology με τύπο RAID και ελεύθερο χώρο, κατάσταση SMART και θερμοκρασία ανά δίσκο, Quick SMART Test και ασφαλής αφαίρεση για USB και eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/el/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Αποθήκευση, RAID και υγεία SMART του Synology - Syno Manager" />
+<meta name="twitter:description" content="Τόμοι και pools του Synology με τύπο RAID και ελεύθερο χώρο, κατάσταση SMART και θερμοκρασία ανά δίσκο, Quick SMART Test και ασφαλής αφαίρεση για USB και eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "el",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Αρχική",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Οδηγός Χρήσης",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Αποθήκευση"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Αποθήκευση, RAID και υγεία SMART του Synology - Syno Manager",
+  "description": "Τόμοι και pools του Synology με τύπο RAID και ελεύθερο χώρο, κατάσταση SMART και θερμοκρασία ανά δίσκο, Quick SMART Test και ασφαλής αφαίρεση για USB και eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "el",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Μπορώ να δω την κατάσταση SMART για κάθε δίσκο;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Η υποπροβολή Υγεία δίσκων απαριθμεί κάθε δίσκο με το μοντέλο του, αν είναι HDD ή SSD, τη χωρητικότητα, τη θερμοκρασία και την κρίση SMART. Μπορείτε επίσης να ξεκινήσετε Quick SMART Test σε οποιονδήποτε δίσκο από το κινητό."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ποια θερμοκρασία είναι υπερβολική για έναν δίσκο NAS;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Η εφαρμογή χρωματίζει έναν δίσκο κεχριμπαρί πάνω από 45 βαθμούς C και κόκκινο πάνω από 55 βαθμούς C, και τη θερμοκρασία συστήματος κεχριμπαρί πάνω από 50 και κόκκινη πάνω από 60. Αυτά τα όρια τροφοδοτούν και το σήμα υγείας στην αρχική οθόνη, οπότε ένας ζεστός δίσκος φαίνεται εκεί χωρίς να χρειαστεί να ψάξετε."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να αφαιρέσω με ασφάλεια έναν δίσκο USB από την εφαρμογή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι, από την υποπροβολή Εξωτερικά. Η αφαίρεση επιβεβαιώνεται από το ότι ο δίσκος φεύγει πραγματικά από τη λίστα συσκευών, όχι από το ότι έγινε δεκτό το αίτημα - οπότε ένας δίσκος που λέει ότι αφαιρέθηκε όντως αφαιρέθηκε. Ένας δίσκος που μορφοποιείται ή αρχικοποιείται δεν μπορεί να αφαιρεθεί."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να δημιουργήσω ή να επεκτείνω έναν τόμο από την εφαρμογή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Όχι. Η δημιουργία, η επέκταση και η επισκευή τόμων και pools γίνονται στον Storage Manager του DSM. Η εφαρμογή αναφέρει τι κάνει η αποθήκευσή σας και σας επιτρέπει να ενεργείτε σε δίσκους· δεν αναδιαρθρώνει τη διάταξή σας από ένα κινητό."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/el/"><img src="/assets/syno-manager-icon.png" alt="Εικονίδιο Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα">
+      <a href="/el/">Αρχική</a>
+      <a href="/el/guide/" class="active">Οδηγός Χρήσης</a>
+      <a href="/el/#screenshots">Στιγμιότυπα οθόνης</a>
+      <a href="/el/compatible-nas/">Συμβατότητα</a>
+      <a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a>
+      <a href="/el/help/">Βοήθεια</a>
+      <a href="/el/#top" class="cta">Λήψη</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός χρήσης</a> &rsaquo; Αποθήκευση</div>
+      <div class="eyebrow">Αποθήκευση</div>
+      <h1>Κάθε τόμος, <span class="g">κάθε δίσκος</span></h1>
+      <p>Τρεις υποπροβολές: <b>Τόμοι &amp; Pools</b> για χωρητικότητα και RAID, <b>Υγεία δίσκων</b> για SMART και θερμοκρασία ανά δίσκο, και <b>Εξωτερικά</b> για ό,τι είναι συνδεδεμένο πίσω.</p>
+    </div>
+    <div class="hero-shot"><img alt="Τόμοι αποθήκευσης και δίσκοι στο Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Σε αυτή τη σελίδα</b><ul>
+      <li><a href="#volumes">Τόμοι &amp; Pools</a></li>
+      <li><a href="#drives">Η λίστα δίσκων</a></li>
+      <li><a href="#disk-health">Υγεία δίσκων &amp; SMART</a></li>
+      <li><a href="#thresholds">Όρια θερμοκρασίας</a></li>
+      <li><a href="#external">Εξωτερικά &amp; ασφαλής αφαίρεση</a></li>
+      <li><a href="#limits">Τι δεν θα κάνει</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Τόμοι &amp; Pools</div>
+      <h2>Χωρητικότητα με μια ματιά</h2>
+      <p class="lead">Κάθε τόμος παίρνει μια κάρτα με το όνομά του, τον τύπο RAID, την κατάστασή του και πόσοι δίσκοι τον υποστηρίζουν, πάνω από μια μπάρα χρήσης με τα χρησιμοποιημένα, το ποσοστό, το σύνολο και τα ελεύθερα.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Εμφανίζεται</th><th>Σημασία</th></tr></thead>
+      <tbody>
+        <tr><td>Όνομα τόμου</td><td>Όπως το ονομάζει το DSM - <code>VOLUME_1</code> και ούτω καθεξής.</td></tr>
+        <tr><td>Τύπος RAID</td><td>RAID 5, SHR, RAID 1, Basic - ό,τι πραγματικά είναι το pool από κάτω.</td></tr>
+        <tr><td>Κατάσταση</td><td>Η κατάσταση του ίδιου του τόμου: <b>κανονική</b>, υποβαθμισμένη, κατεστραμμένη. Μια υποβαθμισμένη διάταξη είναι το μόνο πράγμα σε αυτή την οθόνη που αξίζει να αντιμετωπίσετε σήμερα.</td></tr>
+        <tr><td>Αριθμός δίσκων</td><td>Πόσους φυσικούς δίσκους καλύπτει ο τόμος.</td></tr>
+        <tr><td>Μπάρα χρήσης</td><td>Πράσινη κανονικά, κεχριμπαρί πάνω από 80% και κόκκινη πάνω από 90%. Είναι τα ίδια όρια που χρησιμοποιεί το <a href="/el/guide/home/#header">σήμα υγείας</a>.</td></tr>
+        <tr><td>Χρησιμοποιημένα / Σύνολο / Ελεύθερα</td><td>Και τα τρία, γιατί το «70% γεμάτο» και τα «13 TB ελεύθερα» απαντούν σε διαφορετικές ερωτήσεις.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Τι υπάρχει σε κάθε θέση</h2>
+      <p class="lead">Κάτω από τους τόμους, κάθε φυσικός δίσκος ανά αριθμό θέσης.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Θέση</b> - Δίσκος 1, Δίσκος 2 κ.ο.κ., ίδια με τις ετικέτες στο περίβλημα.</li>
+      <li><b>Μοντέλο</b> - η ίδια η συμβολοσειρά μοντέλου του δίσκου.</li>
+      <li><b>Κατασκευαστής και τύπος</b> - ο κατασκευαστής και αν είναι HDD ή SSD. Ένας δίσκος του οποίου τον κατασκευαστή δεν αναγνώρισε το NAS εμφανίζεται ως <b>Άγνωστος</b> αντί να γίνεται εικασία.</li>
+      <li><b>Θερμοκρασία</b>, χρωματισμένη με βάση τα παρακάτω όρια.</li>
+      <li><b>Κρίση SMART</b> - <b>SMART OK</b> όταν η αυτοαξιολόγηση του δίσκου είναι υγιής.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Υγεία δίσκων</div>
+      <h2>SMART, και ένα τεστ που μπορείτε να ξεκινήσετε</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Η υποπροβολή Υγεία δίσκων είναι οι ίδιοι δίσκοι με περισσότερο χώρο: η χωρητικότητα, ο τύπος, η θερμοκρασία και η κατάσταση SMART παίρνουν από μια ετικέτα και κάθε δίσκος έχει κουμπί <b>Quick SMART Test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>Το <b>Quick SMART Test</b> ζητά από τον δίσκο να τρέξει τη δική του σύντομη αυτοαξιολόγηση. Παίρνει μερικά λεπτά και δεν διακόπτει τίποτα που χρησιμοποιεί τον τόμο.</li>
+          <li><b>Η κρίση είναι του δίσκου, όχι δική μας.</b> Το SMART είναι ο δίσκος που αναφέρει για τον εαυτό του· η εφαρμογή το μεταφέρει. Ένας δίσκος που λέει ότι είναι καλά και μετά χαλάει είναι περιορισμός του SMART, όχι της ανάγνωσης.</li>
+          <li><b>Μια κατάσταση SMART που δεν διαβάζεται εμφανίζεται ως άγνωστη</b>, ποτέ ως υγιής. Μια ανύπαρκτη ανάγνωση και μια καλή ανάγνωση είναι διαφορετικά πράγματα και δεν συγχωνεύονται ποτέ.</li>
+        </ul>
+      </div>
+      <img alt="Υγεία δίσκων με κάθε δίσκο, κατάσταση SMART, θερμοκρασία και κουμπί Quick SMART Test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Οι αριθμοί πίσω από τα χρώματα</div>
+      <h2>Όρια</h2>
+      <p class="lead">Τίποτα εδώ δεν είναι εικασία για το υλικό σας - αυτά είναι τα σημεία στα οποία η εφαρμογή αλλάζει χρώμα και, όπου χρειάζεται, το σήμα υγείας της αρχικής οθόνης.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Μέτρηση</th><th>Κεχριμπαρί στο</th><th>Κόκκινο στο</th></tr></thead>
+      <tbody>
+        <tr><td>Θερμοκρασία δίσκου</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Θερμοκρασία συστήματος</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Χρήση τόμου</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Φορτίο UPS</td><td>κάτω από 50%</td><td>κάτω από 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Εναλλάξτε μεταξύ &deg;C και &deg;F στις <a href="/el/guide/settings/#preferences">Ρυθμίσεις &rsaquo; Μονάδα θερμοκρασίας</a>. Κάθε θερμοκρασία στην εφαρμογή την ακολουθεί αμέσως, και αυτές στην αρχική οθόνη και στα widget.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Εξωτερική</div>
+      <h2>USB, eSATA και ασφαλής αφαίρεση</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Εξωτερική αποθήκευση και συσκευές USB, χωρίς τίποτα συνδεδεμένο και με ένα UPS στη λίστα" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Δύο ενότητες: <b>Εξωτερική αποθήκευση</b> για δίσκους που μπορείτε να προσαρτήσετε και να αφαιρέσετε, και <b>Συσκευές USB</b> για ό,τι άλλο είναι συνδεδεμένο - ένα UPS, ένας εκτυπωτής, ένα dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Η αφαίρεση επιβεβαιώνεται από το ότι ο δίσκος φεύγει.</b> Η εφαρμογή δεν αναφέρει επιτυχία επειδή το αίτημα επέστρεψε OK· ξαναδιαβάζει τη λίστα συσκευών και λέει ότι ο δίσκος αφαιρέθηκε μόνο όταν όντως έχει φύγει. Αυτή είναι η διαφορά ανάμεσα στο «ασφαλές να αποσυνδεθεί» και στο «πιθανώς ασφαλές να αποσυνδεθεί».</li>
+          <li><b>Ένας απασχολημένος δίσκος δεν μπορεί να αφαιρεθεί.</b> Ένας που μορφοποιείται ή αρχικοποιείται απορρίπτεται, με την αιτία, αντί να τραβηχτεί στη μέση μιας εγγραφής.</li>
+          <li><b>Όταν δεν υπάρχει τίποτα συνδεδεμένο, το λέει καθαρά.</b> Μια άδεια λίστα γράφει «Δεν υπάρχουν συνδεδεμένοι εξωτερικοί δίσκοι» - όχι ένα άδειο πλαίσιο που πρέπει να ερμηνεύσετε.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Όρια</div>
+      <h2>Τι δεν θα κάνει αυτή η οθόνη</h2>
+      <p class="lead">Η αποθήκευση είναι το μόνο μέρος όπου ένα λάθος πάτημα δεν αναιρείται, γι' αυτό η εφαρμογή διαβάζει πολύ περισσότερα απ' όσα γράφει.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Δεν θα δημιουργήσει, δεν θα επεκτείνει και δεν θα διαγράψει τόμο ή pool.</b> Αυτά ανήκουν στον Storage Manager του DSM, σε οθόνη αρκετά μεγάλη ώστε να δείχνει τι πρόκειται να κάνετε.</li>
+      <li><b>Δεν θα επισκευάσει μια υποβαθμισμένη διάταξη.</b> Θα σας πει, καθαρά και στην αρχική οθόνη, ότι μία είναι υποβαθμισμένη.</li>
+      <li><b>Δεν θα μορφοποιήσει τίποτα.</b></li>
+      <li><b>Δεν θα τρέξει πλήρες τεστ SMART</b> - μόνο το γρήγορο. Μια πλήρης σάρωση επιφάνειας παίρνει ώρες και ανήκει κάπου από όπου δεν θα φύγετε.</li>
+    </ul>
+    <div class="note"><b>Οι έλεγχοι ακεραιότητας (scrubbing), οι ανακατασκευές και οι έλεγχοι ισοτιμίας</b> εμφανίζονται ως εργασίες σε εξέλιξη όσο τρέχουν, ώστε να παρακολουθήσετε μία να τελειώνει από την εφαρμογή, ακόμη κι αν την ξεκινήσατε στο DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Συχνές ερωτήσεις</div>
+      <h2>Συχνές ερωτήσεις για την αποθήκευση</h2>
+    </div>
+    <details open><summary>Μπορώ να δω την κατάσταση SMART για κάθε δίσκο;</summary><div class="body">Ναι. Η υποπροβολή Υγεία δίσκων απαριθμεί κάθε δίσκο με το μοντέλο του, αν είναι HDD ή SSD, τη χωρητικότητα, τη θερμοκρασία και την κρίση SMART. Μπορείτε επίσης να ξεκινήσετε Quick SMART Test σε οποιονδήποτε δίσκο από το κινητό.</div></details>
+    <details><summary>Ποια θερμοκρασία είναι υπερβολική για έναν δίσκο NAS;</summary><div class="body">Η εφαρμογή χρωματίζει έναν δίσκο κεχριμπαρί πάνω από 45&deg;C και κόκκινο πάνω από 55&deg;C, και τη θερμοκρασία συστήματος κεχριμπαρί πάνω από 50&deg;C και κόκκινη πάνω από 60&deg;C. Αυτά τα όρια τροφοδοτούν και το σήμα υγείας στην αρχική οθόνη.</div></details>
+    <details><summary>Μπορώ να αφαιρέσω με ασφάλεια έναν δίσκο USB από την εφαρμογή;</summary><div class="body">Ναι, από την υποπροβολή Εξωτερικά. Η αφαίρεση επιβεβαιώνεται από το ότι ο δίσκος φεύγει πραγματικά από τη λίστα συσκευών, όχι από το ότι έγινε δεκτό το αίτημα. Ένας δίσκος που μορφοποιείται ή αρχικοποιείται δεν μπορεί να αφαιρεθεί.</div></details>
+    <details><summary>Μπορώ να δημιουργήσω ή να επεκτείνω έναν τόμο από την εφαρμογή;</summary><div class="body">Όχι. Η δημιουργία, η επέκταση και η επισκευή τόμων και pools γίνονται στον Storage Manager του DSM. Η εφαρμογή αναφέρει τι κάνει η αποθήκευσή σας και σας επιτρέπει να ενεργείτε σε δίσκους· δεν αναδιαρθρώνει τη διάταξή σας από ένα κινητό.</div></details>
+    <details><summary>Γιατί ένας δίσκος γράφει Άγνωστος για τον κατασκευαστή του;</summary><div class="body">Επειδή το NAS δεν ανέφερε κανέναν. Η εφαρμογή δείχνει ό,τι της είπαν αντί να συμπεραίνει κατασκευαστή από τη συμβολοσειρά του μοντέλου, κάτι που θα ήταν εικασία παρουσιασμένη ως γεγονός.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Επόμενο: Δίκτυο</h2>
+    <p class="lead" style="margin:0 auto 24px">Ταχύτητα μεταφοράς, συνδέσεις, υπηρεσίες, VPN και DDNS.</p>
+    <p><a class="btn" href="/el/guide/network/">Δίκτυο &rarr;</a> &nbsp; <a class="btn ghost" href="/el/guide/">Πίσω στον οδηγό</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/el/">Αρχική</a><a href="/el/guide/">Οδηγός χρήσης</a><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/compatible-nas/">Συμβατότητα</a><a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a><a href="/el/synology-app-for-iphone/">iPhone & iPad</a><a href="/el/synology-app-for-android/">Android</a><a href="/el/synology-app-for-mac-windows/">Mac & Windows</a><a href="/el/ds-finder-alternative/">έναντι DS finder</a><a href="/el/help/">Βοήθεια</a><a href="/el/privacy/">Απόρρητο</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Αναφορά σφάλματος</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Το Syno Manager είναι ανεξάρτητη εφαρμογή και δεν σχετίζεται με τη Synology Inc., ούτε εγκρίνεται ή χορηγείται από αυτήν. Τα Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station και QuickConnect είναι εμπορικά σήματα της Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>إدارة مستخدمي Synology والمهام وUPS - Syno Manager</title>
+<meta name="description" content="أدر حسابات مستخدمي Synology مع حماية حسابات النظام، وشغّل المهام المجدولة وبدّلها، واقرأ شحن UPS والمدة المتبقية المقدرة من هاتفك." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ar/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="إدارة مستخدمي Synology والمهام وUPS - Syno Manager" />
+<meta property="og:description" content="أدر حسابات مستخدمي Synology مع حماية حسابات النظام، وشغّل المهام المجدولة وبدّلها، واقرأ شحن UPS والمدة المتبقية المقدرة من هاتفك." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ar/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="إدارة مستخدمي Synology والمهام وUPS - Syno Manager" />
+<meta name="twitter:description" content="أدر حسابات مستخدمي Synology مع حماية حسابات النظام، وشغّل المهام المجدولة وبدّلها، واقرأ شحن UPS والمدة المتبقية المقدرة من هاتفك." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ar",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "دليل المستخدم",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "لوحة التحكم"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "إدارة مستخدمي Synology والمهام وUPS - Syno Manager",
+  "description": "أدر حسابات مستخدمي Synology مع حماية حسابات النظام، وشغّل المهام المجدولة وبدّلها، واقرأ شحن UPS والمدة المتبقية المقدرة من هاتفك.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "ar",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل أستطيع إضافة مستخدمي DSM أو تعديلهم من التطبيق؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. أضف مستخدماً، وعدّل تفاصيله، وغيّر كلمة مرور، أو احذف حساباً. وحسابات النظام - admin وguest وحسابات الخدمة التي ينشئها DSM - تُكتشف وتُحمى من الحذف، لأن إزالة أحدها يُفسد NAS بطرق مملة التراجع عنها."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أستطيع تشغيل مهمة مجدولة يدوياً؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، للمهام التي يسمح DSM بتشغيلها - ولكل منها زر Run Now. ويمكنك أيضاً تفعيل أي مهمة أو تعطيلها دون فتح DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ماذا تعرض شاشة UPS؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "طراز UPS، وهل هو على التيار أم على البطارية، وشحنه بنسبة مئوية وشريط، وكيفية اتصاله، والمدة المتبقية المقدرة، وهل دعم UPS مفعّل على NAS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل أستطيع تغيير المدة التي ينتظرها NAS قبل الإغلاق على البطارية؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. يبلغ التطبيق عن حالة UPS؛ أما سياسة الإغلاق فتُضبط في DSM ضمن Hardware and Power، حيث تُشرح عواقب الإعداد."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ar/"><img src="/assets/syno-manager-icon.png" alt="أيقونة Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة">
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/guide/" class="active">دليل المستخدم</a>
+      <a href="/ar/#screenshots">لقطات الشاشة</a>
+      <a href="/ar/compatible-nas/">التوافق</a>
+      <a href="/ar/best-synology-nas-app/">لماذا تنتقل إليه</a>
+      <a href="/ar/help/">المساعدة</a>
+      <a href="/ar/#top" class="cta">تنزيل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; لوحة التحكم</div>
+      <div class="eyebrow">لوحة التحكم</div>
+      <h1>الحسابات والجداول <span class="g">والطاقة</span></h1>
+      <p>أربعة أقسام فرعية: <b>Users</b> و<b>Tasks</b> و<b>Power</b> لـ UPS و<b>Settings</b> - تفضيلات التطبيق نفسه، متاحة دون مغادرة التبويب الذي أنت فيه.</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler يعرض المهام المجدولة مع مفاتيح التبديل وRun Now" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>في هذه الصفحة</b><ul>
+      <li><a href="#users">المستخدمون</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">الإعدادات</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">المستخدمون</div>
+      <h2>حسابات DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">كل حساب على NAS، مع اسم العرض والوصف وعنوان البريد الإلكتروني إن وُجد. وتشير شارة <b>Expired</b> إلى الحسابات التي عطّلها DSM.</p>
+        <h3 style="margin-top:20px">ما تستطيع فعله</h3>
+        <ul class="plain">
+          <li><b>أضف مستخدماً</b> بالتفاصيل التي يطلبها DSM.</li>
+          <li><b>عدّل</b> حساباً موجوداً.</li>
+          <li><b>غيّر كلمة مرور.</b></li>
+          <li><b>احذف</b> حساباً أنشأته أنت.</li>
+        </ul>
+        <div class="note"><b>حسابات النظام لا يمكن حذفها.</b> <code>admin</code> و<code>guest</code> وحسابات الخدمة التي ينشئها DSM لحزمه الخاصة تُكتشف وتُحمى. إزالة أحدها تُفسد NAS بطرق مملة التراجع عنها، والهاتف ليس المكان الذي تكتشف فيه ذلك.</div>
+      </div>
+      <img alt="حسابات مستخدمي DSM، مع إخفاء اسمين وعنوانين" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">حسابان في لقطة الشاشة هذه مطموسان - فهما أسماء وعناوين أشخاص حقيقيين.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>ما هو مجدول، وما سيعمل تالياً</h2>
+      <p class="lead">كل مهمة عند DSM، وهل هي مفعّلة، وما تفعله، ومتى تعمل بعد ذلك.</p>
+    </div>
+    <ul class="plain">
+      <li><b>اسم المهمة ونوعها</b> - مهمة Hyper Backup أو سكربت يحدده المستخدم أو تنظيف سلة المحذوفات - وكل منها موسوم بنوعه.</li>
+      <li><b>ما تفعله فعلاً.</b> تعرض مهمة السكربت الأمر الذي تشغّله؛ وتعرض مهمة النسخ الاحتياطي وصفها.</li>
+      <li><b>التشغيل القادم</b>، بتاريخ ووقت.</li>
+      <li><b>مفتاح لكل مهمة</b> لتفعيلها أو تعطيلها دون فتح DSM.</li>
+      <li><b>Run Now</b> للمهام التي يسمح DSM بتشغيلها عند الطلب.</li>
+    </ul>
+    <div class="note warn"><b>Run Now يشغّلها الآن.</b> سكربت مجدول يتوقع أن يعمل في 3am على NAS خامل سيتصرف بشكل مختلف في 6pm أثناء نسخ ملفات. والزر يفعل ما يقوله.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">الطاقة</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="حالة UPS مع الطراز والشحن وطريقة الاتصال والمدة المتبقية المقدرة" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">يظهر عند توصيل UPS. بطاقة واحدة فيها كل شيء.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>المعروض</th><th>المعنى</th></tr></thead>
+          <tbody>
+            <tr><td>الشركة المصنّعة والطراز</td><td>كما يعرّف UPS عن نفسه.</td></tr>
+            <tr><td>الحالة</td><td><b>متصل</b> بالتيار الكهربائي، أو على البطارية.</td></tr>
+            <tr><td>الشحن</td><td>نسبة مئوية وشريط. كهرماني تحت 50%، وأحمر تحت 20%.</td></tr>
+            <tr><td>الوضع</td><td>كيف يتحدث NAS معه - عبر USB أو عبر الشبكة.</td></tr>
+            <tr><td>المدة المتبقية</td><td>المدة التي يقدّر UPS أنه يستطيع فيها تحمل الحمل.</td></tr>
+            <tr><td>مفعّل</td><td>هل دعم UPS مفعّل في DSM أصلاً.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>يغذّي الشحن شارة الحالة الصحية.</b> يظهر UPS الذي يفرغ في <a href="/ar/guide/home/#header">الشاشة الرئيسية</a> دون أن تفتح هذا التبويب - وهذا هو المقصود، لأنك حين تفكر في التحقق قد لا يكون أمامك وقت طويل.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">الإعدادات</div>
+      <h2>تفضيلات التطبيق نفسه</h2>
+      <p class="lead">القسم الفرعي الرابع هو Settings، مضمّن هنا لتغيّر فاصل الاستعلام أو لون التمييز دون مغادرة التبويب. وهو الشاشة نفسها التي يفتحها رمز الترس.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/ar/guide/settings/">كل إعداد، مشروحاً</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أسئلة شائعة</div>
+      <h2>الأسئلة الشائعة (FAQ) عن لوحة التحكم</h2>
+    </div>
+    <details open><summary>هل أستطيع إضافة مستخدمي DSM أو تعديلهم من التطبيق؟</summary><div class="body">نعم. أضف مستخدماً، وعدّل تفاصيله، وغيّر كلمة مرور، أو احذف حساباً. وحسابات النظام - admin وguest وحسابات الخدمة التي ينشئها DSM - تُكتشف وتُحمى من الحذف.</div></details>
+    <details><summary>هل أستطيع تشغيل مهمة مجدولة يدوياً؟</summary><div class="body">نعم، للمهام التي يسمح DSM بتشغيلها. ويمكنك أيضاً تفعيل أي مهمة أو تعطيلها دون فتح DSM.</div></details>
+    <details><summary>ماذا تعرض شاشة UPS؟</summary><div class="body">طراز UPS، وهل هو على التيار أم على البطارية، وشحنه بنسبة مئوية وشريط، وكيفية اتصاله، والمدة المتبقية المقدرة، وهل دعم UPS مفعّل على NAS.</div></details>
+    <details><summary>هل أستطيع تغيير سياسة الإغلاق عند العمل على البطارية؟</summary><div class="body">لا. يبلغ التطبيق عن حالة UPS؛ أما السياسة فتُضبط في DSM ضمن Hardware and Power، حيث تُشرح العواقب.</div></details>
+    <details><summary>لماذا القسم الفرعي Power مفقود؟</summary><div class="body">لأنه لا يوجد UPS متصل، أو لأن دعم UPS معطّل في DSM. يخفي التطبيق الشاشات الخاصة بعتاد غير موجود.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>التالي: المساعد</h2>
+    <p class="lead" style="margin:0 auto 24px">اسأل NAS سؤالاً، ويجيبك نموذج يعمل على هاتفك.</p>
+    <p><a class="btn" href="/ar/guide/assistant/">المساعد &rarr;</a> &nbsp; <a class="btn ghost" href="/ar/guide/">العودة إلى الدليل</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ar/">الرئيسية</a><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/compatible-nas/">التوافق</a><a href="/ar/best-synology-nas-app/">لماذا التحويل</a><a href="/ar/synology-app-for-iphone/">iPhone وiPad</a><a href="/ar/synology-app-for-android/">Android</a><a href="/ar/synology-app-for-mac-windows/">Mac وWindows</a><a href="/ar/ds-finder-alternative/">مقابل DS finder</a><a href="/ar/help/">المساعدة</a><a href="/ar/privacy/">الخصوصية</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">أبلغ عن خلل</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. تطبيق Syno Manager تطبيق مستقل وليس تابعاً لشركة Synology Inc. ولا معتمداً منها ولا برعايتها. Synology وDSM وDiskStation وRackStation وHyper Backup وActive Backup وSurveillance Station وQuickConnect علامات تجارية مملوكة لشركة Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

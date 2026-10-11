@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>เข้าถึง Synology NAS จากระยะไกล - Syno Manager</title>
+<meta name="description" content="เข้าถึง Synology ของคุณจากที่ไหนก็ได้ด้วย QuickConnect โดเมนของคุณเอง หรือ VPN ดูว่าฟีเจอร์ใดใช้ได้กับเส้นทางใด รวมถึงรูปภาพและภาพสดจากกล้อง" />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="เข้าถึง Synology NAS จากระยะไกล - Syno Manager" />
+<meta property="og:description" content="เข้าถึง Synology ของคุณจากที่ไหนก็ได้ด้วย QuickConnect โดเมนของคุณเอง หรือ VPN ดูว่าฟีเจอร์ใดใช้ได้กับเส้นทางใด รวมถึงรูปภาพและภาพสดจากกล้อง" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="เข้าถึง Synology NAS จากระยะไกล - Syno Manager" />
+<meta name="twitter:description" content="เข้าถึง Synology ของคุณจากที่ไหนก็ได้ด้วย QuickConnect โดเมนของคุณเอง หรือ VPN ดูว่าฟีเจอร์ใดใช้ได้กับเส้นทางใด รวมถึงรูปภาพและภาพสดจากกล้อง" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "นอกบ้าน"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "เข้าถึง Synology NAS จากระยะไกล - Syno Manager",
+  "description": "เข้าถึง Synology ของคุณจากที่ไหนก็ได้ด้วย QuickConnect โดเมนของคุณเอง หรือ VPN ดูว่าฟีเจอร์ใดใช้ได้กับเส้นทางใด รวมถึงรูปภาพและภาพสดจากกล้อง",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "th",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ต้องเปิดพอร์ตฟอร์เวิร์ดเพื่อใช้ NAS จากระยะไกลไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ต้อง QuickConnect ส่งต่อการเชื่อมต่อผ่านบริการของ Synology โดยไม่ต้องตั้งค่าเราเตอร์ และการเชื่อมต่อ VPN เข้าเครือข่ายของคุณก็ใช้ได้เช่นกัน จำเป็นต้องฟอร์เวิร์ดพอร์ตเฉพาะเมื่อคุณต้องการเส้นทางตรงจากอินเทอร์เน็ตเท่านั้น"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "รูปภาพและภาพสดจากกล้องใช้ได้ผ่าน QuickConnect ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ ภาพขนาดย่อ รูปเต็ม ภาพสดจากกล้อง และการดาวน์โหลดจาก File Station และ Drive ทั้งหมดไปตามเส้นทางที่ใช้งานอยู่ รวมถึงรีเลย์ของ QuickConnect รีเลย์ช้ากว่าเครือข่ายของคุณเอง แต่ใช้งานได้"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ควรเพิ่ม NAS เครื่องเดียวกันสองครั้งไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เป็นวิธีที่ดี รายการหนึ่งใช้ IP ในเครือข่ายเมื่ออยู่บ้าน เร็วและตรง อีกรายการใช้ QuickConnect เมื่ออยู่นอกบ้าน แยกเป็นคนละรายการ มีเลย์เอาต์ต่างกัน และสลับได้ในแตะเดียว"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "QuickConnect ปลอดภัยไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "การเชื่อมต่อถูกเข้ารหัสตลอดเส้นทางเมื่อคุณใช้ HTTPS และรีเลย์ของ Synology เพียงส่งต่อทราฟฟิกโดยไม่เก็บข้อมูลของคุณ ข้อมูลเข้าสู่ระบบ DSM ยังคงใช้อยู่ และการยืนยันตัวตนสองขั้นตอนก็ยังใช้ได้"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; เมื่ออยู่นอกบ้าน</div>
+      <div class="eyebrow">นอกบ้าน</div>
+      <h1>แอปเดียวกัน <span class="g">คนละเส้นทาง</span></h1>
+      <p>Syno Manager ทำงานเหมือนกันไม่ว่าคุณจะอยู่ข้าง NAS หรืออยู่อีกฟากโลก สิ่งที่เปลี่ยนคือวิธีที่การเชื่อมต่อเดินทางไปถึง และแต่ละเส้นทางมีข้อแลกเปลี่ยนที่ควรรู้</p>
+    </div>
+    <div class="hero-shot"><img alt="แบบฟอร์มเพิ่ม NAS ที่แสดง IP โดยตรงและ QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">สามเส้นทาง</div>
+      <h2>เลือกอันที่เหมาะกับคุณ</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>เส้นทาง</th><th>การตั้งค่า</th><th>ความเร็ว</th><th>เปิดเผยอะไรไหม</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>เปิดใช้ใน DSM แล้วกรอก ID ไม่ต้องแตะเราเตอร์</td><td>ช้ากว่า เพราะทราฟฟิกผ่านรีเลย์ของ Synology</td><td class="yes">ไม่มี ไม่มีพอร์ตเปิดทางฝั่งคุณ</td></tr>
+        <tr><td><b>โดเมนของคุณเอง / DDNS</b></td><td>ชื่อโฮสต์ที่ชี้ไปยังที่อยู่ของคุณ พร้อมการฟอร์เวิร์ดพอร์ตที่เราเตอร์</td><td>ตรง จึงเร็วเท่าที่ความเร็วอัปโหลดของคุณให้ได้</td><td class="no">มี พอร์ต DSM เข้าถึงได้จากอินเทอร์เน็ต</td></tr>
+        <tr><td><b>VPN</b></td><td>เซิร์ฟเวอร์ VPN บนเราเตอร์หรือ NAS และไคลเอนต์บนโทรศัพท์</td><td>ตรงเมื่อเชื่อมต่อแล้ว</td><td class="yes">เฉพาะพอร์ต VPN ส่วนอื่นยังเป็นส่วนตัว</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>หากไม่แน่ใจ ให้ใช้ QuickConnect</b> เป็นตัวเลือกที่ไม่ต้องมีความรู้เรื่องเราเตอร์และไม่เปิดอะไรเลย และทุกฟีเจอร์ในแอปใช้งานได้ผ่านมัน</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">สิ่งที่ใช้ได้จากระยะไกล</div>
+      <h2>ทุกอย่าง พร้อมเชิงอรรถสองข้อ</h2>
+      <p class="lead">แอปไม่ได้ลดฟีเจอร์เมื่อคุณอยู่นอกบ้าน มีสองเรื่องที่ต้องคิดสักนิด คือภาพสดจากกล้อง และการปลุก NAS ที่ปิดอยู่</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>ฟีเจอร์</th><th>นอกบ้าน</th></tr></thead>
+      <tbody>
+        <tr><td>การตรวจสอบ - ระบบ พื้นที่จัดเก็บ เครือข่าย สุขภาพ</td><td class="yes">ใช้ได้กับทุกเส้นทาง</td></tr>
+        <tr><td>Docker แพ็กเกจ บริการ งานตามกำหนด ผู้ใช้</td><td class="yes">ใช้ได้กับทุกเส้นทาง</td></tr>
+        <tr><td>Synology Photos - ภาพขนาดย่อและรูปเต็ม</td><td class="yes">ใช้ได้ รวมถึงผ่านรีเลย์</td></tr>
+        <tr><td>การดาวน์โหลดจาก File Station และ Drive</td><td class="yes">ใช้ได้ รวมถึงผ่านรีเลย์</td></tr>
+        <tr><td>การสำรองข้อมูล - สถานะและเรียกใช้ทันที</td><td class="yes">ใช้ได้กับทุกเส้นทาง</td></tr>
+        <tr><td>ปลุกอุปกรณ์อื่นผ่าน NAS</td><td class="yes">ใช้ได้ ตราบใดที่ตัว NAS เปิดอยู่</td></tr>
+        <tr><td><b>ภาพสดจากกล้อง</b></td><td>เปิด <b>ส่งภาพสดจากกล้องผ่านพอร์ต DSM</b> หากไม่เปิด ภาพสดจะต้องใช้ RTSP พอร์ต 554 ซึ่งมักเข้าถึงจากภายนอกไม่ได้ ดู<a href="/th/guide/media/#streaming">วิธีที่ภาพสดเชื่อมต่อ</a></td></tr>
+        <tr><td><b>การปลุก NAS เองขณะที่ปิดอยู่</b></td><td>ต้องใช้ VPN หรือการฟอร์เวิร์ด Wake-on-LAN ที่เราเตอร์ QuickConnect เข้าถึง NAS ที่ปิดอยู่ไม่ได้ ดู <a href="/th/guide/wake-on-lan/">Wake-on-LAN</a></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>การตั้งค่า</h2>
+    </div>
+    <ol class="steps">
+      <li><b>ใน DSM:</b> แผงควบคุม &rsaquo; การเข้าถึงภายนอก &rsaquo; QuickConnect เปิดใช้งานแล้วจด QuickConnect ID ไว้</li>
+      <li><b>ในแอป:</b> เพิ่ม NAS แล้วสลับ<b>ประเภทการเชื่อมต่อ</b>เป็น <b>QuickConnect</b></li>
+      <li><b>กรอก ID</b> ไม่ใช่โฮสต์และพอร์ต</li>
+      <li><b>ข้อมูลเข้าสู่ระบบ DSM ของคุณ</b> และ 2FA หากบัญชีใช้อยู่</li>
+      <li><b>บันทึก &amp; เชื่อมต่อ</b></li>
+    </ol>
+    <div class="note"><b>คาดไว้ได้เลยว่าจะช้ากว่า</b> รีเลย์เพิ่มอีกหนึ่งช่วง และ Synology จำกัดอัตราไว้ คลังรูปจึงเลื่อนไม่ลื่นเท่าที่บ้าน ทุกอย่างยังใช้งานได้ เป็นเรื่องของความหน่วง ไม่ใช่ความสามารถ</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">วิธีที่ควรทำตาม</div>
+      <h2>เพิ่ม NAS เครื่องเดียวกันสองครั้ง</h2>
+      <p class="lead">รายการหนึ่งใช้<b>IP ในเครือข่าย</b> อีกรายการใช้ <b>QuickConnect</b> ตั้งชื่อให้แยกออก เช่น “NAS (บ้าน)” และ “NAS (นอกบ้าน)”</p>
+    </div>
+    <ul class="plain">
+      <li><b>เมื่ออยู่บ้าน</b> ใช้รายการที่เชื่อมต่อตรง ไม่ผ่านรีเลย์ เร็วเต็มที่ ภาพขนาดย่อขึ้นทันที</li>
+      <li><b>เมื่ออยู่นอกบ้าน</b> สลับไปใช้รายการ QuickConnect</li>
+      <li><b>เลย์เอาต์แยกกัน</b> คุณจึงตัดรายการนอกบ้านให้เหลือเฉพาะการ์ดที่คุณดูจริงบนเน็ตมือถือ</li>
+      <li><b>สลับได้ในแตะเดียว</b> จากรายการอุปกรณ์</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">ตั้ง<a href="/th/guide/settings/#launch">พฤติกรรมการเปิดแอป</a>เป็น <b>NAS ที่ใช้ล่าสุด</b> แอปก็จะอยู่กับเครื่องที่คุณใช้ค้างไว้</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับการเข้าถึงระยะไกล</h2>
+    </div>
+    <details open><summary>ต้องเปิดพอร์ตฟอร์เวิร์ดเพื่อใช้ NAS จากระยะไกลไหม</summary><div class="body">ไม่ต้อง QuickConnect ส่งต่อการเชื่อมต่อโดยไม่ต้องตั้งค่าเราเตอร์ และ VPN ก็ใช้ได้เช่นกัน จำเป็นต้องฟอร์เวิร์ดพอร์ตเฉพาะเมื่อคุณต้องการเส้นทางตรงจากอินเทอร์เน็ตเท่านั้น</div></details>
+    <details><summary>รูปภาพและภาพสดจากกล้องใช้ได้ผ่าน QuickConnect ไหม</summary><div class="body">ได้ ภาพขนาดย่อ รูปเต็ม ภาพสดจากกล้อง และการดาวน์โหลดจาก File Station และ Drive ทั้งหมดไปตามเส้นทางที่ใช้งานอยู่ รวมถึงรีเลย์ ภาพสดจากกล้องต้องเปิดสวิตช์อุโมงค์พอร์ต DSM</div></details>
+    <details><summary>ควรเพิ่ม NAS เครื่องเดียวกันสองครั้งไหม</summary><div class="body">เป็นวิธีที่ดี รายการหนึ่งใช้ IP ในเครือข่ายสำหรับที่บ้าน อีกรายการใช้ QuickConnect สำหรับนอกบ้าน เลย์เอาต์แยกกันและสลับได้ในแตะเดียว</div></details>
+    <details><summary>QuickConnect ปลอดภัยไหม</summary><div class="body">การเชื่อมต่อถูกเข้ารหัสตลอดเส้นทางเมื่อคุณใช้ HTTPS และรีเลย์เพียงส่งต่อทราฟฟิกโดยไม่เก็บข้อมูลของคุณ ข้อมูลเข้าสู่ระบบ DSM และการยืนยันตัวตนสองขั้นตอนยังคงใช้อยู่</div></details>
+    <details><summary>ทำไมรายการที่ใช้ IP ในเครือข่ายใช้ไม่ได้บนเน็ตมือถือ</summary><div class="body">เพราะที่อยู่ส่วนตัวอย่าง 192.168.x.x มีอยู่เฉพาะในเครือข่ายของคุณเอง ให้ใช้รายการ QuickConnect โดเมน หรือเชื่อมต่อ VPN ก่อน</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: สำรอง &amp; กู้คืน</h2>
+    <p class="lead" style="margin:0 auto 24px">ย้ายการตั้งค่าแอปไปยังโทรศัพท์เครื่องใหม่</p>
+    <p><a class="btn" href="/th/guide/backup-restore/">สำรอง &amp; กู้คืน &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

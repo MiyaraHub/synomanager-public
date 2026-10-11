@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Підключення Synology NAS - налаштування Syno Manager</title>
+<meta name="description" content="Додайте свій Synology NAS менш ніж за хвилину: адреса й порт, HTTPS і самопідписані сертифікати, QuickConnect, 2FA та що робити, коли підключитися не вдається." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/uk/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Підключення Synology NAS - налаштування Syno Manager" />
+<meta property="og:description" content="Додайте свій Synology NAS менш ніж за хвилину: адреса й порт, HTTPS і самопідписані сертифікати, QuickConnect, 2FA та що робити, коли підключитися не вдається." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/uk/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Підключення Synology NAS - налаштування Syno Manager" />
+<meta name="twitter:description" content="Додайте свій Synology NAS менш ніж за хвилину: адреса й порт, HTTPS і самопідписані сертифікати, QuickConnect, 2FA та що робити, коли підключитися не вдається." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Головна",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Посібник користувача",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Початок роботи"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Підключення Synology NAS - налаштування Syno Manager",
+  "description": "Додайте свій Synology NAS менш ніж за хвилину: адреса й порт, HTTPS і самопідписані сертифікати, QuickConnect, 2FA та що робити, коли підключитися не вдається.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "uk",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Що потрібно, щоб користуватися Syno Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Synology NAS з DSM 7.0 або новішою, обліковий запис DSM на ньому та пристрій з Android 7+, iOS 16+, macOS 11+ або Windows. На NAS нічого встановлювати не треба - застосунок використовує власні API DSM, які вже там є."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Яку адресу та порт вводити?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "У власній мережі - локальну IP-адресу NAS і порт DSM: 5001 з увімкненим HTTPS або 5000 з вимкненим. Також можна ввести ім'я хоста чи власний домен. Якщо не хочете мати справу з адресами взагалі, перемкніть «Тип підключення» на QuickConnect і введіть свій QuickConnect ID."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чому «Перевіряти сертифікат SSL» типово вимкнено?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Бо більшість DiskStation надають самопідписаний сертифікат, який не підписано публічним центром сертифікації, і тому він не проходить перевірку, хоча підключення все одно зашифроване. Якщо залишити перевірку вимкненою, цей сертифікат приймається. Якщо ви встановили справжній сертифікат - наприклад, від Let's Encrypt, - увімкніть перевірку."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи потрібно відкривати порти на маршрутизаторі?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ні. У власній мережі нічого переадресовувати не треба. Ззовні підключення ретранслює QuickConnect, а ще працює VPN. Переадресація портів потрібна лише якщо ви хочете прямий маршрут з інтернету або перегляд камер наживо через RTSP ззовні вашої мережі."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Пише «тайм-аут підключення». Що робити?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Це повідомлення означає, що застосунок так і не отримав відповіді, і майже завжди винні адреса, порт або мережа, у якій перебуває телефон. Перевірте, що HTTPS відповідає порту, що телефон в одній мережі з NAS, якщо ви використовуєте локальну IP-адресу, і що вебінтерфейс DSM відкривається в браузері телефона за тією ж адресою й портом."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/uk/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова">
+      <a href="/uk/">Головна</a>
+      <a href="/uk/guide/" class="active">Посібник користувача</a>
+      <a href="/uk/#screenshots">Знімки екрана</a>
+      <a href="/uk/compatible-nas/">Сумісність</a>
+      <a href="/uk/best-synology-nas-app/">Чому варто перейти</a>
+      <a href="/uk/help/">Допомога</a>
+      <a href="/uk/#top" class="cta">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Початок роботи</div>
+      <div class="eyebrow">Початок роботи</div>
+      <h1>Підключено <span class="g">менш ніж за хвилину</span></h1>
+      <p>На NAS нічого не встановлюється. Syno Manager працює з власними API DSM, які вже запущені, - ви просто вказуєте, де ваш DiskStation і хто ви.</p>
+    </div>
+    <div class="hero-shot"><img alt="Форма «Додати NAS» у Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>На цій сторінці</b><ul>
+      <li><a href="#requirements">Що вам потрібно</a></li>
+      <li><a href="#address">Як знайти свій NAS</a></li>
+      <li><a href="#form">Кожне поле форми</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Двофакторна автентифікація</a></li>
+      <li><a href="#test">Перевірка й збереження</a></li>
+      <li><a href="#next">Що буде далі</a></li>
+      <li><a href="#trouble">Коли підключитися не вдається</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Крок нуль</div>
+      <h2>Що вам потрібно</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Вимога</th><th>Подробиці</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td>Будь-яка модель з <b>DSM 7.0 або новішою</b>. На ній нічого не встановлюється - застосунок використовує ті самі API, що й вебінтерфейс DSM.</td></tr>
+        <tr><td>Обліковий запис DSM</td><td>Ваші звичайні ім'я користувача й пароль DSM. Адміністратор бачить усе; користувач без прав адміністратора бачить те, що йому дозволяє DSM, а решту застосунок ховає, не показуючи елементів керування, які буде відхилено.</td></tr>
+        <tr><td>Ваш пристрій</td><td><b>Android 7.0</b> або новіший, <b>iOS 16.0</b> або новіший, <b>macOS 11.0</b> або новіший чи <b>Windows</b>. Той самий застосунок на всіх чотирьох.</td></tr>
+        <tr><td>Маршрут до NAS</td><td>Та сама локальна мережа, VPN у неї, власний домен або QuickConnect. Достатньо будь-чого одного.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Обліковий запис адміністратора не потрібен,</b> щоб просто дивитися. Моніторинг працює для будь-якого користувача DSM. Дії керування - перезапуск контейнера, запуск резервної копії, відключення диска - потребують того дозволу, якого сама DSM вимагає для цієї дії, і застосунок повідомляє про відмову, а не вдає, що все вдалося.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Де це</div>
+      <h2>Як знайти адресу NAS</h2>
+      <p class="lead">Якщо ви вже відкриваєте DSM у браузері, адресний рядок містить усе потрібне: хост і порт - це два значення, яких просить застосунок.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>У самій DSM</h3>
+        <ul class="plain">
+          <li><b>Панель керування &rsaquo; Мережа &rsaquo; Мережевий інтерфейс</b> показує IP-адресу NAS на кожному інтерфейсі.</li>
+          <li><b>Панель керування &rsaquo; Мережа &rsaquo; Налаштування DSM</b> показує порти HTTP і HTTPS, які прослуховує DSM. Це 5000 і 5001, якщо їх ніхто не змінив.</li>
+        </ul>
+        <h3 style="margin-top:22px">У браузері</h3>
+        <p style="color:var(--steel)">Те, що ви вводите, щоб дістатися до DSM, і потрібно застосунку. У <code>https://192.168.1.20:5001</code> хост - <code>192.168.1.20</code>, порт - <code>5001</code>, а HTTPS увімкнено.</p>
+      </div>
+      <div>
+        <h3>У маршрутизаторі</h3>
+        <p style="color:var(--steel)">Більшість маршрутизаторів показують підключені пристрої за назвою. NAS з'являється під назвою сервера - тією, що задана в <b>Панель керування &rsaquo; Інформаційний центр</b>.</p>
+        <div class="note"><b>Задайте йому сталу адресу.</b> Якщо маршрутизатор після перезавантаження видає NAS іншу IP-адресу, застосунок перестане його знаходити. Цьому запобігає резервування DHCP на маршрутизаторі або статична адреса на NAS. Ім'я хоста чи власний домен теж працюють і не залежать від IP.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Додати NAS</div>
+      <h2>Кожне поле форми</h2>
+      <p class="lead">Торкніться <b>+ Додати NAS</b> у списку пристроїв. Форма коротка, і лише три поля не мають розумного типового значення.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Поле</th><th>Що вписати</th></tr></thead>
+          <tbody>
+            <tr><td>Псевдонім NAS</td><td>Будь-яка зручна назва - її бачите лише ви. Стає в пригоді, коли їх більше одного.</td></tr>
+            <tr><td>Тип підключення</td><td><b>Пряма IP-адреса</b> для адреси, яку ви вводите, або <b>QuickConnect</b> для QuickConnect ID. Див. <a href="#quickconnect">нижче</a>.</td></tr>
+            <tr><td>Хост / IP-адреса</td><td>Локальна IP-адреса NAS, його ім'я хоста або власний домен, що на нього вказує.</td></tr>
+            <tr><td>Порт</td><td><b>5001</b> з увімкненим HTTPS, <b>5000</b> з вимкненим - якщо тільки DSM не перенесли на інші порти, тоді використовуйте їх.</td></tr>
+            <tr><td>HTTPS</td><td>Типово ввімкнено, і краще залишити так. Усе між телефоном і NAS зашифроване, зокрема й ваш пароль.</td></tr>
+            <tr><td>Перевіряти сертифікат SSL</td><td>Типово вимкнено, бо більшість DiskStation надають <b>самопідписаний</b> сертифікат, який неможливо перевірити через публічний центр сертифікації. Підключення все одно зашифроване в обох випадках. Вмикайте, лише якщо ви встановили справжній сертифікат.</td></tr>
+            <tr><td>Ім'я користувача</td><td>Назва вашого облікового запису DSM. <b>Імена користувачів із пробілами підтримуються</b> - застосунок обробляє їх правильно, а через це часто збоять інші клієнти.</td></tr>
+            <tr><td>Пароль</td><td>Ваш пароль DSM. Око показує його під час введення. Він записується в системне сховище ключів і ніколи не зберігається відкритим текстом.</td></tr>
+            <tr><td>Двофакторна автентифікація</td><td>Увімкніть, якщо ваш обліковий запис DSM використовує застосунок-автентифікатор. Див. <a href="#twofactor">нижче</a>.</td></tr>
+            <tr><td>Тунелювати перегляд камер наживо через порт DSM</td><td>Типово вимкнено. <b>Вимкнено</b> - перегляд камер наживо підключається напряму до RTSP на порту 554, що швидше у вашій мережі, але потребує, щоб цей порт був досяжний звідки б ви не були. <b>Увімкнено</b> - потік тунелюється через порт HTTPS DSM, яким ви вже користуєтеся, тож перегляд наживо працює ззовні без відкриття 554. Див. <a href="/uk/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Форма «Додати NAS»" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Адреси вводити не треба</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Перемкніть <b>Тип підключення</b> на <b>QuickConnect</b> і введіть свій QuickConnect ID замість хоста й порту. Ретранслятор Synology знаходить ваш NAS де б він не був, і налаштовувати маршрутизатор не потрібно.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Де ваш ID.</b> У DSM, у розділі <b>Панель керування &rsaquo; Зовнішній доступ &rsaquo; QuickConnect</b>. Його спершу потрібно там увімкнути.</li>
+      <li><b>Чим це обходиться.</b> Ретранслятор додає затримку, тож мініатюри та перегляд наживо завантажуються повільніше, ніж у вашій мережі. Усе все одно працює.</li>
+      <li><b>Що це вам заощаджує.</b> Жодної переадресації портів, жодного dynamic-DNS, який треба підтримувати, і нічого, відкритого в інтернет з вашого боку.</li>
+    </ul>
+    <div class="note"><b>Можна мати обидва.</b> Якщо додати той самий NAS двічі - раз за локальною IP, раз через QuickConnect, - матимете швидкий запис для дому й надійний для поза домом. Це окремі записи з окремими розкладками, тож вибирайте той, до якого ближче.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Двофакторна автентифікація</h2>
+      <p class="lead">Якщо ваш обліковий запис DSM захищено застосунком-автентифікатором, перед збереженням увімкніть <b>двофакторну автентифікацію (2FA)</b>. Застосунок запитає ваш шестицифровий код одразу після прийняття пароля.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Увімкніть перемикач</b> на формі «Додати NAS».</li>
+      <li><b>Зберегти &amp; підключитися.</b> Застосунок входить, і DSM запитує другий фактор.</li>
+      <li><b>Введіть код</b> зі свого автентифікатора.</li>
+      <li><b>Виберіть, чи запам'ятовувати цей пристрій.</b> Якщо так, DSM видає токен пристрою, і цей телефон більше не просить код. Токен зберігається так само, як і пароль, - в системному сховищі ключів.</li>
+    </ol>
+    <div class="note warn"><b>Якщо коди відхиляються,</b> перевірте годинник. Коди автентифікатора виводяться з поточного часу, тож телефон чи NAS із розсинхронізованим годинником згенерує або очікуватиме не те число. Джерело часу NAS показано в рядку швидкої статистики на <a href="/uk/guide/home/">головному екрані</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Перш ніж зберегти</div>
+      <h2>Перевірте підключення, потім збережіть</h2>
+      <p class="lead"><b>Перевірити підключення</b> пробує адресу, порт і облікові дані й повідомляє, що сталося, нічого не зберігаючи. Це найшвидший спосіб знайти одруківку, бо він відрізняє «не вдається досягти NAS» від «досягли, але пароль неправильний».</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Що пише</th><th>Що це означає</th></tr></thead>
+      <tbody>
+        <tr><td>Тайм-аут підключення</td><td>Ніхто не відповів. Винні адреса, порт або мережа, у якій перебуває телефон, - не облікові дані, які навіть не пробувалися.</td></tr>
+        <tr><td>Недійсні облікові дані</td><td>NAS відповів і відхилив вхід. Адреса й порт правильні; ім'я користувача або пароль - ні.</td></tr>
+        <tr><td>Помилка сертифіката</td><td>HTTPS увімкнено, і <b>Перевіряти сертифікат SSL</b> теж увімкнено для самопідписаного сертифіката. Вимкніть перевірку.</td></tr>
+        <tr><td>Потрібна 2FA</td><td>Обліковий запис використовує двофакторну автентифікацію, а перемикач вимкнено. Увімкніть його й спробуйте знову.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Зберегти &amp; підключитися</b> зберігає запис і виконує вхід. Ви потрапляєте на головний екран, де ваш NAS уже завантажується.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Ви всередині</div>
+      <h2>Що відбувається під час першого підключення</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Головний екран Syno Manager після підключення" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Застосунок питає, що вміє ваш NAS.</b> Він опитує каталог API DSM і зберігає список. Тому NAS без Surveillance Station ніколи не показує вкладку «Камери», а встановлення пакета змушує його екран з'явитися.</li>
+          <li><b>Усі підтримувані картки ввімкнено.</b> Нові картки з'являються видимими, а не схованими, тож функція, яку підтримує ваш NAS, - та, яку ви бачите. <a href="/uk/guide/customizing/">Налаштувати</a> - це місце, де щось вимикають, а не де це шукають.</li>
+          <li><b>MAC-адресу NAS записано,</b> тож <a href="/uk/guide/wake-on-lan/">Wake-on-LAN</a> працюватиме пізніше без вашого пошуку.</li>
+          <li><b>Коротке вітання з'являється один раз.</b> Воно пояснює, що робить застосунок і де щось змінювати. Є прапорець, щоб воно більше не з'являлося.</li>
+          <li><b>Картки допомоги з'являються на екранах, що потребують пояснень.</b> Утримуйте одну, щоб закрити; відновлюйте їх по одній у <a href="/uk/guide/settings/#help">Налаштуваннях</a>.</li>
+        </ul>
+        <div class="note"><b>Встановили пакет після підключення?</b> Список можливостей зчитується під час підключення, тож для пакета, встановленого після цього, вкладки ще немає. Потягніть для оновлення або перезапустіть застосунок - і новий екран з'явиться.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Коли підключитися не вдається</div>
+      <h2>Короткий перелік перевірок</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Відкрийте DSM у браузері телефона</b> точно за тією адресою й портом, які ви ввели. Якщо браузер теж не дістається, проблема в мережі чи адресі, а не в застосунку.</li>
+      <li><b>Перевірте, що HTTPS відповідає порту.</b> Порт 5001 з вимкненим HTTPS або 5000 з увімкненим закінчиться тайм-аутом. Це різні слухачі.</li>
+      <li><b>Вимкніть «Перевіряти сертифікат SSL»,</b> якщо NAS використовує сертифікат, з яким постачався.</li>
+      <li><b>Перевірте мережу телефона.</b> Локальна IP недосяжна через мобільні дані. Підключіться до Wi-Fi або скористайтеся QuickConnect, доменом чи VPN.</li>
+      <li><b>На iOS дозвольте доступ до локальної мережі.</b> Налаштування &rsaquo; Застосунки &rsaquo; Syno Manager &rsaquo; Локальна мережа. Без цього iOS мовчки блокує підключення до адрес у вашій власній мережі.</li>
+      <li><b>Перевірте брандмауер DSM.</b> Панель керування &rsaquo; Безпека &rsaquo; Брандмауер. Правило, що дозволяє лише певні адреси, блокуватиме телефон, якого серед них немає.</li>
+      <li><b>Перевірте автоблокування.</b> Панель керування &rsaquo; Безпека &rsaquo; Обліковий запис. Повторні невдалі входи можуть заблокувати адресу вашого телефона; вона буде в списку там, і її можна видалити.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/uk/help/">Повний посібник з усунення несправностей</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Поширені запитання</div>
+      <h2>FAQ: поширені запитання про налаштування</h2>
+    </div>
+    <details open><summary>Що потрібно, щоб користуватися Syno Manager?</summary><div class="body">Synology NAS з DSM 7.0 або новішою, обліковий запис DSM на ньому та пристрій з Android 7+, iOS 16+, macOS 11+ або Windows. На NAS нічого встановлювати не треба - застосунок використовує власні API DSM, які вже там є.</div></details>
+    <details><summary>Яку адресу та порт вводити?</summary><div class="body">У власній мережі - локальну IP-адресу NAS і порт DSM: 5001 з увімкненим HTTPS або 5000 з вимкненим. Також можна ввести ім'я хоста чи власний домен. Якщо не хочете мати справу з адресами взагалі, перемкніть «Тип підключення» на QuickConnect і введіть свій QuickConnect ID.</div></details>
+    <details><summary>Чому «Перевіряти сертифікат SSL» типово вимкнено?</summary><div class="body">Бо більшість DiskStation надають самопідписаний сертифікат, який не підписано публічним центром сертифікації, і тому він не проходить перевірку, хоча підключення все одно зашифроване. Якщо залишити перевірку вимкненою, цей сертифікат приймається. Якщо ви встановили справжній сертифікат - наприклад, від Let's Encrypt, - увімкніть перевірку.</div></details>
+    <details><summary>Чи потрібно відкривати порти на маршрутизаторі?</summary><div class="body">Ні. У власній мережі нічого переадресовувати не треба. Ззовні підключення ретранслює QuickConnect, а ще працює VPN. Переадресація портів потрібна лише якщо ви хочете прямий маршрут з інтернету або перегляд камер наживо через RTSP ззовні вашої мережі.</div></details>
+    <details><summary>Пише «тайм-аут підключення». Що робити?</summary><div class="body">Це повідомлення означає, що застосунок так і не отримав відповіді, і майже завжди винні адреса, порт або мережа, у якій перебуває телефон. Перевірте, що HTTPS відповідає порту, що телефон в одній мережі з NAS, якщо ви використовуєте локальну IP-адресу, і що вебінтерфейс DSM відкривається в браузері телефона за тією ж адресою й портом.</div></details>
+    <details><summary>Чи можна додати більше одного NAS?</summary><div class="body">Так, скільки завгодно. Кожен зберігає власні облікові дані, розкладку панелі та налаштування, а перемикатися між ними можна зі списку пристроїв. Див. <a href="/uk/guide/multi-nas/">кілька пристроїв NAS</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далі: головний екран</h2>
+    <p class="lead" style="margin:0 auto 24px">Що показує кожна картка і як зробити панель своєю.</p>
+    <p><a class="btn" href="/uk/guide/home/">Головний екран &rarr;</a> &nbsp; <a class="btn ghost" href="/uk/guide/">Назад до посібника</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/uk/">Головна</a><a href="/uk/guide/">Посібник користувача</a><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/compatible-nas/">Сумісність</a><a href="/uk/best-synology-nas-app/">Чому варто перейти</a><a href="/uk/synology-app-for-iphone/">iPhone та iPad</a><a href="/uk/synology-app-for-android/">Android</a><a href="/uk/synology-app-for-mac-windows/">Mac та Windows</a><a href="/uk/ds-finder-alternative/">Порівняння з DS finder</a><a href="/uk/help/">Допомога</a><a href="/uk/privacy/">Конфіденційність</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Повідомити про помилку</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - незалежний застосунок, який не пов'язаний із Synology Inc., не схвалений і не спонсорований нею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station і QuickConnect є торговельними марками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

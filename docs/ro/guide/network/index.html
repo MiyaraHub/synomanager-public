@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Monitorizare rețea, VPN și DDNS pentru Synology - Syno Manager</title>
+<meta name="description" content="Debit live pe fiecare interfață, conexiuni active și IP-uri blocate, servicii DSM pe care le poți comuta, profiluri de client VPN și DDNS cu adresa ta publică." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Monitorizare rețea, VPN și DDNS pentru Synology - Syno Manager" />
+<meta property="og:description" content="Debit live pe fiecare interfață, conexiuni active și IP-uri blocate, servicii DSM pe care le poți comuta, profiluri de client VPN și DDNS cu adresa ta publică." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Monitorizare rețea, VPN și DDNS pentru Synology - Syno Manager" />
+<meta name="twitter:description" content="Debit live pe fiecare interfață, conexiuni active și IP-uri blocate, servicii DSM pe care le poți comuta, profiluri de client VPN și DDNS cu adresa ta publică." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rețea"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Monitorizare rețea, VPN și DDNS pentru Synology - Syno Manager",
+  "description": "Debit live pe fiecare interfață, conexiuni active și IP-uri blocate, servicii DSM pe care le poți comuta, profiluri de client VPN și DDNS cu adresa ta publică.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot vedea cât de repede transferă NAS-ul meu chiar acum?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Subvizualizarea Network afișează descărcarea și încărcarea live pentru fiecare interfață a NAS-ului, fiecare cu propriul grafic, viteza legăturii și adresa. Interfețele agregate apar ca agregat, cu viteza totală."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot porni și opri serviciile DSM din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, pentru serviciile pe care DSM le lasă sub controlul unui client - SMB, NFS, FTP, rsync și celelalte au fiecare un comutator. Unele sunt marcate ca gestionate de sistem, ceea ce înseamnă că DSM le rulează după regulile lui, iar aplicația le arată starea fără a oferi posibilitatea de a o schimba."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arată aplicația ce adrese IP sunt blocate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Subvizualizarea Connections arată politica de blocare automată - câte încercări eșuate în cât timp - și lista adreselor blocate în prezent, restrânsă în spatele unui număr, ca o sută de intrări să nu acopere restul ecranului."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot afla dacă VPN-ul meu este conectat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplicația listează profilurile de client VPN ale NAS-ului și te lasă să ceri conectarea sau deconectarea unuia. Nu pretinde care este activ, pentru că înregistrarea DSM pe care o citește nu are câmp de stare. A spune altfel ar însemna să inventeze o valoare."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Rețea</div>
+      <div class="eyebrow">Rețea</div>
+      <h1>Ce <span class="g">intră și iese</span></h1>
+      <p>Cinci subvizualizări: debit <b>Network</b> live, <b>Connections</b> cu blocare automată, <b>Services</b> pe care le poți comuta, profiluri <b>VPN</b> și <b>DDNS</b> cu adresa ta publică.</p>
+    </div>
+    <div class="hero-shot"><img alt="Debitul live al rețelei pe fiecare interfață" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#throughput">Debit</a></li>
+      <li><a href="#connections">Conexiuni &amp; blocare automată</a></li>
+      <li><a href="#services">Servicii</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; IP extern</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Rețea</div>
+      <h2>Live, pe fiecare interfață</h2>
+      <p class="lead">Fiecare interfață a NAS-ului are propriul card - inclusiv interfețele agregate și Open vSwitch, pe care multe instrumente le ignoră.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Afișat</th><th>Semnificație</th></tr></thead>
+      <tbody>
+        <tr><td>Numele și viteza interfeței</td><td>Numele folosit de DSM și viteza negociată - <code>bond0 (20 Gbps)</code> pentru un agregat cu două porturi, de exemplu.</td></tr>
+        <tr><td>Adresă</td><td>IP-ul pe care îl deține interfața în prezent.</td></tr>
+        <tr><td>Indicator LIVE</td><td>Verde cât timp valorile se actualizează.</td></tr>
+        <tr><td>Descărcare / Încărcare</td><td>Debitul curent, fiecare cu un grafic derulant dedesubt, ca un impuls scurt să se deosebească de traficul susținut.</td></tr>
+        <tr><td>Network Info</td><td>Numele serverului, gateway-ul și DNS-ul primar - cele trei valori de care ai nevoie când ceva din rețea nu se rezolvă.</td></tr>
+        <tr><td>Conexiuni active</td><td>Un număr, cu acces la detalii.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Direcția este din punctul de vedere al NAS-ului.</b> „Descărcare” înseamnă trafic care ajunge la NAS; când copiezi un fișier <em>pe</em> NAS, aceasta este descărcarea lui.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Conexiuni</div>
+      <h2>Cine este conectat și cine este blocat</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Trei lucruri, în ordinea în care le vrei de obicei:</p>
+        <ul class="plain">
+          <li><b>Auto Block</b> - dacă protecția DSM împotriva atacurilor prin forță brută este activă, câte încercări eșuate o declanșează și într-un interval de cât timp. Aceasta este setarea care blochează un telefon după câteva parole greșite.</li>
+          <li><b>Blocked IPs</b> - fiecare adresă interzisă în prezent, în spatele unui număr. O sută de adrese blocate sunt normale pe un NAS expus la internet și ar acoperi ecranul, așa că rămâne restrâns până îl deschizi.</li>
+          <li><b>Active Connections</b> - cine este conectat, de la ce adresă, prin ce protocol și când a început sesiunea. HTTP/HTTPS, SMB, NFS, FTP - fiecare sesiune are nume.</li>
+        </ul>
+        <div class="note"><b>Poți încheia o sesiune.</b> O conexiune activă poate fi deconectată de aici, ceea ce este răspunsul rapid la „ceva ține un fișier deschis” sau „de ce este încă conectată adresa aceea”.</div>
+      </div>
+      <img alt="Connections cu politica de blocare automată, IP-urile blocate și conexiunile active" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Servicii</div>
+      <h2>Ce rulează DSM</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Servicii DSM cu starea de rulare și comutatoare" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Un număr sus - <b>în rulare din total</b> - apoi fiecare serviciu expus de DSM, cu un indicator de stare și un comutator.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Servicii de fișiere și conexiune</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Pornește sau oprește-le de pe telefon.</li>
+          <li><b>Descoperire și imprimare</b> - Bonjour Printer Broadcast, WS-Discovery, demonul de imprimare CUPS.</li>
+          <li><b>Infrastructură</b> - NTP, KMIP și restul.</li>
+          <li><b>Serviciile gestionate de sistem au un lacăt.</b> DSM le rulează după regulile lui, așa că aplicația le arată starea și nu oferă un comutator care ar fi refuzat. Un control care nu poate funcționa e mai rău decât niciun control.</li>
+        </ul>
+        <div class="note warn"><b>Oprirea SMB va deconecta pe oricine îl folosește.</b> Acestea sunt comutatoare live pe un server în funcțiune, nu un ecran de preferințe.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Profiluri de client</h2>
+      <p class="lead">Subvizualizarea VPN listează profilurile de <b>client</b> VPN configurate pe NAS - conexiunile pe care le face spre altundeva - și te lasă să ceri conectarea sau deconectarea unuia.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Nu pretinde care profil este conectat, și asta e intenționat.</b> NAS-ul confirmă o cerere de conectare sau deconectare, dar înregistrarea DSM citită de aplicație nu are câmp de stare, deci nu există de unde citi un verdict. În loc să deducă unul și să greșească cu încredere, aplicația spune asta și te trimite la pagina Network din DSM, care știe răspunsul.</div>
+    <p style="color:var(--steel);margin-top:18px">Fără niciun profil configurat, ecranul spune asta și îți arată unde să adaugi unul: în DSM, la <b>Network &rsaquo; Network Interface</b>.</p>
+      </div>
+      <img alt="Subvizualizarea VPN cu lista profilurilor de client" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Adresa ta publică și numele care trimite la ea</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Un card, două jumătăți independente:</p>
+        <ul class="plain">
+          <li><b>External IP</b> - adresa publică pe care o are acum conexiunea ta.</li>
+          <li><b>Fiecare nume de gazdă DDNS</b> publicat de NAS, starea păstrată de DSM pentru el, când s-a actualizat ultima dată și când se va actualiza următoarea dată.</li>
+        </ul>
+        <h3 style="margin-top:22px">Refresh și Update</h3>
+        <ul class="plain">
+          <li><b>Refresh</b> citește din nou ce deține DSM în prezent.</li>
+          <li><b>Update now</b> cere NAS-ului să-și publice din nou adresa - exact ce face butonul propriu al DSM.</li>
+        </ul>
+        <div class="note"><b>Fiecare jumătate eșuează independent.</b> Un furnizor DDNS căzut nu duce după el citirea IP-ului public, iar un IP ilizibil nu golește starea numelui de gazdă. Două citiri, două verdicte.</div>
+        <div class="note" style="margin-top:14px"><b>Raportează ce stochează DSM, nu un test live.</b> Aplicația nu rezolvă singură numele de gazdă ca să verifice dacă trimite la tine. Un furnizor care răspunde unei cereri nu spune nimic despre corectitudinea înregistrării tale, așa că aplicația transmite verdictul DSM, în loc să inventeze unul al doilea.</div>
+      </div>
+      <img alt="DDNS și IP extern, cu adresa publică și numele de gazdă ascunse" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Adresa și numele de gazdă din această captură sunt estompate - aparțin unui NAS real.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre rețea</h2>
+    </div>
+    <details open><summary>Pot vedea cât de repede transferă NAS-ul meu chiar acum?</summary><div class="body">Da. Subvizualizarea Network afișează descărcarea și încărcarea live pentru fiecare interfață a NAS-ului, fiecare cu propriul grafic, viteza legăturii și adresa. Interfețele agregate apar ca agregat, cu viteza totală.</div></details>
+    <details><summary>Pot porni și opri serviciile DSM din aplicație?</summary><div class="body">Da, pentru serviciile pe care DSM le lasă sub controlul unui client - SMB, NFS, FTP, rsync și celelalte au fiecare un comutator. Unele sunt marcate ca gestionate de sistem, ceea ce înseamnă că DSM le rulează după regulile lui, iar aplicația le arată starea fără a oferi posibilitatea de a o schimba.</div></details>
+    <details><summary>Arată aplicația ce adrese IP sunt blocate?</summary><div class="body">Da. Subvizualizarea Connections arată politica de blocare automată și lista adreselor blocate în prezent, restrânsă în spatele unui număr, ca o sută de intrări să nu acopere restul ecranului.</div></details>
+    <details><summary>Pot afla dacă VPN-ul meu este conectat?</summary><div class="body">Aplicația listează profilurile de client VPN ale NAS-ului și te lasă să ceri conectarea sau deconectarea unuia. Nu pretinde care este activ, pentru că înregistrarea DSM pe care o citește nu are câmp de stare. Pagina Network din DSM este locul care știe.</div></details>
+    <details><summary>De ce este IP-ul meu public diferit de ce îmi arată un site web?</summary><div class="body">Pentru că aceasta este adresa conexiunii NAS-ului tău, citită prin DSM. Dacă telefonul tău folosește date mobile, are alta. Sunt două rețele diferite și ambele citiri sunt corecte.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Fișiere</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, foldere partajate, notițe, documente și contacte.</p>
+    <p><a class="btn" href="/ro/guide/files/">Fișiere &amp; partajări &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

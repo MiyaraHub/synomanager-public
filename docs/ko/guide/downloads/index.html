@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>휴대폰에서 쓰는 Synology Download Station - Syno Manager</title>
+<meta name="description" content="휴대폰에서 Synology Download Station에 링크, 마그넷, .torrent를 추가하고, 진행 상황을 확인하고, BitTorrent 포트, 속도 제한, 저장 위치를 변경하세요." />
+<meta name="keywords" content="Synology Download Station app, add magnet link Synology phone, Synology torrent app, Download Station settings, Synology BitTorrent port, Synology download speed limit" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/downloads/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/downloads/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/downloads/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/downloads/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/downloads/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/downloads/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/downloads/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/downloads/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/downloads/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/downloads/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/downloads/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/downloads/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/downloads/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/downloads/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/downloads/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/downloads/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/downloads/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/downloads/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/downloads/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/downloads/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/downloads/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/downloads/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/downloads/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/downloads/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/downloads/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/downloads/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/downloads/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/downloads/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/downloads/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/downloads/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/downloads/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/downloads/" />
+<!--/hreflang-->
+<meta property="og:title" content="휴대폰에서 쓰는 Synology Download Station - Syno Manager" />
+<meta property="og:description" content="휴대폰에서 Synology Download Station에 링크, 마그넷, .torrent를 추가하고, 진행 상황을 확인하고, BitTorrent 포트, 속도 제한, 저장 위치를 변경하세요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/downloads/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="휴대폰에서 쓰는 Synology Download Station - Syno Manager" />
+<meta name="twitter:description" content="휴대폰에서 Synology Download Station에 링크, 마그넷, .torrent를 추가하고, 진행 상황을 확인하고, BitTorrent 포트, 속도 제한, 저장 위치를 변경하세요." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Download Station"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "휴대폰에서 쓰는 Synology Download Station - Syno Manager",
+  "description": "휴대폰에서 Synology Download Station에 링크, 마그넷, .torrent를 추가하고, 진행 상황을 확인하고, BitTorrent 포트, 속도 제한, 저장 위치를 변경하세요.",
+  "image": "https://synomanager.com/screenshots/download-settings.webp",
+  "url": "https://synomanager.com/guide/downloads/",
+  "mainEntityOfPage": "https://synomanager.com/guide/downloads/",
+  "inLanguage": "ko",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "휴대폰에서 토렌트를 추가할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, 세 가지 방법이 있습니다. URL 붙여넣기, 마그넷 링크 붙여넣기, 기기에서 .torrent 파일 선택입니다. 추가하기 전에 저장할 폴더도 고를 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "앱에서 Download Station 설정을 바꿀 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. BitTorrent 수신 포트, 다운로드 및 업로드 속도 제한, 최대 피어 수, 동시에 실행할 작업 수, 저장 폴더를 바꿀 수 있습니다. 모든 변경은 이후 NAS에서 다시 읽어 확인하므로, NAS가 거부한 값이 저장된 것처럼 화면에 남아 있지 않고 거부되었다고 보고됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "다운로드 제한이 0이면 무슨 뜻인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "제한 없음을 뜻합니다. 이는 Download Station 고유의 규칙이며, 앱이 읽지 못한 섹션을 0으로 표시하지 않는 이유이기도 합니다. 0은 특정한 의미를 가진 실제 설정값이므로, 읽지 못한 값을 0처럼 꾸며 보여 주면 전혀 다른 잘못된 정보를 전달하게 됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Download Station 탭이 보이지 않는 이유는 무엇인가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "해당 NAS에 패키지가 설치되어 있지 않기 때문입니다. Package Center에서 Download Station을 설치한 뒤, 당겨서 새로 고치거나 앱을 다시 열면 탭이 나타납니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용 가이드</a> &rsaquo; Download Station</div>
+      <div class="eyebrow">Download Station</div>
+      <h1>휴대폰이 아닌 <span class="g">NAS로 보내세요</span></h1>
+      <p>링크나 마그넷을 붙여 넣거나 <code>.torrent</code>을 고르면 다운로드는 NAS가 합니다. 진행 상황을 확인하고, 일시 정지하고 재개하고, NAS에 실제로 설정된 값을 변경할 수 있습니다.</p>
+    </div>
+    <div class="hero-shot"><img alt="NAS에서 읽어 온 Download Station 설정" src="/screenshots/download-settings.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>이 페이지의 내용</b><ul>
+      <li><a href="#tasks">작업 목록</a></li>
+      <li><a href="#adding">다운로드 추가</a></li>
+      <li><a href="#settings">다운로드 설정</a></li>
+      <li><a href="#zero">0을 지어내지 않는 이유</a></li>
+      <li><a href="#missing">탭이 보이지 않는다면</a></li>
+    </ul></div>
+
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Download Station</div>
+      <h2>실행 중인 작업</h2>
+      <p class="lead">맨 위의 속도 헤더에 모든 작업의 전체 다운로드 및 업로드 속도가 표시되고, 그 아래에 작업 목록이 이어집니다.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>각 작업</b>에는 이름, 상태, 진행 막대, 현재 속도, 예상 남은 시간이 표시됩니다.</li>
+          <li>어떤 작업이든 <b>일시 정지, 재개, 삭제</b>할 수 있습니다.</li>
+          <li><b>실행 중인 작업이 없으면</b> 해석해야 하는 빈 상자 대신 "활성 다운로드 없음"이라고 알려 줍니다.</li>
+          <li><b>설정</b>은 헤더에서 한 번 탭하면 열립니다.</li>
+          <li><b>두 세대의 API가 모두 작동합니다.</b> Download Station에는 두 가지 API 버전이 있었는데, 앱은 NAS가 제공하는 쪽에 맞춥니다.</li>
+        </ul>
+      </div>
+      <img alt="속도 헤더가 있고 활성 다운로드가 없는 Download Station" src="/screenshots/downloads.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="adding">
+      <div class="eyebrow">추가하기</div>
+      <h2>세 가지 방법</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="링크 입력란, 저장 위치 선택기, 토렌트 파일 옵션이 있는 다운로드 추가 시트" src="/screenshots/download-add.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">오른쪽 아래의 <b>+</b>를 탭합니다.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>링크나 마그넷을 붙여 넣습니다.</b> <code>https://</code> URL과 <code>magnet:?xt=</code> 링크 모두 같은 입력란에 넣으면 됩니다.</li>
+          <li><b>또는 기기에서 .torrent 파일을 선택</b>하면 파일 선택기가 열립니다.</li>
+          <li><b>저장 위치</b>에서 <b>저장할 곳을 고르거나</b>, 그대로 두면 Download Station의 기본 폴더가 사용됩니다.</li>
+          <li><b>추가를 탭합니다.</b> 작업이 목록에 나타납니다.</li>
+        </ol>
+        <div class="note"><b>휴대폰은 리모컨일 뿐입니다.</b> 파일은 NAS가 자체 연결로 가져오므로, 앱을 닫고 집을 나서도 다운로드는 계속됩니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">다운로드 설정</div>
+      <h2>NAS에서 읽어 온 모든 설정</h2>
+      <p class="lead">Download Station이 묶는 방식 그대로 구성된 별도의 하위 화면입니다. 수정할 수 있는 값에는 변경을 확인하는 체크 표시가 있고, 읽기 전용 값은 사실 그대로 표시됩니다.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>그룹</th><th>설정</th><th>기능</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="5">BitTorrent</td><td>수신 포트</td><td>Download Station이 수신하는 TCP 포트입니다. 수정할 수 있습니다.</td></tr>
+        <tr><td>다운로드 제한</td><td>KB/s 단위입니다. <b>0은 제한 없음을 뜻합니다.</b> 수정할 수 있습니다.</td></tr>
+        <tr><td>업로드 제한</td><td>KB/s 단위입니다. 0은 제한 없음을 뜻합니다. 수정할 수 있습니다.</td></tr>
+        <tr><td>최대 피어 수</td><td>토렌트 하나가 연결할 수 있는 피어의 수입니다.</td></tr>
+        <tr><td>DHT</td><td>분산 해시 테이블이 켜져 있는지, 어느 포트를 사용하는지 보여 줍니다.</td></tr>
+        <tr><td>FTP 및 HTTP</td><td>다운로드 제한</td><td>일반 HTTP와 FTP 다운로드에 적용되는 별도의 제한입니다. 0은 제한 없음을 뜻합니다. 수정할 수 있습니다.</td></tr>
+        <tr><td rowspan="2">작업 및 일정</td><td>동시 작업 수</td><td>동시에 실행되는 다운로드의 수이며, 앱이 <b>NAS가 허용하는 최댓값</b>도 알려 주므로 한계를 짐작할 필요가 없습니다. 수정할 수 있습니다.</td></tr>
+        <tr><td>대체 일정</td><td>특정 시간대에 다른 속도 일정이 적용되는지 여부입니다.</td></tr>
+        <tr><td rowspan="3">대상</td><td>기본 폴더</td><td>작업에 폴더가 지정되지 않았을 때 다운로드가 저장되는 위치입니다. 없으면 빈칸 대신 <b>설정되지 않음</b>으로 표시됩니다.</td></tr>
+        <tr><td>실행 위치</td><td>Download Station 패키지 자체가 설치된 볼륨입니다.</td></tr>
+        <tr><td>eMule</td><td>eMule 서비스가 활성화되어 있는지 여부입니다.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>모든 변경은 다시 읽어 확인합니다.</b> 앱은 입력한 값을 기록한 뒤 NAS에서 해당 설정을 다시 읽습니다. NAS가 값을 조용히 조정하거나 거부했다면 알려 주므로, 입력한 숫자가 적용된 것처럼 화면에 남아 있지 않습니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="zero">
+      <div class="eyebrow">작지만 중요한 부분</div>
+      <h2>읽지 못한 섹션을 0이 아니라 읽지 못했다고 표시하는 이유</h2>
+      <p class="lead">NAS가 실제로 보고한 설정만 표시됩니다. 앱이 읽지 못한 섹션은 0으로 그리지 않고 <b>읽지 못했다고 표시</b>합니다.</p>
+    </div>
+    <p style="color:var(--steel);max-width:70ch">까다롭게 구는 것이 아닙니다. 여기서는 <b>0이 제한 없음</b>을 뜻하므로, 읽기에 실패한 값을 <code>0</code>으로 표시하면 실제로는 아무도 모르는 상황에서 다운로드에 제한이 없다고 알려 주는 셈입니다. 두 가지로 읽힐 수 있는 값은 알 수 없음으로 밝히는 것이 맞고, 이 화면이 그렇게 합니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="missing">
+      <div class="eyebrow">찾을 수 없나요?</div>
+      <h2>Download Station 탭이 보이지 않는다면</h2>
+    </div>
+    <ol class="steps">
+      <li><b>패키지가 설치되어 있는지 확인하세요.</b> Download Station은 DSM의 기본 구성이 아니라 Package Center에서 설치합니다. <a href="/ko/guide/apps/#package-center">이 앱에서 바로 설치</a>할 수 있습니다.</li>
+      <li><b>앱이 보는 NAS 정보를 새로 고치세요.</b> 기능 목록은 연결할 때 읽어 오므로, 그 이후에 설치한 패키지는 아직 탭이 없습니다. 당겨서 새로 고치거나 앱을 다시 여세요.</li>
+      <li><b>숨겨져 있지 않은지 확인하세요.</b> 파일 탭의 더보기 메뉴에 <b>화면 맞춤 설정</b>이 있으며, 여기서 하위 화면을 끌 수 있습니다.</li>
+    </ol>
+    <div class="note"><b>Download Station은 대부분의 DSM 7 버전에서 Python2가 필요하며</b>, 패키지를 설치하면 Package Center가 종속 패키지로 함께 설치해 줍니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>Download Station FAQ</h2>
+    </div>
+    <details open><summary>휴대폰에서 토렌트를 추가할 수 있나요?</summary><div class="body">네, 세 가지 방법이 있습니다. URL 붙여넣기, 마그넷 링크 붙여넣기, 기기에서 .torrent 파일 선택입니다. 추가하기 전에 저장할 폴더도 고를 수 있습니다.</div></details>
+    <details><summary>앱에서 Download Station 설정을 바꿀 수 있나요?</summary><div class="body">네. BitTorrent 수신 포트, 다운로드 및 업로드 속도 제한, 최대 피어 수, 동시에 실행할 작업 수, 저장 폴더를 바꿀 수 있습니다. 모든 변경은 이후 NAS에서 다시 읽어 확인하므로, NAS가 거부한 값은 거부되었다고 보고됩니다.</div></details>
+    <details><summary>다운로드 제한이 0이면 무슨 뜻인가요?</summary><div class="body">제한 없음을 뜻합니다. 이는 Download Station 고유의 규칙이며, 앱이 읽지 못한 섹션을 0으로 표시하지 않는 이유이기도 합니다. 읽지 못한 값을 0처럼 꾸며 보여 주면 전혀 다른 잘못된 정보를 전달하게 됩니다.</div></details>
+    <details><summary>Download Station 탭이 보이지 않는 이유는 무엇인가요?</summary><div class="body">해당 NAS에 패키지가 설치되어 있지 않기 때문입니다. Package Center에서 Download Station을 설치한 뒤, 당겨서 새로 고치거나 앱을 다시 열면 탭이 나타납니다.</div></details>
+    <details><summary>앱을 닫아도 다운로드가 계속되나요?</summary><div class="body">네. 다운로드는 NAS가 자체 연결로 처리합니다. 휴대폰은 리모컨일 뿐입니다.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 앱</h2>
+    <p class="lead" style="margin:0 auto 24px">Package Center, Docker, Compose 프로젝트, 가상 머신.</p>
+    <p><a class="btn" href="/ko/guide/apps/">패키지, Docker &amp; VM &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

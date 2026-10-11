@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology Kullanıcılarını, Görevlerini ve UPS'ini Yönetin - Syno Manager</title>
+<meta name="description" content="Synology kullanıcı hesaplarını sistem hesapları korunarak yönetin, zamanlanmış görevleri çalıştırın ve açıp kapatın, UPS şarjını ve tahmini çalışma süresini telefonunuzdan okuyun." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology Kullanıcılarını, Görevlerini ve UPS'ini Yönetin - Syno Manager" />
+<meta property="og:description" content="Synology kullanıcı hesaplarını sistem hesapları korunarak yönetin, zamanlanmış görevleri çalıştırın ve açıp kapatın, UPS şarjını ve tahmini çalışma süresini telefonunuzdan okuyun." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology Kullanıcılarını, Görevlerini ve UPS'ini Yönetin - Syno Manager" />
+<meta name="twitter:description" content="Synology kullanıcı hesaplarını sistem hesapları korunarak yönetin, zamanlanmış görevleri çalıştırın ve açıp kapatın, UPS şarjını ve tahmini çalışma süresini telefonunuzdan okuyun." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Denetim Masası"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology Kullanıcılarını, Görevlerini ve UPS'ini Yönetin - Syno Manager",
+  "description": "Synology kullanıcı hesaplarını sistem hesapları korunarak yönetin, zamanlanmış görevleri çalıştırın ve açıp kapatın, UPS şarjını ve tahmini çalışma süresini telefonunuzdan okuyun.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "tr",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Uygulamadan DSM kullanıcıları ekleyebilir veya düzenleyebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Kullanıcı ekleyin, ayrıntılarını düzenleyin, parola değiştirin ya da bir hesabı silin. Sistem hesapları - admin, guest ve DSM'in oluşturduğu hizmet hesapları - algılanır ve silinmeye karşı korunur, çünkü birini kaldırmak NAS'u geri alması sıkıcı şekillerde bozar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zamanlanmış bir görevi elle çalıştırabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, DSM'in tetiklenmesine izin verdiği görevler için - her birinin bir Şimdi Çalıştır düğmesi vardır. Ayrıca herhangi bir görevi DSM'i açmadan etkinleştirebilir veya devre dışı bırakabilirsiniz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UPS ekranı ne gösterir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS modeli, şebekede mi yoksa bataryada mı olduğu, yüzde ve çubuk olarak şarjı, nasıl bağlandığı, kalan tahmini çalışma süresi ve NAS'ta UPS desteğinin etkin olup olmadığı."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS'un bataryadayken kapanmadan önce ne kadar bekleyeceğini değiştirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Uygulama UPS durumunu bildirir; kapatma politikası, ayarın sonuçlarının açıkça belirtildiği DSM'deki Donanım ve Güç bölümünde belirlenir."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Denetim Masası</div>
+      <div class="eyebrow">Denetim Masası</div>
+      <h1>Hesaplar, zamanlamalar <span class="g">ve güç</span></h1>
+      <p>Dört alt görünüm: <b>Kullanıcılar</b>, <b>Görevler</b>, UPS için <b>Güç</b> ve <b>Ayarlar</b> - uygulamanın kendi tercihleri, bulunduğunuz sekmeden ayrılmadan erişilebilir.</p>
+    </div>
+    <div class="hero-shot"><img alt="Açma-kapama düğmeleri ve Şimdi Çalıştır ile zamanlanmış görevleri gösteren Görev Zamanlayıcı" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Bu sayfada</b><ul>
+      <li><a href="#users">Kullanıcılar</a></li>
+      <li><a href="#tasks">Görev Zamanlayıcı</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Ayarlar</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Kullanıcılar</div>
+      <h2>DSM hesapları</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">NAS'taki her hesap; görünen adı, açıklaması ve varsa e-posta adresiyle. <b>Süresi doldu</b> çipi, DSM'in devre dışı bıraktığı hesapları işaretler.</p>
+        <h3 style="margin-top:20px">Neler yapabilirsiniz</h3>
+        <ul class="plain">
+          <li>DSM'in istediği ayrıntılarla <b>kullanıcı ekleyin</b>.</li>
+          <li>Mevcut bir hesabı <b>düzenleyin</b>.</li>
+          <li><b>Parola değiştirin.</b></li>
+          <li>Oluşturduğunuz bir hesabı <b>silin</b>.</li>
+        </ul>
+        <div class="note"><b>Sistem hesapları silinemez.</b> <code>admin</code>, <code>guest</code> ve DSM'in kendi paketleri için oluşturduğu hizmet hesapları algılanır ve korunur. Bunlardan birini kaldırmak NAS'u geri alması sıkıcı şekillerde bozar ve telefon bunu öğrenmek için doğru yer değildir.</div>
+      </div>
+      <img alt="İki adı ve adresi bulanıklaştırılmış DSM kullanıcı hesapları" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Bu ekran görüntüsündeki iki hesap bulanıklaştırılmıştır - gerçek kişilerin adları ve adresleridir.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Görev Zamanlayıcı</div>
+      <h2>Neler zamanlanmış ve sırada ne çalışacak</h2>
+      <p class="lead">DSM'deki her görev; etkin olup olmadığı, ne yaptığı ve bir sonraki tetiklenme zamanı.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Görev adı ve türü</b> - bir Hyper Backup görevi, kullanıcı tanımlı bir betik, geri dönüşüm kutusu temizliği - her biri ne tür bir şey olduğuyla etiketlenir.</li>
+      <li><b>Gerçekte ne yaptığı.</b> Betik görevi çalıştırdığı komutu gösterir; yedekleme görevi açıklamasını gösterir.</li>
+      <li>Tarih ve saat olarak <b>sonraki çalışma</b>.</li>
+      <li>DSM'i açmadan etkinleştirmek veya devre dışı bırakmak için <b>görev başına bir anahtar</b>.</li>
+      <li>DSM'in isteğe bağlı tetiklenmesine izin verdiği görevlerde <b>Şimdi Çalıştır</b>.</li>
+    </ul>
+    <div class="note warn"><b>Şimdi Çalıştır, onu şimdi çalıştırır.</b> Boşta bir NAS'ta sabah 3'te çalışmayı bekleyen zamanlanmış bir betik, bir dosya kopyalama sırasında akşam 6'da farklı davranır. Düğme dediğini yapar.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Güç</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Model, şarj, bağlantı modu ve tahmini çalışma süresiyle UPS durumu" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Bir UPS bağlıyken görünür. Tek kart, üzerindeki her şey.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Gösterilen</th><th>Anlamı</th></tr></thead>
+          <tbody>
+            <tr><td>Üretici ve model</td><td>UPS'in kendini tanıttığı şekilde.</td></tr>
+            <tr><td>Durum</td><td>Şebekede <b>çevrimiçi</b> ya da bataryada.</td></tr>
+            <tr><td>Şarj</td><td>Yüzde ve bir çubuk. 50%'nin altında amber, 20%'nin altında kırmızı.</td></tr>
+            <tr><td>Mod</td><td>NAS'un onunla nasıl konuştuğu - USB ya da ağ üzerinden.</td></tr>
+            <tr><td>Çalışma süresi</td><td>UPS'in yükü ne kadar tutabileceğine dair tahmini.</td></tr>
+            <tr><td>Etkin</td><td>DSM'de UPS desteğinin hiç açık olup olmadığı.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Şarj, sağlık rozetini besler.</b> Boşalan bir UPS, siz bu sekmeyi açmadan <a href="/tr/guide/home/#header">ana ekranda</a> görünür - ki asıl amaç budur, çünkü kontrol etmeyi akıl ettiğinizde fazla zamanınız kalmamış olabilir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Ayarlar</div>
+      <h2>Uygulamanın kendi tercihleri</h2>
+      <p class="lead">Dördüncü alt görünüm Ayarlar'dır; sekmeden ayrılmadan sorgulama aralığını veya vurgu rengini değiştirebilmeniz için buraya gömülüdür. Dişli simgesinin açtığı ekranın aynısıdır.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/tr/guide/settings/">Her ayar, açıklamalı</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Denetim Masası SSS</h2>
+    </div>
+    <details open><summary>Uygulamadan DSM kullanıcıları ekleyebilir veya düzenleyebilir miyim?</summary><div class="body">Evet. Kullanıcı ekleyin, ayrıntılarını düzenleyin, parola değiştirin ya da bir hesabı silin. Sistem hesapları - admin, guest ve DSM'in oluşturduğu hizmet hesapları - algılanır ve silinmeye karşı korunur.</div></details>
+    <details><summary>Zamanlanmış bir görevi elle çalıştırabilir miyim?</summary><div class="body">Evet, DSM'in tetiklenmesine izin verdiği görevler için. Ayrıca herhangi bir görevi DSM'i açmadan etkinleştirebilir veya devre dışı bırakabilirsiniz.</div></details>
+    <details><summary>UPS ekranı ne gösterir?</summary><div class="body">UPS modeli, şebekede mi yoksa bataryada mı olduğu, yüzde ve çubuk olarak şarjı, nasıl bağlandığı, kalan tahmini çalışma süresi ve NAS'ta UPS desteğinin etkin olup olmadığı.</div></details>
+    <details><summary>Bataryada kapanma politikasını değiştirebilir miyim?</summary><div class="body">Hayır. Uygulama UPS durumunu bildirir; politika, sonuçların açıkça belirtildiği DSM'deki Donanım ve Güç bölümünde belirlenir.</div></details>
+    <details><summary>Güç alt görünümü neden yok?</summary><div class="body">Çünkü bir UPS bağlı değil ya da DSM'de UPS desteği kapalı. Uygulama, var olmayan donanımın ekranlarını gizler.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sonraki: Asistan</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS'unuza bir soru sorun, yanıtı telefonunuzdaki bir model versin.</p>
+    <p><a class="btn" href="/tr/guide/assistant/">Asistan &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Kılavuza dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

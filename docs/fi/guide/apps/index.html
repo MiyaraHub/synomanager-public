@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, paketit ja VM:t Synology NAS:ille - Syno Manager</title>
+<meta name="description" content="Asenna DSM-paketteja Package Centeristä, käynnistä, pysäytä ja käynnistä uudelleen Docker-kontteja, lue niiden lokeja, aja Compose-pinoja ja hallitse virtuaalikoneita." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, paketit ja VM:t Synology NAS:ille - Syno Manager" />
+<meta property="og:description" content="Asenna DSM-paketteja Package Centeristä, käynnistä, pysäytä ja käynnistä uudelleen Docker-kontteja, lue niiden lokeja, aja Compose-pinoja ja hallitse virtuaalikoneita." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, paketit ja VM:t Synology NAS:ille - Syno Manager" />
+<meta name="twitter:description" content="Asenna DSM-paketteja Package Centeristä, käynnistä, pysäytä ja käynnistä uudelleen Docker-kontteja, lue niiden lokeja, aja Compose-pinoja ja hallitse virtuaalikoneita." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sovellukset"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, paketit ja VM:t Synology NAS:ille - Syno Manager",
+  "description": "Asenna DSM-paketteja Package Centeristä, käynnistä, pysäytä ja käynnistä uudelleen Docker-kontteja, lue niiden lokeja, aja Compose-pinoja ja hallitse virtuaalikoneita.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Voinko asentaa DSM-paketin puhelimesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Sovelluksen Package Centerissä on sama luettelo kuin DSM:ssä - Asennetut, Kaikki paketit, Beta ja Yhteisö - hakukenttineen. Valitse paketti, valitse levy ja asenna. Päivitys ja poisto toimivat samoin, ja jokainen toiminto vahvistetaan lukemalla pakettiluettelo uudelleen, ei sillä että pyyntö palasi OK:na."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko käynnistää Docker-kontin uudelleen sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Jokaisella kontilla on käynnistys, pysäytys ja uudelleenkäynnistys sekä painike, joka avaa sen lokit. Päättynyt kontti näyttää käynnistyspainikkeen eikä pysäytystä, jota se ei voisi toteuttaa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko hallita Docker Compose -pinoja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Projektit-alinäkymä listaa Compose-projektisi ja käynnistää tai pysäyttää koko pinon, jotta sinun ei tarvitse etsiä jokaista konttia erikseen. Pinon lokit avautuvat samalla tavalla kuin kontin lokit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko käynnistää ja pysäyttää virtuaalikoneita?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä, jos Virtual Machine Manager on asennettu. Käynnistä, sammuta tai katkaise virta väkisin mistä tahansa koneesta. Pakotettu katkaisu vaatii pitkän painalluksen vahvistukseksi, koska se vastaa töpselin vetämistä irti. Kone, jonka tilaa NAS ei kutsu käynnissä oleväksi eikä sammutetuksi, näytetään täsmälleen sellaisena, ja sille tarjotaan palautustoiminto eikä Käynnistä-painiketta, joka ei toimisi."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Sovellukset</div>
+      <div class="eyebrow">Sovellukset</div>
+      <h1>Kaikki, mitä <span class="g">NAS:isi ajaa</span></h1>
+      <p>Neljä alinäkymää: <b>Package Center</b> DSM-paketeille, <b>Docker</b> konteille, <b>Projektit</b> Compose-pinoille ja <b>Virtuaalikoneet</b>, kun VMM on asennettu.</p>
+    </div>
+    <div class="hero-shot"><img alt="Docker-kontit tiloineen ja ohjaimineen" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Paketin asentaminen</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Kontin lokit</a></li>
+      <li><a href="#projects">Compose-projektit</a></li>
+      <li><a href="#virtual-machines">Virtuaalikoneet</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Koko luettelo, haettavissa</h2>
+      <p class="lead">Samat neljä suodatinta kuin DSM:ssä sekä hakukenttä kaikkien yli.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Suodatin</th><th>Mitä se listaa</th></tr></thead>
+          <tbody>
+            <tr><td>Asennetut</td><td>Mitä NAS:issasi on nyt, versioineen, kokoineen ja käynnissä-ilmaisimineen.</td></tr>
+            <tr><td>Kaikki paketit</td><td>Synologyn koko luettelo omalle mallillesi.</td></tr>
+            <tr><td>Beta</td><td>Esijulkaisupaketit.</td></tr>
+            <tr><td>Yhteisö</td><td>Kolmansien osapuolten lähteiden paketit, jotka olet lisännyt DSM:ssä.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Jokaisessa kohdassa näkyvät versio ja latauskoko, kuvaus ja mahdollinen tarvittava riippuvuus - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - jotta yllättävä toinen asennus ei yllätä.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Koko pakettiluettelon haku Asenna-painikkeineen" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Haetaan <b>Kaikki paketit</b> -luettelosta pakettia, jota ei ole vielä asennettu.</p>
+      </div>
+      <img alt="Package Center näyttää asennetut paketit ja niiden käyntitilan" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Asenna, päivitä, poista</div>
+      <h2>Mitä tapahtuu, kun napautat Asenna</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Hae tai suodata</b> haluamaasi pakettiin.</li>
+          <li><b>Asenna.</b> Valintaikkuna nimeää paketin, listaa mahdolliset riippuvuudet ja kysyy, mihin levyyn asennetaan - näyttäen kunkin levyn vapaan tilan, jotta et valitse sokkona.</li>
+          <li><b>Vahvista.</b> NAS asentaa sen riippuvuuksineen.</li>
+          <li><b>Luettelo lukee itsensä uudelleen.</b> Painike vaihtuu muotoon <b>Poista</b>, koska pakettiluettelo nyt kertoo paketin olevan asennettu - ei siksi, että pyyntö palasi OK:na.</li>
+        </ol>
+        <div class="note"><b>Tuo viimeinen vaihe on koko pointti.</b> Onnistunut pyyntö ja valmistunut asennus ovat eri tapahtumia. Sovellus odottaa jälkimmäistä.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Asennusikkuna, jossa näkyvät paketti, sen riippuvuus ja kohdelevy" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Paketin asentaminen lisää sovellukseen näkymiä.</b> Välilehtiluettelo rakennetaan sen mukaan, mitä NAS ilmoittaa yhteyttä muodostettaessa, joten esimerkiksi Download Stationin asentamisen jälkeen vedä päivittääksesi tai avaa sovellus uudelleen, niin sen alinäkymä ilmestyy.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Jokainen kontti ja tärkeät ohjaimet</h2>
+      <p class="lead">Tilaotsikko - <b>käynnissä kaikista</b> - ja sen alla jokainen NAS:in kontti yhdessä luettelossa.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nimi ja kuvan tunniste</b> jokaisella rivillä, jotta kaksi samasta kuvasta tehtyä konttia erottuvat toisistaan.</li>
+      <li><b>Tila</b> merkkinä: <b>Käynnissä</b>, <b>Päättynyt</b> ja mitä muuta Docker ilmoittaakaan. Kontti, jonka Docker katsoo terveeksi, kertoo sen - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Käyntiaika</b> kaikelle käynnissä olevalle.</li>
+      <li><b>Käynnistä, pysäytä ja käynnistä uudelleen</b> tilaan sopivalla ohjaimella: pysäytetylle kontille tarjotaan käynnistys, ei pysäytystä, joka ei tekisi mitään.</li>
+      <li><b>Lokit</b> jokaisen rivin painikkeesta.</li>
+      <li><b>Laajenna rivi</b> nähdäksesi tiedot - muun muassa muisti- ja verkkoluvut.</li>
+      <li><b>Tiivistä koko luettelo</b> ylhäällä olevalla ohjaimella, kun haluat nähdä vain määrän.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Lokit</div>
+      <h2>Luetaan kerran, seurataan tarkoituksella</h2>
+      <p class="lead">Kontin ja pinon lokit toimivat samoin kuin <a href="/fi/guide/system/#logs">järjestelmäloki</a>, samasta syystä.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se latautuu kerran ja pysyy paikallaan</b>, joten rivi ei vierähdä pois kesken lukemisen.</li>
+      <li><b>Paina toistoa seurataksesi reaaliaikaisesti</b>, paina uudelleen keskeyttääksesi.</li>
+      <li><b>Seuranta loppuu itsestään</b>, kun poistut näkymästä tai viet sovelluksen taustalle - ei unohtunutta välilehteä, joka kyselee taskussasi.</li>
+      <li><b>Hae</b> yhtä riviä pitkästä lokista.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projektit</div>
+      <h2>Compose-pinot pinoina</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Docker Compose -projektit, joita ei ole määritetty" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Compose-projekti on useita konttia, jotka kuuluvat yhteen. Projektit-alinäkymä käsittelee niitä sellaisina: käynnistä tai pysäytä <b>koko pino</b> sen sijaan, että etsit jokaisen kontin Docker-luettelosta ja toivot saaneesi ne kaikki.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Jokainen projekti</b> näyttää nimensä ja sen, kuinka moni sen kontti on käynnissä.</li>
+          <li><b>Käynnistä tai pysäytä projekti</b> yhtenä kokonaisuutena.</li>
+          <li><b>Pinon lokit</b> avautuvat kuten kontin lokit.</li>
+          <li><b>Jos projekteja ei ole, se sanoo niin</b> - ”Docker Compose -projektit näkyvät täällä” - tyhjän näytön sijaan.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Virtuaalikoneet</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Näkyy, kun VMM on asennettu. Jokainen NAS:in virtuaalikone, sen tekemiset ja kolme virtatoimintoa.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Toiminto</th><th>Mitä se tekee</th></tr></thead>
+      <tbody>
+        <tr><td>Käynnistä</td><td>Kytkee koneen päälle.</td></tr>
+        <tr><td>Sammuta</td><td>Pyytää vieraskäyttöjärjestelmää sammumaan siististi.</td></tr>
+        <tr><td>Katkaise virta</td><td>Katkaisee virran. <b>Vahvista pitkällä painalluksella</b>, koska se vastaa toimivan tietokoneen töpselin vetämistä irti - pelkkä napautus on siihen liian helppo.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Välitilassa oleva kone kuvataan sellaisena.</b> Jos NAS ilmoittaa tilan, jota se ei kutsu käynnissä olevaksi eikä sammutetuksi - käynnistyy, keskeytyy, kaatunut - sovellus näyttää täsmälleen sen sanan ja tarjoaa palautustoiminnon, ei Käynnistä-painiketta, joka ei toimisi, eikä vihreää rastia, joka ei pidä paikkaansa.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Sovellusten UKK</h2>
+    </div>
+    <details open><summary>Voinko asentaa DSM-paketin puhelimesta?</summary><div class="body">Kyllä. Sovelluksen Package Centerissä on sama luettelo kuin DSM:ssä - Asennetut, Kaikki paketit, Beta ja Yhteisö - hakukenttineen. Valitse paketti, valitse levy ja asenna. Päivitys ja poisto toimivat samoin, ja jokainen toiminto vahvistetaan lukemalla pakettiluettelo uudelleen.</div></details>
+    <details><summary>Voinko käynnistää Docker-kontin uudelleen sovelluksesta?</summary><div class="body">Kyllä. Jokaisella kontilla on käynnistys, pysäytys ja uudelleenkäynnistys sekä painike, joka avaa sen lokit. Päättynyt kontti näyttää käynnistyspainikkeen eikä pysäytystä, jota se ei voisi toteuttaa.</div></details>
+    <details><summary>Voinko hallita Docker Compose -pinoja?</summary><div class="body">Kyllä. Projektit-alinäkymä listaa Compose-projektisi ja käynnistää tai pysäyttää koko pinon. Pinon lokit avautuvat samalla tavalla kuin kontin lokit.</div></details>
+    <details><summary>Voinko käynnistää ja pysäyttää virtuaalikoneita?</summary><div class="body">Kyllä, jos Virtual Machine Manager on asennettu. Käynnistä, sammuta tai katkaise virta väkisin mistä tahansa koneesta. Pakotettu katkaisu vahvistetaan pitkällä painalluksella, koska se vastaa töpselin vetämistä irti.</div></details>
+    <details><summary>Voinko luoda uuden kontin sovelluksesta?</summary><div class="body">Ei. Kontin luominen tarkoittaa kuvan valintaa, porttiohjauksia, levyliitoksia ja ympäristömuuttujia - lomaketta, joka kuuluu näytölle, jossa näet kaiken kerralla. Sovellus ajaa ja valvoo sitä, minkä olet luonut DSM:ssä tai Portainerissa.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Media</h2>
+    <p class="lead" style="margin:0 auto 24px">Kuvat, Drive ja Surveillance Stationin reaaliaikainen kuva.</p>
+    <p><a class="btn" href="/fi/guide/media/">Kuvat, Drive &amp; kamerat &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

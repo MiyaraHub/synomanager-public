@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quản lý người dùng, tác vụ và UPS của Synology - Syno Manager</title>
+<meta name="description" content="Quản lý tài khoản người dùng Synology với tài khoản hệ thống được bảo vệ, chạy và bật tắt tác vụ theo lịch, đọc mức sạc UPS và thời gian chạy ước tính ngay từ điện thoại." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Quản lý người dùng, tác vụ và UPS của Synology - Syno Manager" />
+<meta property="og:description" content="Quản lý tài khoản người dùng Synology với tài khoản hệ thống được bảo vệ, chạy và bật tắt tác vụ theo lịch, đọc mức sạc UPS và thời gian chạy ước tính ngay từ điện thoại." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Quản lý người dùng, tác vụ và UPS của Synology - Syno Manager" />
+<meta name="twitter:description" content="Quản lý tài khoản người dùng Synology với tài khoản hệ thống được bảo vệ, chạy và bật tắt tác vụ theo lịch, đọc mức sạc UPS và thời gian chạy ước tính ngay từ điện thoại." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Control Panel"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Quản lý người dùng, tác vụ và UPS của Synology - Syno Manager",
+  "description": "Quản lý tài khoản người dùng Synology với tài khoản hệ thống được bảo vệ, chạy và bật tắt tác vụ theo lịch, đọc mức sạc UPS và thời gian chạy ước tính ngay từ điện thoại.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể thêm hoặc sửa người dùng DSM từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Thêm người dùng, sửa thông tin, đổi mật khẩu hoặc xóa tài khoản. Tài khoản hệ thống - admin, guest và các tài khoản dịch vụ do DSM tạo - được nhận diện và được bảo vệ khỏi việc xóa, vì xóa một tài khoản như vậy làm hỏng NAS theo những cách rất phiền để khắc phục."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể chạy tác vụ theo lịch thủ công không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, với những tác vụ DSM cho phép kích hoạt - mỗi tác vụ đó đều có nút Chạy ngay. Bạn cũng có thể bật hoặc tắt bất kỳ tác vụ nào mà không cần mở DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Màn hình UPS hiển thị gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mẫu UPS, đang dùng điện lưới hay chạy bằng pin, mức sạc theo phần trăm và thanh hiển thị, cách kết nối, thời gian chạy ước tính còn lại, và liệu hỗ trợ UPS có được bật trên NAS hay không."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể đổi thời gian NAS chờ trước khi tắt khi chạy bằng pin không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Ứng dụng báo cáo trạng thái UPS; chính sách tắt máy được đặt trong DSM tại Hardware and Power, nơi hệ quả của thiết lập được giải thích rõ."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Control Panel</div>
+      <div class="eyebrow">Control Panel</div>
+      <h1>Tài khoản, lịch trình <span class="g">và nguồn điện</span></h1>
+      <p>Bốn chế độ xem con: <b>Người dùng</b>, <b>Tác vụ</b>, <b>Nguồn điện</b> cho UPS, và <b>Cài đặt</b> - tùy chọn riêng của ứng dụng, truy cập được mà không cần rời tab bạn đang ở.</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler hiển thị các tác vụ theo lịch với công tắc và nút Chạy ngay" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#users">Người dùng</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Cài đặt</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Người dùng</div>
+      <h2>Tài khoản DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Mọi tài khoản trên NAS, kèm tên hiển thị, mô tả và địa chỉ email nếu có. Nhãn <b>Hết hạn</b> đánh dấu những tài khoản DSM đã vô hiệu hóa.</p>
+        <h3 style="margin-top:20px">Bạn có thể làm gì</h3>
+        <ul class="plain">
+          <li><b>Thêm người dùng</b> với những thông tin DSM yêu cầu.</li>
+          <li><b>Sửa</b> một tài khoản hiện có.</li>
+          <li><b>Đổi mật khẩu.</b></li>
+          <li><b>Xóa</b> tài khoản do bạn tạo.</li>
+        </ul>
+        <div class="note"><b>Tài khoản hệ thống không thể bị xóa.</b> <code>admin</code>, <code>guest</code> và các tài khoản dịch vụ DSM tạo cho các gói của chính nó được nhận diện và bảo vệ. Xóa một tài khoản như vậy làm hỏng NAS theo những cách rất phiền để khắc phục, và điện thoại không phải nơi để phát hiện điều đó.</div>
+      </div>
+      <img alt="Các tài khoản người dùng DSM, với hai tên và địa chỉ được làm mờ" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Hai tài khoản trong ảnh chụp màn hình này bị làm mờ - đó là tên và địa chỉ của người thật.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>Có gì được lên lịch, và gì chạy tiếp theo</h2>
+      <p class="lead">Mọi tác vụ DSM có, đã bật hay chưa, nó làm gì và lần kế tiếp chạy khi nào.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Tên tác vụ và loại của nó</b> - tác vụ Hyper Backup, tập lệnh do người dùng định nghĩa, dọn thùng rác - mỗi loại được ghi nhãn rõ là thứ gì.</li>
+      <li><b>Nó thực sự làm gì.</b> Tác vụ tập lệnh hiển thị lệnh nó chạy; tác vụ sao lưu hiển thị mô tả của nó.</li>
+      <li><b>Lần chạy kế tiếp</b>, dưới dạng ngày và giờ.</li>
+      <li><b>Một công tắc cho mỗi tác vụ</b> để bật hoặc tắt mà không cần mở DSM.</li>
+      <li><b>Chạy ngay</b> trên những tác vụ DSM cho phép kích hoạt theo yêu cầu.</li>
+    </ul>
+    <div class="note warn"><b>Chạy ngay là chạy ngay lập tức.</b> Một tập lệnh theo lịch vốn dự kiến chạy lúc 3 giờ sáng trên NAS rảnh rỗi sẽ hoạt động khác đi lúc 6 giờ chiều khi đang sao chép tệp. Nút này làm đúng như tên gọi.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Nguồn điện</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Trạng thái UPS với mẫu máy, mức sạc, chế độ kết nối và thời gian chạy ước tính" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Có mặt khi có UPS được gắn vào. Một thẻ, mọi thông tin trên đó.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Hiển thị</th><th>Ý nghĩa</th></tr></thead>
+          <tbody>
+            <tr><td>Nhà sản xuất và mẫu máy</td><td>Đúng như UPS tự báo.</td></tr>
+            <tr><td>Trạng thái</td><td><b>Trực tuyến</b> bằng điện lưới, hoặc chạy bằng pin.</td></tr>
+            <tr><td>Mức sạc</td><td>Phần trăm và một thanh hiển thị. Màu hổ phách dưới 50%, đỏ dưới 20%.</td></tr>
+            <tr><td>Chế độ</td><td>Cách NAS trao đổi với nó - USB, hoặc qua mạng.</td></tr>
+            <tr><td>Thời gian chạy</td><td>UPS ước tính có thể giữ tải trong bao lâu.</td></tr>
+            <tr><td>Đã bật</td><td>Hỗ trợ UPS có được bật trong DSM hay không.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Mức sạc ảnh hưởng đến huy hiệu tình trạng.</b> Một UPS đang xả điện sẽ hiện trên <a href="/vi/guide/home/#header">màn hình chính</a> mà bạn không cần mở tab này - đó chính là mục đích, vì khi bạn nghĩ đến việc kiểm tra thì có thể không còn nhiều thời gian.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Cài đặt</div>
+      <h2>Tùy chọn riêng của ứng dụng</h2>
+      <p class="lead">Chế độ xem con thứ tư là Cài đặt, được nhúng ở đây để bạn đổi chu kỳ cập nhật hoặc màu nhấn mà không cần rời tab. Đó chính là màn hình mà biểu tượng bánh răng mở ra.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/vi/guide/settings/">Mọi cài đặt, được giải thích</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về Control Panel</h2>
+    </div>
+    <details open><summary>Tôi có thể thêm hoặc sửa người dùng DSM từ ứng dụng không?</summary><div class="body">Có. Thêm người dùng, sửa thông tin, đổi mật khẩu hoặc xóa tài khoản. Tài khoản hệ thống - admin, guest và các tài khoản dịch vụ do DSM tạo - được nhận diện và được bảo vệ khỏi việc xóa.</div></details>
+    <details><summary>Tôi có thể chạy tác vụ theo lịch thủ công không?</summary><div class="body">Có, với những tác vụ DSM cho phép kích hoạt. Bạn cũng có thể bật hoặc tắt bất kỳ tác vụ nào mà không cần mở DSM.</div></details>
+    <details><summary>Màn hình UPS hiển thị gì?</summary><div class="body">Mẫu UPS, đang dùng điện lưới hay chạy bằng pin, mức sạc theo phần trăm và thanh hiển thị, cách kết nối, thời gian chạy ước tính còn lại, và liệu hỗ trợ UPS có được bật trên NAS hay không.</div></details>
+    <details><summary>Tôi có thể đổi chính sách tắt máy khi chạy bằng pin không?</summary><div class="body">Không. Ứng dụng báo cáo trạng thái UPS; chính sách được đặt trong DSM tại Hardware and Power, nơi hệ quả được giải thích rõ.</div></details>
+    <details><summary>Vì sao không thấy chế độ xem con Nguồn điện?</summary><div class="body">Vì không có UPS nào được gắn, hoặc hỗ trợ UPS bị tắt trong DSM. Ứng dụng ẩn các màn hình của phần cứng không tồn tại.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Trợ lý</h2>
+    <p class="lead" style="margin:0 auto 24px">Hỏi NAS của bạn một câu hỏi, được trả lời bởi một mô hình chạy trên điện thoại.</p>
+    <p><a class="btn" href="/vi/guide/assistant/">Trợ lý &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

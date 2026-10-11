@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>自訂卡片、分頁與檢視 - Syno Manager</title>
+<meta name="description" content="重新排列或隱藏儀表板卡片、選擇底部列的分頁、挑選每個分頁內要顯示的區段，並收合你不看的內容。" />
+<meta name="keywords" content="customize NAS app, Synology app reorder cards, hide tabs Synology app, Synology app layout, customize views Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/customizing/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/customizing/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/customizing/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/customizing/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/customizing/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/customizing/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/customizing/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/customizing/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/customizing/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/customizing/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/customizing/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/customizing/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/customizing/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/customizing/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/customizing/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/customizing/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/customizing/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/customizing/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/customizing/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/customizing/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/customizing/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/customizing/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/customizing/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/customizing/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/customizing/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/customizing/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/customizing/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/customizing/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/customizing/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/customizing/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/customizing/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/customizing/" />
+<!--/hreflang-->
+<meta property="og:title" content="自訂卡片、分頁與檢視 - Syno Manager" />
+<meta property="og:description" content="重新排列或隱藏儀表板卡片、選擇底部列的分頁、挑選每個分頁內要顯示的區段，並收合你不看的內容。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/customizing/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="自訂卡片、分頁與檢視 - Syno Manager" />
+<meta name="twitter:description" content="重新排列或隱藏儀表板卡片、選擇底部列的分頁、挑選每個分頁內要顯示的區段，並收合你不看的內容。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "自訂"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "自訂卡片、分頁與檢視 - Syno Manager",
+  "description": "重新排列或隱藏儀表板卡片、選擇底部列的分頁、挑選每個分頁內要顯示的區段，並收合你不看的內容。",
+  "image": "https://synomanager.com/screenshots/customize-views.webp",
+  "url": "https://synomanager.com/guide/customizing/",
+  "mainEntityOfPage": "https://synomanager.com/guide/customizing/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "在 Syno Manager 中可以重新安排哪些內容？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "四件事：哪些儀表板卡片要顯示及其順序、哪些分頁放在底部列及其順序、每個分頁內要顯示哪些子檢視及其順序，以及每張卡片要展開還是收合。四者都會被記住。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "要怎麼隱藏分頁內的某個區段？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "開啟該分頁，點選右上角的三點選單，然後選擇「自訂檢視」。取消勾選不想要的項目，並將其餘項目拖曳排序。至少要保留一個檢視可見。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我隱藏了某個東西，現在有張卡片點了沒反應。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "它是有反應的 - 它會告訴你該檢視已隱藏，並提供「自訂」按鈕，直接帶你前往設定。它不會默默開啟另一個畫面，那正是以前的做法，也會讓人覺得連結壞掉了。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的版面是存在 NAS 上還是手機上？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "存在手機上。儀表板版面、卡片順序與收合狀態，會依 NAS 分別儲存在該裝置上。若要移到新手機，請使用備份與還原。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 自訂</div>
+      <div class="eyebrow">自訂</div>
+      <h1>四個層級，<span class="g">全都會被記住</span></h1>
+      <p>卡片、分頁、子檢視與收合狀態。每一項都能重新排序或關閉，每一項都會在重新啟動後保留，每一項也都能重設。</p>
+    </div>
+    <div class="hero-shot"><img alt="自訂檢視，附即時預覽與拖曳把手" src="/screenshots/customize-views.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">對照圖</div>
+      <h2>各項設定在哪裡</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>層級</th><th>位置</th><th>儲存方式</th></tr></thead>
+      <tbody>
+        <tr><td>儀表板卡片</td><td>主畫面上的鉛筆圖示，或<b>設定 &rsaquo; 儀表板分類</b></td><td>依 NAS 分別儲存</td></tr>
+        <tr><td>底部導覽列</td><td><b>設定 &rsaquo; 自訂導覽</b></td><td>整個 App 共用</td></tr>
+        <tr><td>分頁內的子檢視</td><td>分頁的 <b>&#8942; 選單 &rsaquo; 自訂檢視</b></td><td>依 NAS 分別儲存</td></tr>
+        <tr><td>收合或展開</td><td>任一卡片上的箭頭，預設值在<b>設定 &rsaquo; 預設卡片檢視</b></td><td>依 NAS 分別儲存</td></tr>
+        <tr><td>說明卡片</td><td>在卡片上關閉；在<b>設定 &rsaquo; 說明</b>中還原</td><td>整個 App 共用</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">分頁內</div>
+      <h2>自訂檢視</h2>
+      <p class="lead">每個有多個區段的分頁，右上角都有 <b>&#8942;</b> 選單，其中有<b>自訂檢視</b>。</p>
+    </div>
+    <ul class="plain">
+      <li>頂端有子檢視列的<b>即時預覽</b>，讓你在儲存前就能看到結果。</li>
+      <li>每個檢視各有<b>一個核取方塊</b>，用來顯示或隱藏。</li>
+      <li><b>拖曳把手</b>可重新排序 - 清單中的第一個，就是該分頁開啟時所在的檢視。</li>
+      <li><b>至少要保留一個檢視可見</b>，所以分頁不會被設成空的。</li>
+      <li><b>重設</b>會還原預設值；<b>儲存</b>則套用變更。</li>
+    </ul>
+    <div class="note"><b>這就是讓分頁開在你想要的位置的方法。</b>如果你希望「系統」分頁一律停在記錄檔，把記錄檔拖到最上方，分頁就會從那裡開啟。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">設計原則</div>
+      <h2>你隱藏的東西不會變成死路</h2>
+      <p class="lead">隱藏項目會產生一個陷阱：儀表板上有張卡片，但它對應的畫面被你隱藏了。點下去，會去哪裡？</p>
+    </div>
+    <p style="color:var(--steel);max-width:74ch">以前它會前往該分頁的第一個區段，不管那是什麼 - 所以隱藏了磁碟健康狀態後再點磁碟健康狀態卡片，會落在磁碟區 &amp; 儲存池，卻沒有任何說明。這會讓人覺得 App 壞掉了。</p>
+    <p style="color:var(--steel);max-width:74ch;margin-top:12px">現在卡片會<b>告訴你</b>。如果檢視被隱藏了，它會這麼說，並提供<b>自訂</b>按鈕，直接帶你前往可將它找回的設定。如果你的 NAS 根本沒有執行該服務，它會改說這件事 - 那是不同的問題，有不同的答案，App 不會把兩者混為一談。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">重新開始</div>
+      <h2>全部還原</h2>
+    </div>
+    <ul class="plain">
+      <li><b>儀表板：</b>編輯工具列中的<b>重設</b>可還原預設的卡片與順序。</li>
+      <li><b>底部列：</b>自訂導覽中的<b>重設</b>。</li>
+      <li><b>子檢視：</b>每個分頁的自訂檢視中的<b>重設</b>。</li>
+      <li><b>說明卡片：</b>設定 &rsaquo; 說明中的<b>全部還原</b>，或一次還原一張。</li>
+      <li><b>在新手機上還原全部：</b><a href="/zh-hant/guide/backup-restore/">匯出並還原</a>App 的設定。</li>
+    </ul>
+    <div class="note"><b>新卡片預設開啟。</b>當新版本加入你的 NAS 支援的卡片時，它會直接出現，而不是等著你在設定畫面中發現。「自訂」是用來關閉項目的地方 - 不是用來探索有哪些功能的地方。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>自訂常見問題</h2>
+    </div>
+    <details open><summary>可以重新安排哪些內容？</summary><div class="body">哪些儀表板卡片要顯示及其順序、哪些分頁放在底部列及其順序、每個分頁內要顯示哪些子檢視及其順序，以及每張卡片要展開還是收合。四者都會被記住。</div></details>
+    <details><summary>要怎麼隱藏分頁內的某個區段？</summary><div class="body">開啟該分頁，點選右上角的三點選單，然後選擇「自訂檢視」。取消勾選不想要的項目，並將其餘項目拖曳排序。至少要保留一個檢視可見。</div></details>
+    <details><summary>我隱藏了某個東西，現在有張卡片點了沒反應。</summary><div class="body">它會告訴你該檢視已隱藏，並提供「自訂」按鈕帶你前往設定。它不會默默開啟另一個畫面。</div></details>
+    <details><summary>我的版面是存在 NAS 上還是手機上？</summary><div class="body">存在手機上，依 NAS 分別儲存。若要移到新手機，請使用備份與還原。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：離開家時</h2>
+    <p class="lead" style="margin:0 auto 24px">QuickConnect、網域、VPN，以及哪些功能適用哪種連線路徑。</p>
+    <p><a class="btn" href="/zh-hant/guide/remote-access/">遠端存取 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

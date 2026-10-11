@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS'unuzu Bağlayın - Syno Manager Kurulumu</title>
+<meta name="description" content="Synology NAS'unuzu bir dakikadan kısa sürede ekleyin: adres ve bağlantı noktası, HTTPS ve otomatik imzalı sertifikalar, QuickConnect, 2FA ve bağlanmadığında yapılacaklar." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS'unuzu Bağlayın - Syno Manager Kurulumu" />
+<meta property="og:description" content="Synology NAS'unuzu bir dakikadan kısa sürede ekleyin: adres ve bağlantı noktası, HTTPS ve otomatik imzalı sertifikalar, QuickConnect, 2FA ve bağlanmadığında yapılacaklar." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS'unuzu Bağlayın - Syno Manager Kurulumu" />
+<meta name="twitter:description" content="Synology NAS'unuzu bir dakikadan kısa sürede ekleyin: adres ve bağlantı noktası, HTTPS ve otomatik imzalı sertifikalar, QuickConnect, 2FA ve bağlanmadığında yapılacaklar." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Başlarken"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS'unuzu Bağlayın - Syno Manager Kurulumu",
+  "description": "Synology NAS'unuzu bir dakikadan kısa sürede ekleyin: adres ve bağlantı noktası, HTTPS ve otomatik imzalı sertifikalar, QuickConnect, 2FA ve bağlanmadığında yapılacaklar.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "tr",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager'ı kullanmak için neye ihtiyacım var?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DSM 7.0 veya üzerini çalıştıran bir Synology NAS, üzerinde bir DSM hesabı ve Android 7+, iOS 16+, macOS 11+ veya Windows çalıştıran bir cihaz. NAS'a hiçbir şey kurmanız gerekmez - uygulama zaten orada olan DSM'in kendi API'lerini kullanır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hangi adresi ve bağlantı noktasını girmeliyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kendi ağınızda, NAS'un yerel IP adresi ve DSM'in bağlantı noktası - HTTPS açıkken 5001, HTTPS kapalıyken 5000. Bir ana makine adı veya özel bir alan adı da girebilirsiniz. Adreslerle hiç uğraşmak istemiyorsanız Bağlantı Türü'nü QuickConnect'e çevirin ve QuickConnect ID'nizi girin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "SSL Sertifikasını Doğrula neden varsayılan olarak kapalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Çünkü çoğu DiskStation, bir genel otorite tarafından imzalanmadığı için bağlantı yine şifreli olsa bile doğrulamadan geçemeyen, otomatik imzalı bir sertifika sunar. Doğrulamayı kapalı bırakmak bu sertifikayı kabul eder. Örneğin Let's Encrypt'ten gerçek bir sertifika kurduysanız doğrulamayı açın."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Yönlendiricimde bağlantı noktaları açmam gerekiyor mu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır. Kendi ağınızda hiçbir şeyin yönlendirilmesi gerekmez. Dışarıdan QuickConnect bağlantıyı sizin için aktarır ve VPN de çalışır. Bağlantı noktası yönlendirme yalnızca internetten doğrudan bir yol istiyorsanız ya da ağınızın dışından RTSP üzerinden kamera canlı görüntüsü istiyorsanız gerekir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bağlantı zaman aşımı diyor. Şimdi ne yapmalı?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bu mesaj, uygulamanın hiç yanıt alamadığı anlamına gelir; bu da neredeyse her zaman adres, bağlantı noktası ya da telefonun bulunduğu ağdır. HTTPS'nin bağlantı noktasıyla eşleştiğini, yerel IP kullanıyorsanız telefonun NAS ile aynı ağda olduğunu ve DSM'in kendi web arayüzünün telefonun tarayıcısında aynı adres ve bağlantı noktasıyla yüklendiğini kontrol edin."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Başlarken</div>
+      <div class="eyebrow">Başlarken</div>
+      <h1><span class="g">Bir dakikadan kısa sürede</span> bağlanın</h1>
+      <p>NAS'a hiçbir şey kurulmaz. Syno Manager, zaten çalışan DSM'in kendi API'leriyle konuşur - yalnızca DiskStation'ınızın nerede olduğunu ve kim olduğunuzu söylersiniz.</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager'da NAS Ekle formu" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Bu sayfada</b><ul>
+      <li><a href="#requirements">Neye ihtiyacınız var</a></li>
+      <li><a href="#address">NAS'unuzu bulma</a></li>
+      <li><a href="#form">Formdaki her alan</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">İki faktörlü kimlik doğrulama</a></li>
+      <li><a href="#test">Test edin ve kaydedin</a></li>
+      <li><a href="#next">Sonra ne olur</a></li>
+      <li><a href="#trouble">Bağlanmadığında</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Sıfırıncı adım</div>
+      <h2>Neye ihtiyacınız var</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Gereksinim</th><th>Ayrıntı</th></tr></thead>
+      <tbody>
+        <tr><td>Bir Synology NAS</td><td><b>DSM 7.0 veya üzerini</b> çalıştıran herhangi bir model. Üzerine hiçbir şey kurulmaz - uygulama, DSM'in web arayüzünün kullandığı aynı API'leri kullanır.</td></tr>
+        <tr><td>Bir DSM hesabı</td><td>Normal DSM kullanıcı adınız ve parolanız. Yönetici hesabı her şeyi görür; yönetici olmayan hesap DSM'in izin verdiğini görür ve uygulama reddedilecek kontrolleri göstermek yerine geri kalanını gizler.</td></tr>
+        <tr><td>Cihazınız</td><td><b>Android 7.0</b> veya üzeri, <b>iOS 16.0</b> veya üzeri, <b>macOS 11.0</b> veya üzeri ya da <b>Windows</b>. Dördünde de aynı uygulama.</td></tr>
+        <tr><td>NAS'a giden bir yol</td><td>Aynı yerel ağ, içine bir VPN, özel bir alan adı veya QuickConnect. Herhangi biri yeterlidir.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Sadece bakmak için yönetici hesabına ihtiyacınız yok.</b> İzleme her DSM kullanıcısı için çalışır. Kontrol eylemleri - kapsayıcıyı yeniden başlatmak, yedekleme çalıştırmak, sürücüyü çıkarmak - DSM'in o eylem için gerektirdiği izni gerektirir ve uygulama çalışmış gibi davranmak yerine reddi bildirir.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Nerede</div>
+      <h2>NAS adresinizi bulma</h2>
+      <p class="lead">DSM'i zaten tarayıcıda açıyorsanız, adres çubuğunda ihtiyacınız olan her şey var: ana makine ve bağlantı noktası, uygulamanın istediği iki değerdir.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>DSM'in kendisinden</h3>
+        <ul class="plain">
+          <li><b>Denetim Masası &rsaquo; Ağ &rsaquo; Ağ Arayüzü</b>, her arayüzdeki NAS IP adresini gösterir.</li>
+          <li><b>Denetim Masası &rsaquo; Ağ &rsaquo; DSM Ayarları</b>, DSM'in dinlediği HTTP ve HTTPS bağlantı noktalarını gösterir. Biri değiştirmediyse bunlar 5000 ve 5001'dir.</li>
+        </ul>
+        <h3 style="margin-top:22px">Tarayıcınızdan</h3>
+        <p style="color:var(--steel)">DSM'e ulaşmak için ne yazıyorsanız uygulamanın istediği de odur. <code>https://192.168.1.20:5001</code> adresinde ana makine <code>192.168.1.20</code>, bağlantı noktası <code>5001</code> ve HTTPS açıktır.</p>
+      </div>
+      <div>
+        <h3>Yönlendiricinizden</h3>
+        <p style="color:var(--steel)">Çoğu yönlendirici bağlı cihazları adıyla listeler. NAS, <b>Denetim Masası &rsaquo; Bilgi Merkezi</b>'nde ayarlanan sunucu adıyla görünür.</p>
+        <div class="note"><b>Ona sabit bir adres verin.</b> Yönlendiriciniz yeniden başlatmadan sonra NAS'a farklı bir IP verirse uygulama onu bulamaz. Yönlendiricide bir DHCP rezervasyonu veya NAS'ta statik bir adres bunu önler. Bir ana makine adı ya da özel bir alan adı da çalışır ve IP'nin ne olduğuna aldırmaz.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS Ekle</div>
+      <h2>Formdaki her alan</h2>
+      <p class="lead">Cihaz listesinde <b>+ NAS Ekle</b>'ye dokunun. Form kısadır ve yalnızca üç alanın makul bir varsayılanı yoktur.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Alan</th><th>Ne yazılmalı</th></tr></thead>
+          <tbody>
+            <tr><td>NAS Takma Adı</td><td>İstediğiniz herhangi bir ad - yalnızca size gösterilir. Birden fazla NAS'unuz olduğunda işe yarar.</td></tr>
+            <tr><td>Bağlantı Türü</td><td>Yazdığınız bir adres için <b>Doğrudan IP</b>, ya da bir QuickConnect ID'si için <b>QuickConnect</b>. <a href="#quickconnect">Aşağıya</a> bakın.</td></tr>
+            <tr><td>Ana Makine / IP Adresi</td><td>NAS'un yerel IP'si, ana makine adı ya da ona işaret eden özel bir alan adı.</td></tr>
+            <tr><td>Bağlantı Noktası</td><td>HTTPS açıkken <b>5001</b>, kapalıyken <b>5000</b> - DSM farklı bağlantı noktalarına taşınmadıysa; taşındıysa onları kullanın.</td></tr>
+            <tr><td>HTTPS</td><td>Varsayılan olarak açık ve açık bırakmaya değer. Telefon ile NAS arasındaki her şey, parolanız dahil şifrelenir.</td></tr>
+            <tr><td>SSL Sertifikasını Doğrula</td><td>Varsayılan olarak kapalıdır, çünkü çoğu DiskStation bir genel otoriteye karşı doğrulanamayan <b>otomatik imzalı</b> bir sertifika sunar. Bağlantı her iki durumda da şifrelidir. Bunu yalnızca gerçek bir sertifika kurduysanız açın.</td></tr>
+            <tr><td>Kullanıcı Adı</td><td>DSM hesap adınız. <b>Boşluk içeren kullanıcı adları desteklenir</b> - uygulama onları doğru şekilde tırnaklar, ki bu diğer istemcilerin başarısız olmasının yaygın bir nedenidir.</td></tr>
+            <tr><td>Parola</td><td>DSM parolanız. Göz simgesi, yazarken parolayı gösterir. Platformun anahtar zincirine veya anahtar deposuna yazılır ve asla düz metin olarak saklanmaz.</td></tr>
+            <tr><td>İki Faktörlü Kimlik Doğrulama</td><td>DSM hesabınız bir kimlik doğrulayıcı uygulaması kullanıyorsa açın. <a href="#twofactor">Aşağıya</a> bakın.</td></tr>
+            <tr><td>Kamera canlı görüntüsünü DSM bağlantı noktası üzerinden tünelle</td><td>Varsayılan olarak kapalı. <b>Kapalı</b>, kamera canlı görüntüsünün doğrudan 554 numaralı bağlantı noktasından RTSP'ye bağlandığı anlamına gelir; bu kendi ağınızda daha hızlıdır ancak o bağlantı noktasının bulunduğunuz yerden erişilebilir olmasını gerektirir. <b>Açık</b> ise akışı zaten kullandığınız DSM HTTPS bağlantı noktası üzerinden tüneller, böylece canlı görüntü 554'ü açmadan dışarıdan çalışır. Bkz. <a href="/tr/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="NAS Ekle formu" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Yazılacak adres yok</div>
+      <h2>QuickConnect</h2>
+      <p class="lead"><b>Bağlantı Türü</b>'nü <b>QuickConnect</b>'e çevirin ve ana makine ile bağlantı noktası yerine QuickConnect ID'nizi girin. Synology'nin aktarıcısı NAS'unuzu nerede olursa olsun bulur ve hiçbir yönlendirici yapılandırması gerekmez.</p>
+    </div>
+    <ul class="plain">
+      <li><b>ID'nizin bulunduğu yer.</b> DSM'de <b>Denetim Masası &rsaquo; Harici Erişim &rsaquo; QuickConnect</b> altında. Önce orada etkinleştirilmesi gerekir.</li>
+      <li><b>Size maliyeti.</b> Aktarıcı gecikme ekler; bu yüzden küçük resimler ve canlı görüntü kendi ağınızdakinden daha yavaş yüklenir. Her şey yine de çalışır.</li>
+      <li><b>Size kazandırdığı.</b> Bağlantı noktası yönlendirme yok, güncel tutulacak dinamik DNS yok ve sizin tarafınızda internete açılan hiçbir şey yok.</li>
+    </ul>
+    <div class="note"><b>İkisine de sahip olabilirsiniz.</b> Aynı NAS'u iki kez eklemek - bir kez yerel IP, bir kez QuickConnect ile - size evde hızlı, dışarıda güvenilir bir giriş verir. Bunlar ayrı düzenlere sahip ayrı kayıtlardır, hangisine daha yakınsanız onu seçin.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>İki faktörlü kimlik doğrulama</h2>
+      <p class="lead">DSM hesabınız bir kimlik doğrulayıcı uygulamasıyla korunuyorsa kaydetmeden önce <b>İki Faktörlü Kimlik Doğrulama (2FA)</b>'yı açın. Uygulama, parola kabul edilir edilmez altı haneli kodunuzu ister.</p>
+    </div>
+    <ol class="steps">
+      <li>NAS Ekle formunda <b>anahtarı etkinleştirin</b>.</li>
+      <li><b>Kaydet &amp; Bağlan.</b> Uygulama oturum açar ve DSM ikinci faktörü ister.</li>
+      <li>Kimlik doğrulayıcınızdaki <b>kodu girin</b>.</li>
+      <li><b>Bu cihazın hatırlanıp hatırlanmayacağını seçin.</b> Hatırlanırsa DSM bir cihaz belirteci verir ve bu telefondan bir daha kod istenmez. Belirteç, parolayla aynı şekilde, platformun anahtar zincirinde saklanır.</li>
+    </ol>
+    <div class="note warn"><b>Kodlar reddediliyorsa</b> saati kontrol edin. Kimlik doğrulayıcı kodları geçerli saatten türetilir; bu yüzden saati kayan bir telefon ya da NAS yanlış sayıyı üretir veya bekler. NAS'un zaman kaynağı <a href="/tr/guide/home/">ana ekrandaki</a> hızlı istatistikler satırında gösterilir.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Onaylamadan önce</div>
+      <h2>Bağlantıyı Sına, sonra kaydet</h2>
+      <p class="lead"><b>Bağlantıyı Sına</b> adresi, bağlantı noktasını ve kimlik bilgilerini dener ve hiçbir şeyi kaydetmeden ne olduğunu söyler. Yazım hatasını bulmanın en hızlı yoludur, çünkü “NAS'a ulaşılamıyor” ile “ulaşıldı ama parola yanlış” arasındaki farkı ayırır.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ne diyor</th><th>Ne anlama gelir</th></tr></thead>
+      <tbody>
+        <tr><td>Bağlantı zaman aşımı</td><td>Hiçbir şey yanıt vermedi. Adres, bağlantı noktası ya da telefonun bulunduğu ağ - hiç denenmeyen kimlik bilgileri değil.</td></tr>
+        <tr><td>Geçersiz kimlik bilgileri</td><td>NAS yanıt verdi ve oturum açmayı reddetti. Adres ve bağlantı noktası doğru; kullanıcı adı veya parola değil.</td></tr>
+        <tr><td>Sertifika hatası</td><td>HTTPS açık ve <b>SSL Sertifikasını Doğrula</b> da otomatik imzalı bir sertifikaya karşı açık. Doğrulamayı kapatın.</td></tr>
+        <tr><td>2FA gerekli</td><td>Hesap iki faktörlü kimlik doğrulama kullanıyor ve anahtar kapalı. Açın ve tekrar deneyin.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Kaydet &amp; Bağlan</b> kaydı saklar ve oturum açar. NAS'unuz zaten yüklenirken ana ekrana gelirsiniz.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">İçerideyiz</div>
+      <h2>İlk bağlantıda ne olur</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Bağlandıktan sonra Syno Manager ana ekranı" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Uygulama NAS'unuzun neler yapabildiğini sorar.</b> DSM'in API kataloğunu sorgular ve listeyi saklar. Bu yüzden Surveillance Station'ı olmayan bir NAS hiçbir zaman Kameralar sekmesi göstermez ve bir paket kurmak ekranının belirmesini sağlar.</li>
+          <li><b>Desteklenen her kart açıktır.</b> Yeni kartlar gizli değil görünür gelir; böylece NAS'unuzun desteklediği bir özelliği görebilirsiniz. <a href="/tr/guide/customizing/">Özelleştir</a>, bir şeyleri kapattığınız yerdir; onları bulmak için gittiğiniz yer değil.</li>
+          <li><b>NAS'un MAC adresi alınır</b>, böylece <a href="/tr/guide/wake-on-lan/">Wake-on-LAN</a> sonradan siz aramadan çalışabilir.</li>
+          <li><b>Kısa bir karşılama bir kez görünür.</b> Uygulamanın ne yaptığını ve bir şeyleri nerede değiştireceğinizi söyler. Yeniden görünmesini durdurmak için bir onay kutusu vardır.</li>
+          <li><b>Açıklama gerektiren ekranlarda yardım kartları görünür.</b> Kapatmak için birine uzun basın; <a href="/tr/guide/settings/#help">Ayarlar</a>'dan tek tek geri yükleyin.</li>
+        </ul>
+        <div class="note"><b>Bağlandıktan sonra bir paket mi kurdunuz?</b> Yetenek listesi bağlanırken okunur, bu yüzden o zamandan beri kurulan bir paketin henüz sekmesi olmaz. Yenilemek için aşağı çekin veya uygulamayı yeniden açın, yeni ekran belirir.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Bağlanmadığında</div>
+      <h2>Kısa kontrol listesi</h2>
+    </div>
+    <ol class="steps">
+      <li><b>DSM'i telefonun tarayıcısında</b> yazdığınız adres ve bağlantı noktasıyla tam olarak açın. Tarayıcı da ona ulaşamıyorsa sorun uygulama değil, ağ veya adrestir.</li>
+      <li><b>HTTPS'nin bağlantı noktasıyla eşleştiğini kontrol edin.</b> HTTPS kapalıyken 5001 numaralı ya da açıkken 5000 numaralı bağlantı noktası zaman aşımına uğrar. Bunlar farklı dinleyicilerdir.</li>
+      <li>NAS, sevkiyatla gelen sertifikayı kullanıyorsa <b>SSL Sertifikasını Doğrula'yı kapatın</b>.</li>
+      <li><b>Telefonun ağını kontrol edin.</b> Yerel bir IP, mobil veriyle erişilemez. Ya Wi-Fi'ye katılın ya da QuickConnect, bir alan adı veya VPN kullanın.</li>
+      <li><b>iOS'ta yerel ağ erişimine izin verin.</b> Ayarlar &rsaquo; Uygulamalar &rsaquo; Syno Manager &rsaquo; Yerel Ağ. Bu olmadan iOS, kendi ağınızdaki adreslere bağlantıları sessizce engeller.</li>
+      <li><b>DSM'in güvenlik duvarını kontrol edin.</b> Denetim Masası &rsaquo; Güvenlik &rsaquo; Güvenlik Duvarı. Yalnızca belirli adreslere izin veren bir kural, o adreslerden biri olmayan bir telefonu engeller.</li>
+      <li><b>Otomatik engellemeyi kontrol edin.</b> Denetim Masası &rsaquo; Güvenlik &rsaquo; Hesap. Tekrarlanan başarısız oturum açma denemeleri telefonunuzun adresini engelleyebilir; orada listelenir ve kaldırılabilir.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/tr/help/">Sorun giderme kılavuzunun tamamı</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Kurulum SSS</h2>
+    </div>
+    <details open><summary>Syno Manager'ı kullanmak için neye ihtiyacım var?</summary><div class="body">DSM 7.0 veya üzerini çalıştıran bir Synology NAS, üzerinde bir DSM hesabı ve Android 7+, iOS 16+, macOS 11+ veya Windows çalıştıran bir cihaz. NAS'a hiçbir şey kurmanız gerekmez - uygulama zaten orada olan DSM'in kendi API'lerini kullanır.</div></details>
+    <details><summary>Hangi adresi ve bağlantı noktasını girmeliyim?</summary><div class="body">Kendi ağınızda, NAS'un yerel IP adresi ve DSM'in bağlantı noktası - HTTPS açıkken 5001, HTTPS kapalıyken 5000. Bir ana makine adı veya özel bir alan adı da girebilirsiniz. Adreslerle hiç uğraşmak istemiyorsanız Bağlantı Türü'nü QuickConnect'e çevirin ve QuickConnect ID'nizi girin.</div></details>
+    <details><summary>SSL Sertifikasını Doğrula neden varsayılan olarak kapalı?</summary><div class="body">Çünkü çoğu DiskStation, bir genel otorite tarafından imzalanmadığı için bağlantı yine şifreli olsa bile doğrulamadan geçemeyen, otomatik imzalı bir sertifika sunar. Doğrulamayı kapalı bırakmak bu sertifikayı kabul eder. Örneğin Let's Encrypt'ten gerçek bir sertifika kurduysanız doğrulamayı açın.</div></details>
+    <details><summary>Yönlendiricimde bağlantı noktaları açmam gerekiyor mu?</summary><div class="body">Hayır. Kendi ağınızda hiçbir şeyin yönlendirilmesi gerekmez. Dışarıdan QuickConnect bağlantıyı sizin için aktarır ve VPN de çalışır. Bağlantı noktası yönlendirme yalnızca internetten doğrudan bir yol istiyorsanız ya da ağınızın dışından RTSP üzerinden kamera canlı görüntüsü istiyorsanız gerekir.</div></details>
+    <details><summary>Bağlantı zaman aşımı diyor. Şimdi ne yapmalı?</summary><div class="body">Bu mesaj, uygulamanın hiç yanıt alamadığı anlamına gelir; bu da neredeyse her zaman adres, bağlantı noktası ya da telefonun bulunduğu ağdır. HTTPS'nin bağlantı noktasıyla eşleştiğini, yerel IP kullanıyorsanız telefonun NAS ile aynı ağda olduğunu ve DSM'in kendi web arayüzünün telefonun tarayıcısında aynı adres ve bağlantı noktasıyla yüklendiğini kontrol edin.</div></details>
+    <details><summary>Birden fazla NAS ekleyebilir miyim?</summary><div class="body">Evet, istediğiniz kadar. Her biri kendi kimlik bilgilerini, pano düzenini ve ayarlarını tutar ve aralarında cihaz listesinden geçiş yaparsınız. Bkz. <a href="/tr/guide/multi-nas/">birden fazla NAS cihazı</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sonraki: ana ekran</h2>
+    <p class="lead" style="margin:0 auto 24px">Her kartın ne gösterdiği ve panoyu nasıl size göre yapacağınız.</p>
+    <p><a class="btn" href="/tr/guide/home/">Ana ekran &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Kılavuza dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

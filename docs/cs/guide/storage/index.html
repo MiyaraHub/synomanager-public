@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Úložiště Synology, RAID a stav SMART - Syno Manager</title>
+<meta name="description" content="Svazky a fondy Synology s typem RAID a volným místem, stav SMART a teplota každého disku, Rychlý test SMART a bezpečné vysunutí USB a eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Úložiště Synology, RAID a stav SMART - Syno Manager" />
+<meta property="og:description" content="Svazky a fondy Synology s typem RAID a volným místem, stav SMART a teplota každého disku, Rychlý test SMART a bezpečné vysunutí USB a eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Úložiště Synology, RAID a stav SMART - Syno Manager" />
+<meta name="twitter:description" content="Svazky a fondy Synology s typem RAID a volným místem, stav SMART a teplota každého disku, Rychlý test SMART a bezpečné vysunutí USB a eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Úložiště"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Úložiště Synology, RAID a stav SMART - Syno Manager",
+  "description": "Svazky a fondy Synology s typem RAID a volným místem, stav SMART a teplota každého disku, Rychlý test SMART a bezpečné vysunutí USB a eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vidím stav SMART každého disku?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Podpohled Stav disků uvádí každý disk s modelem, typem HDD nebo SSD, kapacitou, teplotou a verdiktem SMART. Rychlý test SMART můžete na libovolném disku spustit i z telefonu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jaká teplota je pro disk v NAS příliš vysoká?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplikace zbarví disk jantarově nad 45 stupňů C a červeně nad 55 stupňů C, systémovou teplotu jantarově nad 50 a červeně nad 60. Tyto prahy se promítají i do ukazatele stavu na úvodní obrazovce, takže horký disk uvidíte i tam, aniž byste ho hledali."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu z aplikace bezpečně vysunout disk USB?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, z podpohledu Externí. Vysunutí je potvrzeno tím, že disk skutečně zmizí ze seznamu zařízení, ne přijetím požadavku - takže disk, který hlásí vysunutí, je skutečně vysunut. Disk, který se formátuje nebo inicializuje, vysunout nelze."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu z aplikace vytvořit nebo rozšířit svazek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Vytváření, rozšiřování a opravy svazků a fondů se dělají ve Správci úložiště DSM. Aplikace hlásí, co úložiště dělá, a umožňuje zasáhnout u disků; pole z telefonu nepřestavuje."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Úložiště</div>
+      <div class="eyebrow">Úložiště</div>
+      <h1>Každý svazek, <span class="g">každý disk</span></h1>
+      <p>Tři podpohledy: <b>Svazky &amp; fondy</b> pro kapacitu a RAID, <b>Stav disků</b> pro SMART a teplotu každého disku a <b>Externí</b> pro vše, co je zapojeno vzadu.</p>
+    </div>
+    <div class="hero-shot"><img alt="Úložné svazky a disky v Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#volumes">Svazky &amp; pooly</a></li>
+      <li><a href="#drives">Seznam disků</a></li>
+      <li><a href="#disk-health">Stav disků &amp; SMART</a></li>
+      <li><a href="#thresholds">Teplotní prahy</a></li>
+      <li><a href="#external">Externí &amp; bezpečné vysunutí</a></li>
+      <li><a href="#limits">Co neudělá</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Svazky &amp; pooly</div>
+      <h2>Kapacita na první pohled</h2>
+      <p class="lead">Každý svazek má kartu s názvem, typem RAID, stavem a počtem disků, na kterých stojí, nad ukazatelem využití s hodnotami využito, procenta, celkem a volné.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Zobrazeno</th><th>Význam</th></tr></thead>
+      <tbody>
+        <tr><td>Název svazku</td><td>Tak, jak ho pojmenuje DSM - <code>VOLUME_1</code> a podobně.</td></tr>
+        <tr><td>Typ RAID</td><td>RAID 5, SHR, RAID 1, Basic - čímkoli fond pod ním skutečně je.</td></tr>
+        <tr><td>Stav</td><td>Vlastní stav svazku: <b>normální</b>, degradovaný, havarovaný. Degradované pole je jediná věc na této obrazovce, kterou stojí za to řešit hned dnes.</td></tr>
+        <tr><td>Počet disků</td><td>Kolik fyzických disků svazek zahrnuje.</td></tr>
+        <tr><td>Ukazatel využití</td><td>Normálně zelený, jantarový nad 80 % a červený nad 90 %. Jsou to stejné prahy, jaké používá <a href="/cs/guide/home/#header">ukazatel stavu</a>.</td></tr>
+        <tr><td>Využito / Celkem / Volné</td><td>Všechny tři, protože „plné ze 70 %“ a „13 TB volných“ odpovídají na různé otázky.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Co je v každé pozici</h2>
+      <p class="lead">Pod svazky je každý fyzický disk podle čísla pozice.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Pozice</b> - Disk 1, Disk 2 a tak dále, podle štítků na šasi.</li>
+      <li><b>Model</b> - vlastní označení modelu disku.</li>
+      <li><b>Výrobce a typ</b> - výrobce a zda jde o HDD, nebo SSD. Disk, jehož výrobce NAS nedokázalo určit, se zobrazí jako <b>Neznámý</b>, místo aby se hádalo.</li>
+      <li><b>Teplota</b>, zbarvená podle prahů níže.</li>
+      <li><b>Verdikt SMART</b> - <b>SMART OK</b>, když je vlastní sebehodnocení disku v pořádku.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Stav disků</div>
+      <h2>SMART a test, který můžete spustit</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Podpohled Stav disků jsou tytéž disky s větším prostorem: kapacita, typ, teplota a stav SMART mají každé svůj štítek a každý disk má tlačítko <b>Rychlý test SMART</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Rychlý test SMART</b> požádá disk, aby provedl vlastní krátké sebehodnocení. Trvá několik minut a nepřerušuje nic, co svazek používá.</li>
+          <li><b>Verdikt je diskový, ne náš.</b> SMART je disk, který hlásí sám o sobě; aplikace to předává dál. Disk, který tvrdí, že je v pořádku, a pak selže, je omezení SMART, ne čtení.</li>
+          <li><b>Nečitelný stav SMART se zobrazí jako neznámý</b>, nikdy jako zdravý. Chybějící údaj a dobrý údaj jsou různé věci a nikdy se nesloučí.</li>
+        </ul>
+      </div>
+      <img alt="Stav disků se všemi disky, stavem SMART, teplotou a tlačítkem Rychlý test SMART" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Čísla za barvami</div>
+      <h2>Prahy</h2>
+      <p class="lead">Nic z toho není odhad o vašem hardwaru - jsou to body, ve kterých aplikace mění barvu a případně i ukazatel stavu na úvodní obrazovce.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Údaj</th><th>Jantarová od</th><th>Červená od</th></tr></thead>
+      <tbody>
+        <tr><td>Teplota disku</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Systémová teplota</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Využití svazku</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Nabití UPS</td><td>pod 50 %</td><td>pod 20 %</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Přepínejte mezi &deg;C a &deg;F v <a href="/cs/guide/settings/#preferences">Nastavení &rsaquo; Jednotka teploty</a>. Každá teplota v aplikaci se jí okamžitě řídí, včetně těch na úvodní obrazovce a ve widgetech.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Externí</div>
+      <h2>USB, eSATA a bezpečné vysunutí</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Externí úložiště a zařízení USB, bez připojeného zařízení a s uvedeným UPS" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Dvě sekce: <b>Externí úložiště</b> pro disky, které můžete připojit a vysunout, a <b>Zařízení USB</b> pro vše ostatní zapojené - UPS, tiskárnu, dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Vysunutí je potvrzeno odchodem disku.</b> Aplikace nehlásí úspěch jen proto, že se požadavek vrátil v pořádku; znovu načte seznam zařízení a řekne, že je disk vysunut, až když opravdu zmizel. To je rozdíl mezi „bezpečné odpojit“ a „pravděpodobně bezpečné odpojit“.</li>
+          <li><b>Vytížený disk vysunout nelze.</b> Ten, který se formátuje nebo inicializuje, je odmítnut s uvedením důvodu, místo aby byl vytržen uprostřed zápisu.</li>
+          <li><b>Nic připojeno to říká jasně.</b> Prázdný seznam hlásí „Nejsou připojeny žádné externí disky“ - ne prázdné pole, které byste museli vykládat.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Hranice</div>
+      <h2>Co tato obrazovka neudělá</h2>
+      <p class="lead">Úložiště je jediné místo, kde se chybné klepnutí nedá vrátit, proto aplikace mnohem víc čte, než zapisuje.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nevytvoří, nerozšíří ani nesmaže svazek či fond.</b> To patří do Správce úložiště DSM, na obrazovku dost velkou, aby ukázala, co se chystáte udělat.</li>
+      <li><b>Neopraví degradované pole.</b> Jasně vám a na úvodní obrazovce oznámí, že je degradované.</li>
+      <li><b>Nic nenaformátuje.</b></li>
+      <li><b>Nespustí úplný test SMART</b> - jen rychlý. Úplné skenování povrchu trvá hodiny a patří tam, odkud neodejdete.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, obnovy a kontroly parity</b> se zobrazují jako probíhající operace, takže můžete sledovat jejich dokončení v aplikaci, i když jste je spustili v DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>Časté dotazy k úložišti</h2>
+    </div>
+    <details open><summary>Vidím stav SMART každého disku?</summary><div class="body">Ano. Podpohled Stav disků uvádí každý disk s modelem, typem HDD nebo SSD, kapacitou, teplotou a verdiktem SMART. Rychlý test SMART můžete na libovolném disku spustit i z telefonu.</div></details>
+    <details><summary>Jaká teplota je pro disk v NAS příliš vysoká?</summary><div class="body">Aplikace zbarví disk jantarově nad 45&deg;C a červeně nad 55&deg;C, systémovou teplotu jantarově nad 50&deg;C a červeně nad 60&deg;C. Tyto prahy se promítají i do ukazatele stavu na úvodní obrazovce.</div></details>
+    <details><summary>Mohu z aplikace bezpečně vysunout disk USB?</summary><div class="body">Ano, z podpohledu Externí. Vysunutí je potvrzeno tím, že disk skutečně zmizí ze seznamu zařízení, ne přijetím požadavku. Disk, který se formátuje nebo inicializuje, vysunout nelze.</div></details>
+    <details><summary>Mohu z aplikace vytvořit nebo rozšířit svazek?</summary><div class="body">Ne. Vytváření, rozšiřování a opravy svazků a fondů se dělají ve Správci úložiště DSM. Aplikace hlásí, co úložiště dělá, a umožňuje zasáhnout u disků; pole z telefonu nepřestavuje.</div></details>
+    <details><summary>Proč je u disku výrobce uveden jako Neznámý?</summary><div class="body">Protože ho NAS nenahlásilo. Aplikace ukazuje to, co jí bylo řečeno, a neodvozuje výrobce z označení modelu, což by byl odhad vydávaný za fakt.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Síť</h2>
+    <p class="lead" style="margin:0 auto 24px">Propustnost, připojení, služby, VPN a DDNS.</p>
+    <p><a class="btn" href="/cs/guide/network/">Síť &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na průvodce</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

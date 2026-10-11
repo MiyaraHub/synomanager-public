@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Administrér Synology-brugere, opgaver og UPS - Syno Manager</title>
+<meta name="description" content="Administrér Synology-brugerkonti med beskyttede systemkonti, kør og slå planlagte opgaver til og fra, og læs UPS-opladning og anslået driftstid fra din telefon." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/da/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Administrér Synology-brugere, opgaver og UPS - Syno Manager" />
+<meta property="og:description" content="Administrér Synology-brugerkonti med beskyttede systemkonti, kør og slå planlagte opgaver til og fra, og læs UPS-opladning og anslået driftstid fra din telefon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/da/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="da_DK" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Administrér Synology-brugere, opgaver og UPS - Syno Manager" />
+<meta name="twitter:description" content="Administrér Synology-brugerkonti med beskyttede systemkonti, kør og slå planlagte opgaver til og fra, og læs UPS-opladning og anslået driftstid fra din telefon." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "da",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brugervejledning",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Kontrolpanel"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Administrér Synology-brugere, opgaver og UPS - Syno Manager",
+  "description": "Administrér Synology-brugerkonti med beskyttede systemkonti, kør og slå planlagte opgaver til og fra, og læs UPS-opladning og anslået driftstid fra din telefon.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "da",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jeg tilføje eller redigere DSM-brugere fra appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Tilføj en bruger, redigér vedkommendes oplysninger, skift en adgangskode eller slet en konto. Systemkonti - admin, guest og de tjenestekonti, DSM opretter - registreres og er beskyttet mod sletning, fordi fjernelse af en ødelægger NAS'en på måder, der er besværlige at rette."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg køre en planlagt opgave manuelt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, for opgaver som DSM tillader at udløse - hver af dem har en Kør nu. Du kan også slå en hvilken som helst opgave til eller fra uden at åbne DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvad viser UPS-skærmen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS'ens model, om den er online eller kører på batteri, dens opladning som procent og en bjælke, hvordan den er forbundet, den anslåede driftstid tilbage og om UPS-understøttelse er slået til på NAS'en."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg ændre, hvor længe NAS'en venter, før den lukker ned på batteri?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Appen rapporterer UPS'ens tilstand; politikken for nedlukning sættes i DSM under Hardware og strøm, hvor konsekvenserne af indstillingen er skrevet ud."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/da/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søg i guiden..." data-i18n-empty="Ingen resultater for" data-i18n-language="Sprog">
+      <a href="/da/">Hjem</a>
+      <a href="/da/guide/" class="active">Brugervejledning</a>
+      <a href="/da/#screenshots">Skærmbilleder</a>
+      <a href="/da/compatible-nas/">Kompatibilitet</a>
+      <a href="/da/best-synology-nas-app/">Hvorfor skifte</a>
+      <a href="/da/help/">Hjælp</a>
+      <a href="/da/#top" class="cta">Download</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/da/">Hjem</a> &rsaquo; <a href="/da/guide/">Brugervejledning</a> &rsaquo; Kontrolpanel</div>
+      <div class="eyebrow">Kontrolpanel</div>
+      <h1>Konti, tidsplaner <span class="g">og strøm</span></h1>
+      <p>Fire underafsnit: <b>Brugere</b>, <b>Opgaver</b>, <b>Strøm</b> til UPS'en og <b>Indstillinger</b> - appens egne præferencer, der kan nås uden at forlade den fane, du er i.</p>
+    </div>
+    <div class="hero-shot"><img alt="Opgaveplanlægger med planlagte opgaver, kontakter og Kør nu" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På denne side</b><ul>
+      <li><a href="#users">Brugere</a></li>
+      <li><a href="#tasks">Opgaveplanlægger</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Indstillinger</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Brugere</div>
+      <h2>DSM-konti</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Hver konto på NAS'en, med visningsnavn, beskrivelse og mailadresse, hvor en er sat. Et <b>Udløbet</b>-mærke markerer konti, som DSM har deaktiveret.</p>
+        <h3 style="margin-top:20px">Hvad du kan gøre</h3>
+        <ul class="plain">
+          <li><b>Tilføj en bruger</b> med de oplysninger, DSM beder om.</li>
+          <li><b>Redigér</b> en eksisterende konto.</li>
+          <li><b>Skift en adgangskode.</b></li>
+          <li><b>Slet</b> en konto, du har oprettet.</li>
+        </ul>
+        <div class="note"><b>Systemkonti kan ikke slettes.</b> <code>admin</code>, <code>guest</code> og de tjenestekonti, DSM opretter til sine egne pakker, registreres og er beskyttet. Fjernelse af en af dem ødelægger NAS'en på måder, der er besværlige at rette, og en telefon er ikke stedet at finde ud af det.</div>
+      </div>
+      <img alt="DSM-brugerkonti, med to navne og adresser sløret" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">To konti på dette skærmbillede er sløret - det er rigtige menneskers navne og adresser.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Opgaveplanlægger</div>
+      <h2>Hvad der er planlagt, og hvad der kører næste gang</h2>
+      <p class="lead">Hver opgave, DSM har, om den er aktiveret, hvad den gør, og hvornår den udløses næste gang.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Opgavens navn og type</b> - en Hyper Backup-opgave, et brugerdefineret script, en oprydning af papirkurven - hver mærket med, hvad slags ting den er.</li>
+      <li><b>Hvad den faktisk gør.</b> En scriptopgave viser den kommando, den kører; en backupopgave viser sin beskrivelse.</li>
+      <li><b>Næste kørsel</b>, som dato og klokkeslæt.</li>
+      <li><b>En kontakt pr. opgave</b> til at aktivere eller deaktivere den uden at åbne DSM.</li>
+      <li><b>Kør nu</b> på opgaver, som DSM tillader at udløse efter behov.</li>
+    </ul>
+    <div class="note warn"><b>Kør nu kører den nu.</b> Et planlagt script, der forventer at køre klokken 3 om natten på en ledig NAS, opfører sig anderledes klokken 18 under en filkopiering. Knappen gør, hvad der står.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Strøm</div>
+      <h2>UPS'en</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="UPS-status med model, opladning, forbindelsestilstand og anslået driftstid" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Vises, når en UPS er tilsluttet. Ét kort, alt på det.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Vist</th><th>Betydning</th></tr></thead>
+          <tbody>
+            <tr><td>Producent og model</td><td>Som UPS'en præsenterer sig selv.</td></tr>
+            <tr><td>Status</td><td><b>Online</b> på lysnettet, eller på batteri.</td></tr>
+            <tr><td>Opladning</td><td>Procent og en bjælke. Gul under 50 %, rød under 20 %.</td></tr>
+            <tr><td>Tilstand</td><td>Hvordan NAS'en taler med den - USB eller over netværket.</td></tr>
+            <tr><td>Driftstid</td><td>Hvor længe UPS'en vurderer, den kan bære belastningen.</td></tr>
+            <tr><td>Aktiveret</td><td>Om UPS-understøttelse overhovedet er slået til i DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Opladningen fodrer sundhedsmærket.</b> En UPS, der aflades, dukker op på <a href="/da/guide/home/#header">startskærmen</a>, uden at du åbner denne fane - hvilket er pointen, for når du tænker på at tjekke, har du måske ikke lang tid.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Indstillinger</div>
+      <h2>Appens egne præferencer</h2>
+      <p class="lead">Det fjerde underafsnit er Indstillinger, indlejret her, så du kan ændre pollingsintervallet eller accentfarven uden at forlade fanen. Det er den samme skærm, som tandhjulsikonet åbner.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/da/guide/settings/">Hver indstilling, forklaret</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ofte stillede spørgsmål</div>
+      <h2>Ofte stillede spørgsmål om Kontrolpanel</h2>
+    </div>
+    <details open><summary>Kan jeg tilføje eller redigere DSM-brugere fra appen?</summary><div class="body">Ja. Tilføj en bruger, redigér vedkommendes oplysninger, skift en adgangskode eller slet en konto. Systemkonti - admin, guest og de tjenestekonti, DSM opretter - registreres og er beskyttet mod sletning.</div></details>
+    <details><summary>Kan jeg køre en planlagt opgave manuelt?</summary><div class="body">Ja, for opgaver som DSM tillader at udløse. Du kan også slå en hvilken som helst opgave til eller fra uden at åbne DSM.</div></details>
+    <details><summary>Hvad viser UPS-skærmen?</summary><div class="body">UPS'ens model, om den er online eller kører på batteri, dens opladning som procent og en bjælke, hvordan den er forbundet, den anslåede driftstid tilbage og om UPS-understøttelse er slået til på NAS'en.</div></details>
+    <details><summary>Kan jeg ændre politikken for nedlukning på batteri?</summary><div class="body">Nej. Appen rapporterer UPS'ens tilstand; politikken sættes i DSM under Hardware og strøm, hvor konsekvenserne er skrevet ud.</div></details>
+    <details><summary>Hvorfor mangler underafsnittet Strøm?</summary><div class="body">Fordi der ikke er tilsluttet nogen UPS, eller UPS-understøttelse er slået fra i DSM. Appen skjuler skærme for hardware, der ikke er der.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Næste: Assistenten</h2>
+    <p class="lead" style="margin:0 auto 24px">Stil din NAS et spørgsmål og få svar fra en model på din telefon.</p>
+    <p><a class="btn" href="/da/guide/assistant/">Assistenten &rarr;</a> &nbsp; <a class="btn ghost" href="/da/guide/">Tilbage til vejledningen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/da/">Hjem</a><a href="/da/guide/">Brugervejledning</a><a href="/da/guide/getting-started/">Kom i gang</a><a href="/da/compatible-nas/">Kompatibilitet</a><a href="/da/best-synology-nas-app/">Hvorfor skifte</a><a href="/da/synology-app-for-iphone/">iPhone & iPad</a><a href="/da/synology-app-for-android/">Android</a><a href="/da/synology-app-for-mac-windows/">Mac & Windows</a><a href="/da/ds-finder-alternative/">vs DS finder</a><a href="/da/help/">Hjælp</a><a href="/da/privacy/">Privatliv</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportér en fejl</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uafhængig app og er ikke tilknyttet, godkendt eller sponsoreret af Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemærker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

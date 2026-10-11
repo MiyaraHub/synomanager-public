@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN per NAS Synology - Syno Manager</title>
+<meta name="description" content="Riattiva un Synology in stop, o qualsiasi macchina della tua rete tramite esso, da ovunque. Cosa richiede una VPN o un inoltro sul router, detto chiaramente." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN per NAS Synology - Syno Manager" />
+<meta property="og:description" content="Riattiva un Synology in stop, o qualsiasi macchina della tua rete tramite esso, da ovunque. Cosa richiede una VPN o un inoltro sul router, detto chiaramente." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/it/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN per NAS Synology - Syno Manager" />
+<meta name="twitter:description" content="Riattiva un Synology in stop, o qualsiasi macchina della tua rete tramite esso, da ovunque. Cosa richiede una VPN o un inoltro sul router, detto chiaramente." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "it",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guida utente",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN per NAS Synology - Syno Manager",
+  "description": "Riattiva un Synology in stop, o qualsiasi macchina della tua rete tramite esso, da ovunque. Cosa richiede una VPN o un inoltro sul router, detto chiaramente.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "it",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Posso riattivare il NAS da ovunque?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Solo se c'è un percorso verso la tua rete che non dipende dal NAS acceso: una VPN verso la rete, oppure un router configurato per inoltrare il Wake-on-LAN. Un NAS spento non può inoltrare il proprio pacchetto di riattivazione, e QuickConnect non può raggiungere un NAS spento. Sulla stessa rete funziona e basta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Posso riattivare il mio PC tramite il NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sì, e questo funziona da ovunque, purché il NAS sia acceso. Lo chiedi al NAS tramite la tua normale connessione e il NAS trasmette il magic packet sulla LAN per te. È lo stesso percorso che usa l'app DS Router di Synology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Da dove arriva l'indirizzo MAC del NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "L'app lo acquisisce automaticamente la prima volta che ti connetti, quindi non devi mai cercarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Cosa mi serve per aggiungere un altro dispositivo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un nome che riconosci e il suo indirizzo MAC. Di solito il MAC si trova nell'elenco dei dispositivi del router, oppure sulla macchina stessa nelle impostazioni di rete."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/it/"><img src="/assets/syno-manager-icon.png" alt="Icona di Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cerca nella guida..." data-i18n-empty="Nessun risultato per" data-i18n-language="Lingua">
+      <a href="/it/">Home</a>
+      <a href="/it/guide/" class="active">Guida utente</a>
+      <a href="/it/#screenshots">Screenshot</a>
+      <a href="/it/compatible-nas/">Compatibilità</a>
+      <a href="/it/best-synology-nas-app/">Perché cambiare</a>
+      <a href="/it/help/">Aiuto</a>
+      <a href="/it/#top" class="cta">Scarica</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/it/">Home</a> &rsaquo; <a href="/it/guide/">Guida utente</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Accendi le cose <span class="g">dal divano</span></h1>
+      <p>Un pulsante <b>Riattiva</b> accanto a Connetti nell'elenco dei dispositivi per il NAS stesso, e una schermata <b>Riattiva dispositivi</b> per tutto il resto della tua rete. Una delle due funziona da ovunque; l'altra ha una limitazione che ti diciamo senza giri di parole.</p>
+    </div>
+    <div class="hero-shot"><img alt="La schermata Riattiva dispositivi" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">La tabella senza giri di parole</div>
+      <h2>Cosa funziona e da dove</h2>
+      <p class="lead">Il Wake-on-LAN è un broadcast su una rete locale. Tutto ciò che funziona e ciò che no deriva da questo unico fatto, quindi eccolo detto chiaramente invece che nascosto in una nota.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Cosa vuoi riattivare</th><th>Dove ti trovi</th><th>Funziona?</th><th>Perché</th></tr></thead>
+      <tbody>
+        <tr><td>Il NAS</td><td>Sulla stessa rete</td><td class="yes">Sì</td><td>Il tuo telefono trasmette il pacchetto direttamente. Niente da configurare.</td></tr>
+        <tr><td>Un altro dispositivo</td><td>Sulla stessa rete</td><td class="yes">Sì</td><td>Uguale: può inviarlo il telefono o il NAS.</td></tr>
+        <tr><td>Un altro dispositivo, con il NAS acceso</td><td>Ovunque</td><td class="yes">Sì</td><td><b>Il NAS lo inoltra per te.</b> Raggiungi il NAS tramite la tua normale connessione ed è lui a trasmettere sulla LAN. È il percorso di DS Router.</td></tr>
+        <tr><td>Il NAS stesso, mentre è spento</td><td>Fuori dalla tua rete</td><td class="no">Serve una configurazione</td><td>Un NAS spento non può inoltrare la propria riattivazione, e QuickConnect non può raggiungere un NAS spento. Ti serve una <b>VPN</b> verso la rete, oppure un router che inoltri la <b>porta UDP 9</b> all'indirizzo di broadcast della LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>La riga centrale è quella utile.</b> Riattivare da un treno un desktop che hai a casa funziona e non richiede alcuna configurazione del router, perché a trasmettere è il NAS, sempre acceso.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Il NAS</div>
+      <h2>Riattivare la tua DiskStation</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Niente da configurare.</b> L'app acquisisce l'indirizzo MAC del NAS la prima volta che ti connetti, così il pulsante è pronto prima che ti serva.</li>
+      <li><b>Apri Impostazioni &rsaquo; Gestisci dispositivi NAS.</b></li>
+      <li><b>Tocca Riattiva</b> accanto al NAS.</li>
+      <li><b>Concedigli un momento</b> e tocca Connetti. Un NAS impiega un po' ad avviarsi, e l'app non finge che sia attivo prima che risponda.</li>
+    </ol>
+    <div class="note warn"><b>Il Wake-on-LAN deve essere abilitato anche sul NAS.</b> In DSM, sotto <b>Pannello di controllo &rsaquo; Hardware &amp; alimentazione &rsaquo; Generale</b>. Un NAS con l'opzione disattivata ignorerà il pacchetto, chiunque lo invii.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tutto il resto</div>
+      <h2>Riattivare altri dispositivi tramite il NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Impostazioni &rsaquo; Riattiva dispositivi</b>. Aggiungi qualsiasi macchina della tua rete con nome e indirizzo MAC, e il NAS invia il magic packet per te dall'interno della rete.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Tocca Aggiungi dispositivo.</b></li>
+          <li><b>Dagli un nome</b> che riconosci: «Desktop», «PC da gaming», «Server».</li>
+          <li><b>Inserisci il suo indirizzo MAC.</b> L'elenco dei dispositivi del router è di solito il posto più facile in cui trovarlo.</li>
+          <li><b>Salva.</b> Compare nell'elenco con il proprio pulsante Riattiva.</li>
+        </ol>
+        <div class="note"><b>Poiché a inviare è il NAS, funziona anche quando sei fuori</b>: con i dati mobili, con QuickConnect, da ovunque tu possa raggiungere il NAS. È lo stesso modo in cui lo fa l'app per router di Synology, ed è per questo che vale la pena configurarlo anche se non riattivi mai il NAS stesso.</div>
+      </div>
+      <img alt="La schermata Riattiva dispositivi con lo stato vuoto e un pulsante Aggiungi dispositivo" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sulla macchina di destinazione</div>
+      <h2>Cosa deve essere vero perché la riattivazione vada a buon fine</h2>
+      <p class="lead">Se un pacchetto viene inviato e non succede nulla, quasi sempre dipende da una di queste cose, e l'app non può vederne né correggerne nessuna dall'esterno.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN abilitato nel BIOS o UEFI della macchina</b>, spesso chiamato «Wake on PCIe» o «Power on by PCI-E».</li>
+      <li><b>Abilitato anche sulla scheda di rete.</b> Su Windows: Gestione dispositivi, proprietà della scheda, Risparmio energia, «Consenti al dispositivo di riattivare il computer».</li>
+      <li><b>Avvio rapido disattivato su Windows.</b> Con l'opzione attiva, un PC spento è in realtà in ibernazione e spesso ignora il pacchetto.</li>
+      <li><b>Cablato, di solito.</b> La riattivazione via Wi-Fi richiede hardware e driver specifici; Ethernet è molto più affidabile.</li>
+      <li><b>La macchina ancora alimentata dalla presa.</b> Un magic packet richiede che la scheda di rete abbia alimentazione in standby.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Domande frequenti</div>
+      <h2>FAQ sul Wake-on-LAN</h2>
+    </div>
+    <details open><summary>Posso riattivare il NAS da ovunque?</summary><div class="body">Solo se c'è un percorso verso la tua rete che non dipende dal NAS acceso: una VPN, oppure un router configurato per inoltrare il Wake-on-LAN. Un NAS spento non può inoltrare il proprio pacchetto di riattivazione, e QuickConnect non può raggiungere un NAS spento. Sulla stessa rete funziona e basta.</div></details>
+    <details><summary>Posso riattivare il mio PC tramite il NAS?</summary><div class="body">Sì, e questo funziona da ovunque, purché il NAS sia acceso. Lo chiedi al NAS tramite la tua normale connessione ed è lui a trasmettere il magic packet sulla LAN per te.</div></details>
+    <details><summary>Da dove arriva l'indirizzo MAC del NAS?</summary><div class="body">L'app lo acquisisce automaticamente la prima volta che ti connetti, quindi non devi mai cercarlo.</div></details>
+    <details><summary>Cosa mi serve per aggiungere un altro dispositivo?</summary><div class="body">Un nome che riconosci e il suo indirizzo MAC, che di solito si trova nell'elenco dei dispositivi del router.</div></details>
+    <details><summary>Ho inviato la riattivazione ma non è successo nulla.</summary><div class="body">Controlla che il Wake-on-LAN sia abilitato sulla macchina di destinazione: nel suo BIOS, sulla sua scheda di rete e con l'Avvio rapido di Windows disattivato. Controlla anche che sia su Ethernet cablata e che il NAS abbia il Wake-on-LAN abilitato nel Pannello di controllo, se è il NAS che stai riattivando.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Prossimo: widget</h2>
+    <p class="lead" style="margin:0 auto 24px">Il tuo NAS nella schermata Home, con un timestamp sincero.</p>
+    <p><a class="btn" href="/it/guide/widgets/">Widget della schermata Home &rarr;</a> &nbsp; <a class="btn ghost" href="/it/guide/">Torna alla guida</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/it/">Home</a><a href="/it/guide/">Guida utente</a><a href="/it/guide/getting-started/">Per iniziare</a><a href="/it/compatible-nas/">Compatibilità</a><a href="/it/best-synology-nas-app/">Perché passare</a><a href="/it/synology-app-for-iphone/">iPhone e iPad</a><a href="/it/synology-app-for-android/">Android</a><a href="/it/synology-app-for-mac-windows/">Mac e Windows</a><a href="/it/ds-finder-alternative/">vs DS finder</a><a href="/it/help/">Aiuto</a><a href="/it/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Segnala un bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager è un'app indipendente e non è affiliata, approvata o sponsorizzata da Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station e QuickConnect sono marchi di Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

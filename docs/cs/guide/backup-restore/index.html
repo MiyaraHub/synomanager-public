@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Zálohujte nastavení aplikace - Syno Manager</title>
+<meta name="description" content="Exportujte vlastní nastavení Syno Manager do souboru a obnovte je na novém telefonu. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty, záměrně." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Zálohujte nastavení aplikace - Syno Manager" />
+<meta property="og:description" content="Exportujte vlastní nastavení Syno Manager do souboru a obnovte je na novém telefonu. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty, záměrně." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Zálohujte nastavení aplikace - Syno Manager" />
+<meta name="twitter:description" content="Exportujte vlastní nastavení Syno Manager do souboru a obnovte je na novém telefonu. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty, záměrně." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Záloha &amp; obnovení"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Zálohujte nastavení aplikace - Syno Manager",
+  "description": "Exportujte vlastní nastavení Syno Manager do souboru a obnovte je na novém telefonu. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty, záměrně.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "cs",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Co zahrnuje záloha nastavení?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pouze nastavení aplikace: motiv, navigace, rozvržení dashboardu, chování při spuštění, kategorie, interval dotazování a jednotka teploty. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proč se moje přihlašovací údaje k NAS nezálohují?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Protože přenosný soubor s hesly k NAS je přenosný soubor s hesly k NAS. Přihlašovací údaje žijí v klíčence nebo úložišti klíčů zařízení, kam se export záměrně nedostane. Na novém telefonu je zadáte jednou znovu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jak přejdu na nový telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exportujte na starém pomocí Stáhnout nebo Sdílet, dostaňte soubor na nový telefon, nainstalujte aplikaci, vložte obsah souboru do Obnovit a znovu přidejte své NAS. Všechno ostatní se vrátí, jak jste to měli."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co se stane s nastavením, které soubor nezná?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Použijí se jen známá nastavení aplikace a vše ostatní v souboru se ignoruje, takže starší záloha obnovená do novější aplikace nechá nová nastavení na výchozích hodnotách, místo aby selhala."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Záloha &amp; obnovení</div>
+      <div class="eyebrow">Záloha &amp; obnovení</div>
+      <h1>Vaše nastavení, <span class="g">na dalším telefonu</span></h1>
+      <p>Jeden soubor drží všechny vaše předvolby - motiv, spodní lištu, rozvržení dashboardu, dotazování, jednotky. Záměrně neobsahuje žádné přihlašovací údaje.</p>
+    </div>
+    <div class="hero-shot"><img alt="Obrazovka Záloha a obnovení s Export a Obnovit" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Co v souboru je</div>
+      <h2>A co ne</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Zahrnuto</h3>
+        <ul class="plain">
+          <li>Motiv, povrch, barva zvýraznění a velikost textu.</li>
+          <li>Spodní navigační lišta a její pořadí.</li>
+          <li>Rozvržení dashboardu a které karty jsou zapnuté.</li>
+          <li>Kategorie dashboardu.</li>
+          <li>Chování při spuštění.</li>
+          <li>Interval dotazování.</li>
+          <li>Jednotka teploty.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Nikdy zahrnuto</h3>
+        <ul class="plain">
+          <li><b>Připojení k NAS</b> - adresy, porty a volby.</li>
+          <li><b>Hesla.</b></li>
+          <li><b>Relace a tokeny zařízení 2FA.</b></li>
+        </ul>
+        <div class="note stop"><b>Právě to vyloučení je smysl.</b> Soubor, který si můžete poslat e-mailem a uložit do cloudové složky, je soubor, který může uniknout. Přihlašovací údaje žijí v klíčence nebo úložišti klíčů zařízení právě proto, aby se k nim export nedostal, a aplikace pro vlastní pohodlí nedělá výjimku.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Export</div>
+      <h2>Dostat soubor ven</h2>
+      <p class="lead"><b>Nastavení &rsaquo; Záloha &amp; obnovení</b>, pak jedno ze dvou tlačítek.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Stáhnout</b> uloží soubor JSON přímo do zařízení.</li>
+      <li><b>Sdílet</b> ho předá do sdílecího listu, takže ho můžete poslat do Souborů, Drive, jiné aplikace nebo sobě.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Obnovit</div>
+      <h2>Vrácení zpět</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Otevřete soubor zálohy</b> a zkopírujte jeho obsah.</li>
+      <li><b>Vložte do pole Obnovit</b> nebo klepněte na <b>Vložit ze schránky</b>.</li>
+      <li><b>Klepněte na Obnovit nastavení.</b></li>
+      <li><b>Znovu přidejte své NAS</b> - ta část nikdy v souboru nebyla.</li>
+    </ol>
+    <div class="note"><b>Neznámé položky se ignorují, nezamítají.</b> Použijí se jen nastavení, která aplikace rozpozná, takže záloha pořízená ze starší verze se čistě obnoví do novější - nastavení, která tehdy neexistovala, zůstanou prostě na výchozích hodnotách.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Související</div>
+      <h2>Nezaměňovat s</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/cs/guide/backup/">Hyper Backup a Active Backup</a></b> - vaše NAS zálohující vaše data. S touto obrazovkou nemá nic společného.</li>
+      <li><b>Záloha konfigurace DSM</b> - vlastní nastavení NAS, exportovaná z Ovládacího panelu DSM.</li>
+      <li><b>Zálohy zařízení.</b> Uložené přihlašovací údaje Syno Manager jsou ze záloh zařízení Android a iOS záměrně <b>vyloučeny</b>, takže obnovení telefonu ze zálohy zařízení hesla k NAS nepřenese.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>FAQ k záloze &amp; obnovení</h2>
+    </div>
+    <details open><summary>Co zahrnuje záloha nastavení?</summary><div class="body">Pouze nastavení aplikace: motiv, navigace, rozvržení dashboardu, chování při spuštění, kategorie, interval dotazování a jednotka teploty. Připojení k NAS, hesla a relace nejsou nikdy zahrnuty.</div></details>
+    <details><summary>Proč se moje přihlašovací údaje k NAS nezálohují?</summary><div class="body">Protože přenosný soubor s hesly k NAS je přenosný soubor s hesly k NAS. Přihlašovací údaje žijí v klíčence nebo úložišti klíčů zařízení, kam se export záměrně nedostane.</div></details>
+    <details><summary>Jak přejdu na nový telefon?</summary><div class="body">Exportujte na starém, dostaňte soubor na nový, nainstalujte aplikaci, vložte obsah do Obnovit a znovu přidejte své NAS.</div></details>
+    <details><summary>Co se stane s nastavením, které soubor nezná?</summary><div class="body">Použijí se jen známá nastavení a vše ostatní se ignoruje, takže starší záloha obnovená do novější aplikace nechá nová nastavení na výchozích hodnotách.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Něco nefunguje?</h2>
+    <p class="lead" style="margin:0 auto 24px">Průvodce řešením potíží pokrývá selhání připojení, prázdné dlaždice, chybějící karty a zastaralé widgety.</p>
+    <p><a class="btn" href="/cs/help/">Řešení potíží &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na příručku</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

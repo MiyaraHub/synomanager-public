@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synologyのストレージ、RAID、SMARTヘルス - Syno Manager</title>
+<meta name="description" content="RAIDタイプと空き容量付きのSynologyのボリュームとプール、ドライブごとのSMARTステータスと温度、クイックSMARTテスト、USBとeSATAの安全な取り外し。" />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synologyのストレージ、RAID、SMARTヘルス - Syno Manager" />
+<meta property="og:description" content="RAIDタイプと空き容量付きのSynologyのボリュームとプール、ドライブごとのSMARTステータスと温度、クイックSMARTテスト、USBとeSATAの安全な取り外し。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synologyのストレージ、RAID、SMARTヘルス - Syno Manager" />
+<meta name="twitter:description" content="RAIDタイプと空き容量付きのSynologyのボリュームとプール、ドライブごとのSMARTステータスと温度、クイックSMARTテスト、USBとeSATAの安全な取り外し。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ストレージ"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synologyのストレージ、RAID、SMARTヘルス - Syno Manager",
+  "description": "RAIDタイプと空き容量付きのSynologyのボリュームとプール、ドライブごとのSMARTステータスと温度、クイックSMARTテスト、USBとeSATAの安全な取り外し。",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "ja",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ドライブごとのSMARTステータスを確認できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。「ディスクのヘルス」サブビューには、すべてのドライブがモデル、HDDかSSDか、容量、温度、SMARTの判定とともに一覧表示されます。スマートフォンから、どのドライブでもクイックSMARTテストを開始することもできます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NASのドライブは何度から高温ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "アプリはドライブの温度が45℃を超えるとアンバー、55℃Cを超えると赤で表示し、システム温度は50を超えるとアンバー、60を超えると赤で表示します。これらのしきい値はホーム画面のヘルスバッジにも反映されるので、ドライブが高温になれば探さなくてもそこに表示されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アプリからUSBドライブを安全に取り外せますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい、「外部ストレージ」サブビューから可能です。取り外しは、リクエストが受け付けられたかどうかではなく、ドライブが実際にデバイス一覧から消えたことで確認されるので、取り外したと表示されたドライブは確かに取り外されています。フォーマット中や初期化中のドライブは取り外せません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "アプリからボリュームを作成・拡張できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。ボリュームやプールの作成、拡張、修復は、DSMのストレージマネージャーで行います。アプリはストレージの状態を報告し、ドライブに対する操作を行えますが、スマートフォンからアレイの構成を変更することはありません。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; ストレージ</div>
+      <div class="eyebrow">ストレージ</div>
+      <h1>すべてのボリューム、<span class="g">すべてのドライブ</span></h1>
+      <p>3つのサブビュー：容量とRAIDを確認する<b>ボリューム &amp; プール</b>、ドライブごとのSMARTと温度を確認する<b>ディスクのヘルス</b>、背面に接続したものを確認する<b>外部ストレージ</b>。</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager のストレージのボリュームとドライブ" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#volumes">ボリューム &amp; プール</a></li>
+      <li><a href="#drives">ドライブ一覧</a></li>
+      <li><a href="#disk-health">ディスクのヘルス &amp; SMART</a></li>
+      <li><a href="#thresholds">温度のしきい値</a></li>
+      <li><a href="#external">外部ストレージ &amp; 安全な取り外し</a></li>
+      <li><a href="#limits">しないこと</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">ボリューム &amp; プール</div>
+      <h2>容量をひと目で</h2>
+      <p class="lead">各ボリュームに専用のカードがあり、名前、RAIDタイプ、ステータス、構成するドライブ数が表示されます。その下の使用量バーには、使用量、パーセンテージ、合計、空き容量が表示されます。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>表示内容</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>ボリューム名</td><td>DSMでの名前です。<code>VOLUME_1</code>など。</td></tr>
+        <tr><td>RAIDタイプ</td><td>RAID 5、SHR、RAID 1、Basicなど、下層のプールが実際にどの構成かを示します。</td></tr>
+        <tr><td>状態</td><td>ボリューム自体の状態：<b>正常</b>、劣化、クラッシュ。この画面で今日中に対処すべきものがあるとすれば、劣化したアレイです。</td></tr>
+        <tr><td>ドライブ数</td><td>ボリュームが使用している物理ドライブの数です。</td></tr>
+        <tr><td>使用量バー</td><td>通常は緑、80%を超えるとアンバー、90%を超えると赤になります。<a href="/ja/guide/home/#header">ヘルスバッジ</a>と同じしきい値です。</td></tr>
+        <tr><td>使用量 / 合計 / 空き</td><td>「70%使用」と「13 TB空き」では答える質問が違うため、3つとも表示します。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>各ベイの中身</h2>
+      <p class="lead">ボリュームの下に、すべての物理ドライブがベイ番号順に表示されます。</p>
+    </div>
+    <ul class="plain">
+      <li><b>ベイ</b> - ディスク1、ディスク2など。筐体のラベルと対応しています。</li>
+      <li><b>モデル</b> - ドライブ自身のモデル名です。</li>
+      <li><b>ベンダーとタイプ</b> - メーカーと、HDDかSSDか。NASがベンダーを識別できなかったドライブは、推測せずに<b>不明</b>と表示されます。</li>
+      <li><b>温度</b>。下記のしきい値に基づいて色分けされます。</li>
+      <li><b>SMARTの判定</b> - ドライブ自身の自己診断が正常なら<b>SMART OK</b>と表示されます。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">ディスクの状態</div>
+      <h2>SMARTと、開始できるテスト</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">ディスクのヘルスサブビューは、同じドライブをより広いスペースで表示します。容量、タイプ、温度、SMARTの状態にそれぞれチップがあり、すべてのドライブに<b>クイックSMARTテスト</b>ボタンが付いています。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>クイックSMARTテスト</b>は、ドライブに短い自己診断を実行させます。数分で終わり、ボリュームを使用している処理を中断することはありません。</li>
+          <li><b>判定を下すのはドライブであり、当アプリではありません。</b>SMARTはドライブが自分自身について報告するもので、アプリはそれを中継します。正常と報告したドライブがその後故障するのは、読み取りの問題ではなくSMARTの限界です。</li>
+          <li><b>SMARTの状態が読み取れない場合は「不明」と表示され</b>、正常とは表示されません。読み取れなかったことと、良好な値が読み取れたことは別のことであり、混同しません。</li>
+        </ul>
+      </div>
+      <img alt="SMARTステータス、温度、クイックSMARTテストボタン付きで全ドライブを表示したディスクのヘルス" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">色の裏付けとなる数値</div>
+      <h2>しきい値</h2>
+      <p class="lead">お使いのハードウェアを推測した値はありません。これらは、アプリが色を変える境界値であり、該当する場合はホーム画面のヘルスバッジも変わる境界値です。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>数値</th><th>アンバーになる値</th><th>赤になる値</th></tr></thead>
+      <tbody>
+        <tr><td>ドライブの温度</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>システムの温度</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>ボリュームの使用量</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPSの充電量</td><td>50%未満</td><td>20%未満</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">&deg;Cと&deg;Fは<a href="/ja/guide/settings/#preferences">設定 &rsaquo; 温度の単位</a>で切り替えられます。ホーム画面やウィジェットを含め、アプリ内のすべての温度が即座に切り替わります。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">外付け</div>
+      <h2>USB、eSATA、安全な取り外し</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="何も接続されておらず、UPSが一覧表示された外部ストレージとUSBデバイス" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">2つのセクション：マウントと取り外しができるドライブを扱う<b>外部ストレージ</b>と、UPS、プリンター、ドングルなど、その他の接続機器を扱う<b>USBデバイス</b>。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>取り外しは、ドライブが消えたことで確認されます。</b>リクエストが正常に返ってきたからといって成功とは報告せず、デバイス一覧を読み直して、本当に消えてから初めて取り外し済みと表示します。「安全に抜ける」と「おそらく安全に抜ける」の違いはそこにあります。</li>
+          <li><b>使用中のドライブは取り外せません。</b>フォーマット中や初期化中のものは、書き込み中に引き抜かれてしまうことなく、理由とともに拒否されます。</li>
+          <li><b>何も接続されていなければ、そう表示されます。</b>空のリストには、解釈に迷う空のボックスではなく「外部ドライブは接続されていません」と表示されます。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">できないこと</div>
+      <h2>この画面でできないこと</h2>
+      <p class="lead">ストレージは、誤ってタップすると取り返しがつかない唯一の場所です。そのため、アプリは書き込みよりもはるかに多くの読み取りを行います。</p>
+    </div>
+    <ul class="plain">
+      <li><b>ボリュームやプールの作成、拡張、削除はできません。</b>それらは、実行内容を確認できる十分な大きさの画面があるDSMのストレージマネージャーで行います。</li>
+      <li><b>劣化したアレイの修復はできません。</b>ただし、劣化していることは、ホーム画面にわかりやすく表示してお知らせします。</li>
+      <li><b>何かをフォーマットすることはありません。</b></li>
+      <li><b>フルSMARTテストは実行できず</b>、クイックテストのみです。サーフェス全体のスキャンには数時間かかり、その場を離れずに見守れる環境で行うべきものです。</li>
+    </ul>
+    <div class="note"><b>スクラビング、再構築、パリティチェック</b>は、実行中は進行中の処理として表示されるので、DSMで開始したものでも、アプリから完了までを見届けられます。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>ストレージに関するよくある質問</h2>
+    </div>
+    <details open><summary>ドライブごとのSMARTステータスを確認できますか？</summary><div class="body">はい。「ディスクのヘルス」サブビューには、すべてのドライブがモデル、HDDかSSDか、容量、温度、SMARTの判定とともに一覧表示されます。スマートフォンから、どのドライブでもクイックSMARTテストを開始することもできます。</div></details>
+    <details><summary>NASのドライブは何度から高温ですか？</summary><div class="body">アプリはドライブの温度が45&deg;Cを超えるとアンバー、55&deg;Cを超えると赤で表示し、システム温度は50&deg;Cを超えるとアンバー、60&deg;Cを超えると赤で表示します。これらのしきい値はホーム画面のヘルスバッジにも反映されます。</div></details>
+    <details><summary>アプリからUSBドライブを安全に取り外せますか？</summary><div class="body">はい、「外部ストレージ」サブビューから可能です。取り外しは、リクエストが受け付けられたかどうかではなく、ドライブが実際にデバイス一覧から消えたことで確認されます。フォーマット中や初期化中のドライブは取り外せません。</div></details>
+    <details><summary>アプリからボリュームを作成・拡張できますか？</summary><div class="body">いいえ。ボリュームやプールの作成、拡張、修復は、DSMのストレージマネージャーで行います。アプリはストレージの状態を報告し、ドライブに対する操作を行えますが、スマートフォンからアレイの構成を変更することはありません。</div></details>
+    <details><summary>ドライブのベンダーが「不明」と表示されるのはなぜですか？</summary><div class="body">NASがベンダーを報告しなかったからです。アプリはモデル名からメーカーを推測することはせず、伝えられた内容をそのまま表示します。推測を事実のように見せることになってしまうためです。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：ネットワーク</h2>
+    <p class="lead" style="margin:0 auto 24px">スループット、接続、サービス、VPN、DDNS。</p>
+    <p><a class="btn" href="/ja/guide/network/">ネットワーク &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

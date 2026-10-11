@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NASのヘルプとトラブルシューティング - Syno Manager</title>
+<meta name="description" content="接続タイムアウト、証明書エラー、2FA、表示されないタブ、空白の写真タイル、外出先でのカメラの不具合、古いウィジェットなど、それぞれの意味を解説します。" />
+<meta name="keywords" content="Syno Manager not connecting, Synology app connection timeout, Synology app certificate error, Synology app 2FA, Synology app blank photos, Synology camera not working remotely" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/help/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/help/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/help/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/help/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/help/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/help/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/help/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/help/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/help/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/help/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/help/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/help/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/help/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/help/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/help/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/help/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/help/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/help/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/help/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/help/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/help/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/help/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/help/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/help/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/help/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/help/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/help/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/help/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/help/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/help/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/help/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/help/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NASのヘルプとトラブルシューティング - Syno Manager" />
+<meta property="og:description" content="接続タイムアウト、証明書エラー、2FA、表示されないタブ、空白の写真タイル、外出先でのカメラの不具合、古いウィジェットなど、それぞれの意味を解説します。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/help/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NASのヘルプとトラブルシューティング - Syno Manager" />
+<meta name="twitter:description" content="接続タイムアウト、証明書エラー、2FA、表示されないタブ、空白の写真タイル、外出先でのカメラの不具合、古いウィジェットなど、それぞれの意味を解説します。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ヘルプ"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager に「接続タイムアウト」と表示されます。どういう意味ですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "指定したアドレスとポートで、何も応答がなかったということです。認証情報は試されていません。HTTPSとポートが合っているか（HTTPSオンなら5001、オフなら5000）、スマートフォンがNASに到達できるネットワークにあるか、DSM自体のウェブインターフェースがスマートフォンのブラウザーで同じアドレスで開けるかを確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "パスワードが正しいのに「認証情報が無効」と表示されるのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NASが応答したうえで、サインインを拒否したからです。入力ミスがないか、アカウントで2段階認証を使っていないか（2FAの切り替えがオンである必要があります）、コントロールパネルのセキュリティ、アカウントにあるDSMの自動ブロック一覧で、繰り返しの試行によりスマートフォンのアドレスがブロックされていないかを確認してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "あるはずのタブが表示されないのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "そのタブの元となるパッケージがNASにインストールされていないか、サブビューが非表示になっています。アプリは接続時にNASができることを読み取るため、そのあとにインストールしたパッケージは更新が必要です。下に引っ張って更新するか、アプリを開き直してください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "自宅ではカメラが動くのに、外出先では動きません。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NASの設定で「DSMポート経由でカメラのライブビューをトンネリング」をオンにしてください。オフの場合、ライブビューはポート554のRTSPに直接接続しますが、通常はネットワークの外から到達できません。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "写真が空白のタイルで表示されます。",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DSM 7.2.2以降では、NASがHEICファイルのプレビューを作成しなくなり、Syno Manager がそれらをデバイス上でデコードします。HEIC以外の古い写真も空白の場合は、NASのサムネイルが本当にない状態です。写真画面の再インデックスで、NASに再作成させてください。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ウィジェットの数値が古いのはなぜですか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ウィジェットをいつ更新してよいかを決めるのはAndroidとiOSであり、どちらもバッテリー節約のために更新を制限しているからです。まさにこの理由で、各ウィジェットにデータを取得した時刻が表示されます。アプリを開くのが、最も確実な更新方法です。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/" class="active">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; ヘルプ</div>
+    <div class="eyebrow">ヘルプ</div>
+    <h1>何かが<span class="g">おかしい</span>とき</h1>
+    <p>ほとんどの問題は、いくつかのパターンに分類できます。以下では、それぞれの症状が実際に何を意味するかを説明します。それが解決への一番の近道であることがほとんどです。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>移動先</b><ul>
+      <li><a href="#connecting">接続できない</a></li>
+      <li><a href="#credentials">サインインが拒否される</a></li>
+      <li><a href="#missing">タブやカードがない</a></li>
+      <li><a href="#photos">写真タイルが空白</a></li>
+      <li><a href="#cameras">外出先でカメラが使えない</a></li>
+      <li><a href="#logs">ログが読み込まれない</a></li>
+      <li><a href="#widgets">ウィジェットが古い</a></li>
+      <li><a href="#assistant">アシスタントタブがない</a></li>
+      <li><a href="#contact">それでも解決しない</a></li>
+    </ul></div>
+
+    <div class="section-head" id="connecting">
+      <div class="eyebrow">接続</div>
+      <h2>「接続タイムアウト」</h2>
+      <p class="lead">これは<b>何も応答がなかった</b>ことを意味します。認証情報は試されていないため、原因はアドレス、ポート、またはネットワークのいずれかで、パスワードではありません。</p>
+    </div>
+    <ol class="steps">
+      <li>入力したアドレスとポートと<b>まったく同じ内容で、スマートフォンのブラウザーからDSMを開いて</b>ください。ブラウザーからも到達できないなら、原因はアプリではありません。</li>
+      <li><b>HTTPSとポートが合っているか確認します。</b>5001はHTTPSのポート、5000はHTTPのポートです。取り違えるとタイムアウトになります。</li>
+      <li><b>スマートフォンのネットワークを確認します。</b><code>192.168.1.20</code>のようなローカルアドレスは、モバイルデータ通信には存在しません。Wi-Fiに接続するか、<a href="/ja/guide/remote-access/">QuickConnect、ドメイン、VPN</a>を使ってください。</li>
+      <li><b>iOSではローカルネットワークへのアクセスを許可します。</b>設定 &rsaquo; アプリ &rsaquo; Syno Manager &rsaquo; ローカルネットワーク。許可しないと、iOSは自宅ネットワークへの接続を黙ってブロックし、ネットワークの障害に見えるタイムアウトになります。</li>
+      <li><b>DSMのファイアウォールを確認します。</b>コントロールパネル &rsaquo; セキュリティ &rsaquo; ファイアウォール。特定のアドレスだけを許可するルールがあると、それ以外のスマートフォンはブロックされます。</li>
+      <li><b>NASが起動しているか確認します。</b>スリープ中のNASは応答しません。まず<a href="/ja/guide/wake-on-lan/">起こして</a>ください。</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="credentials">
+      <div class="eyebrow">サインイン</div>
+      <h2>「認証情報が無効」または証明書エラー</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>メッセージ</th><th>意味</th><th>対処</th></tr></thead>
+      <tbody>
+        <tr><td>認証情報が無効</td><td>NASが応答したうえで、サインインを拒否しました。アドレスとポートは正しいです。</td><td>ユーザー名とパスワードを確認してください。アカウントで2FAを使っていないか確認してください。切り替えがオンである必要があります。失敗した試行でアドレスがブロックされていないか、<b>コントロールパネル &rsaquo; セキュリティ &rsaquo; アカウント</b>のDSMの自動ブロック一覧を確認してください。</td></tr>
+        <tr><td>証明書エラー</td><td>HTTPSがオンで、証明書の検証もオンのまま、自己署名証明書に接続しています。</td><td><b>SSL証明書を検証</b>をオフにしてください。ほとんどのDiskStationは自己署名証明書を使用しており、どちらの設定でも接続は暗号化されたままです。</td></tr>
+        <tr><td>2FA が必要</td><td>アカウントが2段階認証を使っていますが、切り替えがオフです。</td><td>NASの設定で<b>2段階認証（2FA）</b>をオンにして、再接続してください。</td></tr>
+        <tr><td>2FAコードが拒否される</td><td>原因はたいていコードではなく時計です。</td><td>コードは現在時刻から生成されます。スマートフォンの時計とNASの時計を確認してください。NASの時刻ソースは、ホーム画面のクイック統計の行に表示されます。</td></tr>
+        <tr><td>以前は動いていたのに、サインインを求められる</td><td>保存されていた認証情報が読み取れなくなりました。アプリを新しいスマートフォンに復元したあとに起こることがあります。</td><td>アプリは読み取れないものを消去して、再度サインインを求めます。パスワードを一度入力し直してください。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>ユーザー名にスペースが含まれていますか？</b>問題ありません。アプリは正しく引用符で囲んで処理します。<code>John Smith</code>のようなアカウントで、他のクライアントが失敗する原因としてよくあるものです。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="missing">
+      <div class="eyebrow">見つからないもの</div>
+      <h2>タブ、サブビュー、カードがない</h2>
+      <p class="lead">理由はちょうど3つあり、それぞれ対処が異なります。</p>
+    </div>
+    <ol class="steps">
+      <li><b>パッケージがインストールされていない。</b>アプリはNASができることを読み取り、できないものはすべて非表示にします。Download Stationパッケージがなければ、Download Stationタブもありません。<a href="/ja/guide/apps/#package-center">パッケージセンター</a>からインストールしてください。</li>
+      <li><b>接続したあとにインストールした。</b>機能の一覧は接続時に読み取られます。下に引っ張って更新するか、アプリを開き直せば表示されます。</li>
+      <li><b>非表示になっている。</b>タブの<b>&#8942;メニュー &rsaquo; ビューのカスタマイズ</b>と、カードについては<b>設定 &rsaquo; ダッシュボードのカテゴリ</b>を確認してください。<a href="/ja/guide/customizing/">カスタマイズ</a>もご覧ください。</li>
+    </ol>
+    <div class="note"><b>ビューが非表示のカードをタップすると、その旨が表示され</b>、カスタマイズボタンが提示されます。NASがそのビューに対応していないと表示された場合は、本当にそのパッケージがありません。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="photos">
+      <div class="eyebrow">Photos</div>
+      <h2>フォトライブラリのタイルが空白</h2>
+    </div>
+    <ul class="plain">
+      <li><b>最近のiPhoneの写真：</b>これらはHEICで、DSM 7.2.2以降ではNASがプレビューを作成しなくなりました。Syno Manager がデバイス上でデコードするので表示されるはずです。表示されない場合は、アプリが最新バージョンかどうか確認してください。</li>
+      <li><b>古い写真も空白：</b>NASのサムネイルが本当にない状態です。写真画面の<b>再インデックス</b>で、NASに再作成させてください。大きなライブラリでは時間がかかりますが、処理はNAS上で実行されるので、アプリを閉じても構いません。</li>
+      <li><b>QuickConnectですべてが空白で遅い：</b>中継は速度が制限されています。もう少し待つか、自宅では直接接続のエントリを使ってください。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cameras">
+      <div class="eyebrow">カメラ</div>
+      <h2>自宅ではライブビューが動くのに、外出先では動かない</h2>
+      <p class="lead">NASの設定にある<b>DSMポート経由でカメラのライブビューをトンネリング</b>という1つの設定で解決します。</p>
+    </div>
+    <ul class="plain">
+      <li><b>オフ</b> - ライブビューはポート554のRTSPに直接接続します。自宅のネットワークでは高速ですが、そのポートが外部から到達可能になることはほとんどありません。</li>
+      <li><b>オン</b> - ストリームは、すでに接続に使っているDSMのHTTPSポート経由でトンネリングされます。新たに公開するものはなく、DSMに接続できる場所ならどこでも動作します。</li>
+      <li><b>「タップして表示」と表示されるカメラは、故障していません。</b>H.265のカメラで、DSMはそれらの静止スナップショットを生成しません。タップするとストリームが開きます。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">ログ</div>
+      <h2>システムログが読み込まれない</h2>
+      <p class="lead">アプリの他の部分は問題なく動作しているのにログが接続タイムアウトと表示される場合、応答していないのは接続ではなく、NAS上のログセンターサービスです。</p>
+    </div>
+    <ul class="plain">
+      <li>DSMのパッケージセンターで、<b>ログセンターがインストールされ、実行中か確認します。</b>システムログAPIはその一部です。</li>
+      <li><b>アカウントの権限を確認します。</b>多くのDSM構成では、システムログの読み取りに管理者権限が必要です。</li>
+      <li><b>コンテナーとスタックのログは別物で</b>Dockerから取得されるため、システムログが読めなくてもそちらは動作することがあります。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="widgets">
+      <div class="eyebrow">ウィジェット</div>
+      <h2>ホーム画面のウィジェットが古い</h2>
+      <p class="lead">ウィジェットをいつ更新してよいかを決めるのはAndroidとiOSで、どちらもバッテリー節約のために厳しく制限しています。アプリが強制することはできないため、各ウィジェットは約束の代わりに数値を取得した時刻を表示します。</p>
+    </div>
+    <ul class="plain">
+      <li><b>アプリを開きます。</b>最も確実な更新方法です。</li>
+      <li><b>Android：</b>Syno Managerをバッテリー最適化の対象から除外します。</li>
+      <li><b>iOS：</b>アプリのバックグラウンド更新がオンになっているか確認します。</li>
+      <li><b>到達性を確認します。</b>スマートフォンから到達できないNASは、ウィジェットも読み取れません。ローカルIPだけのエントリでモバイルデータ通信を使っている場合は、帰宅するまで更新されません。</li>
+      <li><b>「未更新」</b>は、まだ一度も正常に読み取れていないことを意味します。追加したばかりか、それ以降アプリが起動していません。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="assistant">
+      <div class="eyebrow">アシスタント</div>
+      <h2>アシスタントタブがない</h2>
+      <p class="lead">アシスタントにはオンデバイスのモデルが必要で、それがないハードウェアではタブごと非表示になります。動作しない操作部品は、ないほうがましだからです。</p>
+    </div>
+    <ul class="plain">
+      <li><b>Android</b>では、Gemini Nanoモデルが利用可能なAICoreが必要です。</li>
+      <li><b>iOSとmacOS</b>では、Apple Intelligenceに対応し、有効にしている必要があります。</li>
+      <li><b>お使いのデバイスの状態は、</b><b>設定 &rsaquo; オンデバイスAI</b>で確認できます。検出された状態が表示されます。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contact">
+      <div class="eyebrow">それでも解決しない</div>
+      <h2>報告する</h2>
+      <p class="lead">不具合や機能のご要望は公開トラッカーにお寄せください。受信箱に埋もれることなく、番号とスレッドが付きます。</p>
+    </div>
+    <p style="margin-top:8px"><a class="btn" href="https://github.com/MiyaraHub/synomanager-public/issues">不具合の報告・機能のリクエスト</a></p>
+    <div class="note" style="margin-top:22px"><b>記載していただきたい内容：</b>アプリのバージョン（設定に表示され、ビルド番号はアプリ情報にあります）、DSMのバージョン、NASのモデル、自宅のネットワークか外出先か、本来期待していた動作。個人情報が写り込まないようトリミングしたスクリーンショットは、説明文よりも役に立ちます。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>トラブルシューティングに関するよくある質問</h2>
+    </div>
+    <details open><summary>「接続タイムアウト」と表示されます。どういう意味ですか？</summary><div class="body">指定したアドレスとポートで何も応答がなく、認証情報は試されていないということです。HTTPSとポートが合っているか、スマートフォンがNASに到達できるネットワークにあるか、DSM自体のウェブインターフェースがスマートフォンのブラウザーで同じアドレスで開けるかを確認してください。</div></details>
+    <details><summary>パスワードが正しいのに「認証情報が無効」と表示されるのはなぜですか？</summary><div class="body">NASが応答したうえで、サインインを拒否したからです。入力ミスがないか、アカウントで2FAを使っていないか、繰り返しの試行によりスマートフォンのアドレスがブロックされていないかをDSMの自動ブロック一覧で確認してください。</div></details>
+    <details><summary>あるはずのタブが表示されないのはなぜですか？</summary><div class="body">そのタブの元となるパッケージがインストールされていないか、サブビューが非表示になっています。接続したあとにインストールしたパッケージは更新が必要です。下に引っ張って更新するか、アプリを開き直してください。</div></details>
+    <details><summary>自宅ではカメラが動くのに、外出先では動きません。</summary><div class="body">「DSMポート経由でカメラのライブビューをトンネリング」をオンにしてください。オフの場合、ライブビューはポート554のRTSPを必要としますが、通常は外部から到達できません。</div></details>
+    <details><summary>写真が空白のタイルで表示されます。</summary><div class="body">DSM 7.2.2以降ではNASがHEIC写真のプレビューを作成しなくなったため、HEIC写真はデバイス上でデコードされます。古い写真も空白の場合は、写真画面の再インデックスを使ってください。</div></details>
+    <details><summary>ウィジェットの数値が古いのはなぜですか？</summary><div class="body">ウィジェットをいつ更新してよいかを決めるのはOSだからです。まさにこの理由で、各ウィジェットにデータを取得した時刻が表示されます。アプリを開くのが、最も確実な更新方法です。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>完全なマニュアル</h2>
+    <p class="lead" style="margin:0 auto 24px">すべての画面、すべての操作、そしてそれぞれができないこと。</p>
+    <p><a class="btn" href="/ja/guide/">ユーザーガイドを読む &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

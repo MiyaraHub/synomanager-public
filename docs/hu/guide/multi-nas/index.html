@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Több Synology NAS kezelése - Syno Manager</title>
+<meta name="description" content="Adjon hozzá annyi Synology eszközt, amennyit csak szeretne, és váltson köztük egy koppintással. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="Több Synology NAS kezelése - Syno Manager" />
+<meta property="og:description" content="Adjon hozzá annyi Synology eszközt, amennyit csak szeretne, és váltson köztük egy koppintással. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Több Synology NAS kezelése - Syno Manager" />
+<meta name="twitter:description" content="Adjon hozzá annyi Synology eszközt, amennyit csak szeretne, és váltson köztük egy koppintással. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Több NAS-eszköz"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Több Synology NAS kezelése - Syno Manager",
+  "description": "Adjon hozzá annyi Synology eszközt, amennyit csak szeretne, és váltson köztük egy koppintással. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "hu",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hány NAS eszközt adhatok hozzá?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Annyit, amennyit csak szeretne. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát, így egy médiaszervernek és egy mentési célnak nem kell egyformán kinéznie."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Megváltoztat valamit magán a NAS-on, ha átnevezem?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. Az átnevezés csak az alkalmazásban megjelenő nevet módosítja. A NAS saját szervernevét a DSM Vezérlőpultján lehet megváltoztatni."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mi a különbség az IP-cím módosítása és a Konfiguráció szerkesztése között?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az IP-cím módosítása egy gyorsparancs a leggyakrabban változó mezőhöz - a címhez és a porthoz. A Konfiguráció szerkesztése a teljes űrlapot megnyitja, beleértve a HTTPS-t, a tanúsítvány-ellenőrzést, a hitelesítő adatokat, a 2FA-t és a kameraalagút kapcsolóját."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mi történik, ha eltávolítok egy NAS-t?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A bejegyzés és a tárolt hitelesítő adatok törlődnek az alkalmazásból. A NAS-on semmi sem változik - sehol máshol nem jelentkeztetjük ki, és egyetlen adatot sem érint."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Több NAS eszköz</div>
+      <div class="eyebrow">Több NAS-eszköz</div>
+      <h1>Egy alkalmazás, <span class="g">minden DiskStation</span></h1>
+      <p>Adjon hozzá annyit, amennyit csak szeretne. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését és beállításait, így a garázsban lévő mentési célnak nem kell úgy kinéznie, mint a nappaliban lévő médiaszervernek.</p>
+    </div>
+    <div class="hero-shot"><img alt="A NAS eszközök listája Csatlakozás és Felébresztés gombbal" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Az eszközlista</div>
+      <h2>Mit mutat egy-egy bejegyzés</h2>
+      <p class="lead">A <b>Beállítások &rsaquo; NAS eszközök kezelése</b> menüből érhető el, vagy ez a képernyő nyílik meg induláskor, ha egynél több eszköze van, és a kérdezés módot állította be.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Becenév és cím</b> - az Ön által adott név, valamint a gazdagép és a port, amelyen csatlakozik.</li>
+      <li><b>Címkék</b> azokról a dolgokról, amelyeket érdemes az űrlap megnyitása nélkül látni: hogy <b>HTTPS</b>-e, melyik <b>porton</b> érhető el, és melyik <b>fiókkal</b> jelentkezik be.</li>
+      <li><b>Csatlakoztatva</b>, ha ez az aktív eszköz.</li>
+      <li><b>Csatlakozás</b> a váltáshoz, és <b>Felébresztés</b>, hogy magic packetet küldjön neki, ha alszik.</li>
+      <li><b>Húzófogantyú</b> - rendezze át a listát, hogy a leggyakrabban használt legyen legfelül.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A túlcsordulás menü</div>
+      <h2>Öt dolog, amit egy bejegyzéssel tehet</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Művelet</th><th>Mit csinál</th></tr></thead>
+          <tbody>
+            <tr><td>Átnevezés</td><td>Csak a <b>megjelenített nevet</b> módosítja - az alkalmazás saját címkéjét. A NAS saját szervernevéhez nem nyúl; az a DSM Vezérlőpultjában található.</td></tr>
+            <tr><td>IP-cím módosítása</td><td>Gyorsparancs a leggyakrabban változó mezőhöz - a címhez és a porthoz -, anélkül hogy végig kellene mennie a teljes űrlapon.</td></tr>
+            <tr><td>Konfiguráció szerkesztése</td><td>A teljes űrlap: HTTPS, tanúsítvány-ellenőrzés, hitelesítő adatok, kétlépcsős azonosítás és a kamera élő nézetének alagútja.</td></tr>
+            <tr><td>Kapcsolat tesztelése</td><td>Ellenőrzi az elérhetőséget anélkül, hogy bármit módosítana, és megkülönbözteti az „nem érhető el” esetet attól, hogy „elérte, de a hitelesítő adatokat elutasították”.</td></tr>
+            <tr><td>NAS eltávolítása</td><td>Törli a bejegyzést és a tárolt hitelesítő adatokat <b>az alkalmazásból</b>. A NAS-on semmi sem változik.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="A NAS-onkénti menü Átnevezés, IP-cím módosítása, Konfiguráció szerkesztése, Kapcsolat tesztelése és Eltávolítás pontokkal" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mi tartozik egy-egy NAS-hoz</div>
+      <h2>Mit jegyez meg magától minden eszköz</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>NAS-onként</h3>
+        <ul class="plain">
+          <li>A hitelesítő adatok és a 2FA eszköztoken.</li>
+          <li>Mely irányítópult-kártyák vannak bekapcsolva, és milyen sorrendben.</li>
+          <li>Mely kártyák vannak összecsukva.</li>
+          <li>Mely almenük vannak elrejtve az egyes lapokon, és milyen sorrendben.</li>
+          <li>A kamera élő nézetének alagútbeállítása.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Alkalmazásszintű</h3>
+        <ul class="plain">
+          <li>Téma, felület, kiemelőszín és szövegméret.</li>
+          <li>Az alsó navigációs sáv.</li>
+          <li>Lekérdezési időköz és hőmérséklet-mértékegység.</li>
+          <li>Indítási viselkedés.</li>
+          <li>Mely súgókártyákat zárta be.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Ugyanazt a NAS-t kétszer hozzáadni teljesen jó megoldás.</b> Egy bejegyzés helyi IP-címmel otthonra, egy QuickConnecttel távolra. Külön bejegyzések, külön elrendezéssel, és a váltás egyetlen koppintás.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Több NAS - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Hány NAS eszközt adhatok hozzá?</summary><div class="body">Annyit, amennyit csak szeretne. Mindegyik megőrzi a saját hitelesítő adatait, irányítópult-elrendezését, kártyasorrendjét és összecsukási állapotát.</div></details>
+    <details><summary>Megváltoztat valamit magán a NAS-on, ha átnevezem?</summary><div class="body">Nem. Az átnevezés csak az alkalmazásban megjelenő nevet módosítja. A NAS saját szervernevét a DSM Vezérlőpultján lehet megváltoztatni.</div></details>
+    <details><summary>Mi a különbség az IP-cím módosítása és a Konfiguráció szerkesztése között?</summary><div class="body">Az IP-cím módosítása gyorsparancs a címhez és a porthoz. A Konfiguráció szerkesztése a teljes űrlapot megnyitja, beleértve a HTTPS-t, a tanúsítvány-ellenőrzést, a hitelesítő adatokat, a 2FA-t és a kameraalagút kapcsolóját.</div></details>
+    <details><summary>Mi történik, ha eltávolítok egy NAS-t?</summary><div class="body">A bejegyzés és a tárolt hitelesítő adatok törlődnek az alkalmazásból. A NAS-on semmi sem változik.</div></details>
+    <details><summary>Melyikkel nyílik meg az alkalmazás?</summary><div class="body">Azzal, amelyet az <a href="/hu/guide/settings/#launch">Indítási viselkedés</a> alatt beállít - az eszközválasztóval, a legutóbb használttal, vagy mindig egy meghatározottal.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">Ébressze fel a NAS-t, vagy rajta keresztül bármi mást a hálózatán.</p>
+    <p><a class="btn" href="/hu/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

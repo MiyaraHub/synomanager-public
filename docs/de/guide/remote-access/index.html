@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Von unterwegs auf dein Synology-NAS zugreifen - Syno Manager</title>
+<meta name="description" content="Erreiche dein Synology von überall per QuickConnect, eigener Domain oder VPN. Welche Funktionen über welchen Weg laufen, einschließlich Fotos und Kamera-Live-Ansicht." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/de/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Von unterwegs auf dein Synology-NAS zugreifen - Syno Manager" />
+<meta property="og:description" content="Erreiche dein Synology von überall per QuickConnect, eigener Domain oder VPN. Welche Funktionen über welchen Weg laufen, einschließlich Fotos und Kamera-Live-Ansicht." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/de/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Von unterwegs auf dein Synology-NAS zugreifen - Syno Manager" />
+<meta name="twitter:description" content="Erreiche dein Synology von überall per QuickConnect, eigener Domain oder VPN. Welche Funktionen über welchen Weg laufen, einschließlich Fotos und Kamera-Live-Ansicht." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "de",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Benutzerhandbuch",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Unterwegs"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Von unterwegs auf dein Synology-NAS zugreifen - Syno Manager",
+  "description": "Erreiche dein Synology von überall per QuickConnect, eigener Domain oder VPN. Welche Funktionen über welchen Weg laufen, einschließlich Fotos und Kamera-Live-Ansicht.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "de",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Muss ich Ports weiterleiten, um mein NAS aus der Ferne zu nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. QuickConnect leitet die Verbindung ohne Router-Konfiguration über den Dienst von Synology weiter, und auch ein VPN in dein Netzwerk funktioniert. Portweiterleitung brauchst du nur, wenn du ausdrücklich einen direkten Weg aus dem Internet willst."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Funktionieren Fotos und die Kamera-Live-Ansicht über QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Vorschaubilder, Vollbilder, Kamera-Live-Ansicht sowie Downloads aus File Station und Drive laufen über den jeweils aktiven Weg, auch über das QuickConnect-Relay. Das Relay ist langsamer als dein eigenes Netzwerk, aber es funktioniert."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sollte ich mein NAS zweimal hinzufügen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das ist ein gutes Muster. Ein Eintrag über die lokale IP für zu Hause - schnell, direkt - und einer über QuickConnect für unterwegs. Es sind getrennte Einträge mit getrennten Layouts, und das Wechseln dauert einen Tipp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist QuickConnect sicher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Verbindung ist bei HTTPS Ende-zu-Ende-verschlüsselt, und das Relay von Synology leitet den Datenverkehr nur durch, statt deine Daten zu speichern. Deine DSM-Zugangsdaten gelten weiterhin, und die Zwei-Faktor-Authentifizierung funktioniert ebenfalls."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/de/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager Symbol" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Handbuch durchsuchen..." data-i18n-empty="Keine Treffer für" data-i18n-language="Sprache">
+      <a href="/de/">Start</a>
+      <a href="/de/guide/" class="active">Benutzerhandbuch</a>
+      <a href="/de/#screenshots">Screenshots</a>
+      <a href="/de/compatible-nas/">Kompatibilität</a>
+      <a href="/de/best-synology-nas-app/">Warum wechseln</a>
+      <a href="/de/help/">Hilfe</a>
+      <a href="/de/#top" class="cta">Herunterladen</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/de/">Start</a> &rsaquo; <a href="/de/guide/">Benutzerhandbuch</a> &rsaquo; Unterwegs</div>
+      <div class="eyebrow">Unterwegs</div>
+      <h1>Dieselbe App, <span class="g">ein anderer Weg</span></h1>
+      <p>Syno Manager funktioniert gleich, egal ob du neben deinem NAS sitzt oder am anderen Ende der Welt. Was sich ändert, ist der Weg der Verbindung, und jeder Weg hat andere Vor- und Nachteile, die du kennen solltest.</p>
+    </div>
+    <div class="hero-shot"><img alt="Das Formular „NAS hinzufügen“ mit Direkte IP und QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Drei Wege</div>
+      <h2>Such dir den passenden aus</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Weg</th><th>Einrichtung</th><th>Geschwindigkeit</th><th>Gibt etwas frei?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>In DSM aktivieren und die ID eingeben. Am Router nichts.</td><td>Langsamer - der Datenverkehr läuft über das Relay von Synology.</td><td class="yes">Nichts. Keine offenen Ports bei dir.</td></tr>
+        <tr><td><b>Eigene Domain / DDNS</b></td><td>Ein Hostname, der auf deine Adresse zeigt, plus eine Portweiterleitung am Router.</td><td>Direkt, also so schnell, wie dein Upload es zulässt.</td><td class="no">Ja - der DSM-Port ist aus dem Internet erreichbar.</td></tr>
+        <tr><td><b>VPN</b></td><td>Ein VPN-Server auf deinem Router oder NAS und ein Client auf dem Handy.</td><td>Direkt, sobald verbunden.</td><td class="yes">Nur der VPN-Port. Alles andere bleibt privat.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Wenn du unsicher bist, nimm QuickConnect.</b> Es ist die Option, die keine Router-Kenntnisse braucht und nichts öffnet, und jede Funktion der App läuft darüber.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Was aus der Ferne funktioniert</div>
+      <h2>Alles, mit zwei Fußnoten</h2>
+      <p class="lead">Die App hat unterwegs keinen eingeschränkten Funktionsumfang. Zwei Dinge verlangen kurzes Nachdenken: die Kamera-Live-Ansicht und das Aufwecken eines ausgeschalteten NAS.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Funktion</th><th>Unterwegs</th></tr></thead>
+      <tbody>
+        <tr><td>Überwachung - System, Speicher, Netzwerk, Zustand</td><td class="yes">Funktioniert über jeden Weg.</td></tr>
+        <tr><td>Docker, Pakete, Dienste, Aufgaben, Benutzer</td><td class="yes">Funktioniert über jeden Weg.</td></tr>
+        <tr><td>Synology Photos - Vorschaubilder und Vollbilder</td><td class="yes">Funktioniert, auch über das Relay.</td></tr>
+        <tr><td>Downloads aus File Station und Drive</td><td class="yes">Funktioniert, auch über das Relay.</td></tr>
+        <tr><td>Backups - Status und Jetzt ausführen</td><td class="yes">Funktioniert über jeden Weg.</td></tr>
+        <tr><td>Ein anderes Gerät über das NAS aufwecken</td><td class="yes">Funktioniert, solange das NAS selbst eingeschaltet ist.</td></tr>
+        <tr><td><b>Kamera-Live-Ansicht</b></td><td>Aktiviere <b>Kamera-Live-Ansicht über DSM-Port tunneln</b>. Ohne diese Option braucht die Live-Ansicht RTSP über Port 554, der von außen meist nicht erreichbar ist. Siehe <a href="/de/guide/media/#streaming">so verbindet sich die Live-Ansicht</a>.</td></tr>
+        <tr><td><b>Das NAS selbst aufwecken, solange es aus ist</b></td><td>Braucht ein VPN oder eine Wake-on-LAN-Weiterleitung am Router. QuickConnect erreicht kein ausgeschaltetes NAS. Siehe <a href="/de/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Einrichtung</h2>
+    </div>
+    <ol class="steps">
+      <li><b>In DSM:</b> Systemsteuerung &rsaquo; Externer Zugriff &rsaquo; QuickConnect. Aktiviere es und notiere die QuickConnect-ID.</li>
+      <li><b>In der App:</b> Füge ein NAS hinzu und stelle den <b>Verbindungstyp</b> auf <b>QuickConnect</b>.</li>
+      <li><b>Gib die ID ein</b> - nicht Host und Port.</li>
+      <li><b>Deine DSM-Zugangsdaten</b> und 2FA, wenn das Konto es nutzt.</li>
+      <li><b>Speichern &amp; Verbinden.</b></li>
+    </ol>
+    <div class="note"><b>Rechne mit weniger Tempo.</b> Das Relay fügt eine Station hinzu und Synology drosselt es, deshalb scrollt eine Fotobibliothek weniger flüssig als zu Hause. Alles funktioniert trotzdem - es ist ein Unterschied in der Latenz, nicht im Funktionsumfang.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ein Muster zum Nachmachen</div>
+      <h2>Füge dasselbe NAS zweimal hinzu</h2>
+      <p class="lead">Ein Eintrag über die <b>lokale IP</b>, einer über <b>QuickConnect</b>. Benenne sie so, dass du sie unterscheiden kannst - „NAS (zu Hause)“ und „NAS (unterwegs)“.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Zu Hause</b> nimmst du den direkten: kein Relay, volle Geschwindigkeit, sofort sichtbare Vorschaubilder.</li>
+      <li><b>Unterwegs</b> wechselst du zum QuickConnect-Eintrag.</li>
+      <li><b>Sie behalten getrennte Layouts</b>, sodass du den Eintrag für unterwegs auf die wenigen Karten reduzieren kannst, die du im Mobilfunknetz wirklich prüfst.</li>
+      <li><b>Das Wechseln dauert einen Tipp</b> in der Geräteliste.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Stelle das <a href="/de/guide/settings/#launch">Startverhalten</a> auf <b>Zuletzt verwendetes NAS</b>, und die App bleibt bei dem, auf dem du zuletzt warst.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2>FAQ zum Fernzugriff</h2>
+    </div>
+    <details open><summary>Muss ich Ports weiterleiten, um mein NAS aus der Ferne zu nutzen?</summary><div class="body">Nein. QuickConnect leitet die Verbindung ohne Router-Konfiguration weiter, und auch ein VPN funktioniert. Portweiterleitung brauchst du nur, wenn du ausdrücklich einen direkten Weg aus dem Internet willst.</div></details>
+    <details><summary>Funktionieren Fotos und die Kamera-Live-Ansicht über QuickConnect?</summary><div class="body">Ja. Vorschaubilder, Vollbilder, Kamera-Live-Ansicht sowie Downloads aus File Station und Drive laufen über den jeweils aktiven Weg, auch über das Relay. Für die Kamera-Live-Ansicht muss der Tunnel-Schalter für den DSM-Port aktiv sein.</div></details>
+    <details><summary>Sollte ich mein NAS zweimal hinzufügen?</summary><div class="body">Das ist ein gutes Muster - ein Eintrag über die lokale IP für zu Hause und einer über QuickConnect für unterwegs, mit getrennten Layouts und Wechsel per Tipp.</div></details>
+    <details><summary>Ist QuickConnect sicher?</summary><div class="body">Die Verbindung ist bei HTTPS Ende-zu-Ende-verschlüsselt, und das Relay leitet den Datenverkehr nur durch, statt deine Daten zu speichern. Deine DSM-Zugangsdaten und die Zwei-Faktor-Authentifizierung gelten weiterhin.</div></details>
+    <details><summary>Warum funktioniert mein Eintrag mit lokaler IP im Mobilfunknetz nicht?</summary><div class="body">Weil eine private Adresse wie 192.168.x.x nur in deinem eigenen Netzwerk existiert. Nutze den QuickConnect-Eintrag, eine Domain oder verbinde dich zuerst mit deinem VPN.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Weiter: Backup &amp; Wiederherstellung</h2>
+    <p class="lead" style="margin:0 auto 24px">Übertrage deine App-Einstellungen auf ein neues Handy.</p>
+    <p><a class="btn" href="/de/guide/backup-restore/">Backup &amp; Wiederherstellung &rarr;</a> &nbsp; <a class="btn ghost" href="/de/guide/">Zurück zur Anleitung</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/de/">Start</a><a href="/de/guide/">Anleitung</a><a href="/de/guide/getting-started/">Erste Schritte</a><a href="/de/compatible-nas/">Kompatibilität</a><a href="/de/best-synology-nas-app/">Warum wechseln</a><a href="/de/synology-app-for-iphone/">iPhone & iPad</a><a href="/de/synology-app-for-android/">Android</a><a href="/de/synology-app-for-mac-windows/">Mac & Windows</a><a href="/de/ds-finder-alternative/">vs. DS finder</a><a href="/de/help/">Hilfe</a><a href="/de/privacy/">Datenschutz</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Fehler melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager ist eine unabhängige App und steht in keiner Verbindung zu Synology Inc., wird weder von Synology Inc. unterstützt noch gesponsert. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station und QuickConnect sind Marken von Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

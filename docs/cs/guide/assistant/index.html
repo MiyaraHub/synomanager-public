@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asistent AI v zařízení pro Synology NAS - Syno Manager</title>
+<meta name="description" content="Ptejte se na své Synology NAS normálními slovy a získejte stejný verdikt o stavu, jaký ukazuje dashboard. Běží v telefonu, učí se z vašich hodnocení, jen čte." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Asistent AI v zařízení pro Synology NAS - Syno Manager" />
+<meta property="og:description" content="Ptejte se na své Synology NAS normálními slovy a získejte stejný verdikt o stavu, jaký ukazuje dashboard. Běží v telefonu, učí se z vašich hodnocení, jen čte." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Asistent AI v zařízení pro Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Ptejte se na své Synology NAS normálními slovy a získejte stejný verdikt o stavu, jaký ukazuje dashboard. Běží v telefonu, učí se z vašich hodnocení, jen čte." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Asistent"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Asistent AI v zařízení pro Synology NAS - Syno Manager",
+  "description": "Ptejte se na své Synology NAS normálními slovy a získejte stejný verdikt o stavu, jaký ukazuje dashboard. Běží v telefonu, učí se z vašich hodnocení, jen čte.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kde asistent běží?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "V telefonu. Gemini Nano přes AICore na Androidu, Apple Intelligence na iOS a macOS. Žádná cloudová úroveň, na kterou by se dalo přejít - sestavení aplikace selže, pokud se kdekoli v asistentovi objeví cloudový hostitel, cloudové SDK nebo klíč API, takže slib vynucuje sestavení, ne něčí paměť."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Odesílají se moje data z NAS někam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Vaše otázka, data vašeho NAS i odpověď zařízení nikdy neopustí. Funguje i s vypnutou sítí. Protože se nic neodesílá, neexistuje žádná kopie, kterou by bylo možné ukládat, sdílet nebo na ní trénovat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Na co se mohu ptát?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pevný seznam neexistuje. Vaše NAS zveřejňuje všechno, co umí ohlásit - na typickém NAS přes tisíc položek - a asistent v tom hledá a čte, čeho se vaše otázka týká. Nainstalujte balíček a dokáže odpovídat i o něm, okamžitě, bez aktualizace aplikace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Může na mém NAS něco změnit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Pouze čte. Nemůže nic spustit, zastavit, smazat ani restartovat - ne jako pravidlo, které má model dodržovat, ale proto, že k tomu nemá nástroje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Stojí to něco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Používá model, který je už vestavěný ve vašem zařízení, takže se nic neplatí a nemusíte zakládat žádný účet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proč nevidím kartu Asistent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Protože zařízení nemá použitelný model v zařízení. Místo zobrazení funkce, která nemůže fungovat, ji aplikace na hardwaru, který ji neutáhne, úplně skryje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Učí se asistent něco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Učí se z vašich hodnocení, výhradně v tomto zařízení. Ohodnoťte odpověď palci pod ní a podobné otázky začnou tam, kde se ta odpověď četla, takže asistent čte vaše NAS čím dál lépe. Hodnocení zařízení nikdy neopustí a Zapomenout hodnocení pro toto NAS je smaže."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Proč píše, že je model zaneprázdněn nebo že došly tahy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Model v zařízení sdílí všechny ostatní aplikace v telefonu a běží jen tehdy, když je Syno Manager otevřený na obrazovce. Když narazíte na jedno z těchto omezení, asistent řekne které, místo obecné chyby, a přibližně jak dlouho čekat."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Asistent</div>
+      <div class="eyebrow">Asistent &middot; beta</div>
+      <h1>Zeptejte se svého NAS <span class="g">normálními slovy</span></h1>
+      <p>„Stojí za to se u mého úložiště něčím znepokojovat?“ je otázka, která jinak znamená otevřít čtyři obrazovky. Asistent přečte, co vaše NAS ohlásilo, a odpoví - modelem běžícím ve vašem telefonu, offline, který nic nikam neposílá.</p>
+    </div>
+    <div class="hero-shot"><img alt="Asistent připravený s navrhovanými otázkami" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#asking">Položení otázky</a></li>
+      <li><a href="#topics">Na co se můžete ptát</a></li>
+      <li><a href="#privacy">Kam jdou vaše data</a></li>
+      <li><a href="#readonly">Jen čte</a></li>
+      <li><a href="#wrong">Může se mýlit</a></li>
+      <li><a href="#learning">Učení z vašich hodnocení</a></li>
+      <li><a href="#availability">Která zařízení ho mají</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Ptaní se</div>
+      <h2>Napište to, nebo to řekněte</h2>
+      <p class="lead">Karta Asistent má dva podpohledy: <b>Zeptat se</b> a <b>Jak to funguje</b>. Zeptat se se otevře se čtyřmi návrhy, které ukazují podobu dobré otázky, ne aby vás omezovaly.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Napište otázku</b> do pole dole, nebo klepněte na jeden z návrhů.</li>
+      <li><b>Řekněte ji</b> mikrofonem, pokud chcete.</li>
+      <li><b>Nechte si odpověď přečíst nahlas</b> ovládacím prvkem reproduktoru vpravo nahoře.</li>
+      <li><b>Odpověď se vypisuje, jak vzniká</b>, ne najednou - takže ji můžete začít číst, než skončí.</li>
+      <li><b>Vymazat</b> vyprázdní konverzaci.</li>
+    </ul>
+    <div class="note"><b>Model se načte při otevření obrazovky</b>, ne při odeslání první otázky, takže první odpověď není nejpomalejší.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Rozsah</div>
+      <h2>Žádný seznam témat neexistuje</h2>
+      <p class="lead">To je část, kterou snadno přehlédnete. Asistent není sada hotových odpovědí o úložišti a zálohách - míří na cokoli, co vaše NAS skutečně zveřejňuje.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Vaše NAS zveřejňuje všechno, co umí ohlásit</b> - na typickém NAS přes tisíc položek - a asistent v tomto katalogu hledá a čte, čeho se vaše otázka týká.</li>
+          <li><b>Nainstalujte balíček a dokáže odpovídat i o něm</b>, okamžitě, bez aktualizace aplikace. Nic z katalogu není zapsáno v aplikaci; zjišťuje se z vašeho zařízení.</li>
+          <li><b>S používáním je rychlejší.</b> Jak číst každou část DSM se zjistí jednou a zapamatuje, takže pozdější otázky na totéž jsou rychlejší.</li>
+          <li><b>„Jak se daří mému NAS?“ odpoví verdiktem o stavu</b> - stejným čtením Zdravé, Varování nebo Kritické, jaké ukazuje domovská obrazovka, s důvody, ne holou teplotou nebo jedním měřením vytrženým z kontextu.</li>
+        </ul>
+        <div class="note"><b>Dobré otázky vypadají jako otázky.</b> „Jak se daří mému NAS?“, „Jsou moje zálohy v pořádku?“, „Co zabírá nejvíc místa?“, „Co o tomto NAS vidíte?“ - na poslední se vyplatí zeptat jednou, protože odpověď říká, k čemu se na <em>vašem</em> NAS dostane.</div>
+      </div>
+      <img alt="Asistent odpovídající na Jak se daří mému NAS verdiktem o stavu" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Soukromí</div>
+      <h2>Nic neopouští telefon</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Model patří zařízení. Vaše otázka, data vašeho NAS i odpověď se zpracovávají v telefonu a funguje to i s vypnutou sítí.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Neexistuje cloudová úroveň, na kterou by se dalo přejít.</b> Ne „rozhodli jsme se ji nepoužívat“ - sestavení aplikace <b>selže</b>, pokud se kdekoli v asistentovi objeví cloudový hostitel, cloudové SDK nebo klíč API. Slib drží sestavení, ne něčí paměť.</li>
+          <li><b>Protože se nic neodesílá, neexistuje kopie</b>, kterou by bylo možné ukládat, sdílet nebo na ní cokoli trénovat.</li>
+          <li><b>Je zdarma a nepotřebuje účet</b>, protože model už ve vašem zařízení je.</li>
+        </ul>
+      </div>
+      <img alt="Jak to funguje, s vysvětlením, že model je v zařízení a žádná data ho neopouštějí" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Hranice</div>
+      <h2>Vždy jen čte</h2>
+      <p class="lead">Asistent nemůže nic spustit, zastavit, smazat ani restartovat. Ne proto, že byl slušně požádán, aby to nedělal - ale proto, že k tomu od začátku nemá nástroje.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">To znamená víc, než by se zdálo. Model, kterému je <em>řečeno</em>, aby něco nedělal, lze přemluvit, aby to udělal. Model, který k tomu nemá prostředky, ne. Pokud chcete restartovat kontejner, <a href="/cs/guide/apps/#docker">obrazovka Docker</a> je tři klepnutí daleko a požádá vás o potvrzení.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Poctivost</div>
+      <h2>Může se mýlit a obrazovka to říká</h2>
+      <p class="lead">Je to malý model běžící v telefonu, ne velký v datovém centru. Může špatně přečíst číslo nebo znít jistěji, než by měl. Aplikace to říká na obrazovce, ne v poznámce pod čarou.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Cokoli důležitého zkontrolujte</b> na obrazovce, která to má na starosti. Každá odpověď se týká něčeho, co vám aplikace ukazuje i přímo.</li>
+      <li><b>Je označen BETA</b> v záhlaví karty přesně z tohoto důvodu.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Když teď nemůže odpovědět, řekne proč</h3>
+      <p class="lead">Ne obecná chyba. Jeden ze tří pojmenovaných důvodů a přibližně jak dlouho čekat.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Důvod</th><th>Co to znamená</th></tr></thead>
+      <tbody>
+        <tr><td>Limit využití</td><td>Tato aplikace prozatím vyčerpala svůj podíl modelu v zařízení. Zařízení sdílí jeden model mezi všemi aplikacemi, které ho používají; znovu odpoví, jakmile se váš podíl obnoví, obvykle do minuty či několika.</td></tr>
+        <tr><td>Zaneprázdněn</td><td>Model v zařízení právě odpovídá na jiný požadavek. Zkuste to za chvíli znovu.</td></tr>
+        <tr><td>Na pozadí</td><td>Model v zařízení odpovídá jen tehdy, když je Syno Manager otevřený na obrazovce. Přeneste aplikaci do popředí a zeptejte se znovu.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Při žádné z těchto situací se nic neztratí.</b> Vaše otázka zůstane v konverzaci; zeptejte se znovu, jakmile důvod pomine.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Čím dál lepší</div>
+      <h2>Učí se z vašich hodnocení, v tomto zařízení</h2>
+      <p class="lead">Pod každou odpovědí je palec nahoru nebo dolů. Ohodnoťte jednu a podobné otázky začnou tam, kde se ta odpověď četla - asistent čte <em>vaše</em> NAS čím dál lépe, aniž by cokoli opustilo telefon.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Dobrá odpověď</b> nebo <b>Není dobrá odpověď</b> - dva palce pod odpovědí, jedno klepnutí.</li>
+          <li><b>Uchováno pro každé NAS.</b> Hodnocení se ukládají k NAS, které odpovídalo, v tomto zařízení, takže přepnutím na jiné NAS začínáte pro něj znovu.</li>
+          <li><b>Nikdy se nikam neodesílají.</b> Hodnocení jsou stejně místní jako samotný model - žádný účet, žádná synchronizace, žádné nahrávání.</li>
+        </ul>
+      </div>
+      <img alt="Odpověď asistenta s vybraným hodnocením palec nahoru" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Karta Co se zde naučil s jednou ohodnocenou odpovědí a tlačítkem Zapomenout hodnocení pro toto NAS" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Co se zde naučil</b> na kartě Jak to funguje spočítá, kolik odpovědí na aktuálním NAS bylo ohodnoceno jako dobrých, a přečte je jednoduchými slovy.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Žádná odpověď na tomto NAS zatím nebyla ohodnocena jako dobrá</b> je to, co se zobrazí před vaším prvním hodnocením - ne nula, protože nula by vypadala jako měření, ne jako nepřítomnost.</li>
+          <li><b>Zapomenout hodnocení pro toto NAS</b> jedním klepnutím smaže všechna hodnocení uložená pro aktuální NAS v tomto zařízení.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Dostupnost</div>
+      <h2>Která zařízení ho mají</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Platforma</th><th>Model</th><th>Požadavek</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>Zařízení s <b>AICore</b> a dostupným modelem Gemini Nano.</td></tr>
+        <tr><td>iOS a macOS</td><td>Apple Intelligence</td><td>Zařízení, kde je Apple Intelligence podporován a zapnut.</td></tr>
+        <tr><td>Cokoli jiného</td><td>-</td><td>Karta se vůbec nezobrazí.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Zařízení bez použitelného modelu funkci nezobrazí.</b> Ne zašedlou, ne jako ukázku - chybí. Ovládací prvek, který nemůže fungovat, je horší než žádný, takže karta prostě není.</div>
+    <p style="color:var(--steel);margin-top:18px">Podpohled <b>Jak to funguje</b> vám řekne, v jakém stavu je vaše zařízení a co zjistil.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>FAQ k asistentovi</h2>
+    </div>
+    <details open><summary>Kde asistent běží?</summary><div class="body">V telefonu. Gemini Nano přes AICore na Androidu, Apple Intelligence na iOS a macOS. Žádná cloudová úroveň, na kterou by se dalo přejít - sestavení aplikace selže, pokud se kdekoli v asistentovi objeví cloudový hostitel, cloudové SDK nebo klíč API.</div></details>
+    <details><summary>Odesílají se moje data z NAS někam?</summary><div class="body">Ne. Vaše otázka, data vašeho NAS i odpověď zařízení nikdy neopustí a funguje to i s vypnutou sítí. Protože se nic neodesílá, neexistuje žádná kopie, kterou by bylo možné ukládat, sdílet nebo na ní trénovat.</div></details>
+    <details><summary>Na co se mohu ptát?</summary><div class="body">Pevný seznam neexistuje. Vaše NAS zveřejňuje všechno, co umí ohlásit - na typickém NAS přes tisíc položek - a asistent v tom hledá. Nainstalujte balíček a dokáže odpovídat i o něm, bez aktualizace aplikace.</div></details>
+    <details><summary>Může na mém NAS něco změnit?</summary><div class="body">Ne. Pouze čte. Nemůže nic spustit, zastavit, smazat ani restartovat - protože k tomu nemá nástroje.</div></details>
+    <details><summary>Stojí to něco?</summary><div class="body">Ne. Používá model, který je už vestavěný ve vašem zařízení, takže se nic neplatí a nemusíte zakládat žádný účet.</div></details>
+    <details><summary>Proč nevidím kartu Asistent?</summary><div class="body">Protože zařízení nemá použitelný model v zařízení. Místo zobrazení funkce, která nemůže fungovat, ji aplikace na hardwaru, který ji neutáhne, úplně skryje.</div></details>
+    <details><summary>Učí se asistent něco?</summary><div class="body">Učí se z vašich hodnocení, výhradně v tomto zařízení. Ohodnoťte odpověď palci pod ní a podobné otázky začnou tam, kde se ta odpověď četla. Hodnocení zařízení nikdy neopustí a Zapomenout hodnocení pro toto NAS je smaže.</div></details>
+    <details><summary>Proč píše, že je model zaneprázdněn nebo že došly tahy?</summary><div class="body">Model v zařízení sdílí všechny ostatní aplikace v telefonu a běží jen tehdy, když je Syno Manager otevřený na obrazovce. Asistent řekne, na které z těchto omezení narazil, místo obecné chyby.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Nastavení</h2>
+    <p class="lead" style="margin:0 auto 24px">Každá předvolba aplikace a co mění.</p>
+    <p><a class="btn" href="/cs/guide/settings/">Nastavení &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na příručku</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

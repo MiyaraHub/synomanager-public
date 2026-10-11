@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Monitor sítě, VPN a DDNS pro Synology - Syno Manager</title>
+<meta name="description" content="Živá propustnost podle rozhraní, aktivní připojení a blokované IP adresy, služby DSM, které můžete přepínat, klientské profily VPN a DDNS s vaší veřejnou adresou." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Monitor sítě, VPN a DDNS pro Synology - Syno Manager" />
+<meta property="og:description" content="Živá propustnost podle rozhraní, aktivní připojení a blokované IP adresy, služby DSM, které můžete přepínat, klientské profily VPN a DDNS s vaší veřejnou adresou." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Monitor sítě, VPN a DDNS pro Synology - Syno Manager" />
+<meta name="twitter:description" content="Živá propustnost podle rozhraní, aktivní připojení a blokované IP adresy, služby DSM, které můžete přepínat, klientské profily VPN a DDNS s vaší veřejnou adresou." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Síť"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Monitor sítě, VPN a DDNS pro Synology - Syno Manager",
+  "description": "Živá propustnost podle rozhraní, aktivní připojení a blokované IP adresy, služby DSM, které můžete přepínat, klientské profily VPN a DDNS s vaší veřejnou adresou.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mohu vidět, jak rychle můj NAS právě teď přenáší data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Podpohled Síť ukazuje živé stahování a odesílání pro každé rozhraní, které NAS má, každé s vlastním grafem, rychlostí linky a adresou. Spojená rozhraní (bond) se zobrazí jako jeden celek s celkovou rychlostí."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu služby DSM z aplikace spouštět a zastavovat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, u služeb, které DSM klientovi dovolí ovládat - SMB, NFS, FTP, rsync a další mají každá svůj přepínač. Některé jsou označeny jako spravované systémem, což znamená, že je DSM provozuje podle svého a aplikace jen ukazuje jejich stav, aniž by nabízela změnu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ukazuje aplikace, které IP adresy jsou blokované?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Podpohled Připojení zobrazuje zásady automatického blokování - kolik neúspěšných pokusů za jak dlouho - a seznam aktuálně blokovaných adres, sbalený za počtem, aby stovka záznamů nezakryla zbytek obrazovky."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Poznám, zda je moje VPN připojená?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplikace vypíše klientské profily VPN, které váš NAS má, a umožní požádat o připojení nebo odpojení některého z nich. Netvrdí, který z nich je aktivní, protože záznam DSM, který čte, neobsahuje stavové pole. Tvrdit opak by znamenalo vymýšlet si údaj."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Síť</div>
+      <div class="eyebrow">Síť</div>
+      <h1>Co teče <span class="g">dovnitř a ven</span></h1>
+      <p>Pět podpohledů: živá propustnost <b>Sítě</b>, <b>Připojení</b> s automatickým blokováním, <b>Služby</b>, které můžete přepínat, profily <b>VPN</b> a <b>DDNS</b> s vaší veřejnou adresou.</p>
+    </div>
+    <div class="hero-shot"><img alt="Živá propustnost sítě podle rozhraní" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#throughput">Propustnost</a></li>
+      <li><a href="#connections">Připojení &amp; automatické blokování</a></li>
+      <li><a href="#services">Služby</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; externí IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Síť</div>
+      <h2>Živě, podle rozhraní</h2>
+      <p class="lead">Každé rozhraní, které NAS má, dostane vlastní kartu - včetně spojených rozhraní (bond) a rozhraní Open vSwitch, která mnoho nástrojů přeskakuje.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Zobrazeno</th><th>Význam</th></tr></thead>
+      <tbody>
+        <tr><td>Název a rychlost rozhraní</td><td>Název, který DSM používá, a sjednaná rychlost - třeba <code>bond0 (20 Gbps)</code> u dvouportového agregátu.</td></tr>
+        <tr><td>Adresa</td><td>IP adresa, kterou rozhraní právě má.</td></tr>
+        <tr><td>Indikátor LIVE</td><td>Zelený, dokud se údaje aktualizují.</td></tr>
+        <tr><td>Stahování / Odesílání</td><td>Aktuální propustnost, u každé s průběžným grafem pod ní, aby se špička dala odlišit od trvalého provozu.</td></tr>
+        <tr><td>Informace o síti</td><td>Název serveru, brána a primární DNS - tři hodnoty, které potřebujete, když se v síti něco nepřekládá.</td></tr>
+        <tr><td>Aktivní připojení</td><td>Počet a cesta k podrobnostem.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Směr je z pohledu NAS.</b> „Stahování“ je provoz, který na NAS přichází; když kopírujete soubor <em>na</em> NAS, je to jeho stahování.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Připojení</div>
+      <h2>Kdo je připojen a kdo je zablokován</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Tři věci, v pořadí, v jakém je obvykle chcete:</p>
+        <ul class="plain">
+          <li><b>Automatické blokování</b> - zda je zapnutá ochrana DSM proti útokům hrubou silou, kolik neúspěšných pokusů ji spustí a v jakém časovém okně. Právě toto nastavení vyřadí telefon po několika špatných heslech.</li>
+          <li><b>Blokované IP adresy</b> - všechny aktuálně zablokované adresy, sbalené za počtem. Sto zablokovaných adres je u NAS dostupného z internetu běžné a jinak by zaplnilo obrazovku, proto zůstává sbaleno, dokud ho neotevřete.</li>
+          <li><b>Aktivní připojení</b> - kdo je přihlášen, z jaké adresy, jakým protokolem a kdy relace začala. HTTP/HTTPS, SMB, NFS, FTP - každá relace je pojmenována.</li>
+        </ul>
+        <div class="note"><b>Relaci můžete ukončit.</b> Aktivní připojení lze odtud odpojit, což je rychlá odpověď na „něco drží otevřený soubor“ nebo „proč je ta adresa pořád připojená“.</div>
+      </div>
+      <img alt="Připojení se zásadami automatického blokování, blokovanými IP a aktivními připojeními" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Služby</div>
+      <h2>Co DSM provozuje</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Služby DSM se stavem běhu a přepínači" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Nahoře počet - <b>běžící z celkového počtu</b> - a pod ním každá služba, kterou DSM zpřístupňuje, s tečkou stavu a přepínačem.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Služby souborů a připojení</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Zapněte nebo vypněte je z telefonu.</li>
+          <li><b>Vyhledávání a tisk</b> - Bonjour Printer Broadcast, WS-Discovery, tiskový démon CUPS.</li>
+          <li><b>Infrastruktura</b> - NTP, KMIP a další.</li>
+          <li><b>Služby spravované systémem mají zámek.</b> DSM je provozuje podle svého, takže aplikace ukazuje jejich stav a nenabízí přepínač, který by byl odmítnut. Ovládací prvek, který nemůže fungovat, je horší než žádný.</li>
+        </ul>
+        <div class="note warn"><b>Vypnutí SMB odpojí všechny, kdo ho používají.</b> Jsou to živé přepínače na běžícím serveru, ne obrazovka předvoleb.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Klientské profily</h2>
+      <p class="lead">Podpohled VPN vypisuje <b>klientské</b> profily VPN nastavené na vašem NAS - spojení, která naváže někam ven - a umožňuje požádat o připojení nebo odpojení některého z nich.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Netvrdí, který profil je připojený, a je to záměr.</b> NAS požadavek na připojení nebo odpojení potvrdí, ale záznam DSM, který aplikace čte, neobsahuje stavové pole, takže není z čeho verdikt vyčíst. Místo aby stav odhadovala a sebejistě se mýlila, aplikace to řekne a odkáže vás na stránku Síť v DSM, která to ví.</div>
+    <p style="color:var(--steel);margin-top:18px">Pokud nejsou nastaveny žádné profily, obrazovka to oznámí a řekne, kde nějaký přidat: v DSM pod <b>Síť &rsaquo; Síťové rozhraní</b>.</p>
+      </div>
+      <img alt="Podpohled VPN se seznamem klientských profilů" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Vaše veřejná adresa a jméno, které na ni ukazuje</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Jedna karta, dvě nezávislé poloviny:</p>
+        <ul class="plain">
+          <li><b>Externí IP</b> - veřejná adresa, kterou vaše připojení právě má.</li>
+          <li><b>Každý hostname DDNS</b>, který váš NAS publikuje, stav, který o něm DSM drží, kdy byl naposledy aktualizován a kdy se aktualizuje příště.</li>
+        </ul>
+        <h3 style="margin-top:22px">Obnovit a Aktualizovat</h3>
+        <ul class="plain">
+          <li><b>Obnovit</b> znovu načte, co DSM aktuálně drží.</li>
+          <li><b>Aktualizovat nyní</b> požádá NAS, aby svou adresu publikoval znovu - stejně jako tlačítko přímo v DSM.</li>
+        </ul>
+        <div class="note"><b>Každá polovina selhává zvlášť.</b> Nefunkční poskytovatel DDNS nestáhne s sebou údaj o veřejné IP a nečitelná IP nevymaže stav hostname. Dva údaje, dva verdikty.</div>
+        <div class="note" style="margin-top:14px"><b>Hlásí, co DSM ukládá, ne živý test.</b> Aplikace svůj hostname sama nepřekládá, aby ověřila, že ukazuje na vás. Poskytovatel, který na požadavek odpoví, nic nevypovídá o tom, zda je váš záznam správný, takže aplikace předává verdikt DSM, místo aby vymýšlela druhý.</div>
+      </div>
+      <img alt="DDNS a externí IP s ukrytou veřejnou adresou a hostname" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Adresa a hostname na tomto snímku obrazovky jsou rozmazané - patří skutečnému NAS.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>Časté dotazy k síti</h2>
+    </div>
+    <details open><summary>Mohu vidět, jak rychle můj NAS právě teď přenáší data?</summary><div class="body">Ano. Podpohled Síť ukazuje živé stahování a odesílání pro každé rozhraní, které NAS má, každé s vlastním grafem, rychlostí linky a adresou. Spojená rozhraní (bond) se zobrazí jako jeden celek s celkovou rychlostí.</div></details>
+    <details><summary>Mohu služby DSM z aplikace spouštět a zastavovat?</summary><div class="body">Ano, u služeb, které DSM klientovi dovolí ovládat - SMB, NFS, FTP, rsync a další mají každá svůj přepínač. Některé jsou označeny jako spravované systémem, což znamená, že je DSM provozuje podle svého a aplikace jen ukazuje jejich stav, aniž by nabízela změnu.</div></details>
+    <details><summary>Ukazuje aplikace, které IP adresy jsou blokované?</summary><div class="body">Ano. Podpohled Připojení zobrazuje zásady automatického blokování a seznam aktuálně blokovaných adres, sbalený za počtem, aby stovka záznamů nezakryla zbytek obrazovky.</div></details>
+    <details><summary>Poznám, zda je moje VPN připojená?</summary><div class="body">Aplikace vypíše klientské profily VPN, které váš NAS má, a umožní požádat o připojení nebo odpojení některého z nich. Netvrdí, který z nich je aktivní, protože záznam DSM, který čte, neobsahuje stavové pole. Stránka Síť v DSM je místo, které to ví.</div></details>
+    <details><summary>Proč se moje veřejná IP liší od té, kterou mi ukazuje webová stránka?</summary><div class="body">Protože je to adresa připojení vašeho NAS, přečtená přes DSM. Pokud je telefon na mobilních datech, má jinou. Jsou to dvě různé sítě a oba údaje jsou správné.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Soubory</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, sdílené složky, poznámky, dokumenty a kontakty.</p>
+    <p><a class="btn" href="/cs/guide/files/">Soubory &amp; sdílení &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na průvodce</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

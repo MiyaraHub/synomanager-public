@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stocare Synology, RAID și sănătate SMART - Syno Manager</title>
+<meta name="description" content="Volume și pool-uri Synology cu tip RAID și spațiu liber, stare SMART și temperatură pe fiecare disc, Quick SMART Test și scoatere sigură pentru USB și eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Stocare Synology, RAID și sănătate SMART - Syno Manager" />
+<meta property="og:description" content="Volume și pool-uri Synology cu tip RAID și spațiu liber, stare SMART și temperatură pe fiecare disc, Quick SMART Test și scoatere sigură pentru USB și eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Stocare Synology, RAID și sănătate SMART - Syno Manager" />
+<meta name="twitter:description" content="Volume și pool-uri Synology cu tip RAID și spațiu liber, stare SMART și temperatură pe fiecare disc, Quick SMART Test și scoatere sigură pentru USB și eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Stocare"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Stocare Synology, RAID și sănătate SMART - Syno Manager",
+  "description": "Volume și pool-uri Synology cu tip RAID și spațiu liber, stare SMART și temperatură pe fiecare disc, Quick SMART Test și scoatere sigură pentru USB și eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot vedea starea SMART a fiecărui disc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Subvizualizarea Disk Health listează fiecare disc cu modelul, dacă e HDD sau SSD, capacitatea, temperatura și verdictul SMART. Poți porni și un Quick SMART Test pe orice disc, de pe telefon."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce temperatură e prea mare pentru un disc de NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplicația colorează un disc în chihlimbar peste 45 de grade C și în roșu peste 55 de grade C, iar temperatura sistemului în chihlimbar peste 50 și roșu peste 60. Aceste praguri alimentează și insigna de sănătate de pe ecranul principal, deci un disc fierbinte apare acolo fără să-l cauți."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot scoate în siguranță un disc USB din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, din subvizualizarea External. Scoaterea este confirmată de faptul că discul chiar dispare din lista de dispozitive, nu de acceptarea cererii - deci un disc care spune că a fost scos chiar a fost. Un disc aflat în formatare sau inițializare nu poate fi scos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot crea sau extinde un volum din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Crearea, extinderea și repararea volumelor și pool-urilor se fac în Storage Manager din DSM. Aplicația raportează ce face stocarea ta și te lasă să acționezi asupra discurilor; nu restructurează matricea ta de pe un telefon."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Stocare</div>
+      <div class="eyebrow">Stocare</div>
+      <h1>Fiecare volum, <span class="g">fiecare disc</span></h1>
+      <p>Trei subvizualizări: <b>Volumes &amp; Pools</b> pentru capacitate și RAID, <b>Disk Health</b> pentru SMART și temperatura fiecărui disc și <b>External</b> pentru tot ce e conectat în spate.</p>
+    </div>
+    <div class="hero-shot"><img alt="Volume și discuri de stocare în Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#volumes">Volume &amp; Pool-uri</a></li>
+      <li><a href="#drives">Lista discurilor</a></li>
+      <li><a href="#disk-health">Disk Health &amp; SMART</a></li>
+      <li><a href="#thresholds">Praguri de temperatură</a></li>
+      <li><a href="#external">External &amp; scoatere sigură</a></li>
+      <li><a href="#limits">Ce nu va face</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volume &amp; Pool-uri</div>
+      <h2>Capacitatea dintr-o privire</h2>
+      <p class="lead">Fiecare volum primește un card cu numele, tipul RAID, starea și câte discuri îl susțin, deasupra unei bare de utilizare cu spațiul folosit, procentul, totalul și spațiul liber.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Afișat</th><th>Semnificație</th></tr></thead>
+      <tbody>
+        <tr><td>Numele volumului</td><td>Cum îl numește DSM - <code>VOLUME_1</code> și așa mai departe.</td></tr>
+        <tr><td>Tip RAID</td><td>RAID 5, SHR, RAID 1, Basic - orice este de fapt pool-ul de dedesubt.</td></tr>
+        <tr><td>Stare</td><td>Starea proprie a volumului: <b>normal</b>, degradat, defect. O matrice degradată este singurul lucru de pe acest ecran care merită tratat azi.</td></tr>
+        <tr><td>Număr de discuri</td><td>Câte discuri fizice acoperă volumul.</td></tr>
+        <tr><td>Bară de utilizare</td><td>Verde în mod normal, chihlimbar peste 80% și roșu peste 90%. Sunt aceleași praguri pe care le folosește <a href="/ro/guide/home/#header">insigna de sănătate</a>.</td></tr>
+        <tr><td>Folosit / Total / Liber</td><td>Toate trei, pentru că „70% plin” și „13 TB liberi” răspund la întrebări diferite.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Ce se află în fiecare slot</h2>
+      <p class="lead">Sub volume, fiecare disc fizic după numărul slotului.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bay</b> - Disk 1, Disk 2 și așa mai departe, potrivit etichetelor de pe carcasă.</li>
+      <li><b>Model</b> - șirul de model al discului.</li>
+      <li><b>Producător și tip</b> - fabricantul și dacă e HDD sau SSD. Un disc al cărui producător nu a putut fi identificat de NAS apare ca <b>Unknown</b>, nu ghicit.</li>
+      <li><b>Temperatura</b>, colorată față de pragurile de mai jos.</li>
+      <li><b>Verdictul SMART</b> - <b>SMART OK</b> când autoevaluarea discului este sănătoasă.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Starea discurilor</div>
+      <h2>SMART și un test pe care îl poți porni</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Subvizualizarea Disk Health afișează aceleași discuri cu mai mult spațiu: capacitatea, tipul, temperatura și starea SMART au fiecare propria etichetă, iar fiecare disc are un buton <b>Quick SMART Test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Quick SMART Test</b> cere discului să ruleze propria autoevaluare scurtă. Durează câteva minute și nu întrerupe nimic din ce folosește volumul.</li>
+          <li><b>Verdictul este al discului, nu al nostru.</b> SMART este discul care raportează despre sine; aplicația îl transmite. Un disc care spune că e bine și apoi cedează este o limită a SMART, nu a citirii.</li>
+          <li><b>O stare SMART ilizibilă apare ca necunoscută</b>, niciodată ca sănătoasă. Lipsa unei citiri și o citire bună sunt lucruri diferite și nu sunt amestecate niciodată.</li>
+        </ul>
+      </div>
+      <img alt="Disk Health cu fiecare disc, starea SMART, temperatura și un buton Quick SMART Test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Cifrele din spatele culorilor</div>
+      <h2>Praguri</h2>
+      <p class="lead">Nimic de aici nu e o presupunere despre hardware-ul tău - acestea sunt punctele la care aplicația schimbă o culoare și, unde e cazul, insigna de sănătate de pe ecranul principal.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Citire</th><th>Chihlimbar la</th><th>Roșu la</th></tr></thead>
+      <tbody>
+        <tr><td>Temperatura discului</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Temperatura sistemului</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Utilizarea volumului</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Încărcarea UPS</td><td>sub 50%</td><td>sub 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Comută între &deg;C și &deg;F în <a href="/ro/guide/settings/#preferences">Setări &rsaquo; Temperature Unit</a>. Fiecare temperatură din aplicație o urmează imediat, inclusiv cele de pe ecranul principal și din widgeturi.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Extern</div>
+      <h2>USB, eSATA și scoatere sigură</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Stocare externă și dispozitive USB, fără nimic conectat și cu un UPS listat" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Două secțiuni: <b>External Storage</b> pentru discurile pe care le poți monta și scoate și <b>USB Devices</b> pentru tot restul conectat - un UPS, o imprimantă, un adaptor.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Scoaterea este confirmată de dispariția discului.</b> Aplicația nu raportează succes pentru că cererea a revenit OK; reciteste lista de dispozitive și spune că discul e scos abia când a dispărut cu adevărat. Aceasta e diferența dintre „sigur de deconectat” și „probabil sigur de deconectat”.</li>
+          <li><b>Un disc ocupat nu poate fi scos.</b> Unul aflat în formatare sau inițializare este refuzat, cu motivul, în loc să fie smuls în mijlocul scrierii.</li>
+          <li><b>Dacă nu e nimic conectat, spune clar.</b> O listă goală afișează „No external drives attached” - nu un chenar gol pe care trebuie să-l interpretezi.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Limite</div>
+      <h2>Ce nu va face acest ecran</h2>
+      <p class="lead">Stocarea este singurul loc unde o atingere greșită nu se poate repara, așa că aplicația citește mult mai mult decât scrie.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nu va crea, extinde sau șterge un volum sau un pool.</b> Acestea se fac în Storage Manager din DSM, pe un ecran suficient de mare cât să arate ce urmează să faci.</li>
+      <li><b>Nu va repara o matrice degradată.</b> Îți va spune clar, pe ecranul principal, că una este degradată.</li>
+      <li><b>Nu va formata nimic.</b></li>
+      <li><b>Nu va rula un test SMART complet</b> - doar cel rapid. O scanare completă a suprafeței durează ore și trebuie făcută într-un loc de unde nu pleci.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, reconstruirile și verificările de paritate</b> apar ca operațiuni în curs cât timp rulează, așa că poți vedea una terminându-se din aplicație chiar dacă ai pornit-o în DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre stocare</h2>
+    </div>
+    <details open><summary>Pot vedea starea SMART a fiecărui disc?</summary><div class="body">Da. Subvizualizarea Disk Health listează fiecare disc cu modelul, dacă e HDD sau SSD, capacitatea, temperatura și verdictul SMART. Poți porni și un Quick SMART Test pe orice disc, de pe telefon.</div></details>
+    <details><summary>Ce temperatură e prea mare pentru un disc de NAS?</summary><div class="body">Aplicația colorează un disc în chihlimbar peste 45&deg;C și în roșu peste 55&deg;C, iar temperatura sistemului în chihlimbar peste 50&deg;C și roșu peste 60&deg;C. Aceste praguri alimentează și insigna de sănătate de pe ecranul principal.</div></details>
+    <details><summary>Pot scoate în siguranță un disc USB din aplicație?</summary><div class="body">Da, din subvizualizarea External. Scoaterea este confirmată de faptul că discul chiar dispare din lista de dispozitive, nu de acceptarea cererii. Un disc aflat în formatare sau inițializare nu poate fi scos.</div></details>
+    <details><summary>Pot crea sau extinde un volum din aplicație?</summary><div class="body">Nu. Crearea, extinderea și repararea volumelor și pool-urilor se fac în Storage Manager din DSM. Aplicația raportează ce face stocarea ta și te lasă să acționezi asupra discurilor; nu restructurează matricea ta de pe un telefon.</div></details>
+    <details><summary>De ce apare un disc cu producătorul Unknown?</summary><div class="body">Pentru că NAS-ul nu a raportat unul. Aplicația arată ce i s-a spus, în loc să deducă un fabricant din șirul modelului, ceea ce ar fi o presupunere prezentată ca fapt.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Rețea</h2>
+    <p class="lead" style="margin:0 auto 24px">Debit, conexiuni, servicii, VPN și DDNS.</p>
+    <p><a class="btn" href="/ro/guide/network/">Rețea &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

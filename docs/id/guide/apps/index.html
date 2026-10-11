@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, Paket & VM untuk Synology NAS - Syno Manager</title>
+<meta name="description" content="Instal paket DSM dari Package Center, mulai, hentikan, dan mulai ulang container Docker, baca lognya, jalankan stack Compose, dan kendalikan mesin virtual." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, Paket &amp; VM untuk Synology NAS - Syno Manager" />
+<meta property="og:description" content="Instal paket DSM dari Package Center, mulai, hentikan, dan mulai ulang container Docker, baca lognya, jalankan stack Compose, dan kendalikan mesin virtual." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, Paket &amp; VM untuk Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Instal paket DSM dari Package Center, mulai, hentikan, dan mulai ulang container Docker, baca lognya, jalankan stack Compose, dan kendalikan mesin virtual." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aplikasi"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, Paket & VM untuk Synology NAS - Syno Manager",
+  "description": "Instal paket DSM dari Package Center, mulai, hentikan, dan mulai ulang container Docker, baca lognya, jalankan stack Compose, dan kendalikan mesin virtual.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "id",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bisakah saya menginstal paket DSM dari ponsel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Package Center di aplikasi memiliki katalog yang sama dengan DSM - Terinstal, Semua paket, Beta, dan Komunitas - dengan kotak pencarian. Pilih paket, pilih volume, lalu instal. Pembaruan dan pencopotan bekerja dengan cara yang sama, dan setiap tindakan dikonfirmasi dengan membaca ulang daftar paket, bukan dari permintaan yang kembali OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya memulai ulang container Docker dari aplikasi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Setiap container memiliki mulai, hentikan, dan mulai ulang, ditambah tombol yang membuka lognya. Container yang sudah berhenti menampilkan tombol mulai, bukan tombol hentikan yang tidak bisa dijalankan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya mengendalikan stack Docker Compose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa. Sub-tampilan Proyek mencantumkan proyek Compose Anda dan memulai atau menghentikan seluruh stack, sehingga Anda tidak perlu mencari setiap container. Log stack dibuka dengan cara yang sama seperti log container."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya memulai dan menghentikan mesin virtual?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa, jika Virtual Machine Manager terinstal. Mulai, matikan, atau paksa mati mesin mana pun. Paksa mati harus ditahan untuk konfirmasi karena sama dengan mencabut kabel listrik. Mesin dengan status yang tidak disebut NAS berjalan maupun mati ditampilkan persis seperti itu, dan ditawari kontrol pemulihan, bukan tombol Mulai yang tidak bisa dijalankan."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Aplikasi</div>
+      <div class="eyebrow">Aplikasi</div>
+      <h1>Semua yang <span class="g">dijalankan NAS Anda</span></h1>
+      <p>Empat sub-tampilan: <b>Package Center</b> untuk paket DSM, <b>Docker</b> untuk container, <b>Proyek</b> untuk stack Compose, dan <b>Mesin Virtual</b> saat VMM terinstal.</p>
+    </div>
+    <div class="hero-shot"><img alt="Container Docker dengan status dan kontrol" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Di halaman ini</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Menginstal paket</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Log container</a></li>
+      <li><a href="#projects">Proyek Compose</a></li>
+      <li><a href="#virtual-machines">Mesin virtual</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Seluruh katalog, bisa dicari</h2>
+      <p class="lead">Empat filter yang sama dengan DSM, dan kotak pencarian untuk semuanya.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Filter</th><th>Yang dicantumkan</th></tr></thead>
+          <tbody>
+            <tr><td>Terinstal</td><td>Yang ada di NAS Anda sekarang, lengkap dengan versi, ukuran, dan indikator berjalan.</td></tr>
+            <tr><td>Semua paket</td><td>Katalog lengkap Synology untuk model Anda.</td></tr>
+            <tr><td>Beta</td><td>Paket pra-rilis.</td></tr>
+            <tr><td>Komunitas</td><td>Paket dari sumber pihak ketiga yang Anda tambahkan di DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Setiap entri menampilkan versi dan ukuran unduhannya, deskripsinya, dan dependensi yang dibutuhkan - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - sehingga instalasi kedua yang tak terduga tidak lagi mengejutkan.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Mencari di katalog paket lengkap, dengan tombol Instal" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Mencari di <b>Semua paket</b> untuk paket yang belum terinstal.</p>
+      </div>
+      <img alt="Package Center menampilkan paket terinstal beserta status berjalan" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Instal, perbarui, copot</div>
+      <h2>Yang terjadi saat Anda mengetuk Instal</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Cari atau filter</b> ke paket yang Anda inginkan.</li>
+          <li><b>Instal.</b> Dialog menyebutkan nama paket, mencantumkan dependensinya, dan menanyakan volume tujuan instalasi - dengan menampilkan ruang kosong setiap volume agar Anda tidak memilih secara buta.</li>
+          <li><b>Konfirmasi.</b> NAS menginstalnya, termasuk dependensi.</li>
+          <li><b>Daftar membaca ulang dirinya sendiri.</b> Tombol berubah menjadi <b>Copot</b> karena daftar paket kini menyatakan paket itu terinstal - bukan karena permintaan kembali OK.</li>
+        </ol>
+        <div class="note"><b>Langkah terakhir itulah intinya.</b> Permintaan yang berhasil dan instalasi yang selesai adalah dua peristiwa berbeda. Aplikasi menunggu yang kedua.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Dialog instalasi yang menyebutkan paket, dependensi, dan volume tujuan" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Menginstal paket menambah layar ke aplikasi.</b> Daftar tab dibangun dari apa yang dilaporkan NAS Anda saat terhubung, jadi setelah menginstal sesuatu seperti Download Station, tarik untuk menyegarkan atau buka ulang aplikasi dan sub-tampilannya muncul.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Setiap container, dengan kontrol yang penting</h2>
+      <p class="lead">Header status - <b>yang berjalan dari total</b> - lalu setiap container yang dimiliki NAS, dalam satu daftar.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nama dan tag image</b> di setiap baris, sehingga dua container dari image yang sama tetap bisa dibedakan.</li>
+      <li><b>Status</b> sebagai chip: <b>Berjalan</b>, <b>Keluar</b>, dan apa pun yang dilaporkan Docker. Container yang disebut sehat oleh Docker akan menyatakannya - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Uptime</b> untuk semua yang berjalan.</li>
+      <li><b>Mulai, hentikan, dan mulai ulang</b>, dengan kontrol yang sesuai status: container yang berhenti ditawari mulai, bukan hentikan yang tidak akan berbuat apa-apa.</li>
+      <li><b>Log</b> dari tombol di setiap baris.</li>
+      <li><b>Perluas baris</b> untuk detailnya - termasuk angka memori dan jaringan.</li>
+      <li><b>Ciutkan seluruh daftar</b> dengan kontrol di atas saat Anda hanya butuh jumlahnya.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Log</div>
+      <h2>Dibaca sekali, diikuti dengan sengaja</h2>
+      <p class="lead">Log container dan stack berperilaku sama seperti <a href="/id/guide/system/#logs">log sistem</a>, dengan alasan yang sama.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Dimuat sekali lalu diam</b>, sehingga baris tidak bergulir pergi saat Anda membacanya.</li>
+      <li><b>Tekan putar untuk mengikuti secara langsung</b>, tekan lagi untuk jeda.</li>
+      <li><b>Pengikutan berhenti sendiri</b> saat Anda meninggalkan layar atau mengirim aplikasi ke latar belakang - tidak ada tab terlupakan yang terus melakukan polling di saku Anda.</li>
+      <li><b>Cari</b> satu baris di log yang panjang.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Proyek</div>
+      <h2>Stack Compose, sebagai stack</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Proyek Docker Compose, tanpa satu pun yang dikonfigurasi" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Proyek Compose adalah beberapa container yang saling terkait. Sub-tampilan Proyek memperlakukannya demikian: mulai atau hentikan <b>seluruh stack</b> alih-alih mencari setiap container di daftar Docker sambil berharap tidak ada yang terlewat.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Setiap proyek</b> menampilkan namanya dan berapa banyak container-nya yang aktif.</li>
+          <li><b>Mulai atau hentikan proyek</b> sebagai satu kesatuan.</li>
+          <li><b>Log stack</b> dibuka seperti log container.</li>
+          <li><b>Jika tidak ada proyek, aplikasi menyatakannya</b> - "Proyek Docker Compose akan muncul di sini" - bukan layar kosong.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Mesin Virtual</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Muncul saat VMM terinstal. Setiap mesin virtual di NAS, apa yang sedang dikerjakannya, dan tiga tindakan daya.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Aksi</th><th>Fungsinya</th></tr></thead>
+      <tbody>
+        <tr><td>Mulai</td><td>Menyalakan mesin.</td></tr>
+        <tr><td>Matikan</td><td>Meminta sistem operasi tamu untuk mati dengan bersih.</td></tr>
+        <tr><td>Paksa mati</td><td>Memutus daya. <b>Tahan untuk konfirmasi</b>, karena sama dengan mencabut kabel listrik komputer yang sedang menyala - satu ketukan terlalu murah untuk itu.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Mesin dengan status di antara dijelaskan apa adanya.</b> Jika NAS melaporkan status yang tidak disebut berjalan maupun mati - memulai, menangguhkan, crash - aplikasi menampilkan persis kata itu dan menawarkan kontrol pemulihan, bukan tombol Mulai yang tidak bisa dijalankan atau tanda centang hijau yang tidak benar.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ Aplikasi</h2>
+    </div>
+    <details open><summary>Bisakah saya menginstal paket DSM dari ponsel?</summary><div class="body">Bisa. Package Center di aplikasi memiliki katalog yang sama dengan DSM - Terinstal, Semua paket, Beta, dan Komunitas - dengan kotak pencarian. Pilih paket, pilih volume, lalu instal. Pembaruan dan pencopotan bekerja dengan cara yang sama, dan setiap tindakan dikonfirmasi dengan membaca ulang daftar paket.</div></details>
+    <details><summary>Bisakah saya memulai ulang container Docker dari aplikasi?</summary><div class="body">Bisa. Setiap container memiliki mulai, hentikan, dan mulai ulang, ditambah tombol yang membuka lognya. Container yang sudah berhenti menampilkan tombol mulai, bukan tombol hentikan yang tidak bisa dijalankan.</div></details>
+    <details><summary>Bisakah saya mengendalikan stack Docker Compose?</summary><div class="body">Bisa. Sub-tampilan Proyek mencantumkan proyek Compose Anda dan memulai atau menghentikan seluruh stack. Log stack dibuka dengan cara yang sama seperti log container.</div></details>
+    <details><summary>Bisakah saya memulai dan menghentikan mesin virtual?</summary><div class="body">Bisa, jika Virtual Machine Manager terinstal. Mulai, matikan, atau paksa mati mesin mana pun. Paksa mati harus ditahan untuk konfirmasi karena sama dengan mencabut kabel listrik.</div></details>
+    <details><summary>Bisakah saya membuat container baru dari aplikasi?</summary><div class="body">Tidak. Membuat container berarti memilih image, pemetaan port, mount volume, dan variabel lingkungan - formulir yang pantas ada di layar tempat Anda bisa melihat semuanya sekaligus. Aplikasi ini menjalankan dan memantau apa yang Anda buat di DSM atau Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: Media</h2>
+    <p class="lead" style="margin:0 auto 24px">Foto, Drive, dan tampilan langsung Surveillance Station.</p>
+    <p><a class="btn" href="/id/guide/media/">Foto, Drive &amp; kamera &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ניטור Synology Hyper Backup בטלפון - Syno Manager</title>
+<meta name="description" content="כל משימת Hyper Backup עם המקום שהיא באמת תופסת ביעד, ועוד מכשירי Active Backup for Business וגודל לאחר דה-דופליקציה לפי עומס עבודה." />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="ניטור Synology Hyper Backup בטלפון - Syno Manager" />
+<meta property="og:description" content="כל משימת Hyper Backup עם המקום שהיא באמת תופסת ביעד, ועוד מכשירי Active Backup for Business וגודל לאחר דה-דופליקציה לפי עומס עבודה." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ניטור Synology Hyper Backup בטלפון - Syno Manager" />
+<meta name="twitter:description" content="כל משימת Hyper Backup עם המקום שהיא באמת תופסת ביעד, ועוד מכשירי Active Backup for Business וגודל לאחר דה-דופליקציה לפי עומס עבודה." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "גיבוי"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "ניטור Synology Hyper Backup בטלפון - Syno Manager",
+  "description": "כל משימת Hyper Backup עם המקום שהיא באמת תופסת ביעד, ועוד מכשירי Active Backup for Business וגודל לאחר דה-דופליקציה לפי עומס עבודה.",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "אפשר להתחיל גיבוי מהטלפון?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. לכל משימת Hyper Backup יש כפתור Run Now, ומשימה שרצה מציגה פס התקדמות חי שאפשר לבטל."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה ההבדל בין גודל הגיבוי לגודל המקור?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "גודל המקור הוא כמה נתונים המשימה מגבה. גודל הגיבוי הוא כמה מקום היא באמת תופסת ביעד, אחרי דה-דופליקציה ודחיסה. לראות את שניהם יחד זו הדרך להבין מה שני אלה חוסכים לכם - והאם היעד מתמלא מהר יותר ממה שהמקור גדל."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם הוא מציג את Active Backup for Business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. הכרטיס ותצוגת הפירוט שלו מציגים את הגודל הכולל לאחר דה-דופליקציה של מאגר הגיבויים, מפורט לפי עומס עבודה - PCs, שרתים, מכונות וירטואליות והתקני DSM - כל אחד עם מספר ההתקנים שלו, ועוד כל התקן מוגן עם זמן הגיבוי האחרון שלו וכפתור Backup Now."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם הוא יגיד לי אם גיבוי נכשל?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. מצב המשימה מוצג לכל משימה, ומשימה שנכשלה גם מעלה את תג הבריאות במסך הבית, כך שתגלו בלי לחפש."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; גיבוי</div>
+      <div class="eyebrow">גיבוי</div>
+      <h1>הגיבוי <span class="g">באמת רץ?</span></h1>
+      <p>השאלה ששואלים הכי הרבה בעלי NAS, והתשובה במסך אחד. <b>Backup</b> מכסה את Hyper Backup; <b>Active Backup</b> מכסה את Active Backup for Business.</p>
+    </div>
+    <div class="hero-shot"><img alt="משימות Hyper Backup עם גודל גיבוי, גודל מקור והרצה הבאה" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>בדף הזה</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">גודל הגיבוי לעומת גודל המקור</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">כשמשהו נכשל</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>כל משימה, ומה היא עושה</h2>
+      <p class="lead">סיכום בראש המסך - כמה משימות, כמה תקינות, כמה בבעיה - ואז כרטיס לכל משימה.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>מוצג</th><th>משמעות</th></tr></thead>
+      <tbody>
+        <tr><td>שם המשימה</td><td>כפי ששיניתם אותו ב-Hyper Backup.</td></tr>
+        <tr><td>יעד</td><td>לאן היא מגבה - Synology C2, NAS מרוחק, תיקייה מקומית, ספק ענן.</td></tr>
+        <tr><td>מצב</td><td><b>במנוחה</b>, רצה, או כשל. משימה שרצה מציגה פס התקדמות חי.</td></tr>
+        <tr><td>גודל הגיבוי</td><td>כמה מקום המשימה תופסת <b>ביעד שלה</b>.</td></tr>
+        <tr><td>גודל המקור</td><td>כמה נתונים היא מגבה.</td></tr>
+        <tr><td>גיבוי אחרון</td><td>לפני כמה זמן ההרצה האחרונה הסתיימה.</td></tr>
+        <tr><td>גיבוי הבא</td><td>מתי התזמון יופעל שוב.</td></tr>
+        <tr><td>Run Now</td><td>מפעיל את המשימה מיד. משימה שרצה אפשר לבטל.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">שני מספרים, בכוונה</div>
+      <h2>גודל הגיבוי לצד גודל המקור</h2>
+      <p class="lead">רוב הכלים מראים לכם אחד או השני. כשמציגים אותם יחד הם עונים על שאלות ששניהם לא יכולים לענות לבד.</p>
+    </div>
+    <ul class="plain">
+      <li><b>מה דה-דופליקציה ודחיסה חוסכות לכם.</b> מקור של 758 GB שתופס 814 GB ביעד אומר משהו אחר לגמרי ממקור שתופס 300 GB - ורק הזוג חושף זאת.</li>
+      <li><b>האם היעד עומד להתמלא.</b> הגידול במקור והגידול ביעד אינם אותה עקומה, וזו שחשובה לשאלה “האם זה ייכשל בחודש הבא” היא של היעד.</li>
+      <li><b>האם ניהול הגרסאות יוצא משליטה.</b> יעד שגדל הרבה יותר מהר מהמקור שלו מעיד בדרך כלל על מדיניות שמירה שמחזיקה יותר ממה שהתכוונתם.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">כותרת עם מספר ההתקנים והמשימות, אחריה גודל המאגר, ואז ההתקנים עצמם.</p>
+        <h3 style="margin-top:20px">גודל הגיבוי</h3>
+        <ul class="plain">
+          <li><b>הגודל הכולל לאחר דה-דופליקציה</b> של המאגר, לכל נפח.</li>
+          <li><b>מפורט לפי עומס עבודה</b> - PCs, שרתים, מכונות וירטואליות והתקני DSM - כל אחד עם מספר ההתקנים והגודל שלו.</li>
+          <li><b>מסומן כמו שהוא:</b> גודל לאחר דה-דופליקציה ביעד, כפי ש-Active Backup מדווח. לא סכום של גדלי מקור שמתחפש לזה.</li>
+        </ul>
+        <h3 style="margin-top:22px">מכשירים</h3>
+        <ul class="plain">
+          <li><b>כל התקן מוגן</b> עם הכתובת ומערכת ההפעלה שלו.</li>
+          <li><b>גיבוי אחרון</b>, או <b>Never</b> כשלא רץ - וזו הרשומה ששווה לשים אליה לב.</li>
+          <li><b>Backup Now</b> לכל התקן.</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business עם גודל המאגר לפי עומס עבודה והתקנים מוגנים" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">כשמשהו נכשל</div>
+      <h2>מגלים בלי לחפש</h2>
+    </div>
+    <ul class="plain">
+      <li><b>המשימה אומרת זאת</b> בכרטיס שלה, עם המצב שה-NAS דיווח.</li>
+      <li><b>תג הבריאות של מסך הבית</b> משקף זאת, כך שגיבוי שנכשל צף במסך הראשון שאתם רואים ולא שלוש נגיעות פנימה.</li>
+      <li><b>התקן שמעולם לא גובה</b> מוצג כ-<b>Never</b> ולא כשדה ריק או אפס - כי אלה ייקראו “בסדר”.</li>
+    </ul>
+    <div class="note"><b>מה שהאפליקציה לא תעשה:</b> ליצור או לערוך משימת גיבוי, לשנות מדיניות שמירה, או לשחזר מגיבוי. אלה העבודה של Hyper Backup עצמו, ושחזור בפרט הוא לא משהו שמתחילים בטעות בטלפון.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על גיבוי</h2>
+    </div>
+    <details open><summary>אפשר להתחיל גיבוי מהטלפון?</summary><div class="body">כן. לכל משימת Hyper Backup יש כפתור Run Now, ומשימה שרצה מציגה פס התקדמות חי שאפשר לבטל.</div></details>
+    <details><summary>מה ההבדל בין גודל הגיבוי לגודל המקור?</summary><div class="body">גודל המקור הוא כמה נתונים המשימה מגבה. גודל הגיבוי הוא כמה מקום היא באמת תופסת ביעד, אחרי דה-דופליקציה ודחיסה. לראות את שניהם יחד מראה מה אלה חוסכים לכם, והאם היעד מתמלא מהר יותר ממה שהמקור שלו גדל.</div></details>
+    <details><summary>האם הוא מציג את Active Backup for Business?</summary><div class="body">כן - גודל המאגר לאחר דה-דופליקציה מפורט לפי עומס עבודה, כל אחד עם מספר ההתקנים שלו, ועוד כל התקן מוגן עם זמן הגיבוי האחרון שלו וכפתור Backup Now.</div></details>
+    <details><summary>האם הוא יגיד לי אם גיבוי נכשל?</summary><div class="body">כן. מצב המשימה מוצג לכל משימה, ומשימה שנכשלה גם מעלה את תג הבריאות במסך הבית.</div></details>
+    <details><summary>אפשר לשחזר מגיבוי באפליקציה?</summary><div class="body">לא. שחזורים נעשים ב-Hyper Backup או ב-Active Backup, שם נמצאים בורר הגרסאות ובחירת היעד. האפליקציה מנטרת ומפעילה גיבויים; היא לא מחזירה נתונים.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: Control Panel</h2>
+    <p class="lead" style="margin:0 auto 24px">משתמשים, משימות מתוזמנות, UPS וההגדרות של האפליקציה עצמה.</p>
+    <p><a class="btn" href="/he/guide/control-panel/">Control Panel &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

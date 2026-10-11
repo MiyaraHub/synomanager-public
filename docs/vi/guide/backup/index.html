@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giám sát Synology Hyper Backup trên điện thoại - Syno Manager</title>
+<meta name="description" content="Mọi tác vụ Hyper Backup cùng dung lượng thực sự chiếm tại đích, cộng với thiết bị Active Backup for Business và dung lượng sau khử trùng lặp theo từng loại khối lượng công việc." />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="Giám sát Synology Hyper Backup trên điện thoại - Syno Manager" />
+<meta property="og:description" content="Mọi tác vụ Hyper Backup cùng dung lượng thực sự chiếm tại đích, cộng với thiết bị Active Backup for Business và dung lượng sau khử trùng lặp theo từng loại khối lượng công việc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Giám sát Synology Hyper Backup trên điện thoại - Syno Manager" />
+<meta name="twitter:description" content="Mọi tác vụ Hyper Backup cùng dung lượng thực sự chiếm tại đích, cộng với thiết bị Active Backup for Business và dung lượng sau khử trùng lặp theo từng loại khối lượng công việc." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sao lưu"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Giám sát Synology Hyper Backup trên điện thoại - Syno Manager",
+  "description": "Mọi tác vụ Hyper Backup cùng dung lượng thực sự chiếm tại đích, cộng với thiết bị Active Backup for Business và dung lượng sau khử trùng lặp theo từng loại khối lượng công việc.",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể bắt đầu sao lưu từ điện thoại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Mỗi tác vụ Hyper Backup đều có nút Chạy ngay, và tác vụ đang chạy hiển thị thanh tiến độ trực tiếp mà bạn có thể hủy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dung lượng sao lưu khác dung lượng nguồn thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dung lượng nguồn là lượng dữ liệu mà tác vụ đang sao lưu. Dung lượng sao lưu là không gian nó thực sự chiếm tại đích, sau khi khử trùng lặp và nén. Xem cả hai cùng nhau là cách để biết hai thứ đó đang tiết kiệm cho bạn bao nhiêu - và liệu nơi lưu có đang đầy nhanh hơn tốc độ tăng của nguồn hay không."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nó có hiển thị Active Backup for Business không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Thẻ và màn hình chi tiết của nó hiển thị tổng dung lượng đã khử trùng lặp của kho sao lưu, chia theo loại khối lượng công việc - máy tính, máy chủ, máy ảo và thiết bị DSM - mỗi loại kèm số thiết bị, cùng mọi thiết bị được bảo vệ với thời điểm sao lưu gần nhất và nút Sao lưu ngay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nó có báo cho tôi nếu sao lưu thất bại không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Trạng thái được hiển thị theo từng tác vụ, và một tác vụ thất bại cũng làm huy hiệu tình trạng trên màn hình chính tăng mức cảnh báo, nên bạn biết mà không cần đi tìm."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Sao lưu</div>
+      <div class="eyebrow">Sao lưu</div>
+      <h1>Sao lưu <span class="g">đã thực sự chạy chưa?</span></h1>
+      <p>Câu hỏi mà chủ sở hữu NAS hỏi nhiều nhất, được trả lời trong một màn hình. <b>Sao lưu</b> bao gồm Hyper Backup; <b>Active Backup</b> bao gồm Active Backup for Business.</p>
+    </div>
+    <div class="hero-shot"><img alt="Các tác vụ Hyper Backup với dung lượng sao lưu, dung lượng nguồn và lần chạy kế tiếp" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">Dung lượng sao lưu so với dung lượng nguồn</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">Khi có điều gì thất bại</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>Mọi tác vụ, và nó đang làm gì</h2>
+      <p class="lead">Phần tóm tắt ở trên cùng - có bao nhiêu tác vụ, bao nhiêu khỏe mạnh, bao nhiêu gặp sự cố - rồi một thẻ cho mỗi tác vụ.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hiển thị</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Tên tác vụ</td><td>Đúng như bạn đã đặt tên trong Hyper Backup.</td></tr>
+        <tr><td>Đích</td><td>Nơi nó sao lưu đến - Synology C2, một NAS từ xa, một thư mục cục bộ, một nhà cung cấp đám mây.</td></tr>
+        <tr><td>Trạng thái</td><td><b>Nhàn rỗi</b>, đang chạy hoặc thất bại. Tác vụ đang chạy hiển thị thanh tiến độ trực tiếp.</td></tr>
+        <tr><td>Dung lượng sao lưu</td><td>Tác vụ chiếm bao nhiêu không gian <b>tại đích</b>.</td></tr>
+        <tr><td>Dung lượng nguồn</td><td>Lượng dữ liệu nó đang sao lưu.</td></tr>
+        <tr><td>Sao lưu gần nhất</td><td>Lần chạy gần nhất kết thúc cách đây bao lâu.</td></tr>
+        <tr><td>Sao lưu kế tiếp</td><td>Lần kế tiếp lịch chạy sẽ kích hoạt.</td></tr>
+        <tr><td>Chạy ngay</td><td>Bắt đầu tác vụ ngay lập tức. Tác vụ đang chạy có thể bị hủy.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">Hai con số, có chủ ý</div>
+      <h2>Dung lượng sao lưu bên cạnh dung lượng nguồn</h2>
+      <p class="lead">Hầu hết công cụ chỉ cho bạn thấy một trong hai. Khi hiển thị cùng nhau, chúng trả lời những câu hỏi mà riêng từng cái không trả lời được.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Khử trùng lặp và nén đang tiết kiệm cho bạn bao nhiêu.</b> Nguồn 758 GB chiếm 814 GB ở đích cho bạn biết một điều rất khác với nguồn chiếm 300 GB - và chỉ khi có cả cặp số mới thấy được.</li>
+      <li><b>Nơi lưu có sắp đầy hay không.</b> Mức tăng của nguồn và mức tăng của đích không cùng một đường cong, và cái quan trọng cho câu hỏi “tháng sau có thất bại không” là đích.</li>
+      <li><b>Việc lưu nhiều phiên bản có đang vượt kiểm soát không.</b> Một nơi lưu tăng nhanh hơn nhiều so với nguồn thường có nghĩa là chính sách lưu giữ đang giữ nhiều hơn bạn dự định.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Một đầu trang với số thiết bị và tác vụ, rồi dung lượng kho, rồi đến chính các thiết bị.</p>
+        <h3 style="margin-top:20px">Dung lượng sao lưu</h3>
+        <ul class="plain">
+          <li><b>Tổng dung lượng đã khử trùng lặp</b> của kho, theo từng volume.</li>
+          <li><b>Chia theo loại khối lượng công việc</b> - máy tính, máy chủ, máy ảo và thiết bị DSM - mỗi loại kèm số thiết bị và dung lượng riêng.</li>
+          <li><b>Được ghi nhãn đúng bản chất:</b> dung lượng đã khử trùng lặp tại đích, theo báo cáo của Active Backup. Không phải tổng các dung lượng nguồn được ngụy trang thành như vậy.</li>
+        </ul>
+        <h3 style="margin-top:22px">Thiết bị</h3>
+        <ul class="plain">
+          <li><b>Mỗi thiết bị được bảo vệ</b> kèm địa chỉ và hệ điều hành.</li>
+          <li><b>Sao lưu gần nhất</b>, hoặc <b>Chưa bao giờ</b> khi chưa chạy - đó là mục đáng chú ý.</li>
+          <li><b>Sao lưu ngay</b> cho từng thiết bị.</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business với dung lượng kho theo loại khối lượng công việc và các thiết bị được bảo vệ" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">Khi có điều gì thất bại</div>
+      <h2>Bạn biết mà không cần đi tìm</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tác vụ tự báo</b> trên thẻ của nó, kèm trạng thái NAS đã báo cáo.</li>
+      <li><b>Huy hiệu tình trạng trên màn hình chính</b> phản ánh điều đó, nên một lần sao lưu thất bại hiện ra ngay trên màn hình đầu tiên bạn thấy chứ không phải sau ba lần chạm.</li>
+      <li><b>Một thiết bị chưa từng được sao lưu</b> được hiển thị là <b>Chưa bao giờ</b> chứ không phải để trống hay là số không - vì chúng sẽ trông như “ổn”.</li>
+    </ul>
+    <div class="note"><b>Những gì ứng dụng sẽ không làm:</b> tạo hoặc sửa tác vụ sao lưu, đổi chính sách lưu giữ, hay khôi phục từ bản sao lưu. Đó là việc của chính Hyper Backup, và đặc biệt khôi phục không phải việc nên vô tình bắt đầu trên điện thoại.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về sao lưu</h2>
+    </div>
+    <details open><summary>Tôi có thể bắt đầu sao lưu từ điện thoại không?</summary><div class="body">Có. Mỗi tác vụ Hyper Backup đều có nút Chạy ngay, và tác vụ đang chạy hiển thị thanh tiến độ trực tiếp mà bạn có thể hủy.</div></details>
+    <details><summary>Dung lượng sao lưu khác dung lượng nguồn thế nào?</summary><div class="body">Dung lượng nguồn là lượng dữ liệu mà tác vụ đang sao lưu. Dung lượng sao lưu là không gian nó thực sự chiếm tại đích, sau khi khử trùng lặp và nén. Xem cả hai cùng nhau cho thấy hai thứ đó tiết kiệm được bao nhiêu, và liệu nơi lưu có đang đầy nhanh hơn tốc độ tăng của nguồn hay không.</div></details>
+    <details><summary>Nó có hiển thị Active Backup for Business không?</summary><div class="body">Có - dung lượng kho đã khử trùng lặp chia theo loại khối lượng công việc, mỗi loại kèm số thiết bị, cùng mọi thiết bị được bảo vệ với thời điểm sao lưu gần nhất và nút Sao lưu ngay.</div></details>
+    <details><summary>Nó có báo cho tôi nếu sao lưu thất bại không?</summary><div class="body">Có. Trạng thái được hiển thị theo từng tác vụ, và một tác vụ thất bại cũng làm huy hiệu tình trạng trên màn hình chính tăng mức cảnh báo.</div></details>
+    <details><summary>Tôi có thể khôi phục từ bản sao lưu trong ứng dụng không?</summary><div class="body">Không. Việc khôi phục được thực hiện trong Hyper Backup hoặc Active Backup, nơi có bộ chọn phiên bản và lựa chọn đích. Ứng dụng giám sát và kích hoạt sao lưu; nó không đưa dữ liệu trở lại.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Control Panel</h2>
+    <p class="lead" style="margin:0 auto 24px">Người dùng, tác vụ theo lịch, UPS và cài đặt riêng của ứng dụng.</p>
+    <p><a class="btn" href="/vi/guide/control-panel/">Control Panel &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology hálózat, VPN és DDNS monitor - Syno Manager</title>
+<meta name="description" content="Élő adatátvitel interfészenként, aktív kapcsolatok és letiltott IP-címek, kapcsolható DSM-szolgáltatások, VPN-kliensprofilok, valamint DDNS a nyilvános címével." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology hálózat, VPN és DDNS monitor - Syno Manager" />
+<meta property="og:description" content="Élő adatátvitel interfészenként, aktív kapcsolatok és letiltott IP-címek, kapcsolható DSM-szolgáltatások, VPN-kliensprofilok, valamint DDNS a nyilvános címével." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology hálózat, VPN és DDNS monitor - Syno Manager" />
+<meta name="twitter:description" content="Élő adatátvitel interfészenként, aktív kapcsolatok és letiltott IP-címek, kapcsolható DSM-szolgáltatások, VPN-kliensprofilok, valamint DDNS a nyilvános címével." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Hálózat"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology hálózat, VPN és DDNS monitor - Syno Manager",
+  "description": "Élő adatátvitel interfészenként, aktív kapcsolatok és letiltott IP-címek, kapcsolható DSM-szolgáltatások, VPN-kliensprofilok, valamint DDNS a nyilvános címével.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Láthatom, milyen gyorsan visz át adatot most a NAS-om?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Hálózat almenü minden, a NAS-on lévő interfészhez élő letöltési és feltöltési értéket mutat, mindegyikhez saját grafikonnal, kapcsolati sebességgel és címmel. Az összevont interfészek összevontként, az összesített sebességgel jelennek meg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Indíthatok és állíthatok le DSM-szolgáltatásokat az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, azokat a szolgáltatásokat, amelyeket a DSM engedélyez a kliensnek - az SMB, NFS, FTP, rsync és a többi mindegyikének van kapcsolója. Néhány rendszer által kezeltként van megjelölve, ami azt jelenti, hogy a DSM a saját szabályai szerint futtatja őket, és az alkalmazás megmutatja az állapotukat, de nem kínál lehetőséget a módosításra."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Megmutatja az alkalmazás, mely IP-címek vannak letiltva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Kapcsolatok almenü megjeleníti az automatikus letiltás szabályát - hány sikertelen kísérlet mennyi időn belül - és a jelenleg letiltott címek listáját, számláló mögé összecsukva, hogy száz bejegyzés ne temesse el a képernyő többi részét."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Megállapíthatom, hogy csatlakozik-e a VPN-em?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az alkalmazás felsorolja a NAS VPN-kliensprofiljait, és lehetővé teszi, hogy kérje valamelyik csatlakoztatását vagy leválasztását. Nem állítja, hogy melyik aktív, mert az általa olvasott DSM-rekord nem tartalmaz állapotmezőt. Más állítás kitalált adat lenne."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Hálózat</div>
+      <div class="eyebrow">Hálózat</div>
+      <h1>Mi megy <span class="g">be és ki</span></h1>
+      <p>Öt almenü: élő <b>Hálózat</b> adatforgalom, <b>Kapcsolatok</b> automatikus letiltással, kapcsolható <b>Szolgáltatások</b>, <b>VPN</b> profilok, és <b>DDNS</b> a nyilvános címével.</p>
+    </div>
+    <div class="hero-shot"><img alt="Élő hálózati adatforgalom interfészenként" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#throughput">Adatforgalom</a></li>
+      <li><a href="#connections">Kapcsolatok &amp; automatikus letiltás</a></li>
+      <li><a href="#services">Szolgáltatások</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; külső IP-cím</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Hálózat</div>
+      <h2>Élőben, interfészenként</h2>
+      <p class="lead">A NAS minden interfésze saját kártyát kap - beleértve az összevont (bond) és az Open vSwitch interfészeket is, amelyeket sok eszköz kihagy.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Megjelenik</th><th>Jelentés</th></tr></thead>
+      <tbody>
+        <tr><td>Az interfész neve és sebessége</td><td>A DSM által használt név és a kialkudott sebesség - például <code>bond0 (20 Gbps)</code> egy kétportos összevonásnál.</td></tr>
+        <tr><td>Cím</td><td>Az az IP-cím, amellyel az interfész jelenleg rendelkezik.</td></tr>
+        <tr><td>LIVE jelzés</td><td>Zöld, amíg az adatok frissülnek.</td></tr>
+        <tr><td>Letöltés / Feltöltés</td><td>Az aktuális adatforgalom, mindegyik alatt gördülő grafikonnal, hogy egy hirtelen csúcs megkülönböztethető legyen a tartós forgalomtól.</td></tr>
+        <tr><td>Hálózati információk</td><td>Szervernév, átjáró és elsődleges DNS - az a három érték, amelyre szüksége van, ha valami a hálózaton nem oldódik fel.</td></tr>
+        <tr><td>Aktív kapcsolatok</td><td>Egy szám, és út a részletekhez.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Az irány a NAS szemszögéből értendő.</b> A „Letöltés” a NAS-ra érkező forgalom; ha egy fájlt <em>a NAS-ra</em> másol, az a NAS letöltése.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Kapcsolatok</div>
+      <h2>Ki van fent, és kit tiltottak ki</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Három dolog, abban a sorrendben, ahogyan általában szüksége van rájuk:</p>
+        <ul class="plain">
+          <li><b>Automatikus letiltás</b> - be van-e kapcsolva a DSM nyers erő elleni védelme, hány sikertelen kísérlet váltja ki, és milyen időablakban. Ez az a beállítás, amely néhány rossz jelszó után kizár egy telefont.</li>
+          <li><b>Letiltott IP-címek</b> - minden jelenleg tiltott cím, számláló mögött. Száz letiltott cím normális egy internetről elérhető NAS-on, és egyébként eltemetné a képernyőt, ezért összecsukva marad, amíg meg nem nyitja.</li>
+          <li><b>Aktív kapcsolatok</b> - ki van bejelentkezve, melyik címről, melyik protokollon, és mikor kezdődött a munkamenet. HTTP/HTTPS, SMB, NFS, FTP - minden munkamenet néven szerepel.</li>
+        </ul>
+        <div class="note"><b>Egy munkamenetet befejezhet.</b> Az aktív kapcsolat innen kidobható, ami gyors válasz arra, hogy „valami nyitva tart egy fájlt” vagy „miért van még mindig csatlakozva az a cím”.</div>
+      </div>
+      <img alt="Kapcsolatok az automatikus letiltási szabállyal, letiltott IP-címekkel és aktív kapcsolatokkal" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Szolgáltatások</div>
+      <h2>Mit futtat a DSM</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="DSM-szolgáltatások futási állapottal és kapcsolókkal" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Felül egy szám - <b>futó az összesből</b> - majd minden, a DSM által elérhetővé tett szolgáltatás, mindegyik állapotjelzővel és kapcsolóval.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Fájl- és kapcsolatszolgáltatások</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Bármelyiket be- vagy kikapcsolhatja a telefonról.</li>
+          <li><b>Felderítés és nyomtatás</b> - Bonjour nyomtatókörözés, WS-Discovery, a CUPS nyomtatódémon.</li>
+          <li><b>Infrastruktúra</b> - NTP, KMIP és a többi.</li>
+          <li><b>A rendszer által kezelt szolgáltatásokon zár látható.</b> A DSM ezeket a saját szabályai szerint futtatja, ezért az alkalmazás megmutatja az állapotukat, de nem kínál olyan kapcsolót, amelyet úgyis elutasítana. Egy működésképtelen vezérlő rosszabb, mint a vezérlő hiánya.</li>
+        </ul>
+        <div class="note warn"><b>Az SMB kikapcsolása mindenkit megszakít, aki használja.</b> Ezek élő kapcsolók egy futó szerveren, nem egy beállítási képernyő.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Kliensprofilok</h2>
+      <p class="lead">A VPN almenü a NAS-on beállított VPN-<b>kliens</b>profilokat sorolja fel - azokat a kapcsolatokat, amelyeket a NAS kifelé, valahová máshová épít -, és lehetővé teszi, hogy kérje valamelyik csatlakoztatását vagy leválasztását.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Nem állítja, hogy melyik profil csatlakozik, és ez szándékos.</b> A NAS nyugtázza a csatlakozási vagy leválasztási kérést, de az alkalmazás által olvasott DSM-rekord nem tartalmaz állapotmezőt, így nincs miből ítéletet olvasni. Ahelyett hogy következtetne, és magabiztosan tévedne, az alkalmazás ezt közli, és a DSM Hálózat oldalára irányít, amely tudja a választ.</div>
+    <p style="color:var(--steel);margin-top:18px">Ha nincs beállított profil, a képernyő ezt jelzi, és megmondja, hol adhat hozzá egyet: a DSM-ben, a <b>Hálózat &rsaquo; Hálózati interfész</b> alatt.</p>
+      </div>
+      <img alt="A VPN almenü a kliensprofilok listájával" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>A nyilvános címe, és a névhez, amely rá mutat</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Egy kártya, két független fél:</p>
+        <ul class="plain">
+          <li><b>Külső IP-cím</b> - az a nyilvános cím, amellyel a kapcsolata jelenleg rendelkezik.</li>
+          <li><b>Minden DDNS-állomásnév</b>, amelyet a NAS közzétesz, a DSM által tárolt állapotával, az utolsó frissítés idejével és a következő frissítés időpontjával.</li>
+        </ul>
+        <h3 style="margin-top:22px">Frissítés és Frissítés most</h3>
+        <ul class="plain">
+          <li>A <b>Frissítés</b> újraolvassa, amit a DSM jelenleg tárol.</li>
+          <li>A <b>Frissítés most</b> megkéri a NAS-t, hogy tegye közzé újra a címét - ugyanazt teszi, mint a DSM saját gombja.</li>
+        </ul>
+        <div class="note"><b>Mindkét fél külön hibázhat.</b> Ha egy DDNS-szolgáltató nem működik, az nem viszi magával a nyilvános IP-cím leolvasását, és egy nem olvasható IP-cím sem üresíti ki az állomásnév állapotát. Két leolvasás, két ítélet.</div>
+        <div class="note" style="margin-top:14px"><b>Azt jelenti, amit a DSM tárol, nem élő teszt.</b> Az alkalmazás nem oldja fel maga az állomásnevét, hogy ellenőrizze, rámutat-e Önre. Az, hogy egy szolgáltató válaszol egy kérésre, semmit sem mond arról, hogy a rekord helyes-e, ezért az alkalmazás a DSM saját ítéletét közvetíti, nem talál ki egy másodikat.</div>
+      </div>
+      <img alt="DDNS és külső IP-cím, a nyilvános cím és az állomásnév elhomályosítva" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">A képernyőképen látható cím és állomásnév el van mosva - egy valódi NAS adatai.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Hálózat - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Láthatom, milyen gyorsan visz át adatot most a NAS-om?</summary><div class="body">Igen. A Hálózat almenü minden, a NAS-on lévő interfészhez élő letöltési és feltöltési értéket mutat, mindegyikhez saját grafikonnal, kapcsolati sebességgel és címmel. Az összevont interfészek összevontként, az összesített sebességgel jelennek meg.</div></details>
+    <details><summary>Indíthatok és állíthatok le DSM-szolgáltatásokat az alkalmazásból?</summary><div class="body">Igen, azokat a szolgáltatásokat, amelyeket a DSM engedélyez a kliensnek - az SMB, NFS, FTP, rsync és a többi mindegyikének van kapcsolója. Néhány rendszer által kezeltként van megjelölve, ami azt jelenti, hogy a DSM a saját szabályai szerint futtatja őket, és az alkalmazás megmutatja az állapotukat, de nem kínál lehetőséget a módosításra.</div></details>
+    <details><summary>Megmutatja az alkalmazás, mely IP-címek vannak letiltva?</summary><div class="body">Igen. A Kapcsolatok almenü megjeleníti az automatikus letiltás szabályát és a jelenleg letiltott címek listáját, számláló mögé összecsukva, hogy száz bejegyzés ne temesse el a képernyő többi részét.</div></details>
+    <details><summary>Megállapíthatom, hogy csatlakozik-e a VPN-em?</summary><div class="body">Az alkalmazás felsorolja a NAS VPN-kliensprofiljait, és lehetővé teszi, hogy kérje valamelyik csatlakoztatását vagy leválasztását. Nem állítja, hogy melyik aktív, mert az általa olvasott DSM-rekord nem tartalmaz állapotmezőt. A DSM Hálózat oldala tudja a választ.</div></details>
+    <details><summary>Miért különbözik a nyilvános IP-címem attól, amit egy weboldal mutat?</summary><div class="body">Mert ez az a cím, amellyel a NAS kapcsolata rendelkezik, a DSM-en keresztül leolvasva. Ha a telefonja mobiladatot használ, annak más címe van. Ez két különböző hálózat, és mindkét leolvasás helyes.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Fájlok</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, megosztott mappák, jegyzetek, dokumentumok és névjegyek.</p>
+    <p><a class="btn" href="/hu/guide/files/">Fájlok &amp; megosztások &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

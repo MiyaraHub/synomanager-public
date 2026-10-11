@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Monitorizează Synology Hyper Backup de pe telefon - Syno Manager</title>
+<meta name="description" content="Fiecare sarcină Hyper Backup, cu spațiul pe care îl ocupă de fapt la destinație, plus dispozitivele Active Backup for Business și dimensiunea deduplicată pe tip de sarcină." />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="Monitorizează Synology Hyper Backup de pe telefon - Syno Manager" />
+<meta property="og:description" content="Fiecare sarcină Hyper Backup, cu spațiul pe care îl ocupă de fapt la destinație, plus dispozitivele Active Backup for Business și dimensiunea deduplicată pe tip de sarcină." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Monitorizează Synology Hyper Backup de pe telefon - Syno Manager" />
+<meta name="twitter:description" content="Fiecare sarcină Hyper Backup, cu spațiul pe care îl ocupă de fapt la destinație, plus dispozitivele Active Backup for Business și dimensiunea deduplicată pe tip de sarcină." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Copie de rezervă"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Monitorizează Synology Hyper Backup de pe telefon - Syno Manager",
+  "description": "Fiecare sarcină Hyper Backup, cu spațiul pe care îl ocupă de fapt la destinație, plus dispozitivele Active Backup for Business și dimensiunea deduplicată pe tip de sarcină.",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot porni un backup de pe telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Fiecare sarcină Hyper Backup are un buton Rulează acum, iar o sarcină în curs afișează o bară de progres live pe care o poți anula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Care este diferența dintre dimensiunea backupului și dimensiunea sursei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dimensiunea sursei este cât de multe date salvează sarcina. Dimensiunea backupului este cât spațiu ocupă de fapt la destinație, după deduplicare și comprimare. Vederea lor împreună arată cât economisești prin ele - și dacă o destinație se umple mai repede decât crește sursa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Arată și Active Backup for Business?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Cardul și vizualizarea sa detaliată arată dimensiunea totală deduplicată a depozitului de backup, defalcată pe tip de sarcină - PC-uri, servere, mașini virtuale și dispozitive DSM - fiecare cu numărul de dispozitive, plus fiecare dispozitiv protejat cu ora ultimului backup și un buton Backup acum."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Îmi spune dacă un backup a eșuat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Starea este afișată pentru fiecare sarcină, iar o sarcină eșuată ridică și indicatorul de stare de pe ecranul principal, așa că afli fără să cauți."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Backup</div>
+      <div class="eyebrow">Copie de rezervă</div>
+      <h1>S-a rulat <span class="g">de fapt</span> backupul?</h1>
+      <p>Întrebarea pe care un proprietar de NAS o pune cel mai des, cu răspuns pe un singur ecran. <b>Backup</b> acoperă Hyper Backup; <b>Active Backup</b> acoperă Active Backup for Business.</p>
+    </div>
+    <div class="hero-shot"><img alt="Sarcini Hyper Backup cu dimensiunea backupului, dimensiunea sursei și următoarea rulare" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">Dimensiunea backupului față de dimensiunea sursei</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">Când ceva eșuează</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>Fiecare sarcină și ce face</h2>
+      <p class="lead">Un rezumat sus - câte sarcini, câte sănătoase, câte în dificultate - apoi un card pentru fiecare sarcină.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Afișat</th><th>Semnificație</th></tr></thead>
+      <tbody>
+        <tr><td>Numele sarcinii</td><td>Așa cum ai numit-o în Hyper Backup.</td></tr>
+        <tr><td>Destinație</td><td>Unde face backup - Synology C2, un NAS la distanță, un dosar local, un furnizor cloud.</td></tr>
+        <tr><td>Stare</td><td><b>Inactivă</b>, în curs sau un eșec. O sarcină în curs afișează o bară de progres live.</td></tr>
+        <tr><td>Dimensiunea backupului</td><td>Cât spațiu ocupă sarcina <b>la destinație</b>.</td></tr>
+        <tr><td>Dimensiunea sursei</td><td>Câte date salvează.</td></tr>
+        <tr><td>Ultimul backup</td><td>Cât timp a trecut de la terminarea ultimei rulări.</td></tr>
+        <tr><td>Următorul backup</td><td>Când se declanșează următoarea programare.</td></tr>
+        <tr><td>Rulează acum</td><td>Pornește sarcina imediat. O sarcină în curs poate fi anulată.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">Două numere, intenționat</div>
+      <h2>Dimensiunea backupului lângă dimensiunea sursei</h2>
+      <p class="lead">Majoritatea uneltelor îți arată una sau alta. Împreună răspund la întrebări la care niciuna singură nu poate răspunde.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Cât economisești prin deduplicare și comprimare.</b> O sursă de 758 GB care ocupă 814 GB la destinație spune ceva foarte diferit de una care ocupă 300 GB - și doar perechea o dezvăluie.</li>
+      <li><b>Dacă o destinație este pe cale să se umple.</b> Creșterea sursei și creșterea destinației nu sunt aceeași curbă, iar cea care contează pentru „va eșua luna viitoare” este destinația.</li>
+      <li><b>Dacă versionarea scapă de sub control.</b> O destinație care crește mult mai repede decât sursa înseamnă de obicei o politică de retenție care păstrează mai mult decât ai vrut.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Un antet cu numărul de dispozitive și sarcini, apoi dimensiunea depozitului, apoi dispozitivele propriu-zise.</p>
+        <h3 style="margin-top:20px">Dimensiunea backupului</h3>
+        <ul class="plain">
+          <li><b>Dimensiunea totală deduplicată</b> a depozitului, pe volum.</li>
+          <li><b>Defalcată pe tip de sarcină</b> - PC-uri, servere, mașini virtuale și dispozitive DSM - fiecare cu propriul număr de dispozitive și propria dimensiune.</li>
+          <li><b>Etichetată ca ceea ce este:</b> dimensiune deduplicată la destinație, așa cum o raportează Active Backup. Nu o sumă a dimensiunilor surselor prezentată drept ea.</li>
+        </ul>
+        <h3 style="margin-top:22px">Dispozitive</h3>
+        <ul class="plain">
+          <li><b>Fiecare dispozitiv protejat</b> cu adresa și sistemul de operare.</li>
+          <li><b>Ultimul backup</b> sau <b>Niciodată</b> când nu a rulat - intrarea care merită observată.</li>
+          <li><b>Backup acum</b> pentru fiecare dispozitiv.</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business cu dimensiunea depozitului pe tip de sarcină și dispozitivele protejate" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">Când ceva eșuează</div>
+      <h2>Afli fără să cauți</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Sarcina o spune</b> pe cardul ei, cu starea raportată de NAS.</li>
+      <li><b>Indicatorul de stare de pe ecranul principal</b> o reflectă, deci un backup eșuat apare pe primul ecran pe care îl vezi, nu după trei atingeri.</li>
+      <li><b>Un dispozitiv care nu a fost niciodată salvat</b> este afișat ca <b>Niciodată</b>, nu ca un spațiu gol sau un zero - acelea s-ar citi ca „totul e bine”.</li>
+    </ul>
+    <div class="note"><b>Ce nu face aplicația:</b> nu creează sau editează o sarcină de backup, nu schimbă o politică de retenție și nu restaurează dintr-un backup. Acestea sunt treaba Hyper Backup, iar o restaurare în special nu e ceva ce vrei să pornești din greșeală de pe telefon.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre copia de rezervă</h2>
+    </div>
+    <details open><summary>Pot porni un backup de pe telefon?</summary><div class="body">Da. Fiecare sarcină Hyper Backup are un buton Rulează acum, iar o sarcină în curs afișează o bară de progres live pe care o poți anula.</div></details>
+    <details><summary>Care este diferența dintre dimensiunea backupului și dimensiunea sursei?</summary><div class="body">Dimensiunea sursei este cât de multe date salvează sarcina. Dimensiunea backupului este cât spațiu ocupă de fapt la destinație, după deduplicare și comprimare. Vederea lor împreună arată cât economisești prin ele și dacă o destinație se umple mai repede decât crește sursa.</div></details>
+    <details><summary>Arată și Active Backup for Business?</summary><div class="body">Da - dimensiunea deduplicată a depozitului, defalcată pe tip de sarcină, fiecare cu numărul de dispozitive, plus fiecare dispozitiv protejat cu ora ultimului backup și un buton Backup acum.</div></details>
+    <details><summary>Îmi spune dacă un backup a eșuat?</summary><div class="body">Da. Starea este afișată pentru fiecare sarcină, iar o sarcină eșuată ridică și indicatorul de stare de pe ecranul principal.</div></details>
+    <details><summary>Pot restaura dintr-un backup în aplicație?</summary><div class="body">Nu. Restaurările se fac în Hyper Backup sau Active Backup, unde se află selectorul de versiuni și alegerea țintei. Aplicația monitorizează și declanșează backupuri; nu pune datele înapoi.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Panou de control</h2>
+    <p class="lead" style="margin:0 auto 24px">Utilizatori, sarcini programate, UPS și setările proprii ale aplicației.</p>
+    <p><a class="btn" href="/ro/guide/control-panel/">Panou de control &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

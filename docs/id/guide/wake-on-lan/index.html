@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN untuk NAS Synology - Syno Manager</title>
+<meta name="description" content="Bangunkan Synology yang tertidur, atau mesin apa pun di jaringan Anda melaluinya - yang berfungsi dari mana saja. Apa yang butuh VPN atau penerusan router, dinyatakan terus terang." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN untuk NAS Synology - Syno Manager" />
+<meta property="og:description" content="Bangunkan Synology yang tertidur, atau mesin apa pun di jaringan Anda melaluinya - yang berfungsi dari mana saja. Apa yang butuh VPN atau penerusan router, dinyatakan terus terang." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN untuk NAS Synology - Syno Manager" />
+<meta name="twitter:description" content="Bangunkan Synology yang tertidur, atau mesin apa pun di jaringan Anda melaluinya - yang berfungsi dari mana saja. Apa yang butuh VPN atau penerusan router, dinyatakan terus terang." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN untuk NAS Synology - Syno Manager",
+  "description": "Bangunkan Synology yang tertidur, atau mesin apa pun di jaringan Anda melaluinya - yang berfungsi dari mana saja. Apa yang butuh VPN atau penerusan router, dinyatakan terus terang.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "id",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Bisakah saya membangunkan NAS dari mana saja?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hanya jika ada jalur ke jaringan Anda yang tidak bergantung pada NAS yang sedang menyala - VPN ke jaringan, atau router yang dikonfigurasi untuk meneruskan Wake-on-LAN. NAS yang mati tidak bisa meneruskan paket wake-nya sendiri, dan QuickConnect tidak bisa menjangkau NAS yang mati. Di jaringan yang sama, langsung berfungsi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bisakah saya membangunkan PC lewat NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bisa, dan yang ini berfungsi dari mana saja, selama NAS itu sendiri menyala. Anda meminta NAS lewat koneksi normal Anda dan NAS menyiarkan magic packet di LAN untuk Anda. Jalurnya sama dengan yang dipakai aplikasi DS Router milik Synology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dari mana alamat MAC NAS berasal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplikasi menangkapnya otomatis saat pertama kali Anda terhubung, jadi Anda tidak perlu mencarinya."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apa yang saya butuhkan untuk menambahkan perangkat lain?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nama yang mudah Anda kenali dan alamat MAC-nya. Biasanya MAC bisa ditemukan di daftar perangkat router Anda, atau pada mesinnya sendiri di pengaturan jaringan."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Nyalakan semuanya <span class="g">dari sofa</span></h1>
+      <p>Tombol <b>Bangunkan</b> di samping Hubungkan pada daftar perangkat untuk NAS itu sendiri, dan layar <b>Bangunkan perangkat</b> untuk semua yang lain di jaringan Anda. Salah satunya berfungsi dari mana saja; yang lain punya catatan jujur.</p>
+    </div>
+    <div class="hero-shot"><img alt="Layar Bangunkan perangkat" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tabel yang jujur</div>
+      <h2>Apa yang berfungsi dari mana</h2>
+      <p class="lead">Wake-on-LAN adalah siaran di jaringan lokal. Semua hal tentang apa yang berfungsi dan tidak berfungsi berpangkal dari satu fakta itu, jadi inilah penjelasannya secara terang-terangan, bukan terkubur di catatan kaki.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Yang ingin Anda bangunkan</th><th>Posisi Anda</th><th>Berfungsi?</th><th>Alasan</th></tr></thead>
+      <tbody>
+        <tr><td>NAS</td><td>Di jaringan yang sama</td><td class="yes">Ya</td><td>Ponsel Anda menyiarkan paketnya langsung. Tidak ada yang perlu disiapkan.</td></tr>
+        <tr><td>Perangkat lain</td><td>Di jaringan yang sama</td><td class="yes">Ya</td><td>Sama - ponsel atau NAS bisa mengirimkannya.</td></tr>
+        <tr><td>Perangkat lain, NAS menyala</td><td>Di mana saja</td><td class="yes">Ya</td><td><b>NAS meneruskannya untuk Anda.</b> Anda menjangkau NAS lewat koneksi normal dan NAS menyiarkannya di LAN. Ini jalur DS Router.</td></tr>
+        <tr><td>NAS itu sendiri, saat mati</td><td>Di luar jaringan Anda</td><td class="no">Perlu penyiapan</td><td>NAS yang mati tidak bisa meneruskan wake-nya sendiri, dan QuickConnect tidak bisa menjangkau NAS yang mati. Anda memerlukan <b>VPN</b> ke dalam jaringan, atau router yang meneruskan <b>UDP port 9</b> ke alamat broadcast LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Baris tengah adalah yang paling berguna.</b> Membangunkan desktop di rumah dari dalam kereta berfungsi, dan sama sekali tidak memerlukan konfigurasi router - karena NAS yang selalu menyala-lah yang melakukan siaran.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS</div>
+      <h2>Membangunkan DiskStation Anda</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Tidak ada yang perlu dikonfigurasi.</b> Aplikasi menangkap alamat MAC NAS saat pertama kali Anda terhubung, jadi tombolnya sudah siap sebelum Anda membutuhkannya.</li>
+      <li><b>Buka Pengaturan &rsaquo; Kelola Perangkat NAS.</b></li>
+      <li><b>Ketuk Bangunkan</b> di samping NAS.</li>
+      <li><b>Beri waktu sebentar</b> lalu ketuk Hubungkan. NAS butuh waktu untuk booting, dan aplikasi tidak akan berpura-pura NAS sudah menyala sebelum menjawab.</li>
+    </ol>
+    <div class="note warn"><b>Wake-on-LAN harus diaktifkan juga di NAS.</b> Di DSM, pada <b>Control Panel &rsaquo; Hardware &amp; Power &rsaquo; General</b>. NAS yang fiturnya dimatikan akan mengabaikan paket itu siapa pun pengirimnya.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Semua yang lain</div>
+      <h2>Membangunkan perangkat lain lewat NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Pengaturan &rsaquo; Bangunkan perangkat</b>. Tambahkan mesin mana pun di jaringan Anda dengan nama dan alamat MAC, dan NAS mengirim magic packet untuk Anda dari dalam jaringan.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Ketuk Tambah perangkat.</b></li>
+          <li><b>Beri nama</b> yang mudah Anda kenali - “Desktop”, “PC Game”, “Server”.</li>
+          <li><b>Masukkan alamat MAC-nya.</b> Daftar perangkat di router Anda biasanya tempat termudah untuk menemukannya.</li>
+          <li><b>Simpan.</b> Perangkat muncul di daftar dengan tombol Bangunkan sendiri.</li>
+        </ol>
+        <div class="note"><b>Karena NAS yang mengirim, ini berfungsi saat Anda sedang di luar</b> - lewat data seluler, lewat QuickConnect, dari mana saja Anda bisa menjangkau NAS. Begitulah cara aplikasi router Synology sendiri bekerja, dan itulah mengapa ini layak disiapkan meskipun Anda tidak pernah membangunkan NAS itu sendiri.</div>
+      </div>
+      <img alt="Layar Bangunkan perangkat dengan kondisi kosong dan tombol Tambah perangkat" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pada mesin target</div>
+      <h2>Apa yang harus terpenuhi agar wake berhasil</h2>
+      <p class="lead">Jika paket terkirim dan tidak terjadi apa-apa, hampir selalu salah satu dari ini - tidak ada yang bisa dilihat atau diperbaiki aplikasi dari luar.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN diaktifkan di BIOS atau UEFI mesin</b>, yang sering disebut “Wake on PCIe” atau “Power on by PCI-E”.</li>
+      <li><b>Diaktifkan juga pada adaptor jaringan.</b> Di Windows: Device Manager, properti adaptor, Power Management, “Allow this device to wake the computer”.</li>
+      <li><b>Fast Startup dimatikan di Windows.</b> Jika aktif, PC yang dimatikan sebenarnya hibernasi dan sering mengabaikan paket tersebut.</li>
+      <li><b>Biasanya kabel.</b> Wake lewat Wi-Fi memerlukan dukungan perangkat keras dan driver tertentu; Ethernet jauh lebih andal.</li>
+      <li><b>Mesin masih mendapat daya dari stopkontak.</b> Magic packet membutuhkan adaptor jaringan yang mendapat daya siaga.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ Wake-on-LAN</h2>
+    </div>
+    <details open><summary>Bisakah saya membangunkan NAS dari mana saja?</summary><div class="body">Hanya jika ada jalur ke jaringan Anda yang tidak bergantung pada NAS yang sedang menyala - VPN, atau router yang dikonfigurasi untuk meneruskan Wake-on-LAN. NAS yang mati tidak bisa meneruskan paket wake-nya sendiri, dan QuickConnect tidak bisa menjangkau NAS yang mati. Di jaringan yang sama, langsung berfungsi.</div></details>
+    <details><summary>Bisakah saya membangunkan PC lewat NAS?</summary><div class="body">Bisa, dan ini berfungsi dari mana saja selama NAS itu sendiri menyala. Anda meminta NAS lewat koneksi normal dan NAS menyiarkan magic packet di LAN untuk Anda.</div></details>
+    <details><summary>Dari mana alamat MAC NAS berasal?</summary><div class="body">Aplikasi menangkapnya otomatis saat pertama kali Anda terhubung, jadi Anda tidak perlu mencarinya.</div></details>
+    <details><summary>Apa yang saya butuhkan untuk menambahkan perangkat lain?</summary><div class="body">Nama yang mudah Anda kenali dan alamat MAC-nya, yang biasanya ada di daftar perangkat router Anda.</div></details>
+    <details><summary>Saya sudah mengirim wake tetapi tidak terjadi apa-apa.</summary><div class="body">Pastikan Wake-on-LAN aktif pada mesin target - di BIOS-nya, pada adaptor jaringannya, dan dengan Fast Startup Windows dimatikan. Periksa juga bahwa mesin memakai Ethernet kabel, dan bahwa NAS mengaktifkan Wake-on-LAN di Control Panel jika NAS itulah yang Anda bangunkan.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: widget</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS Anda di layar beranda, dengan stempel waktu yang jujur.</p>
+    <p><a class="btn" href="/id/guide/widgets/">Widget layar beranda &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

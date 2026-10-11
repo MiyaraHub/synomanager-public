@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>連接你的 Synology NAS - Syno Manager 設定</title>
+<meta name="description" content="不到一分鐘，新增你的 Synology NAS：位址與連接埠、HTTPS 與自簽憑證、QuickConnect、兩步驟驗證，以及無法連線時該怎麼辦。" />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="連接你的 Synology NAS - Syno Manager 設定" />
+<meta property="og:description" content="不到一分鐘，新增你的 Synology NAS：位址與連接埠、HTTPS 與自簽憑證、QuickConnect、兩步驟驗證，以及無法連線時該怎麼辦。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="連接你的 Synology NAS - Syno Manager 設定" />
+<meta name="twitter:description" content="不到一分鐘，新增你的 Synology NAS：位址與連接埠、HTTPS 與自簽憑證、QuickConnect、兩步驟驗證，以及無法連線時該怎麼辦。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "入門指南"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "連接你的 Synology NAS - Syno Manager 設定",
+  "description": "不到一分鐘，新增你的 Synology NAS：位址與連接埠、HTTPS 與自簽憑證、QuickConnect、兩步驟驗證，以及無法連線時該怎麼辦。",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "使用 Syno Manager 需要準備什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一台執行 DSM 7.0 或更新版本的 Synology NAS、該 NAS 上的 DSM 帳號，以及一台執行 Android 7+、iOS 16+、macOS 11+ 或 Windows 的裝置。NAS 上不需要安裝任何東西 - App 使用的是 DSM 本來就有的 API。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "要輸入什麼位址和連接埠？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在自己的網路中，輸入 NAS 的本機 IP 位址與 DSM 的連接埠 - 啟用 HTTPS 時為 5001，關閉 HTTPS 時為 5000。你也可以輸入主機名稱或自訂網域。如果你不想處理位址，可以把連線類型切換為 QuickConnect，然後輸入你的 QuickConnect ID。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼「驗證 SSL 憑證」預設是關閉的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為多數 DiskStation 使用的是自簽憑證，它不是由公開機構簽發，因此即使連線仍然是加密的，驗證也會失敗。關閉驗證就會接受該憑證。如果你安裝了正式的憑證 - 例如來自 Let's Encrypt - 請開啟驗證。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要在路由器上開啟連接埠嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。在自己的網路中，不需要轉送任何連接埠。從外部連線時，由 QuickConnect 為你中繼連線，VPN 也可以。只有在你特別想要從網際網路直接連入，或想從網路外部透過 RTSP 觀看攝影機即時影像時，才需要連接埠轉送。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "顯示連線逾時，該怎麼辦？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "這個訊息代表 App 完全沒有得到回應，幾乎都是位址、連接埠或手機所在的網路有問題。請確認 HTTPS 與連接埠相符、若使用本機 IP 則手機要與 NAS 在同一個網路，並確認手機瀏覽器能以相同的位址與連接埠開啟 DSM 自己的網頁介面。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 開始使用</div>
+      <div class="eyebrow">入門指南</div>
+      <h1><span class="g">不到一分鐘</span>就連上</h1>
+      <p>NAS 上不需要安裝任何東西。Syno Manager 與 DSM 本來就在運作的 API 溝通 - 你只要告訴它 DiskStation 在哪裡、你是誰就好。</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager 中的「新增 NAS」表單" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#requirements">您需要準備的東西</a></li>
+      <li><a href="#address">找到你的 NAS</a></li>
+      <li><a href="#form">表單上的每個欄位</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">兩步驟驗證</a></li>
+      <li><a href="#test">測試並儲存</a></li>
+      <li><a href="#next">接下來會發生什麼</a></li>
+      <li><a href="#trouble">無法連線時</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">第零步</div>
+      <h2>您需要準備的東西</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>需求</th><th>詳細說明</th></tr></thead>
+      <tbody>
+        <tr><td>一台 Synology NAS</td><td>任何執行 <b>DSM 7.0 或更新版本</b>的機型。上面不需要安裝任何東西 - App 使用的是 DSM 網頁介面使用的同一批 API。</td></tr>
+        <tr><td>一個 DSM 帳號</td><td>你平常的 DSM 使用者名稱與密碼。管理員帳號看得到所有內容；非管理員則只看得到 DSM 允許的內容，App 會隱藏其餘部分，而不是顯示會被拒絕的控制項。</td></tr>
+        <tr><td>你的裝置</td><td><b>Android 7.0</b> 或更新版本、<b>iOS 16.0</b> 或更新版本、<b>macOS 11.0</b> 或更新版本，或 <b>Windows</b>。四個平台都是同一個 App。</td></tr>
+        <tr><td>連到 NAS 的路徑</td><td>同一個區域網路、連入該網路的 VPN、自訂網域，或 QuickConnect。任何一種都夠用。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>只是查看並不需要管理員帳號。</b>任何 DSM 使用者都能使用監控功能。控制動作 - 重新啟動容器、執行備份、退出磁碟 - 則需要 DSM 本身對該動作要求的權限，App 會如實回報被拒絕，而不是假裝成功。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">它在哪裡</div>
+      <h2>找到你的 NAS 位址</h2>
+      <p class="lead">如果你已經用瀏覽器開啟過 DSM，網址列就有你需要的一切：主機與連接埠，就是 App 要求的兩個值。</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>從 DSM 本身</h3>
+        <ul class="plain">
+          <li><b>控制台 &rsaquo; 網路 &rsaquo; 網路介面</b>會顯示 NAS 在每個介面上的 IP 位址。</li>
+          <li><b>控制台 &rsaquo; 網路 &rsaquo; DSM 設定</b>會顯示 DSM 監聽的 HTTP 與 HTTPS 連接埠。除非有人更改過，否則是 5000 與 5001。</li>
+        </ul>
+        <h3 style="margin-top:22px">從瀏覽器</h3>
+        <p style="color:var(--steel)">你輸入什麼來連到 DSM，App 就要什麼。在 <code>https://192.168.1.20:5001</code> 中，主機是 <code>192.168.1.20</code>，連接埠是 <code>5001</code>，且 HTTPS 為開啟。</p>
+      </div>
+      <div>
+        <h3>從路由器</h3>
+        <p style="color:var(--steel)">多數路由器會依名稱列出已連線的裝置。NAS 會以伺服器名稱出現 - 也就是在<b>控制台 &rsaquo; 資訊中心</b>中設定的那個。</p>
+        <div class="note"><b>為它指定固定位址。</b>如果路由器在重新開機後給 NAS 不同的 IP，App 就會找不到它。在路由器上設定 DHCP 保留，或在 NAS 上設定固定位址，就能避免這個問題。使用主機名稱或自訂網域也可以，而且不在乎 IP 是什麼。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">新增 NAS</div>
+      <h2>表單上的每個欄位</h2>
+      <p class="lead">在裝置清單上點選 <b>+ 新增 NAS</b>。表單很短，只有三個欄位沒有合理的預設值。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>欄位</th><th>要填什麼</th></tr></thead>
+          <tbody>
+            <tr><td>NAS 暱稱</td><td>任何你喜歡的名稱 - 只有你自己看得到。有多台 NAS 時會很有用。</td></tr>
+            <tr><td>連線類型</td><td>輸入位址時選擇<b>直接 IP</b>，使用 QuickConnect ID 時選擇 <b>QuickConnect</b>。請參閱<a href="#quickconnect">下方</a>說明。</td></tr>
+            <tr><td>主機 / IP 位址</td><td>NAS 的本機 IP、主機名稱，或指向它的自訂網域。</td></tr>
+            <tr><td>連接埠</td><td>啟用 HTTPS 時為 <b>5001</b>，關閉時為 <b>5000</b> - 除非 DSM 改用了其他連接埠，那就填那些。</td></tr>
+            <tr><td>HTTPS</td><td>預設為開啟，建議保持開啟。手機與 NAS 之間的一切都會加密，包括你的密碼。</td></tr>
+            <tr><td>驗證 SSL 憑證</td><td>預設為關閉，因為多數 DiskStation 使用的是<b>自簽</b>憑證，無法對公開機構進行驗證。無論開關，連線仍然是加密的。只有在你安裝了正式憑證時才需開啟。</td></tr>
+            <tr><td>使用者名稱</td><td>你的 DSM 帳號名稱。<b>支援含有空格的使用者名稱</b> - App 會正確處理引號，這是其他用戶端常常失敗的原因。</td></tr>
+            <tr><td>密碼</td><td>你的 DSM 密碼。眼睛圖示可在輸入時顯示密碼。密碼會寫入平台鑰匙圈或金鑰儲存區，絕不以純文字儲存。</td></tr>
+            <tr><td>兩步驟驗證</td><td>如果你的 DSM 帳號使用驗證器 App，請開啟此項。請參閱<a href="#twofactor">下方</a>說明。</td></tr>
+            <tr><td>透過 DSM 連接埠通道傳輸攝影機即時影像</td><td>預設為關閉。<b>關閉</b>時，攝影機即時影像會直接連到連接埠 554 上的 RTSP，在自己的網路中速度較快，但無論你身在何處，都必須能連到該連接埠。<b>開啟</b>時，影像串流會透過你已在使用的 DSM HTTPS 連接埠傳輸，因此不必對外開放 554，也能從外部觀看即時影像。請參閱 <a href="/zh-hant/guide/media/#cameras">Surveillance Station</a>。</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="「新增 NAS」表單" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">不必輸入位址</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">將<b>連線類型</b>切換為 <b>QuickConnect</b>，輸入你的 QuickConnect ID，取代主機與連接埠。Synology 的中繼服務會找到你的 NAS，不論它在哪裡，也完全不需要設定路由器。</p>
+    </div>
+    <ul class="plain">
+      <li><b>你的 ID 在哪裡。</b>在 DSM 的<b>控制台 &rsaquo; 外部存取 &rsaquo; QuickConnect</b>。必須先在那裡啟用。</li>
+      <li><b>代價是什麼。</b>中繼會增加延遲，所以縮圖與即時影像的載入速度會比在自己的網路中慢。一切功能仍可正常使用。</li>
+      <li><b>省下了什麼。</b>不必轉送連接埠、不必隨時更新動態 DNS，你這一端也不會有任何東西暴露在網際網路上。</li>
+    </ul>
+    <div class="note"><b>你可以兩種都用。</b>同一台 NAS 新增兩次 - 一次用本機 IP，一次用 QuickConnect - 在家用快速的那筆，外出用穩定的那筆。它們是各自獨立的項目，版面也各自獨立，哪個離你近就用哪個。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>兩步驟驗證</h2>
+      <p class="lead">如果你的 DSM 帳號受驗證器 App 保護，請在儲存前開啟<b>兩步驟驗證 (2FA)</b>。密碼通過後，App 會立刻要求你輸入六位數驗證碼。</p>
+    </div>
+    <ol class="steps">
+      <li>在「新增 NAS」表單上<b>開啟切換開關</b>。</li>
+      <li><b>儲存 &amp; 連線。</b>App 會登入，DSM 會要求第二重驗證。</li>
+      <li><b>輸入驗證器</b>中的驗證碼。</li>
+      <li><b>選擇是否記住這台裝置。</b>如果記住，DSM 會發出裝置權杖，這支手機就不會再被要求輸入驗證碼。權杖的儲存方式與密碼相同，都存放在平台鑰匙圈。</li>
+    </ol>
+    <div class="note warn"><b>如果驗證碼被拒絕</b>，請檢查時鐘。驗證器的驗證碼是依目前時間產生的，所以手機或 NAS 的時鐘若有偏差，就會產生或預期錯誤的數字。NAS 的時間來源會顯示在<a href="/zh-hant/guide/home/">主畫面</a>的快速統計列。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">送出之前</div>
+      <h2>測試連線，然後儲存</h2>
+      <p class="lead"><b>測試連線</b>會嘗試位址、連接埠與憑證，並告訴你發生了什麼事，但不會儲存任何內容。這是找出打字錯誤最快的方法，因為它能區分「連不到 NAS」與「連到了，但密碼不對」。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>訊息的意思</th><th>意思</th></tr></thead>
+      <tbody>
+        <tr><td>連線逾時</td><td>沒有任何回應。問題出在位址、連接埠或手機所在的網路 - 不是憑證，因為憑證根本還沒被嘗試。</td></tr>
+        <tr><td>憑證無效</td><td>NAS 有回應，但拒絕了登入。位址與連接埠是對的；使用者名稱或密碼不對。</td></tr>
+        <tr><td>憑證錯誤</td><td>已啟用 HTTPS，且對自簽憑證同時開啟了<b>驗證 SSL 憑證</b>。請關閉驗證。</td></tr>
+        <tr><td>需要 2FA</td><td>此帳號使用兩步驟驗證，但切換開關是關閉的。請開啟後再試一次。</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>儲存 &amp; 連線</b>會儲存此項目並登入。你會進入主畫面，而你的 NAS 已經在載入中。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">你已進入</div>
+      <h2>第一次連線時會發生什麼事</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="連線後的 Syno Manager 主畫面" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>App 會詢問你的 NAS 能做什麼。</b>它查詢 DSM 的 API 目錄並保留清單。這就是為什麼沒有 Surveillance Station 的 NAS 永遠不會出現攝影機分頁，也是安裝套件後它的畫面就會出現的原因。</li>
+          <li><b>所有支援的卡片都已開啟。</b>新卡片會直接顯示而不是隱藏，所以你的 NAS 支援的功能，你就看得到。<a href="/zh-hant/guide/customizing/">自訂</a>是用來關閉項目的地方，不是用來尋找功能的地方。</li>
+          <li><b>會擷取 NAS 的 MAC 位址</b>，讓<a href="/zh-hant/guide/wake-on-lan/">網路喚醒 (Wake-on-LAN)</a> 之後能夠運作，不需要你自己去查。</li>
+          <li><b>只會出現一次簡短的歡迎畫面。</b>它會說明 App 的功能，以及在哪裡變更設定。有個核取方塊可以讓它不再出現。</li>
+          <li><b>需要說明的畫面會出現說明卡片。</b>長按卡片即可關閉；可在<a href="/zh-hant/guide/settings/#help">設定</a>中逐一還原。</li>
+        </ul>
+        <div class="note"><b>連線後才安裝了套件？</b>功能清單是在連線時讀取的，所以連線後才安裝的套件還沒有分頁。下拉重新整理，或重新開啟 App，新畫面就會出現。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">無法連線時</div>
+      <h2>簡短檢查清單</h2>
+    </div>
+    <ol class="steps">
+      <li><b>在手機瀏覽器中開啟 DSM</b>，位址與連接埠要與你輸入的完全相同。如果瀏覽器也連不上，問題就出在網路或位址，而不是 App。</li>
+      <li><b>確認 HTTPS 與連接埠相符。</b>連接埠 5001 搭配關閉 HTTPS，或連接埠 5000 搭配開啟 HTTPS，都會逾時。它們是不同的監聽服務。</li>
+      <li>如果 NAS 使用的是出廠時內建的憑證，請<b>關閉驗證 SSL 憑證</b>。</li>
+      <li><b>檢查手機的網路。</b>使用行動數據時，本機 IP 是連不到的。請連上 Wi-Fi，或改用 QuickConnect、網域或 VPN。</li>
+      <li><b>在 iOS 上，請允許本機網路存取。</b>設定 &rsaquo; App &rsaquo; Syno Manager &rsaquo; 本機網路。沒有開啟的話，iOS 會默默封鎖對你自己網路內位址的連線。</li>
+      <li><b>檢查 DSM 的防火牆。</b>控制台 &rsaquo; 安全性 &rsaquo; 防火牆。若有規則只允許特定位址，就會擋掉不在其中的手機。</li>
+      <li><b>檢查自動封鎖。</b>控制台 &rsaquo; 安全性 &rsaquo; 帳號。多次登入失敗可能會讓你手機的位址被封鎖；它會列在那裡，可以將它移除。</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/zh-hant/help/">完整疑難排解指南</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>設定常見問題</h2>
+    </div>
+    <details open><summary>使用 Syno Manager 需要準備什麼？</summary><div class="body">一台執行 DSM 7.0 或更新版本的 Synology NAS、該 NAS 上的 DSM 帳號，以及一台執行 Android 7+、iOS 16+、macOS 11+ 或 Windows 的裝置。NAS 上不需要安裝任何東西 - App 使用的是 DSM 本來就有的 API。</div></details>
+    <details><summary>要輸入什麼位址和連接埠？</summary><div class="body">在自己的網路中，輸入 NAS 的本機 IP 位址與 DSM 的連接埠 - 啟用 HTTPS 時為 5001，關閉 HTTPS 時為 5000。你也可以輸入主機名稱或自訂網域。如果你不想處理位址，可以把連線類型切換為 QuickConnect，然後輸入你的 QuickConnect ID。</div></details>
+    <details><summary>為什麼「驗證 SSL 憑證」預設是關閉的？</summary><div class="body">因為多數 DiskStation 使用的是自簽憑證，它不是由公開機構簽發，因此即使連線仍然是加密的，驗證也會失敗。關閉驗證就會接受該憑證。如果你安裝了正式的憑證 - 例如來自 Let's Encrypt - 請開啟驗證。</div></details>
+    <details><summary>需要在路由器上開啟連接埠嗎？</summary><div class="body">不需要。在自己的網路中，不需要轉送任何連接埠。從外部連線時，由 QuickConnect 為你中繼連線，VPN 也可以。只有在你特別想要從網際網路直接連入，或想從網路外部透過 RTSP 觀看攝影機即時影像時，才需要連接埠轉送。</div></details>
+    <details><summary>顯示連線逾時，該怎麼辦？</summary><div class="body">這個訊息代表 App 完全沒有得到回應，幾乎都是位址、連接埠或手機所在的網路有問題。請確認 HTTPS 與連接埠相符、若使用本機 IP 則手機要與 NAS 在同一個網路，並確認手機瀏覽器能以相同的位址與連接埠開啟 DSM 自己的網頁介面。</div></details>
+    <details><summary>可以新增多台 NAS 嗎？</summary><div class="body">可以，想加幾台都行。每一台都有自己的憑證、儀表板版面與設定，你可以從裝置清單切換。請參閱<a href="/zh-hant/guide/multi-nas/">多台 NAS 裝置</a>。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：主畫面</h2>
+    <p class="lead" style="margin:0 auto 24px">每張卡片顯示什麼，以及如何打造屬於你的儀表板。</p>
+    <p><a class="btn" href="/zh-hant/guide/home/">主畫面 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

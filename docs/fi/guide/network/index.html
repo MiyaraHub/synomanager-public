@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synologyn verkko, VPN ja DDNS -valvonta - Syno Manager</title>
+<meta name="description" content="Reaaliaikainen läpäisy rajapinnoittain, aktiiviset yhteydet ja estetyt IP-osoitteet, kytkettävät DSM-palvelut, VPN-asiakasprofiilit sekä DDNS ja julkinen osoitteesi." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synologyn verkko, VPN ja DDNS -valvonta - Syno Manager" />
+<meta property="og:description" content="Reaaliaikainen läpäisy rajapinnoittain, aktiiviset yhteydet ja estetyt IP-osoitteet, kytkettävät DSM-palvelut, VPN-asiakasprofiilit sekä DDNS ja julkinen osoitteesi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synologyn verkko, VPN ja DDNS -valvonta - Syno Manager" />
+<meta name="twitter:description" content="Reaaliaikainen läpäisy rajapinnoittain, aktiiviset yhteydet ja estetyt IP-osoitteet, kytkettävät DSM-palvelut, VPN-asiakasprofiilit sekä DDNS ja julkinen osoitteesi." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Verkko"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synologyn verkko, VPN ja DDNS -valvonta - Syno Manager",
+  "description": "Reaaliaikainen läpäisy rajapinnoittain, aktiiviset yhteydet ja estetyt IP-osoitteet, kytkettävät DSM-palvelut, VPN-asiakasprofiilit sekä DDNS ja julkinen osoitteesi.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Näenkö, kuinka nopeasti NAS siirtää dataa juuri nyt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Verkko-alinäkymä näyttää reaaliaikaisen lataus- ja lähetysnopeuden jokaiselle NAS-laitteen verkkoliitännälle, kullekin oman kaavion, linkin nopeuden ja osoitteen. Yhdistetyt liitännät näkyvät yhtenä yhdistelmänä kokonaisnopeuksineen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko käynnistää ja pysäyttää DSM-palveluita sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä, niille palveluille, joita DSM sallii asiakkaan ohjata - SMB:llä, NFS:llä, FTP:llä, rsyncillä ja muilla kullakin on oma kytkimensä. Osa on merkitty järjestelmän hallinnoimiksi, mikä tarkoittaa, että DSM ajaa ne omilla ehdoillaan ja sovellus näyttää niiden tilan tarjoamatta muutosta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Näyttääkö sovellus, mitkä IP-osoitteet on estetty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Yhteydet-alinäkymä näyttää automaattisen eston käytännön - montako epäonnistunutta yritystä ja kuinka pitkässä ajassa - sekä parhaillaan estetyt osoitteet, laskurin taakse kutistettuna, jotta sata merkintää ei hautaa muuta näkymää."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Näenkö, onko VPN yhdistetty?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovellus luettelee NAS-laitteen VPN-asiakasprofiilit ja antaa pyytää yhdistämään tai katkaisemaan yhteyden. Se ei väitä, mikä niistä on päällä, koska DSM:n tietueessa, jota se lukee, ei ole tilakenttää. Muuta väittäminen olisi lukeman keksimistä."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Verkko</div>
+      <div class="eyebrow">Verkko</div>
+      <h1>Mitä tapahtuu <span class="g">sisään ja ulos</span></h1>
+      <p>Viisi alinäkymää: reaaliaikainen <b>Verkko</b>-läpäisy, <b>Yhteydet</b> ja automaattinen esto, kytkettävät <b>Palvelut</b>, <b>VPN</b>-profiilit sekä <b>DDNS</b> ja julkinen osoitteesi.</p>
+    </div>
+    <div class="hero-shot"><img alt="Reaaliaikainen verkon läpäisy liitännöittäin" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#throughput">Läpäisy</a></li>
+      <li><a href="#connections">Yhteydet &amp; automaattinen esto</a></li>
+      <li><a href="#services">Palvelut</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; ulkoinen IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Verkko</div>
+      <h2>Reaaliaikaisesti, liitännöittäin</h2>
+      <p class="lead">Jokainen NAS-laitteen verkkoliitäntä saa oman korttinsa - myös yhdistelmät ja Open vSwitch -liitännät, jotka monet työkalut ohittavat.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Näytetään</th><th>Merkitys</th></tr></thead>
+      <tbody>
+        <tr><td>Liitännän nimi ja nopeus</td><td>Nimi, jota DSM käyttää, ja sen neuvoteltu nopeus - esimerkiksi <code>bond0 (20 Gbps)</code> kaksiporttiselle yhdistelmälle.</td></tr>
+        <tr><td>Osoite</td><td>IP-osoite, joka liitännällä on parhaillaan.</td></tr>
+        <tr><td>LIVE-merkki</td><td>Vihreä, kun lukemat päivittyvät.</td></tr>
+        <tr><td>Lataus / Lähetys</td><td>Nykyinen läpäisy, ja sen alla vierivä kaavio, josta erottaa piikin jatkuvasta liikenteestä.</td></tr>
+        <tr><td>Verkkotiedot</td><td>Palvelimen nimi, yhdyskäytävä ja ensisijainen DNS - kolme arvoa, joita tarvitset, kun jokin verkossa ei selviä nimestä osoitteeksi.</td></tr>
+        <tr><td>Aktiiviset yhteydet</td><td>Lukumäärä ja tie yksityiskohtiin.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Suunta on NAS-laitteen näkökulmasta.</b> ”Lataus” on NAS-laitteelle saapuvaa liikennettä; kun kopioit tiedoston <em>NAS-laitteelle</em>, se on NAS-laitteen latausta.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Yhteydet</div>
+      <h2>Kuka on kiinni ja kuka on estetty</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Kolme asiaa siinä järjestyksessä, jossa niitä yleensä haluat:</p>
+        <ul class="plain">
+          <li><b>Automaattinen esto</b> - onko DSM:n raakaa voimaa vastaan suojaava toiminto päällä, kuinka monta epäonnistunutta yritystä sen laukaisee ja millä aikavälillä. Tämä on asetus, joka lukitsee puhelimen ulos muutaman väärän salasanan jälkeen.</li>
+          <li><b>Estetyt IP-osoitteet</b> - kaikki parhaillaan estetyt osoitteet laskurin takana. Sata estettyä osoitetta on normaalia internetiin avoimella NAS-laitteella ja hautaisi muuten näkymän, joten lista pysyy kutistettuna, kunnes avaat sen.</li>
+          <li><b>Aktiiviset yhteydet</b> - kuka on kirjautuneena, mistä osoitteesta, millä protokollalla ja milloin istunto alkoi. HTTP/HTTPS, SMB, NFS, FTP - jokainen istunto on nimetty.</li>
+        </ul>
+        <div class="note"><b>Voit katkaista istunnon.</b> Aktiivisen yhteyden voi potkaista ulos täältä, mikä on nopea vastaus kysymyksiin ”jokin pitää tiedostoa auki” tai ”miksi tuo osoite on yhä yhdistettynä”.</div>
+      </div>
+      <img alt="Yhteydet-näkymä, jossa automaattisen eston käytäntö, estetyt IP-osoitteet ja aktiiviset yhteydet" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Palvelut</div>
+      <h2>Mitä DSM ajaa</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="DSM-palvelut käynnissäolotiloineen ja kytkimineen" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Ylhäällä lukumäärä - <b>käynnissä kaikista</b> - ja sen alla jokainen DSM:n tarjoama palvelu tilapisteen ja kytkimen kera.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Tiedosto- ja yhteyspalvelut</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Kytke päälle tai pois puhelimesta.</li>
+          <li><b>Etsintä ja tulostus</b> - Bonjour Printer Broadcast, WS-Discovery, CUPS-tulostuspalvelin.</li>
+          <li><b>Infrastruktuuri</b> - NTP, KMIP ja muut.</li>
+          <li><b>Järjestelmän hallinnoimissa palveluissa on lukko.</b> DSM ajaa ne omilla ehdoillaan, joten sovellus näyttää niiden tilan eikä tarjoa kytkintä, jonka muutos hylättäisiin. Ohjain, joka ei voi toimia, on huonompi kuin ei ohjainta lainkaan.</li>
+        </ul>
+        <div class="note warn"><b>SMB:n kytkeminen pois katkaisee sen käyttäjiltä yhteyden.</b> Nämä ovat toimivan palvelimen oikeita kytkimiä, ei asetusnäkymä.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Asiakasprofiilit</h2>
+      <p class="lead">VPN-alinäkymä luettelee NAS-laitteelle määritetyt VPN-<b>asiakasprofiilit</b> - yhteydet, jotka se muodostaa muualle - ja antaa pyytää sitä yhdistämään tai katkaisemaan yhteyden.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Se ei väitä, mikä profiili on yhdistetty, ja se on tarkoituksellista.</b> NAS kuittaa yhdistämis- tai katkaisupyynnön, mutta DSM:n tietueessa, jota sovellus lukee, ei ole tilakenttää, joten tuomiota ei ole mistä lukea. Sen sijaan että arvaisi ja olisi varmasti väärässä, sovellus kertoo tämän ja ohjaa DSM:n Verkko-sivulle, joka tietää asian.</div>
+    <p style="color:var(--steel);margin-top:18px">Jos profiileja ei ole, näkymä kertoo sen ja neuvoo, mistä sellaisen lisää: DSM:ssä kohdasta <b>Network &rsaquo; Network Interface</b>.</p>
+      </div>
+      <img alt="VPN-alinäkymä, jossa asiakasprofiilit" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Julkinen osoitteesi ja siihen osoittava nimi</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Yksi kortti, kaksi toisistaan riippumatonta puoliskoa:</p>
+        <ul class="plain">
+          <li><b>Ulkoinen IP</b> - julkinen osoite, joka yhteydelläsi on parhaillaan.</li>
+          <li><b>Jokainen DDNS-isäntänimi</b>, jonka NAS julkaisee, DSM:n sille tallentama tila, milloin se päivittyi viimeksi ja milloin se päivittyy seuraavan kerran.</li>
+        </ul>
+        <h3 style="margin-top:22px">Päivitä ja Päivitä nyt</h3>
+        <ul class="plain">
+          <li><b>Päivitä</b> lukee uudelleen sen, mitä DSM parhaillaan tietää.</li>
+          <li><b>Päivitä nyt</b> pyytää NAS-laitetta julkaisemaan osoitteensa uudelleen - sama asia, jonka DSM:n oma painike tekee.</li>
+        </ul>
+        <div class="note"><b>Kumpikin puolisko voi epäonnistua erikseen.</b> Alhaalla oleva DDNS-palveluntarjoaja ei vie julkisen IP:n lukemaa mukanaan, eikä lukukelvoton IP tyhjennä isäntänimen tilaa. Kaksi lukemaa, kaksi tuomiota.</div>
+        <div class="note" style="margin-top:14px"><b>Se kertoo, mitä DSM on tallentanut, ei suoraa testiä.</b> Sovellus ei itse selvitä isäntänimeäsi tarkistaakseen, että se osoittaa sinuun. Palveluntarjoaja, joka vastaa pyyntöön, ei kerro, onko tietueesi oikein, joten sovellus välittää DSM:n oman tuomion eikä keksi toista.</div>
+      </div>
+      <img alt="DDNS ja ulkoinen IP, julkinen osoite ja isäntänimi peitettyinä" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Tämän kuvakaappauksen osoite ja isäntänimi on sumennettu - ne ovat oikean NAS-laitteen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Usein kysyttyä verkosta</h2>
+    </div>
+    <details open><summary>Näenkö, kuinka nopeasti NAS siirtää dataa juuri nyt?</summary><div class="body">Kyllä. Verkko-alinäkymä näyttää reaaliaikaisen lataus- ja lähetysnopeuden jokaiselle NAS-laitteen verkkoliitännälle, kullekin oman kaavion, linkin nopeuden ja osoitteen. Yhdistetyt liitännät näkyvät yhtenä yhdistelmänä kokonaisnopeuksineen.</div></details>
+    <details><summary>Voinko käynnistää ja pysäyttää DSM-palveluita sovelluksesta?</summary><div class="body">Kyllä, niille palveluille, joita DSM sallii asiakkaan ohjata - SMB:llä, NFS:llä, FTP:llä, rsyncillä ja muilla kullakin on oma kytkimensä. Osa on merkitty järjestelmän hallinnoimiksi, mikä tarkoittaa, että DSM ajaa ne omilla ehdoillaan ja sovellus näyttää niiden tilan tarjoamatta muutosta.</div></details>
+    <details><summary>Näyttääkö sovellus, mitkä IP-osoitteet on estetty?</summary><div class="body">Kyllä. Yhteydet-alinäkymä näyttää automaattisen eston käytännön ja parhaillaan estetyt osoitteet, laskurin taakse kutistettuna, jotta sata merkintää ei hautaa muuta näkymää.</div></details>
+    <details><summary>Näenkö, onko VPN yhdistetty?</summary><div class="body">Sovellus luettelee NAS-laitteen VPN-asiakasprofiilit ja antaa pyytää yhdistämään tai katkaisemaan yhteyden. Se ei väitä, mikä niistä on päällä, koska DSM:n tietueessa, jota se lukee, ei ole tilakenttää. DSM:n Verkko-sivu tietää asian.</div></details>
+    <details><summary>Miksi julkinen IP-osoitteeni poikkeaa siitä, minkä verkkosivu kertoo?</summary><div class="body">Koska tämä on NAS-laitteesi yhteyden osoite, luettuna DSM:n kautta. Jos puhelimesi on mobiilidatassa, sillä on eri osoite. Ne ovat kaksi eri verkkoa, ja molemmat lukemat ovat oikein.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Tiedostot</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, jaetut kansiot, muistiinpanot, asiakirjat ja yhteystiedot.</p>
+    <p><a class="btn" href="/fi/guide/files/">Tiedostot &amp; jaot &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

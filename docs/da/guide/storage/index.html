@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="da" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology-lager, RAID og SMART-helbred - Syno Manager</title>
+<meta name="description" content="Synology-diske og -puljer med RAID-type og ledig plads, SMART-status og temperatur pr. drev, en hurtig SMART-test og sikker udskubning af USB og eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/da/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology-lager, RAID og SMART-helbred - Syno Manager" />
+<meta property="og:description" content="Synology-diske og -puljer med RAID-type og ledig plads, SMART-status og temperatur pr. drev, en hurtig SMART-test og sikker udskubning af USB og eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/da/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="da_DK" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology-lager, RAID og SMART-helbred - Syno Manager" />
+<meta name="twitter:description" content="Synology-diske og -puljer med RAID-type og ledig plads, SMART-status og temperatur pr. drev, en hurtig SMART-test og sikker udskubning af USB og eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "da",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brugervejledning",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lager"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology-lager, RAID og SMART-helbred - Syno Manager",
+  "description": "Synology-diske og -puljer med RAID-type og ledig plads, SMART-status og temperatur pr. drev, en hurtig SMART-test og sikker udskubning af USB og eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "da",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan jeg se SMART-status for hvert drev?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Undersiden Diskhelbred viser hvert drev med model, om det er en HDD eller SSD, kapacitet, temperatur og SMART-afgørelse. Du kan også starte en hurtig SMART-test på et hvilket som helst drev fra telefonen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvilken temperatur er for varm til et NAS-drev?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Appen farver et drev rav over 45 grader C og rødt over 55 grader C, og systemtemperaturen rav over 50 og rød over 60. De grænser fodrer også helbredsmærket på startskærmen, så et varmt drev dukker op der, uden at du skal lede efter det."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg sikkert skubbe et USB-drev ud fra appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, fra undersiden Eksterne. Udskubningen bekræftes ved, at drevet faktisk forsvinder fra enhedslisten, ikke ved at anmodningen blev accepteret - så et drev, der siger, det er skubbet ud, er det også. Et drev, der formateres eller initialiseres, kan ikke skubbes ud."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan jeg oprette eller udvide en disk fra appen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nej. Oprettelse, udvidelse og reparation af diske og puljer sker i DSM's Lagringsadministration. Appen melder, hvad dit lager foretager sig, og lader dig handle på drev; den omstrukturerer ikke dit array fra en telefon."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/da/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søg i guiden..." data-i18n-empty="Ingen resultater for" data-i18n-language="Sprog">
+      <a href="/da/">Hjem</a>
+      <a href="/da/guide/" class="active">Brugervejledning</a>
+      <a href="/da/#screenshots">Skærmbilleder</a>
+      <a href="/da/compatible-nas/">Kompatibilitet</a>
+      <a href="/da/best-synology-nas-app/">Hvorfor skifte</a>
+      <a href="/da/help/">Hjælp</a>
+      <a href="/da/#top" class="cta">Download</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/da/">Forside</a> &rsaquo; <a href="/da/guide/">Brugerguide</a> &rsaquo; Lager</div>
+      <div class="eyebrow">Lager</div>
+      <h1>Hver disk, <span class="g">hvert drev</span></h1>
+      <p>Tre undersider: <b>Diske &amp; puljer</b> til kapacitet og RAID, <b>Diskhelbred</b> til SMART og temperatur pr. drev og <b>Eksterne</b> til alt, der er sat i bagsiden.</p>
+    </div>
+    <div class="hero-shot"><img alt="Lagerdiske og drev i Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På denne side</b><ul>
+      <li><a href="#volumes">Volumener &amp; puljer</a></li>
+      <li><a href="#drives">Drevlisten</a></li>
+      <li><a href="#disk-health">Diskhelbred &amp; SMART</a></li>
+      <li><a href="#thresholds">Temperaturgrænser</a></li>
+      <li><a href="#external">Eksterne &amp; sikker udskubning</a></li>
+      <li><a href="#limits">Hvad det ikke gør</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumener &amp; puljer</div>
+      <h2>Kapacitet på et øjeblik</h2>
+      <p class="lead">Hver disk får et kort med navn, RAID-type, status og antal drev bag den, over en forbrugsbjælke med brugt, procent, i alt og ledigt.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Vist</th><th>Betydning</th></tr></thead>
+      <tbody>
+        <tr><td>Disknavn</td><td>Som DSM navngiver den - <code>VOLUME_1</code> og så videre.</td></tr>
+        <tr><td>RAID-type</td><td>RAID 5, SHR, RAID 1, Basic - hvad puljen nedenunder end er.</td></tr>
+        <tr><td>Status</td><td>Diskens egen tilstand: <b>normal</b>, forringet, nedbrudt. Et forringet array er det eneste på denne skærm, der er værd at handle på i dag.</td></tr>
+        <tr><td>Antal drev</td><td>Hvor mange fysiske drev disken strækker sig over.</td></tr>
+        <tr><td>Forbrugsbjælke</td><td>Normalt grøn, rav over 80 % og rød over 90 %. Det er de samme grænser, som <a href="/da/guide/home/#header">helbredsmærket</a> bruger.</td></tr>
+        <tr><td>Brugt / I alt / Ledigt</td><td>Alle tre, fordi »70 % fuld« og »13 TB ledigt« svarer på to forskellige spørgsmål.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Hvad der er i hver slot</h2>
+      <p class="lead">Under diskene står hvert fysisk drev efter slotnummer.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Slot</b> - Disk 1, Disk 2 og så videre, svarende til mærkaterne på kabinettet.</li>
+      <li><b>Model</b> - drevets egen modelstreng.</li>
+      <li><b>Producent og type</b> - fabrikanten og om det er en HDD eller en SSD. Et drev, hvis producent NAS'en ikke kunne identificere, vises som <b>Ukendt</b> i stedet for at blive gættet.</li>
+      <li><b>Temperatur</b>, farvet efter grænserne nedenfor.</li>
+      <li><b>SMART-afgørelse</b> - <b>SMART OK</b>, når drevets egen selvvurdering er sund.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Diskhelbred</div>
+      <h2>SMART og en test, du kan starte</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Undersiden Diskhelbred er de samme drev med mere plads: kapacitet, type, temperatur og SMART-tilstand får hver deres mærke, og hvert drev har en knap til <b>hurtig SMART-test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Hurtig SMART-test</b> beder drevet køre sin egen korte selvvurdering. Den tager et par minutter og afbryder ikke noget, der bruger disken.</li>
+          <li><b>Afgørelsen er drevets, ikke vores.</b> SMART er drevet, der rapporterer om sig selv; appen videregiver det. Et drev, der siger, at det er fint, og så går i stykker, er en begrænsning ved SMART, ikke ved aflæsningen.</li>
+          <li><b>En SMART-tilstand, der ikke kan læses, vises som ukendt</b>, aldrig som sund. En manglende aflæsning og en god aflæsning er to forskellige ting og bliver aldrig slået sammen.</li>
+        </ul>
+      </div>
+      <img alt="Diskhelbred med hvert drev, SMART-status, temperatur og en knap til hurtig SMART-test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Tallene bag farverne</div>
+      <h2>Grænser</h2>
+      <p class="lead">Intet her er et gæt om din hardware - det er de punkter, hvor appen skifter farve og, hvor det er relevant, startskærmens helbredsmærke.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Aflæsning</th><th>Rav ved</th><th>Rød ved</th></tr></thead>
+      <tbody>
+        <tr><td>Drevtemperatur</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Systemtemperatur</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Diskforbrug</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS-opladning</td><td>under 50 %</td><td>under 20 %</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Skift mellem &deg;C og &deg;F i <a href="/da/guide/settings/#preferences">Indstillinger &rsaquo; Temperaturenhed</a>. Alle temperaturer i appen følger med det samme, også dem på startskærmen og i widgets.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Eksternt</div>
+      <h2>USB, eSATA og sikker udskubning</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Eksternt lager og USB-enheder, uden noget tilsluttet og med en UPS på listen" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">To afsnit: <b>Eksternt lager</b> til drev, du kan montere og skubbe ud, og <b>USB-enheder</b> til alt andet, der er sat i - en UPS, en printer, en dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Udskubning bekræftes ved, at drevet forsvinder.</b> Appen melder ikke succes, fordi anmodningen kom tilbage med OK; den genlæser enhedslisten og siger først, at drevet er skubbet ud, når det reelt er væk. Det er forskellen på »sikkert at tage ud« og »sandsynligvis sikkert at tage ud«.</li>
+          <li><b>Et optaget drev kan ikke skubbes ud.</b> Et, der formateres eller initialiseres, afvises med begrundelse i stedet for at blive revet ud midt i en skrivning.</li>
+          <li><b>Når intet er tilsluttet, står det klart.</b> En tom liste lyder »Ingen eksterne drev tilsluttet« - ikke en tom boks, du selv skal tolke.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Grænser</div>
+      <h2>Hvad denne skærm ikke gør</h2>
+      <p class="lead">Lager er det ene sted, hvor et fejltryk ikke kan rettes, så appen læser langt mere, end den skriver.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Den opretter, udvider eller sletter ikke en disk eller pulje.</b> Det sker i DSM's Lagringsadministration, på en skærm, der er stor nok til at vise, hvad du er ved at gøre.</li>
+      <li><b>Den reparerer ikke et forringet array.</b> Den fortæller dig tydeligt og på startskærmen, at et er forringet.</li>
+      <li><b>Den formaterer ikke noget.</b></li>
+      <li><b>Den kører ikke en fuld SMART-test</b> - kun den hurtige. En fuld overfladescanning tager timer og hører hjemme et sted, du ikke går fra.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, genopbygning og paritetstjek</b> vises som kørende operationer, mens de står på, så du kan se en blive færdig i appen, selv om du startede den i DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ofte stillede spørgsmål</div>
+      <h2>FAQ om lager</h2>
+    </div>
+    <details open><summary>Kan jeg se SMART-status for hvert drev?</summary><div class="body">Ja. Undersiden Diskhelbred viser hvert drev med model, om det er en HDD eller SSD, kapacitet, temperatur og SMART-afgørelse. Du kan også starte en hurtig SMART-test på et hvilket som helst drev fra telefonen.</div></details>
+    <details><summary>Hvilken temperatur er for varm til et NAS-drev?</summary><div class="body">Appen farver et drev rav over 45&deg;C og rødt over 55&deg;C, og systemtemperaturen rav over 50&deg;C og rød over 60&deg;C. De grænser fodrer også helbredsmærket på startskærmen.</div></details>
+    <details><summary>Kan jeg sikkert skubbe et USB-drev ud fra appen?</summary><div class="body">Ja, fra undersiden Eksterne. Udskubningen bekræftes ved, at drevet faktisk forsvinder fra enhedslisten, ikke ved at anmodningen blev accepteret. Et drev, der formateres eller initialiseres, kan ikke skubbes ud.</div></details>
+    <details><summary>Kan jeg oprette eller udvide en disk fra appen?</summary><div class="body">Nej. Oprettelse, udvidelse og reparation af diske og puljer sker i DSM's Lagringsadministration. Appen melder, hvad dit lager foretager sig, og lader dig handle på drev; den omstrukturerer ikke dit array fra en telefon.</div></details>
+    <details><summary>Hvorfor står der Ukendt som producent på et drev?</summary><div class="body">Fordi NAS'en ikke oplyste en. Appen viser det, den fik at vide, i stedet for at udlede en fabrikant af modelstrengen, hvilket ville være et gæt fremstillet som en kendsgerning.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Næste: Netværk</h2>
+    <p class="lead" style="margin:0 auto 24px">Gennemstrømning, forbindelser, tjenester, VPN og DDNS.</p>
+    <p><a class="btn" href="/da/guide/network/">Netværk &rarr;</a> &nbsp; <a class="btn ghost" href="/da/guide/">Tilbage til guiden</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/da/">Hjem</a><a href="/da/guide/">Brugervejledning</a><a href="/da/guide/getting-started/">Kom i gang</a><a href="/da/compatible-nas/">Kompatibilitet</a><a href="/da/best-synology-nas-app/">Hvorfor skifte</a><a href="/da/synology-app-for-iphone/">iPhone & iPad</a><a href="/da/synology-app-for-android/">Android</a><a href="/da/synology-app-for-mac-windows/">Mac & Windows</a><a href="/da/ds-finder-alternative/">vs DS finder</a><a href="/da/help/">Hjælp</a><a href="/da/privacy/">Privatliv</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportér en fejl</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uafhængig app og er ikke tilknyttet, godkendt eller sponsoreret af Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemærker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

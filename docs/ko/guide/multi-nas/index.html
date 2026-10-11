@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>여러 대의 Synology NAS 관리 - Syno Manager</title>
+<meta name="description" content="Synology 기기를 원하는 만큼 추가하고 한 번의 탭으로 전환하세요. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장됩니다." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="여러 대의 Synology NAS 관리 - Syno Manager" />
+<meta property="og:description" content="Synology 기기를 원하는 만큼 추가하고 한 번의 탭으로 전환하세요. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장됩니다." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="여러 대의 Synology NAS 관리 - Syno Manager" />
+<meta name="twitter:description" content="Synology 기기를 원하는 만큼 추가하고 한 번의 탭으로 전환하세요. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장됩니다." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "여러 대의 NAS"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "여러 대의 Synology NAS 관리 - Syno Manager",
+  "description": "Synology 기기를 원하는 만큼 추가하고 한 번의 탭으로 전환하세요. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장됩니다.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "ko",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "NAS를 몇 대까지 추가할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "원하는 만큼 추가할 수 있습니다. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장되므로 미디어 서버와 백업 대상 NAS의 화면이 같을 필요가 없습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "이름을 바꾸면 NAS 자체에도 변화가 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 이름 변경은 앱에 표시되는 이름만 바꿉니다. NAS 자체의 서버 이름을 바꾸려면 DSM의 제어판을 사용하세요."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "IP 변경과 구성 편집은 어떻게 다른가요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "IP 변경은 가장 자주 바뀌는 항목인 주소와 포트만 빠르게 고치는 바로가기입니다. 구성 편집은 HTTPS, 인증서 검증, 자격 증명, 2FA, 카메라 터널 설정까지 포함한 전체 양식을 엽니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS를 제거하면 어떻게 되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "해당 항목과 저장된 자격 증명이 앱에서 삭제됩니다. NAS에는 아무 영향이 없으며, 다른 곳에서 로그아웃되지도 않고 데이터도 그대로입니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용자 가이드</a> &rsaquo; 여러 대의 NAS</div>
+      <div class="eyebrow">여러 대의 NAS</div>
+      <h1>앱 하나로 <span class="g">모든 DiskStation</span>을</h1>
+      <p>원하는 만큼 추가하세요. 기기마다 자격 증명, 대시보드 레이아웃, 설정이 따로 저장되므로 차고에 있는 백업용 NAS와 거실의 미디어 서버가 같은 모습일 필요가 없습니다.</p>
+    </div>
+    <div class="hero-shot"><img alt="연결 및 깨우기 버튼이 있는 NAS 기기 목록" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">기기 목록</div>
+      <h2>각 항목에 표시되는 정보</h2>
+      <p class="lead"><b>설정 &rsaquo; NAS 기기 관리</b>에서 열 수 있으며, 기기가 여러 대이고 앱 실행 시 선택하도록 설정했다면 시작 화면으로도 나타납니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>별칭과 주소</b> - 내가 붙인 이름과 연결에 사용하는 호스트 및 포트입니다.</li>
+      <li>폼을 열지 않고도 확인할 만한 정보를 보여 주는 <b>칩</b>: <b>HTTPS</b> 여부, 어떤 <b>포트</b>인지, 어떤 <b>계정</b>으로 로그인하는지 표시됩니다.</li>
+      <li>현재 사용 중인 기기에는 <b>연결됨</b>이 표시됩니다.</li>
+      <li><b>연결</b>을 누르면 해당 NAS로 전환하고, NAS가 절전 상태라면 <b>깨우기</b>로 매직 패킷을 보냅니다.</li>
+      <li><b>드래그 핸들</b> - 목록 순서를 바꿔 가장 자주 쓰는 NAS를 맨 위에 둘 수 있습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">더보기 메뉴</div>
+      <h2>항목에서 할 수 있는 다섯 가지</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>동작</th><th>기능</th></tr></thead>
+          <tbody>
+            <tr><td>이름 변경</td><td><b>표시 이름만</b> 바꿉니다. 앱에서 부르는 이름일 뿐이며, NAS 자체의 서버 이름은 그대로입니다. 서버 이름은 DSM의 제어판에서 바꿀 수 있습니다.</td></tr>
+            <tr><td>IP 변경</td><td>전체 양식을 거치지 않고 가장 자주 바뀌는 항목인 주소와 포트만 바로 고치는 바로가기입니다.</td></tr>
+            <tr><td>구성 편집</td><td>전체 양식입니다. HTTPS, 인증서 검증, 자격 증명, 2단계 인증, 카메라 실시간 보기 터널을 설정할 수 있습니다.</td></tr>
+            <tr><td>연결 테스트</td><td>아무것도 바꾸지 않고 접속 가능 여부를 확인하며, “연결할 수 없음”과 “연결은 됐지만 자격 증명이 거부됨”을 구분해 알려 줍니다.</td></tr>
+            <tr><td>NAS 제거</td><td>항목과 저장된 자격 증명을 <b>앱에서</b> 삭제합니다. NAS에는 아무 영향이 없습니다.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="이름 변경, IP 변경, 구성 편집, 연결 테스트, 제거가 있는 NAS별 메뉴" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS별 설정</div>
+      <h2>기기마다 따로 기억하는 것</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>NAS별</h3>
+        <ul class="plain">
+          <li>자격 증명과 2FA 기기 토큰.</li>
+          <li>켜 둔 대시보드 카드와 그 순서.</li>
+          <li>접어 둔 카드.</li>
+          <li>각 탭에서 숨긴 하위 보기와 그 순서.</li>
+          <li>카메라 실시간 보기 터널 설정.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>앱 전체</h3>
+        <ul class="plain">
+          <li>테마, 표면, 강조 색상, 글자 크기.</li>
+          <li>하단 내비게이션 바.</li>
+          <li>폴링 간격과 온도 단위.</li>
+          <li>실행 동작.</li>
+          <li>닫아 둔 도움말 카드.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>같은 NAS를 두 번 등록하는 것도 올바른 사용법입니다.</b> 집에서는 로컬 IP로, 밖에서는 QuickConnect로 항목을 하나씩 만드세요. 두 항목은 레이아웃이 따로 저장되며, 전환은 한 번의 탭이면 됩니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>다중 NAS FAQ</h2>
+    </div>
+    <details open><summary>NAS를 몇 대까지 추가할 수 있나요?</summary><div class="body">원하는 만큼 추가할 수 있습니다. 기기마다 자격 증명, 대시보드 레이아웃, 카드 순서, 접힘 상태가 따로 저장됩니다.</div></details>
+    <details><summary>이름을 바꾸면 NAS 자체에도 변화가 있나요?</summary><div class="body">아니요. 이름 변경은 앱에 표시되는 이름만 바꿉니다. NAS 자체의 서버 이름을 바꾸려면 DSM의 제어판을 사용하세요.</div></details>
+    <details><summary>IP 변경과 구성 편집은 어떻게 다른가요?</summary><div class="body">IP 변경은 주소와 포트만 고치는 바로가기입니다. 구성 편집은 HTTPS, 인증서 검증, 자격 증명, 2FA, 카메라 터널 설정까지 포함한 전체 양식을 엽니다.</div></details>
+    <details><summary>NAS를 제거하면 어떻게 되나요?</summary><div class="body">해당 항목과 저장된 자격 증명이 앱에서 삭제됩니다. NAS에는 아무 영향이 없습니다.</div></details>
+    <details><summary>앱은 어떤 NAS로 시작되나요?</summary><div class="body"><a href="/ko/guide/settings/#launch">시작 동작</a>에서 설정한 대로 시작됩니다. 기기 선택 화면, 마지막으로 사용한 NAS, 또는 항상 특정 NAS 중에서 고를 수 있습니다.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS는 물론 네트워크의 다른 기기도 NAS를 통해 깨울 수 있습니다.</p>
+    <p><a class="btn" href="/ko/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

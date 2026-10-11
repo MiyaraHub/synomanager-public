@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>สำรองการตั้งค่าแอปของคุณ - Syno Manager</title>
+<meta name="description" content="ส่งออกการตั้งค่าของ Syno Manager เป็นไฟล์ แล้วกู้คืนบนมือถือเครื่องใหม่ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยโดยตั้งใจ" />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="สำรองการตั้งค่าแอปของคุณ - Syno Manager" />
+<meta property="og:description" content="ส่งออกการตั้งค่าของ Syno Manager เป็นไฟล์ แล้วกู้คืนบนมือถือเครื่องใหม่ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยโดยตั้งใจ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="สำรองการตั้งค่าแอปของคุณ - Syno Manager" />
+<meta name="twitter:description" content="ส่งออกการตั้งค่าของ Syno Manager เป็นไฟล์ แล้วกู้คืนบนมือถือเครื่องใหม่ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยโดยตั้งใจ" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "สำรอง &amp; กู้คืน"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "สำรองการตั้งค่าแอปของคุณ - Syno Manager",
+  "description": "ส่งออกการตั้งค่าของ Syno Manager เป็นไฟล์ แล้วกู้คืนบนมือถือเครื่องใหม่ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยโดยตั้งใจ",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "th",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "การสำรองการตั้งค่ารวมอะไรบ้าง",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เฉพาะการตั้งค่าแอป ได้แก่ ธีม การนำทาง เลย์เอาต์แดชบอร์ด พฤติกรรมตอนเปิดแอป หมวดหมู่ ช่วงเวลาดึงข้อมูล และหน่วยอุณหภูมิ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยเลย"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไมข้อมูลรับรอง NAS ของฉันจึงไม่ถูกสำรอง",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เพราะไฟล์พกพาที่มีรหัสผ่าน NAS ก็คือไฟล์พกพาที่มีรหัสผ่าน NAS ข้อมูลรับรองอยู่ใน keychain หรือ keystore ของอุปกรณ์ ซึ่งตั้งใจให้การส่งออกเข้าถึงไม่ได้ คุณป้อนใหม่ครั้งเดียวบนมือถือเครื่องใหม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ย้ายไปมือถือเครื่องใหม่อย่างไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ส่งออกบนเครื่องเก่าด้วย Download หรือ Share นำไฟล์ไปที่เครื่องใหม่ ติดตั้งแอป วางเนื้อหาของไฟล์ลงใน Restore แล้วเพิ่ม NAS ของคุณอีกครั้ง ที่เหลือทั้งหมดจะกลับมาเหมือนเดิม"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "จะเกิดอะไรกับการตั้งค่าที่ไฟล์ไม่รู้จัก",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ระบบจะใช้เฉพาะการตั้งค่าแอปที่รู้จัก และข้ามสิ่งอื่นในไฟล์ ดังนั้นการกู้คืนข้อมูลสำรองเก่าลงในแอปเวอร์ชันใหม่ จะคงการตั้งค่าใหม่ไว้ที่ค่าเริ่มต้นแทนที่จะล้มเหลว"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; สำรอง &amp; กู้คืน</div>
+      <div class="eyebrow">สำรอง &amp; กู้คืน</div>
+      <h1>การตั้งค่าของคุณ <span class="g">บนมือถือเครื่องต่อไป</span></h1>
+      <p>ไฟล์เดียวเก็บทุกค่ากำหนดที่คุณตั้งไว้ ทั้งธีม แถบด้านล่าง เลย์เอาต์แดชบอร์ด การดึงข้อมูล หน่วย โดยตั้งใจไม่เก็บข้อมูลรับรองใด ๆ เลย</p>
+    </div>
+    <div class="hero-shot"><img alt="หน้าจอสำรองและกู้คืน พร้อมส่งออกและกู้คืน" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">สิ่งที่อยู่ในไฟล์</div>
+      <h2>และสิ่งที่ไม่มี</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>รวมอยู่</h3>
+        <ul class="plain">
+          <li>ธีม พื้นผิว สีเน้น และขนาดตัวอักษร</li>
+          <li>แถบนำทางด้านล่างและลำดับของแถบ</li>
+          <li>เลย์เอาต์แดชบอร์ดและการ์ดที่เปิดอยู่</li>
+          <li>หมวดหมู่ของแดชบอร์ด</li>
+          <li>พฤติกรรมตอนเปิดแอป</li>
+          <li>ช่วงเวลาดึงข้อมูล</li>
+          <li>หน่วยอุณหภูมิ</li>
+        </ul>
+      </div>
+      <div>
+        <h3>ไม่รวมเด็ดขาด</h3>
+        <ul class="plain">
+          <li><b>การเชื่อมต่อ NAS</b> ได้แก่ ที่อยู่ พอร์ต และตัวเลือก</li>
+          <li><b>รหัสผ่าน</b></li>
+          <li><b>เซสชันและโทเค็นอุปกรณ์ 2FA</b></li>
+        </ul>
+        <div class="note stop"><b>การไม่รวมนี้คือประเด็นสำคัญ</b> ไฟล์ที่คุณส่งอีเมลหาตัวเองหรือวางในโฟลเดอร์คลาวด์ได้ ก็เป็นไฟล์ที่รั่วไหลได้ ข้อมูลรับรองอยู่ใน keychain หรือ keystore ของอุปกรณ์ก็เพื่อให้การส่งออกเข้าถึงไม่ได้ และแอปไม่ยกเว้นให้ตัวเองเพื่อความสะดวก</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ส่งออก</div>
+      <h2>นำไฟล์ออกมา</h2>
+      <p class="lead"><b>การตั้งค่า &rsaquo; สำรอง &amp; กู้คืน</b> จากนั้นเลือกหนึ่งในสองปุ่ม</p>
+    </div>
+    <ul class="plain">
+      <li><b>Download</b> บันทึกไฟล์ JSON ลงอุปกรณ์โดยตรง</li>
+      <li><b>Share</b> ส่งไปยังเมนูแชร์ คุณจึงส่งไปที่ Files, Drive, แอปอื่น หรือส่งให้ตัวเองได้</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">กู้คืน</div>
+      <h2>นำกลับมา</h2>
+    </div>
+    <ol class="steps">
+      <li><b>เปิดไฟล์สำรอง</b>แล้วคัดลอกเนื้อหา</li>
+      <li><b>วางลงในช่อง Restore</b> หรือแตะ<b>วางจากคลิปบอร์ด</b></li>
+      <li><b>แตะ Restore settings</b></li>
+      <li><b>เพิ่ม NAS ของคุณอีกครั้ง</b> ส่วนนั้นไม่เคยอยู่ในไฟล์</li>
+    </ol>
+    <div class="note"><b>รายการที่ไม่รู้จักจะถูกข้าม ไม่ใช่ปฏิเสธ</b> ระบบใช้เฉพาะการตั้งค่าที่แอปรู้จัก ข้อมูลสำรองจากเวอร์ชันเก่าจึงกู้คืนลงเวอร์ชันใหม่ได้อย่างราบรื่น การตั้งค่าที่ยังไม่มีในตอนนั้นก็คงอยู่ที่ค่าเริ่มต้น</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ที่เกี่ยวข้อง</div>
+      <h2>อย่าสับสนกับ</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/th/guide/backup/">Hyper Backup และ Active Backup</a></b> - NAS ของคุณสำรองข้อมูลของคุณ ไม่เกี่ยวกับหน้าจอนี้</li>
+      <li><b>การสำรองการกำหนดค่า DSM</b> - การตั้งค่าของ NAS เอง ส่งออกจากแผงควบคุมของ DSM</li>
+      <li><b>การสำรองข้อมูลอุปกรณ์</b> ข้อมูลรับรองที่ Syno Manager เก็บไว้<b>ไม่รวม</b>อยู่ในการสำรองข้อมูลอุปกรณ์ของ Android และ iOS โดยตั้งใจ การกู้คืนมือถือจากข้อมูลสำรองของอุปกรณ์จึงไม่นำรหัสผ่าน NAS มาด้วย</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเรื่องสำรอง &amp; กู้คืน</h2>
+    </div>
+    <details open><summary>การสำรองการตั้งค่ารวมอะไรบ้าง</summary><div class="body">เฉพาะการตั้งค่าแอป ได้แก่ ธีม การนำทาง เลย์เอาต์แดชบอร์ด พฤติกรรมตอนเปิดแอป หมวดหมู่ ช่วงเวลาดึงข้อมูล และหน่วยอุณหภูมิ การเชื่อมต่อ NAS รหัสผ่าน และเซสชันจะไม่รวมอยู่ด้วยเลย</div></details>
+    <details><summary>ทำไมข้อมูลรับรอง NAS ของฉันจึงไม่ถูกสำรอง</summary><div class="body">เพราะไฟล์พกพาที่มีรหัสผ่าน NAS ก็คือไฟล์พกพาที่มีรหัสผ่าน NAS ข้อมูลรับรองอยู่ใน keychain หรือ keystore ของอุปกรณ์ ซึ่งการส่งออกเข้าถึงไม่ได้โดยตั้งใจ</div></details>
+    <details><summary>ย้ายไปมือถือเครื่องใหม่อย่างไร</summary><div class="body">ส่งออกบนเครื่องเก่า นำไฟล์ไปที่เครื่องใหม่ ติดตั้งแอป วางเนื้อหาลงใน Restore แล้วเพิ่ม NAS ของคุณอีกครั้ง</div></details>
+    <details><summary>จะเกิดอะไรกับการตั้งค่าที่ไฟล์ไม่รู้จัก</summary><div class="body">ระบบใช้เฉพาะการตั้งค่าที่รู้จัก และข้ามสิ่งอื่น ดังนั้นการกู้คืนข้อมูลสำรองเก่าลงในแอปเวอร์ชันใหม่ จะคงการตั้งค่าใหม่ไว้ที่ค่าเริ่มต้น</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>มีบางอย่างไม่ทำงานหรือ</h2>
+    <p class="lead" style="margin:0 auto 24px">คู่มือแก้ปัญหาครอบคลุมการเชื่อมต่อล้มเหลว ไทล์ว่างเปล่า แท็บที่หายไป และวิดเจ็ตที่ค้างเก่า</p>
+    <p><a class="btn" href="/th/help/">แก้ปัญหา &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Asistent AI pe dispozitiv pentru Synology NAS - Syno Manager</title>
+<meta name="description" content="Întreabă despre Synology NAS-ul tău cu vorbe simple și primește aceeași verdict de stare ca în panoul de control. Rulează pe telefon, învață din evaluările tale, doar citește." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Asistent AI pe dispozitiv pentru Synology NAS - Syno Manager" />
+<meta property="og:description" content="Întreabă despre Synology NAS-ul tău cu vorbe simple și primește aceeași verdict de stare ca în panoul de control. Rulează pe telefon, învață din evaluările tale, doar citește." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Asistent AI pe dispozitiv pentru Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Întreabă despre Synology NAS-ul tău cu vorbe simple și primește aceeași verdict de stare ca în panoul de control. Rulează pe telefon, învață din evaluările tale, doar citește." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Asistentul"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Asistent AI pe dispozitiv pentru Synology NAS - Syno Manager",
+  "description": "Întreabă despre Synology NAS-ul tău cu vorbe simple și primește aceeași verdict de stare ca în panoul de control. Rulează pe telefon, învață din evaluările tale, doar citește.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Unde rulează asistentul?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pe telefonul tău. Gemini Nano prin AICore pe Android, Apple Intelligence pe iOS și macOS. Nu există un nivel cloud de rezervă - build-ul aplicației eșuează dacă apare oriunde în asistent o gazdă cloud, un SDK cloud sau o cheie API, deci promisiunea este impusă de build, nu de memoria cuiva."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se trimit undeva datele NAS-ului meu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Întrebarea ta, datele NAS-ului și răspunsul nu părăsesc niciodată dispozitivul. Funcționează și cu rețeaua oprită. Pentru că nu se transmite nimic, nu există nicio copie pe care s-o stocheze, s-o partajeze sau cu care să se antreneze."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce pot să-l întreb?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu există o listă fixă. NAS-ul tău publică tot ce poate raporta - peste o mie de intrări la un NAS obișnuit - iar asistentul caută acolo și citește ce ține de întrebarea ta. Instalezi un pachet și poate răspunde și despre el, imediat, fără actualizarea aplicației."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Poate schimba ceva pe NAS-ul meu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Doar citește. Nu poate porni, opri, șterge sau reporni nimic - nu pentru că modelul este rugat să respecte o politică, ci pentru că nu i se dau acele unelte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Costă ceva?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Folosește modelul deja integrat în dispozitivul tău, deci nu ai nimic de plătit și niciun cont de creat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De ce nu văd fila Asistent?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru că dispozitivul nu are un model utilizabil pe dispozitiv. În loc să arate o funcție care nu poate funcționa, aplicația o ascunde complet pe hardware-ul care nu o poate rula."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Învață ceva asistentul?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Învață din evaluările tale, doar pe acest dispozitiv. Evaluează un răspuns cu degetele de sub el, iar întrebările similare pornesc de unde a fost citit acel răspuns, deci asistentul citește tot mai bine NAS-ul tău cu cât îl folosești mai mult. Evaluările nu părăsesc niciodată dispozitivul, iar Uită evaluările pentru acest NAS le șterge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De ce spune că modelul este ocupat sau a rămas fără ture?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modelul de pe dispozitiv este partajat cu toate celelalte aplicații de pe telefon și rulează doar cât timp Syno Manager este deschisă pe ecran. Când atingi una dintre aceste limite, asistentul spune care anume, în loc să afișeze o eroare generică, și estimează cât să aștepți."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Asistentul</div>
+      <div class="eyebrow">Asistent &middot; beta</div>
+      <h1>Întreabă-ți NAS-ul, <span class="g">cu vorbe simple</span></h1>
+      <p>„Există ceva legat de stocarea mea care merită îngrijorare?” este o întrebare care altfel înseamnă să deschizi patru ecrane. Asistentul citește ce a raportat NAS-ul și răspunde - cu un model care rulează pe telefon, offline, și nu trimite nimic nicăieri.</p>
+    </div>
+    <div class="hero-shot"><img alt="Asistentul, gata cu întrebări sugerate" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#asking">Cum pui o întrebare</a></li>
+      <li><a href="#topics">Ce poți întreba</a></li>
+      <li><a href="#privacy">Unde ajung datele tale</a></li>
+      <li><a href="#readonly">Doar citește</a></li>
+      <li><a href="#wrong">Poate greși</a></li>
+      <li><a href="#learning">Învață din evaluările tale</a></li>
+      <li><a href="#availability">Ce dispozitive îl au</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Întrebarea</div>
+      <h2>Scrie-o sau spune-o</h2>
+      <p class="lead">Fila Asistent are două sub-vizualizări: <b>Întreabă</b> și <b>Cum funcționează</b>. Întreabă se deschide cu patru sugestii, menite să arate forma unei întrebări bune, nu să te limiteze.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Scrie o întrebare</b> în caseta de jos sau atinge una dintre sugestii.</li>
+      <li><b>Spune-o</b> cu microfonul, dacă preferi.</li>
+      <li><b>Ascultă răspunsul citit cu voce tare</b> cu comanda difuzorului din dreapta sus.</li>
+      <li><b>Răspunsul este scris pe măsură ce este produs</b>, nu apare dintr-odată - așa că poți începe să citești înainte să se termine.</li>
+      <li><b>Șterge</b> golește conversația.</li>
+    </ul>
+    <div class="note"><b>Modelul este încărcat când deschizi ecranul</b>, nu când trimiți prima întrebare, așa că primul răspuns nu este cel mai lent.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Domeniu</div>
+      <h2>Nu există o listă de subiecte</h2>
+      <p class="lead">Este partea care se scapă ușor din vedere. Asistentul nu este un set de răspunsuri gata făcute despre stocare și copii de rezervă - este îndreptat spre tot ce publică de fapt NAS-ul tău.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>NAS-ul tău publică tot ce poate raporta</b> - peste o mie de intrări la un NAS obișnuit - iar asistentul caută în acel catalog și citește ce ține de întrebarea ta.</li>
+          <li><b>Instalezi un pachet și poate răspunde și despre el</b>, imediat, fără actualizarea aplicației. Nimic din catalog nu este scris în aplicație; este descoperit de pe dispozitivul tău.</li>
+          <li><b>Devine mai rapid cu cât îl folosești.</b> Cum se citește fiecare parte din DSM se stabilește o singură dată și se ține minte, deci întrebările ulterioare despre același lucru sunt mai rapide.</li>
+          <li><b>„Cum stă NAS-ul meu?” primește ca răspuns verdictul de stare</b> - aceeași citire Sănătos, Avertisment sau Critic pe care o arată ecranul principal, cu motivele din spate, nu o temperatură brută sau o singură citire scoasă din context.</li>
+        </ul>
+        <div class="note"><b>Întrebările bune arată a întrebări.</b> „Cum stă NAS-ul meu?”, „Sunt sănătoase copiile mele de rezervă?”, „Ce ocupă cel mai mult spațiu?”, „Ce poți vedea despre acest NAS?” - ultima merită pusă o dată, pentru că răspunsul îți spune la ce are acces pe <em>NAS-ul tău</em>.</div>
+      </div>
+      <img alt="Asistentul răspunde la Cum stă NAS-ul meu cu verdictul de stare" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Confidențialitate</div>
+      <h2>Nimic nu părăsește telefonul</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Modelul aparține dispozitivului. Întrebarea ta, datele NAS-ului și răspunsul sunt toate procesate pe telefon, iar totul funcționează și cu rețeaua oprită.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Nu există un nivel cloud de rezervă.</b> Nu „am ales să nu folosim unul” - build-ul aplicației <b>eșuează</b> dacă apare oriunde în asistent o gazdă cloud, un SDK cloud sau o cheie API. Promisiunea este ținută de build, nu de memoria cuiva.</li>
+          <li><b>Pentru că nu se transmite nimic, nu există nicio copie</b> de stocat, de partajat sau cu care să se antreneze ceva.</li>
+          <li><b>Este gratuit și nu cere cont</b>, pentru că modelul se află deja pe dispozitivul tău.</li>
+        </ul>
+      </div>
+      <img alt="Cum funcționează: explică faptul că modelul este pe dispozitiv și nicio dată nu îl părăsește" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Limite</div>
+      <h2>Doar citește, întotdeauna</h2>
+      <p class="lead">Asistentul nu poate porni, opri, șterge sau reporni nimic. Nu pentru că a fost rugat frumos să nu o facă - ci pentru că nu i se dau acele unelte de la bun început.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Contează mai mult decât pare. Un model <em>instruit</em> să nu facă ceva poate fi convins să o facă. Un model care nu are cum, nu poate. Dacă vrei să repornești un container, <a href="/ro/guide/apps/#docker">ecranul Docker</a> e la trei atingeri distanță și îți va cere confirmarea.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Sinceritate</div>
+      <h2>Poate greși, iar ecranul spune asta</h2>
+      <p class="lead">Este un model mic care rulează pe telefon, nu unul mare dintr-un centru de date. Poate citi greșit un număr sau poate suna mai sigur decât ar trebui. Aplicația spune asta pe ecran, nu într-o notă de subsol.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Verifică tot ce contează</b> pe ecranul care îi aparține. Fiecare răspuns se referă la ceva ce aplicația îți arată și direct.</li>
+      <li><b>Este marcat BETA</b> în antetul filei tocmai din acest motiv.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Când nu poate răspunde acum, spune de ce</h3>
+      <p class="lead">Nu o eroare generică. Unul dintre trei motive numite și cam cât să aștepți.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Motiv</th><th>Ce înseamnă</th></tr></thead>
+      <tbody>
+        <tr><td>Limită de utilizare</td><td>Această aplicație și-a folosit deocamdată partea din modelul de pe dispozitiv. Dispozitivul partajează un singur model între toate aplicațiile care îl folosesc; răspunde din nou când partea ta se reînnoiește, de obicei într-un minut sau câteva.</td></tr>
+        <tr><td>Ocupat</td><td>Modelul de pe dispozitiv este în mijlocul unui răspuns pentru altă cerere. Încearcă din nou peste un moment.</td></tr>
+        <tr><td>În fundal</td><td>Modelul de pe dispozitiv răspunde doar cât timp Syno Manager este deschisă pe ecran. Adu aplicația în prim-plan și întreabă din nou.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Nu se pierde nimic când se întâmplă oricare dintre acestea.</b> Întrebarea ta rămâne în conversație; pune-o din nou după ce motivul dispare.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Devine tot mai bun</div>
+      <h2>Învață din evaluările tale, pe acest dispozitiv</h2>
+      <p class="lead">Un deget în sus sau în jos apare sub fiecare răspuns. Evaluează unul, iar întrebările similare pornesc de unde a fost citit acel răspuns - asistentul citește tot mai bine <em>NAS-ul tău</em> cu cât îl folosești mai mult, fără ca ceva să părăsească telefonul.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Răspuns bun</b> sau <b>Răspuns nepotrivit</b> - cele două degete de sub un răspuns, atinse o singură dată.</li>
+          <li><b>Păstrate per NAS.</b> Evaluările sunt stocate pentru NAS-ul care a răspuns, pe acest dispozitiv, deci trecerea la alt NAS începe de la zero pentru acela.</li>
+          <li><b>Nu sunt trimise nicăieri.</b> Evaluările sunt la fel de locale ca modelul însuși - fără cont, fără sincronizare, fără încărcare.</li>
+        </ul>
+      </div>
+      <img alt="Un răspuns al asistentului cu evaluarea deget în sus selectată" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Cardul Ce a învățat aici, cu un răspuns evaluat și Uită evaluările pentru acest NAS" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Ce a învățat aici</b>, în fila Cum funcționează, numără câte răspunsuri de pe NAS-ul curent au fost evaluate ca bune și le reia în cuvinte simple.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Niciun răspuns de pe acest NAS nu a fost încă evaluat ca bun</b> este ce scrie înainte de prima ta evaluare - nu un zero, pentru că un zero s-ar citi ca o măsurătoare, nu ca o absență.</li>
+          <li><b>Uită evaluările pentru acest NAS</b> șterge dintr-o atingere toate evaluările păstrate pentru NAS-ul curent pe acest dispozitiv.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Disponibilitate</div>
+      <h2>Ce dispozitive îl au</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Platformă</th><th>Model</th><th>Cerință</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>Un dispozitiv cu <b>AICore</b> și un model Gemini Nano disponibil pentru el.</td></tr>
+        <tr><td>iOS și macOS</td><td>Apple Intelligence</td><td>Un dispozitiv pe care Apple Intelligence este suportat și activat.</td></tr>
+        <tr><td>Orice altceva</td><td>-</td><td>Fila nu este afișată deloc.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Un dispozitiv fără model utilizabil nu afișează funcția.</b> Nu este estompată, nu este o teaserie - lipsește. O comandă care nu poate funcționa e mai rea decât lipsa ei, așa că fila pur și simplu nu există.</div>
+    <p style="color:var(--steel);margin-top:18px">Sub-vizualizarea <b>Cum funcționează</b> îți spune în ce stare se află propriul dispozitiv și ce a găsit.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre asistent</h2>
+    </div>
+    <details open><summary>Unde rulează asistentul?</summary><div class="body">Pe telefonul tău. Gemini Nano prin AICore pe Android, Apple Intelligence pe iOS și macOS. Nu există un nivel cloud de rezervă - build-ul aplicației eșuează dacă apare oriunde în asistent o gazdă cloud, un SDK cloud sau o cheie API.</div></details>
+    <details><summary>Se trimit undeva datele NAS-ului meu?</summary><div class="body">Nu. Întrebarea ta, datele NAS-ului și răspunsul nu părăsesc niciodată dispozitivul, iar totul funcționează și cu rețeaua oprită. Pentru că nu se transmite nimic, nu există nicio copie de stocat, de partajat sau cu care să se antreneze.</div></details>
+    <details><summary>Ce pot să-l întreb?</summary><div class="body">Nu există o listă fixă. NAS-ul tău publică tot ce poate raporta - peste o mie de intrări la un NAS obișnuit - iar asistentul caută acolo. Instalezi un pachet și poate răspunde și despre el, fără actualizarea aplicației.</div></details>
+    <details><summary>Poate schimba ceva pe NAS-ul meu?</summary><div class="body">Nu. Doar citește. Nu poate porni, opri, șterge sau reporni nimic - pentru că nu i se dau acele unelte.</div></details>
+    <details><summary>Costă ceva?</summary><div class="body">Nu. Folosește modelul deja integrat în dispozitivul tău, deci nu ai nimic de plătit și niciun cont de creat.</div></details>
+    <details><summary>De ce nu văd fila Asistent?</summary><div class="body">Pentru că dispozitivul nu are un model utilizabil pe dispozitiv. În loc să arate o funcție care nu poate funcționa, aplicația o ascunde complet pe hardware-ul care nu o poate rula.</div></details>
+    <details><summary>Învață ceva asistentul?</summary><div class="body">Învață din evaluările tale, doar pe acest dispozitiv. Evaluează un răspuns cu degetele de sub el, iar întrebările similare pornesc de unde a fost citit acel răspuns. Evaluările nu părăsesc niciodată dispozitivul, iar Uită evaluările pentru acest NAS le șterge.</div></details>
+    <details><summary>De ce spune că modelul este ocupat sau a rămas fără ture?</summary><div class="body">Modelul de pe dispozitiv este partajat cu toate celelalte aplicații de pe telefon și rulează doar cât timp Syno Manager este deschisă pe ecran. Asistentul spune de care dintre acestea s-a lovit, în loc să afișeze o eroare generică.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Setări</h2>
+    <p class="lead" style="margin:0 auto 24px">Fiecare preferință a aplicației și ce schimbă fiecare.</p>
+    <p><a class="btn" href="/ro/guide/settings/">Setări &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

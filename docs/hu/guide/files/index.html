@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology File Station, másolás és áthelyezés mobilon - Syno Manager</title>
+<meta name="description" content="Böngéssze a File Stationt, másoljon és helyezzen át fájlokat és mappákat magán a NAS-on, USB-meghajtóra is, kezelje a megosztásokat, és olvassa a Note Station, az Office és a Contacts tartalmát." />
+<meta name="keywords" content="Synology File Station app, Synology copy move files, Synology USB drive copy, Synology shared folders phone, Note Station app, Synology Office app, Synology Contacts app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/files/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/files/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/files/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/files/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/files/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/files/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/files/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/files/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/files/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/files/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/files/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/files/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/files/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/files/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/files/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/files/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/files/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/files/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/files/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/files/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/files/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/files/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/files/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/files/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/files/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/files/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/files/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/files/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/files/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/files/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/files/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/files/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology File Station, másolás és áthelyezés mobilon - Syno Manager" />
+<meta property="og:description" content="Böngéssze a File Stationt, másoljon és helyezzen át fájlokat és mappákat magán a NAS-on, USB-meghajtóra is, kezelje a megosztásokat, és olvassa a Note Station, az Office és a Contacts tartalmát." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/files/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology File Station, másolás és áthelyezés mobilon - Syno Manager" />
+<meta name="twitter:description" content="Böngéssze a File Stationt, másoljon és helyezzen át fájlokat és mappákat magán a NAS-on, USB-meghajtóra is, kezelje a megosztásokat, és olvassa a Note Station, az Office és a Contacts tartalmát." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Fájlok"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology File Station, másolás és áthelyezés mobilon - Syno Manager",
+  "description": "Böngéssze a File Stationt, másoljon és helyezzen át fájlokat és mappákat magán a NAS-on, USB-meghajtóra is, kezelje a megosztásokat, és olvassa a Note Station, az Office és a Contacts tartalmát.",
+  "image": "https://synomanager.com/screenshots/files-station.webp",
+  "url": "https://synomanager.com/guide/files/",
+  "mainEntityOfPage": "https://synomanager.com/guide/files/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Letölthetek fájlt a NAS-omról a telefonomra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Nyissa meg a File Stationt, keresse meg a fájlt, és töltse le. Mobilon a megosztási lap veszi át a szerepet, így elmentheti, megnyithatja másik alkalmazásban vagy továbbküldheti. Windowson és macOS-en natív Mentés másként párbeszédablakot kap. A letöltések QuickConnecten keresztül is működnek, így az otthonon kívüli tartózkodás nem akadályozza őket."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Létrehozhatok megosztott mappát az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, a Megosztott mappák részlapról. A meglévő megosztások mutatják a nevüket, a kötetüket, a leírásukat, és hogy van-e ACL-jogosultságuk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Olvashatom a Note Station jegyzeteimet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Jegyzetek részlap a jegyzetfüzeteket jegyzetszámmal és címkeszámmal mutatja, és bármelyik jegyzetet megnyithatja teljes terjedelmében olvasásra, létrehozhat jegyzetfüzetet, vagy hozzáadhat jegyzetet. A jegyzeten belüli képek ott jelennek meg, ahol a jegyzetben vannak, a NAS által nem küldhető kép helyén pedig „nem tölthető be” helyőrző látható, nem pedig eltűnik."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Miért mutat a Synology Office csak állapotot?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mert az Office-dokumentumokat a Synology Drive tárolja és nyitja meg. Az alkalmazás jelzi, hogy az Office telepítve van, és mely dokumentumtípusokat támogatja; a táblázatszerkesztés telefonon a Synology saját Drive alkalmazásába való."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Másolhatok vagy helyezhetek át fájlokat a NAS-ba dugott USB-meghajtóra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A külső meghajtó ugyanúgy jelenik meg célként, mint a megosztott mappa, mert a NAS megosztásként csatolja. Válassza a Másolás ide vagy az Áthelyezés ide lehetőséget, nyissa meg a meghajtót, és erősítse meg - a NAS közvetlenül ír rá, és semmi sem megy át a telefonján."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A másolás vagy áthelyezés átmegy a telefonomon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A munkát maga a NAS végzi a SYNO.FileStation.CopyMove segítségével. A telefon elküldi a kérést, majd csak a haladást figyeli, így a több száz gigabájtos átvitel soha nem érinti az adatforgalmi csomagját vagy a telefon tárhelyét, és az alkalmazás bezárása esetén is tovább fut."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Kezdőlap</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Fájlok</div>
+      <div class="eyebrow">Fájlok</div>
+      <h1>A megosztásai, <span class="g">bárhonnan</span></h1>
+      <p>File Station és Megosztott mappák, másolás és áthelyezés magán a NAS-on, valamint a három DSM-alkalmazás, amely valójában a tartalomról szól: Note Station, Synology Office és Contacts. Ha a Download Station telepítve van, az is itt él - neki <a href="/hu/guide/downloads/">saját oldala van</a>.</p>
+    </div>
+    <div class="hero-shot"><img alt="A File Station megosztott mappákat böngész" src="/screenshots/files-station.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#file-station">File Station</a></li>
+      <li><a href="#copy-move">Másolás és áthelyezés</a></li>
+      <li><a href="#shares">Megosztott mappák</a></li>
+      <li><a href="#notes">Note Station</a></li>
+      <li><a href="#office">Synology Office</a></li>
+      <li><a href="#contacts">Contacts</a></li>
+    </ul></div>
+
+    <div class="section-head" id="file-station">
+      <div class="eyebrow">File Station</div>
+      <h2>Böngészés és letöltés</h2>
+      <p class="lead">A <b>Gyökérből</b> indul - minden megosztott mappából, amelyet a fiókja lát -, és onnan halad lefelé. A felül lévő morzsamenü megmutatja, hol van, és visszavisz egy szinttel feljebb.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Mappák és fájlok</b>, mindegyik azokkal az adatokkal, amelyeket a DSM tárol: méret, létrehozás és módosítás dátuma, tulajdonos és jogosultságok.</li>
+      <li><b>Töltsön le</b> bármely fájlt. Androidon és iOS-en megnyílik a megosztási lap, így elmentheti, máshol megnyithatja vagy továbbküldheti. Windowson és macOS-en natív <b>Mentés másként</b> párbeszédablakot kap.</li>
+      <li><b>Otthonon kívül is működik.</b> A letöltések azon az útvonalon mennek, amelyen a NAS elérhető, a QuickConnect-átjátszót is beleértve.</li>
+      <li><b>Töltsön fel fájlt a NAS-ra</b> az eszközéről kiválasztva.</li>
+    </ul>
+    <div class="note"><b>Amit lát, azt a DSM engedi látni.</b> A File Station itt pontosan a DSM-fiókja jogosultságait tiszteletben tartja - az a mappa, amelyet a fiókja nem olvashat, nem jelenik meg, ugyanúgy, mint a webes felületen.</div>
+  </div>
+</section>
+
+<section id="copy-move">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">File Station</div>
+      <h2>Másolás és áthelyezés magán a NAS-on</h2>
+      <p class="lead">Válasszon fájlokat vagy mappákat, majd a <b>Másolás ide</b> vagy az <b>Áthelyezés ide</b> lehetőséget, és az átvitelt a NAS végzi - nem a telefon. Még a több száz gigabájt sem megy át a kezében tartott eszközön.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Hosszan nyomja meg a kijelöléshez</b> egy vagy több fájlt és mappát. A felső sáv átvált a <b>Másolás ide...</b> és <b>Áthelyezés ide...</b> gombokra.</li>
+          <li><b>Válasszon célt</b> ugyanúgy, ahogy a File Stationt böngészi - nyisson meg egy megosztást vagy mappát, és erősítse meg. A NAS által felsorolt minden megosztás cél, <b>a NAS-ba dugott külső meghajtót is beleértve</b>: pontosan úgy jelenik meg, mint a megosztott mappa, mert a NAS megosztásként csatolja.</li>
+          <li><b>A névütközés előbb rákérdez.</b> Ha egy elem már létezik a célhelyen, bármi indulása előtt választhat: <b>felülírja</b>, vagy <b>kihagyja, és megtartja a meglévőt</b>.</li>
+          <li><b>Az áthelyezés nyomva tartással erősíthető meg.</b> Az áthelyezés törli az eredeti példányokat, miután a másolat megérkezett, ezért a megerősítő gombot nem megkoppintani, hanem lenyomva tartani kell - szándékos kis súrlódás egy olyan lépés előtt, amelyet az alkalmazásból nem lehet visszavonni.</li>
+        </ul>
+      </div>
+      <img alt="A File Stationben kijelölt mappa, a műveleti sávban Másolás ide és Áthelyezés ide gombbal" src="/screenshots/files-copy-move-select.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Az Áthelyezés ide célválasztó, a NAS által kínált összes megosztással" src="/screenshots/files-copy-move-destination.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">A célválasztó ismét a File Station, mappa kiválasztására szűkítve, nem fájl megnyitására.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Haladás futás közben</b> - átmozgatott bájtok és százalék, magától a NAS-tól beolvasva. A NAS által még számolt összeg méretezés alatt álló állapotként jelenik meg, nem egy még semmit sem jelentő számként, és méretezés közben a szalag továbbra is mutatja, mennyi másolódott eddig, például „6,82 GB eddig” felirattal, megakadt sáv helyett mozgó sávval.</li>
+          <li><b>A sebesség akkor jelenik meg, amikor a NAS jelent egyet.</b> Ha a NAS egy időre elnémul - ez gyakori, amikor lassú USB-meghajtóra ír -, a szalag megtartja a már átmásolt mennyiséget, elrejti a sebességet egy új leolvasásig, és ritkábban kérdez, amíg a NAS újra nem válaszol. A másolás maga végig fut a NAS-on.</li>
+          <li><b>A Mégse leállítja a NAS-on</b>, átvitel közben. Ami már átmásolódott, a célhelyen marad; semmi sem áll vissza.</li>
+          <li><b>Zárja be az alkalmazást, és tovább fut.</b> A feladat a NAS-é, nem egy képernyőé, amelyet nyitva kell tartania. Nyissa meg újra a File Stationt, és az alkalmazás újra csatlakozik ugyanahhoz a feladathoz, nem veszíti el a nyomát.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note" style="margin-top:22px"><b>Miért nyomva tartás koppintás helyett.</b> A másolás a helyén hagyja az eredetiket, így a félrekoppintás nem kerül semmibe - az egyetlen koppintás. Az áthelyezés törli őket, miután a másolat megérkezett, ezért ugyanazt a nyomva tartással történő megerősítést kapja, mint az újraindítás és a leállítás vezérlői az alkalmazás más részein.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="shares">
+      <div class="eyebrow">Megosztott mappák</div>
+      <h2>Maguk a megosztások</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Nem a fájlok - a megosztások. Minden bejegyzés mutatja a nevét, a kötetet, amelyen van, a leírását, valamint egy <b>ACL</b> címkét, ha hozzáférés-vezérlési jogosultságai vannak.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Hozzon létre megosztott mappát</b> a jobb alsó sarokban lévő gombbal.</li>
+          <li><b>Az egyes sorok túlcsordulás menüje</b> tartalmazza, mit tehet az adott megosztással.</li>
+          <li><b>A titkosított megosztások</b> ilyenként vannak jelölve, így első pillantásra látszik, melyeket kell újraindítás után feloldani.</li>
+        </ul>
+        <div class="note"><b>Számít, hol van a megosztás.</b> A kötet minden soron látható, ami a leggyorsabb módja a „melyik kötet telik meg” kérdés megválaszolásának, amikor a <a href="/hu/guide/storage/">Tárhely</a> képernyőn egy megtelt kötetet néz.</div>
+      </div>
+      <img alt="Megosztott mappák kötettel, leírással és ACL-címkékkel" src="/screenshots/files-shared.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="notes">
+      <div class="eyebrow">Note Station</div>
+      <h2>Jegyzetfüzetek és jegyzetek</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Note Station jegyzetfüzetek jegyzetszámmal" src="/screenshots/notes.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Felül összesítés - összes jegyzet, jegyzetfüzet és címke -, majd az <b>Összes jegyzet</b> és az egyes jegyzetfüzetek saját számmal.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Nyisson meg bármely jegyzetet</b>, és olvassa a teljes tartalmát.</li>
+          <li><b>A képek ott jelennek meg, ahol a jegyzetben vannak</b>, a bekezdései között, nem kihagyva vagy a végén összegyűjtve.</li>
+          <li><b>A NAS által nem küldhető kép</b> helyén <b>A kép nem tölthető be</b> felirat látszik, nem egyszerűen eltűnik - ideértve azokat a képeket is, amelyeket a webes kivágó külső weboldalakról adott hozzá, és amelyeket a NAS néha nem tud visszaadni.</li>
+          <li><b>Hozzon létre jegyzetfüzetet</b> vagy <b>adjon hozzá jegyzetet</b> a jobb alsó sarokban lévő két gombbal.</li>
+          <li><b>Töröljön jegyzetfüzetet</b> a sorából.</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">Ezen a képernyőképen három jegyzetfüzet címe el van mosva - egy valódi NAS-éi.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="office">
+      <div class="eyebrow">Synology Office</div>
+      <h2>Telepítve, és mit támogat</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Állapotképernyő, nem szerkesztő: a NAS-on futó Synology Office verziója, és hogy mely dokumentumtípusokat támogatja - <b>Dokumentumok</b>, <b>Táblázatok</b> és <b>Diák</b> -, mindegyik pipával.</p>
+        <div class="note"><b>Miért áll meg itt.</b> Az Office-dokumentumokat a Synology Drive tárolja és nyitja meg. Ahelyett, hogy fél táblázatszerkesztőt építene egy NAS-figyelőbe, az alkalmazás jelzi, hogy az Office ott van, és a Drive-ra irányítja, ahol a dokumentumok valójában élnek.</div>
+      </div>
+      <img alt="Synology Office állapota Dokumentumokkal, Táblázatokkal és Diákkal" src="/screenshots/office.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contacts">
+      <div class="eyebrow">Contacts</div>
+      <h2>Címjegyzékek</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Synology Contacts címjegyzékek névjegyszámmal" src="/screenshots/contacts.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Az összes címjegyzék teljes száma, majd minden címjegyzék saját számmal - a Google-ből importált jegyzékeket is beleértve, amelyek a NAS-on létrehozottak mellett jelennek meg.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Keressen mindenben</b> a felül lévő mezőből.</li>
+          <li><b>Nyisson ki egy jegyzéket</b>, hogy lássa a benne lévő névjegyeket; a szakaszok összecsukódnak, így a kétezer bejegyzéses jegyzék nem nyomja el a hatbejegyzésest.</li>
+          <li><b>Adjon hozzá névjegyet</b> egy adott jegyzékhez a sorából, vagy a jobb alsó sarokban lévő gombbal.</li>
+          <li><b>Szerkesszen vagy töröljön</b> meglévő névjegyet.</li>
+        </ul>
+        <p class="capt" style="margin-top:18px">Egy címjegyzék neve el van mosva - valódi cím.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Fájlok GYIK</h2>
+    </div>
+    <details open><summary>Letölthetek fájlt a NAS-omról a telefonomra?</summary><div class="body">Igen. Nyissa meg a File Stationt, keresse meg a fájlt, és töltse le. Mobilon a megosztási lap veszi át a szerepet; Windowson és macOS-en natív Mentés másként párbeszédablakot kap. A letöltések QuickConnecten keresztül is működnek.</div></details>
+    <details><summary>Másolhatok vagy helyezhetek át fájlokat a NAS-ba dugott USB-meghajtóra?</summary><div class="body">Igen. A külső meghajtó ugyanúgy jelenik meg célként, mint a megosztott mappa, mert a NAS megosztásként csatolja. Válassza a Másolás ide vagy az Áthelyezés ide lehetőséget, nyissa meg a meghajtót, és erősítse meg - a NAS közvetlenül ír rá.</div></details>
+    <details><summary>A másolás vagy áthelyezés átmegy a telefonomon?</summary><div class="body">Nem. A munkát maga a NAS végzi. A telefon elküldi a kérést, és figyeli a haladást, így a több száz gigabájtos átvitel soha nem érinti az adatforgalmi csomagját, és az alkalmazás bezárása esetén is tovább fut.</div></details>
+    <details><summary>Létrehozhatok megosztott mappát az alkalmazásból?</summary><div class="body">Igen, a Megosztott mappák részlapról. A meglévő megosztások mutatják a nevüket, a kötetüket, a leírásukat, és hogy van-e ACL-jogosultságuk.</div></details>
+    <details><summary>Olvashatom a Note Station jegyzeteimet?</summary><div class="body">Igen. A Jegyzetek részlap a jegyzetfüzeteket jegyzetszámmal és címkeszámmal mutatja, és bármelyik jegyzetet megnyithatja teljes terjedelmében olvasásra, létrehozhat jegyzetfüzetet, vagy hozzáadhat jegyzetet. A jegyzeten belüli képek ott jelennek meg, ahol a jegyzetben vannak, a NAS által nem küldhető kép helyén pedig „nem tölthető be” helyőrző látható, nem pedig eltűnik.</div></details>
+    <details><summary>Miért mutat a Synology Office csak állapotot?</summary><div class="body">Mert az Office-dokumentumokat a Synology Drive tárolja és nyitja meg. Az alkalmazás jelzi, hogy az Office telepítve van, és mely dokumentumtípusokat támogatja; a dokumentumszerkesztés a Synology Drive alkalmazásába való.</div></details>
+    <details><summary>Miért nem látok egy mappát, amelyről tudom, hogy létezik?</summary><div class="body">A File Station itt pontosan a DSM-fiókja jogosultságait tiszteletben tartja. Az a mappa, amelyet a fiókja nem olvashat, nem jelenik meg, ugyanúgy, mint a webes felületen. Jelentkezzen be olyan fiókkal, amely látja.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Download Station</h2>
+    <p class="lead" style="margin:0 auto 24px">Hozzáadás hivatkozással, magnet linkkel vagy .torrent fájllal, és a NAS által jelentett beállítások módosítása.</p>
+    <p><a class="btn" href="/hu/guide/downloads/">Download Station &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

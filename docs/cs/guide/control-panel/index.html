@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Správa uživatelů, úloh a UPS Synology - Syno Manager</title>
+<meta name="description" content="Spravujte uživatelské účty Synology s chráněnými systémovými účty, spouštějte a přepínejte plánované úlohy a čtěte nabití UPS a odhadovanou dobu provozu z telefonu." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Správa uživatelů, úloh a UPS Synology - Syno Manager" />
+<meta property="og:description" content="Spravujte uživatelské účty Synology s chráněnými systémovými účty, spouštějte a přepínejte plánované úlohy a čtěte nabití UPS a odhadovanou dobu provozu z telefonu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Správa uživatelů, úloh a UPS Synology - Syno Manager" />
+<meta name="twitter:description" content="Spravujte uživatelské účty Synology s chráněnými systémovými účty, spouštějte a přepínejte plánované úlohy a čtěte nabití UPS a odhadovanou dobu provozu z telefonu." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ovládací panel"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Správa uživatelů, úloh a UPS Synology - Syno Manager",
+  "description": "Spravujte uživatelské účty Synology s chráněnými systémovými účty, spouštějte a přepínejte plánované úlohy a čtěte nabití UPS a odhadovanou dobu provozu z telefonu.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mohu z aplikace přidávat nebo upravovat uživatele DSM?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Přidejte uživatele, upravte jeho údaje, změňte heslo nebo smažte účet. Systémové účty - admin, guest a servisní účty, které DSM vytváří - se rozpoznají a jsou chráněny před smazáním, protože jejich odstranění rozbije NAS způsobem, který se nepříjemně opravuje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu spustit plánovanou úlohu ručně?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, u úloh, které DSM dovolí spustit - každá z nich má Spustit nyní. Libovolnou úlohu také můžete povolit nebo zakázat, aniž byste otevírali DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co ukazuje obrazovka UPS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Model UPS, zda je v síti nebo na baterii, jeho nabití v procentech a jako lištu, jak je připojen, odhadovanou zbývající dobu provozu a zda je na NAS zapnuta podpora UPS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu změnit, jak dlouho NAS čeká před vypnutím na baterii?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne. Aplikace hlásí stav UPS; zásada vypnutí se nastavuje v DSM v části Hardware a napájení, kde jsou důsledky nastavení vypsány."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Ovládací panel</div>
+      <div class="eyebrow">Ovládací panel</div>
+      <h1>Účty, plány <span class="g">a napájení</span></h1>
+      <p>Čtyři podpohledy: <b>Uživatelé</b>, <b>Úlohy</b>, <b>Napájení</b> pro UPS a <b>Nastavení</b> - vlastní předvolby aplikace, dostupné, aniž byste opustili kartu, na které jste.</p>
+    </div>
+    <div class="hero-shot"><img alt="Plánovač úloh s plánovanými úlohami, přepínači a Spustit nyní" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#users">Uživatelé</a></li>
+      <li><a href="#tasks">Plánovač úloh</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Nastavení</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Uživatelé</div>
+      <h2>Účty DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Každý účet na NAS se zobrazovaným jménem, popisem a e-mailovou adresou, pokud je nastavena. Štítek <b>Vypršel</b> označuje účty, které DSM zakázalo.</p>
+        <h3 style="margin-top:20px">Co můžete dělat</h3>
+        <ul class="plain">
+          <li><b>Přidat uživatele</b> s údaji, které DSM žádá.</li>
+          <li><b>Upravit</b> existující účet.</li>
+          <li><b>Změnit heslo.</b></li>
+          <li><b>Smazat</b> účet, který jste vytvořili.</li>
+        </ul>
+        <div class="note"><b>Systémové účty nelze smazat.</b> <code>admin</code>, <code>guest</code> a servisní účty, které DSM vytváří pro vlastní balíčky, se rozpoznají a jsou chráněny. Jejich odstranění rozbije NAS způsobem, který se nepříjemně opravuje, a telefon není místo, kde na to přijít.</div>
+      </div>
+      <img alt="Uživatelské účty DSM, se dvěma jmény a adresami zakrytými" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Dva účty na tomto snímku jsou rozmazané - jsou to jména a adresy skutečných lidí.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Plánovač úloh</div>
+      <h2>Co je naplánováno a co poběží příště</h2>
+      <p class="lead">Každá úloha, kterou DSM má, zda je povolená, co dělá a kdy se příště spustí.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Název úlohy a její typ</b> - úloha Hyper Backup, uživatelský skript, vyčištění koše - každá označená druhem věci, kterým je.</li>
+      <li><b>Co skutečně dělá.</b> Úloha skriptu ukazuje příkaz, který spouští; zálohovací úloha ukazuje svůj popis.</li>
+      <li><b>Další běh</b>, jako datum a čas.</li>
+      <li><b>Přepínač u každé úlohy</b> pro její povolení nebo zakázání bez otevření DSM.</li>
+      <li><b>Spustit nyní</b> u úloh, které DSM dovolí spustit na požádání.</li>
+    </ul>
+    <div class="note warn"><b>Spustit nyní ji spustí hned.</b> Plánovaný skript, který čeká, že poběží ve 3am na nečinném NAS, se bude chovat jinak v 6pm během kopírování souborů. Tlačítko dělá, co říká.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Napájení</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Stav UPS s modelem, nabitím, režimem připojení a odhadovanou dobou provozu" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Zobrazí se, když je UPS připojen. Jedna karta, vše na ní.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Zobrazeno</th><th>Význam</th></tr></thead>
+          <tbody>
+            <tr><td>Výrobce a model</td><td>Tak, jak se UPS představuje.</td></tr>
+            <tr><td>Stav</td><td><b>Online</b> na síťové napětí, nebo na baterii.</td></tr>
+            <tr><td>Nabití</td><td>Procenta a lišta. Oranžová pod 50 %, červená pod 20 %.</td></tr>
+            <tr><td>Režim</td><td>Jak s ním NAS komunikuje - přes USB, nebo po síti.</td></tr>
+            <tr><td>Doba provozu</td><td>Jak dlouho UPS odhaduje, že udrží zátěž.</td></tr>
+            <tr><td>Povoleno</td><td>Zda je podpora UPS v DSM vůbec zapnuta.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Nabití se promítá do stavového odznaku.</b> UPS, který se vybíjí, se objeví na <a href="/cs/guide/home/#header">domovské obrazovce</a>, aniž byste otevřeli tuto kartu - což je smysl, protože až vás napadne zkontrolovat to, nemusíte mít moc času.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Nastavení</div>
+      <h2>Vlastní předvolby aplikace</h2>
+      <p class="lead">Čtvrtý podpohled je Nastavení, vložené sem, abyste mohli změnit interval dotazování nebo barvu zvýraznění, aniž byste opustili kartu. Je to stejná obrazovka, kterou otevírá ikona ozubeného kola.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/cs/guide/settings/">Každé nastavení vysvětleno</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>FAQ k Ovládacímu panelu</h2>
+    </div>
+    <details open><summary>Mohu z aplikace přidávat nebo upravovat uživatele DSM?</summary><div class="body">Ano. Přidejte uživatele, upravte jeho údaje, změňte heslo nebo smažte účet. Systémové účty - admin, guest a servisní účty, které DSM vytváří - se rozpoznají a jsou chráněny před smazáním.</div></details>
+    <details><summary>Mohu spustit plánovanou úlohu ručně?</summary><div class="body">Ano, u úloh, které DSM dovolí spustit. Libovolnou úlohu také můžete povolit nebo zakázat, aniž byste otevírali DSM.</div></details>
+    <details><summary>Co ukazuje obrazovka UPS?</summary><div class="body">Model UPS, zda je v síti nebo na baterii, jeho nabití v procentech a jako lištu, jak je připojen, odhadovanou zbývající dobu provozu a zda je na NAS zapnuta podpora UPS.</div></details>
+    <details><summary>Mohu změnit zásadu vypnutí na baterii?</summary><div class="body">Ne. Aplikace hlásí stav UPS; zásada se nastavuje v DSM v části Hardware a napájení, kde jsou důsledky vypsány.</div></details>
+    <details><summary>Proč chybí podpohled Napájení?</summary><div class="body">Protože není připojen žádný UPS, nebo je podpora UPS v DSM vypnutá. Aplikace skrývá obrazovky pro hardware, který tam není.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Asistent</h2>
+    <p class="lead" style="margin:0 auto 24px">Položte svému NAS otázku a odpoví model ve vašem telefonu.</p>
+    <p><a class="btn" href="/cs/guide/assistant/">Asistent &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na příručku</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

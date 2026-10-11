@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="sv" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Säkerhetskopiera dina appinställningar - Syno Manager</title>
+<meta name="description" content="Exportera Syno Managers egna inställningar till en fil och återställ dem på en ny telefon. NAS-anslutningar, lösenord och sessioner ingår medvetet aldrig." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/sv/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Säkerhetskopiera dina appinställningar - Syno Manager" />
+<meta property="og:description" content="Exportera Syno Managers egna inställningar till en fil och återställ dem på en ny telefon. NAS-anslutningar, lösenord och sessioner ingår medvetet aldrig." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/sv/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Säkerhetskopiera dina appinställningar - Syno Manager" />
+<meta name="twitter:description" content="Exportera Syno Managers egna inställningar till en fil och återställ dem på en ny telefon. NAS-anslutningar, lösenord och sessioner ingår medvetet aldrig." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "sv",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Användarguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Säkerhetskopiering &amp; återställning"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Säkerhetskopiera dina appinställningar - Syno Manager",
+  "description": "Exportera Syno Managers egna inställningar till en fil och återställ dem på en ny telefon. NAS-anslutningar, lösenord och sessioner ingår medvetet aldrig.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "sv",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad ingår i inställningssäkerhetskopian?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Endast appinställningar: tema, navigering, layout för instrumentpanelen, startbeteende, kategorier, avfrågningsintervall och temperaturenhet. NAS-anslutningar, lösenord och sessioner ingår aldrig."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför säkerhetskopieras inte mina NAS-uppgifter?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "För att en portabel fil med NAS-lösenord är en portabel fil med NAS-lösenord. Inloggningsuppgifter lagras i enhetens nyckelring eller nyckellager, som medvetet inte är en plats en export kan nå. Du anger dem på nytt en gång på den nya telefonen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur flyttar jag till en ny telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Exportera på den gamla med Ladda ner eller Dela, för över filen till den nya telefonen, installera appen, klistra in filens innehåll i Återställ och lägg till din NAS igen. Allt annat kommer tillbaka som du hade det."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad händer med inställningar som filen inte känner till?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bara kända appinställningar tillämpas och allt annat i filen ignoreras, så en äldre säkerhetskopia som återställs i en nyare app låter de nya inställningarna ligga kvar på sina standardvärden i stället för att misslyckas."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/sv/"><img src="/assets/syno-manager-icon.png" alt="Ikon för Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Sök i guiden..." data-i18n-empty="Inga träffar för" data-i18n-language="Språk">
+      <a href="/sv/">Hem</a>
+      <a href="/sv/guide/" class="active">Användarguide</a>
+      <a href="/sv/#screenshots">Skärmbilder</a>
+      <a href="/sv/compatible-nas/">Kompatibilitet</a>
+      <a href="/sv/best-synology-nas-app/">Därför byter man</a>
+      <a href="/sv/help/">Hjälp</a>
+      <a href="/sv/#top" class="cta">Ladda ner</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/sv/">Hem</a> &rsaquo; <a href="/sv/guide/">Användarguide</a> &rsaquo; Säkerhetskopiering &amp; återställning</div>
+      <div class="eyebrow">Säkerhetskopiering &amp; återställning</div>
+      <h1>Din konfiguration, <span class="g">på nästa telefon</span></h1>
+      <p>En fil innehåller varje inställning du gjort - tema, nedre fält, layout för instrumentpanelen, avfrågning, enheter. Den innehåller medvetet inga inloggningsuppgifter alls.</p>
+    </div>
+    <div class="hero-shot"><img alt="Skärmen Säkerhetskopiering och återställning med Exportera och Återställ" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vad som finns i filen</div>
+      <h2>Och vad som inte gör det</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Ingår</h3>
+        <ul class="plain">
+          <li>Tema, yta, accentfärg och textstorlek.</li>
+          <li>Det nedre navigeringsfältet och dess ordning.</li>
+          <li>Layout för instrumentpanelen och vilka kort som är på.</li>
+          <li>Kategorier för instrumentpanelen.</li>
+          <li>Startbeteende.</li>
+          <li>Avfrågningsintervall.</li>
+          <li>Temperaturenhet.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ingår aldrig</h3>
+        <ul class="plain">
+          <li><b>NAS-anslutningar</b> - adresser, portar och alternativ.</li>
+          <li><b>Lösenord.</b></li>
+          <li><b>Sessioner och 2FA-enhetstoken.</b></li>
+        </ul>
+        <div class="note stop"><b>Den uteslutningen är poängen.</b> En fil som du kan mejla till dig själv och lägga i en molnmapp är en fil som kan läcka. Inloggningsuppgifter lagras i enhetens nyckelring eller nyckellager just så att en export inte kan nå dem, och appen gör inget undantag för sin egen bekvämlighet.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Exportera</div>
+      <h2>Få ut filen</h2>
+      <p class="lead"><b>Inställningar &rsaquo; Säkerhetskopiering och återställning</b>, sedan en av två knappar.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Ladda ner</b> sparar JSON-filen direkt på enheten.</li>
+      <li><b>Dela</b> lämnar över den till delningsmenyn, så att du kan skicka den till Filer, Drive, en annan app eller dig själv.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Återställ</div>
+      <h2>Lägga tillbaka den</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Öppna säkerhetskopian</b> och kopiera dess innehåll.</li>
+      <li><b>Klistra in i rutan Återställ</b>, eller tryck på <b>Klistra in från urklipp</b>.</li>
+      <li><b>Tryck på Återställ inställningar.</b></li>
+      <li><b>Lägg till din NAS igen</b> - den delen fanns aldrig i filen.</li>
+    </ol>
+    <div class="note"><b>Okända poster ignoreras, de avvisas inte.</b> Bara inställningar som appen känner igen tillämpas, så en säkerhetskopia från en äldre version återställs rent i en nyare - de inställningar som inte fanns då ligger helt enkelt kvar på sina standardvärden.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Relaterat</div>
+      <h2>Ska inte förväxlas med</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/sv/guide/backup/">Hyper Backup och Active Backup</a></b> - din NAS som säkerhetskopierar dina data. Har inget med den här skärmen att göra.</li>
+      <li><b>DSM-konfigurationssäkerhetskopia</b> - NAS-enhetens egna inställningar, exporterade från DSM:s Kontrollpanel.</li>
+      <li><b>Enhetssäkerhetskopior.</b> Syno Managers lagrade inloggningsuppgifter är medvetet <b>uteslutna</b> från säkerhetskopior av Android- och iOS-enheter, så att återställa en telefon från en enhetssäkerhetskopia för inte med sig NAS-lösenord.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanliga frågor</div>
+      <h2>FAQ om säkerhetskopiering &amp; återställning</h2>
+    </div>
+    <details open><summary>Vad ingår i inställningssäkerhetskopian?</summary><div class="body">Endast appinställningar: tema, navigering, layout för instrumentpanelen, startbeteende, kategorier, avfrågningsintervall och temperaturenhet. NAS-anslutningar, lösenord och sessioner ingår aldrig.</div></details>
+    <details><summary>Varför säkerhetskopieras inte mina NAS-uppgifter?</summary><div class="body">För att en portabel fil med NAS-lösenord är en portabel fil med NAS-lösenord. Inloggningsuppgifter lagras i enhetens nyckelring eller nyckellager, som en export medvetet inte kan nå.</div></details>
+    <details><summary>Hur flyttar jag till en ny telefon?</summary><div class="body">Exportera på den gamla, för över filen, installera appen, klistra in innehållet i Återställ och lägg till din NAS igen.</div></details>
+    <details><summary>Vad händer med inställningar som filen inte känner till?</summary><div class="body">Bara kända inställningar tillämpas och allt annat ignoreras, så en äldre säkerhetskopia som återställs i en nyare app låter de nya inställningarna ligga kvar på sina standardvärden.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Fungerar något inte?</h2>
+    <p class="lead" style="margin:0 auto 24px">Felsökningsguiden täcker anslutningsfel, tomma rutor, saknade flikar och inaktuella widgetar.</p>
+    <p><a class="btn" href="/sv/help/">Felsökning &rarr;</a> &nbsp; <a class="btn ghost" href="/sv/guide/">Tillbaka till guiden</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/sv/">Hem</a><a href="/sv/guide/">Användarguide</a><a href="/sv/guide/getting-started/">Kom igång</a><a href="/sv/compatible-nas/">Kompatibilitet</a><a href="/sv/best-synology-nas-app/">Varför byta</a><a href="/sv/synology-app-for-iphone/">iPhone & iPad</a><a href="/sv/synology-app-for-android/">Android</a><a href="/sv/synology-app-for-mac-windows/">Mac & Windows</a><a href="/sv/ds-finder-alternative/">mot DS finder</a><a href="/sv/help/">Hjälp</a><a href="/sv/privacy/">Integritet</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Rapportera en bugg</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager är en oberoende app och är inte knuten till, godkänd av eller sponsrad av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station och QuickConnect är varumärken som tillhör Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

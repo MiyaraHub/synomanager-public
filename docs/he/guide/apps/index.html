@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, חבילות ו-VMs ל-Synology NAS - Syno Manager</title>
+<meta name="description" content="התקינו חבילות DSM מ-Package Center, הפעילו, עצרו והפעילו מחדש קונטיינרים של Docker, קראו את היומנים שלהם, הריצו סטאקים של Compose ושלטו במכונות וירטואליות." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, חבילות ו-VMs ל-Synology NAS - Syno Manager" />
+<meta property="og:description" content="התקינו חבילות DSM מ-Package Center, הפעילו, עצרו והפעילו מחדש קונטיינרים של Docker, קראו את היומנים שלהם, הריצו סטאקים של Compose ושלטו במכונות וירטואליות." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, חבילות ו-VMs ל-Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="התקינו חבילות DSM מ-Package Center, הפעילו, עצרו והפעילו מחדש קונטיינרים של Docker, קראו את היומנים שלהם, הריצו סטאקים של Compose ושלטו במכונות וירטואליות." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "אפליקציות"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, חבילות ו-VMs ל-Synology NAS - Syno Manager",
+  "description": "התקינו חבילות DSM מ-Package Center, הפעילו, עצרו והפעילו מחדש קונטיינרים של Docker, קראו את היומנים שלהם, הריצו סטאקים של Compose ושלטו במכונות וירטואליות.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "אפשר להתקין חבילת DSM מהטלפון?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. ל-Package Center באפליקציה יש אותו קטלוג כמו ל-DSM - מותקנות, כל החבילות, בטא וקהילה - עם תיבת חיפוש. בוחרים חבילה, בוחרים נפח ומתקינים. עדכון והסרה עובדים באותו אופן, וכל פעולה מאושרת בקריאה חוזרת של רשימת החבילות ולא בכך שהבקשה חזרה OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "אפשר להפעיל מחדש קונטיינר Docker מהאפליקציה?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. לכל קונטיינר יש הפעלה, עצירה והפעלה מחדש, וכפתור שפותח את היומנים שלו. קונטיינר שהסתיים מציג כפתור הפעלה ולא עצירה שאי אפשר לבצע."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "אפשר לשלוט בסטאקים של Docker Compose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן. תצוגת Projects מציגה את פרויקטי ה-Compose שלכם ומפעילה או עוצרת את כל הסטאק, במקום לגרום לכם לחפש כל קונטיינר. יומני הסטאק נפתחים כמו יומני קונטיינר."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "אפשר להפעיל ולעצור מכונות וירטואליות?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן, אם Virtual Machine Manager מותקן. אפשר להפעיל, לכבות או לכבות בכוח כל מכונה. כיבוי בכוח דורש החזקה לאישור כי זה שווה ערך למשיכת התקע. מכונה במצב שה-NAS לא קורא לו פועל או כבוי מוצגת בדיוק כך, ומוצע לה פקד התאוששות ולא הפעלה שאי אפשר לבצע."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; אפליקציות</div>
+      <div class="eyebrow">אפליקציות</div>
+      <h1>הכול <span class="g">שה-NAS שלכם מריץ</span></h1>
+      <p>ארבע תצוגות משנה: <b>Package Center</b> לחבילות DSM, <b>Docker</b> לקונטיינרים, <b>Projects</b> לסטאקים של Compose, ו-<b>Virtual Machines</b> כש-VMM מותקן.</p>
+    </div>
+    <div class="hero-shot"><img alt="קונטיינרים של Docker עם סטטוס ופקדים" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>בדף הזה</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">התקנת חבילה</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">יומני קונטיינר</a></li>
+      <li><a href="#projects">פרויקטי Compose</a></li>
+      <li><a href="#virtual-machines">מכונות וירטואליות</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>כל הקטלוג, עם חיפוש</h2>
+      <p class="lead">אותם ארבעה מסננים כמו ב-DSM, ותיבת חיפוש על כולם.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>מסנן</th><th>מה הוא מציג</th></tr></thead>
+          <tbody>
+            <tr><td>מותקנות</td><td>מה שנמצא עכשיו ב-NAS שלכם, עם הגרסה, הגודל ומחוון פעילות.</td></tr>
+            <tr><td>כל החבילות</td><td>הקטלוג המלא של Synology לדגם שלכם.</td></tr>
+            <tr><td>בטא</td><td>חבילות טרום-הפצה.</td></tr>
+            <tr><td>קהילה</td><td>חבילות ממקורות צד שלישי שהוספתם ב-DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">כל רשומה כוללת את הגרסה וגודל ההורדה, את התיאור, ואת כל תלות שהיא צריכה - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - כך שהתקנה שנייה לא תפתיע אתכם.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="חיפוש בקטלוג החבילות המלא, עם כפתורי התקנה" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">חיפוש ב-<b>כל החבילות</b> אחרי חבילה שעדיין לא מותקנת.</p>
+      </div>
+      <img alt="Package Center מציג חבילות מותקנות עם מצב הפעלה" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">התקנה, עדכון, הסרה</div>
+      <h2>מה קורה כשנוגעים בהתקנה</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>חפשו או סננו</b> עד לחבילה שאתם רוצים.</li>
+          <li><b>התקנה.</b> תיבת דו-שיח מציינת את שם החבילה, מציגה כל תלות, ושואלת על איזה נפח להתקין - עם השטח הפנוי של כל נפח, כדי שלא תבחרו בעיניים עצומות.</li>
+          <li><b>אישור.</b> ה-NAS מתקין אותה, כולל התלויות.</li>
+          <li><b>הרשימה נקראת מחדש.</b> הכפתור הופך ל-<b>הסרה</b> כי רשימת החבילות אומרת עכשיו שהיא מותקנת - לא כי הבקשה חזרה OK.</li>
+        </ol>
+        <div class="note"><b>השלב האחרון הוא העיקר.</b> בקשה שהצליחה והתקנה שהסתיימה הם שני אירועים שונים. האפליקציה מחכה לשני.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="תיבת ההתקנה עם שם החבילה, התלות שלה ונפח היעד" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>התקנת חבילה מוסיפה מסכים לאפליקציה.</b> רשימת הלשוניות נבנית ממה שה-NAS מדווח בעת ההתחברות, ולכן אחרי התקנה של משהו כמו Download Station, משכו לרענון או פתחו את האפליקציה מחדש ותצוגת המשנה שלו תופיע.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>כל קונטיינר, עם הפקדים החשובים</h2>
+      <p class="lead">כותרת סטטוס - <b>פועלים מתוך סך הכול</b> - ואז כל קונטיינר שיש ל-NAS, ברשימה אחת.</p>
+    </div>
+    <ul class="plain">
+      <li><b>שם ותגית image</b> בכל שורה, כך ששני קונטיינרים מאותו image עדיין ניתנים להבחנה.</li>
+      <li><b>מצב</b> כצ׳יפ: <b>פועל</b>, <b>הסתיים</b>, וכל מה ש-Docker מדווח מלבד זה. קונטיינר ש-Docker מגדיר כתקין אומר זאת - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>זמן פעילות</b> לכל מה שפועל.</li>
+      <li><b>הפעלה, עצירה והפעלה מחדש</b>, עם הפקד שמתאים למצב: קונטיינר עצור מקבל הפעלה, לא עצירה שלא תעשה כלום.</li>
+      <li><b>יומנים</b> מהכפתור בכל שורה.</li>
+      <li><b>הרחיבו שורה</b> לפרטים שלה - נתוני זיכרון ורשת, בין היתר.</li>
+      <li><b>כווצו את כל הרשימה</b> עם הפקד שבראש המסך כשאתם רוצים רק את הספירה.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">יומנים</div>
+      <h2>קוראים פעם אחת, עוקבים בכוונה</h2>
+      <p class="lead">יומני קונטיינר וסטאק מתנהגים כמו <a href="/he/guide/system/#logs">יומן המערכת</a>, ומאותה סיבה.</p>
+    </div>
+    <ul class="plain">
+      <li><b>הם נטענים פעם אחת ונשארים במקום</b>, כך ששורה לא בורחת בגלילה בזמן שקוראים אותה.</li>
+      <li><b>לחצו על play כדי לעקוב בזמן אמת</b>, ולחצו שוב כדי להשהות.</li>
+      <li><b>המעקב נעצר מעצמו</b> כשיוצאים מהמסך או שולחים את האפליקציה לרקע - בלי לשונית נשכחת שדוגמת נתונים בכיס.</li>
+      <li><b>חפשו</b> שורה אחת ביומן ארוך.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projects</div>
+      <h2>סטאקים של Compose, כסטאקים</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="פרויקטי Docker Compose, כשאין אף אחד מוגדר" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">פרויקט Compose הוא כמה קונטיינרים ששייכים יחד. תצוגת Projects מתייחסת אליהם כך: מפעילים או עוצרים <b>את כל הסטאק</b> במקום לחפש כל קונטיינר ברשימת Docker ולקוות שלא פספסתם אף אחד.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>כל פרויקט</b> מציג את שמו וכמה מהקונטיינרים שלו פועלים.</li>
+          <li><b>הפעילו או עצרו את הפרויקט</b> כיחידה אחת.</li>
+          <li><b>יומני הסטאק</b> נפתחים כמו יומני קונטיינר.</li>
+          <li><b>כשאין פרויקטים, זה כתוב</b> - “פרויקטי Docker Compose יופיעו כאן” - ולא מסך ריק.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">מכונות וירטואליות</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">מופיע כש-VMM מותקן. כל מכונה וירטואלית ב-NAS, מה היא עושה, ושלוש פעולות ההפעלה.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>פעולה</th><th>מה הוא עושה</th></tr></thead>
+      <tbody>
+        <tr><td>הפעלה</td><td>מדליקה את המכונה.</td></tr>
+        <tr><td>כיבוי</td><td>מבקשת ממערכת ההפעלה של האורח להיכבות בצורה נקייה.</td></tr>
+        <tr><td>כיבוי בכוח</td><td>מנתקת את החשמל. <b>החזיקו לאישור</b>, כי זה שווה ערך למשיכת התקע ממחשב שפועל - נגיעה פשוטה זולה מדי בשביל זה.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>מכונה במצב ביניים מתוארת ככזו.</b> אם ה-NAS מדווח על מצב שהוא לא קורא לו פועל או כבוי - עולה, מושעית, קרסה - האפליקציה מציגה בדיוק את המילה הזו ומציעה את פקד ההתאוששות, ולא כפתור הפעלה שאי אפשר לבצע או וי ירוק שאינו נכון.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>FAQ - אפליקציות</h2>
+    </div>
+    <details open><summary>אפשר להתקין חבילת DSM מהטלפון?</summary><div class="body">כן. ל-Package Center באפליקציה יש אותו קטלוג כמו ל-DSM - מותקנות, כל החבילות, בטא וקהילה - עם תיבת חיפוש. בוחרים חבילה, בוחרים נפח ומתקינים. עדכון והסרה עובדים באותו אופן, וכל פעולה מאושרת בקריאה חוזרת של רשימת החבילות.</div></details>
+    <details><summary>אפשר להפעיל מחדש קונטיינר Docker מהאפליקציה?</summary><div class="body">כן. לכל קונטיינר יש הפעלה, עצירה והפעלה מחדש, וכפתור שפותח את היומנים שלו. קונטיינר שהסתיים מציג כפתור הפעלה ולא עצירה שאי אפשר לבצע.</div></details>
+    <details><summary>אפשר לשלוט בסטאקים של Docker Compose?</summary><div class="body">כן. תצוגת Projects מציגה את פרויקטי ה-Compose שלכם ומפעילה או עוצרת את כל הסטאק. יומני הסטאק נפתחים כמו יומני קונטיינר.</div></details>
+    <details><summary>אפשר להפעיל ולעצור מכונות וירטואליות?</summary><div class="body">כן, אם Virtual Machine Manager מותקן. אפשר להפעיל, לכבות או לכבות בכוח כל מכונה. כיבוי בכוח דורש החזקה לאישור כי זה שווה ערך למשיכת התקע.</div></details>
+    <details><summary>אפשר ליצור קונטיינר חדש מהאפליקציה?</summary><div class="body">לא. יצירת קונטיינר פירושה בחירת image, מיפוי פורטים, חיבור נפחים ומשתני סביבה - טופס שמקומו על מסך שבו רואים את הכול בבת אחת. האפליקציה מריצה ומנטרת את מה שיצרתם ב-DSM או ב-Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: מדיה</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos, Drive וצפייה חיה ב-Surveillance Station.</p>
+    <p><a class="btn" href="/he/guide/media/">Photos, Drive &amp; מצלמות &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 的裝置端 AI 助理 - Syno Manager</title>
+<meta name="description" content="用白話詢問你的 Synology NAS，得到與儀表板相同的健康判定。在手機上執行，會從你的評分中學習，而且只讀取。" />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 的裝置端 AI 助理 - Syno Manager" />
+<meta property="og:description" content="用白話詢問你的 Synology NAS，得到與儀表板相同的健康判定。在手機上執行，會從你的評分中學習，而且只讀取。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 的裝置端 AI 助理 - Syno Manager" />
+<meta name="twitter:description" content="用白話詢問你的 Synology NAS，得到與儀表板相同的健康判定。在手機上執行，會從你的評分中學習，而且只讀取。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "助理"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS 的裝置端 AI 助理 - Syno Manager",
+  "description": "用白話詢問你的 Synology NAS，得到與儀表板相同的健康判定。在手機上執行，會從你的評分中學習，而且只讀取。",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "助理在哪裡執行？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在你的手機上。Android 使用透過 AICore 提供的 Gemini Nano，iOS 與 macOS 使用 Apple Intelligence。沒有雲端方案可退而求其次 - 只要助理中出現任何雲端主機、雲端 SDK 或 API 金鑰，App 的建置就會失敗，所以這項承諾是由建置流程強制執行，而不是靠誰記得。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我的 NAS 資料會被傳送到任何地方嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不會。你的問題、NAS 的資料與回答，都不會離開裝置。關閉網路也能使用。因為沒有任何資料被傳送，所以也沒有任何副本可供儲存、分享或用來訓練。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以問什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "沒有固定的清單。你的 NAS 會公布它能回報的所有項目 - 一般機型超過一千項 - 助理會搜尋這份目錄，並讀取與你的問題相關的內容。安裝新套件後，它也能立刻回答相關問題，不需要更新 App。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "它能更改我 NAS 上的任何設定嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不能。它只會讀取。它無法啟動、停止、刪除或重新啟動任何東西 - 這不是要求模型遵守的政策，而是因為根本沒有給它這些工具。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "需要額外付費嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不用。它使用你裝置內建的模型，所以不必付費，也不用建立帳號。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼我看不到助理分頁？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因為你的裝置沒有可用的裝置端模型。與其顯示一個無法運作的功能，App 會在無法執行它的硬體上將它完全隱藏。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "助理會學習嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "它會從你的評分中學習，而且只在這台裝置上。用回答下方的大拇指為回答評分，之後類似的問題就會從那個回答所讀取的位置開始，因此你用得越多，助理就越會解讀你的 NAS。評分不會離開裝置，而「清除此 NAS 的評分」可將它們清除。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "為什麼會顯示模型忙碌或已超出次數？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "裝置端模型與手機上的其他 App 共用，而且只在 Syno Manager 顯示於螢幕上時才會運作。遇到這些限制時，助理會指出是哪一種，而不是顯示籠統的錯誤，並說明大約要等多久。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 助理</div>
+      <div class="eyebrow">助理 &middot; 測試版</div>
+      <h1>直接問你的 NAS，<span class="g">用白話就行</span></h1>
+      <p>「我的儲存空間有什麼值得擔心的嗎？」這類問題原本得打開四個畫面才能回答。助理會讀取你的 NAS 回報的內容並回答 - 使用在手機上執行的模型，離線可用，不會把任何資料傳到任何地方。</p>
+    </div>
+    <div class="hero-shot"><img alt="助理畫面，附建議問題" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#asking">提出問題</a></li>
+      <li><a href="#topics">你可以問什麼</a></li>
+      <li><a href="#privacy">你的資料去哪裡</a></li>
+      <li><a href="#readonly">它只讀取</a></li>
+      <li><a href="#wrong">它可能會出錯</a></li>
+      <li><a href="#learning">從你的評分中學習</a></li>
+      <li><a href="#availability">哪些裝置支援</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">提問</div>
+      <h2>用打字或用說的</h2>
+      <p class="lead">助理分頁有兩個子檢視：<b>提問</b>與<b>運作方式</b>。提問畫面一開始會有四個建議，用意是示範好問題的樣子，而不是限制你。</p>
+    </div>
+    <ul class="plain">
+      <li>在底部的輸入框<b>輸入問題</b>，或點選其中一個建議。</li>
+      <li>如果你想，也可以用麥克風<b>口述</b>。</li>
+      <li>用右上角的喇叭控制項<b>朗讀回答</b>。</li>
+      <li><b>回答會邊產生邊顯示</b>，而不是一次全部出現 - 所以你不必等它說完，就可以開始閱讀。</li>
+      <li><b>清除</b>會清空對話。</li>
+    </ul>
+    <div class="note"><b>模型在你開啟畫面時就會載入</b>，而不是等你送出第一個問題才載入，所以第一個回答不會是最慢的。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">範圍</div>
+      <h2>沒有主題清單</h2>
+      <p class="lead">這一點很容易被忽略。助理不是一組關於儲存空間與備份的現成答案 - 它針對的是你的 NAS 實際公布的所有內容。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>你的 NAS 會公布它能回報的所有項目</b> - 一般機型超過一千項 - 助理會搜尋這份目錄，並讀取與你的問題相關的內容。</li>
+          <li><b>安裝新套件後，它也能回答相關問題</b>，而且立即生效，不需要更新 App。目錄中的任何內容都沒有寫死在 App 裡，全都是從你的裝置探索而來。</li>
+          <li><b>用得越多，速度越快。</b>如何解讀 DSM 各個部分只需摸索一次並記住，之後再問同樣的事就會更快。</li>
+          <li><b>「我的 NAS 狀況如何？」會以健康判定回答</b> - 與主畫面顯示的正常、警告或嚴重判定相同，並附上背後的原因，而不是單獨抽出的溫度或某個脫離脈絡的讀數。</li>
+        </ul>
+        <div class="note"><b>好問題看起來就像一般的問句。</b>「我的 NAS 狀況如何？」、「我的備份正常嗎？」、「什麼最佔空間？」、「你能看到這台 NAS 的哪些資訊？」 - 最後一個值得問一次，因為答案會告訴你它能存取<em>你的</em> NAS 的哪些內容。</div>
+      </div>
+      <img alt="助理以健康判定回答「我的 NAS 狀況如何」" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">隱私權</div>
+      <h2>資料不會離開手機</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">模型屬於裝置本身。你的問題、NAS 的資料與回答全都在手機上處理，關閉網路也能使用。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>沒有雲端方案可退而求其次。</b>不是「我們選擇不用」 - 只要助理中出現任何雲端主機、雲端 SDK 或 API 金鑰，App 的建置就會<b>失敗</b>。這項承諾是由建置流程來確保，而不是靠誰記得。</li>
+          <li><b>因為沒有任何資料被傳送，所以沒有副本</b>可供儲存、分享，或用來訓練任何東西。</li>
+          <li><b>免費且不需要帳號</b>，因為模型本來就在你的裝置上。</li>
+        </ul>
+      </div>
+      <img alt="運作方式畫面，說明模型在裝置上，沒有任何資料離開裝置" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">界線</div>
+      <h2>它只會讀取</h2>
+      <p class="lead">助理無法啟動、停止、刪除或重新啟動任何東西。不是因為我們客客氣氣地請它不要，而是因為一開始就沒有給它這些工具。</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">這點比聽起來更重要。被<em>指示</em>不要做某件事的模型，可能被說服去做；而完全沒有辦法做的模型，就做不到。如果你想重新啟動容器，<a href="/zh-hant/guide/apps/#docker">Docker 畫面</a>只要三下點擊，而且會請你確認。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">誠實</div>
+      <h2>它可能會出錯，畫面上也會這樣說</h2>
+      <p class="lead">這是在手機上執行的小型模型，不是資料中心裡的大型模型。它可能讀錯數字，或說得比實際更有把握。App 會直接在畫面上說明，而不是藏在註腳裡。</p>
+    </div>
+    <ul class="plain">
+      <li><b>重要的事情請到對應的畫面確認。</b>每個回答談的都是 App 也會直接顯示給你看的內容。</li>
+      <li><b>分頁標題上標示 BETA</b>，正是為了這個原因。</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>暫時無法回答時，它會說明原因</h3>
+      <p class="lead">不是籠統的錯誤，而是三種明確原因之一，並說明大約要等多久。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>原因</th><th>意思</th></tr></thead>
+      <tbody>
+        <tr><td>已達使用上限</td><td>這個 App 目前已用完它在裝置端模型中的份額。裝置上所有使用該模型的 App 共用同一個模型；份額重新計算後就會恢復回答，通常在一兩分鐘內。</td></tr>
+        <tr><td>忙碌中</td><td>裝置端模型目前正在回答另一個請求。請稍後再試。</td></tr>
+        <tr><td>在背景執行中</td><td>裝置端模型只在 Syno Manager 顯示於螢幕上時才會回答。請將 App 切回前景，再問一次。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>發生以上任何情況時，都不會遺失任何內容。</b>你的問題仍留在對話中；原因排除後再問一次即可。</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">越用越好</div>
+      <h2>它會從你的評分中學習，而且只在這台裝置上</h2>
+      <p class="lead">每個回答下方都有大拇指向上或向下的按鈕。評分之後，類似的問題就會從那個回答所讀取的位置開始 - 你用得越多，助理就越會解讀<em>你的</em> NAS，而且不會有任何資料離開手機。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>好答案</b>或<b>不是好答案</b> - 回答下方的兩個大拇指，點一下即可。</li>
+          <li><b>依 NAS 分開保存。</b>評分會記錄在回答問題的那台 NAS 之下，且存放於這台裝置上，因此切換到另一台 NAS 時，會從頭開始。</li>
+          <li><b>絕不傳送到任何地方。</b>評分就像模型本身一樣完全在本機 - 沒有帳號、沒有同步、沒有上傳。</li>
+        </ul>
+      </div>
+      <img alt="已選取大拇指向上評分的助理回答" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="「在此學到了什麼」卡片，顯示一則已評分的回答與「清除此 NAS 的評分」" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0">「運作方式」分頁中的<b>在此學到了什麼</b>，會計算目前這台 NAS 上有多少回答被評為好答案，並用白話讀出來。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>這台 NAS 上尚無任何回答被評為好答案</b>，是你第一次評分之前會看到的文字 - 而不是顯示零，因為零會被當成測量結果，而不是「尚無資料」。</li>
+          <li><b>清除此 NAS 的評分</b>只要點一下，就能刪除這台裝置上為目前這台 NAS 保存的所有評分。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">支援情形</div>
+      <h2>哪些裝置支援</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>平台</th><th>模型</th><th>需求</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>具備 <b>AICore</b> 且可使用 Gemini Nano 模型的裝置。</td></tr>
+        <tr><td>iOS 與 macOS</td><td>Apple Intelligence</td><td>支援並已啟用 Apple Intelligence 的裝置。</td></tr>
+        <tr><td>其他裝置</td><td>-</td><td>完全不會顯示該分頁。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>沒有可用模型的裝置，不會顯示這項功能。</b>不是灰色停用，也不是預告 - 而是完全不存在。無法運作的控制項比沒有控制項更糟，所以這個分頁就是不會出現。</div>
+    <p style="color:var(--steel);margin-top:18px"><b>運作方式</b>子檢視會告訴你，你自己的裝置屬於哪種狀態，以及偵測到了什麼。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>助理常見問題</h2>
+    </div>
+    <details open><summary>助理在哪裡執行？</summary><div class="body">在你的手機上。Android 使用透過 AICore 提供的 Gemini Nano，iOS 與 macOS 使用 Apple Intelligence。沒有雲端方案可退而求其次 - 只要助理中出現任何雲端主機、雲端 SDK 或 API 金鑰，App 的建置就會失敗。</div></details>
+    <details><summary>我的 NAS 資料會被傳送到任何地方嗎？</summary><div class="body">不會。你的問題、NAS 的資料與回答，都不會離開裝置，關閉網路也能使用。因為沒有任何資料被傳送，所以也沒有任何副本可供儲存、分享或用來訓練。</div></details>
+    <details><summary>我可以問什麼？</summary><div class="body">沒有固定的清單。你的 NAS 會公布它能回報的所有項目 - 一般機型超過一千項 - 助理會搜尋這份目錄。安裝新套件後，它也能回答相關問題，不需要更新 App。</div></details>
+    <details><summary>它能更改我 NAS 上的任何設定嗎？</summary><div class="body">不能。它只會讀取。它無法啟動、停止、刪除或重新啟動任何東西 - 因為根本沒有給它這些工具。</div></details>
+    <details><summary>需要額外付費嗎？</summary><div class="body">不用。它使用你裝置內建的模型，所以不必付費，也不用建立帳號。</div></details>
+    <details><summary>為什麼我看不到助理分頁？</summary><div class="body">因為你的裝置沒有可用的裝置端模型。與其顯示一個無法運作的功能，App 會在無法執行它的硬體上將它完全隱藏。</div></details>
+    <details><summary>助理會學習嗎？</summary><div class="body">它會從你的評分中學習，而且只在這台裝置上。用回答下方的大拇指為回答評分，之後類似的問題就會從那個回答所讀取的位置開始。評分不會離開裝置，而「清除此 NAS 的評分」可將它們清除。</div></details>
+    <details><summary>為什麼會顯示模型忙碌或已超出次數？</summary><div class="body">裝置端模型與手機上的其他 App 共用，而且只在 Syno Manager 顯示於螢幕上時才會運作。助理會指出遇到的是哪一種情況，而不是顯示籠統的錯誤。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：設定</h2>
+    <p class="lead" style="margin:0 auto 24px">App 的每一項偏好設定，以及各自會改變什麼。</p>
+    <p><a class="btn" href="/zh-hant/guide/settings/">設定 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

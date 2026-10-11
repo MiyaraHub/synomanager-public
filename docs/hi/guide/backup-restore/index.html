@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>अपनी ऐप सेटिंग का बैकअप लें - Syno Manager</title>
+<meta name="description" content="Syno Manager की अपनी सेटिंग को फ़ाइल में एक्सपोर्ट करें और नए फ़ोन पर रिस्टोर करें। NAS कनेक्शन, पासवर्ड और सेशन जानबूझकर कभी शामिल नहीं किए जाते।" />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hi/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="अपनी ऐप सेटिंग का बैकअप लें - Syno Manager" />
+<meta property="og:description" content="Syno Manager की अपनी सेटिंग को फ़ाइल में एक्सपोर्ट करें और नए फ़ोन पर रिस्टोर करें। NAS कनेक्शन, पासवर्ड और सेशन जानबूझकर कभी शामिल नहीं किए जाते।" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hi/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hi_IN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="अपनी ऐप सेटिंग का बैकअप लें - Syno Manager" />
+<meta name="twitter:description" content="Syno Manager की अपनी सेटिंग को फ़ाइल में एक्सपोर्ट करें और नए फ़ोन पर रिस्टोर करें। NAS कनेक्शन, पासवर्ड और सेशन जानबूझकर कभी शामिल नहीं किए जाते।" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "होम",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "उपयोगकर्ता गाइड",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "बैकअप &amp; रिस्टोर"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "अपनी ऐप सेटिंग का बैकअप लें - Syno Manager",
+  "description": "Syno Manager की अपनी सेटिंग को फ़ाइल में एक्सपोर्ट करें और नए फ़ोन पर रिस्टोर करें। NAS कनेक्शन, पासवर्ड और सेशन जानबूझकर कभी शामिल नहीं किए जाते।",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "hi",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "सेटिंग बैकअप में क्या शामिल है?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "सिर्फ़ ऐप सेटिंग: थीम, नेविगेशन, डैशबोर्ड लेआउट, लॉन्च व्यवहार, श्रेणियाँ, पोलिंग अंतराल और तापमान इकाई। NAS कनेक्शन, पासवर्ड और सेशन कभी शामिल नहीं होते।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "मेरे NAS क्रेडेंशियल का बैकअप क्यों नहीं होता?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "क्योंकि NAS पासवर्ड वाली पोर्टेबल फ़ाइल का मतलब है NAS पासवर्ड वाली पोर्टेबल फ़ाइल। क्रेडेंशियल डिवाइस के कीचेन या कीस्टोर में रहते हैं, जहाँ एक्सपोर्ट जानबूझकर नहीं पहुँच सकता। नए फ़ोन पर उन्हें एक बार फिर दर्ज करना होता है।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "नए फ़ोन पर कैसे जाऊँ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "पुराने फ़ोन पर Download या Share से एक्सपोर्ट करें, फ़ाइल को नए फ़ोन तक पहुँचाएँ, ऐप इंस्टॉल करें, फ़ाइल की सामग्री Restore में पेस्ट करें, और अपना NAS फिर जोड़ें। बाकी सब वैसा ही लौट आता है जैसा आपने रखा था।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "जिन सेटिंग को फ़ाइल नहीं जानती उनका क्या होता है?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "सिर्फ़ जानी-पहचानी ऐप सेटिंग लागू होती हैं और फ़ाइल में बाकी सब अनदेखा किया जाता है, इसलिए पुराना बैकअप नए ऐप में रिस्टोर करने पर नई सेटिंग फ़ेल होने के बजाय अपने डिफ़ॉल्ट पर रहती हैं।"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hi/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager आइकन" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="मेन्यू" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="गाइड में खोजें..." data-i18n-empty="कोई परिणाम नहीं मिला:" data-i18n-language="भाषा">
+      <a href="/hi/">होम</a>
+      <a href="/hi/guide/" class="active">उपयोगकर्ता गाइड</a>
+      <a href="/hi/#screenshots">स्क्रीनशॉट</a>
+      <a href="/hi/compatible-nas/">संगतता</a>
+      <a href="/hi/best-synology-nas-app/">बदलाव क्यों करें</a>
+      <a href="/hi/help/">सहायता</a>
+      <a href="/hi/#top" class="cta">डाउनलोड करें</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hi/">होम</a> &rsaquo; <a href="/hi/guide/">यूज़र गाइड</a> &rsaquo; बैकअप &amp; रिस्टोर</div>
+      <div class="eyebrow">बैकअप &amp; रिस्टोर</div>
+      <h1>आपका सेटअप, <span class="g">अगले फ़ोन पर</span></h1>
+      <p>एक फ़ाइल में आपकी तय की हुई हर प्राथमिकता है - थीम, बॉटम बार, डैशबोर्ड लेआउट, पोलिंग, इकाइयाँ। उसमें जानबूझकर कोई क्रेडेंशियल नहीं होता।</p>
+    </div>
+    <div class="hero-shot"><img alt="Export और Restore के साथ Backup and Restore स्क्रीन" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">फ़ाइल में क्या है</div>
+      <h2>और क्या नहीं है</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>शामिल</h3>
+        <ul class="plain">
+          <li>थीम, सरफ़ेस, एक्सेंट रंग और टेक्स्ट साइज़।</li>
+          <li>बॉटम नेविगेशन बार और उसका क्रम।</li>
+          <li>डैशबोर्ड लेआउट और कौन से कार्ड चालू हैं।</li>
+          <li>डैशबोर्ड श्रेणियाँ।</li>
+          <li>लॉन्च व्यवहार।</li>
+          <li>पोलिंग अंतराल।</li>
+          <li>तापमान इकाई।</li>
+        </ul>
+      </div>
+      <div>
+        <h3>कभी शामिल नहीं</h3>
+        <ul class="plain">
+          <li><b>NAS कनेक्शन</b> - पते, पोर्ट और विकल्प।</li>
+          <li><b>पासवर्ड।</b></li>
+          <li><b>सेशन और 2FA डिवाइस टोकन।</b></li>
+        </ul>
+        <div class="note stop"><b>यह बहिष्करण ही असली बात है।</b> जिस फ़ाइल को आप खुद को ईमेल कर सकें और क्लाउड फ़ोल्डर में डाल सकें, वह लीक हो सकती है। क्रेडेंशियल डिवाइस के कीचेन या कीस्टोर में इसीलिए रहते हैं कि एक्सपोर्ट उन तक न पहुँचे, और ऐप अपनी सुविधा के लिए इसमें कोई छूट नहीं देता।</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">एक्सपोर्ट</div>
+      <h2>फ़ाइल निकालना</h2>
+      <p class="lead"><b>Settings &rsaquo; Backup &amp; Restore</b>, फिर दो बटन में से एक।</p>
+    </div>
+    <ul class="plain">
+      <li><b>Download</b> JSON फ़ाइल सीधे डिवाइस में सहेजता है।</li>
+      <li><b>Share</b> उसे शेयर शीट को देता है, ताकि आप उसे Files, Drive, किसी दूसरे ऐप या खुद को भेज सकें।</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">रिस्टोर</div>
+      <h2>वापस रखना</h2>
+    </div>
+    <ol class="steps">
+      <li><b>बैकअप फ़ाइल खोलें</b> और उसकी सामग्री कॉपी करें।</li>
+      <li><b>Restore बॉक्स में पेस्ट करें</b>, या <b>Paste from clipboard</b> पर टैप करें।</li>
+      <li><b>Restore settings पर टैप करें।</b></li>
+      <li><b>अपना NAS फिर जोड़ें</b> - वह हिस्सा फ़ाइल में कभी था ही नहीं।</li>
+    </ol>
+    <div class="note"><b>अनजानी एंट्री अनदेखी की जाती हैं, ठुकराई नहीं जातीं।</b> सिर्फ़ वे सेटिंग लागू होती हैं जिन्हें ऐप पहचानता है, इसलिए पुराने वर्शन का लिया बैकअप नए वर्शन में साफ़ ढंग से रिस्टोर हो जाता है - जो सेटिंग तब थीं ही नहीं वे बस अपने डिफ़ॉल्ट पर रहती हैं।</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">संबंधित</div>
+      <h2>इनसे भ्रमित न हों</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/hi/guide/backup/">Hyper Backup और Active Backup</a></b> - आपका NAS आपके डेटा का बैकअप ले रहा है। इस स्क्रीन से इसका कोई लेना-देना नहीं।</li>
+      <li><b>DSM कॉन्फ़िगरेशन बैकअप</b> - NAS की अपनी सेटिंग, जो DSM के Control Panel से एक्सपोर्ट होती हैं।</li>
+      <li><b>डिवाइस बैकअप।</b> Syno Manager के सहेजे क्रेडेंशियल Android और iOS के डिवाइस बैकअप से जानबूझकर <b>बाहर</b> रखे जाते हैं, इसलिए डिवाइस बैकअप से फ़ोन रिस्टोर करने पर NAS पासवर्ड साथ नहीं आएँगे।</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">आम सवाल</div>
+      <h2>बैकअप &amp; रिस्टोर के सवाल-जवाब</h2>
+    </div>
+    <details open><summary>सेटिंग बैकअप में क्या शामिल है?</summary><div class="body">सिर्फ़ ऐप सेटिंग: थीम, नेविगेशन, डैशबोर्ड लेआउट, लॉन्च व्यवहार, श्रेणियाँ, पोलिंग अंतराल और तापमान इकाई। NAS कनेक्शन, पासवर्ड और सेशन कभी शामिल नहीं होते।</div></details>
+    <details><summary>मेरे NAS क्रेडेंशियल का बैकअप क्यों नहीं होता?</summary><div class="body">क्योंकि NAS पासवर्ड वाली पोर्टेबल फ़ाइल का मतलब है NAS पासवर्ड वाली पोर्टेबल फ़ाइल। क्रेडेंशियल डिवाइस के कीचेन या कीस्टोर में रहते हैं, जहाँ एक्सपोर्ट जानबूझकर नहीं पहुँच सकता।</div></details>
+    <details><summary>नए फ़ोन पर कैसे जाऊँ?</summary><div class="body">पुराने फ़ोन पर एक्सपोर्ट करें, फ़ाइल को दूसरे फ़ोन तक पहुँचाएँ, ऐप इंस्टॉल करें, सामग्री Restore में पेस्ट करें, और अपना NAS फिर जोड़ें।</div></details>
+    <details><summary>जिन सेटिंग को फ़ाइल नहीं जानती उनका क्या होता है?</summary><div class="body">सिर्फ़ जानी-पहचानी सेटिंग लागू होती हैं और बाकी सब अनदेखा किया जाता है, इसलिए पुराना बैकअप नए ऐप में रिस्टोर करने पर नई सेटिंग अपने डिफ़ॉल्ट पर रहती हैं।</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>कुछ काम नहीं कर रहा?</h2>
+    <p class="lead" style="margin:0 auto 24px">समस्या-समाधान गाइड में कनेक्शन फ़ेल होना, खाली टाइल, गायब टैब और पुराने विजेट शामिल हैं।</p>
+    <p><a class="btn" href="/hi/help/">समस्या-समाधान &rarr;</a> &nbsp; <a class="btn ghost" href="/hi/guide/">गाइड पर वापस</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hi/">होम</a><a href="/hi/guide/">यूज़र गाइड</a><a href="/hi/guide/getting-started/">शुरू करें</a><a href="/hi/compatible-nas/">संगतता</a><a href="/hi/best-synology-nas-app/">क्यों बदलें</a><a href="/hi/synology-app-for-iphone/">iPhone और iPad</a><a href="/hi/synology-app-for-android/">Android</a><a href="/hi/synology-app-for-mac-windows/">Mac और Windows</a><a href="/hi/ds-finder-alternative/">बनाम DS finder</a><a href="/hi/help/">सहायता</a><a href="/hi/privacy/">गोपनीयता</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">बग रिपोर्ट करें</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager एक स्वतंत्र ऐप है और Synology Inc. से संबद्ध नहीं है, न ही उसके द्वारा समर्थित या प्रायोजित है। Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station और QuickConnect, Synology Inc. के ट्रेडमार्क हैं।</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

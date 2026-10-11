@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Резервна копія налаштувань застосунку - Syno Manager</title>
+<meta name="description" content="Експортуйте власні налаштування Syno Manager у файл і відновіть їх на новому телефоні. Підключення до NAS, паролі та сеанси свідомо ніколи не включаються." />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/uk/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="Резервна копія налаштувань застосунку - Syno Manager" />
+<meta property="og:description" content="Експортуйте власні налаштування Syno Manager у файл і відновіть їх на новому телефоні. Підключення до NAS, паролі та сеанси свідомо ніколи не включаються." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/uk/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Резервна копія налаштувань застосунку - Syno Manager" />
+<meta name="twitter:description" content="Експортуйте власні налаштування Syno Manager у файл і відновіть їх на новому телефоні. Підключення до NAS, паролі та сеанси свідомо ніколи не включаються." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Головна",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Посібник користувача",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Резервне копіювання &amp; відновлення"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Резервна копія налаштувань застосунку - Syno Manager",
+  "description": "Експортуйте власні налаштування Syno Manager у файл і відновіть їх на новому телефоні. Підключення до NAS, паролі та сеанси свідомо ніколи не включаються.",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "uk",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Що входить до резервної копії налаштувань?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Лише налаштування застосунку: тема, навігація, розкладка панелі, поведінка під час запуску, категорії, інтервал опитування та одиниця температури. Підключення до NAS, паролі та сеанси не включаються ніколи."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чому облікові дані NAS не входять до резервної копії?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Бо переносний файл із паролями NAS - це переносний файл із паролями NAS. Облікові дані зберігаються в системному сховищі ключів пристрою, куди експорт свідомо не дістає. На новому телефоні ви вводите їх один раз."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Як перейти на новий телефон?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Експортуйте на старому через «Завантажити» або «Поділитися», перенесіть файл на новий телефон, встановіть застосунок, вставте вміст файлу в «Відновити» й знову додайте свій NAS. Усе інше повернеться таким, яким було."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Що буде з налаштуваннями, яких файл не знає?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Застосовуються лише відомі налаштування застосунку, а все інше у файлі ігнорується, тож стара копія, відновлена в новішому застосунку, залишає нові налаштування типовими замість того, щоб викликати помилку."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/uk/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова">
+      <a href="/uk/">Головна</a>
+      <a href="/uk/guide/" class="active">Посібник користувача</a>
+      <a href="/uk/#screenshots">Знімки екрана</a>
+      <a href="/uk/compatible-nas/">Сумісність</a>
+      <a href="/uk/best-synology-nas-app/">Чому варто перейти</a>
+      <a href="/uk/help/">Допомога</a>
+      <a href="/uk/#top" class="cta">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Резервне копіювання &amp; відновлення</div>
+      <div class="eyebrow">Резервне копіювання &amp; відновлення</div>
+      <h1>Ваші налаштування <span class="g">на наступному телефоні</span></h1>
+      <p>Один файл містить усі вибрані вами параметри - тему, нижню панель, розкладку панелі, опитування, одиниці. Облікових даних у ньому свідомо немає взагалі.</p>
+    </div>
+    <div class="hero-shot"><img alt="Екран резервного копіювання та відновлення з кнопками «Експорт» і «Відновити»" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Що є у файлі</div>
+      <h2>А чого немає</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Що входить</h3>
+        <ul class="plain">
+          <li>Тема, поверхня, акцентний колір і розмір тексту.</li>
+          <li>Нижня навігаційна панель і її порядок.</li>
+          <li>Розкладка панелі та які картки ввімкнено.</li>
+          <li>Категорії панелі.</li>
+          <li>Поведінка під час запуску.</li>
+          <li>Інтервал опитування.</li>
+          <li>Одиниця температури.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Ніколи не включається</h3>
+        <ul class="plain">
+          <li><b>Підключення до NAS</b> - адреси, порти та параметри.</li>
+          <li><b>Паролі.</b></li>
+          <li><b>Сеанси та токени пристроїв 2FA.</b></li>
+        </ul>
+        <div class="note stop"><b>Саме це виключення і є суттю.</b> Файл, який можна надіслати собі поштою й кинути в хмарну теку, - це файл, який може витекти. Облікові дані зберігаються в системному сховищі ключів саме для того, щоб експорт їх не діставав, і застосунок не робить винятку заради власної зручності.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Експорт</div>
+      <h2>Як отримати файл</h2>
+      <p class="lead"><b>Налаштування &rsaquo; Резервне копіювання &amp; відновлення</b>, а далі одна з двох кнопок.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Завантажити</b> зберігає файл JSON одразу на пристрій.</li>
+      <li><b>Поділитися</b> передає його в меню спільного доступу, щоб ви могли надіслати його у Файли, Drive, інший застосунок або собі.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Відновлення</div>
+      <h2>Як повернути все назад</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Відкрийте файл резервної копії</b> і скопіюйте його вміст.</li>
+      <li><b>Вставте у поле «Відновити»</b> або торкніться <b>Вставити з буфера обміну</b>.</li>
+      <li><b>Торкніться «Відновити налаштування».</b></li>
+      <li><b>Додайте свій NAS знову</b> - цієї частини у файлі ніколи не було.</li>
+    </ol>
+    <div class="note"><b>Невідомі записи ігноруються, а не відхиляються.</b> Застосовуються лише налаштування, які застосунок розпізнає, тож копія зі старішої версії відновлюється в новішу без проблем - налаштування, яких тоді не було, просто залишаються типовими.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Пов'язане</div>
+      <h2>Не плутати з</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/uk/guide/backup/">Hyper Backup і Active Backup</a></b> - ваш NAS копіює ваші дані. До цього екрана це не має жодного стосунку.</li>
+      <li><b>Резервна копія конфігурації DSM</b> - власні налаштування NAS, експортовані з Панелі керування DSM.</li>
+      <li><b>Резервні копії пристрою.</b> Збережені облікові дані Syno Manager свідомо <b>виключаються</b> з резервних копій пристроїв Android та iOS, тож відновлення телефона з резервної копії пристрою не перенесе паролі NAS.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Поширені запитання</div>
+      <h2>FAQ: резервне копіювання &amp; відновлення</h2>
+    </div>
+    <details open><summary>Що входить до резервної копії налаштувань?</summary><div class="body">Лише налаштування застосунку: тема, навігація, розкладка панелі, поведінка під час запуску, категорії, інтервал опитування та одиниця температури. Підключення до NAS, паролі та сеанси не включаються ніколи.</div></details>
+    <details><summary>Чому облікові дані NAS не входять до резервної копії?</summary><div class="body">Бо переносний файл із паролями NAS - це переносний файл із паролями NAS. Облікові дані зберігаються в системному сховищі ключів пристрою, куди експорт свідомо не дістає.</div></details>
+    <details><summary>Як перейти на новий телефон?</summary><div class="body">Експортуйте на старому, перенесіть файл, встановіть застосунок, вставте вміст у «Відновити» й знову додайте свій NAS.</div></details>
+    <details><summary>Що буде з налаштуваннями, яких файл не знає?</summary><div class="body">Застосовуються лише відомі налаштування, а все інше ігнорується, тож стара копія, відновлена в новішому застосунку, залишає нові налаштування типовими.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Щось не працює?</h2>
+    <p class="lead" style="margin:0 auto 24px">Посібник з усунення несправностей охоплює збої підключення, порожні плитки, відсутні вкладки та застарілі віджети.</p>
+    <p><a class="btn" href="/uk/help/">Усунення несправностей &rarr;</a> &nbsp; <a class="btn ghost" href="/uk/guide/">Назад до посібника</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/uk/">Головна</a><a href="/uk/guide/">Посібник користувача</a><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/compatible-nas/">Сумісність</a><a href="/uk/best-synology-nas-app/">Чому варто перейти</a><a href="/uk/synology-app-for-iphone/">iPhone та iPad</a><a href="/uk/synology-app-for-android/">Android</a><a href="/uk/synology-app-for-mac-windows/">Mac та Windows</a><a href="/uk/ds-finder-alternative/">Порівняння з DS finder</a><a href="/uk/help/">Допомога</a><a href="/uk/privacy/">Конфіденційність</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Повідомити про помилку</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - незалежний застосунок, який не пов'язаний із Synology Inc., не схвалений і не спонсорований нею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station і QuickConnect є торговельними марками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

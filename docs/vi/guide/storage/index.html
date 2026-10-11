@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Lưu trữ, RAID & tình trạng SMART của Synology - Syno Manager</title>
+<meta name="description" content="Ổ đĩa và pool Synology với loại RAID và dung lượng trống, trạng thái SMART và nhiệt độ từng ổ, Quick SMART Test, và tháo an toàn cho USB và eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Lưu trữ, RAID &amp; tình trạng SMART của Synology - Syno Manager" />
+<meta property="og:description" content="Ổ đĩa và pool Synology với loại RAID và dung lượng trống, trạng thái SMART và nhiệt độ từng ổ, Quick SMART Test, và tháo an toàn cho USB và eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Lưu trữ, RAID &amp; tình trạng SMART của Synology - Syno Manager" />
+<meta name="twitter:description" content="Ổ đĩa và pool Synology với loại RAID và dung lượng trống, trạng thái SMART và nhiệt độ từng ổ, Quick SMART Test, và tháo an toàn cho USB và eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lưu trữ"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Lưu trữ, RAID & tình trạng SMART của Synology - Syno Manager",
+  "description": "Ổ đĩa và pool Synology với loại RAID và dung lượng trống, trạng thái SMART và nhiệt độ từng ổ, Quick SMART Test, và tháo an toàn cho USB và eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể xem trạng thái SMART của từng ổ đĩa không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Chế độ xem phụ Disk Health liệt kê mọi ổ đĩa với kiểu máy, là HDD hay SSD, dung lượng, nhiệt độ và kết luận SMART. Bạn cũng có thể chạy Quick SMART Test trên bất kỳ ổ nào từ điện thoại."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nhiệt độ bao nhiêu là quá nóng với ổ đĩa NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ứng dụng tô màu hổ phách cho ổ đĩa khi vượt 45 độ C và đỏ khi vượt 55 độ C, còn nhiệt độ hệ thống hổ phách khi vượt 50 và đỏ khi vượt 60. Các ngưỡng này cũng đưa vào huy hiệu tình trạng trên màn hình chính, nên một ổ nóng sẽ hiện ở đó mà bạn không cần đi tìm."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể tháo an toàn ổ USB từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, từ chế độ xem phụ External. Việc tháo được xác nhận khi ổ đĩa thực sự biến mất khỏi danh sách thiết bị, chứ không phải khi yêu cầu được chấp nhận - nên ổ đĩa báo đã tháo là thực sự đã tháo. Ổ đang định dạng hoặc khởi tạo thì không thể tháo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể tạo hoặc mở rộng volume từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Việc tạo, mở rộng và sửa chữa volume và pool được thực hiện trong Storage Manager của DSM. Ứng dụng báo cáo lưu trữ của bạn đang làm gì và cho phép bạn thao tác với ổ đĩa; nó không cấu trúc lại mảng của bạn từ điện thoại."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Lưu trữ</div>
+      <div class="eyebrow">Lưu trữ</div>
+      <h1>Mọi volume, <span class="g">mọi ổ đĩa</span></h1>
+      <p>Ba chế độ xem phụ: <b>Volumes &amp; Pools</b> cho dung lượng và RAID, <b>Disk Health</b> cho SMART và nhiệt độ từng ổ, và <b>External</b> cho mọi thứ cắm ở phía sau.</p>
+    </div>
+    <div class="hero-shot"><img alt="Các volume và ổ đĩa lưu trữ trong Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#volumes">Volumes &amp; Pools</a></li>
+      <li><a href="#drives">Danh sách ổ đĩa</a></li>
+      <li><a href="#disk-health">Disk Health &amp; SMART</a></li>
+      <li><a href="#thresholds">Ngưỡng nhiệt độ</a></li>
+      <li><a href="#external">External &amp; tháo an toàn</a></li>
+      <li><a href="#limits">Nó sẽ không làm gì</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; Pools</div>
+      <h2>Dung lượng, nhìn thoáng qua</h2>
+      <p class="lead">Mỗi volume có một thẻ với tên, loại RAID, trạng thái và số ổ đĩa tạo nên nó, bên trên thanh dung lượng với đã dùng, phần trăm, tổng và còn trống.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hiển thị</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Tên volume</td><td>Theo cách DSM đặt tên - <code>VOLUME_1</code>, và tương tự.</td></tr>
+        <tr><td>Loại RAID</td><td>RAID 5, SHR, RAID 1, Basic - pool bên dưới thực sự là gì.</td></tr>
+        <tr><td>Trạng thái</td><td>Trạng thái của chính volume: <b>normal</b>, degraded, crashed. Mảng degraded là thứ duy nhất trên màn hình này đáng xử lý ngay hôm nay.</td></tr>
+        <tr><td>Số ổ đĩa</td><td>Volume trải trên bao nhiêu ổ đĩa vật lý.</td></tr>
+        <tr><td>Thanh dung lượng</td><td>Xanh lá bình thường, hổ phách khi vượt 80% và đỏ khi vượt 90%. Đó là các ngưỡng mà <a href="/vi/guide/home/#header">huy hiệu tình trạng</a> cũng dùng.</td></tr>
+        <tr><td>Used / Total / Free</td><td>Cả ba, vì "đầy 70%" và "còn trống 13 TB" trả lời hai câu hỏi khác nhau.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Có gì trong mỗi khay</h2>
+      <p class="lead">Bên dưới các volume, mọi ổ đĩa vật lý theo số khay.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bay</b> - Disk 1, Disk 2, và tiếp tục, khớp với nhãn trên khung máy.</li>
+      <li><b>Model</b> - chuỗi kiểu máy của chính ổ đĩa.</li>
+      <li><b>Hãng và loại</b> - nhà sản xuất và là HDD hay SSD. Ổ đĩa mà NAS không nhận diện được hãng sẽ hiển thị là <b>Unknown</b> thay vì bị đoán mò.</li>
+      <li><b>Nhiệt độ</b>, được tô màu theo các ngưỡng bên dưới.</li>
+      <li><b>Kết luận SMART</b> - <b>SMART OK</b> khi bản tự đánh giá của ổ đĩa là khỏe mạnh.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Tình trạng ổ đĩa</div>
+      <h2>SMART, và một bài kiểm tra bạn có thể bắt đầu</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Chế độ xem phụ Disk Health là cùng những ổ đĩa đó nhưng rộng rãi hơn: dung lượng, loại, nhiệt độ và trạng thái SMART mỗi thứ có một nhãn riêng, và mọi ổ đều có nút <b>Quick SMART Test</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Quick SMART Test</b> yêu cầu ổ đĩa chạy bài tự đánh giá ngắn của chính nó. Mất vài phút và không làm gián đoạn bất cứ thứ gì đang dùng volume.</li>
+          <li><b>Kết luận là của ổ đĩa, không phải của chúng tôi.</b> SMART là ổ đĩa tự báo cáo về mình; ứng dụng chuyển tiếp lại. Một ổ báo ổn rồi sau đó hỏng là hạn chế của SMART, không phải của việc đọc.</li>
+          <li><b>Trạng thái SMART không đọc được sẽ hiển thị là unknown</b>, không bao giờ là khỏe mạnh. Không có kết quả đọc và kết quả đọc tốt là hai chuyện khác nhau và không bao giờ bị gộp.</li>
+        </ul>
+      </div>
+      <img alt="Disk Health hiển thị mọi ổ đĩa với trạng thái SMART, nhiệt độ và nút Quick SMART Test" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Những con số đằng sau các màu</div>
+      <h2>Ngưỡng</h2>
+      <p class="lead">Không có gì ở đây là đoán mò về phần cứng của bạn - đây là các điểm mà ứng dụng đổi màu và, khi liên quan, đổi huy hiệu tình trạng của màn hình chính.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Chỉ số</th><th>Hổ phách tại</th><th>Đỏ tại</th></tr></thead>
+      <tbody>
+        <tr><td>Nhiệt độ ổ đĩa</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Nhiệt độ hệ thống</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Mức dùng volume</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Mức sạc UPS</td><td>dưới 50%</td><td>dưới 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Chuyển đổi giữa &deg;C và &deg;F trong <a href="/vi/guide/settings/#preferences">Settings &rsaquo; Temperature Unit</a>. Mọi nhiệt độ trong ứng dụng đổi theo ngay lập tức, kể cả những nhiệt độ trên màn hình chính và trong widget.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Ngoài</div>
+      <h2>USB, eSATA và tháo an toàn</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Lưu trữ ngoài và thiết bị USB, không có gì được cắm và một UPS được liệt kê" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Hai mục: <b>External Storage</b> cho các ổ bạn có thể gắn và tháo, và <b>USB Devices</b> cho mọi thứ khác được cắm vào - UPS, máy in, đầu thu USB.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Việc tháo được xác nhận khi ổ đĩa biến mất.</b> Ứng dụng không báo thành công chỉ vì yêu cầu trả về OK; nó đọc lại danh sách thiết bị và chỉ nói ổ đã được tháo khi nó thực sự không còn. Đó là sự khác biệt giữa "an toàn để rút" và "có lẽ an toàn để rút".</li>
+          <li><b>Ổ đang bận không thể tháo.</b> Ổ đang định dạng hoặc khởi tạo sẽ bị từ chối kèm lý do, thay vì bị giật ra giữa lúc đang ghi.</li>
+          <li><b>Không có gì được cắm thì nói rõ ràng.</b> Danh sách trống hiển thị "No external drives attached" - không phải một ô trống để bạn tự diễn giải.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Ranh giới</div>
+      <h2>Màn hình này sẽ không làm gì</h2>
+      <p class="lead">Lưu trữ là nơi duy nhất mà một cú chạm nhầm không thể khôi phục, nên ứng dụng đọc nhiều hơn ghi rất nhiều.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nó sẽ không tạo, mở rộng hay xóa volume hoặc pool.</b> Việc đó nằm trong Storage Manager của DSM, trên màn hình đủ lớn để thấy bạn sắp làm gì.</li>
+      <li><b>Nó sẽ không sửa chữa mảng degraded.</b> Nó sẽ cho bạn biết, rõ ràng và ngay trên màn hình chính, rằng có một mảng degraded.</li>
+      <li><b>Nó sẽ không định dạng bất cứ thứ gì.</b></li>
+      <li><b>Nó sẽ không chạy bài kiểm tra SMART đầy đủ</b> - chỉ bài nhanh. Quét toàn bộ bề mặt mất hàng giờ và thuộc về nơi bạn sẽ không bỏ đi.</li>
+    </ul>
+    <div class="note"><b>Scrubbing, dựng lại và kiểm tra parity</b> hiển thị là các tác vụ đang chạy trong khi chúng diễn ra, nên bạn có thể theo dõi một tác vụ hoàn tất từ ứng dụng dù bạn bắt đầu nó trong DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về lưu trữ</h2>
+    </div>
+    <details open><summary>Tôi có thể xem trạng thái SMART của từng ổ đĩa không?</summary><div class="body">Có. Chế độ xem phụ Disk Health liệt kê mọi ổ đĩa với kiểu máy, là HDD hay SSD, dung lượng, nhiệt độ và kết luận SMART. Bạn cũng có thể chạy Quick SMART Test trên bất kỳ ổ nào từ điện thoại.</div></details>
+    <details><summary>Nhiệt độ bao nhiêu là quá nóng với ổ đĩa NAS?</summary><div class="body">Ứng dụng tô màu hổ phách cho ổ đĩa khi vượt 45&deg;C và đỏ khi vượt 55&deg;C, còn nhiệt độ hệ thống hổ phách khi vượt 50&deg;C và đỏ khi vượt 60&deg;C. Các ngưỡng này cũng đưa vào huy hiệu tình trạng trên màn hình chính.</div></details>
+    <details><summary>Tôi có thể tháo an toàn ổ USB từ ứng dụng không?</summary><div class="body">Có, từ chế độ xem phụ External. Việc tháo được xác nhận khi ổ đĩa thực sự biến mất khỏi danh sách thiết bị, chứ không phải khi yêu cầu được chấp nhận. Ổ đang định dạng hoặc khởi tạo thì không thể tháo.</div></details>
+    <details><summary>Tôi có thể tạo hoặc mở rộng volume từ ứng dụng không?</summary><div class="body">Không. Việc tạo, mở rộng và sửa chữa volume và pool được thực hiện trong Storage Manager của DSM. Ứng dụng báo cáo lưu trữ của bạn đang làm gì và cho phép bạn thao tác với ổ đĩa; nó không cấu trúc lại mảng của bạn từ điện thoại.</div></details>
+    <details><summary>Vì sao hãng của một ổ đĩa hiển thị Unknown?</summary><div class="body">Vì NAS không báo cáo hãng. Ứng dụng hiển thị những gì nó được cho biết thay vì suy ra nhà sản xuất từ chuỗi kiểu máy, vốn là một phỏng đoán được trình bày như sự thật.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Mạng</h2>
+    <p class="lead" style="margin:0 auto 24px">Thông lượng, kết nối, dịch vụ, VPN và DDNS.</p>
+    <p><a class="btn" href="/vi/guide/network/">Mạng &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

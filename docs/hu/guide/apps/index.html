@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, csomagok és virtuális gépek Synology NAS-hoz - Syno Manager</title>
+<meta name="description" content="Telepítsen DSM-csomagokat a Package Centerből, indítsa, állítsa le és indítsa újra a Docker-konténereket, olvassa a naplóikat, futtasson Compose-stackeket, és vezérelje a virtuális gépeket." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, csomagok és virtuális gépek Synology NAS-hoz - Syno Manager" />
+<meta property="og:description" content="Telepítsen DSM-csomagokat a Package Centerből, indítsa, állítsa le és indítsa újra a Docker-konténereket, olvassa a naplóikat, futtasson Compose-stackeket, és vezérelje a virtuális gépeket." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, csomagok és virtuális gépek Synology NAS-hoz - Syno Manager" />
+<meta name="twitter:description" content="Telepítsen DSM-csomagokat a Package Centerből, indítsa, állítsa le és indítsa újra a Docker-konténereket, olvassa a naplóikat, futtasson Compose-stackeket, és vezérelje a virtuális gépeket." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Alkalmazások"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, csomagok és virtuális gépek Synology NAS-hoz - Syno Manager",
+  "description": "Telepítsen DSM-csomagokat a Package Centerből, indítsa, állítsa le és indítsa újra a Docker-konténereket, olvassa a naplóikat, futtasson Compose-stackeket, és vezérelje a virtuális gépeket.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Telepíthetek DSM-csomagot a telefonomról?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Az alkalmazás Package Centere ugyanazt a katalógust tartalmazza, mint a DSM - Telepített, Minden csomag, Béta és Közösségi - kereső mezővel. Válasszon csomagot, jelölje ki a kötetet, és telepítse. A frissítés és az eltávolítás ugyanígy működik, és minden műveletet a csomaglista újraolvasása erősít meg, nem az, hogy a kérés OK választ kapott."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Újraindíthatok Docker-konténert az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Minden konténerhez van indítás, leállítás és újraindítás, valamint egy gomb, amely megnyitja a naplóit. A leállt konténernél indítás gomb látható, nem olyan leállítás, amelyet nem tudna végrehajtani."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vezérelhetem a Docker Compose stackeket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Projektek részlap felsorolja a Compose-projekteket, és az egész stacket indítja vagy leállítja, ahelyett, hogy minden konténert külön kellene megkeresnie. A stacknaplók ugyanúgy nyílnak meg, mint a konténernaplók."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Indíthatok és állíthatok le virtuális gépeket?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, ha a Virtual Machine Manager telepítve van. Bármelyik gépet elindíthatja, leállíthatja vagy erőszakkal kikapcsolhatja. Az erőszakos kikapcsolás nyomva tartással erősíthető meg, mert ez egyenértékű a dugó kihúzásával. Az a gép, amelynek állapotát a NAS sem futónak, sem leállítottnak nem nevezi, pontosan úgy jelenik meg, és helyreállító vezérlőt kínál, nem olyan Indítást, amelyet nem tudna végrehajtani."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Kezdőlap</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Alkalmazások</div>
+      <div class="eyebrow">Alkalmazások</div>
+      <h1>Minden, <span class="g">amit a NAS futtat</span></h1>
+      <p>Négy részlap: <b>Package Center</b> a DSM-csomagokhoz, <b>Docker</b> a konténerekhez, <b>Projektek</b> a Compose-stackekhez, és <b>Virtuális gépek</b>, ha a VMM telepítve van.</p>
+    </div>
+    <div class="hero-shot"><img alt="Docker-konténerek állapottal és vezérlőkkel" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Csomag telepítése</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Konténernaplók</a></li>
+      <li><a href="#projects">Compose-projektek</a></li>
+      <li><a href="#virtual-machines">Virtuális gépek</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>A teljes katalógus, kereshetően</h2>
+      <p class="lead">Ugyanaz a négy szűrő, mint a DSM-ben, és egy kereső mező mindegyik fölött.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Szűrő</th><th>Mit listáz</th></tr></thead>
+          <tbody>
+            <tr><td>Telepített</td><td>Ami most a NAS-on van, verzióval, mérettel és futásjelzővel.</td></tr>
+            <tr><td>Minden csomag</td><td>A Synology teljes katalógusa az Ön modelljéhez.</td></tr>
+            <tr><td>Béta</td><td>Kiadás előtti csomagok.</td></tr>
+            <tr><td>Közösségi</td><td>A DSM-ben hozzáadott harmadik féltől származó források csomagjai.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Minden bejegyzés tartalmazza a verzióját és letöltési méretét, a leírását és az esetleges függőségét - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - így a váratlan második telepítés nem lesz meglepetés.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Keresés a teljes csomagkatalógusban, Telepítés gombokkal" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Keresés a <b>Minden csomag</b> között egy még nem telepített csomagra.</p>
+      </div>
+      <img alt="A Package Center a telepített csomagokat futási állapottal mutatja" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Telepítés, frissítés, eltávolítás</div>
+      <h2>Mi történik, ha a Telepítésre koppint</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Keressen vagy szűrjön</b> a kívánt csomagra.</li>
+          <li><b>Telepítés.</b> Egy párbeszédablak megnevezi a csomagot, felsorolja az esetleges függőséget, és megkérdezi, melyik kötetre telepítsen - mindegyik kötet szabad helyét mutatva, hogy ne vaktában válasszon.</li>
+          <li><b>Megerősítés.</b> A NAS telepíti, a függőségekkel együtt.</li>
+          <li><b>A lista újraolvassa önmagát.</b> A gomb <b>Eltávolítás</b> gombra vált, mert a csomaglista már azt mondja, hogy telepítve van - nem azért, mert a kérés OK választ adott.</li>
+        </ol>
+        <div class="note"><b>Ez az utolsó lépés a lényeg.</b> A sikeres kérés és a befejezett telepítés két különböző esemény. Az alkalmazás a másodikra vár.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="A telepítési párbeszédablak a csomag, a függősége és a célkötet nevével" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>A csomag telepítése új képernyőkkel bővíti az alkalmazást.</b> A fülek listája azt tükrözi, amit a NAS csatlakozáskor jelent, így például a Download Station telepítése után húzással frissítsen, vagy nyissa meg újra az alkalmazást, és megjelenik a hozzá tartozó részlap.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Minden konténer, a fontos vezérlőkkel</h2>
+      <p class="lead">Állapotfejléc - <b>futó az összesből</b> - majd minden konténer, amely a NAS-on van, egyetlen listában.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Név és képcímke</b> minden soron, így az azonos képből készült két konténer is megkülönböztethető.</li>
+      <li><b>Állapot</b> címkeként: <b>Fut</b>, <b>Kilépett</b>, és bármi más, amit a Docker jelent. Az a konténer, amelyet a Docker egészségesnek nevez, ezt ki is mondja - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Üzemidő</b> minden futó konténernél.</li>
+      <li><b>Indítás, leállítás és újraindítás</b> az állapotnak megfelelő vezérlővel: a leállt konténernél indítás látható, nem olyan leállítás, amely semmit sem tenne.</li>
+      <li><b>Naplók</b> az egyes sorok gombjáról.</li>
+      <li><b>Nyisson ki egy sort</b> a részletekért - többek között memória- és hálózati adatokért.</li>
+      <li><b>Csukja össze az egész listát</b> a felül lévő vezérlővel, ha csak a darabszám érdekli.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Naplók</div>
+      <h2>Egyszer olvasható, szándékosan követhető</h2>
+      <p class="lead">A konténer- és stacknaplók ugyanúgy viselkednek, mint <a href="/hu/guide/system/#logs">a rendszernapló</a>, és ugyanazért.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Egyszer töltődik be, és nyugodtan áll</b>, így olvasás közben nem gördül el egy sor sem.</li>
+      <li><b>Nyomja meg a lejátszást az élő követéshez</b>, nyomja meg újra a szüneteltetéshez.</li>
+      <li><b>A követés magától leáll</b>, amikor elhagyja a képernyőt, vagy háttérbe küldi az alkalmazást - nincs elfeledett fül, amely a zsebében kérdezgetne.</li>
+      <li><b>Keresés</b> egyetlen sorra egy hosszú naplóban.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projektek</div>
+      <h2>Compose-stackek, stackként kezelve</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Docker Compose-projektek, egyetlen beállított projekt nélkül" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">A Compose-projekt több összetartozó konténer. A Projektek részlap így is kezeli őket: indítsa vagy állítsa le <b>az egész stacket</b>, ahelyett, hogy a Docker-listában vadászna az egyes konténerekre, és remélné, hogy mindet megtalálta.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Minden projekt</b> mutatja a nevét és azt, hogy hány konténere fut.</li>
+          <li><b>Indítsa vagy állítsa le a projektet</b> egységként.</li>
+          <li><b>A stacknaplók</b> úgy nyílnak meg, mint a konténernaplók.</li>
+          <li><b>Ha nincs projekt, azt ki is mondja</b> - „A Docker Compose-projektek itt jelennek meg” - ahelyett, hogy üres képernyőt mutatna.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Virtuális gépek</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Akkor érhető el, ha a VMM telepítve van. A NAS minden virtuális gépe, az, hogy mit csinál, és a három tápellátási művelet.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Művelet</th><th>Mit csinál</th></tr></thead>
+      <tbody>
+        <tr><td>Indítás</td><td>Bekapcsolja a gépet.</td></tr>
+        <tr><td>Leállítás</td><td>Megkéri a vendég operációs rendszert, hogy szabályosan álljon le.</td></tr>
+        <tr><td>Kényszerített kikapcsolás</td><td>Megszakítja a tápellátást. <b>Nyomva tartással erősíthető meg</b>, mert ez egyenértékű azzal, mintha kihúzná egy működő számítógép dugóját - ehhez egy koppintás túl olcsó.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>A köztes állapotú gépet köztes állapotúként írjuk le.</b> Ha a NAS olyan állapotot jelent, amelyet nem futónak vagy leállítottnak nevez - indul, felfüggesztés alatt, összeomlott -, az alkalmazás pontosan ezt a szót mutatja, és helyreállító vezérlőt kínál, nem olyan Indítás gombot, amelyet nem tud végrehajtani, vagy valótlan zöld pipát.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Alkalmazások GYIK</h2>
+    </div>
+    <details open><summary>Telepíthetek DSM-csomagot a telefonomról?</summary><div class="body">Igen. Az alkalmazás Package Centere ugyanazt a katalógust tartalmazza, mint a DSM - Telepített, Minden csomag, Béta és Közösségi - kereső mezővel. Válasszon csomagot, jelölje ki a kötetet, és telepítse. A frissítés és az eltávolítás ugyanígy működik, és minden műveletet a csomaglista újraolvasása erősít meg.</div></details>
+    <details><summary>Újraindíthatok Docker-konténert az alkalmazásból?</summary><div class="body">Igen. Minden konténerhez van indítás, leállítás és újraindítás, valamint egy gomb, amely megnyitja a naplóit. A leállt konténernél indítás gomb látható, nem olyan leállítás, amelyet nem tudna végrehajtani.</div></details>
+    <details><summary>Vezérelhetem a Docker Compose stackeket?</summary><div class="body">Igen. A Projektek részlap felsorolja a Compose-projekteket, és az egész stacket indítja vagy leállítja. A stacknaplók ugyanúgy nyílnak meg, mint a konténernaplók.</div></details>
+    <details><summary>Indíthatok és állíthatok le virtuális gépeket?</summary><div class="body">Igen, ha a Virtual Machine Manager telepítve van. Bármelyik gépet elindíthatja, leállíthatja vagy erőszakkal kikapcsolhatja. Az erőszakos kikapcsolás nyomva tartással erősíthető meg, mert ez egyenértékű a dugó kihúzásával.</div></details>
+    <details><summary>Létrehozhatok új konténert az alkalmazásból?</summary><div class="body">Nem. A konténer létrehozása képválasztást, portleképezéseket, kötetcsatolásokat és környezeti változókat jelent - olyan űrlapot, amely olyan képernyőre való, ahol mindent egyszerre lát. Az alkalmazás a DSM-ben vagy a Portainerben létrehozott konténereket futtatja és figyeli.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Média</h2>
+    <p class="lead" style="margin:0 auto 24px">Fényképek, Drive és a Surveillance Station élő nézete.</p>
+    <p><a class="btn" href="/hu/guide/media/">Fényképek, Drive &amp; kamerák &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

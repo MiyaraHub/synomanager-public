@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN pro NAS Synology - Syno Manager</title>
+<meta name="description" content="Probuďte spící Synology nebo jakýkoli počítač ve vaší síti přes něj - funguje to odkudkoli. Co vyžaduje VPN nebo přesměrování na routeru, řečeno jasně." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN pro NAS Synology - Syno Manager" />
+<meta property="og:description" content="Probuďte spící Synology nebo jakýkoli počítač ve vaší síti přes něj - funguje to odkudkoli. Co vyžaduje VPN nebo přesměrování na routeru, řečeno jasně." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN pro NAS Synology - Syno Manager" />
+<meta name="twitter:description" content="Probuďte spící Synology nebo jakýkoli počítač ve vaší síti přes něj - funguje to odkudkoli. Co vyžaduje VPN nebo přesměrování na routeru, řečeno jasně." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN pro NAS Synology - Syno Manager",
+  "description": "Probuďte spící Synology nebo jakýkoli počítač ve vaší síti přes něj - funguje to odkudkoli. Co vyžaduje VPN nebo přesměrování na routeru, řečeno jasně.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mohu své NAS probudit odkudkoli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Jen pokud existuje cesta do vaší sítě, která nezávisí na tom, zda je NAS vzhůru - VPN do sítě, nebo router nastavený na přeposílání Wake-on-LAN. Vypnuté NAS nemůže přenést vlastní probouzecí paket a QuickConnect se k vypnutému NAS nedostane. Ve stejné síti to prostě funguje."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu probudit svůj počítač přes NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, a tohle funguje odkudkoli, pokud je samotné NAS zapnuté. Požádáte NAS přes běžné připojení a NAS za vás rozešle magický paket do LAN. Je to stejná cesta, jakou používá vlastní aplikace Synology DS Router."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Odkud se bere MAC adresa NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplikace ji zachytí automaticky při prvním připojení, takže ji nikdy nemusíte vyhledávat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Co potřebuji k přidání dalšího zařízení?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Název, který poznáte, a jeho MAC adresu. MAC obvykle najdete v seznamu zařízení na routeru nebo přímo na daném počítači v síťových nastaveních."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Zapínejte věci <span class="g">z gauče</span></h1>
+      <p>Tlačítko <b>Probudit</b> vedle Připojit v seznamu zařízení pro samotné NAS a obrazovka <b>Probudit zařízení</b> pro vše ostatní ve vaší síti. Jedno funguje odkudkoli, druhé má upřímný háček.</p>
+    </div>
+    <div class="hero-shot"><img alt="Obrazovka Probudit zařízení" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Upřímná tabulka</div>
+      <h2>Co funguje odkud</h2>
+      <p class="lead">Wake-on-LAN je broadcast v lokální síti. Vše o tom, co funguje a co ne, vyplývá z tohoto jednoho faktu, takže tady je řečen jasně, ne schován v poznámce pod čarou.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Co chcete probudit</th><th>Kde jste</th><th>Funguje?</th><th>Proč</th></tr></thead>
+      <tbody>
+        <tr><td>NAS</td><td>Ve stejné síti</td><td class="yes">Ano</td><td>Telefon rozešle paket přímo. Nic k nastavování.</td></tr>
+        <tr><td>Jiné zařízení</td><td>Ve stejné síti</td><td class="yes">Ano</td><td>Stejně - může ho poslat telefon i NAS.</td></tr>
+        <tr><td>Jiné zařízení, NAS je zapnuté</td><td>Kdekoli</td><td class="yes">Ano</td><td><b>NAS ho za vás přenese.</b> Spojíte se s NAS běžným připojením a ono rozešle paket do LAN. Je to cesta, kterou používá DS Router.</td></tr>
+        <tr><td>Samotné NAS, když je vypnuté</td><td>Mimo vaši síť</td><td class="no">Vyžaduje nastavení</td><td>Vypnuté NAS nemůže přenést vlastní probuzení a QuickConnect se k vypnutému NAS nedostane. Potřebujete <b>VPN</b> do sítě, nebo router přeposílající <b>UDP port 9</b> na broadcastovou adresu LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Prostřední řádek je ten užitečný.</b> Probuzení stolního počítače doma z vlaku funguje a nepotřebuje žádné nastavení routeru - protože broadcast zajišťuje stále zapnuté NAS.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS</div>
+      <h2>Probuzení vašeho DiskStation</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Není co nastavovat.</b> Aplikace zachytí MAC adresu NAS při prvním připojení, takže tlačítko je připravené dřív, než ho potřebujete.</li>
+      <li><b>Otevřete Nastavení &rsaquo; Správa zařízení NAS.</b></li>
+      <li><b>Klepněte na Probudit</b> vedle NAS.</li>
+      <li><b>Chvilku počkejte</b> a klepněte na Připojit. NAS se spouští delší dobu a aplikace nebude předstírat, že běží, dokud neodpoví.</li>
+    </ol>
+    <div class="note warn"><b>Wake-on-LAN musí být zapnuté i na NAS.</b> V DSM pod <b>Ovládací panel &rsaquo; Hardware &amp; napájení &rsaquo; Obecné</b>. NAS s vypnutou funkcí paket ignoruje, ať ho pošle kdokoli.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Všechno ostatní</div>
+      <h2>Probouzení dalších zařízení přes NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Nastavení &rsaquo; Probudit zařízení</b>. Přidejte libovolný počítač ve své síti podle názvu a MAC adresy a NAS za vás odešle magický paket zevnitř sítě.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Klepněte na Přidat zařízení.</b></li>
+          <li><b>Dejte mu název</b>, který poznáte - „Stolní PC“, „Herní PC“, „Server“.</li>
+          <li><b>Zadejte jeho MAC adresu.</b> Nejsnáze ji najdete v seznamu zařízení na routeru.</li>
+          <li><b>Uložte.</b> Objeví se v seznamu s vlastním tlačítkem Probudit.</li>
+        </ol>
+        <div class="note"><b>Protože odesílá NAS, funguje to, i když jste pryč</b> - přes mobilní data, přes QuickConnect, odkudkoli, odkud se k NAS dostanete. Stejně to dělá i router aplikace od Synology a proto stojí za nastavení, i když samotné NAS nikdy nebudíte.</div>
+      </div>
+      <img alt="Obrazovka Probudit zařízení s prázdným stavem a tlačítkem Přidat zařízení" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Na cílovém počítači</div>
+      <h2>Co musí platit, aby probuzení zabralo</h2>
+      <p class="lead">Pokud se paket odešle a nic se nestane, je to téměř vždy jedna z těchto věcí - žádnou z nich aplikace zvenčí nevidí ani nespraví.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN zapnuté v BIOSu nebo UEFI počítače</b>, často pod názvem „Wake on PCIe“ nebo „Power on by PCI-E“.</li>
+      <li><b>Zapnuté i na síťovém adaptéru.</b> Ve Windows: Správce zařízení, vlastnosti adaptéru, Řízení spotřeby, „Povolit zařízení probouzet počítač“.</li>
+      <li><b>Rychlé spuštění ve Windows vypnuté.</b> Když je zapnuté, vypnutý počítač ve skutečnosti hibernuje a paket často ignoruje.</li>
+      <li><b>Obvykle kabelem.</b> Probuzení přes Wi-Fi vyžaduje konkrétní hardware a podporu ovladače; Ethernet je mnohem spolehlivější.</li>
+      <li><b>Počítač stále napájený ze zásuvky.</b> Magický paket vyžaduje, aby měl síťový adaptér pohotovostní napájení.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>Časté dotazy k Wake-on-LAN</h2>
+    </div>
+    <details open><summary>Mohu své NAS probudit odkudkoli?</summary><div class="body">Jen pokud existuje cesta do vaší sítě, která nezávisí na tom, zda je NAS vzhůru - VPN, nebo router nastavený na přeposílání Wake-on-LAN. Vypnuté NAS nemůže přenést vlastní probouzecí paket a QuickConnect se k vypnutému NAS nedostane. Ve stejné síti to prostě funguje.</div></details>
+    <details><summary>Mohu probudit svůj počítač přes NAS?</summary><div class="body">Ano, a tohle funguje odkudkoli, pokud je samotné NAS zapnuté. Požádáte NAS běžným připojením a ono za vás rozešle magický paket do LAN.</div></details>
+    <details><summary>Odkud se bere MAC adresa NAS?</summary><div class="body">Aplikace ji zachytí automaticky při prvním připojení, takže ji nikdy nemusíte vyhledávat.</div></details>
+    <details><summary>Co potřebuji k přidání dalšího zařízení?</summary><div class="body">Název, který poznáte, a jeho MAC adresu, která bývá v seznamu zařízení na routeru.</div></details>
+    <details><summary>Poslal jsem probuzení a nic se nestalo.</summary><div class="body">Zkontrolujte, zda je Wake-on-LAN zapnuté na cílovém počítači - v BIOSu, na síťovém adaptéru a s vypnutým Rychlým spuštěním ve Windows. Zkontrolujte také, že je na kabelovém Ethernetu, a pokud budíte NAS, že má Wake-on-LAN zapnuté v Ovládacím panelu.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: widgety</h2>
+    <p class="lead" style="margin:0 auto 24px">Vaše NAS na úvodní obrazovce, s poctivou časovou značkou.</p>
+    <p><a class="btn" href="/cs/guide/widgets/">Widgety na úvodní obrazovce &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na průvodce</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

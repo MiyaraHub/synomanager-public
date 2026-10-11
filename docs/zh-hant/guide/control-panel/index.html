@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>管理 Synology 使用者、排程工作與 UPS - Syno Manager</title>
+<meta name="description" content="在手機上管理 Synology 使用者帳號（系統帳號受到保護）、執行並切換排程工作，並查看 UPS 電量與預估續航時間。" />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="管理 Synology 使用者、排程工作與 UPS - Syno Manager" />
+<meta property="og:description" content="在手機上管理 Synology 使用者帳號（系統帳號受到保護）、執行並切換排程工作，並查看 UPS 電量與預估續航時間。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="管理 Synology 使用者、排程工作與 UPS - Syno Manager" />
+<meta name="twitter:description" content="在手機上管理 Synology 使用者帳號（系統帳號受到保護）、執行並切換排程工作，並查看 UPS 電量與預估續航時間。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "控制台"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "管理 Synology 使用者、排程工作與 UPS - Syno Manager",
+  "description": "在手機上管理 Synology 使用者帳號（系統帳號受到保護）、執行並切換排程工作，並查看 UPS 電量與預估續航時間。",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以在 App 裡新增或編輯 DSM 使用者嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。可以新增使用者、編輯詳細資料、變更密碼或刪除帳號。系統帳號 - admin、guest 與 DSM 建立的服務帳號 - 會被偵測出來並受到保護，無法刪除，因為移除其中任何一個都會讓 NAS 出現很難復原的問題。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以手動執行排程工作嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，只要是 DSM 允許手動觸發的工作，都有「立即執行」。你也可以不開啟 DSM，直接啟用或停用任何工作。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UPS 畫面會顯示什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS 型號、目前是市電供電還是電池供電、以百分比與進度列呈現的電量、連線方式、預估剩餘續航時間，以及 NAS 是否已啟用 UPS 支援。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以變更 NAS 在電池供電時等待多久才關機嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不行。App 只回報 UPS 狀態；關機原則要在 DSM 的「硬體與電源」中設定，那裡會明確說明設定的後果。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 控制台</div>
+      <div class="eyebrow">控制台</div>
+      <h1>帳號、排程<span class="g">與電源</span></h1>
+      <p>四個子檢視：<b>使用者</b>、<b>工作</b>、<b>電源</b>（UPS），以及<b>設定</b> - App 本身的偏好設定，不必離開目前所在的分頁就能開啟。</p>
+    </div>
+    <div class="hero-shot"><img alt="工作排程器，顯示排程工作及其切換開關與「立即執行」" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#users">使用者</a></li>
+      <li><a href="#tasks">工作排程器</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">設定</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">使用者</div>
+      <h2>DSM 帳號</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">NAS 上的每個帳號，顯示名稱、說明，以及已設定時的電子郵件地址。DSM 已停用的帳號會標示<b>已過期</b>標籤。</p>
+        <h3 style="margin-top:20px">你可以做什麼</h3>
+        <ul class="plain">
+          <li><b>新增使用者</b>，填入 DSM 要求的資料。</li>
+          <li><b>編輯</b>現有帳號。</li>
+          <li><b>變更密碼。</b></li>
+          <li><b>刪除</b>你自己建立的帳號。</li>
+        </ul>
+        <div class="note"><b>系統帳號無法刪除。</b><code>admin</code>、<code>guest</code> 以及 DSM 為自家套件建立的服務帳號都會被偵測出來並受到保護。移除其中任何一個都會讓 NAS 出現很難復原的問題，而手機並不是發現這件事的好地方。</div>
+      </div>
+      <img alt="DSM 使用者帳號，其中兩組名稱與位址已遮蔽" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">這張截圖中有兩個帳號已模糊處理 - 那是真實人物的姓名與地址。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">工作排程器</div>
+      <h2>排了什麼，以及下一個執行什麼</h2>
+      <p class="lead">DSM 上的每個工作、是否啟用、做什麼，以及下次何時觸發。</p>
+    </div>
+    <ul class="plain">
+      <li><b>工作名稱與類型</b> - Hyper Backup 工作、使用者自訂的指令碼、資源回收筒清理 - 各自標示是哪一類。</li>
+      <li><b>它實際做什麼。</b>指令碼工作會顯示它執行的指令；備份工作會顯示其說明。</li>
+      <li><b>下次執行</b>，以日期與時間表示。</li>
+      <li><b>每個工作各有一個開關</b>，不必開啟 DSM 就能啟用或停用。</li>
+      <li><b>立即執行</b>適用於 DSM 允許隨時觸發的工作。</li>
+    </ul>
+    <div class="note warn"><b>「立即執行」就是立刻執行。</b>原本預期在凌晨 3 點、NAS 閒置時執行的排程指令碼，在下午 6 點檔案複製中執行，行為可能完全不同。按鈕就是照字面做事。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">電源</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="UPS 狀態，顯示型號、電量、連線模式與預估續航時間" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">連接 UPS 時才會出現。一張卡片，全部資訊都在上面。</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>顯示內容</th><th>說明</th></tr></thead>
+          <tbody>
+            <tr><td>製造商與型號</td><td>依 UPS 自行回報的內容。</td></tr>
+            <tr><td>狀態</td><td><b>線上</b>（市電供電）或電池供電。</td></tr>
+            <tr><td>電量</td><td>百分比與進度列。低於 50% 為琥珀色，低於 20% 為紅色。</td></tr>
+            <tr><td>模式</td><td>NAS 與它的連線方式 - USB 或網路連線。</td></tr>
+            <tr><td>續航時間</td><td>UPS 預估還能支撐負載多久。</td></tr>
+            <tr><td>已啟用</td><td>DSM 中是否已開啟 UPS 支援。</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>電量會影響健康狀態標章。</b>正在放電的 UPS 會顯示在<a href="/zh-hant/guide/home/#header">主畫面</a>，不必開啟這個分頁 - 這正是重點，因為等你想到要檢查時，可能已經沒剩多少時間了。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">設定</div>
+      <h2>App 本身的偏好設定</h2>
+      <p class="lead">第四個子檢視是「設定」，內嵌在這裡，讓你不必離開分頁就能變更輪詢間隔或強調色。它與齒輪圖示開啟的是同一個畫面。</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/zh-hant/guide/settings/">每一項設定，逐一說明</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>控制台常見問題</h2>
+    </div>
+    <details open><summary>可以在 App 裡新增或編輯 DSM 使用者嗎？</summary><div class="body">可以。可以新增使用者、編輯詳細資料、變更密碼或刪除帳號。系統帳號 - admin、guest 與 DSM 建立的服務帳號 - 會被偵測出來並受到保護，無法刪除。</div></details>
+    <details><summary>可以手動執行排程工作嗎？</summary><div class="body">可以，只要是 DSM 允許手動觸發的工作都可以。你也可以不開啟 DSM，直接啟用或停用任何工作。</div></details>
+    <details><summary>UPS 畫面會顯示什麼？</summary><div class="body">UPS 型號、目前是市電供電還是電池供電、以百分比與進度列呈現的電量、連線方式、預估剩餘續航時間，以及 NAS 是否已啟用 UPS 支援。</div></details>
+    <details><summary>可以變更電池供電時的關機原則嗎？</summary><div class="body">不行。App 只回報 UPS 狀態；原則要在 DSM 的「硬體與電源」中設定，那裡會明確說明後果。</div></details>
+    <details><summary>為什麼看不到「電源」子檢視？</summary><div class="body">因為沒有連接 UPS，或 DSM 中已關閉 UPS 支援。App 會隱藏不存在之硬體的畫面。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：助理</h2>
+    <p class="lead" style="margin:0 auto 24px">向你的 NAS 提問，由手機上的模型回答。</p>
+    <p><a class="btn" href="/zh-hant/guide/assistant/">助理 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

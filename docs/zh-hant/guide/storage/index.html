@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology 儲存空間、RAID 與 SMART 健康狀態 - Syno Manager</title>
+<meta name="description" content="顯示 RAID 類型與可用空間的 Synology 磁碟區與儲存池、每顆硬碟的 SMART 狀態與溫度、快速 SMART 測試，以及 USB 與 eSATA 的安全退出。" />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology 儲存空間、RAID 與 SMART 健康狀態 - Syno Manager" />
+<meta property="og:description" content="顯示 RAID 類型與可用空間的 Synology 磁碟區與儲存池、每顆硬碟的 SMART 狀態與溫度、快速 SMART 測試，以及 USB 與 eSATA 的安全退出。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology 儲存空間、RAID 與 SMART 健康狀態 - Syno Manager" />
+<meta name="twitter:description" content="顯示 RAID 類型與可用空間的 Synology 磁碟區與儲存池、每顆硬碟的 SMART 狀態與溫度、快速 SMART 測試，以及 USB 與 eSATA 的安全退出。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "儲存空間"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology 儲存空間、RAID 與 SMART 健康狀態 - Syno Manager",
+  "description": "顯示 RAID 類型與可用空間的 Synology 磁碟區與儲存池、每顆硬碟的 SMART 狀態與溫度、快速 SMART 測試，以及 USB 與 eSATA 的安全退出。",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我可以查看每顆硬碟的 SMART 狀態嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。「硬碟健康狀態」子檢視會列出每顆硬碟的型號、是 HDD 還是 SSD、容量、溫度與 SMART 判定。你也可以直接用手機對任何一顆硬碟啟動快速 SMART 測試。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS 硬碟溫度多高算太熱？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App 會在硬碟超過攝氏 45 度時標為琥珀色、超過 55 度時標為紅色，系統溫度則是超過 50 度標為琥珀色、超過 60 度標為紅色。這些門檻也會影響主畫面上的健康徽章，所以硬碟過熱時，不必你去找就會在那裡顯示。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以從 App 安全地退出 USB 隨身碟嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，在「外接裝置」子檢視中操作。退出的確認依據是硬碟確實從裝置清單中消失，而不是要求被接受 - 所以顯示已退出的硬碟就是真的退出了。正在格式化或初始化的硬碟無法退出。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以從 App 建立或擴充磁碟區嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不行。建立、擴充與修復磁碟區和儲存池，都要在 DSM 的 Storage Manager 中進行。App 會回報你的儲存空間正在做什麼，並讓你對硬碟採取動作；它不會用手機來重新調整你的陣列結構。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 儲存空間</div>
+      <div class="eyebrow">儲存空間</div>
+      <h1>每個磁碟區，<span class="g">每顆硬碟</span></h1>
+      <p>三個子檢視：<b>磁碟區 &amp; 儲存池</b>顯示容量與 RAID，<b>硬碟健康狀態</b>顯示每顆硬碟的 SMART 與溫度，<b>外接裝置</b>則顯示插在背面的所有東西。</p>
+    </div>
+    <div class="hero-shot"><img alt="Syno Manager 中的儲存磁碟區與硬碟" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#volumes">磁碟區 &amp; 儲存池</a></li>
+      <li><a href="#drives">硬碟清單</a></li>
+      <li><a href="#disk-health">硬碟健康狀態 &amp; SMART</a></li>
+      <li><a href="#thresholds">溫度門檻</a></li>
+      <li><a href="#external">外接裝置 &amp; 安全退出</a></li>
+      <li><a href="#limits">它不會做的事</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">磁碟區 &amp; 儲存池</div>
+      <h2>容量，一目了然</h2>
+      <p class="lead">每個磁碟區都有一張卡片，顯示名稱、RAID 類型、狀態，以及由幾顆硬碟組成，下方是用量長條，標示已用、百分比、總容量與可用空間。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>顯示內容</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td>磁碟區名稱</td><td>與 DSM 的命名相同 - <code>VOLUME_1</code> 等等。</td></tr>
+        <tr><td>RAID 類型</td><td>RAID 5、SHR、RAID 1、Basic - 底層儲存池實際是什麼就顯示什麼。</td></tr>
+        <tr><td>狀態</td><td>磁碟區本身的狀態：<b>正常</b>、降級、毀損。降級的陣列是這個畫面上唯一值得你今天就處理的事。</td></tr>
+        <tr><td>硬碟數量</td><td>磁碟區橫跨幾顆實體硬碟。</td></tr>
+        <tr><td>用量長條</td><td>正常時為綠色，超過 80% 為琥珀色，超過 90% 為紅色。這些與<a href="/zh-hant/guide/home/#header">健康徽章</a>使用的門檻相同。</td></tr>
+        <tr><td>已用 / 總計 / 可用</td><td>三個都顯示，因為「已滿 70%」和「還剩 13 TB」回答的是不同的問題。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>每個硬碟槽裡有什麼</h2>
+      <p class="lead">磁碟區下方，依硬碟槽編號列出每顆實體硬碟。</p>
+    </div>
+    <ul class="plain">
+      <li><b>硬碟槽</b> - Disk 1、Disk 2 等，與機身上的標示一致。</li>
+      <li><b>型號</b> - 硬碟本身的型號字串。</li>
+      <li><b>廠牌與類型</b> - 製造商，以及是 HDD 還是 SSD。NAS 無法辨識廠牌的硬碟會顯示為<b>未知</b>，而不是靠猜測。</li>
+      <li><b>溫度</b>，依下方的門檻標示顏色。</li>
+      <li><b>SMART 判定</b> - 當硬碟自我評估為健康時，顯示 <b>SMART 正常</b>。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">硬碟健康狀態</div>
+      <h2>SMART，以及可以啟動的測試</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">「硬碟健康狀態」子檢視顯示同樣的硬碟，但空間更大：容量、類型、溫度與 SMART 狀態各有自己的標籤，每顆硬碟也都有一個<b>快速 SMART 測試</b>按鈕。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>快速 SMART 測試</b>會請硬碟執行自己的簡短自我評估。大約需要幾分鐘，而且不會打斷任何正在使用該磁碟區的作業。</li>
+          <li><b>判定來自硬碟，而不是我們。</b>SMART 是硬碟自我回報，App 只是轉述。一顆自稱沒問題後來卻故障的硬碟，是 SMART 本身的限制，而不是讀取的問題。</li>
+          <li><b>無法讀取的 SMART 狀態會顯示為未知</b>，絕不會顯示為健康。沒有讀數與讀數良好是兩回事，絕不會混為一談。</li>
+        </ul>
+      </div>
+      <img alt="硬碟健康狀態，顯示每顆硬碟的 SMART 狀態、溫度與快速 SMART 測試按鈕" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">顏色背後的數字</div>
+      <h2>門檻</h2>
+      <p class="lead">這裡沒有任何一項是對你硬體的猜測 - 這些是 App 改變顏色的臨界點，在相關的情況下，也包括主畫面的健康徽章。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>讀數</th><th>琥珀色門檻</th><th>紅色門檻</th></tr></thead>
+      <tbody>
+        <tr><td>硬碟溫度</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>系統溫度</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>磁碟區用量</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS 電量</td><td>低於 50%</td><td>低於 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">可在<a href="/zh-hant/guide/settings/#preferences">設定 &rsaquo; 溫度單位</a>中切換 &deg;C 與 &deg;F。App 中所有的溫度都會立即跟著變，包括主畫面與小工具上的溫度。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">外接</div>
+      <h2>USB、eSATA 與安全退出</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="外接儲存裝置與 USB 裝置，未連接任何裝置，並列出一台 UPS" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">兩個區段：<b>外接儲存裝置</b>顯示可掛載與退出的硬碟，<b>USB 裝置</b>則顯示其他所有插著的東西 - UPS、印表機、接收器。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>退出以硬碟確實消失為準。</b>App 不會因為要求回應正常就回報成功；它會重新讀取裝置清單，直到硬碟確實消失後才說已退出。這就是「可以安全拔除」和「大概可以安全拔除」的差別。</li>
+          <li><b>忙碌中的硬碟無法退出。</b>正在格式化或初始化的硬碟會被拒絕並附上原因，而不是在寫入中途被硬拔。</li>
+          <li><b>沒有連接任何裝置時，會明白地說出來。</b>空的清單會顯示「未連接外接硬碟」，而不是一個要你自己解讀的空白方塊。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">界線</div>
+      <h2>這個畫面不會做的事</h2>
+      <p class="lead">儲存空間是唯一一個誤點後無法挽回的地方，所以 App 的讀取遠多於寫入。</p>
+    </div>
+    <ul class="plain">
+      <li><b>它不會建立、擴充或刪除磁碟區或儲存池。</b>這些都應該在 DSM 的 Storage Manager 中，於夠大的畫面上看清楚你要做什麼之後再進行。</li>
+      <li><b>它不會修復降級的陣列。</b>但它會明確地在主畫面上告訴你，有一個陣列降級了。</li>
+      <li><b>它不會格式化任何東西。</b></li>
+      <li><b>它不會執行完整的 SMART 測試</b> - 只有快速測試。完整的表面掃描需要數小時，應該在你不會中途離開的地方進行。</li>
+    </ul>
+    <div class="note"><b>資料整理、重建與同位檢查</b>在進行期間會顯示為執行中的作業，所以即使是你在 DSM 中啟動的，也能在 App 中看著它完成。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>儲存空間常見問題</h2>
+    </div>
+    <details open><summary>我可以查看每顆硬碟的 SMART 狀態嗎？</summary><div class="body">可以。「硬碟健康狀態」子檢視會列出每顆硬碟的型號、是 HDD 還是 SSD、容量、溫度與 SMART 判定。你也可以直接用手機對任何一顆硬碟啟動快速 SMART 測試。</div></details>
+    <details><summary>NAS 硬碟溫度多高算太熱？</summary><div class="body">App 會在硬碟超過 45&deg;C 時標為琥珀色、超過 55&deg;C 時標為紅色，系統溫度則是超過 50&deg;C 標為琥珀色、超過 60&deg;C 標為紅色。這些門檻也會影響主畫面上的健康徽章。</div></details>
+    <details><summary>我可以從 App 安全地退出 USB 隨身碟嗎？</summary><div class="body">可以，在「外接裝置」子檢視中操作。退出的確認依據是硬碟確實從裝置清單中消失，而不是要求被接受。正在格式化或初始化的硬碟無法退出。</div></details>
+    <details><summary>我可以從 App 建立或擴充磁碟區嗎？</summary><div class="body">不行。建立、擴充與修復磁碟區和儲存池，都要在 DSM 的 Storage Manager 中進行。App 會回報你的儲存空間正在做什麼，並讓你對硬碟採取動作；它不會用手機來重新調整你的陣列結構。</div></details>
+    <details><summary>為什麼硬碟的廠牌顯示為未知？</summary><div class="body">因為 NAS 沒有回報廠牌。App 顯示的是它被告知的內容，而不是從型號字串推測製造商，那樣會把猜測當成事實呈現。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：網路</h2>
+    <p class="lead" style="margin:0 auto 24px">傳輸量、連線、服務、VPN 與 DDNS。</p>
+    <p><a class="btn" href="/zh-hant/guide/network/">網路 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">返回使用指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Almacenamiento, RAID y estado SMART de Synology - Syno Manager</title>
+<meta name="description" content="Volúmenes y pools de Synology con tipo de RAID y espacio libre, estado SMART y temperatura por disco, una prueba SMART rápida y expulsión segura para USB y eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/es/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Almacenamiento, RAID y estado SMART de Synology - Syno Manager" />
+<meta property="og:description" content="Volúmenes y pools de Synology con tipo de RAID y espacio libre, estado SMART y temperatura por disco, una prueba SMART rápida y expulsión segura para USB y eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/es/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Almacenamiento, RAID y estado SMART de Synology - Syno Manager" />
+<meta name="twitter:description" content="Volúmenes y pools de Synology con tipo de RAID y espacio libre, estado SMART y temperatura por disco, una prueba SMART rápida y expulsión segura para USB y eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "es",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guía de usuario",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Almacenamiento"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Almacenamiento, RAID y estado SMART de Synology - Syno Manager",
+  "description": "Volúmenes y pools de Synology con tipo de RAID y espacio libre, estado SMART y temperatura por disco, una prueba SMART rápida y expulsión segura para USB y eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "es",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo ver el estado SMART de cada disco?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La subvista Estado de los discos lista cada disco con su modelo, si es HDD o SSD, su capacidad, su temperatura y su veredicto SMART. También puedes iniciar una prueba SMART rápida en cualquier disco desde el teléfono."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué temperatura es demasiado alta para un disco de NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La app marca un disco en ámbar por encima de 45 grados C y en rojo por encima de 55 grados C, y la temperatura del sistema en ámbar por encima de 50 y en rojo por encima de 60. Esos umbrales también alimentan la insignia de estado de la pantalla de inicio, así que un disco caliente aparece ahí sin que tengas que buscarlo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo expulsar con seguridad un disco USB desde la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, desde la subvista Externos. La expulsión se confirma porque el disco desaparece realmente de la lista de dispositivos, no porque se acepte la solicitud, así que un disco que dice haberse expulsado de verdad lo ha hecho. Un disco que se está formateando o inicializando no se puede expulsar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo crear o ampliar un volumen desde la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Crear, ampliar y reparar volúmenes y pools se hace en el Administrador de almacenamiento de DSM. La app informa de lo que hace tu almacenamiento y te deja actuar sobre los discos; no reestructura tu matriz desde un teléfono."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/es/"><img src="/assets/syno-manager-icon.png" alt="Icono de Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menú" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Buscar en la guía..." data-i18n-empty="Sin resultados para" data-i18n-language="Idioma">
+      <a href="/es/">Inicio</a>
+      <a href="/es/guide/" class="active">Guía de usuario</a>
+      <a href="/es/#screenshots">Capturas de pantalla</a>
+      <a href="/es/compatible-nas/">Compatibilidad</a>
+      <a href="/es/best-synology-nas-app/">Por qué cambiarte</a>
+      <a href="/es/help/">Ayuda</a>
+      <a href="/es/#top" class="cta">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/guide/">Guía de usuario</a> &rsaquo; Almacenamiento</div>
+      <div class="eyebrow">Almacenamiento</div>
+      <h1>Cada volumen, <span class="g">cada disco</span></h1>
+      <p>Tres subvistas: <b>Volúmenes &amp; pools</b> para capacidad y RAID, <b>Estado de los discos</b> para SMART y temperatura por disco, y <b>Externos</b> para todo lo que esté conectado en la parte trasera.</p>
+    </div>
+    <div class="hero-shot"><img alt="Volúmenes y discos de almacenamiento en Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>En esta página</b><ul>
+      <li><a href="#volumes">Volúmenes &amp; Pools</a></li>
+      <li><a href="#drives">La lista de discos</a></li>
+      <li><a href="#disk-health">Estado de los discos &amp; SMART</a></li>
+      <li><a href="#thresholds">Umbrales de temperatura</a></li>
+      <li><a href="#external">Externos &amp; expulsión segura</a></li>
+      <li><a href="#limits">Lo que no hará</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volúmenes &amp; Pools</div>
+      <h2>La capacidad, de un vistazo</h2>
+      <p class="lead">Cada volumen tiene una tarjeta con su nombre, su tipo de RAID, su estado y cuántos discos lo respaldan, sobre una barra de uso con usado, porcentaje, total y libre.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Se muestra</th><th>Significado</th></tr></thead>
+      <tbody>
+        <tr><td>Nombre del volumen</td><td>Tal como lo nombra DSM: <code>VOLUME_1</code>, y así sucesivamente.</td></tr>
+        <tr><td>Tipo de RAID</td><td>RAID 5, SHR, RAID 1, Basic: sea lo que sea el pool que hay debajo.</td></tr>
+        <tr><td>Estado</td><td>El estado propio del volumen: <b>normal</b>, degradado, fallido. Una matriz degradada es lo único de esta pantalla que merece actuar hoy mismo.</td></tr>
+        <tr><td>Número de discos</td><td>Cuántos discos físicos abarca el volumen.</td></tr>
+        <tr><td>Barra de uso</td><td>Verde en condiciones normales, ámbar por encima del 80% y rojo por encima del 90%. Son los mismos umbrales que usa la <a href="/es/guide/home/#header">insignia de estado</a>.</td></tr>
+        <tr><td>Usado / Total / Libre</td><td>Los tres, porque «70% lleno» y «13 TB libres» responden a preguntas distintas.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Qué hay en cada bahía</h2>
+      <p class="lead">Debajo de los volúmenes, cada disco físico por número de bahía.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bahía</b>: Disco 1, Disco 2, etcétera, igual que las etiquetas del chasis.</li>
+      <li><b>Modelo</b>: la cadena de modelo del propio disco.</li>
+      <li><b>Fabricante y tipo</b>: el fabricante y si es HDD o SSD. Un disco cuyo fabricante el NAS no pudo identificar se muestra como <b>Desconocido</b> en lugar de adivinarlo.</li>
+      <li><b>Temperatura</b>, coloreada según los umbrales de abajo.</li>
+      <li><b>Veredicto SMART</b>: <b>SMART OK</b> cuando la propia autoevaluación del disco es saludable.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Estado de los discos</div>
+      <h2>SMART y una prueba que puedes iniciar</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">La subvista Estado de los discos muestra los mismos discos con más espacio: capacidad, tipo, temperatura y estado SMART tienen cada uno su propia etiqueta, y cada disco lleva un botón <b>Prueba SMART rápida</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Prueba SMART rápida</b> pide al disco que ejecute su propia autoevaluación corta. Tarda un par de minutos y no interrumpe nada de lo que use el volumen.</li>
+          <li><b>El veredicto es del disco, no nuestro.</b> SMART es el disco informando sobre sí mismo; la app lo retransmite. Un disco que dice estar bien y luego falla es una limitación de SMART, no de la lectura.</li>
+          <li><b>Un estado SMART ilegible se muestra como desconocido</b>, nunca como saludable. Una lectura ausente y una lectura buena son cosas distintas y nunca se mezclan.</li>
+        </ul>
+      </div>
+      <img alt="Estado de los discos mostrando cada disco con su estado SMART, temperatura y un botón de Prueba SMART rápida" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Los números detrás de los colores</div>
+      <h2>Umbrales</h2>
+      <p class="lead">Nada de esto es una suposición sobre tu hardware: son los puntos en los que la app cambia un color y, cuando corresponde, la insignia de estado de la pantalla de inicio.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Lectura</th><th>Ámbar en</th><th>Rojo en</th></tr></thead>
+      <tbody>
+        <tr><td>Temperatura del disco</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Temperatura del sistema</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Uso del volumen</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Carga del SAI</td><td>por debajo del 50%</td><td>por debajo del 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Cambia entre &deg;C y &deg;F en <a href="/es/guide/settings/#preferences">Ajustes &rsaquo; Unidad de temperatura</a>. Todas las temperaturas de la app lo siguen al instante, incluidas las de la pantalla de inicio y las de los widgets.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Externo</div>
+      <h2>USB, eSATA y expulsión segura</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Almacenamiento externo y dispositivos USB, sin nada conectado y con un SAI listado" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Dos secciones: <b>Almacenamiento externo</b> para discos que puedes montar y expulsar, y <b>Dispositivos USB</b> para todo lo demás que esté conectado: un SAI, una impresora, un adaptador.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>La expulsión se confirma cuando el disco se va.</b> La app no informa de éxito porque la solicitud haya vuelto bien; vuelve a leer la lista de dispositivos y solo dice que el disco está expulsado cuando de verdad ha desaparecido. Esa es la diferencia entre «seguro desconectarlo» y «probablemente seguro desconectarlo».</li>
+          <li><b>Un disco ocupado no se puede expulsar.</b> Uno que se está formateando o inicializando se rechaza, con el motivo, en lugar de arrancarlo en plena escritura.</li>
+          <li><b>Si no hay nada conectado, lo dice claramente.</b> Una lista vacía muestra «No hay discos externos conectados», no un recuadro vacío que tengas que interpretar.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Límites</div>
+      <h2>Lo que esta pantalla no hará</h2>
+      <p class="lead">El almacenamiento es el único lugar donde un toque equivocado no tiene vuelta atrás, así que la app lee mucho más de lo que escribe.</p>
+    </div>
+    <ul class="plain">
+      <li><b>No creará, ampliará ni eliminará un volumen o pool.</b> Eso vive en el Administrador de almacenamiento de DSM, en una pantalla lo bastante grande para mostrar lo que estás a punto de hacer.</li>
+      <li><b>No reparará una matriz degradada.</b> Te dirá, con claridad y en la pantalla de inicio, que una está degradada.</li>
+      <li><b>No formateará nada.</b></li>
+      <li><b>No ejecutará una prueba SMART completa</b>, solo la rápida. Un escaneo completo de la superficie tarda horas y pertenece a un lugar del que no te vayas a alejar.</li>
+    </ul>
+    <div class="note"><b>Las depuraciones, reconstrucciones y comprobaciones de paridad</b> aparecen como operaciones en curso mientras avanzan, así que puedes ver cómo termina una desde la app aunque la hayas iniciado en DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Preguntas frecuentes sobre almacenamiento</h2>
+    </div>
+    <details open><summary>¿Puedo ver el estado SMART de cada disco?</summary><div class="body">Sí. La subvista Estado de los discos lista cada disco con su modelo, si es HDD o SSD, su capacidad, su temperatura y su veredicto SMART. También puedes iniciar una prueba SMART rápida en cualquier disco desde el teléfono.</div></details>
+    <details><summary>¿Qué temperatura es demasiado alta para un disco de NAS?</summary><div class="body">La app marca un disco en ámbar por encima de 45&deg;C y en rojo por encima de 55&deg;C, y la temperatura del sistema en ámbar por encima de 50&deg;C y en rojo por encima de 60&deg;C. Esos umbrales también alimentan la insignia de estado de la pantalla de inicio.</div></details>
+    <details><summary>¿Puedo expulsar con seguridad un disco USB desde la app?</summary><div class="body">Sí, desde la subvista Externos. La expulsión se confirma porque el disco desaparece realmente de la lista de dispositivos, no porque se acepte la solicitud. Un disco que se está formateando o inicializando no se puede expulsar.</div></details>
+    <details><summary>¿Puedo crear o ampliar un volumen desde la app?</summary><div class="body">No. Crear, ampliar y reparar volúmenes y pools se hace en el Administrador de almacenamiento de DSM. La app informa de lo que hace tu almacenamiento y te deja actuar sobre los discos; no reestructura tu matriz desde un teléfono.</div></details>
+    <details><summary>¿Por qué un disco muestra Desconocido como fabricante?</summary><div class="body">Porque el NAS no informó de ninguno. La app muestra lo que se le dijo en lugar de deducir un fabricante a partir de la cadena del modelo, lo que sería una suposición presentada como un hecho.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Siguiente: Red</h2>
+    <p class="lead" style="margin:0 auto 24px">Rendimiento, conexiones, servicios, VPN y DDNS.</p>
+    <p><a class="btn" href="/es/guide/network/">Red &rarr;</a> &nbsp; <a class="btn ghost" href="/es/guide/">Volver a la guía</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/es/">Inicio</a><a href="/es/guide/">Guía de usuario</a><a href="/es/guide/getting-started/">Primeros pasos</a><a href="/es/compatible-nas/">Compatibilidad</a><a href="/es/best-synology-nas-app/">Por qué cambiar</a><a href="/es/synology-app-for-iphone/">iPhone & iPad</a><a href="/es/synology-app-for-android/">Android</a><a href="/es/synology-app-for-mac-windows/">Mac & Windows</a><a href="/es/ds-finder-alternative/">vs DS finder</a><a href="/es/help/">Ayuda</a><a href="/es/privacy/">Privacidad</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Informar de un error</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager es una app independiente y no está afiliada, respaldada ni patrocinada por Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station y QuickConnect son marcas registradas de Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

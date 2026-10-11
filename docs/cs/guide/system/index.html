@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU, RAM, teplota a ventilátory Synology - Syno Manager</title>
+<meta name="description" content="Sledujte CPU, RAM, zátěž, vstupy/výstupy disků a teplotu, měňte režim otáček ventilátorů, kontrolujte aktualizace DSM a restartujte či vypínejte své Synology z telefonu." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU, RAM, teplota a ventilátory Synology - Syno Manager" />
+<meta property="og:description" content="Sledujte CPU, RAM, zátěž, vstupy/výstupy disků a teplotu, měňte režim otáček ventilátorů, kontrolujte aktualizace DSM a restartujte či vypínejte své Synology z telefonu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU, RAM, teplota a ventilátory Synology - Syno Manager" />
+<meta name="twitter:description" content="Sledujte CPU, RAM, zátěž, vstupy/výstupy disků a teplotu, měňte režim otáček ventilátorů, kontrolujte aktualizace DSM a restartujte či vypínejte své Synology z telefonu." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Systém"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU, RAM, teplota a ventilátory Synology - Syno Manager",
+  "description": "Sledujte CPU, RAM, zátěž, vstupy/výstupy disků a teplotu, měňte režim otáček ventilátorů, kontrolujte aktualizace DSM a restartujte či vypínejte své Synology z telefonu.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mohu měnit otáčky ventilátoru z aplikace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Stav systému má kartu Chlazení s režimy Plné otáčky, Chladný a Tichý. Aplikace přečte režim, ve kterém NAS právě je, zapíše vaši volbu a přečte ji zpět pro potvrzení. NAS hlásící režim mimo tyto tři si ponechá zobrazení pouze pro čtení, místo aby bylo zkresleno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu NAS restartovat nebo vypnout z telefonu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, z karty Ovládání napájení dole ve Stavu systému. Obojí se před provedením potvrzuje, protože to ovlivní každého připojeného uživatele. Vzdálené vypnutí stojí za dvojí rozmyšlení - vypnuté NAS nelze probudit přes internet bez VPN nebo routeru nastaveného pro Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "K čemu je Identifikovat NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rozbliká stavovou kontrolku NAS, abyste poznali, na kterou skříňku v racku nebo ve skříni se díváte. Ztišit pípání zastaví alarm, ale ne podmínku, která ho spustila - opravte i příčinu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Obnovují se protokoly samy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ne, a je to záměr. Protokol se dřív znovu načítal podle časovače, ať jste ho četli, nebo ne, což zbytečně stálo baterii a data. Nyní se načte jednou a drží. Stiskem přehrání ho sledujete živě, dalším stiskem pozastavíte a po opuštění obrazovky se sledování samo zastaví."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu protokol, který si prohlížím, exportovat nebo zkopírovat?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Dlouhým stisknutím libovolného řádku vyvoláte systémovou lištu Kopírovat / Vybrat vše / Sdílet, nebo použijte tlačítko exportu vedle přepínače živého sledování na kartě Systém, případně nad seznamem na kartě Připojení. Otevře se list s volbami Uložit do souboru, Sdílet nebo poslat e-mailem a Kopírovat do schránky a exportuje přesně záznamy na obrazovce po filtru úrovně a vyhledávání - jeden záznam na řádek, s časem, úrovní, uživatelem a popisem oddělenými tabulátory."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Systém</div>
+      <div class="eyebrow">Systém</div>
+      <h1>Co ta skříňka <span class="g">skutečně dělá</span></h1>
+      <p>Tři podpohledy: <b>Stav systému</b> pro stav stroje, <b>Prostředky</b> pro živé grafy a <b>Protokoly</b> pro to, co DSM zaznamenalo. Plus ovládací prvky, které něco mění - režim ventilátorů, identifikační kontrolka, aktualizace DSM, restart a vypnutí.</p>
+    </div>
+    <div class="hero-shot"><img alt="Stav systému s ukazateli CPU a RAM, průměrnou zátěží, vstupy/výstupy disků a historií teploty" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#health">Stav systému</a></li>
+      <li><a href="#cooling">Chlazení &amp; režim ventilátorů</a></li>
+      <li><a href="#identify">Identifikace &amp; upozornění</a></li>
+      <li><a href="#dsm-update">Aktualizace DSM</a></li>
+      <li><a href="#power">Ovládání napájení</a></li>
+      <li><a href="#resources">Prostředky</a></li>
+      <li><a href="#logs">Logy</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Stav systému</div>
+      <h2>Naměřené hodnoty</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Karta</th><th>Co ukazuje</th></tr></thead>
+      <tbody>
+        <tr><td>Ukazatele CPU &amp; RAM</td><td>Celkové CPU jako kruh, pod ním zvýrazněný podíl <b>uživatele</b>, abyste rozeznali vlastní zátěž od režie systému. RAM ukazuje procenta i absolutní hodnoty.</td></tr>
+        <tr><td>Paměť</td><td>Využito z celku, jako pruh. Zelený, dokud na tom nezáleží.</td></tr>
+        <tr><td>Průměrná zátěž CPU</td><td>Hodnoty za jednu, pět a patnáct minut - procesy čekající na čas CPU, ne procento. Posuzuje se podle počtu jader, takže zdravá hodnota na osmijádrovém rackovém zařízení je na dvoupozičním NAS už zatížení.</td></tr>
+        <tr><td>Vstupy/výstupy disků</td><td>Propustnost čtení a zápisu plus procento vytížení - jak dlouho byly disky zaneprázdněné, což je často skutečná odpověď, když je NAS pomalé, zatímco CPU vypadá nečinně.</td></tr>
+        <tr><td>Historie teploty</td><td>Průběžný graf s aktuální hodnotou. V &deg;C nebo &deg;F podle vaší <a href="/cs/guide/settings/#preferences">předvolby</a>.</td></tr>
+        <tr><td>Procesy</td><td>Kolik procesů NAS provozuje.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Chlazení</div>
+      <h2>Režim otáček ventilátorů, měněný z telefonu</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Karta Chlazení ukazuje stav ventilátorů a režim, ve kterém NAS je, jako trojí volbu:</p>
+        <ul class="plain">
+          <li><b>Plné otáčky</b> - maximální proudění vzduchu, maximální hluk. Správné pro rack nebo skříň.</li>
+          <li><b>Chladný</b> - vyvážený výchozí režim.</li>
+          <li><b>Tichý</b> - nižší otáčky, vyšší teploty. Správné pro NAS v obýváku, pokud to disky snesou.</li>
+        </ul>
+        <div class="note"><b>Potvrzeno, ne předpokládáno.</b> Aplikace přečte aktuální režim z NAS, zapíše vaši volbu a poté ji <b>přečte zpět</b>. Režim, který NAS tiše odmítlo, je ohlášen jako odmítnutý, místo aby na obrazovce vypadal, jako by se použil.</div>
+        <div class="note" style="margin-top:14px"><b>Nerozpoznaný režim zůstává jen pro čtení.</b> Pokud vaše NAS hlásí režim chlazení mimo tyto tři, karta ukáže, co nahlásilo, a nenabízí změnu - místo aby ho nesprávně označila jedním z těch tří, které zná.</div>
+      </div>
+      <img alt="Karta Chlazení s režimy Plné otáčky, Chladný a Tichý, plus Identifikace a Ovládání napájení" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identifikace &amp; upozornění</div>
+      <h2>Najděte skříňku, ztište bzučák</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Identifikovat</b> rozbliká stavovou kontrolku NAS, abyste poznali, před kterou jednotkou stojíte. <b>Zastavit</b> to ukončí.</li>
+      <li><b>Ztišit pípání</b> zastaví alarm. Ztiší hluk, ne podmínku - cokoli alarm spustilo, stále platí a záhlaví stavu to bude dál hlásit.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">Aktualizace DSM</div>
+      <h2>Je k dispozici aktualizace firmwaru</h2>
+      <p class="lead">Karta Aktualizace DSM hlásí verzi, kterou máte, a zda má Synology něco novějšího. <b>Zkontrolovat aktualizace</b> požádá NAS, aby se podívalo znovu.</p>
+    </div>
+    <div class="note"><b>Jde o firmware vašeho NAS, ne o aplikaci.</b> Syno Manager se aktualizuje přes App Store nebo Google Play jako jakákoli jiná aplikace. Tato karta je vlastní aktualizační plocha DSM, tatáž jako v Ovládacím panelu.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Ovládání napájení</div>
+      <h2>Restart a vypnutí</h2>
+      <p class="lead">Dole ve Stavu systému a červeně označené, protože ovlivňují každého připojeného uživatele - včetně toho, kdo je uprostřed kopírování souboru.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Restartovat NAS</b> - čistý restart. Před provedením se potvrzuje.</li>
+      <li><b>Vypnout NAS</b> - čisté vypnutí. Před provedením se potvrzuje.</li>
+    </ul>
+    <div class="note stop"><b>Rozmyslete si vzdálené vypnutí.</b> Vypnuté NAS nemůže přenést vlastní probouzecí paket. Zpětné zapnutí zvenčí vaší sítě vyžaduje VPN do ní, nebo router nastavený na přeposílání Wake-on-LAN. Viz <a href="/cs/guide/wake-on-lan/">Wake-on-LAN</a>, co funguje odkud.</div>
+    <div class="note" style="margin-top:14px"><b>Zkratky potvrzení nepřeskakují.</b> <a href="/cs/guide/shortcuts/">Odkazy</a> <code>synomanager://reboot</code> a <code>synomanager://shutdown</code> záměrně jen <em>otevřou aplikaci</em> na této obrazovce. Destruktivní akce se nestane jednoklepovou jen proto, že byla spuštěna z launcheru.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Prostředky</div>
+      <h2>Živé grafy</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Grafy sledování prostředků pro CPU, paměť, čtení a zápis disku" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Podpohled Prostředky jsou tatáž data jako průběžný graf, což chcete, když je otázka „je to špička, nebo je to trvalé?“</p>
+        <ul class="plain">
+          <li><b>Využití CPU</b> s rozdělením na uživatele a systém.</li>
+          <li><b>Využití paměti</b> s využitím z celku.</li>
+          <li><b>Čtení disku</b> a <b>Zápis disku</b>, každé s vlastním grafem, plus celkové vytížení disku.</li>
+          <li><b>Průměrné zátěže</b> za jednu, pět a patnáct minut.</li>
+        </ul>
+        <div class="note">Grafy se plní v <a href="/cs/guide/settings/#preferences">intervalu dotazování</a>. Kratší interval dává jemnější detail a stojí víc baterie; delší je šetrnější a hrubší.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Logy</div>
+      <h2>Co DSM zaznamenalo</h2>
+      <p class="lead">Dvě karty: <b>Systém</b> pro vlastní protokol DSM a <b>Připojení</b> pro přihlášení a přístup k souborům. Obojí se načítá, až když o to požádáte.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Načte se jednou a drží.</b> Protokol, který se znovu načítá podle časovače, zatímco se snažíte přečíst řádek, je k ničemu a zbytečně stojí baterii i data.</li>
+      <li><b>Stiskem přehrání sledujete živě.</b> Dalším stiskem pozastavíte. Sledování se samo zastaví, když opustíte obrazovku nebo aplikaci pošlete na pozadí, takže zapomenutá karta protokolu v kapse nedotazuje potichu dál.</li>
+      <li><b>K dispozici je vyhledávací pole</b> pro nalezení jednoho řádku v dlouhém protokolu.</li>
+      <li><b>Protokoly kontejnerů a stacků fungují stejně</b> - viz <a href="/cs/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Text lze vybrat.</b> Dlouhým stisknutím řádku vyvoláte systémovou lištu Kopírovat / Vybrat vše / Sdílet, stejně jako kdekoli jinde, kde je na obrazovce text.</li>
+      <li><b>Exportujte to, na co se díváte.</b> Tlačítko exportu je vedle přepínače živého sledování na kartě Systém a nad seznamem na kartě Připojení. Otevře list se třemi cestami ven: <b>Uložit do souboru</b>, <b>Sdílet</b> pro odeslání nebo e-mail, nebo <b>Kopírovat do schránky</b>.</li>
+    </ul>
+    <div class="note"><b>Exportuje se to, co je na obrazovce, ne celý protokol.</b> Odchází to, na co seznam zúžil filtr úrovně a vyhledávací pole - nic, co jste už odfiltrovali, se do exportu nevrátí. Soubor je prostý text, jeden záznam na řádek, s časem, úrovní, uživatelem a popisem oddělenými tabulátory.</div>
+    <div class="note warn"><b>Pokud se protokol nenačte</b> a hlásí vypršení časového limitu připojení, zatímco zbytek aplikace funguje, neodpovídá služba Log Center na NAS, ne vaše připojení. Zkontrolujte, zda je Log Center nainstalován a běží v Centru balíčků DSM - API systémového protokolu je jeho součástí.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>Časté dotazy k systému</h2>
+    </div>
+    <details open><summary>Mohu měnit otáčky ventilátoru z aplikace?</summary><div class="body">Ano. Stav systému má kartu Chlazení s režimy Plné otáčky, Chladný a Tichý. Aplikace přečte režim, ve kterém NAS právě je, zapíše vaši volbu a přečte ji zpět pro potvrzení. NAS hlásící režim mimo tyto tři si ponechá zobrazení pouze pro čtení, místo aby bylo zkresleno.</div></details>
+    <details><summary>Mohu NAS restartovat nebo vypnout z telefonu?</summary><div class="body">Ano, z Ovládání napájení dole ve Stavu systému. Obojí se před provedením potvrzuje. Vzdálené vypnutí stojí za dvojí rozmyšlení - vypnuté NAS nelze probudit přes internet bez VPN nebo routeru nastaveného pro Wake-on-LAN.</div></details>
+    <details><summary>K čemu je Identifikovat NAS?</summary><div class="body">Rozbliká stavovou kontrolku NAS, abyste poznali, na kterou skříňku v racku nebo ve skříni se díváte. Ztišit pípání zastaví alarm, ale ne podmínku, která ho spustila.</div></details>
+    <details><summary>Obnovují se protokoly samy?</summary><div class="body">Ne, a je to záměr. Protokol se načte jednou a drží, abyste ho mohli číst. Stiskem přehrání ho sledujete živě, dalším stiskem pozastavíte a po opuštění obrazovky či odeslání aplikace na pozadí se sledování samo zastaví.</div></details>
+    <details><summary>Mohu protokol, který si prohlížím, exportovat nebo zkopírovat?</summary><div class="body">Ano. Dlouhým stisknutím libovolného řádku vyvoláte systémovou lištu Kopírovat / Vybrat vše / Sdílet, nebo použijte tlačítko exportu vedle přepínače živého sledování na kartě Systém, případně nad seznamem na kartě Připojení. Otevře se list s volbami Uložit do souboru, Sdílet nebo poslat e-mailem a Kopírovat do schránky a exportuje přesně záznamy na obrazovce po filtru úrovně a vyhledávání - jeden záznam na řádek, s časem, úrovní, uživatelem a popisem oddělenými tabulátory.</div></details>
+    <details><summary>Proč je moje průměrná zátěž vysoká, když CPU vypadá v pořádku?</summary><div class="body">Průměrná zátěž počítá čekající procesy a ty často čekají na disky, ne na CPU. Zkontrolujte vytížení Vstupů/výstupů disků na stejné obrazovce - vysoké procento vytížení při nízkém CPU je obvyklé vysvětlení.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Úložiště</h2>
+    <p class="lead" style="margin:0 auto 24px">Svazky, fondy, stav SMART každého disku a bezpečné vysunutí.</p>
+    <p><a class="btn" href="/cs/guide/storage/">Úložiště &amp; disky &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na průvodce</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

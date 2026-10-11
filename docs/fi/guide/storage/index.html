@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synologyn tallennustila, RAID ja SMART-kunto - Syno Manager</title>
+<meta name="description" content="Synologyn taltiot ja poolit RAID-tyyppeineen ja vapaine tiloineen, levykohtainen SMART-tila ja lämpötila, Quick SMART Test sekä turvallinen irrotus USB- ja eSATA-laitteille." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synologyn tallennustila, RAID ja SMART-kunto - Syno Manager" />
+<meta property="og:description" content="Synologyn taltiot ja poolit RAID-tyyppeineen ja vapaine tiloineen, levykohtainen SMART-tila ja lämpötila, Quick SMART Test sekä turvallinen irrotus USB- ja eSATA-laitteille." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synologyn tallennustila, RAID ja SMART-kunto - Syno Manager" />
+<meta name="twitter:description" content="Synologyn taltiot ja poolit RAID-tyyppeineen ja vapaine tiloineen, levykohtainen SMART-tila ja lämpötila, Quick SMART Test sekä turvallinen irrotus USB- ja eSATA-laitteille." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tallennustila"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synologyn tallennustila, RAID ja SMART-kunto - Syno Manager",
+  "description": "Synologyn taltiot ja poolit RAID-tyyppeineen ja vapaine tiloineen, levykohtainen SMART-tila ja lämpötila, Quick SMART Test sekä turvallinen irrotus USB- ja eSATA-laitteille.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Näenkö jokaisen levyn SMART-tilan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Levyjen kunto -alinäkymä listaa jokaisen levyn malleineen, tyyppeineen (HDD tai SSD), kapasiteetteineen, lämpötiloineen ja SMART-tuomioineen. Voit myös käynnistää Quick SMART Testin millä tahansa levyllä puhelimesta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mikä lämpötila on liian kuuma NAS-levylle?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sovellus värittää levyn keltaiseksi 45 asteen ja punaiseksi 55 asteen jälkeen, ja järjestelmän lämpötilan keltaiseksi 50 ja punaiseksi 60 jälkeen. Samat rajat syöttävät myös etusivun kuntomerkkiä, joten kuuma levy näkyy siellä ilman, että sitä tarvitsee etsiä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko irrottaa USB-aseman turvallisesti sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä, Ulkoiset-alinäkymästä. Irrotus vahvistetaan sillä, että asema todella poistuu laiteluettelosta, ei sillä, että pyyntö hyväksyttiin - joten asema, joka sanoo irtautuneensa, on todella irronnut. Asemaa, jota alustetaan tai muotoillaan, ei voi irrottaa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko luoda tai laajentaa taltion sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Taltioiden ja poolien luonti, laajennus ja korjaus tehdään DSM:n Storage Managerissa. Sovellus kertoo, mitä tallennustilasi tekee, ja antaa toimia levyillä; se ei muokkaa levyjoukkoasi puhelimesta käsin."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Tallennustila</div>
+      <div class="eyebrow">Tallennustila</div>
+      <h1>Jokainen taltio, <span class="g">jokainen levy</span></h1>
+      <p>Kolme alinäkymää: <b>Taltiot &amp; poolit</b> kapasiteetille ja RAID:lle, <b>Levyjen kunto</b> SMART:lle ja lämpötilalle levyittäin sekä <b>Ulkoiset</b> kaikelle takaosaan kytketylle.</p>
+    </div>
+    <div class="hero-shot"><img alt="Tallennustaltiot ja levyt Syno Managerissa" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#volumes">Levyt &amp; poolit</a></li>
+      <li><a href="#drives">Levyluettelo</a></li>
+      <li><a href="#disk-health">Levyjen kunto &amp; SMART</a></li>
+      <li><a href="#thresholds">Lämpötilarajat</a></li>
+      <li><a href="#external">Ulkoiset &amp; turvallinen irrotus</a></li>
+      <li><a href="#limits">Mitä se ei tee</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Levyt &amp; poolit</div>
+      <h2>Kapasiteetti yhdellä silmäyksellä</h2>
+      <p class="lead">Jokaiselle taltiolle on oma kortti, jossa sen nimi, RAID-tyyppi, tila ja kuinka monta levyä sen takana on, sekä käyttöastepalkki, jossa käytetty, prosentti, yhteensä ja vapaa.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Näytetään</th><th>Merkitys</th></tr></thead>
+      <tbody>
+        <tr><td>Taltion nimi</td><td>Siten kuin DSM sen nimeää - <code>VOLUME_1</code> ja niin edelleen.</td></tr>
+        <tr><td>RAID-tyyppi</td><td>RAID 5, SHR, RAID 1, Basic - mikä tahansa alla oleva pooli todellisuudessa onkaan.</td></tr>
+        <tr><td>Tila</td><td>Taltion oma tila: <b>normaali</b>, heikentynyt, kaatunut. Heikentynyt levyjoukko on tämän näkymän ainoa asia, johon kannattaa tarttua tänään.</td></tr>
+        <tr><td>Levyjen määrä</td><td>Kuinka monta fyysistä levyä taltio kattaa.</td></tr>
+        <tr><td>Käyttöastepalkki</td><td>Normaalisti vihreä, keltainen 80 % jälkeen ja punainen 90 % jälkeen. Samat rajat, joita <a href="/fi/guide/home/#header">kuntomerkki</a> käyttää.</td></tr>
+        <tr><td>Käytetty / Yhteensä / Vapaa</td><td>Kaikki kolme, koska ”70 % täynnä” ja ”13 TB vapaana” vastaavat eri kysymyksiin.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Mitä kussakin paikassa on</h2>
+      <p class="lead">Taltioiden alla jokainen fyysinen levy paikkanumeronsa mukaan.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Paikka</b> - Disk 1, Disk 2 ja niin edelleen, täsmälleen kuten kotelon tarrat.</li>
+      <li><b>Malli</b> - levyn oma mallitunnus.</li>
+      <li><b>Valmistaja ja tyyppi</b> - valmistaja ja onko levy HDD vai SSD. Levy, jonka valmistajaa NAS ei tunnistanut, näytetään nimellä <b>Tuntematon</b> arvaamisen sijaan.</li>
+      <li><b>Lämpötila</b>, väritettynä alla olevia rajoja vasten.</li>
+      <li><b>SMART-tuomio</b> - <b>SMART OK</b>, kun levyn oma itsearviointi on terve.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Levyjen kunto</div>
+      <h2>SMART ja testi, jonka voit käynnistää</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Levyjen kunto -alinäkymä on samat levyt väljemmin: kapasiteetti, tyyppi, lämpötila ja SMART-tila saavat kukin oman merkkinsä, ja jokaisella levyllä on <b>Quick SMART Test</b> -painike.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Quick SMART Test</b> pyytää levyä suorittamaan oman lyhyen itsearvionsa. Se kestää pari minuuttia eikä keskeytä mitään taltiota käyttävää.</li>
+          <li><b>Tuomio on levyn, ei meidän.</b> SMART on levyn raportti itsestään; sovellus välittää sen. Levy, joka sanoo olevansa kunnossa ja sitten pettää, on SMART:n rajoitus, ei lukeman.</li>
+          <li><b>Lukukelvoton SMART-tila näytetään tuntemattomana</b>, ei koskaan terveenä. Puuttuva lukema ja hyvä lukema ovat eri asioita, eikä niitä koskaan yhdistetä.</li>
+        </ul>
+      </div>
+      <img alt="Levyjen kunto: jokainen levy SMART-tiloineen, lämpötiloineen ja Quick SMART Test -painikkeineen" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Värien takana olevat luvut</div>
+      <h2>Rajat</h2>
+      <p class="lead">Mikään tässä ei ole arvaus laitteistostasi - nämä ovat pisteet, joissa sovellus vaihtaa väriä ja tarvittaessa etusivun kuntomerkkiä.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Lukema</th><th>Keltainen kohdassa</th><th>Punainen kohdassa</th></tr></thead>
+      <tbody>
+        <tr><td>Levyn lämpötila</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Järjestelmän lämpötila</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Taltion käyttöaste</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS:n varaus</td><td>alle 50 %</td><td>alle 20 %</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Vaihda &deg;C:n ja &deg;F:n välillä kohdassa <a href="/fi/guide/settings/#preferences">Asetukset &rsaquo; Lämpötilayksikkö</a>. Jokainen sovelluksen lämpötila seuraa sitä heti, myös etusivun ja widgetien lämpötilat.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Ulkoinen</div>
+      <h2>USB, eSATA ja turvallinen irrotus</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Ulkoinen tallennustila ja USB-laitteet, ei liitettyjä asemia ja UPS listattuna" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Kaksi osiota: <b>Ulkoinen tallennustila</b> asemille, jotka voi liittää ja irrottaa, ja <b>USB-laitteet</b> kaikelle muulle kytketylle - UPS, tulostin, dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Irrotus vahvistetaan sillä, että asema poistuu.</b> Sovellus ei ilmoita onnistumisesta sillä perusteella, että pyyntö palasi OK; se lukee laiteluettelon uudelleen ja sanoo aseman irronneen vasta, kun se on todella poissa. Siinä on ero merkintöjen ”turvallista irrottaa” ja ”luultavasti turvallista irrottaa” välillä.</li>
+          <li><b>Varattua asemaa ei voi irrottaa.</b> Asema, jota alustetaan tai muotoillaan, evätään syyn kera sen sijaan, että se repäistäisiin irti kesken kirjoituksen.</li>
+          <li><b>Tyhjä lista sanoo sen suoraan.</b> Tyhjä lista lukee ”Ei liitettyjä ulkoisia asemia” - ei tyhjä ruutu, jota sinun pitäisi tulkita.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Rajat</div>
+      <h2>Mitä tämä näkymä ei tee</h2>
+      <p class="lead">Tallennustila on ainoa paikka, jossa väärä napautus ei ole peruttavissa, joten sovellus lukee paljon enemmän kuin kirjoittaa.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se ei luo, laajenna tai poista taltiota tai poolia.</b> Ne kuuluvat DSM:n Storage Manageriin, näytölle, joka on tarpeeksi suuri näyttämään, mitä aiot tehdä.</li>
+      <li><b>Se ei korjaa heikentynyttä levyjoukkoa.</b> Se kertoo selkeästi ja etusivulla, että yksi on heikentynyt.</li>
+      <li><b>Se ei alusta mitään.</b></li>
+      <li><b>Se ei suorita täyttä SMART-testiä</b> - vain pikatestin. Täysi pintaskannaus kestää tunteja ja kuuluu paikkaan, josta et aio kävellä pois.</li>
+    </ul>
+    <div class="note"><b>Scrubbaus, jälleenrakennukset ja pariteettitarkistukset</b> näkyvät käynnissä olevina toimintoina niiden aikana, joten voit seurata yhden päättymistä sovelluksesta, vaikka käynnistit sen DSM:ssä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Usein kysyttyä tallennustilasta</h2>
+    </div>
+    <details open><summary>Näenkö jokaisen levyn SMART-tilan?</summary><div class="body">Kyllä. Levyjen kunto -alinäkymä listaa jokaisen levyn malleineen, tyyppeineen (HDD tai SSD), kapasiteetteineen, lämpötiloineen ja SMART-tuomioineen. Voit myös käynnistää Quick SMART Testin millä tahansa levyllä puhelimesta.</div></details>
+    <details><summary>Mikä lämpötila on liian kuuma NAS-levylle?</summary><div class="body">Sovellus värittää levyn keltaiseksi 45&deg;C:n ja punaiseksi 55&deg;C:n jälkeen, ja järjestelmän lämpötilan keltaiseksi 50&deg;C:n ja punaiseksi 60&deg;C:n jälkeen. Samat rajat syöttävät myös etusivun kuntomerkkiä.</div></details>
+    <details><summary>Voinko irrottaa USB-aseman turvallisesti sovelluksesta?</summary><div class="body">Kyllä, Ulkoiset-alinäkymästä. Irrotus vahvistetaan sillä, että asema todella poistuu laiteluettelosta, ei sillä, että pyyntö hyväksyttiin. Asemaa, jota alustetaan tai muotoillaan, ei voi irrottaa.</div></details>
+    <details><summary>Voinko luoda tai laajentaa taltion sovelluksesta?</summary><div class="body">Ei. Taltioiden ja poolien luonti, laajennus ja korjaus tehdään DSM:n Storage Managerissa. Sovellus kertoo, mitä tallennustilasi tekee, ja antaa toimia levyillä; se ei muokkaa levyjoukkoasi puhelimesta käsin.</div></details>
+    <details><summary>Miksi levyn valmistajaksi sanotaan Tuntematon?</summary><div class="body">Koska NAS ei ilmoittanut sitä. Sovellus näyttää sen, mitä sille kerrottiin, eikä päättele valmistajaa mallitunnuksesta, mikä olisi arvaus faktana esitettynä.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Verkko</h2>
+    <p class="lead" style="margin:0 auto 24px">Läpäisy, yhteydet, palvelut, VPN ja DDNS.</p>
+    <p><a class="btn" href="/fi/guide/network/">Verkko &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

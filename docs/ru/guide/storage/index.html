@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Хранилище Synology, RAID и состояние SMART - Syno Manager</title>
+<meta name="description" content="Тома и пулы Synology с типом RAID и свободным местом, состояние SMART и температура каждого диска, быстрый тест SMART и безопасное извлечение USB и eSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ru/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Хранилище Synology, RAID и состояние SMART - Syno Manager" />
+<meta property="og:description" content="Тома и пулы Synology с типом RAID и свободным местом, состояние SMART и температура каждого диска, быстрый тест SMART и безопасное извлечение USB и eSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ru/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Хранилище Synology, RAID и состояние SMART - Syno Manager" />
+<meta name="twitter:description" content="Тома и пулы Synology с типом RAID и свободным местом, состояние SMART и температура каждого диска, быстрый тест SMART и безопасное извлечение USB и eSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ru",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Руководство пользователя",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Хранилище"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Хранилище Synology, RAID и состояние SMART - Syno Manager",
+  "description": "Тома и пулы Synology с типом RAID и свободным местом, состояние SMART и температура каждого диска, быстрый тест SMART и безопасное извлечение USB и eSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "ru",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Можно ли увидеть состояние SMART каждого диска?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да. Подраздел «Состояние дисков» показывает все диски: модель, HDD это или SSD, ёмкость, температуру и вердикт SMART. Быстрый тест SMART на любом диске тоже можно запустить с телефона."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Какая температура диска NAS считается слишком высокой?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Приложение окрашивает диск в янтарный цвет выше 45 градусов C и в красный выше 55 градусов C, а температуру системы - в янтарный выше 50 и в красный выше 60. Эти же пороги влияют на значок состояния на главном экране, так что перегретый диск заметен там без дополнительных поисков."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли безопасно извлечь USB-диск из приложения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Да, в подразделе «Внешние». Извлечение подтверждается тем, что диск действительно пропал из списка устройств, а не тем, что запрос принят, - поэтому диск, который сообщает об извлечении, действительно извлечён. Диск, который форматируется или инициализируется, извлечь нельзя."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Можно ли создать или расширить том из приложения?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Нет. Создание, расширение и восстановление томов и пулов выполняются в Менеджере хранения DSM. Приложение сообщает, что происходит с вашим хранилищем, и позволяет выполнять действия с дисками, но не перестраивает массив с телефона."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ru/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Поиск по руководству..." data-i18n-empty="Нет совпадений для" data-i18n-language="Язык">
+      <a href="/ru/">Главная</a>
+      <a href="/ru/guide/" class="active">Руководство пользователя</a>
+      <a href="/ru/#screenshots">Скриншоты</a>
+      <a href="/ru/compatible-nas/">Совместимость</a>
+      <a href="/ru/best-synology-nas-app/">Зачем переходить</a>
+      <a href="/ru/help/">Справка</a>
+      <a href="/ru/#top" class="cta">Скачать</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ru/">Главная</a> &rsaquo; <a href="/ru/guide/">Руководство пользователя</a> &rsaquo; Хранилище</div>
+      <div class="eyebrow">Хранилище</div>
+      <h1>Каждый том, <span class="g">каждый диск</span></h1>
+      <p>Три подраздела: <b>Тома &amp; пулы</b> - ёмкость и RAID, <b>Состояние дисков</b> - SMART и температура каждого диска, <b>Внешние</b> - всё, что подключено сзади.</p>
+    </div>
+    <div class="hero-shot"><img alt="Тома и диски хранилища в Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>На этой странице</b><ul>
+      <li><a href="#volumes">Тома &amp; пулы</a></li>
+      <li><a href="#drives">Список дисков</a></li>
+      <li><a href="#disk-health">Состояние дисков &amp; SMART</a></li>
+      <li><a href="#thresholds">Пороги температуры</a></li>
+      <li><a href="#external">Внешние устройства &amp; безопасное извлечение</a></li>
+      <li><a href="#limits">Чего он не делает</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Тома &amp; пулы</div>
+      <h2>Ёмкость с первого взгляда</h2>
+      <p class="lead">У каждого тома своя карточка с названием, типом RAID, состоянием и числом дисков, а над ней полоса заполнения с занятым, процентом, общим и свободным объёмом.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Показано</th><th>Значение</th></tr></thead>
+      <tbody>
+        <tr><td>Имя тома</td><td>Так, как его называет DSM - <code>VOLUME_1</code> и так далее.</td></tr>
+        <tr><td>Тип RAID</td><td>RAID 5, SHR, RAID 1, Basic - чем бы ни был пул на самом деле.</td></tr>
+        <tr><td>Состояние</td><td>Собственное состояние тома: <b>норма</b>, деградирован, вышел из строя. Деградировавший массив - единственное, на этом экране, с чем стоит что-то делать сегодня.</td></tr>
+        <tr><td>Число дисков</td><td>Сколько физических дисков входит в том.</td></tr>
+        <tr><td>Полоса заполнения</td><td>Обычно зелёная, янтарная выше 80% и красная выше 90%. Те же пороги использует <a href="/ru/guide/home/#header">значок состояния</a>.</td></tr>
+        <tr><td>Занято / Всего / Свободно</td><td>Все три значения, потому что «заполнено на 70%» и «свободно 13 ТБ» отвечают на разные вопросы.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Что стоит в каждом отсеке</h2>
+      <p class="lead">Под томами - все физические диски по номерам отсеков.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Отсек</b> - Disk 1, Disk 2 и так далее, как на надписях на корпусе.</li>
+      <li><b>Модель</b> - строка модели самого диска.</li>
+      <li><b>Производитель и тип</b> - изготовитель и HDD это или SSD. Если NAS не смог определить производителя диска, показывается <b>Неизвестно</b>, а не догадка.</li>
+      <li><b>Температура</b> с цветом по порогам ниже.</li>
+      <li><b>Вердикт SMART</b> - <b>SMART OK</b>, если самооценка диска в порядке.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Состояние дисков</div>
+      <h2>SMART и тест, который можно запустить</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Подраздел «Состояние дисков» - те же диски, но с большим пространством: ёмкость, тип, температура и состояние SMART получают по отдельной метке, а у каждого диска есть кнопка <b>Быстрый тест SMART</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Быстрый тест SMART</b> просит диск выполнить собственную короткую самопроверку. Она занимает пару минут и не прерывает работу с томом.</li>
+          <li><b>Вердикт принадлежит диску, а не нам.</b> SMART - это диск, сообщающий о себе, а приложение лишь передаёт его слова. Диск, который сообщает, что с ним всё хорошо, а потом выходит из строя, - это ограничение SMART, а не считывания.</li>
+          <li><b>Нечитаемое состояние SMART показывается как неизвестное</b>, а не как исправное. Отсутствие показания и хорошее показание - разные вещи, и они никогда не смешиваются.</li>
+        </ul>
+      </div>
+      <img alt="Состояние дисков: все диски с состоянием SMART, температурой и кнопкой быстрого теста SMART" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">Числа за цветами</div>
+      <h2>Пороги</h2>
+      <p class="lead">Здесь нет догадок о вашем оборудовании - это точки, в которых приложение меняет цвет и, где это уместно, значок состояния на главном экране.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Показание</th><th>Янтарный при</th><th>Красный при</th></tr></thead>
+      <tbody>
+        <tr><td>Температура диска</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Температура системы</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Заполнение тома</td><td>80%</td><td>90%</td></tr>
+        <tr><td>Заряд ИБП</td><td>ниже 50%</td><td>ниже 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">Переключайтесь между &deg;C и &deg;F в <a href="/ru/guide/settings/#preferences">«Настройки &rsaquo; Единица температуры»</a>. Все температуры в приложении меняются сразу, включая те, что на главном экране и в виджетах.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Внешнее</div>
+      <h2>USB, eSATA и безопасное извлечение</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Внешние накопители и USB-устройства: ничего не подключено, указан ИБП" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Два раздела: <b>Внешние накопители</b> - диски, которые можно подключить и извлечь, и <b>USB-устройства</b> - всё остальное, что подключено: ИБП, принтер, адаптер.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Извлечение подтверждается тем, что диск исчез.</b> Приложение не сообщает об успехе только потому, что запрос вернул OK: оно заново считывает список устройств и объявляет диск извлечённым, лишь когда он действительно пропал. В этом разница между «можно отключать» и «наверное, можно отключать».</li>
+          <li><b>Занятый диск извлечь нельзя.</b> Диск, который форматируется или инициализируется, получает отказ с указанием причины, а не выдёргивается посреди записи.</li>
+          <li><b>Если ничего не подключено, об этом сказано прямо.</b> Пустой список показывает «Внешние диски не подключены», а не пустой прямоугольник, который нужно толковать самому.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Границы</div>
+      <h2>Чего этот экран не делает</h2>
+      <p class="lead">Хранилище - единственное место, где ошибочное касание нельзя исправить, поэтому приложение гораздо больше читает, чем записывает.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Оно не создаёт, не расширяет и не удаляет том или пул.</b> Это делается в Менеджере хранения DSM, на экране, достаточно большом, чтобы показать, что вы собираетесь сделать.</li>
+      <li><b>Оно не восстанавливает деградировавший массив.</b> Но чётко сообщит на главном экране, что массив деградировал.</li>
+      <li><b>Оно ничего не форматирует.</b></li>
+      <li><b>Оно не запускает полный тест SMART</b> - только быстрый. Полное сканирование поверхности занимает часы и подходит для того случая, когда вы не собираетесь отходить.</li>
+    </ul>
+    <div class="note"><b>Проверка целостности, перестроение и проверка чётности</b> отображаются как выполняющиеся операции, пока они идут, поэтому вы можете наблюдать за их завершением из приложения, даже если запустили их в DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Частые вопросы</div>
+      <h2>Вопросы о хранилище</h2>
+    </div>
+    <details open><summary>Можно ли увидеть состояние SMART каждого диска?</summary><div class="body">Да. Подраздел «Состояние дисков» показывает все диски: модель, HDD это или SSD, ёмкость, температуру и вердикт SMART. Быстрый тест SMART на любом диске тоже можно запустить с телефона.</div></details>
+    <details><summary>Какая температура диска NAS считается слишком высокой?</summary><div class="body">Приложение окрашивает диск в янтарный цвет выше 45&deg;C и в красный выше 55&deg;C, а температуру системы - в янтарный выше 50&deg;C и в красный выше 60&deg;C. Эти же пороги влияют на значок состояния на главном экране.</div></details>
+    <details><summary>Можно ли безопасно извлечь USB-диск из приложения?</summary><div class="body">Да, в подразделе «Внешние». Извлечение подтверждается тем, что диск действительно пропал из списка устройств, а не тем, что запрос принят. Диск, который форматируется или инициализируется, извлечь нельзя.</div></details>
+    <details><summary>Можно ли создать или расширить том из приложения?</summary><div class="body">Нет. Создание, расширение и восстановление томов и пулов выполняются в Менеджере хранения DSM. Приложение сообщает, что происходит с вашим хранилищем, и позволяет выполнять действия с дисками, но не перестраивает массив с телефона.</div></details>
+    <details><summary>Почему у диска в поле производителя указано «Неизвестно»?</summary><div class="body">Потому что NAS его не сообщил. Приложение показывает то, что ему сказали, а не выводит производителя из строки модели - это была бы догадка, выданная за факт.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далее: сеть</h2>
+    <p class="lead" style="margin:0 auto 24px">Скорость, подключения, службы, VPN и DDNS.</p>
+    <p><a class="btn" href="/ru/guide/network/">Сеть &rarr;</a> &nbsp; <a class="btn ghost" href="/ru/guide/">Назад к руководству</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ru/">Главная</a><a href="/ru/guide/">Руководство</a><a href="/ru/guide/getting-started/">Начало работы</a><a href="/ru/compatible-nas/">Совместимость</a><a href="/ru/best-synology-nas-app/">Почему стоит перейти</a><a href="/ru/synology-app-for-iphone/">iPhone и iPad</a><a href="/ru/synology-app-for-android/">Android</a><a href="/ru/synology-app-for-mac-windows/">Mac и Windows</a><a href="/ru/ds-finder-alternative/">vs DS finder</a><a href="/ru/help/">Помощь</a><a href="/ru/privacy/">Конфиденциальность</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Сообщить об ошибке</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - независимое приложение, не связанное с Synology Inc., не одобренное и не спонсируемое ею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station и QuickConnect являются товарными знаками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>捷徑、Siri 與深層連結 - Syno Manager</title>
+<meta name="description" content="synomanager:// URL 配置可讓 App 直接開啟任何畫面；在 Mac 上，Siri 與捷徑則透過 App Intents 原生支援 Syno Manager。" />
+<meta name="keywords" content="synomanager url scheme, Synology app deep link, Siri shortcut NAS, Synology Mac Shortcuts app, macOS App Intents, Android shortcut Synology, NAS automation shortcut" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/shortcuts/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/shortcuts/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/shortcuts/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/shortcuts/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/shortcuts/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/shortcuts/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/shortcuts/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/shortcuts/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/shortcuts/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/shortcuts/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/shortcuts/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/shortcuts/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/shortcuts/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/shortcuts/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/shortcuts/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/shortcuts/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/shortcuts/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/shortcuts/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/shortcuts/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/shortcuts/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/shortcuts/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/shortcuts/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/shortcuts/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/shortcuts/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/shortcuts/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/shortcuts/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/shortcuts/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/shortcuts/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/shortcuts/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/shortcuts/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/shortcuts/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/shortcuts/" />
+<!--/hreflang-->
+<meta property="og:title" content="捷徑、Siri 與深層連結 - Syno Manager" />
+<meta property="og:description" content="synomanager:// URL 配置可讓 App 直接開啟任何畫面；在 Mac 上，Siri 與捷徑則透過 App Intents 原生支援 Syno Manager。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/shortcuts/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="捷徑、Siri 與深層連結 - Syno Manager" />
+<meta name="twitter:description" content="synomanager:// URL 配置可讓 App 直接開啟任何畫面；在 Mac 上，Siri 與捷徑則透過 App Intents 原生支援 Syno Manager。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "捷徑"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "捷徑、Siri 與深層連結 - Syno Manager",
+  "description": "synomanager:// URL 配置可讓 App 直接開啟任何畫面；在 Mac 上，Siri 與捷徑則透過 App Intents 原生支援 Syno Manager。",
+  "image": "https://synomanager.com/screenshots/dashboard.webp",
+  "url": "https://synomanager.com/guide/shortcuts/",
+  "mainEntityOfPage": "https://synomanager.com/guide/shortcuts/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-09-23",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager 有 URL 配置嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。synomanager://<name> 可讓 App 直接開啟特定畫面。儀表板、儲存空間、系統、網路、App、備份、檔案與喚醒各有一個，所以 Siri 捷徑、Android 啟動器捷徑與自動化 App 都能直接跳到你要的地方。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "捷徑可以一點就重新啟動我的 NAS 嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不行，而且是刻意的。重新啟動與關機的連結只會開啟 App 並停在電源控制畫面，那裡仍會套用既有的確認機制。破壞性的操作不會因為是從啟動器觸發的，就變成一點即執行。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以搭配 Siri 使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。在 Apple 的「捷徑」App 中建立一個開啟該 URL 的捷徑，為它設定一個語音片語，Siri 就會直接帶你過去。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "捷徑可以指定特定的 NAS 嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不行。捷徑只會開啟一個畫面；要在哪一台 NAS 上開啟，則依你的啟動行為設定而定。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Syno Manager 能在 Mac 上搭配「捷徑」App 使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，而且是原生支援。「開啟區段」、「重新啟動 NAS」與「關閉 NAS」會以 Syno Manager 動作的形式出現在 macOS 的 Apple「捷徑」App 中，不需要輸入任何 URL。「重新啟動 NAS」與「關閉 NAS」會先請 Siri 或捷徑確認才執行任何動作，然後只會開啟 App 並停在電源控制畫面 - 與其他地方一樣，先確認再動作。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 捷徑</div>
+    <div class="eyebrow">捷徑 &amp; 連結</div>
+    <h1>直接前往<span class="g">你要的畫面</span></h1>
+    <p>Syno Manager 註冊了 <code>synomanager://</code> URL 配置，因此 Siri 語音片語、啟動器捷徑或自動化 App 都能直接把 App 開在你需要的地方，而不是首頁。在 Mac 上，Siri 與「捷徑」App 能原生辨識 Syno Manager，完全不需要輸入 URL。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">連結</div>
+      <h2>所有捷徑</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>連結</th><th>開啟</th></tr></thead>
+      <tbody>
+        <tr><td><code>synomanager://dashboard</code></td><td>首頁。</td></tr>
+        <tr><td><code>synomanager://storage</code></td><td><a href="/zh-hant/guide/storage/">儲存空間</a> - 磁碟區、硬碟健康狀態、外接裝置。</td></tr>
+        <tr><td><code>synomanager://system</code></td><td><a href="/zh-hant/guide/system/">系統</a> - 健康狀態、資源、記錄。</td></tr>
+        <tr><td><code>synomanager://network</code></td><td><a href="/zh-hant/guide/network/">網路</a> - 傳輸量、連線、服務、VPN、DDNS。</td></tr>
+        <tr><td><code>synomanager://apps</code></td><td><a href="/zh-hant/guide/apps/">App</a> - 套件、Docker、專案、虛擬機器。</td></tr>
+        <tr><td><code>synomanager://backup</code></td><td><a href="/zh-hant/guide/backup/">備份</a> - Hyper Backup 與 Active Backup。</td></tr>
+        <tr><td><code>synomanager://files</code></td><td><a href="/zh-hant/guide/files/">檔案</a> - File Station 與共用資料夾。</td></tr>
+        <tr><td><code>synomanager://wake</code></td><td><a href="/zh-hant/guide/wake-on-lan/">喚醒裝置</a>畫面。</td></tr>
+        <tr><td><code>synomanager://reboot</code></td><td>電源控制。<b>僅開啟畫面</b> - 詳見下方。</td></tr>
+        <tr><td><code>synomanager://shutdown</code></td><td>電源控制。<b>僅開啟畫面</b> - 詳見下方。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">刻意設下的限制</div>
+      <h2>為什麼重新啟動與關機只會開啟 App</h2>
+      <p class="lead">它們會帶你到電源控制畫面，本身不會重新啟動或關閉任何東西。</p>
+    </div>
+    <p style="color:var(--steel);max-width:74ch">捷徑是可能不小心觸發的東西 - 誤點的啟動器圖示、聽錯的語音片語、在錯誤時機觸發的自動化。重新啟動 NAS 會中斷所有正在使用它的人，也會打斷它正在進行的工作。這兩件事不該湊在一起，所以連結只到畫面為止，<a href="/zh-hant/guide/system/#power">既有的確認機制</a>仍然適用。</p>
+    <div class="note"><b>其他所有連結本質上都很安全</b>，因為它們只是顯示東西給你看。這就是為什麼其餘的都一點即達，而這兩個不是。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">如何使用</div>
+      <h2>各平台的做法</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>iOS - Siri 與捷徑</h3>
+        <ol class="steps">
+          <li>開啟<b>捷徑</b>並建立新的捷徑。</li>
+          <li>加入<b>開啟 URL</b> 動作。</li>
+          <li>輸入連結，例如 <code>synomanager://storage</code>。</li>
+          <li>取一個你會大聲說出口的名稱 - 「查看我的 NAS 儲存空間」。</li>
+          <li>加到主畫面，或直接問 Siri。</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Android - 啟動器與自動化</h3>
+        <ol class="steps">
+          <li>大多數啟動器都能放置一個開啟 URL 的捷徑。</li>
+          <li>自動化 App - Tasker、MacroDroid 等 - 可在任何觸發條件下開啟它。</li>
+          <li>筆記或網頁中的 <code>&lt;a href="synomanager://system"&gt;</code> 連結同樣有效。</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note" style="margin-top:24px"><b>要在哪一台 NAS 上開啟，依你的<a href="/zh-hant/guide/settings/#launch">啟動行為</a>設定而定。</b>捷徑選擇的是畫面，而不是裝置 - 所以在設定為「上次使用的 NAS」時，<code>synomanager://storage</code> 會顯示你上次所在那台 NAS 的儲存空間。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">macOS</div>
+      <h2>Siri 與捷徑的原生支援</h2>
+      <p class="lead">在 Mac 上，Syno Manager 完全不需要 URL。它直接向 Apple 的 App Intents 註冊了三個動作，因此 Siri 與「捷徑」App 會把 <b>Syno Manager</b> 視為一個有自己詞彙的 App，就像看待 Apple 自家的 App 一樣。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>動作</th><th>功能</th><th>對 Siri 說</th></tr></thead>
+      <tbody>
+        <tr><td>開啟區段</td><td>開啟 Syno Manager 並直接前往你選擇的區段 - 儀表板、儲存空間、系統、網路、App、備份、檔案或喚醒。</td><td>「開啟 Syno Manager」</td></tr>
+        <tr><td>重新啟動 NAS</td><td>先請你確認，然後開啟 App 並停在電源控制畫面。在你於該處再次確認之前，不會對 NAS 傳送任何指令。</td><td>「用 Syno Manager 重新啟動我的 NAS」</td></tr>
+        <tr><td>關閉 NAS</td><td>與重新啟動的流程相同：先透過 Siri 或捷徑確認，然後 App 開啟並停在電源控制畫面。</td><td>「用 Syno Manager 關閉我的 NAS」</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>重新啟動與關機仍需確認兩次。</b>Siri 或捷徑會先詢問 - 「要開啟 Syno Manager 來重新啟動 NAS 嗎？目前尚未對 NAS 傳送任何指令 - 你要在 App 中確認」 - 然後 App 本身的電源控制會再問一次。一個聽錯第一個字就讓 NAS 重新開機的語音指令，不是什麼值得擁有的功能。</div>
+    <p style="color:var(--steel);margin-top:18px;max-width:74ch"><b>你可以在這些基礎上打造自己的自動化。</b>因為它們是一般的捷徑動作，「開啟區段」可以放進你建立的任何捷徑中 - 排程執行、由 Home Hub 觸發，或接在其他動作之後 - 與其他任何 Mac App 的動作完全一樣。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>捷徑常見問題</h2>
+    </div>
+    <details open><summary>Syno Manager 有 URL 配置嗎？</summary><div class="body">有。<code>synomanager://&lt;name&gt;</code> 可讓 App 直接開啟特定畫面。儀表板、儲存空間、系統、網路、App、備份、檔案與喚醒各有一個。</div></details>
+    <details><summary>捷徑可以一點就重新啟動我的 NAS 嗎？</summary><div class="body">不行，而且是刻意的。重新啟動與關機的連結只會開啟 App 並停在電源控制畫面，那裡仍會套用既有的確認機制。</div></details>
+    <details><summary>我可以搭配 Siri 使用嗎？</summary><div class="body">可以。在 Apple 的「捷徑」App 中建立一個開啟該 URL 的捷徑，為它設定一個語音片語，Siri 就會直接帶你過去。</div></details>
+    <details><summary>捷徑可以指定特定的 NAS 嗎？</summary><div class="body">不行。捷徑只會開啟一個畫面；要在哪一台 NAS 上開啟，則依你的啟動行為設定而定。</div></details>
+    <details><summary>Syno Manager 能在 Mac 上搭配「捷徑」App 使用嗎？</summary><div class="body">可以，而且是原生支援。「開啟區段」、「重新啟動 NAS」與「關閉 NAS」會以 Syno Manager 動作的形式出現在 macOS 的 Apple「捷徑」App 中，不需要輸入任何 URL。兩個電源動作會先請 Siri 或捷徑確認才執行任何動作，然後只會開啟 App 並停在電源控制畫面。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：自訂</h2>
+    <p class="lead" style="margin:0 auto 24px">卡片、分頁、子檢視，以及它們的排列順序。</p>
+    <p><a class="btn" href="/zh-hant/guide/customizing/">自訂 App &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">返回使用指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN pentru NAS Synology - Syno Manager</title>
+<meta name="description" content="Trezește un Synology adormit sau orice mașină din rețeaua ta prin el - ceea ce merge de oriunde. Ce necesită un VPN sau o redirecționare pe router, spus pe față." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN pentru NAS Synology - Syno Manager" />
+<meta property="og:description" content="Trezește un Synology adormit sau orice mașină din rețeaua ta prin el - ceea ce merge de oriunde. Ce necesită un VPN sau o redirecționare pe router, spus pe față." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN pentru NAS Synology - Syno Manager" />
+<meta name="twitter:description" content="Trezește un Synology adormit sau orice mașină din rețeaua ta prin el - ceea ce merge de oriunde. Ce necesită un VPN sau o redirecționare pe router, spus pe față." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN pentru NAS Synology - Syno Manager",
+  "description": "Trezește un Synology adormit sau orice mașină din rețeaua ta prin el - ceea ce merge de oriunde. Ce necesită un VPN sau o redirecționare pe router, spus pe față.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot trezi NAS-ul de oriunde?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Doar dacă există un traseu către rețeaua ta care nu depinde de NAS fiind pornit - un VPN în rețea sau un router configurat să redirecționeze Wake-on-LAN. Un NAS oprit nu își poate retransmite propriul pachet de trezire, iar QuickConnect nu poate ajunge la un NAS oprit. În aceeași rețea, pur și simplu merge."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot trezi PC-ul prin NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, și aceasta funcționează de oriunde, atât timp cât NAS-ul însuși este pornit. Ceri NAS-ului prin conexiunea ta obișnuită, iar NAS-ul transmite pachetul magic în rețeaua locală pentru tine. Este același traseu pe care îl folosește aplicația DS Router de la Synology."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De unde vine adresa MAC a NAS-ului?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aplicația o captează automat prima dată când te conectezi, deci nu trebuie să o cauți niciodată."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce îmi trebuie pentru a adăuga alt dispozitiv?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un nume pe care îl recunoști și adresa lui MAC. De obicei găsești MAC-ul în lista de dispozitive a routerului sau pe mașina însăși, în setările de rețea."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Pornește lucrurile <span class="g">de pe canapea</span></h1>
+      <p>Un buton <b>Wake</b> lângă Connect în lista de dispozitive pentru NAS-ul propriu-zis și un ecran <b>Wake devices</b> pentru tot restul din rețeaua ta. Unul dintre ele merge de oriunde; celălalt are o rezervă spusă sincer.</p>
+    </div>
+    <div class="hero-shot"><img alt="Ecranul Wake devices" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tabelul sincer</div>
+      <h2>Ce merge de unde</h2>
+      <p class="lead">Wake-on-LAN este un broadcast într-o rețea locală. Tot ce funcționează și tot ce nu funcționează decurge din acest singur fapt, așa că iată-l pe față, nu îngropat într-o notă de subsol.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ce vrei să trezești</th><th>Unde te afli</th><th>Merge?</th><th>De ce</th></tr></thead>
+      <tbody>
+        <tr><td>NAS-ul</td><td>În aceeași rețea</td><td class="yes">Da</td><td>Telefonul tău transmite pachetul direct. Nu e nimic de configurat.</td></tr>
+        <tr><td>Alt dispozitiv</td><td>În aceeași rețea</td><td class="yes">Da</td><td>La fel - îl poate trimite fie telefonul, fie NAS-ul.</td></tr>
+        <tr><td>Alt dispozitiv, NAS-ul este pornit</td><td>Oriunde</td><td class="yes">Da</td><td><b>NAS-ul îl retransmite pentru tine.</b> Ajungi la NAS prin conexiunea ta obișnuită, iar el transmite în rețeaua locală. Acesta este traseul DS Router.</td></tr>
+        <tr><td>Chiar NAS-ul, cât timp este oprit</td><td>În afara rețelei tale</td><td class="no">Necesită configurare</td><td>Un NAS oprit nu își poate retransmite propria trezire, iar QuickConnect nu poate ajunge la un NAS oprit. Ai nevoie de un <b>VPN</b> în rețea sau de un router care redirecționează <b>portul UDP 9</b> către adresa de broadcast a rețelei locale.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Rândul din mijloc este cel util.</b> Trezirea unui desktop de acasă dintr-un tren funcționează și nu cere nicio configurare a routerului - pentru că NAS-ul mereu pornit face broadcastul.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS-ul</div>
+      <h2>Trezirea DiskStation-ului tău</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Nu e nimic de configurat.</b> Aplicația captează adresa MAC a NAS-ului prima dată când te conectezi, deci butonul e gata înainte să ai nevoie de el.</li>
+      <li><b>Deschide Setări &rsaquo; Manage NAS Devices.</b></li>
+      <li><b>Atinge Wake</b> lângă NAS.</li>
+      <li><b>Dă-i un moment</b> și atinge Connect. Un NAS are nevoie de timp să pornească, iar aplicația nu se preface că e pornit înainte să răspundă.</li>
+    </ol>
+    <div class="note warn"><b>Wake-on-LAN trebuie activat și pe NAS.</b> În DSM, la <b>Control Panel &rsaquo; Hardware &amp; Power &rsaquo; General</b>. Un NAS cu opțiunea oprită va ignora pachetul indiferent cine îl trimite.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tot restul</div>
+      <h2>Trezirea altor dispozitive prin NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Setări &rsaquo; Wake devices</b>. Adaugă orice mașină din rețeaua ta după nume și adresă MAC, iar NAS-ul trimite pachetul magic pentru tine din interiorul rețelei.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Atinge Add device.</b></li>
+          <li><b>Dă-i un nume</b> pe care îl recunoști - „Desktop”, „PC de jocuri”, „Server”.</li>
+          <li><b>Introdu adresa MAC.</b> Lista de dispozitive a routerului este de obicei cel mai simplu loc unde o găsești.</li>
+          <li><b>Salvează.</b> Apare în listă cu propriul buton Wake.</li>
+        </ol>
+        <div class="note"><b>Pentru că NAS-ul face trimiterea, aceasta funcționează cât ești plecat</b> - pe date mobile, prin QuickConnect, de oriunde poți ajunge la NAS. Așa face și aplicația de router a Synology și de aceea merită configurat chiar dacă nu trezești niciodată NAS-ul însuși.</div>
+      </div>
+      <img alt="Ecranul Wake devices cu starea goală și un buton Add device" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pe mașina țintă</div>
+      <h2>Ce trebuie să fie adevărat ca o trezire să ajungă</h2>
+      <p class="lead">Dacă un pachet e trimis și nu se întâmplă nimic, aproape sigur e una dintre acestea - și aplicația nu poate vedea sau repara niciuna din exterior.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN activat în BIOS sau UEFI-ul mașinii</b>, adesea numit „Wake on PCIe” sau „Power on by PCI-E”.</li>
+      <li><b>Activat și pe placa de rețea.</b> Pe Windows: Device Manager, proprietățile adaptorului, Power Management, „Allow this device to wake the computer”.</li>
+      <li><b>Fast Startup oprit pe Windows.</b> Cu el pornit, un PC oprit de fapt hibernează și adesea ignoră pachetul.</li>
+      <li><b>De obicei prin cablu.</b> Trezirea prin Wi-Fi cere hardware și drivere speciale; Ethernet este mult mai fiabil.</li>
+      <li><b>Mașina încă alimentată de la priză.</b> Un pachet magic cere ca placa de rețea să aibă alimentare în standby.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre Wake-on-LAN</h2>
+    </div>
+    <details open><summary>Pot trezi NAS-ul de oriunde?</summary><div class="body">Doar dacă există un traseu către rețeaua ta care nu depinde de NAS fiind pornit - un VPN sau un router configurat să redirecționeze Wake-on-LAN. Un NAS oprit nu își poate retransmite propriul pachet de trezire, iar QuickConnect nu poate ajunge la un NAS oprit. În aceeași rețea, pur și simplu merge.</div></details>
+    <details><summary>Pot trezi PC-ul prin NAS?</summary><div class="body">Da, și aceasta funcționează de oriunde atât timp cât NAS-ul însuși este pornit. Ceri NAS-ului prin conexiunea ta obișnuită, iar el transmite pachetul magic în rețeaua locală pentru tine.</div></details>
+    <details><summary>De unde vine adresa MAC a NAS-ului?</summary><div class="body">Aplicația o captează automat prima dată când te conectezi, deci nu trebuie să o cauți niciodată.</div></details>
+    <details><summary>Ce îmi trebuie pentru a adăuga alt dispozitiv?</summary><div class="body">Un nume pe care îl recunoști și adresa lui MAC, care de obicei se află în lista de dispozitive a routerului.</div></details>
+    <details><summary>Am trimis o trezire și nu s-a întâmplat nimic.</summary><div class="body">Verifică dacă Wake-on-LAN este activat pe mașina țintă - în BIOS, pe placa de rețea și cu Windows Fast Startup oprit. Verifică și dacă e pe Ethernet prin cablu și dacă NAS-ul are Wake-on-LAN activat în Control Panel, în cazul în care NAS-ul este cel pe care îl trezești.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: widgeturi</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS-ul tău pe ecranul principal, cu un marcaj de timp sincer.</p>
+    <p><a class="btn" href="/ro/guide/widgets/">Widgeturi pentru ecranul principal &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

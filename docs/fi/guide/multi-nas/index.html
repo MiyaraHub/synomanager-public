@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Useiden Synology NAS -laitteiden hallinta - Syno Manager</title>
+<meta name="description" content="Lisää niin monta Synology-laitetta kuin haluat ja vaihda niiden välillä yhdellä napautuksella. Jokaisella on omat tunnuksensa, oma kojelautansa, korttien järjestys ja kutistustila." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="Useiden Synology NAS -laitteiden hallinta - Syno Manager" />
+<meta property="og:description" content="Lisää niin monta Synology-laitetta kuin haluat ja vaihda niiden välillä yhdellä napautuksella. Jokaisella on omat tunnuksensa, oma kojelautansa, korttien järjestys ja kutistustila." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Useiden Synology NAS -laitteiden hallinta - Syno Manager" />
+<meta name="twitter:description" content="Lisää niin monta Synology-laitetta kuin haluat ja vaihda niiden välillä yhdellä napautuksella. Jokaisella on omat tunnuksensa, oma kojelautansa, korttien järjestys ja kutistustila." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Useat NAS-laitteet"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Useiden Synology NAS -laitteiden hallinta - Syno Manager",
+  "description": "Lisää niin monta Synology-laitetta kuin haluat ja vaihda niiden välillä yhdellä napautuksella. Jokaisella on omat tunnuksensa, oma kojelautansa, korttien järjestys ja kutistustila.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "fi",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Montako NAS-laitetta voin lisätä?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Niin monta kuin haluat. Jokaisella on omat tunnuksensa, oma kojelautansa, oma korttien järjestyksensä ja oma kutistustilansa, joten mediapalvelimen ja varmuuskopiokohteen ei tarvitse näyttää samalta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muuttaako nimeäminen uudelleen mitään itse NAS-laitteessa?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Uudelleennimeäminen muuttaa vain sovelluksessa näkyvää nimeä. NAS-laitteen oman palvelinnimen voit vaihtaa DSM:n Control Panelissa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mitä eroa on toiminnoilla Vaihda IP ja Muokkaa asetuksia?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vaihda IP on oikotie useimmin muuttuvaan kenttään - osoitteeseen ja porttiin. Muokkaa asetuksia avaa koko lomakkeen, johon kuuluvat HTTPS, varmenteen tarkistus, tunnukset, 2FA ja kameratunnelin kytkin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mitä tapahtuu, kun poistan NAS-laitteen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Merkintä ja siihen tallennetut tunnukset poistetaan sovelluksesta. NAS-laitteeseen ei kosketa - sitä ei kirjata ulos muualta, eikä mikään tieto muutu."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Useita NAS-laitteita</div>
+      <div class="eyebrow">Useat NAS-laitteet</div>
+      <h1>Yksi sovellus, <span class="g">kaikki DiskStationit</span></h1>
+      <p>Lisää niin monta kuin haluat. Jokaisella on omat tunnuksensa, oma kojelautansa ja omat asetuksensa, joten autotallin varmuuskopiokohteen ei tarvitse näyttää samalta kuin olohuoneen mediapalvelimen.</p>
+    </div>
+    <div class="hero-shot"><img alt="NAS-laitteiden luettelo Yhdistä- ja Herätä-painikkeineen" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Laiteluettelo</div>
+      <h2>Mitä kukin merkintä näyttää</h2>
+      <p class="lead">Löytyy kohdasta <b>Asetukset &rsaquo; Hallitse NAS-laitteita</b>, tai se on näkymä, johon sovellus avautuu, kun laitteita on useampi ja olet valinnut sen kysymään.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nimi ja osoite</b> - oma nimesi laitteelle sekä isäntä ja portti, joihin yhdistetään.</li>
+      <li><b>Merkit</b> asioille, jotka kannattaa nähdä avaamatta lomaketta: onko käytössä <b>HTTPS</b>, mikä <b>portti</b> ja millä <b>tilillä</b> kirjaudutaan.</li>
+      <li><b>Yhdistetty</b>, kun laite on aktiivinen.</li>
+      <li><b>Yhdistä</b> vaihtaaksesi siihen ja <b>Herätä</b> lähettääksesi sille magic packetin, jos se nukkuu.</li>
+      <li><b>Vetokahva</b> - järjestä luettelo niin, että eniten käyttämäsi on ylimpänä.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Lisävalikko</div>
+      <h2>Viisi asiaa, jotka voit tehdä merkinnälle</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Toiminto</th><th>Mitä se tekee</th></tr></thead>
+          <tbody>
+            <tr><td>Nimeä uudelleen</td><td>Muuttaa vain <b>näkyvää nimeä</b> - sovelluksen omaa nimeä laitteelle. NAS-laitteen oma palvelinnimi pysyy ennallaan; se on DSM:n Control Panelissa.</td></tr>
+            <tr><td>Vaihda IP</td><td>Oikotie useimmin muuttuvaan kenttään - osoitteeseen ja porttiin - ilman, että koko lomaketta tarvitsee käydä läpi.</td></tr>
+            <tr><td>Muokkaa asetuksia</td><td>Koko lomake: HTTPS, varmenteen tarkistus, tunnukset, kaksivaiheinen tunnistautuminen ja kameran live-kuvan tunneli.</td></tr>
+            <tr><td>Testaa yhteys</td><td>Tarkistaa tavoitettavuuden muuttamatta mitään ja erottaa toisistaan tilanteet ”laitetta ei tavoiteta” ja ”laite tavoitettiin, mutta tunnukset hylättiin”.</td></tr>
+            <tr><td>Poista NAS</td><td>Poistaa merkinnän ja siihen tallennetut tunnukset <b>sovelluksesta</b>. NAS-laitteeseen ei kosketa.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Laitekohtainen valikko: Nimeä uudelleen, Vaihda IP, Muokkaa asetuksia, Testaa yhteys ja Poista" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mikä on laitekohtaista</div>
+      <h2>Mitä kukin laite muistaa itse</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>NAS-kohtaisesti</h3>
+        <ul class="plain">
+          <li>Tunnukset ja 2FA-laitetunniste.</li>
+          <li>Mitkä kojelaudan kortit ovat päällä ja missä järjestyksessä.</li>
+          <li>Mitkä kortit on kutistettu.</li>
+          <li>Mitkä alinäkymät on piilotettu kullakin välilehdellä ja missä järjestyksessä ne ovat.</li>
+          <li>Kameran live-kuvan tunnelin asetus.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Koko sovellukselle</h3>
+        <ul class="plain">
+          <li>Teema, tausta, korostusväri ja tekstin koko.</li>
+          <li>Alapalkki.</li>
+          <li>Päivitysväli ja lämpötilayksikkö.</li>
+          <li>Käynnistystapa.</li>
+          <li>Mitkä ohjekortit olet sulkenut.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Sama NAS kahdesti on täysin järkevä ratkaisu.</b> Yksi merkintä paikallisella IP-osoitteella kotiin, toinen QuickConnectilla kodin ulkopuolelle. Ne ovat erillisiä merkintöjä erillisine asetteluineen, ja vaihtaminen vie yhden napautuksen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Usein kysyttyä useasta NAS-laitteesta</h2>
+    </div>
+    <details open><summary>Montako NAS-laitetta voin lisätä?</summary><div class="body">Niin monta kuin haluat. Jokaisella on omat tunnuksensa, kojelautansa, korttien järjestys ja kutistustila.</div></details>
+    <details><summary>Muuttaako nimeäminen uudelleen mitään itse NAS-laitteessa?</summary><div class="body">Ei. Uudelleennimeäminen muuttaa vain sovelluksessa näkyvää nimeä. NAS-laitteen oman palvelinnimen voit vaihtaa DSM:n Control Panelissa.</div></details>
+    <details><summary>Mitä eroa on toiminnoilla Vaihda IP ja Muokkaa asetuksia?</summary><div class="body">Vaihda IP on oikotie osoitteeseen ja porttiin. Muokkaa asetuksia avaa koko lomakkeen, johon kuuluvat HTTPS, varmenteen tarkistus, tunnukset, 2FA ja kameratunnelin kytkin.</div></details>
+    <details><summary>Mitä tapahtuu, kun poistan NAS-laitteen?</summary><div class="body">Merkintä ja siihen tallennetut tunnukset poistetaan sovelluksesta. NAS-laitteeseen ei kosketa.</div></details>
+    <details><summary>Minkä laitteen sovellus avaa?</summary><div class="body">Sen, jonka olet asettanut kohtaan <a href="/fi/guide/settings/#launch">Käynnistystapa</a> - laitevalitsin, viimeksi käyttämäsi tai aina tietty laite.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">Herätä NAS tai mikä tahansa muu verkkosi laite sen kautta.</p>
+    <p><a class="btn" href="/fi/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

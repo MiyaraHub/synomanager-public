@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, πακέτα & VM για Synology NAS - Syno Manager</title>
+<meta name="description" content="Εγκαταστήστε πακέτα DSM από το Package Center, ξεκινήστε, σταματήστε και επανεκκινήστε κοντέινερ Docker, διαβάστε τα αρχεία καταγραφής τους, τρέξτε στοίβες Compose και ελέγξτε εικονικές μηχανές." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/el/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, πακέτα &amp; VM για Synology NAS - Syno Manager" />
+<meta property="og:description" content="Εγκαταστήστε πακέτα DSM από το Package Center, ξεκινήστε, σταματήστε και επανεκκινήστε κοντέινερ Docker, διαβάστε τα αρχεία καταγραφής τους, τρέξτε στοίβες Compose και ελέγξτε εικονικές μηχανές." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/el/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, πακέτα &amp; VM για Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Εγκαταστήστε πακέτα DSM από το Package Center, ξεκινήστε, σταματήστε και επανεκκινήστε κοντέινερ Docker, διαβάστε τα αρχεία καταγραφής τους, τρέξτε στοίβες Compose και ελέγξτε εικονικές μηχανές." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "el",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Αρχική",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Οδηγός Χρήσης",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Εφαρμογές"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, πακέτα & VM για Synology NAS - Syno Manager",
+  "description": "Εγκαταστήστε πακέτα DSM από το Package Center, ξεκινήστε, σταματήστε και επανεκκινήστε κοντέινερ Docker, διαβάστε τα αρχεία καταγραφής τους, τρέξτε στοίβες Compose και ελέγξτε εικονικές μηχανές.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "el",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Μπορώ να εγκαταστήσω πακέτο DSM από το κινητό μου;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Το Package Center της εφαρμογής έχει τον ίδιο κατάλογο με το DSM - Εγκατεστημένα, Όλα τα πακέτα, Beta και Community - με πλαίσιο αναζήτησης. Επιλέξτε πακέτο, διαλέξτε τόμο και εγκαταστήστε. Η ενημέρωση και η απεγκατάσταση λειτουργούν με τον ίδιο τρόπο, και κάθε ενέργεια επιβεβαιώνεται με νέα ανάγνωση της λίστας πακέτων και όχι με το ότι το αίτημα επέστρεψε OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να κάνω επανεκκίνηση κοντέινερ Docker από την εφαρμογή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Κάθε κοντέινερ έχει έναρξη, διακοπή και επανεκκίνηση, καθώς και ένα κουμπί που ανοίγει τα αρχεία καταγραφής του. Ένα κοντέινερ που έχει τερματίσει δείχνει κουμπί έναρξης και όχι διακοπή που δεν θα μπορούσε να εκτελεστεί."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να ελέγξω στοίβες Docker Compose;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Η υποπροβολή Projects απαριθμεί τα έργα Compose και ξεκινά ή σταματά ολόκληρη τη στοίβα, αντί να σας αναγκάζει να βρίσκετε κάθε κοντέινερ. Τα αρχεία καταγραφής της στοίβας ανοίγουν όπως και των κοντέινερ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να ξεκινήσω και να σταματήσω εικονικές μηχανές;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι, αν είναι εγκατεστημένο το Virtual Machine Manager. Έναρξη, τερματισμός ή αναγκαστική απενεργοποίηση οποιασδήποτε μηχανής. Η αναγκαστική απενεργοποίηση απαιτεί παρατεταμένο πάτημα, επειδή ισοδυναμεί με τράβηγμα του καλωδίου. Μια μηχανή σε κατάσταση που το NAS δεν ονομάζει ούτε σε λειτουργία ούτε απενεργοποιημένη εμφανίζεται ακριβώς έτσι και παίρνει το χειριστήριο ανάκτησης αντί για μια Έναρξη που δεν μπορεί να εκτελεστεί."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/el/"><img src="/assets/syno-manager-icon.png" alt="Εικονίδιο Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα">
+      <a href="/el/">Αρχική</a>
+      <a href="/el/guide/" class="active">Οδηγός Χρήσης</a>
+      <a href="/el/#screenshots">Στιγμιότυπα οθόνης</a>
+      <a href="/el/compatible-nas/">Συμβατότητα</a>
+      <a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a>
+      <a href="/el/help/">Βοήθεια</a>
+      <a href="/el/#top" class="cta">Λήψη</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός χρήσης</a> &rsaquo; Εφαρμογές</div>
+      <div class="eyebrow">Εφαρμογές</div>
+      <h1>Όλα όσα <span class="g">τρέχει το NAS σας</span></h1>
+      <p>Τέσσερις υποπροβολές: <b>Package Center</b> για πακέτα DSM, <b>Docker</b> για κοντέινερ, <b>Projects</b> για στοίβες Compose και <b>Εικονικές μηχανές</b> όταν είναι εγκατεστημένο το VMM.</p>
+    </div>
+    <div class="hero-shot"><img alt="Κοντέινερ Docker με κατάσταση και χειριστήρια" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Σε αυτή τη σελίδα</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Εγκατάσταση πακέτου</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Αρχεία καταγραφής κοντέινερ</a></li>
+      <li><a href="#projects">Έργα Compose</a></li>
+      <li><a href="#virtual-machines">Εικονικές μηχανές</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Ολόκληρος ο κατάλογος, με αναζήτηση</h2>
+      <p class="lead">Τα ίδια τέσσερα φίλτρα που έχει το DSM, και ένα πλαίσιο αναζήτησης σε όλα.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Φίλτρο</th><th>Τι απαριθμεί</th></tr></thead>
+          <tbody>
+            <tr><td>Εγκατεστημένα</td><td>Ό,τι υπάρχει τώρα στο NAS σας, με την έκδοση, το μέγεθος και μια ένδειξη λειτουργίας.</td></tr>
+            <tr><td>Όλα τα πακέτα</td><td>Ο πλήρης κατάλογος της Synology για το μοντέλο σας.</td></tr>
+            <tr><td>Beta</td><td>Πακέτα προέκδοσης.</td></tr>
+            <tr><td>Community</td><td>Πακέτα από πηγές τρίτων που έχετε προσθέσει στο DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Κάθε εγγραφή δείχνει την έκδοση και το μέγεθος λήψης, την περιγραφή και κάθε εξάρτηση που χρειάζεται - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - ώστε μια δεύτερη εγκατάσταση να μην αποτελεί έκπληξη.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Αναζήτηση στον πλήρη κατάλογο πακέτων, με κουμπιά Εγκατάστασης" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Αναζήτηση στα <b>Όλα τα πακέτα</b> για ένα πακέτο που δεν έχει ακόμα εγκατασταθεί.</p>
+      </div>
+      <img alt="Package Center με εγκατεστημένα πακέτα και κατάσταση λειτουργίας" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Εγκατάσταση, ενημέρωση, απεγκατάσταση</div>
+      <h2>Τι γίνεται όταν πατήσετε Εγκατάσταση</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Αναζητήστε ή φιλτράρετε</b> μέχρι το πακέτο που θέλετε.</li>
+          <li><b>Εγκατάσταση.</b> Ένα παράθυρο ονομάζει το πακέτο, απαριθμεί τυχόν εξάρτηση και ρωτά σε ποιον τόμο θα γίνει η εγκατάσταση - δείχνοντας τον ελεύθερο χώρο κάθε τόμου ώστε να μην επιλέγετε στα τυφλά.</li>
+          <li><b>Επιβεβαίωση.</b> Το NAS το εγκαθιστά, μαζί με τις εξαρτήσεις.</li>
+          <li><b>Η λίστα διαβάζεται ξανά.</b> Το κουμπί αλλάζει σε <b>Απεγκατάσταση</b> επειδή η λίστα πακέτων πλέον λέει ότι είναι εγκατεστημένο - όχι επειδή το αίτημα επέστρεψε OK.</li>
+        </ol>
+        <div class="note"><b>Αυτό το τελευταίο βήμα είναι το ζητούμενο.</b> Ένα αίτημα που πέτυχε και μια εγκατάσταση που ολοκληρώθηκε είναι διαφορετικά γεγονότα. Η εφαρμογή περιμένει το δεύτερο.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Το παράθυρο εγκατάστασης με το όνομα του πακέτου, την εξάρτησή του και τον τόμο προορισμού" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Η εγκατάσταση ενός πακέτου προσθέτει οθόνες στην εφαρμογή.</b> Η λίστα καρτελών χτίζεται από όσα αναφέρει το NAS σας κατά τη σύνδεση, οπότε μετά την εγκατάσταση π.χ. του Download Station, τραβήξτε για ανανέωση ή ανοίξτε ξανά την εφαρμογή και θα εμφανιστεί η υποπροβολή του.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Κάθε κοντέινερ, με τα χειριστήρια που μετράνε</h2>
+      <p class="lead">Μια κεφαλίδα κατάστασης - <b>σε λειτουργία από το σύνολο</b> - και μετά κάθε κοντέινερ του NAS σε μία λίστα.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Όνομα και ετικέτα εικόνας</b> σε κάθε γραμμή, ώστε δύο κοντέινερ από την ίδια εικόνα να διακρίνονται.</li>
+      <li><b>Κατάσταση</b> ως ετικέτα: <b>Σε λειτουργία</b>, <b>Τερματισμένο</b> και ό,τι άλλο αναφέρει το Docker. Ένα κοντέινερ που το Docker θεωρεί υγιές το δηλώνει - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Χρόνος λειτουργίας</b> για ό,τι τρέχει.</li>
+      <li><b>Έναρξη, διακοπή και επανεκκίνηση</b>, με το χειριστήριο που ταιριάζει στην κατάσταση: σε ένα σταματημένο κοντέινερ προσφέρεται έναρξη, όχι διακοπή που δεν θα έκανε τίποτα.</li>
+      <li><b>Αρχεία καταγραφής</b> από το κουμπί σε κάθε γραμμή.</li>
+      <li><b>Αναπτύξτε μια γραμμή</b> για τις λεπτομέρειές της - μεταξύ άλλων στοιχεία μνήμης και δικτύου.</li>
+      <li><b>Συμπτύξτε ολόκληρη τη λίστα</b> με το χειριστήριο στην κορυφή όταν θέλετε μόνο το πλήθος.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Αρχεία καταγραφής</div>
+      <h2>Διαβάστε μία φορά, παρακολουθήστε εσκεμμένα</h2>
+      <p class="lead">Τα αρχεία καταγραφής κοντέινερ και στοίβας συμπεριφέρονται όπως <a href="/el/guide/system/#logs">το αρχείο καταγραφής συστήματος</a>, και για τον ίδιο λόγο.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Φορτώνει μία φορά και μένει ακίνητο</b>, ώστε μια γραμμή να μην ξεφεύγει ενώ τη διαβάζετε.</li>
+      <li><b>Πατήστε αναπαραγωγή για ζωντανή παρακολούθηση</b>, πατήστε ξανά για παύση.</li>
+      <li><b>Η παρακολούθηση σταματά μόνη της</b> όταν φύγετε από την οθόνη ή στείλετε την εφαρμογή στο παρασκήνιο - χωρίς ξεχασμένη καρτέλα που κάνει polling στην τσέπη σας.</li>
+      <li><b>Αναζήτηση</b> για μία γραμμή σε ένα μακρύ αρχείο καταγραφής.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projects</div>
+      <h2>Στοίβες Compose, ως στοίβες</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Έργα Docker Compose, χωρίς κανένα ρυθμισμένο" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Ένα έργο Compose είναι πολλά κοντέινερ που ανήκουν μαζί. Η υποπροβολή Projects τα αντιμετωπίζει έτσι: ξεκινήστε ή σταματήστε <b>ολόκληρη τη στοίβα</b> αντί να ψάχνετε κάθε κοντέινερ στη λίστα του Docker ελπίζοντας ότι τα βρήκατε όλα.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Κάθε έργο</b> δείχνει το όνομά του και πόσα από τα κοντέινερ του λειτουργούν.</li>
+          <li><b>Ξεκινήστε ή σταματήστε το έργο</b> ως ενιαίο σύνολο.</li>
+          <li><b>Τα αρχεία καταγραφής της στοίβας</b> ανοίγουν όπως των κοντέινερ.</li>
+          <li><b>Αν δεν υπάρχουν έργα, το λέει</b> - «Τα έργα Docker Compose θα εμφανιστούν εδώ» - αντί για μια κενή οθόνη.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Εικονικές μηχανές</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Εμφανίζεται όταν είναι εγκατεστημένο το VMM. Κάθε εικονική μηχανή του NAS, τι κάνει, και οι τρεις ενέργειες ισχύος.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ενέργεια</th><th>Τι κάνει</th></tr></thead>
+      <tbody>
+        <tr><td>Έναρξη</td><td>Ανοίγει τη μηχανή.</td></tr>
+        <tr><td>Τερματισμός</td><td>Ζητά από το λειτουργικό σύστημα του επισκέπτη να τερματίσει ομαλά.</td></tr>
+        <tr><td>Αναγκαστική απενεργοποίηση</td><td>Κόβει το ρεύμα. <b>Κρατήστε πατημένο για επιβεβαίωση</b>, επειδή ισοδυναμεί με το να τραβήξετε το καλώδιο σε έναν υπολογιστή που λειτουργεί - ένα απλό πάτημα είναι πολύ εύκολο γι' αυτό.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Μια μηχανή σε ενδιάμεση κατάσταση περιγράφεται ως τέτοια.</b> Αν το NAS αναφέρει κατάσταση που δεν ονομάζει ούτε σε λειτουργία ούτε απενεργοποιημένη - εκκίνηση, αναστολή, κατάρρευση - η εφαρμογή δείχνει ακριβώς αυτή τη λέξη και προσφέρει το χειριστήριο ανάκτησης, αντί για ένα κουμπί Έναρξης που δεν μπορεί να εκτελεστεί ή ένα πράσινο τικ που δεν ισχύει.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Συχνές ερωτήσεις</div>
+      <h2>Συχνές ερωτήσεις για τις εφαρμογές</h2>
+    </div>
+    <details open><summary>Μπορώ να εγκαταστήσω πακέτο DSM από το κινητό μου;</summary><div class="body">Ναι. Το Package Center της εφαρμογής έχει τον ίδιο κατάλογο με το DSM - Εγκατεστημένα, Όλα τα πακέτα, Beta και Community - με πλαίσιο αναζήτησης. Επιλέξτε πακέτο, διαλέξτε τόμο και εγκαταστήστε. Η ενημέρωση και η απεγκατάσταση λειτουργούν με τον ίδιο τρόπο, και κάθε ενέργεια επιβεβαιώνεται με νέα ανάγνωση της λίστας πακέτων.</div></details>
+    <details><summary>Μπορώ να κάνω επανεκκίνηση κοντέινερ Docker από την εφαρμογή;</summary><div class="body">Ναι. Κάθε κοντέινερ έχει έναρξη, διακοπή και επανεκκίνηση, καθώς και ένα κουμπί που ανοίγει τα αρχεία καταγραφής του. Ένα κοντέινερ που έχει τερματίσει δείχνει κουμπί έναρξης και όχι διακοπή που δεν θα μπορούσε να εκτελεστεί.</div></details>
+    <details><summary>Μπορώ να ελέγξω στοίβες Docker Compose;</summary><div class="body">Ναι. Η υποπροβολή Projects απαριθμεί τα έργα Compose και ξεκινά ή σταματά ολόκληρη τη στοίβα. Τα αρχεία καταγραφής της στοίβας ανοίγουν όπως των κοντέινερ.</div></details>
+    <details><summary>Μπορώ να ξεκινήσω και να σταματήσω εικονικές μηχανές;</summary><div class="body">Ναι, αν είναι εγκατεστημένο το Virtual Machine Manager. Έναρξη, τερματισμός ή αναγκαστική απενεργοποίηση οποιασδήποτε μηχανής. Η αναγκαστική απενεργοποίηση απαιτεί παρατεταμένο πάτημα, επειδή ισοδυναμεί με τράβηγμα του καλωδίου.</div></details>
+    <details><summary>Μπορώ να δημιουργήσω νέο κοντέινερ από την εφαρμογή;</summary><div class="body">Όχι. Η δημιουργία κοντέινερ σημαίνει επιλογή εικόνας, αντιστοιχίσεις θυρών, προσαρτήσεις τόμων και μεταβλητές περιβάλλοντος - μια φόρμα που ανήκει σε οθόνη όπου τα βλέπετε όλα μαζί. Η εφαρμογή εκτελεί και παρακολουθεί ό,τι έχετε δημιουργήσει στο DSM ή στο Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Επόμενο: Πολυμέσα</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos, Drive και ζωντανή προβολή Surveillance Station.</p>
+    <p><a class="btn" href="/el/guide/media/">Photos, Drive &amp; κάμερες &rarr;</a> &nbsp; <a class="btn ghost" href="/el/guide/">Πίσω στον οδηγό</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/el/">Αρχική</a><a href="/el/guide/">Οδηγός χρήσης</a><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/compatible-nas/">Συμβατότητα</a><a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a><a href="/el/synology-app-for-iphone/">iPhone & iPad</a><a href="/el/synology-app-for-android/">Android</a><a href="/el/synology-app-for-mac-windows/">Mac & Windows</a><a href="/el/ds-finder-alternative/">έναντι DS finder</a><a href="/el/help/">Βοήθεια</a><a href="/el/privacy/">Απόρρητο</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Αναφορά σφάλματος</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Το Syno Manager είναι ανεξάρτητη εφαρμογή και δεν σχετίζεται με τη Synology Inc., ούτε εγκρίνεται ή χορηγείται από αυτήν. Τα Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station και QuickConnect είναι εμπορικά σήματα της Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

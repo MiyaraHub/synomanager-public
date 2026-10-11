@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>จัดการผู้ใช้ งาน และ UPS ของ Synology - Syno Manager</title>
+<meta name="description" content="จัดการบัญชีผู้ใช้ Synology โดยมีบัญชีระบบได้รับการป้องกัน รันและเปิดปิดงานตามกำหนดเวลา และอ่านประจุ UPS กับเวลาทำงานโดยประมาณจากมือถือ" />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="จัดการผู้ใช้ งาน และ UPS ของ Synology - Syno Manager" />
+<meta property="og:description" content="จัดการบัญชีผู้ใช้ Synology โดยมีบัญชีระบบได้รับการป้องกัน รันและเปิดปิดงานตามกำหนดเวลา และอ่านประจุ UPS กับเวลาทำงานโดยประมาณจากมือถือ" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="จัดการผู้ใช้ งาน และ UPS ของ Synology - Syno Manager" />
+<meta name="twitter:description" content="จัดการบัญชีผู้ใช้ Synology โดยมีบัญชีระบบได้รับการป้องกัน รันและเปิดปิดงานตามกำหนดเวลา และอ่านประจุ UPS กับเวลาทำงานโดยประมาณจากมือถือ" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "แผงควบคุม"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "จัดการผู้ใช้ งาน และ UPS ของ Synology - Syno Manager",
+  "description": "จัดการบัญชีผู้ใช้ Synology โดยมีบัญชีระบบได้รับการป้องกัน รันและเปิดปิดงานตามกำหนดเวลา และอ่านประจุ UPS กับเวลาทำงานโดยประมาณจากมือถือ",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "th",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "เพิ่มหรือแก้ไขผู้ใช้ DSM จากแอปได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ เพิ่มผู้ใช้ แก้ไขรายละเอียด เปลี่ยนรหัสผ่าน หรือลบบัญชี บัญชีระบบ ได้แก่ admin, guest และบัญชีบริการที่ DSM สร้างขึ้น จะถูกตรวจพบและป้องกันไม่ให้ลบ เพราะการลบจะทำให้ NAS เสียหายในแบบที่แก้กลับได้ยาก"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "รันงานตามกำหนดเวลาด้วยตัวเองได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ สำหรับงานที่ DSM อนุญาตให้สั่งเริ่ม แต่ละงานมี Run Now และยังเปิดหรือปิดงานใดก็ได้โดยไม่ต้องเปิด DSM"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "หน้าจอ UPS แสดงอะไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "รุ่นของ UPS ว่าใช้ไฟหลักหรือแบตเตอรี่ ประจุเป็นเปอร์เซ็นต์และแถบ วิธีเชื่อมต่อ เวลาทำงานที่เหลือโดยประมาณ และว่าเปิดการรองรับ UPS บน NAS หรือไม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "เปลี่ยนเวลาที่ NAS รอก่อนปิดเครื่องเมื่อใช้แบตเตอรี่ได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ได้ แอปรายงานสถานะ UPS นโยบายการปิดเครื่องตั้งใน DSM ภายใต้ฮาร์ดแวร์และพลังงาน ซึ่งอธิบายผลของการตั้งค่าไว้ชัดเจน"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; แผงควบคุม</div>
+      <div class="eyebrow">แผงควบคุม</div>
+      <h1>บัญชี ตารางเวลา <span class="g">และพลังงาน</span></h1>
+      <p>สี่มุมมองย่อย ได้แก่ <b>Users</b>, <b>Tasks</b>, <b>Power</b> สำหรับ UPS และ <b>Settings</b> ซึ่งเป็นค่ากำหนดของแอปเอง เข้าถึงได้โดยไม่ต้องออกจากแท็บที่คุณอยู่</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler แสดงงานตามกำหนดเวลาพร้อมสวิตช์และ Run Now" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>ในหน้านี้</b><ul>
+      <li><a href="#users">ผู้ใช้</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">การตั้งค่า</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">ผู้ใช้</div>
+      <h2>บัญชี DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">ทุกบัญชีบน NAS พร้อมชื่อที่แสดง คำอธิบาย และอีเมลหากตั้งไว้ ชิป<b>หมดอายุ</b>ระบุบัญชีที่ DSM ปิดใช้งาน</p>
+        <h3 style="margin-top:20px">สิ่งที่ทำได้</h3>
+        <ul class="plain">
+          <li><b>เพิ่มผู้ใช้</b>ด้วยรายละเอียดที่ DSM ต้องการ</li>
+          <li><b>แก้ไข</b>บัญชีที่มีอยู่</li>
+          <li><b>เปลี่ยนรหัสผ่าน</b></li>
+          <li><b>ลบ</b>บัญชีที่คุณสร้างเอง</li>
+        </ul>
+        <div class="note"><b>บัญชีระบบลบไม่ได้</b> <code>admin</code>, <code>guest</code> และบัญชีบริการที่ DSM สร้างให้แพ็กเกจของตัวเองจะถูกตรวจพบและป้องกันไว้ การลบบัญชีเหล่านั้นทำให้ NAS เสียหายในแบบที่แก้กลับได้ยาก และมือถือไม่ใช่ที่ที่ควรไปรู้เรื่องนี้</div>
+      </div>
+      <img alt="บัญชีผู้ใช้ DSM โดยปิดบังสองชื่อและที่อยู่" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">สองบัญชีในภาพหน้าจอนี้ถูกเบลอไว้ เพราะเป็นชื่อและที่อยู่ของบุคคลจริง</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>อะไรถูกตั้งเวลาไว้ และอะไรจะรันต่อไป</h2>
+      <p class="lead">ทุกงานที่ DSM มี เปิดใช้อยู่หรือไม่ ทำอะไร และจะทำงานครั้งถัดไปเมื่อใด</p>
+    </div>
+    <ul class="plain">
+      <li><b>ชื่องานและประเภท</b> เช่น งาน Hyper Backup สคริปต์ที่ผู้ใช้กำหนด การล้างถังขยะ โดยแต่ละงานระบุว่าเป็นประเภทใด</li>
+      <li><b>ทำอะไรจริง ๆ</b> งานสคริปต์แสดงคำสั่งที่รัน งานสำรองข้อมูลแสดงคำอธิบาย</li>
+      <li><b>รอบถัดไป</b> เป็นวันที่และเวลา</li>
+      <li><b>สวิตช์ต่องาน</b>เพื่อเปิดหรือปิดโดยไม่ต้องเปิด DSM</li>
+      <li><b>Run Now</b> บนงานที่ DSM อนุญาตให้สั่งเริ่มได้ตามต้องการ</li>
+    </ul>
+    <div class="note warn"><b>Run Now รันทันที</b> สคริปต์ตามกำหนดเวลาที่คาดว่าจะรันตอนตีสามบน NAS ที่ว่าง จะทำงานต่างออกไปตอนหกโมงเย็นขณะกำลังคัดลอกไฟล์ ปุ่มทำตามที่บอกไว้</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">สถานะเปิดปิด</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="สถานะ UPS พร้อมรุ่น ประจุ โหมดการเชื่อมต่อ และเวลาทำงานโดยประมาณ" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">ปรากฏเมื่อมี UPS เชื่อมต่ออยู่ หนึ่งการ์ด รวมทุกอย่างไว้</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>ที่แสดง</th><th>ความหมาย</th></tr></thead>
+          <tbody>
+            <tr><td>ผู้ผลิตและรุ่น</td><td>ตามที่ UPS รายงานตัวเอง</td></tr>
+            <tr><td>สถานะ</td><td><b>ออนไลน์</b>ใช้ไฟหลัก หรือใช้แบตเตอรี่</td></tr>
+            <tr><td>ประจุ</td><td>เปอร์เซ็นต์และแถบ สีเหลืองอำพันต่ำกว่า 50% สีแดงต่ำกว่า 20%</td></tr>
+            <tr><td>โหมด</td><td>NAS สื่อสารกับ UPS อย่างไร ผ่าน USB หรือผ่านเครือข่าย</td></tr>
+            <tr><td>เวลาทำงาน</td><td>UPS ประเมินว่ารับโหลดได้นานเท่าไร</td></tr>
+            <tr><td>เปิดใช้งาน</td><td>เปิดการรองรับ UPS ใน DSM หรือไม่</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>ประจุส่งผลต่อป้ายสถานะสุขภาพ</b> UPS ที่กำลังคายประจุจะปรากฏบน<a href="/th/guide/home/#header">หน้าจอหลัก</a>โดยไม่ต้องเปิดแท็บนี้ ซึ่งเป็นประเด็นสำคัญ เพราะเมื่อคุณนึกจะไปตรวจ อาจเหลือเวลาไม่มาก</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">การตั้งค่า</div>
+      <h2>ค่ากำหนดของแอปเอง</h2>
+      <p class="lead">มุมมองย่อยที่สี่คือการตั้งค่า ฝังไว้ที่นี่เพื่อให้คุณเปลี่ยนช่วงเวลาดึงข้อมูลหรือสีเน้นได้โดยไม่ต้องออกจากแท็บ เป็นหน้าจอเดียวกับที่ไอคอนเฟืองเปิด</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/th/guide/settings/">อธิบายทุกการตั้งค่า</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเรื่องแผงควบคุม</h2>
+    </div>
+    <details open><summary>เพิ่มหรือแก้ไขผู้ใช้ DSM จากแอปได้ไหม</summary><div class="body">ได้ เพิ่มผู้ใช้ แก้ไขรายละเอียด เปลี่ยนรหัสผ่าน หรือลบบัญชี บัญชีระบบ ได้แก่ admin, guest และบัญชีบริการที่ DSM สร้างขึ้น จะถูกตรวจพบและป้องกันไม่ให้ลบ</div></details>
+    <details><summary>รันงานตามกำหนดเวลาด้วยตัวเองได้ไหม</summary><div class="body">ได้ สำหรับงานที่ DSM อนุญาตให้สั่งเริ่ม และยังเปิดหรือปิดงานใดก็ได้โดยไม่ต้องเปิด DSM</div></details>
+    <details><summary>หน้าจอ UPS แสดงอะไร</summary><div class="body">รุ่นของ UPS ว่าใช้ไฟหลักหรือแบตเตอรี่ ประจุเป็นเปอร์เซ็นต์และแถบ วิธีเชื่อมต่อ เวลาทำงานที่เหลือโดยประมาณ และว่าเปิดการรองรับ UPS บน NAS หรือไม่</div></details>
+    <details><summary>เปลี่ยนนโยบายการปิดเครื่องเมื่อใช้แบตเตอรี่ได้ไหม</summary><div class="body">ไม่ได้ แอปรายงานสถานะ UPS นโยบายตั้งใน DSM ภายใต้ฮาร์ดแวร์และพลังงาน ซึ่งอธิบายผลของการตั้งค่าไว้ชัดเจน</div></details>
+    <details><summary>ทำไมมุมมองย่อย Power จึงหายไป</summary><div class="body">เพราะไม่มี UPS เชื่อมต่ออยู่ หรือปิดการรองรับ UPS ใน DSM แอปซ่อนหน้าจอของฮาร์ดแวร์ที่ไม่มีอยู่</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: ผู้ช่วย</h2>
+    <p class="lead" style="margin:0 auto 24px">ถามคำถามกับ NAS ของคุณ แล้วรับคำตอบจากโมเดลบนมือถือ</p>
+    <p><a class="btn" href="/th/guide/assistant/">ผู้ช่วย &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

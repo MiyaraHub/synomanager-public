@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology-gebruikers, taken & UPS beheren - Syno Manager</title>
+<meta name="description" content="Beheer Synology-gebruikersaccounts met beschermde systeemaccounts, voer geplande taken uit en schakel ze in of uit, en lees UPS-lading en geschatte looptijd af op je telefoon." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology-gebruikers, taken &amp; UPS beheren - Syno Manager" />
+<meta property="og:description" content="Beheer Synology-gebruikersaccounts met beschermde systeemaccounts, voer geplande taken uit en schakel ze in of uit, en lees UPS-lading en geschatte looptijd af op je telefoon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology-gebruikers, taken &amp; UPS beheren - Syno Manager" />
+<meta name="twitter:description" content="Beheer Synology-gebruikersaccounts met beschermde systeemaccounts, voer geplande taken uit en schakel ze in of uit, en lees UPS-lading en geschatte looptijd af op je telefoon." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Configuratiescherm"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology-gebruikers, taken & UPS beheren - Syno Manager",
+  "description": "Beheer Synology-gebruikersaccounts met beschermde systeemaccounts, voer geplande taken uit en schakel ze in of uit, en lees UPS-lading en geschatte looptijd af op je telefoon.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik DSM-gebruikers toevoegen of bewerken vanuit de app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Voeg een gebruiker toe, bewerk de gegevens, wijzig een wachtwoord of verwijder een account. Systeemaccounts - admin, guest en de serviceaccounts die DSM aanmaakt - worden herkend en zijn beschermd tegen verwijdering, omdat het verwijderen van zo'n account de NAS kapotmaakt op een manier die lastig te herstellen is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik een geplande taak handmatig uitvoeren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, voor taken die DSM laat starten - elk daarvan heeft een knop Nu uitvoeren. Je kunt ook elke taak in- of uitschakelen zonder DSM te openen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wat toont het UPS-scherm?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het UPS-model, of hij op het net of op de accu werkt, de lading als percentage en balk, hoe hij is aangesloten, de geschatte resterende looptijd, en of UPS-ondersteuning op de NAS is ingeschakeld."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik wijzigen hoe lang de NAS wacht voordat hij op accu afsluit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. De app meldt de UPS-status; het afsluitbeleid stel je in DSM in onder Hardware en stroom, waar de gevolgen van de instelling worden uitgelegd."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Gebruikershandleiding</a> &rsaquo; Configuratiescherm</div>
+      <div class="eyebrow">Configuratiescherm</div>
+      <h1>Accounts, schema's <span class="g">en stroom</span></h1>
+      <p>Vier subweergaven: <b>Gebruikers</b>, <b>Taken</b>, <b>Stroom</b> voor de UPS, en <b>Instellingen</b> - de eigen voorkeuren van de app, bereikbaar zonder het huidige tabblad te verlaten.</p>
+    </div>
+    <div class="hero-shot"><img alt="Taakplanner met geplande taken, schakelaars en Nu uitvoeren" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Op deze pagina</b><ul>
+      <li><a href="#users">Gebruikers</a></li>
+      <li><a href="#tasks">Taakplanner</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Instellingen</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Gebruikers</div>
+      <h2>DSM-accounts</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Elk account op de NAS, met weergavenaam, beschrijving en e-mailadres als dat is ingesteld. Een chip <b>Verlopen</b> markeert accounts die DSM heeft uitgeschakeld.</p>
+        <h3 style="margin-top:20px">Wat je kunt doen</h3>
+        <ul class="plain">
+          <li><b>Een gebruiker toevoegen</b> met de gegevens waar DSM om vraagt.</li>
+          <li><b>Een bestaand account bewerken.</b></li>
+          <li><b>Een wachtwoord wijzigen.</b></li>
+          <li><b>Een account verwijderen</b> dat je zelf hebt aangemaakt.</li>
+        </ul>
+        <div class="note"><b>Systeemaccounts kunnen niet worden verwijderd.</b> <code>admin</code>, <code>guest</code> en de serviceaccounts die DSM voor zijn eigen pakketten aanmaakt, worden herkend en beschermd. Het verwijderen van zo'n account maakt de NAS kapot op een manier die lastig te herstellen is, en een telefoon is niet de plek om daarachter te komen.</div>
+      </div>
+      <img alt="DSM-gebruikersaccounts, met twee namen en adressen onleesbaar gemaakt" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Twee accounts in deze schermafbeelding zijn onscherp gemaakt - het zijn namen en adressen van echte mensen.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Taakplanner</div>
+      <h2>Wat er gepland staat, en wat als volgende draait</h2>
+      <p class="lead">Elke taak die DSM heeft, of hij is ingeschakeld, wat hij doet en wanneer hij de volgende keer afgaat.</p>
+    </div>
+    <ul class="plain">
+      <li><b>De taaknaam en het type</b> - een Hyper Backup-taak, een zelfgemaakt script, een opruimactie van de prullenbak - elk gelabeld met het soort taak.</li>
+      <li><b>Wat hij echt doet.</b> Een scripttaak toont de opdracht die hij uitvoert; een back-uptaak toont zijn beschrijving.</li>
+      <li><b>Volgende run</b>, als datum en tijd.</li>
+      <li><b>Een schakelaar per taak</b> om hem in of uit te schakelen zonder DSM te openen.</li>
+      <li><b>Nu uitvoeren</b> bij taken die DSM op verzoek laat starten.</li>
+    </ul>
+    <div class="note warn"><b>Nu uitvoeren draait hem nu.</b> Een geplande taak die om 3 uur 's nachts op een rustige NAS hoort te draaien, gedraagt zich om 6 uur 's avonds tijdens een bestandskopie anders. De knop doet wat er staat.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Aan/uit</div>
+      <h2>De UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="UPS-status met model, lading, verbindingsmodus en geschatte looptijd" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Aanwezig als er een UPS is aangesloten. Eén kaart, alles erop.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Getoond</th><th>Betekenis</th></tr></thead>
+          <tbody>
+            <tr><td>Fabrikant en model</td><td>Zoals de UPS zichzelf meldt.</td></tr>
+            <tr><td>Status</td><td><b>Online</b> op het lichtnet, of op de accu.</td></tr>
+            <tr><td>Lading</td><td>Percentage en een balk. Oranje onder 50%, rood onder 20%.</td></tr>
+            <tr><td>Modus</td><td>Hoe de NAS ermee praat - USB, of via het netwerk.</td></tr>
+            <tr><td>Looptijd</td><td>Hoe lang de UPS naar schatting de belasting kan dragen.</td></tr>
+            <tr><td>Ingeschakeld</td><td>Of UPS-ondersteuning in DSM überhaupt aan staat.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>De lading voedt de gezondheidsbadge.</b> Een UPS die ontlaadt verschijnt op het <a href="/nl/guide/home/#header">startscherm</a> zonder dat je dit tabblad opent - en daar gaat het om, want als je eraan denkt om te kijken, heb je misschien niet lang meer.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Instellingen</div>
+      <h2>De eigen voorkeuren van de app</h2>
+      <p class="lead">De vierde subweergave is Instellingen, hier ingebed zodat je het pollinginterval of de accentkleur kunt wijzigen zonder het tabblad te verlaten. Het is hetzelfde scherm dat het tandwielpictogram opent.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/nl/guide/settings/">Elke instelling uitgelegd</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Veelgestelde vragen over het Configuratiescherm</h2>
+    </div>
+    <details open><summary>Kan ik DSM-gebruikers toevoegen of bewerken vanuit de app?</summary><div class="body">Ja. Voeg een gebruiker toe, bewerk de gegevens, wijzig een wachtwoord of verwijder een account. Systeemaccounts - admin, guest en de serviceaccounts die DSM aanmaakt - worden herkend en zijn beschermd tegen verwijdering.</div></details>
+    <details><summary>Kan ik een geplande taak handmatig uitvoeren?</summary><div class="body">Ja, voor taken die DSM laat starten. Je kunt ook elke taak in- of uitschakelen zonder DSM te openen.</div></details>
+    <details><summary>Wat toont het UPS-scherm?</summary><div class="body">Het UPS-model, of hij op het net of op de accu werkt, de lading als percentage en balk, hoe hij is aangesloten, de geschatte resterende looptijd, en of UPS-ondersteuning op de NAS is ingeschakeld.</div></details>
+    <details><summary>Kan ik het beleid voor afsluiten op accu wijzigen?</summary><div class="body">Nee. De app meldt de UPS-status; het beleid stel je in DSM in onder Hardware en stroom, waar de gevolgen worden uitgelegd.</div></details>
+    <details><summary>Waarom ontbreekt de subweergave Stroom?</summary><div class="body">Omdat er geen UPS is aangesloten, of UPS-ondersteuning in DSM is uitgeschakeld. De app verbergt schermen voor hardware die er niet is.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: de assistent</h2>
+    <p class="lead" style="margin:0 auto 24px">Stel je NAS een vraag, beantwoord door een model op je telefoon.</p>
+    <p><a class="btn" href="/nl/guide/assistant/">De assistent &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology CPU, RAM, temperatuur en ventilatoren - Syno Manager</title>
+<meta name="description" content="Bekijk CPU, RAM, belasting, schijf-I/O en temperatuur, wijzig de ventilatorstand, zoek naar DSM-updates en herstart of schakel je Synology uit vanaf je telefoon." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology CPU, RAM, temperatuur en ventilatoren - Syno Manager" />
+<meta property="og:description" content="Bekijk CPU, RAM, belasting, schijf-I/O en temperatuur, wijzig de ventilatorstand, zoek naar DSM-updates en herstart of schakel je Synology uit vanaf je telefoon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology CPU, RAM, temperatuur en ventilatoren - Syno Manager" />
+<meta name="twitter:description" content="Bekijk CPU, RAM, belasting, schijf-I/O en temperatuur, wijzig de ventilatorstand, zoek naar DSM-updates en herstart of schakel je Synology uit vanaf je telefoon." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Systeem"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology CPU, RAM, temperatuur en ventilatoren - Syno Manager",
+  "description": "Bekijk CPU, RAM, belasting, schijf-I/O en temperatuur, wijzig de ventilatorstand, zoek naar DSM-updates en herstart of schakel je Synology uit vanaf je telefoon.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "nl",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kan ik de ventilatorsnelheid vanuit de app wijzigen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Systeemgezondheid heeft een kaart Koeling met Volle snelheid, Koel en Stil. De app leest de stand waarin de NAS nu staat, schrijft jouw keuze en leest hem terug ter bevestiging. Een NAS die een stand buiten deze drie meldt, houdt een alleen-lezen weergave in plaats van verkeerd te worden voorgesteld."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik mijn NAS vanaf mijn telefoon herstarten of uitschakelen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, via de kaart Aan/uit-bediening onderaan Systeemgezondheid. Beide worden bevestigd voordat ze draaien, omdat ze elke verbonden gebruiker raken. Op afstand uitschakelen vraagt even nadenken - een uitgeschakelde NAS is niet via internet te wekken zonder VPN of een router die voor Wake-on-LAN is ingesteld."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waar is NAS identificeren voor?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Het laat het statuslampje van de NAS knipperen zodat je weet naar welke kast in een rack of kast je kijkt. Piep dempen stopt de alarmzoemer zonder de oorzaak van het alarm weg te nemen - los ook de oorzaak op."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Verversen de logboeken zichzelf?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee, en dat is bewust. Een logboek las zichzelf vroeger op een timer opnieuw in, of je nu las of niet, wat batterij en netwerk voor niets kostte. Nu laadt het eenmaal en blijft stil staan. Druk op afspelen om het live te volgen, druk nogmaals om te pauzeren, en het stopt vanzelf met volgen wanneer je het scherm verlaat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan ik het logboek dat ik bekijk exporteren of kopiëren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Houd een regel ingedrukt voor de systeembalk Kopiëren / Alles selecteren / Delen, of gebruik de exportknop naast de live-schakelaar op het tabblad Systeem, of boven de lijst op het tabblad Verbinding. Die opent een blad met Opslaan in een bestand, Delen of mailen en Kopiëren naar klembord, en exporteert precies de items op het scherm na het niveaufilter en de zoekopdracht - één item per regel, met tijd, niveau, gebruiker en omschrijving gescheiden door tabs."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Handleiding</a> &rsaquo; Systeem</div>
+      <div class="eyebrow">Systeem</div>
+      <h1>Wat de machine <span class="g">echt doet</span></h1>
+      <p>Drie subweergaven: <b>Systeemgezondheid</b> voor de staat van de machine, <b>Resources</b> voor live grafieken en <b>Logboeken</b> voor wat DSM heeft vastgelegd. Plus de bedieningen die iets veranderen - ventilatorstand, het identificatielampje, DSM-updates, herstarten en uitschakelen.</p>
+    </div>
+    <div class="hero-shot"><img alt="Systeemgezondheid met CPU- en RAM-metertjes, gemiddelde belasting, schijf-I/O en temperatuurgeschiedenis" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Op deze pagina</b><ul>
+      <li><a href="#health">Systeemgezondheid</a></li>
+      <li><a href="#cooling">Koeling &amp; ventilatorstand</a></li>
+      <li><a href="#identify">Identificeren &amp; meldingen</a></li>
+      <li><a href="#dsm-update">DSM-update</a></li>
+      <li><a href="#power">Aan/uit-bediening</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#logs">Logboeken</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Systeemgezondheid</div>
+      <h2>De metingen</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Kaart</th><th>Wat hij toont</th></tr></thead>
+      <tbody>
+        <tr><td>CPU- &amp; RAM-metertjes</td><td>Totale CPU als ring, met het aandeel van de <b>gebruiker</b> eronder uitgelicht zodat je je eigen werklast kunt onderscheiden van systeemoverhead. RAM toont het percentage en de absolute cijfers.</td></tr>
+        <tr><td>Geheugen</td><td>Gebruikt ten opzichte van totaal, als balk. Groen totdat het ertoe doet.</td></tr>
+        <tr><td>Gemiddelde CPU-belasting</td><td>Cijfers voor één, vijf en vijftien minuten - processen die op CPU-tijd wachten, geen percentage. Beoordeeld tegen je aantal kernen, dus een gezond cijfer op een rackmount met acht kernen is druk op een model met twee bays.</td></tr>
+        <tr><td>Schijf-I/O</td><td>Lees- en schrijfdoorvoer plus het gebruikspercentage - hoeveel van de tijd de schijven bezig waren, wat vaak het echte antwoord is wanneer een NAS traag voelt terwijl de CPU niets lijkt te doen.</td></tr>
+        <tr><td>Temperatuurgeschiedenis</td><td>Een doorlopende grafiek met de huidige waarde. In &deg;C of &deg;F volgens je <a href="/nl/guide/settings/#preferences">voorkeur</a>.</td></tr>
+        <tr><td>Processen</td><td>Hoeveel processen de NAS draait.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Koeling</div>
+      <h2>Ventilatorstand, te wijzigen vanaf je telefoon</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">De kaart Koeling toont de ventilatorstatus en de stand van de NAS, als bediening met drie standen:</p>
+        <ul class="plain">
+          <li><b>Volle snelheid</b> - maximale luchtstroom, maximaal lawaai. Goed voor een rack of een kast.</li>
+          <li><b>Koel</b> - de gebalanceerde standaard.</li>
+          <li><b>Stil</b> - lagere snelheid, hogere temperaturen. Goed voor een NAS in de woonkamer, als de schijven het aankunnen.</li>
+        </ul>
+        <div class="note"><b>Bevestigd, niet aangenomen.</b> De app leest de huidige stand van de NAS, schrijft jouw keuze en <b>leest hem terug</b>. Een stand die de NAS stilletjes weigerde, wordt als geweigerd gemeld in plaats van op het scherm te staan alsof hij is toegepast.</div>
+        <div class="note" style="margin-top:14px"><b>Een onbekende stand blijft alleen-lezen.</b> Meldt je NAS een koelstand buiten deze drie, dan toont de kaart wat er gemeld is en biedt hij geen wijziging aan - in plaats van hem verkeerd te benoemen als een van de drie die hij kent.</div>
+      </div>
+      <img alt="De kaart Koeling met Volle snelheid, Koel en Stil, plus Identificeren en Aan/uit-bediening" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identificeren &amp; meldingen</div>
+      <h2>Vind de machine, demp de zoemer</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Identificeren</b> laat het statuslampje van de NAS knipperen zodat je weet voor welke unit je staat. <b>Stoppen</b> beëindigt het.</li>
+      <li><b>Piep dempen</b> stopt de alarmzoemer. Het dempt het geluid, niet de oorzaak - wat het alarm veroorzaakte is nog steeds zo, en de gezondheidskop zegt dat ook nog.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM-update</div>
+      <h2>Is er een firmware-update</h2>
+      <p class="lead">De kaart DSM-update meldt welke versie je draait en of Synology iets nieuwers heeft. <b>Zoeken naar update</b> vraagt de NAS opnieuw te kijken.</p>
+    </div>
+    <div class="note"><b>Dit is de firmware van je NAS, niet de app.</b> Syno Manager werkt zichzelf bij via de App Store of Google Play, zoals elke andere app. Deze kaart is het eigen updatescherm van DSM, hetzelfde als in het Configuratiescherm.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Aan/uit-bediening</div>
+      <h2>Herstarten en uitschakelen</h2>
+      <p class="lead">Onderaan Systeemgezondheid en rood gemarkeerd, omdat ze elke verbonden gebruiker raken - ook degene die midden in een bestandskopie zit.</p>
+    </div>
+    <ul class="plain">
+      <li><b>NAS herstarten</b> - een nette herstart. Wordt bevestigd voordat het draait.</li>
+      <li><b>NAS uitschakelen</b> - netjes uitzetten. Wordt bevestigd voordat het draait.</li>
+    </ul>
+    <div class="note stop"><b>Denk na voordat je op afstand uitschakelt.</b> Een uitgeschakelde NAS kan zijn eigen wekpakket niet doorsturen. Hem van buiten je netwerk terughalen vereist een VPN ernaartoe, of een router die Wake-on-LAN doorstuurt. Zie <a href="/nl/guide/wake-on-lan/">Wake-on-LAN</a> voor wat van waar werkt.</div>
+    <div class="note" style="margin-top:14px"><b>Snelkoppelingen slaan de bevestiging niet over.</b> De <a href="/nl/guide/shortcuts/">links</a> <code>synomanager://reboot</code> en <code>synomanager://shutdown</code> <em>openen de app</em> bewust alleen op dit scherm. Een destructieve actie wordt niet één tik omdat hij vanuit een launcher is gestart.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Resources</div>
+      <h2>Live grafieken</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Resourcemonitor-grafieken voor CPU, geheugen, schijf lezen en schijf schrijven" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">De subweergave Resources is dezelfde data als doorlopende grafiek, en dat wil je als de vraag is: "is dit een piek of is dit constant?"</p>
+        <ul class="plain">
+          <li><b>CPU-gebruik</b> met de verdeling tussen gebruiker en systeem.</li>
+          <li><b>Geheugengebruik</b> met gebruikt ten opzichte van totaal.</li>
+          <li><b>Schijf lezen</b> en <b>Schijf schrijven</b>, elk met een eigen grafiek, plus het totale schijfgebruik.</li>
+          <li><b>Gemiddelde belasting</b> over één, vijf en vijftien minuten.</li>
+        </ul>
+        <div class="note">Grafieken vullen zich met het <a href="/nl/guide/settings/#preferences">pollinginterval</a>. Een korter interval geeft meer detail en kost meer batterij; een langer interval is zuiniger en grover.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Logboeken</div>
+      <h2>Wat DSM heeft vastgelegd</h2>
+      <p class="lead">Twee tabbladen: <b>Systeem</b> voor het eigen logboek van DSM en <b>Verbinding</b> voor aanmeldingen en bestandstoegang. Beide worden gelezen wanneer je erom vraagt.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Het laadt eenmaal en blijft stil staan.</b> Een logboek dat zichzelf op een timer opnieuw inleest terwijl je een regel probeert te lezen is nutteloos en kost batterij en netwerk voor niets.</li>
+      <li><b>Druk op afspelen om live te volgen.</b> Druk nogmaals om te pauzeren. Volgen stopt vanzelf wanneer je het scherm verlaat of de app naar de achtergrond stuurt, zodat een vergeten logboektabblad niet stilletjes in je zak staat te pollen.</li>
+      <li><b>Er is een zoekvak</b> om één regel in een lang logboek te vinden.</li>
+      <li><b>Container- en stacklogboeken werken op dezelfde manier</b> - zie <a href="/nl/guide/apps/#docker">Docker</a>.</li>
+      <li><b>De tekst is selecteerbaar.</b> Houd een regel ingedrukt en de systeembalk Kopiëren / Alles selecteren / Delen verschijnt, net als overal waar tekst op het scherm staat.</li>
+      <li><b>Exporteer wat je bekijkt.</b> Een exportknop staat naast de live-schakelaar op het tabblad Systeem en boven de lijst op het tabblad Verbinding. Die opent een blad met drie uitwegen: <b>Opslaan in een bestand</b>, <b>Delen</b> om het te sturen of te mailen, of <b>Kopiëren naar klembord</b>.</li>
+    </ul>
+    <div class="note"><b>Het exporteert wat op het scherm staat, niet het hele logboek.</b> Wat de filterchip voor het niveau en het zoekvak van de lijst hebben overgelaten, gaat eruit - niets wat je al weggefilterd hebt komt terug in de export. Het bestand is platte tekst, één item per regel, met tijd, niveau, gebruiker en omschrijving gescheiden door tabs.</div>
+    <div class="note warn"><b>Laadt het logboek niet</b> en meldt het een verbindingstime-out terwijl de rest van de app prima werkt, dan reageert de service Log Center op de NAS niet, niet jouw verbinding. Controleer of Log Center is geïnstalleerd en draait in het Pakketcentrum van DSM - de systeemlogboek-API maakt er deel van uit.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Systeem-FAQ</h2>
+    </div>
+    <details open><summary>Kan ik de ventilatorsnelheid vanuit de app wijzigen?</summary><div class="body">Ja. Systeemgezondheid heeft een kaart Koeling met Volle snelheid, Koel en Stil. De app leest de stand waarin de NAS nu staat, schrijft jouw keuze en leest hem terug ter bevestiging. Een NAS die een stand buiten deze drie meldt, houdt een alleen-lezen weergave in plaats van verkeerd te worden voorgesteld.</div></details>
+    <details><summary>Kan ik mijn NAS vanaf mijn telefoon herstarten of uitschakelen?</summary><div class="body">Ja, via Aan/uit-bediening onderaan Systeemgezondheid. Beide worden bevestigd voordat ze draaien. Op afstand uitschakelen vraagt even nadenken - een uitgeschakelde NAS is niet via internet te wekken zonder VPN of een router die voor Wake-on-LAN is ingesteld.</div></details>
+    <details><summary>Waar is NAS identificeren voor?</summary><div class="body">Het laat het statuslampje van de NAS knipperen zodat je weet naar welke kast in een rack of kast je kijkt. Piep dempen stopt de alarmzoemer zonder de oorzaak van het alarm weg te nemen.</div></details>
+    <details><summary>Verversen de logboeken zichzelf?</summary><div class="body">Nee, en dat is bewust. Een logboek laadt eenmaal en blijft stil staan zodat je het kunt lezen. Druk op afspelen om het live te volgen, druk nogmaals om te pauzeren, en het stopt vanzelf met volgen wanneer je het scherm verlaat of de app naar de achtergrond gaat.</div></details>
+    <details><summary>Kan ik het logboek dat ik bekijk exporteren of kopiëren?</summary><div class="body">Ja. Houd een regel ingedrukt voor de systeembalk Kopiëren / Alles selecteren / Delen, of gebruik de exportknop naast de live-schakelaar op het tabblad Systeem, of boven de lijst op het tabblad Verbinding. Die opent een blad met Opslaan in een bestand, Delen of mailen en Kopiëren naar klembord, en exporteert precies de items op het scherm na het niveaufilter en de zoekopdracht - één item per regel, met tijd, niveau, gebruiker en omschrijving gescheiden door tabs.</div></details>
+    <details><summary>Waarom is mijn gemiddelde belasting hoog terwijl de CPU er prima uitziet?</summary><div class="body">De gemiddelde belasting telt wachtende processen, en die wachten vaak op schijven in plaats van op de CPU. Kijk op hetzelfde scherm naar het schijf-I/O-gebruik - een hoog gebruikspercentage bij weinig CPU is de gebruikelijke verklaring.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: Opslag</h2>
+    <p class="lead" style="margin:0 auto 24px">Volumes, pools, SMART-gezondheid per schijf en veilig uitwerpen.</p>
+    <p><a class="btn" href="/nl/guide/storage/">Opslag &amp; schijven &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

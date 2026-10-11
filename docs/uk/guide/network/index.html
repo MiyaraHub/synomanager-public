@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Монітор мережі, VPN та DDNS Synology - Syno Manager</title>
+<meta name="description" content="Швидкість у реальному часі для кожного інтерфейсу, активні підключення й заблоковані IP, служби DSM з перемикачами, профілі VPN-клієнта та DDNS з вашою публічною адресою." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/uk/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Монітор мережі, VPN та DDNS Synology - Syno Manager" />
+<meta property="og:description" content="Швидкість у реальному часі для кожного інтерфейсу, активні підключення й заблоковані IP, служби DSM з перемикачами, профілі VPN-клієнта та DDNS з вашою публічною адресою." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/uk/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="uk_UA" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Монітор мережі, VPN та DDNS Synology - Syno Manager" />
+<meta name="twitter:description" content="Швидкість у реальному часі для кожного інтерфейсу, активні підключення й заблоковані IP, служби DSM з перемикачами, профілі VPN-клієнта та DDNS з вашою публічною адресою." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "uk",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Головна",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Посібник користувача",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Мережа"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Монітор мережі, VPN та DDNS Synology - Syno Manager",
+  "description": "Швидкість у реальному часі для кожного інтерфейсу, активні підключення й заблоковані IP, служби DSM з перемикачами, профілі VPN-клієнта та DDNS з вашою публічною адресою.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "uk",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Чи можна побачити, з якою швидкістю NAS передає дані просто зараз?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Підрозділ «Мережа» показує вхідний і вихідний трафік наживо для кожного інтерфейсу NAS, з окремим графіком, швидкістю каналу та адресою. Об'єднані інтерфейси відображаються як одне ціле із сумарною швидкістю."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи можна запускати й зупиняти служби DSM із застосунку?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так, для служб, якими DSM дозволяє керувати з клієнта: SMB, NFS, FTP, rsync та інші мають перемикач. Деякі позначені як системні: DSM керує ними сам, тож застосунок показує їхній стан, але не пропонує його змінити."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи показує застосунок, які IP-адреси заблоковано?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Так. Підрозділ «Підключення» показує політику автоблокування (скільки невдалих спроб за який час) і список адрес, заблокованих зараз. Він згорнутий за лічильником, щоб сотня записів не затуляла решту екрана."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Чи можна дізнатися, чи підключено мій VPN?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Застосунок показує профілі VPN-клієнта на вашому NAS і дозволяє попросити підключити чи відключити будь-який із них. Він не стверджує, який саме активний, бо запис DSM, який він читає, не містить поля стану. Стверджувати інакше означало б вигадувати показник."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/uk/"><img src="/assets/syno-manager-icon.png" alt="Значок Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Пошук у посібнику..." data-i18n-empty="Немає збігів для" data-i18n-language="Мова">
+      <a href="/uk/">Головна</a>
+      <a href="/uk/guide/" class="active">Посібник користувача</a>
+      <a href="/uk/#screenshots">Знімки екрана</a>
+      <a href="/uk/compatible-nas/">Сумісність</a>
+      <a href="/uk/best-synology-nas-app/">Чому варто перейти</a>
+      <a href="/uk/help/">Допомога</a>
+      <a href="/uk/#top" class="cta">Завантажити</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/uk/">Головна</a> &rsaquo; <a href="/uk/guide/">Посібник користувача</a> &rsaquo; Мережа</div>
+      <div class="eyebrow">Мережа</div>
+      <h1>Що <span class="g">входить і виходить</span></h1>
+      <p>П'ять підрозділів: трафік <b>Мережа</b> наживо, <b>Підключення</b> з автоблокуванням, <b>Служби</b> з перемикачами, профілі <b>VPN</b> та <b>DDNS</b> з вашою публічною адресою.</p>
+    </div>
+    <div class="hero-shot"><img alt="Швидкість мережі наживо для кожного інтерфейсу" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>На цій сторінці</b><ul>
+      <li><a href="#throughput">Пропускна здатність</a></li>
+      <li><a href="#connections">Підключення &amp; автоблокування</a></li>
+      <li><a href="#services">Служби</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; зовнішній IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Мережа</div>
+      <h2>Наживо, для кожного інтерфейсу</h2>
+      <p class="lead">Кожен інтерфейс NAS має власну картку, зокрема об'єднані інтерфейси та Open vSwitch, які багато інструментів пропускають.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Показано</th><th>Значення</th></tr></thead>
+      <tbody>
+        <tr><td>Назва й швидкість інтерфейсу</td><td>Назва, яку використовує DSM, і узгоджена швидкість, наприклад <code>bond0 (20 Gbps)</code> для об'єднання двох портів.</td></tr>
+        <tr><td>Адреса</td><td>IP, який інтерфейс має зараз.</td></tr>
+        <tr><td>Індикатор LIVE</td><td>Зелений, поки показники оновлюються.</td></tr>
+        <tr><td>Завантаження / Вивантаження</td><td>Поточна швидкість із графіком, що прокручується внизу, щоб короткий сплеск відрізнявся від тривалого трафіку.</td></tr>
+        <tr><td>Інформація про мережу</td><td>Ім'я сервера, шлюз і основний DNS - три значення, потрібні, коли щось у мережі не розпізнається.</td></tr>
+        <tr><td>Активні підключення</td><td>Лічильник і перехід до подробиць.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Напрямок вказано з погляду NAS.</b> «Завантаження» - це трафік, що надходить на NAS; коли ви копіюєте файл <em>на</em> NAS, для нього це завантаження.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Підключення</div>
+      <h2>Хто підключений і кого заблоковано</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Три речі в тому порядку, у якому вони зазвичай потрібні:</p>
+        <ul class="plain">
+          <li><b>Автоблокування</b> - чи ввімкнено захист DSM від підбору паролів, скільки невдалих спроб його запускає і за який проміжок часу. Саме це налаштування блокує телефон після кількох неправильних паролів.</li>
+          <li><b>Заблоковані IP</b> - усі адреси, заблоковані зараз, за лічильником. Сотня заблокованих адрес - це нормально для NAS, доступного з інтернету, і вона б затулила екран, тому список лишається згорнутим, доки ви його не відкриєте.</li>
+          <li><b>Активні підключення</b> - хто ввійшов, з якої адреси, через який протокол і коли почався сеанс. HTTP/HTTPS, SMB, NFS, FTP: кожен сеанс названо.</li>
+        </ul>
+        <div class="note"><b>Сеанс можна завершити.</b> Активне підключення можна відключити звідси, і це швидка відповідь на «щось тримає файл відкритим» чи «чому ця адреса досі підключена».</div>
+      </div>
+      <img alt="Підключення з політикою автоблокування, заблокованими IP та активними підключеннями" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Служби</div>
+      <h2>Що працює на DSM</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Служби DSM зі станом роботи й перемикачами" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Угорі лічильник - <b>працюють із загальної кількості</b> - а далі кожна служба, яку відкриває DSM, зі значком стану та перемикачем.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Служби файлів і підключень</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Вмикайте й вимикайте їх з телефона.</li>
+          <li><b>Виявлення й друк</b> - Bonjour Printer Broadcast, WS-Discovery, демон друку CUPS.</li>
+          <li><b>Інфраструктура</b> - NTP, KMIP та інше.</li>
+          <li><b>Системні служби позначено замком.</b> DSM керує ними сам, тож застосунок показує їхній стан і не пропонує перемикач, який був би відхилений. Елемент керування, що не працює, гірший за його відсутність.</li>
+        </ul>
+        <div class="note warn"><b>Вимкнення SMB розірве підключення всіх, хто ним користується.</b> Це живі перемикачі на працюючому сервері, а не екран уподобань.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Профілі клієнта</h2>
+      <p class="lead">Підрозділ VPN показує профілі VPN-<b>клієнта</b>, налаштовані на вашому NAS, тобто підключення, які він встановлює назовні, і дозволяє попросити підключити чи відключити будь-який із них.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Він не стверджує, який профіль підключено, і це свідомо.</b> NAS підтверджує запит на підключення чи відключення, але запис DSM, який читає застосунок, не містить поля стану, тож вердикт брати нізвідки. Замість того щоб здогадуватися й впевнено помилятися, застосунок так і каже та спрямовує вас на сторінку «Мережа» в DSM, яка це знає.</div>
+    <p style="color:var(--steel);margin-top:18px">Якщо профілів немає, екран про це повідомить і підкаже, де додати: у DSM, у розділі <b>Мережа &rsaquo; Мережевий інтерфейс</b>.</p>
+      </div>
+      <img alt="Підрозділ VPN зі списком профілів клієнта" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Ваша публічна адреса та ім'я, що на неї вказує</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Одна картка, дві незалежні половини:</p>
+        <ul class="plain">
+          <li><b>Зовнішній IP</b> - публічна адреса, яку зараз має ваше підключення.</li>
+          <li><b>Кожне ім'я хоста DDNS</b>, яке публікує ваш NAS, стан, що його зберігає DSM, час останнього оновлення та наступного.</li>
+        </ul>
+        <h3 style="margin-top:22px">Оновити та Оновити зараз</h3>
+        <ul class="plain">
+          <li><b>Оновити</b> перечитує те, що зараз зберігає DSM.</li>
+          <li><b>Оновити зараз</b> просить NAS знову опублікувати адресу - те саме робить власна кнопка DSM.</li>
+        </ul>
+        <div class="note"><b>Кожна половина збоїть окремо.</b> Недоступний постачальник DDNS не забирає із собою показання публічного IP, а нечитабельний IP не затирає стан імені хоста. Два показники, два вердикти.</div>
+        <div class="note" style="margin-top:14px"><b>Показує те, що зберігає DSM, а не живу перевірку.</b> Застосунок сам не розв'язує ваше ім'я хоста, щоб перевірити, що воно вказує на вас. Постачальник, який відповідає на запит, нічого не каже про правильність вашого запису, тож застосунок передає вердикт самого DSM, а не вигадує другий.</div>
+      </div>
+      <img alt="DDNS і зовнішній IP, публічна адреса та ім'я хоста приховані" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Адреса й ім'я хоста на цьому знімку екрана розмиті - вони справжні, від реального NAS.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Поширені запитання</div>
+      <h2>Поширені запитання про мережу</h2>
+    </div>
+    <details open><summary>Чи можна побачити, з якою швидкістю NAS передає дані просто зараз?</summary><div class="body">Так. Підрозділ «Мережа» показує вхідний і вихідний трафік наживо для кожного інтерфейсу NAS, з окремим графіком, швидкістю каналу та адресою. Об'єднані інтерфейси відображаються як одне ціле із сумарною швидкістю.</div></details>
+    <details><summary>Чи можна запускати й зупиняти служби DSM із застосунку?</summary><div class="body">Так, для служб, якими DSM дозволяє керувати з клієнта: SMB, NFS, FTP, rsync та інші мають перемикач. Деякі позначені як системні: DSM керує ними сам, тож застосунок показує їхній стан, але не пропонує його змінити.</div></details>
+    <details><summary>Чи показує застосунок, які IP-адреси заблоковано?</summary><div class="body">Так. Підрозділ «Підключення» показує політику автоблокування і список адрес, заблокованих зараз, згорнутий за лічильником, щоб сотня записів не затуляла решту екрана.</div></details>
+    <details><summary>Чи можна дізнатися, чи підключено мій VPN?</summary><div class="body">Застосунок показує профілі VPN-клієнта на вашому NAS і дозволяє попросити підключити чи відключити будь-який із них. Він не стверджує, який активний, бо запис DSM, який він читає, не містить поля стану. Це знає сторінка «Мережа» в DSM.</div></details>
+    <details><summary>Чому мій публічний IP відрізняється від того, що показує вебсайт?</summary><div class="body">Бо це адреса підключення вашого NAS, прочитана через DSM. Якщо телефон працює на мобільному інтернеті, у нього інша. Це дві різні мережі, і обидва показники правильні.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Далі: Файли</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, спільні папки, нотатки, документи та контакти.</p>
+    <p><a class="btn" href="/uk/guide/files/">Файли &amp; спільні папки &rarr;</a> &nbsp; <a class="btn ghost" href="/uk/guide/">Назад до посібника</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/uk/">Головна</a><a href="/uk/guide/">Посібник користувача</a><a href="/uk/guide/getting-started/">Початок роботи</a><a href="/uk/compatible-nas/">Сумісність</a><a href="/uk/best-synology-nas-app/">Чому варто перейти</a><a href="/uk/synology-app-for-iphone/">iPhone та iPad</a><a href="/uk/synology-app-for-android/">Android</a><a href="/uk/synology-app-for-mac-windows/">Mac та Windows</a><a href="/uk/ds-finder-alternative/">Порівняння з DS finder</a><a href="/uk/help/">Допомога</a><a href="/uk/privacy/">Конфіденційність</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Повідомити про помилку</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager - незалежний застосунок, який не пов'язаний із Synology Inc., не схвалений і не спонсорований нею. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station і QuickConnect є торговельними марками Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

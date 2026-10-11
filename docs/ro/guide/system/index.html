@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU, RAM, temperatură și ventilatoare Synology - Syno Manager</title>
+<meta name="description" content="Urmărește CPU, RAM, încărcarea, I/O pe disc și temperatura, schimbă modul de viteză al ventilatoarelor, verifică actualizările DSM și repornește sau oprește-ți Synology de pe telefon." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU, RAM, temperatură și ventilatoare Synology - Syno Manager" />
+<meta property="og:description" content="Urmărește CPU, RAM, încărcarea, I/O pe disc și temperatura, schimbă modul de viteză al ventilatoarelor, verifică actualizările DSM și repornește sau oprește-ți Synology de pe telefon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU, RAM, temperatură și ventilatoare Synology - Syno Manager" />
+<meta name="twitter:description" content="Urmărește CPU, RAM, încărcarea, I/O pe disc și temperatura, schimbă modul de viteză al ventilatoarelor, verifică actualizările DSM și repornește sau oprește-ți Synology de pe telefon." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sistem"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU, RAM, temperatură și ventilatoare Synology - Syno Manager",
+  "description": "Urmărește CPU, RAM, încărcarea, I/O pe disc și temperatura, schimbă modul de viteză al ventilatoarelor, verifică actualizările DSM și repornește sau oprește-ți Synology de pe telefon.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot schimba viteza ventilatoarelor din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. System Health are un card Cooling cu Full Speed, Cool și Quiet. Aplicația citește modul în care se află NAS-ul, scrie alegerea ta și o citește înapoi pentru confirmare. Un NAS care raportează un mod în afara acestor trei păstrează o afișare doar pentru citire, în loc să fie reprezentat greșit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot reporni sau opri NAS-ul de pe telefon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, din cardul Power Controls din partea de jos a System Health. Ambele sunt confirmate înainte de a rula, pentru că afectează toți utilizatorii conectați. Oprirea de la distanță merită gândită de două ori - un NAS oprit nu poate fi trezit prin internet fără un VPN sau un router configurat pentru Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pentru ce e Identify NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Face să clipească lumina de stare a NAS-ului, ca să știi la ce unitate dintr-un rack sau dulap te uiți. Silence beep oprește buzzerul de alarmă fără a opri condiția care l-a declanșat - repară și cauza."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Se reîmprospătează jurnalele singure?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu, și intenționat. Un jurnal se recitea pe un temporizator indiferent dacă îl citeai sau nu, ceea ce costa baterie și rețea degeaba. Acum se încarcă o dată și stă pe loc. Apasă play pentru a-l urmări live, apasă din nou pentru pauză, iar urmărirea se oprește singură când părăsești ecranul."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot exporta sau copia jurnalul pe care îl privesc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Apasă lung pe orice linie pentru bara de sistem Copy / Select all / Share, sau folosește butonul de export de lângă comutatorul live din fila System, ori de deasupra listei din fila Connection. Se deschide o foaie cu Save to a file, Share sau email și Copy to clipboard și exportă exact intrările de pe ecran după filtrul de nivel și căutare - o intrare pe linie, cu ora, nivelul, utilizatorul și descrierea separate prin taburi."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Sistem</div>
+      <div class="eyebrow">Sistem</div>
+      <h1>Ce face <span class="g">de fapt</span> aparatul</h1>
+      <p>Trei subvizualizări: <b>System Health</b> pentru starea mașinii, <b>Resources</b> pentru grafice live și <b>Logs</b> pentru ce a înregistrat DSM. Plus controalele care schimbă ceva - modul ventilatoarelor, lumina de identificare, actualizările DSM, repornirea și oprirea.</p>
+    </div>
+    <div class="hero-shot"><img alt="System Health cu indicatoare CPU și RAM, încărcare medie, I/O pe disc și istoricul temperaturii" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#health">Starea sistemului</a></li>
+      <li><a href="#cooling">Răcire &amp; mod ventilatoare</a></li>
+      <li><a href="#identify">Identificare &amp; alerte</a></li>
+      <li><a href="#dsm-update">Actualizare DSM</a></li>
+      <li><a href="#power">Controale de alimentare</a></li>
+      <li><a href="#resources">Resurse</a></li>
+      <li><a href="#logs">Jurnale</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Starea sistemului</div>
+      <h2>Valorile citite</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Card</th><th>Ce arată</th></tr></thead>
+      <tbody>
+        <tr><td>Indicatoare CPU &amp; RAM</td><td>CPU total ca inel, cu partea de <b>utilizator</b> evidențiată dedesubt, ca să deosebești propria încărcare de cea a sistemului. RAM arată procentul și valorile absolute.</td></tr>
+        <tr><td>Memorie</td><td>Folosită față de total, ca bară. Verde până contează.</td></tr>
+        <tr><td>CPU Load Average</td><td>Valorile pe unu, cinci și cincisprezece minute - procese care așteaptă timp de CPU, nu un procent. Se judecă după numărul de nuclee, deci o valoare sănătoasă pe un rackmount cu opt nuclee înseamnă aglomerație pe un model cu două sloturi.</td></tr>
+        <tr><td>Disk I/O</td><td>Debitul de citire și scriere plus procentul de utilizare - cât din timp au fost ocupate discurile, ceea ce este adesea răspunsul real când un NAS pare lent iar CPU-ul pare liber.</td></tr>
+        <tr><td>Istoricul temperaturii</td><td>Un grafic derulant cu valoarea curentă. În &deg;C sau &deg;F, după <a href="/ro/guide/settings/#preferences">preferința</a> ta.</td></tr>
+        <tr><td>Procese</td><td>Câte procese rulează NAS-ul.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Răcire</div>
+      <h2>Modul de viteză al ventilatoarelor, schimbat de pe telefon</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Cardul Cooling arată starea ventilatoarelor și modul în care se află NAS-ul, ca un control cu trei poziții:</p>
+        <ul class="plain">
+          <li><b>Full Speed</b> - flux maxim de aer, zgomot maxim. Potrivit pentru un rack sau un dulap.</li>
+          <li><b>Cool</b> - implicitul echilibrat.</li>
+          <li><b>Quiet</b> - viteză mai mică, temperaturi mai ridicate. Potrivit pentru un NAS din living, dacă discurile suportă.</li>
+        </ul>
+        <div class="note"><b>Confirmat, nu presupus.</b> Aplicația citește modul curent de la NAS, scrie alegerea ta, apoi <b>o citește înapoi</b>. Un mod pe care NAS-ul l-a refuzat în tăcere este raportat ca refuzat, nu rămâne pe ecran ca și cum s-ar fi aplicat.</div>
+        <div class="note" style="margin-top:14px"><b>Un mod nerecunoscut rămâne doar pentru citire.</b> Dacă NAS-ul raportează un mod de răcire în afara acestor trei, cardul arată ce a raportat și nu oferă posibilitatea de a-l schimba - în loc să-l eticheteze greșit drept unul din cele trei cunoscute.</div>
+      </div>
+      <img alt="Cardul Cooling cu Full Speed, Cool și Quiet, plus Identify și Power Controls" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Identify &amp; alerte</div>
+      <h2>Găsește aparatul, oprește buzzerul</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Identify</b> face să clipească lumina de stare a NAS-ului, ca să știi în fața cărei unități stai. <b>Stop</b> o oprește.</li>
+      <li><b>Silence beep</b> oprește buzzerul de alarmă. Oprește zgomotul, nu condiția - ce a declanșat alarma e încă adevărat, iar antetul de sănătate o va spune în continuare.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">Actualizare DSM</div>
+      <h2>Există o actualizare de firmware</h2>
+      <p class="lead">Cardul DSM Update arată versiunea pe care o ai și dacă Synology are ceva mai nou. <b>Check for update</b> cere NAS-ului să caute din nou.</p>
+    </div>
+    <div class="note"><b>Acesta este firmware-ul NAS-ului, nu aplicația.</b> Syno Manager se actualizează prin App Store sau Google Play ca orice altă aplicație. Acest card este suprafața de actualizare proprie DSM, aceeași din Control Panel.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Controale de alimentare</div>
+      <h2>Repornire și oprire</h2>
+      <p class="lead">În partea de jos a System Health, marcate cu roșu, pentru că afectează toți utilizatorii conectați - inclusiv pe cel aflat la jumătatea unei copieri de fișiere.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Restart NAS</b> - o repornire curată. Confirmată înainte de a rula.</li>
+      <li><b>Shutdown NAS</b> - o oprire curată. Confirmată înainte de a rula.</li>
+    </ul>
+    <div class="note stop"><b>Gândește-te înainte de a opri de la distanță.</b> Un NAS oprit nu își poate retransmite propriul pachet de trezire. Readucerea lui din afara rețelei cere un VPN către el sau un router configurat să redirecționeze Wake-on-LAN. Vezi <a href="/ro/guide/wake-on-lan/">Wake-on-LAN</a> pentru ce merge de unde.</div>
+    <div class="note" style="margin-top:14px"><b>Scurtăturile nu sar peste confirmare.</b> Linkurile <code>synomanager://reboot</code> și <code>synomanager://shutdown</code> <a href="/ro/guide/shortcuts/">de</a> tip scurtătură doar <em>deschid aplicația</em> la acest ecran, intenționat. O acțiune distructivă nu devine dintr-o atingere doar pentru că a fost declanșată dintr-un launcher.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Resurse</div>
+      <h2>Grafice live</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Grafice de monitorizare a resurselor pentru CPU, memorie, citire și scriere pe disc" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Subvizualizarea Resources afișează aceleași date ca grafic derulant, ceea ce vrei când întrebarea e „este un vârf sau e constant?”</p>
+        <ul class="plain">
+          <li><b>CPU Usage</b> cu împărțirea între utilizator și sistem.</li>
+          <li><b>Memory Usage</b> cu folosit față de total.</li>
+          <li><b>Disk Read</b> și <b>Disk Write</b>, fiecare cu propriul grafic, plus utilizarea generală a discului.</li>
+          <li><b>Load Averages</b> pe unu, cinci și cincisprezece minute.</li>
+        </ul>
+        <div class="note">Graficele se umplu la <a href="/ro/guide/settings/#preferences">intervalul de interogare</a>. Un interval mai scurt dă mai multe detalii și costă mai multă baterie; unul mai lung e mai blând și mai grosier.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Jurnale</div>
+      <h2>Ce a înregistrat DSM</h2>
+      <p class="lead">Două file: <b>System</b> pentru jurnalul propriu al DSM și <b>Connection</b> pentru autentificări și acces la fișiere. Ambele se citesc când le ceri.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se încarcă o dată și stă pe loc.</b> Un jurnal care se recitește pe un temporizator cât timp încerci să citești o linie e inutil și costă baterie și rețea degeaba.</li>
+      <li><b>Apasă play pentru a urmări live.</b> Apasă din nou pentru pauză. Urmărirea se oprește singură când părăsești ecranul sau trimiți aplicația în fundal, deci o filă de jurnal uitată nu interoghează pe ascuns în buzunarul tău.</li>
+      <li><b>Există o casetă de căutare</b> pentru a găsi o singură linie într-un jurnal lung.</li>
+      <li><b>Jurnalele de containere și stack-uri funcționează la fel</b> - vezi <a href="/ro/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Textul este selectabil.</b> Apasă lung pe o linie și apare bara de sistem Copy / Select all / Share, la fel ca oriunde apare text pe ecran.</li>
+      <li><b>Exportă ce vezi.</b> Un buton de export se află lângă comutatorul live din fila System și deasupra listei din fila Connection. Se deschide o foaie cu trei căi: <b>Save to a file</b>, <b>Share</b> pentru a-l trimite sau a-l trimite prin email sau <b>Copy to clipboard</b>.</li>
+    </ul>
+    <div class="note"><b>Exportă ce e pe ecran, nu tot jurnalul.</b> Se exportă ce au restrâns lista chip-ul de filtrare a nivelului și caseta de căutare - nimic din ce ai filtrat deja nu revine în export. Fișierul este text simplu, o intrare pe linie, cu ora, nivelul, utilizatorul și descrierea separate prin taburi.</div>
+    <div class="note warn"><b>Dacă jurnalul nu se încarcă</b> și raportează o expirare a conexiunii, deși restul aplicației merge bine, serviciul Log Center de pe NAS este cel care nu răspunde, nu conexiunea ta. Verifică dacă Log Center este instalat și rulează în Package Center din DSM - API-ul jurnalului de sistem face parte din el.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre sistem</h2>
+    </div>
+    <details open><summary>Pot schimba viteza ventilatoarelor din aplicație?</summary><div class="body">Da. System Health are un card Cooling cu Full Speed, Cool și Quiet. Aplicația citește modul în care se află NAS-ul, scrie alegerea ta și o citește înapoi pentru confirmare. Un NAS care raportează un mod în afara acestor trei păstrează o afișare doar pentru citire, în loc să fie reprezentat greșit.</div></details>
+    <details><summary>Pot reporni sau opri NAS-ul de pe telefon?</summary><div class="body">Da, din Power Controls din partea de jos a System Health. Ambele sunt confirmate înainte de a rula. Oprirea de la distanță merită gândită de două ori - un NAS oprit nu poate fi trezit prin internet fără un VPN sau un router configurat pentru Wake-on-LAN.</div></details>
+    <details><summary>Pentru ce e Identify NAS?</summary><div class="body">Face să clipească lumina de stare a NAS-ului, ca să știi la ce unitate dintr-un rack sau dulap te uiți. Silence beep oprește buzzerul de alarmă fără a opri condiția care l-a declanșat.</div></details>
+    <details><summary>Se reîmprospătează jurnalele singure?</summary><div class="body">Nu, și intenționat. Un jurnal se încarcă o dată și stă pe loc ca să-l poți citi. Apasă play pentru a-l urmări live, apasă din nou pentru pauză, iar urmărirea se oprește singură când părăsești ecranul sau trimiți aplicația în fundal.</div></details>
+    <details><summary>Pot exporta sau copia jurnalul pe care îl privesc?</summary><div class="body">Da. Apasă lung pe orice linie pentru bara de sistem Copy / Select all / Share, sau folosește butonul de export de lângă comutatorul live din fila System, ori de deasupra listei din fila Connection. Se deschide o foaie cu Save to a file, Share sau email și Copy to clipboard și exportă exact intrările de pe ecran după filtrul de nivel și căutare - o intrare pe linie, cu ora, nivelul, utilizatorul și descrierea separate prin taburi.</div></details>
+    <details><summary>De ce este încărcarea medie mare când CPU pare în regulă?</summary><div class="body">Load average numără procesele care așteaptă, iar ele așteaptă adesea după discuri, nu după CPU. Verifică utilizarea Disk I/O pe același ecran - un procent mare de utilizare cu CPU scăzut este explicația obișnuită.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Stocare</h2>
+    <p class="lead" style="margin:0 auto 24px">Volume, pool-uri, sănătate SMART pe fiecare disc și scoatere sigură.</p>
+    <p><a class="btn" href="/ro/guide/storage/">Stocare &amp; discuri &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

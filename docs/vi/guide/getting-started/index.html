@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kết nối Synology NAS của bạn - Cài đặt Syno Manager</title>
+<meta name="description" content="Thêm Synology NAS của bạn chưa đầy một phút: địa chỉ và cổng, HTTPS và chứng chỉ tự ký, QuickConnect, 2FA, và việc cần làm khi không kết nối được." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Kết nối Synology NAS của bạn - Cài đặt Syno Manager" />
+<meta property="og:description" content="Thêm Synology NAS của bạn chưa đầy một phút: địa chỉ và cổng, HTTPS và chứng chỉ tự ký, QuickConnect, 2FA, và việc cần làm khi không kết nối được." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Kết nối Synology NAS của bạn - Cài đặt Syno Manager" />
+<meta name="twitter:description" content="Thêm Synology NAS của bạn chưa đầy một phút: địa chỉ và cổng, HTTPS và chứng chỉ tự ký, QuickConnect, 2FA, và việc cần làm khi không kết nối được." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Bắt đầu"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Kết nối Synology NAS của bạn - Cài đặt Syno Manager",
+  "description": "Thêm Synology NAS của bạn chưa đầy một phút: địa chỉ và cổng, HTTPS và chứng chỉ tự ký, QuickConnect, 2FA, và việc cần làm khi không kết nối được.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "vi",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi cần gì để dùng Syno Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Một Synology NAS chạy DSM 7.0 trở lên, một tài khoản DSM trên đó, và thiết bị chạy Android 7+, iOS 16+, macOS 11+ hoặc Windows. Không cần cài gì trên NAS - ứng dụng dùng các API của chính DSM, vốn đã có sẵn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi nhập địa chỉ và cổng nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trên mạng của bạn, nhập địa chỉ IP cục bộ của NAS và cổng của DSM - 5001 khi bật HTTPS, hoặc 5000 khi tắt HTTPS. Bạn cũng có thể nhập tên máy chủ hoặc tên miền tùy chỉnh. Nếu bạn không muốn đụng đến địa chỉ, hãy chuyển Loại kết nối sang QuickConnect và nhập ID QuickConnect của bạn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao Xác minh chứng chỉ SSL mặc định bị tắt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vì hầu hết DiskStation dùng chứng chỉ tự ký, không do tổ chức công khai nào ký nên không qua được xác minh dù kết nối vẫn được mã hóa. Tắt xác minh sẽ chấp nhận chứng chỉ đó. Nếu bạn đã cài chứng chỉ thật - chẳng hạn từ Let's Encrypt - hãy bật xác minh."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có cần mở cổng trên router không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Trên mạng của bạn không cần chuyển tiếp gì. Từ bên ngoài, QuickConnect chuyển tiếp kết nối cho bạn, và VPN cũng được. Chuyển tiếp cổng chỉ cần khi bạn muốn một đường trực tiếp từ internet, hoặc muốn xem trực tiếp camera qua RTSP từ ngoài mạng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nó báo hết thời gian kết nối. Giờ làm gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thông báo đó có nghĩa là ứng dụng không nhận được phản hồi nào, hầu như luôn do địa chỉ, cổng hoặc mạng mà điện thoại đang dùng. Hãy kiểm tra HTTPS khớp với cổng, điện thoại cùng mạng với NAS nếu bạn dùng IP cục bộ, và giao diện web của DSM tải được trong trình duyệt điện thoại ở cùng địa chỉ và cổng."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Bắt đầu</div>
+      <div class="eyebrow">Bắt đầu</div>
+      <h1>Kết nối <span class="g">chưa đầy một phút</span></h1>
+      <p>Không có gì được cài trên NAS. Syno Manager trao đổi với các API của chính DSM, vốn đã đang chạy - bạn chỉ cần cho nó biết DiskStation của bạn ở đâu và bạn là ai.</p>
+    </div>
+    <div class="hero-shot"><img alt="Biểu mẫu Thêm NAS trong Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#requirements">Bạn cần gì</a></li>
+      <li><a href="#address">Tìm NAS của bạn</a></li>
+      <li><a href="#form">Mọi trường trong biểu mẫu</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Xác thực hai yếu tố</a></li>
+      <li><a href="#test">Kiểm tra và lưu</a></li>
+      <li><a href="#next">Điều gì xảy ra tiếp theo</a></li>
+      <li><a href="#trouble">Khi không kết nối được</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Bước số không</div>
+      <h2>Bạn cần gì</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Yêu cầu</th><th>Chi tiết</th></tr></thead>
+      <tbody>
+        <tr><td>Một Synology NAS</td><td>Mọi mẫu máy chạy <b>DSM 7.0 trở lên</b>. Không cài gì trên đó - ứng dụng dùng cùng các API mà giao diện web của DSM dùng.</td></tr>
+        <tr><td>Một tài khoản DSM</td><td>Tên người dùng và mật khẩu DSM thông thường của bạn. Tài khoản quản trị thấy mọi thứ; tài khoản không phải quản trị thấy những gì DSM cho phép, và ứng dụng ẩn phần còn lại thay vì hiển thị các nút sẽ bị từ chối.</td></tr>
+        <tr><td>Thiết bị của bạn</td><td><b>Android 7.0</b> trở lên, <b>iOS 16.0</b> trở lên, <b>macOS 11.0</b> trở lên, hoặc <b>Windows</b>. Cùng một ứng dụng trên cả bốn.</td></tr>
+        <tr><td>Một đường đến NAS</td><td>Cùng mạng cục bộ, một VPN vào đó, một tên miền tùy chỉnh, hoặc QuickConnect. Chỉ cần một trong số đó.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Bạn không cần tài khoản quản trị</b> chỉ để xem. Giám sát hoạt động với mọi người dùng DSM. Các thao tác điều khiển - khởi động lại container, chạy sao lưu, tháo ổ đĩa - cần quyền mà chính DSM yêu cầu cho thao tác đó, và ứng dụng báo việc bị từ chối thay vì giả vờ là đã thành công.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Nó ở đâu</div>
+      <h2>Tìm địa chỉ NAS của bạn</h2>
+      <p class="lead">Nếu bạn đã mở DSM trong trình duyệt, thanh địa chỉ có mọi thứ bạn cần: máy chủ và cổng là hai giá trị mà ứng dụng hỏi.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Từ chính DSM</h3>
+        <ul class="plain">
+          <li><b>Control Panel &rsaquo; Network &rsaquo; Network Interface</b> hiển thị địa chỉ IP của NAS trên từng giao diện.</li>
+          <li><b>Control Panel &rsaquo; Network &rsaquo; DSM Settings</b> hiển thị các cổng HTTP và HTTPS mà DSM đang lắng nghe. Đó là 5000 và 5001 trừ khi ai đó đã đổi.</li>
+        </ul>
+        <h3 style="margin-top:22px">Từ trình duyệt của bạn</h3>
+        <p style="color:var(--steel)">Bất cứ thứ gì bạn gõ để vào DSM đều là thứ ứng dụng cần. Trong <code>https://192.168.1.20:5001</code> máy chủ là <code>192.168.1.20</code>, cổng là <code>5001</code>, và HTTPS đang bật.</p>
+      </div>
+      <div>
+        <h3>Từ router của bạn</h3>
+        <p style="color:var(--steel)">Hầu hết router liệt kê các thiết bị đã kết nối theo tên. NAS xuất hiện dưới tên máy chủ của nó - tên được đặt trong <b>Control Panel &rsaquo; Info Center</b>.</p>
+        <div class="note"><b>Cho nó một địa chỉ cố định.</b> Nếu router cấp cho NAS một IP khác sau khi khởi động lại, ứng dụng sẽ không tìm thấy nó nữa. Đặt chỗ DHCP trên router, hoặc địa chỉ tĩnh trên NAS, sẽ ngăn điều đó. Tên máy chủ hoặc tên miền tùy chỉnh cũng được và không quan tâm IP là gì.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Thêm NAS</div>
+      <h2>Mọi trường trong biểu mẫu</h2>
+      <p class="lead">Chạm <b>+ Thêm NAS</b> trên danh sách thiết bị. Biểu mẫu ngắn, và chỉ có ba trường không có mặc định hợp lý.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Trường</th><th>Nhập gì vào đó</th></tr></thead>
+          <tbody>
+            <tr><td>Biệt danh NAS</td><td>Tên bất kỳ bạn thích - nó chỉ hiển thị cho bạn. Hữu ích khi bạn có nhiều hơn một NAS.</td></tr>
+            <tr><td>Loại kết nối</td><td><b>Direct IP</b> cho địa chỉ bạn tự gõ, hoặc <b>QuickConnect</b> cho ID QuickConnect. Xem <a href="#quickconnect">bên dưới</a>.</td></tr>
+            <tr><td>Máy chủ / Địa chỉ IP</td><td>IP cục bộ của NAS, tên máy chủ của nó, hoặc tên miền tùy chỉnh trỏ đến nó.</td></tr>
+            <tr><td>Cổng</td><td><b>5001</b> khi bật HTTPS, <b>5000</b> khi tắt - trừ khi DSM đã được chuyển sang cổng khác, khi đó hãy dùng các cổng đó.</td></tr>
+            <tr><td>HTTPS</td><td>Mặc định bật, và nên để bật. Mọi thứ giữa điện thoại và NAS đều được mã hóa, kể cả mật khẩu của bạn.</td></tr>
+            <tr><td>Xác minh chứng chỉ SSL</td><td>Mặc định tắt, vì hầu hết DiskStation dùng chứng chỉ <b>tự ký</b> không thể xác minh với tổ chức công khai. Kết nối vẫn được mã hóa trong cả hai trường hợp. Chỉ bật khi bạn đã cài chứng chỉ thật.</td></tr>
+            <tr><td>Tên người dùng</td><td>Tên tài khoản DSM của bạn. <b>Tên người dùng có khoảng trắng được hỗ trợ</b> - ứng dụng đặt dấu nháy đúng cách, một lý do phổ biến khiến các ứng dụng khách khác thất bại.</td></tr>
+            <tr><td>Mật khẩu</td><td>Mật khẩu DSM của bạn. Biểu tượng con mắt hiện mật khẩu khi bạn gõ. Nó được ghi vào chuỗi khóa hoặc kho khóa của nền tảng và không bao giờ lưu ở dạng văn bản thuần.</td></tr>
+            <tr><td>Xác thực hai yếu tố</td><td>Bật nếu tài khoản DSM của bạn dùng ứng dụng xác thực. Xem <a href="#twofactor">bên dưới</a>.</td></tr>
+            <tr><td>Chuyển hướng xem trực tiếp camera qua cổng DSM</td><td>Mặc định tắt. <b>Tắt</b> nghĩa là xem trực tiếp camera kết nối thẳng đến RTSP trên cổng 554, nhanh hơn trên mạng của bạn nhưng cần cổng đó truy cập được từ nơi bạn đang ở. <b>Bật</b> chuyển hướng luồng qua cổng HTTPS của DSM mà bạn đã dùng, nên xem trực tiếp hoạt động từ bên ngoài mà không phải mở cổng 554. Xem <a href="/vi/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Biểu mẫu Thêm NAS" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Không cần gõ địa chỉ</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Chuyển <b>Loại kết nối</b> sang <b>QuickConnect</b> và nhập ID QuickConnect thay cho máy chủ và cổng. Relay của Synology tìm NAS của bạn ở bất cứ đâu, và không cần cấu hình router.</p>
+    </div>
+    <ul class="plain">
+      <li><b>ID của bạn nằm ở đâu.</b> DSM, trong <b>Control Panel &rsaquo; External Access &rsaquo; QuickConnect</b>. Phải bật nó ở đó trước.</li>
+      <li><b>Cái giá phải trả.</b> Relay thêm độ trễ, nên hình thu nhỏ và xem trực tiếp tải chậm hơn so với trên mạng của bạn. Mọi thứ vẫn hoạt động.</li>
+      <li><b>Bạn tiết kiệm được gì.</b> Không chuyển tiếp cổng, không cần giữ DNS động luôn cập nhật, và không có gì bị mở ra internet ở phía bạn.</li>
+    </ul>
+    <div class="note"><b>Bạn có thể dùng cả hai.</b> Thêm cùng một NAS hai lần - một lần bằng IP cục bộ, một lần bằng QuickConnect - cho bạn một mục nhanh khi ở nhà và một mục đáng tin khi ở xa. Chúng là hai mục riêng với bố cục riêng, nên hãy chọn mục nào gần bạn hơn.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Xác thực hai yếu tố</h2>
+      <p class="lead">Nếu tài khoản DSM của bạn được bảo vệ bằng ứng dụng xác thực, hãy bật <b>Xác thực hai yếu tố (2FA)</b> trước khi lưu. Ứng dụng sẽ hỏi mã sáu chữ số của bạn ngay sau khi mật khẩu được chấp nhận.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Bật công tắc</b> trên biểu mẫu Thêm NAS.</li>
+      <li><b>Lưu &amp; Kết nối.</b> Ứng dụng đăng nhập, và DSM hỏi yếu tố thứ hai.</li>
+      <li><b>Nhập mã</b> từ ứng dụng xác thực của bạn.</li>
+      <li><b>Chọn có nhớ thiết bị này hay không.</b> Nếu có, DSM cấp mã thông báo thiết bị và điện thoại này sẽ không bị hỏi mã nữa. Mã thông báo được lưu giống như mật khẩu, trong chuỗi khóa của nền tảng.</li>
+    </ol>
+    <div class="note warn"><b>Nếu mã bị từ chối</b>, hãy kiểm tra đồng hồ. Mã xác thực được tính từ thời gian hiện tại, nên điện thoại hoặc NAS có đồng hồ bị lệch sẽ tạo hoặc mong đợi sai số. Nguồn thời gian của NAS được hiển thị trên hàng thống kê nhanh của <a href="/vi/guide/home/">màn hình chính</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Trước khi bạn chốt</div>
+      <h2>Kiểm tra kết nối, rồi lưu</h2>
+      <p class="lead"><b>Kiểm tra kết nối</b> thử địa chỉ, cổng và thông tin đăng nhập và cho bạn biết chuyện gì đã xảy ra mà không lưu gì. Đó là cách nhanh nhất để tìm lỗi gõ, vì nó tách “không tới được NAS” khỏi “tới được, nhưng mật khẩu sai”.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Nó nói gì</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Hết thời gian kết nối</td><td>Không có gì trả lời. Do địa chỉ, cổng hoặc mạng mà điện thoại đang dùng - không phải thông tin đăng nhập, vì chưa được thử.</td></tr>
+        <tr><td>Thông tin đăng nhập không hợp lệ</td><td>NAS đã trả lời và từ chối đăng nhập. Địa chỉ và cổng đúng; tên người dùng hoặc mật khẩu thì không.</td></tr>
+        <tr><td>Lỗi chứng chỉ</td><td>HTTPS đang bật và <b>Xác minh chứng chỉ SSL</b> cũng bật với chứng chỉ tự ký. Hãy tắt xác minh.</td></tr>
+        <tr><td>Yêu cầu 2FA</td><td>Tài khoản dùng xác thực hai yếu tố và công tắc đang tắt. Hãy bật nó và thử lại.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Lưu &amp; Kết nối</b> lưu mục này và đăng nhập. Bạn vào màn hình chính với NAS đang tải sẵn.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Bạn đã vào</div>
+      <h2>Điều gì xảy ra ở lần kết nối đầu tiên</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Màn hình chính Syno Manager sau khi kết nối" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Ứng dụng hỏi NAS của bạn làm được gì.</b> Nó truy vấn danh mục API của DSM và lưu danh sách. Đó là lý do NAS không có Surveillance Station không bao giờ hiện tab Camera, và vì sao cài một gói làm màn hình của nó xuất hiện.</li>
+          <li><b>Mọi thẻ được hỗ trợ đều được bật.</b> Thẻ mới đến ở trạng thái hiển thị chứ không bị ẩn, nên tính năng NAS của bạn hỗ trợ là tính năng bạn thấy được. <a href="/vi/guide/customizing/">Tùy chỉnh</a> là nơi bạn tắt mọi thứ, không phải nơi bạn đi tìm chúng.</li>
+          <li><b>Địa chỉ MAC của NAS được ghi lại</b> để <a href="/vi/guide/wake-on-lan/">Wake-on-LAN</a> hoạt động sau này mà bạn không cần tra cứu.</li>
+          <li><b>Một lời chào ngắn xuất hiện một lần.</b> Nó nói ứng dụng làm gì và nơi đổi cài đặt. Có hộp kiểm để ngừng hiện nó nữa.</li>
+          <li><b>Thẻ trợ giúp xuất hiện trên những màn hình cần giải thích.</b> Nhấn giữ một thẻ để đóng; khôi phục từng thẻ từ <a href="/vi/guide/settings/#help">Cài đặt</a>.</li>
+        </ul>
+        <div class="note"><b>Đã cài một gói sau khi kết nối?</b> Danh sách khả năng được đọc lúc kết nối, nên gói cài sau đó chưa có tab. Hãy kéo để làm mới, hoặc mở lại ứng dụng, và màn hình mới sẽ xuất hiện.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Khi không kết nối được</div>
+      <h2>Danh sách kiểm tra ngắn</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Mở DSM trong trình duyệt của điện thoại</b> đúng với địa chỉ và cổng bạn đã gõ. Nếu trình duyệt cũng không tới được, vấn đề là mạng hoặc địa chỉ, không phải ứng dụng.</li>
+      <li><b>Kiểm tra HTTPS khớp với cổng.</b> Cổng 5001 khi tắt HTTPS, hoặc 5000 khi bật, sẽ hết thời gian. Chúng là hai bộ lắng nghe khác nhau.</li>
+      <li><b>Tắt Xác minh chứng chỉ SSL</b> nếu NAS dùng chứng chỉ đi kèm sẵn.</li>
+      <li><b>Kiểm tra mạng của điện thoại.</b> IP cục bộ không truy cập được qua dữ liệu di động. Hãy kết nối Wi-Fi, hoặc dùng QuickConnect, tên miền hay VPN.</li>
+      <li><b>Trên iOS, hãy cho phép truy cập mạng cục bộ.</b> Cài đặt &rsaquo; Ứng dụng &rsaquo; Syno Manager &rsaquo; Mạng cục bộ. Nếu không, iOS lặng lẽ chặn kết nối đến các địa chỉ trên mạng của bạn.</li>
+      <li><b>Kiểm tra tường lửa của DSM.</b> Control Panel &rsaquo; Security &rsaquo; Firewall. Một quy tắc chỉ cho phép một số địa chỉ nhất định sẽ chặn điện thoại không nằm trong đó.</li>
+      <li><b>Kiểm tra tự động chặn.</b> Control Panel &rsaquo; Security &rsaquo; Account. Đăng nhập thất bại nhiều lần có thể khiến địa chỉ điện thoại của bạn bị chặn; nó sẽ được liệt kê ở đó và có thể gỡ bỏ.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/vi/help/">Hướng dẫn khắc phục sự cố đầy đủ</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về Thiết lập</h2>
+    </div>
+    <details open><summary>Tôi cần gì để dùng Syno Manager?</summary><div class="body">Một Synology NAS chạy DSM 7.0 trở lên, một tài khoản DSM trên đó, và thiết bị chạy Android 7+, iOS 16+, macOS 11+ hoặc Windows. Không cần cài gì trên NAS - ứng dụng dùng các API của chính DSM, vốn đã có sẵn.</div></details>
+    <details><summary>Tôi nhập địa chỉ và cổng nào?</summary><div class="body">Trên mạng của bạn, nhập địa chỉ IP cục bộ của NAS và cổng của DSM - 5001 khi bật HTTPS, hoặc 5000 khi tắt HTTPS. Bạn cũng có thể nhập tên máy chủ hoặc tên miền tùy chỉnh. Nếu bạn không muốn đụng đến địa chỉ, hãy chuyển Loại kết nối sang QuickConnect và nhập ID QuickConnect của bạn.</div></details>
+    <details><summary>Vì sao Xác minh chứng chỉ SSL mặc định bị tắt?</summary><div class="body">Vì hầu hết DiskStation dùng chứng chỉ tự ký, không do tổ chức công khai nào ký nên không qua được xác minh dù kết nối vẫn được mã hóa. Tắt xác minh sẽ chấp nhận chứng chỉ đó. Nếu bạn đã cài chứng chỉ thật - chẳng hạn từ Let's Encrypt - hãy bật xác minh.</div></details>
+    <details><summary>Tôi có cần mở cổng trên router không?</summary><div class="body">Không. Trên mạng của bạn không cần chuyển tiếp gì. Từ bên ngoài, QuickConnect chuyển tiếp kết nối cho bạn, và VPN cũng được. Chuyển tiếp cổng chỉ cần khi bạn muốn một đường trực tiếp từ internet, hoặc muốn xem trực tiếp camera qua RTSP từ ngoài mạng.</div></details>
+    <details><summary>Nó báo hết thời gian kết nối. Giờ làm gì?</summary><div class="body">Thông báo đó có nghĩa là ứng dụng không nhận được phản hồi nào, hầu như luôn do địa chỉ, cổng hoặc mạng mà điện thoại đang dùng. Hãy kiểm tra HTTPS khớp với cổng, điện thoại cùng mạng với NAS nếu bạn dùng IP cục bộ, và giao diện web của DSM tải được trong trình duyệt điện thoại ở cùng địa chỉ và cổng.</div></details>
+    <details><summary>Tôi có thể thêm nhiều hơn một NAS không?</summary><div class="body">Có, bao nhiêu tùy thích. Mỗi NAS giữ thông tin đăng nhập, bố cục bảng điều khiển và cài đặt riêng, và bạn chuyển đổi giữa chúng từ danh sách thiết bị. Xem <a href="/vi/guide/multi-nas/">nhiều thiết bị NAS</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: màn hình chính</h2>
+    <p class="lead" style="margin:0 auto 24px">Mỗi thẻ hiển thị gì, và cách làm bảng điều khiển thành của riêng bạn.</p>
+    <p><a class="btn" href="/vi/guide/home/">Màn hình chính &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

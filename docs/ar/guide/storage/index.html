@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>تخزين Synology وRAID وصحة SMART - Syno Manager</title>
+<meta name="description" content="أقراص ومجمّعات Synology مع نوع RAID والمساحة الحرة، وحالة SMART ودرجة حرارة كل قرص، واختبار SMART سريع، وإخراج آمن لأجهزة USB وeSATA." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ar/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="تخزين Synology وRAID وصحة SMART - Syno Manager" />
+<meta property="og:description" content="أقراص ومجمّعات Synology مع نوع RAID والمساحة الحرة، وحالة SMART ودرجة حرارة كل قرص، واختبار SMART سريع، وإخراج آمن لأجهزة USB وeSATA." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ar/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="تخزين Synology وRAID وصحة SMART - Syno Manager" />
+<meta name="twitter:description" content="أقراص ومجمّعات Synology مع نوع RAID والمساحة الحرة، وحالة SMART ودرجة حرارة كل قرص، واختبار SMART سريع، وإخراج آمن لأجهزة USB وeSATA." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ar",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "دليل المستخدم",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Storage"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "تخزين Synology وRAID وصحة SMART - Syno Manager",
+  "description": "أقراص ومجمّعات Synology مع نوع RAID والمساحة الحرة، وحالة SMART ودرجة حرارة كل قرص، واختبار SMART سريع، وإخراج آمن لأجهزة USB وeSATA.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "ar",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يمكنني رؤية حالة SMART لكل قرص؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. يسرد العرض الفرعي «صحة الأقراص» كل قرص مع طرازه، وهل هو HDD أم SSD، وسعته ودرجة حرارته وحكم SMART. ويمكنك أيضاً بدء اختبار SMART سريع على أي قرص من الهاتف."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما درجة الحرارة التي تُعدّ مرتفعة جداً لقرص NAS؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "يلوّن التطبيق القرص بالعنبري فوق 45 درجة مئوية وبالأحمر فوق 55، ودرجة حرارة النظام بالعنبري فوق 50 وبالأحمر فوق 60. وتغذّي هذه الحدود أيضاً شارة الصحة في الشاشة الرئيسية، فيظهر القرص الساخن هناك دون أن تبحث عنه."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني إخراج قرص USB بأمان من التطبيق؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، من العرض الفرعي «الخارجي». يتأكد الإخراج بخروج القرص فعلاً من قائمة الأجهزة، لا بقبول الطلب - فالقرص الذي يقول إنه أُخرج قد أُخرج حقاً. ولا يمكن إخراج قرص قيد التهيئة أو التهيئة الأولية."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني إنشاء وحدة تخزين أو توسيعها من التطبيق؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا. إنشاء وحدات التخزين والمجمّعات وتوسيعها وإصلاحها يتم في Storage Manager في DSM. يعرض التطبيق ما يفعله تخزينك ويتيح لك التصرف في الأقراص؛ ولا يعيد هيكلة مصفوفتك من هاتف."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ar/"><img src="/assets/syno-manager-icon.png" alt="أيقونة Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة">
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/guide/" class="active">دليل المستخدم</a>
+      <a href="/ar/#screenshots">لقطات الشاشة</a>
+      <a href="/ar/compatible-nas/">التوافق</a>
+      <a href="/ar/best-synology-nas-app/">لماذا تنتقل إليه</a>
+      <a href="/ar/help/">المساعدة</a>
+      <a href="/ar/#top" class="cta">تنزيل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; التخزين</div>
+      <div class="eyebrow">Storage</div>
+      <h1>كل وحدة تخزين، <span class="g">وكل قرص</span></h1>
+      <p>ثلاثة عروض فرعية: <b>الأقراص والمجمّعات</b> للسعة وRAID، و<b>صحة الأقراص</b> لـ SMART والحرارة لكل قرص، و<b>الخارجي</b> لكل ما هو موصول في الخلف.</p>
+    </div>
+    <div class="hero-shot"><img alt="وحدات التخزين والأقراص في Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>في هذه الصفحة</b><ul>
+      <li><a href="#volumes">Volumes &amp; Pools</a></li>
+      <li><a href="#drives">قائمة الأقراص</a></li>
+      <li><a href="#disk-health">صحة الأقراص وSMART</a></li>
+      <li><a href="#thresholds">حدود الحرارة</a></li>
+      <li><a href="#external">الخارجي والإخراج الآمن</a></li>
+      <li><a href="#limits">ما لن يفعله</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; Pools</div>
+      <h2>السعة بنظرة واحدة</h2>
+      <p class="lead">تحصل كل وحدة تخزين على بطاقة بها اسمها ونوع RAID وحالتها وعدد الأقراص التي تسندها، فوق شريط استخدام يعرض المستخدم والنسبة والإجمالي والحر.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>المعروض</th><th>المعنى</th></tr></thead>
+      <tbody>
+        <tr><td>اسم وحدة التخزين</td><td>كما يسميها DSM - <code>VOLUME_1</code> وهكذا.</td></tr>
+        <tr><td>نوع RAID</td><td>RAID 5 وSHR وRAID 1 وBasic - أياً كان المجمّع الفعلي تحتها.</td></tr>
+        <tr><td>الحالة</td><td>حالة وحدة التخزين نفسها: <b>سليمة</b> أو متدهورة أو محطّمة. المصفوفة المتدهورة هي الشيء الوحيد في هذه الشاشة الذي يستحق التحرك اليوم.</td></tr>
+        <tr><td>عدد الأقراص</td><td>كم قرصاً فعلياً تمتد عليه وحدة التخزين.</td></tr>
+        <tr><td>شريط الاستخدام</td><td>أخضر عادة، وعنبري فوق 80% وأحمر فوق 90%. وهي الحدود نفسها التي تستخدمها <a href="/ar/guide/home/#header">شارة الصحة</a>.</td></tr>
+        <tr><td>المستخدم / الإجمالي / الحر</td><td>الثلاثة معاً، لأن «ممتلئ بنسبة 70%» و«13 TB حرة» يجيبان عن سؤالين مختلفين.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>ما في كل خليج</h2>
+      <p class="lead">تحت وحدات التخزين، كل قرص فعلي برقم الخليج.</p>
+    </div>
+    <ul class="plain">
+      <li><b>الخليج</b> - القرص 1 والقرص 2 وهكذا، مطابقة للتسميات على الهيكل.</li>
+      <li><b>الطراز</b> - سلسلة الطراز الخاصة بالقرص.</li>
+      <li><b>المصنّع والنوع</b> - الشركة المصنّعة وهل هو HDD أم SSD. القرص الذي لم يستطع الـ NAS تحديد مصنّعه يظهر كـ<b>غير معروف</b> بدل التخمين.</li>
+      <li><b>الحرارة</b>، ملوّنة وفق الحدود أدناه.</li>
+      <li><b>حكم SMART</b> - <b>SMART OK</b> حين يكون التقييم الذاتي للقرص سليماً.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Disk Health</div>
+      <h2>SMART، واختبار يمكنك بدءه</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">العرض الفرعي «صحة الأقراص» هو الأقراص نفسها بمساحة أكبر: السعة والنوع والحرارة وحالة SMART لكل منها شريحتها، وكل قرص يحمل زر <b>اختبار SMART سريع</b>.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>اختبار SMART السريع</b> يطلب من القرص إجراء تقييم ذاتي قصير. يستغرق دقيقتين تقريباً ولا يقاطع أي شيء يستخدم وحدة التخزين.</li>
+          <li><b>الحكم للقرص، لا لنا.</b> SMART هو القرص يبلّغ عن نفسه؛ والتطبيق ينقله. قرص يقول إنه بخير ثم يتعطل هو قصور في SMART لا في القراءة.</li>
+          <li><b>حالة SMART غير المقروءة تظهر كغير معروفة</b>، لا كسليمة أبداً. القراءة المفقودة والقراءة الجيدة شيئان مختلفان ولا يُدمجان أبداً.</li>
+        </ul>
+      </div>
+      <img alt="صحة الأقراص تعرض كل قرص مع حالة SMART والحرارة وزر اختبار SMART سريع" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">الأرقام خلف الألوان</div>
+      <h2>الحدود</h2>
+      <p class="lead">لا شيء هنا تخمين بشأن عتادك - هذه هي النقاط التي يغيّر عندها التطبيق لوناً، وعند الاقتضاء شارة الصحة في الشاشة الرئيسية.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>القراءة</th><th>عنبري عند</th><th>أحمر عند</th></tr></thead>
+      <tbody>
+        <tr><td>حرارة القرص</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>حرارة النظام</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>استخدام وحدة التخزين</td><td>80%</td><td>90%</td></tr>
+        <tr><td>شحن UPS</td><td>أقل من 50%</td><td>أقل من 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">بدّل بين &deg;C و&deg;F في <a href="/ar/guide/settings/#preferences">الإعدادات &rsaquo; وحدة الحرارة</a>. تتبعها كل درجة حرارة في التطبيق فوراً، بما فيها الموجودة في الشاشة الرئيسية وفي الويدجت.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">External</div>
+      <h2>USB وeSATA والإخراج الآمن</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="التخزين الخارجي وأجهزة USB، دون شيء موصول ومع UPS مدرج" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">قسمان: <b>التخزين الخارجي</b> للأقراص التي يمكنك تركيبها وإخراجها، و<b>أجهزة USB</b> لكل ما عداها مما هو موصول - UPS أو طابعة أو دونغل.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>يتأكد الإخراج بخروج القرص.</b> لا يبلّغ التطبيق بالنجاح لأن الطلب عاد بنتيجة OK؛ بل يعيد قراءة قائمة الأجهزة ولا يقول إن القرص أُخرج إلا حين يختفي فعلاً. وهذا هو الفرق بين «آمن للفصل» و«على الأرجح آمن للفصل».</li>
+          <li><b>لا يمكن إخراج قرص مشغول.</b> القرص قيد التهيئة أو التهيئة الأولية يُرفض مع ذكر السبب، بدل أن يُنتزع أثناء الكتابة.</li>
+          <li><b>عدم وجود شيء موصول يُقال بوضوح.</b> القائمة الفارغة تقرأ «لا توجد أقراص خارجية موصولة» - لا مربعاً فارغاً عليك أن تفسّره.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">الحدود</div>
+      <h2>ما لن تفعله هذه الشاشة</h2>
+      <p class="lead">التخزين هو المكان الوحيد الذي لا يمكن فيه التراجع عن ضغطة خاطئة، لذا يقرأ التطبيق أكثر بكثير مما يكتب.</p>
+    </div>
+    <ul class="plain">
+      <li><b>لن تنشئ وحدة تخزين أو مجمّعاً أو توسّعه أو تحذفه.</b> هذه تتم في Storage Manager في DSM، على شاشة كبيرة بما يكفي لتُظهر ما أنت على وشك فعله.</li>
+      <li><b>لن تصلح مصفوفة متدهورة.</b> لكنها ستخبرك بوضوح، وفي الشاشة الرئيسية، بأن مصفوفة ما متدهورة.</li>
+      <li><b>لن تهيّئ أي شيء.</b></li>
+      <li><b>لن تشغّل اختبار SMART كاملاً</b> - بل السريع فقط. المسح الكامل للسطح يستغرق ساعات وموضعه مكان لن تبتعد عنه.</li>
+    </ul>
+    <div class="note"><b>التنظيف (scrubbing) وإعادة البناء وفحوصات التكافؤ</b> تظهر كعمليات جارية أثناء تنفيذها، فتستطيع مشاهدة انتهاء إحداها من التطبيق وإن كنت قد بدأتها في DSM.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أسئلة شائعة</div>
+      <h2>الأسئلة الشائعة (FAQ) عن التخزين</h2>
+    </div>
+    <details open><summary>هل يمكنني رؤية حالة SMART لكل قرص؟</summary><div class="body">نعم. يسرد العرض الفرعي «صحة الأقراص» كل قرص مع طرازه، وهل هو HDD أم SSD، وسعته ودرجة حرارته وحكم SMART. ويمكنك أيضاً بدء اختبار SMART سريع على أي قرص من الهاتف.</div></details>
+    <details><summary>ما درجة الحرارة التي تُعدّ مرتفعة جداً لقرص NAS؟</summary><div class="body">يلوّن التطبيق القرص بالعنبري فوق 45&deg;C وبالأحمر فوق 55&deg;C، ودرجة حرارة النظام بالعنبري فوق 50&deg;C وبالأحمر فوق 60&deg;C. وتغذّي هذه الحدود أيضاً شارة الصحة في الشاشة الرئيسية.</div></details>
+    <details><summary>هل يمكنني إخراج قرص USB بأمان من التطبيق؟</summary><div class="body">نعم، من العرض الفرعي «الخارجي». يتأكد الإخراج بخروج القرص فعلاً من قائمة الأجهزة، لا بقبول الطلب. ولا يمكن إخراج قرص قيد التهيئة أو التهيئة الأولية.</div></details>
+    <details><summary>هل يمكنني إنشاء وحدة تخزين أو توسيعها من التطبيق؟</summary><div class="body">لا. إنشاء وحدات التخزين والمجمّعات وتوسيعها وإصلاحها يتم في Storage Manager في DSM. يعرض التطبيق ما يفعله تخزينك ويتيح لك التصرف في الأقراص؛ ولا يعيد هيكلة مصفوفتك من هاتف.</div></details>
+    <details><summary>لماذا يظهر «غير معروف» كمصنّع لقرص ما؟</summary><div class="body">لأن الـ NAS لم يبلّغ عن مصنّع. يعرض التطبيق ما قيل له بدل استنتاج الشركة المصنّعة من سلسلة الطراز، وهو ما سيكون تخميناً يُقدَّم كحقيقة.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>التالي: الشبكة</h2>
+    <p class="lead" style="margin:0 auto 24px">معدل النقل والاتصالات والخدمات وVPN وDDNS.</p>
+    <p><a class="btn" href="/ar/guide/network/">الشبكة &rarr;</a> &nbsp; <a class="btn ghost" href="/ar/guide/">العودة إلى الدليل</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ar/">الرئيسية</a><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/compatible-nas/">التوافق</a><a href="/ar/best-synology-nas-app/">لماذا التحويل</a><a href="/ar/synology-app-for-iphone/">iPhone وiPad</a><a href="/ar/synology-app-for-android/">Android</a><a href="/ar/synology-app-for-mac-windows/">Mac وWindows</a><a href="/ar/ds-finder-alternative/">مقابل DS finder</a><a href="/ar/help/">المساعدة</a><a href="/ar/privacy/">الخصوصية</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">أبلغ عن خلل</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. تطبيق Syno Manager تطبيق مستقل وليس تابعاً لشركة Synology Inc. ولا معتمداً منها ولا برعايتها. Synology وDSM وDiskStation وRackStation وHyper Backup وActive Backup وSurveillance Station وQuickConnect علامات تجارية مملوكة لشركة Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

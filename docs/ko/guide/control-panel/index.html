@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology 사용자, 작업, UPS 관리 - Syno Manager</title>
+<meta name="description" content="시스템 계정은 보호하면서 Synology 사용자 계정을 관리하고, 예약 작업을 실행하거나 전환하고, UPS 충전량과 예상 가동 시간을 휴대폰에서 확인하세요." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ko/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology 사용자, 작업, UPS 관리 - Syno Manager" />
+<meta property="og:description" content="시스템 계정은 보호하면서 Synology 사용자 계정을 관리하고, 예약 작업을 실행하거나 전환하고, UPS 충전량과 예상 가동 시간을 휴대폰에서 확인하세요." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ko/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology 사용자, 작업, UPS 관리 - Syno Manager" />
+<meta name="twitter:description" content="시스템 계정은 보호하면서 Synology 사용자 계정을 관리하고, 예약 작업을 실행하거나 전환하고, UPS 충전량과 예상 가동 시간을 휴대폰에서 확인하세요." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ko",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "홈",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "사용 설명서",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "제어판"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology 사용자, 작업, UPS 관리 - Syno Manager",
+  "description": "시스템 계정은 보호하면서 Synology 사용자 계정을 관리하고, 예약 작업을 실행하거나 전환하고, UPS 충전량과 예상 가동 시간을 휴대폰에서 확인하세요.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "ko",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "앱에서 DSM 사용자를 추가하거나 수정할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네. 사용자를 추가하고, 세부 정보를 수정하고, 비밀번호를 바꾸고, 계정을 삭제할 수 있습니다. 시스템 계정(admin, guest, DSM이 만든 서비스 계정)은 자동으로 감지되어 삭제가 막혀 있습니다. 하나라도 지우면 되돌리기 번거로운 방식으로 NAS가 망가지기 때문입니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "예약 작업을 수동으로 실행할 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "네, DSM이 수동 실행을 허용하는 작업에는 지금 실행 버튼이 있습니다. DSM을 열지 않고도 어떤 작업이든 활성화하거나 비활성화할 수 있습니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UPS 화면에는 무엇이 표시되나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS 모델, 전원 연결 상태인지 배터리 사용 중인지, 충전량(퍼센트와 막대), 연결 방식, 남은 예상 가동 시간, NAS에서 UPS 지원이 켜져 있는지 여부가 표시됩니다."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "배터리 사용 시 NAS가 종료되기까지의 대기 시간을 바꿀 수 있나요?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "아니요. 앱은 UPS 상태를 보고하며, 종료 정책은 설정 결과가 자세히 설명된 DSM의 하드웨어 및 전원에서 지정합니다."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ko/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 아이콘" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="메뉴" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="가이드 검색..." data-i18n-empty="검색 결과 없음:" data-i18n-language="언어">
+      <a href="/ko/">홈</a>
+      <a href="/ko/guide/" class="active">사용 설명서</a>
+      <a href="/ko/#screenshots">스크린샷</a>
+      <a href="/ko/compatible-nas/">호환성</a>
+      <a href="/ko/best-synology-nas-app/">갈아타는 이유</a>
+      <a href="/ko/help/">도움말</a>
+      <a href="/ko/#top" class="cta">다운로드</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ko/">홈</a> &rsaquo; <a href="/ko/guide/">사용 가이드</a> &rsaquo; 제어판</div>
+      <div class="eyebrow">제어판</div>
+      <h1>계정, 일정 <span class="g">그리고 전원</span></h1>
+      <p>네 가지 하위 화면이 있습니다. <b>사용자</b>, <b>작업</b>, UPS용 <b>전원</b>, 그리고 앱 자체 환경설정인 <b>설정</b>이며, 현재 탭을 벗어나지 않고도 열 수 있습니다.</p>
+    </div>
+    <div class="hero-shot"><img alt="전환 스위치와 지금 실행이 있는 작업 스케줄러의 예약 작업" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>이 페이지의 내용</b><ul>
+      <li><a href="#users">사용자</a></li>
+      <li><a href="#tasks">작업 스케줄러</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">설정</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">사용자</div>
+      <h2>DSM 계정</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">NAS의 모든 계정이 표시 이름, 설명, 설정된 경우 이메일 주소와 함께 나타납니다. DSM이 비활성화한 계정에는 <b>만료됨</b> 칩이 붙습니다.</p>
+        <h3 style="margin-top:20px">할 수 있는 일</h3>
+        <ul class="plain">
+          <li>DSM이 요구하는 정보로 <b>사용자를 추가</b>합니다.</li>
+          <li>기존 계정을 <b>수정</b>합니다.</li>
+          <li><b>비밀번호를 변경합니다.</b></li>
+          <li>직접 만든 계정을 <b>삭제</b>합니다.</li>
+        </ul>
+        <div class="note"><b>시스템 계정은 삭제할 수 없습니다.</b> <code>admin</code>, <code>guest</code>, 그리고 DSM이 자체 패키지를 위해 만든 서비스 계정은 자동으로 감지되어 보호됩니다. 이런 계정을 지우면 되돌리기 번거로운 방식으로 NAS가 망가지는데, 그걸 휴대폰에서 알게 되어서는 안 됩니다.</div>
+      </div>
+      <img alt="이름과 주소 두 건이 가려진 DSM 사용자 계정" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">이 스크린샷에서 계정 두 개는 실제 사람의 이름과 주소라서 흐리게 처리했습니다.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">작업 스케줄러</div>
+      <h2>예약된 작업과 다음 실행</h2>
+      <p class="lead">DSM의 모든 작업과 활성화 여부, 수행 내용, 다음 실행 시각을 보여 줍니다.</p>
+    </div>
+    <ul class="plain">
+      <li><b>작업 이름과 유형</b> - Hyper Backup 작업, 사용자 정의 스크립트, 휴지통 정리 등 어떤 종류인지 함께 표시됩니다.</li>
+      <li><b>실제로 하는 일.</b> 스크립트 작업에는 실행할 명령이, 백업 작업에는 설명이 표시됩니다.</li>
+      <li>날짜와 시각으로 표시되는 <b>다음 실행</b>.</li>
+      <li>DSM을 열지 않고도 작업을 활성화하거나 비활성화하는 <b>작업별 스위치</b>.</li>
+      <li>DSM이 필요 시 실행을 허용하는 작업의 <b>지금 실행</b>.</li>
+    </ul>
+    <div class="note warn"><b>지금 실행은 말 그대로 지금 실행합니다.</b> 한가한 NAS에서 새벽 3시에 실행될 것을 전제로 한 예약 스크립트는 파일 복사 중인 오후 6시에는 다르게 동작할 수 있습니다. 버튼은 이름 그대로 동작합니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">전원</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="모델, 충전량, 연결 방식, 예상 가동 시간이 표시된 UPS 상태" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">UPS가 연결되어 있을 때 표시됩니다. 카드 하나에 모든 정보가 담겨 있습니다.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>표시 항목</th><th>의미</th></tr></thead>
+          <tbody>
+            <tr><td>제조사 및 모델</td><td>UPS가 스스로 보고하는 그대로입니다.</td></tr>
+            <tr><td>상태</td><td>상용 전원 사용 중인 <b>온라인</b> 또는 배터리 사용 중.</td></tr>
+            <tr><td>충전량</td><td>퍼센트와 막대로 표시됩니다. 50% 미만은 주황색, 20% 미만은 빨간색입니다.</td></tr>
+            <tr><td>모드</td><td>NAS가 UPS와 통신하는 방식입니다. USB 또는 네트워크를 통합니다.</td></tr>
+            <tr><td>가동 시간</td><td>UPS가 부하를 얼마나 유지할 수 있다고 추정하는지 보여 줍니다.</td></tr>
+            <tr><td>활성화</td><td>DSM에서 UPS 지원이 켜져 있는지 여부입니다.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>충전량은 상태 배지에 반영됩니다.</b> 방전 중인 UPS는 이 탭을 열지 않아도 <a href="/ko/guide/home/#header">홈 화면</a>에 나타납니다. 확인해 봐야겠다고 생각할 즈음에는 시간이 많이 남지 않았을 수 있기 때문입니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">설정</div>
+      <h2>앱 자체 환경설정</h2>
+      <p class="lead">네 번째 하위 화면은 설정이며, 탭을 벗어나지 않고 폴링 간격이나 강조 색상을 바꿀 수 있도록 여기에 포함되어 있습니다. 톱니바퀴 아이콘으로 여는 화면과 같은 화면입니다.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/ko/guide/settings/">모든 설정을 자세히 설명합니다</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">자주 묻는 질문</div>
+      <h2>제어판 FAQ</h2>
+    </div>
+    <details open><summary>앱에서 DSM 사용자를 추가하거나 수정할 수 있나요?</summary><div class="body">네. 사용자를 추가하고, 세부 정보를 수정하고, 비밀번호를 바꾸고, 계정을 삭제할 수 있습니다. 시스템 계정(admin, guest, DSM이 만든 서비스 계정)은 자동으로 감지되어 삭제가 막혀 있습니다.</div></details>
+    <details><summary>예약 작업을 수동으로 실행할 수 있나요?</summary><div class="body">네, DSM이 수동 실행을 허용하는 작업이라면 가능합니다. DSM을 열지 않고도 어떤 작업이든 활성화하거나 비활성화할 수 있습니다.</div></details>
+    <details><summary>UPS 화면에는 무엇이 표시되나요?</summary><div class="body">UPS 모델, 전원 연결 상태인지 배터리 사용 중인지, 충전량(퍼센트와 막대), 연결 방식, 남은 예상 가동 시간, NAS에서 UPS 지원이 켜져 있는지 여부가 표시됩니다.</div></details>
+    <details><summary>배터리 사용 시 종료 정책을 바꿀 수 있나요?</summary><div class="body">아니요. 앱은 UPS 상태를 보고하며, 정책은 설정 결과가 자세히 설명된 DSM의 하드웨어 및 전원에서 지정합니다.</div></details>
+    <details><summary>전원 하위 화면이 보이지 않는 이유는 무엇인가요?</summary><div class="body">UPS가 연결되어 있지 않거나 DSM에서 UPS 지원이 꺼져 있기 때문입니다. 앱은 존재하지 않는 하드웨어의 화면을 숨깁니다.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>다음: 어시스턴트</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS에게 질문해 보세요. 휴대폰 속 모델이 답해 드립니다.</p>
+    <p><a class="btn" href="/ko/guide/assistant/">어시스턴트 &rarr;</a> &nbsp; <a class="btn ghost" href="/ko/guide/">가이드로 돌아가기</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ko/">홈</a><a href="/ko/guide/">사용 가이드</a><a href="/ko/guide/getting-started/">시작하기</a><a href="/ko/compatible-nas/">호환성</a><a href="/ko/best-synology-nas-app/">왜 갈아탈까요</a><a href="/ko/synology-app-for-iphone/">iPhone & iPad</a><a href="/ko/synology-app-for-android/">Android</a><a href="/ko/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ko/ds-finder-alternative/">vs DS finder</a><a href="/ko/help/">도움말</a><a href="/ko/privacy/">개인정보 처리방침</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">버그 신고</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager는 독립 앱이며 Synology Inc.와 제휴, 보증, 후원 관계가 없습니다. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, QuickConnect는 Synology Inc.의 상표입니다.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="cs" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, balíčky a VMs pro Synology NAS - Syno Manager</title>
+<meta name="description" content="Instalujte balíčky DSM z Package Center, spouštějte, zastavujte a restartujte kontejnery Docker, čtěte jejich logy, spouštějte stacky Compose a ovládejte virtuální počítače." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/cs/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, balíčky a VMs pro Synology NAS - Syno Manager" />
+<meta property="og:description" content="Instalujte balíčky DSM z Package Center, spouštějte, zastavujte a restartujte kontejnery Docker, čtěte jejich logy, spouštějte stacky Compose a ovládejte virtuální počítače." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/cs/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="cs_CZ" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, balíčky a VMs pro Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Instalujte balíčky DSM z Package Center, spouštějte, zastavujte a restartujte kontejnery Docker, čtěte jejich logy, spouštějte stacky Compose a ovládejte virtuální počítače." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "cs",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Domů",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Uživatelská příručka",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aplikace"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, balíčky a VMs pro Synology NAS - Syno Manager",
+  "description": "Instalujte balíčky DSM z Package Center, spouštějte, zastavujte a restartujte kontejnery Docker, čtěte jejich logy, spouštějte stacky Compose a ovládejte virtuální počítače.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "cs",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Mohu nainstalovat balíček DSM z telefonu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Package Center v aplikaci má stejný katalog jako DSM - Nainstalované, Všechny balíčky, Beta a Komunita - s vyhledávacím polem. Vyberte balíček, zvolte svazek a nainstalujte. Aktualizace a odinstalace fungují stejně a každá akce se potvrdí opětovným načtením seznamu balíčků, ne tím, že požadavek vrátí OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu z aplikace restartovat kontejner Docker?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Každý kontejner má spuštění, zastavení a restart a tlačítko, které otevře jeho logy. Ukončený kontejner zobrazí tlačítko spuštění, ne zastavení, které by nemohl provést."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu ovládat stacky Docker Compose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano. Podpohled Projekty vypíše vaše projekty Compose a spustí nebo zastaví celý stack, takže nemusíte hledat každý kontejner zvlášť. Logy stacku se otevírají stejně jako logy kontejnerů."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mohu spouštět a zastavovat virtuální počítače?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ano, pokud je nainstalován Virtual Machine Manager. Spusťte, vypněte nebo natvrdo vypněte libovolný počítač. Natvrdo vypnout se potvrzuje podržením, protože je to ekvivalent vytažení šňůry ze zásuvky. Počítač ve stavu, který NAS nenazývá spuštěný ani vypnutý, se zobrazí přesně jako takový a dostane ovládací prvek obnovy, ne tlačítko Spustit, které nemůže provést."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/cs/"><img src="/assets/syno-manager-icon.png" alt="Ikona Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Nabídka" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hledat v příručce..." data-i18n-empty="Žádné výsledky pro" data-i18n-language="Jazyk">
+      <a href="/cs/">Domů</a>
+      <a href="/cs/guide/" class="active">Uživatelská příručka</a>
+      <a href="/cs/#screenshots">Snímky obrazovky</a>
+      <a href="/cs/compatible-nas/">Kompatibilita</a>
+      <a href="/cs/best-synology-nas-app/">Proč přejít</a>
+      <a href="/cs/help/">Nápověda</a>
+      <a href="/cs/#top" class="cta">Stáhnout</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/cs/">Domů</a> &rsaquo; <a href="/cs/guide/">Uživatelská příručka</a> &rsaquo; Aplikace</div>
+      <div class="eyebrow">Aplikace</div>
+      <h1>Vše, <span class="g">co vaše NAS provozuje</span></h1>
+      <p>Čtyři podpohledy: <b>Package Center</b> pro balíčky DSM, <b>Docker</b> pro kontejnery, <b>Projekty</b> pro stacky Compose a <b>Virtuální počítače</b>, když je nainstalován VMM.</p>
+    </div>
+    <div class="hero-shot"><img alt="Kontejnery Docker se stavem a ovládáním" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Na této stránce</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Instalace balíčku</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Logy kontejnerů</a></li>
+      <li><a href="#projects">Projekty Compose</a></li>
+      <li><a href="#virtual-machines">Virtuální počítače</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Celý katalog, s vyhledáváním</h2>
+      <p class="lead">Stejné čtyři filtry jako v DSM a vyhledávací pole napříč všemi.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Filtr</th><th>Co vypisuje</th></tr></thead>
+          <tbody>
+            <tr><td>Nainstalované</td><td>Co je teď na vašem NAS, s verzí, velikostí a indikátorem běhu.</td></tr>
+            <tr><td>Všechny balíčky</td><td>Kompletní katalog Synology pro váš model.</td></tr>
+            <tr><td>Beta</td><td>Předběžné balíčky.</td></tr>
+            <tr><td>Komunita</td><td>Balíčky ze zdrojů třetích stran, které jste přidali v DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Každá položka uvádí verzi a velikost ke stažení, popis a případnou závislost - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - takže druhá instalace navíc nepřijde jako překvapení.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Vyhledávání v celém katalogu balíčků s tlačítky Instalovat" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Hledání ve <b>Všech balíčcích</b> pro balíček, který ještě není nainstalován.</p>
+      </div>
+      <img alt="Package Center s nainstalovanými balíčky a stavem běhu" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Instalace, aktualizace, odinstalace</div>
+      <h2>Co se stane po klepnutí na Instalovat</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Vyhledejte nebo vyfiltrujte</b> požadovaný balíček.</li>
+          <li><b>Instalovat.</b> Dialog pojmenuje balíček, vypíše případnou závislost a zeptá se, na který svazek instalovat - u každého svazku ukáže volné místo, takže nevybíráte naslepo.</li>
+          <li><b>Potvrďte.</b> NAS balíček nainstaluje, včetně závislostí.</li>
+          <li><b>Seznam se znovu načte.</b> Tlačítko se změní na <b>Odinstalovat</b>, protože seznam balíčků nyní říká, že je nainstalován - ne proto, že požadavek vrátil OK.</li>
+        </ol>
+        <div class="note"><b>Právě ten poslední krok je podstatný.</b> Úspěšný požadavek a dokončená instalace jsou dvě různé události. Aplikace čeká na tu druhou.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="Instalační dialog s názvem balíčku, jeho závislostí a cílovým svazkem" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Instalace balíčku přidává do aplikace obrazovky.</b> Seznam karet se sestavuje z toho, co NAS ohlásí při připojení, takže po instalaci například Download Station stačí stáhnout k obnovení nebo aplikaci znovu otevřít a její podpohled se objeví.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Každý kontejner s ovládáním, které se hodí</h2>
+      <p class="lead">Stavové záhlaví - <b>běžící z celku</b> - a pak každý kontejner, který NAS má, v jednom seznamu.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Název a značka obrazu</b> na každém řádku, takže i dva kontejnery ze stejného obrazu jdou rozlišit.</li>
+      <li><b>Stav</b> jako štítek: <b>Běží</b>, <b>Ukončen</b> a cokoli dalšího, co Docker ohlásí. Kontejner, který Docker označí za zdravý, to říká - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Doba běhu</b> u všeho, co běží.</li>
+      <li><b>Spustit, zastavit a restartovat</b> s ovládacím prvkem, který odpovídá stavu: zastavený kontejner nabízí spuštění, ne zastavení, které by nic neudělalo.</li>
+      <li><b>Logy</b> z tlačítka na každém řádku.</li>
+      <li><b>Rozbalte řádek</b> pro podrobnosti - mimo jiné údaje o paměti a síti.</li>
+      <li><b>Sbalte celý seznam</b> ovládacím prvkem nahoře, když chcete jen počet.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Logy</div>
+      <h2>Přečtěte jednou, sledujte záměrně</h2>
+      <p class="lead">Logy kontejnerů a stacků se chovají stejně jako <a href="/cs/guide/system/#logs">systémový log</a> a ze stejného důvodu.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Načte se jednou a drží na místě</b>, takže řádek neujede, když ho čtete.</li>
+      <li><b>Stisknutím přehrávání sledujete živě</b>, dalším stisknutím pozastavíte.</li>
+      <li><b>Sledování se samo zastaví</b>, když opustíte obrazovku nebo aplikaci pošlete na pozadí - žádná zapomenutá karta, která by vám v kapse stále dotazovala.</li>
+      <li><b>Hledejte</b> jeden řádek v dlouhém logu.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projekty</div>
+      <h2>Stacky Compose jako stacky</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Projekty Docker Compose, žádný není nakonfigurován" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Projekt Compose je několik kontejnerů, které patří k sobě. Podpohled Projekty s nimi tak zachází: spusťte nebo zastavte <b>celý stack</b>, místo abyste v seznamu Docker lovili každý kontejner zvlášť a doufali, že jste na žádný nezapomněli.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Každý projekt</b> ukazuje svůj název a kolik jeho kontejnerů běží.</li>
+          <li><b>Spusťte nebo zastavte projekt</b> jako celek.</li>
+          <li><b>Logy stacku</b> se otevírají jako logy kontejnerů.</li>
+          <li><b>Žádné projekty to říká</b> - „Projekty Docker Compose se zobrazí zde“ - místo prázdné obrazovky.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Virtuální počítače</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Zobrazí se, když je nainstalován VMM. Každý virtuální počítač na NAS, co právě dělá, a tři akce napájení.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Akce</th><th>Co dělá</th></tr></thead>
+      <tbody>
+        <tr><td>Spustit</td><td>Zapne počítač.</td></tr>
+        <tr><td>Vypnout</td><td>Požádá hostovaný operační systém o řádné vypnutí.</td></tr>
+        <tr><td>Natvrdo vypnout</td><td>Odpojí napájení. <b>Potvrďte podržením</b>, protože je to ekvivalent vytažení šňůry z běžícího počítače - na to je pouhé klepnutí příliš levné.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Počítač v přechodném stavu je popsán jako takový.</b> Pokud NAS ohlásí stav, který nenazývá spuštěný ani vypnutý - spouští se, uspává se, zhroutil se - aplikace zobrazí přesně toto slovo a nabídne ovládací prvek obnovy, místo tlačítka Spustit, které nemůže provést, nebo zelené fajfky, která není pravdivá.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Časté dotazy</div>
+      <h2>FAQ k aplikacím</h2>
+    </div>
+    <details open><summary>Mohu nainstalovat balíček DSM z telefonu?</summary><div class="body">Ano. Package Center v aplikaci má stejný katalog jako DSM - Nainstalované, Všechny balíčky, Beta a Komunita - s vyhledávacím polem. Vyberte balíček, zvolte svazek a nainstalujte. Aktualizace a odinstalace fungují stejně a každá akce se potvrdí opětovným načtením seznamu balíčků.</div></details>
+    <details><summary>Mohu z aplikace restartovat kontejner Docker?</summary><div class="body">Ano. Každý kontejner má spuštění, zastavení a restart a tlačítko, které otevře jeho logy. Ukončený kontejner zobrazí tlačítko spuštění, ne zastavení, které by nemohl provést.</div></details>
+    <details><summary>Mohu ovládat stacky Docker Compose?</summary><div class="body">Ano. Podpohled Projekty vypíše vaše projekty Compose a spustí nebo zastaví celý stack. Logy stacku se otevírají stejně jako logy kontejnerů.</div></details>
+    <details><summary>Mohu spouštět a zastavovat virtuální počítače?</summary><div class="body">Ano, pokud je nainstalován Virtual Machine Manager. Spusťte, vypněte nebo natvrdo vypněte libovolný počítač. Natvrdo vypnout se potvrzuje podržením, protože je to ekvivalent vytažení šňůry ze zásuvky.</div></details>
+    <details><summary>Mohu z aplikace vytvořit nový kontejner?</summary><div class="body">Ne. Vytvoření kontejneru znamená výběr obrazu, mapování portů, připojení svazků a proměnné prostředí - formulář, který patří na obrazovku, kde vidíte všechno najednou. Aplikace spouští a sleduje to, co jste vytvořili v DSM nebo Portaineru.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Další: Média</h2>
+    <p class="lead" style="margin:0 auto 24px">Fotky, Drive a živý náhled Surveillance Station.</p>
+    <p><a class="btn" href="/cs/guide/media/">Fotky, Drive &amp; kamery &rarr;</a> &nbsp; <a class="btn ghost" href="/cs/guide/">Zpět na příručku</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/cs/">Domů</a><a href="/cs/guide/">Uživatelská příručka</a><a href="/cs/guide/getting-started/">Začínáme</a><a href="/cs/compatible-nas/">Kompatibilita</a><a href="/cs/best-synology-nas-app/">Proč přejít</a><a href="/cs/synology-app-for-iphone/">iPhone a iPad</a><a href="/cs/synology-app-for-android/">Android</a><a href="/cs/synology-app-for-mac-windows/">Mac a Windows</a><a href="/cs/ds-finder-alternative/">vs DS finder</a><a href="/cs/help/">Nápověda</a><a href="/cs/privacy/">Soukromí</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Nahlásit chybu</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager je nezávislá aplikace a není spojena se společností Synology Inc., nijak ji nepodporuje ani nesponzoruje. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station a QuickConnect jsou ochranné známky společnosti Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology CPU, RAM, hőmérséklet és ventilátorok - Syno Manager</title>
+<meta name="description" content="Figyelje a CPU-t, a RAM-ot, a terhelést, a lemez I/O-t és a hőmérsékletet, módosítsa a ventilátor fordulatszám-módját, ellenőrizze a DSM-frissítéseket, és indítsa újra vagy állítsa le a Synology-ját a telefonjáról." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology CPU, RAM, hőmérséklet és ventilátorok - Syno Manager" />
+<meta property="og:description" content="Figyelje a CPU-t, a RAM-ot, a terhelést, a lemez I/O-t és a hőmérsékletet, módosítsa a ventilátor fordulatszám-módját, ellenőrizze a DSM-frissítéseket, és indítsa újra vagy állítsa le a Synology-ját a telefonjáról." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology CPU, RAM, hőmérséklet és ventilátorok - Syno Manager" />
+<meta name="twitter:description" content="Figyelje a CPU-t, a RAM-ot, a terhelést, a lemez I/O-t és a hőmérsékletet, módosítsa a ventilátor fordulatszám-módját, ellenőrizze a DSM-frissítéseket, és indítsa újra vagy állítsa le a Synology-ját a telefonjáról." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Rendszer"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology CPU, RAM, hőmérséklet és ventilátorok - Syno Manager",
+  "description": "Figyelje a CPU-t, a RAM-ot, a terhelést, a lemez I/O-t és a hőmérsékletet, módosítsa a ventilátor fordulatszám-módját, ellenőrizze a DSM-frissítéseket, és indítsa újra vagy állítsa le a Synology-ját a telefonjáról.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Módosíthatom a ventilátor fordulatszámát az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Rendszerállapot Hűtés kártyáján a Teljes sebesség, a Hűvös és a Csendes mód közül választhat. Az alkalmazás kiolvassa a NAS aktuális módját, beírja az Ön választását, majd visszaolvassa a megerősítéshez. Az a NAS, amely ezen a háromon kívüli módot jelent, csak olvasható kijelzést kap, nem pedig téves ábrázolást."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Újraindíthatom vagy leállíthatom a NAS-omat a telefonomról?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, a Rendszerállapot alján található Energiakezelő vezérlők kártyán. Mindkettő megerősítést kér a futtatás előtt, mert minden csatlakozott felhasználót érintenek. A távoli leállítást érdemes kétszer is átgondolni - egy kikapcsolt NAS nem ébreszthető fel az interneten keresztül VPN vagy Wake-on-LAN-ra beállított router nélkül."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mire jó a NAS azonosítása?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Villogtatja a NAS állapotjelző fényét, hogy megtudja, melyik doboz van előtte egy rackben vagy egy szekrényben. A Hangjelzés némítása leállítja a riasztás zümmögőjét, de nem szünteti meg azt az állapotot, amely kiváltotta - a kiváltó okot is javítsa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A naplók maguktól frissülnek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem, és ez szándékos. A napló korábban időzítővel újraolvasott, akár olvasta, akár nem, ami feleslegesen fogyasztotta az akkumulátort és a hálózatot. Most egyszer töltődik be, és egy helyben marad. A lejátszás gombbal élőben követheti, újabb nyomásra szünetelteti, és a képernyő elhagyásakor magától abbahagyja a követést."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Exportálhatom vagy másolhatom a naplót, amit éppen nézek?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Hosszan nyomjon meg egy sort a rendszer Másolás / Összes kijelölése / Megosztás sávjához, vagy használja az exportálás gombot az élő kapcsoló mellett a Rendszer lapon, vagy a lista felett a Kapcsolat lapon. Megnyit egy lapot a Mentés fájlba, Megosztás vagy e-mail, és Másolás a vágólapra lehetőségekkel, és pontosan azokat a bejegyzéseket exportálja, amelyek a szintszűrő és a keresés után a képernyőn vannak - soronként egy bejegyzés, az időt, a szintet, a felhasználót és a leírást tabulátorral elválasztva."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Rendszer</div>
+      <div class="eyebrow">Rendszer</div>
+      <h1>Mit csinál a doboz <span class="g">valójában</span></h1>
+      <p>Három almenü: a <b>Rendszerállapot</b> a gép állapotához, az <b>Erőforrások</b> az élő grafikonokhoz, és a <b>Naplók</b> arról, amit a DSM rögzített. Valamint azok a vezérlők, amelyek változtatnak valamin - a ventilátor módja, az azonosító fény, a DSM-frissítések, az újraindítás és a leállítás.</p>
+    </div>
+    <div class="hero-shot"><img alt="Rendszerállapot CPU- és RAM-mérőkkel, átlagos terheléssel, lemez I/O-val és hőmérséklet-előzményekkel" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#health">Rendszerállapot</a></li>
+      <li><a href="#cooling">Hűtés &amp; ventilátor módja</a></li>
+      <li><a href="#identify">Azonosítás &amp; riasztások</a></li>
+      <li><a href="#dsm-update">DSM-frissítés</a></li>
+      <li><a href="#power">Energiakezelő vezérlők</a></li>
+      <li><a href="#resources">Erőforrások</a></li>
+      <li><a href="#logs">Naplók</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Rendszerállapot</div>
+      <h2>A leolvasások</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Kártya</th><th>Mit mutat</th></tr></thead>
+      <tbody>
+        <tr><td>CPU- &amp; RAM-mérők</td><td>Az összes CPU gyűrűként, alatta kiemelve a <b>felhasználói</b> hányaddal, hogy megkülönböztesse a saját munkaterhelését a rendszer többletterhelésétől. A RAM a százalékot és az abszolút értékeket mutatja.</td></tr>
+        <tr><td>Memória</td><td>A felhasznált a teljeshez képest, sávként. Zöld, amíg nem számít.</td></tr>
+        <tr><td>CPU átlagos terhelése</td><td>Egy-, öt- és tizenöt perces értékek - a CPU-időre váró folyamatok, nem százalék. A magok számához mérve, így egy nyolcmagos rack-eszközön egészséges érték egy kétrekeszes eszközön már nagy terhelés.</td></tr>
+        <tr><td>Lemez I/O</td><td>Olvasási és írási adatforgalom, valamint a kihasználtság százaléka - az idő mekkora részében voltak elfoglalva a lemezek, ami gyakran a valódi válasz, amikor a NAS lassúnak tűnik, miközben a CPU tétlennek látszik.</td></tr>
+        <tr><td>Hőmérséklet-előzmények</td><td>Gördülő grafikon az aktuális értékkel. &deg;C vagy &deg;F az Ön <a href="/hu/guide/settings/#preferences">beállítása</a> szerint.</td></tr>
+        <tr><td>Folyamatok</td><td>Hány folyamatot futtat a NAS.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Hűtés</div>
+      <h2>A ventilátor fordulatszám-módja, a telefonjáról módosítva</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">A Hűtés kártya megmutatja a ventilátor állapotát és a NAS aktuális módját, háromállású vezérlőként:</p>
+        <ul class="plain">
+          <li><b>Teljes sebesség</b> - maximális légáramlás, maximális zaj. Rackbe vagy szekrénybe való.</li>
+          <li><b>Hűvös</b> - a kiegyensúlyozott alapértelmezés.</li>
+          <li><b>Csendes</b> - alacsonyabb fordulatszám, magasabb hőmérséklet. Nappaliban lévő NAS-hoz való, ha a meghajtók bírják.</li>
+        </ul>
+        <div class="note"><b>Megerősítve, nem feltételezve.</b> Az alkalmazás kiolvassa az aktuális módot a NAS-ból, beírja az Ön választását, majd <b>visszaolvassa</b>. Az a mód, amelyet a NAS csendben elutasított, elutasítottként jelenik meg, nem pedig úgy, mintha érvénybe lépett volna.</div>
+        <div class="note" style="margin-top:14px"><b>Az ismeretlen mód csak olvasható marad.</b> Ha a NAS ezen a háromon kívüli hűtési módot jelent, a kártya megmutatja, amit jelentett, és nem kínál módosítást - ahelyett hogy tévesen a három ismert mód valamelyikének nevezné.</div>
+      </div>
+      <img alt="A Hűtés kártya a Teljes sebesség, Hűvös és Csendes móddal, valamint az Azonosítás és az Energiakezelő vezérlők" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Azonosítás &amp; riasztások</div>
+      <h2>Találja meg a dobozt, némítsa a zümmögőt</h2>
+    </div>
+    <ul class="plain">
+      <li>Az <b>Azonosítás</b> villogtatja a NAS állapotjelző fényét, hogy megtudja, melyik egység előtt áll. A <b>Leállítás</b> befejezi.</li>
+      <li>A <b>Hangjelzés némítása</b> leállítja a riasztás zümmögőjét. A zajt némítja, nem az állapotot - ami a riasztást kiváltotta, még mindig fennáll, és az állapotfejléc ezt továbbra is jelzi.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM-frissítés</div>
+      <h2>Van-e belső vezérlőprogram-frissítés</h2>
+      <p class="lead">A DSM-frissítés kártya jelzi, melyik verziót használja, és hogy a Synology kínál-e újabbat. A <b>Frissítés keresése</b> megkéri a NAS-t, hogy nézzen újra.</p>
+    </div>
+    <div class="note"><b>Ez a NAS belső vezérlőprogramja, nem az alkalmazás.</b> A Syno Manager az App Store-on vagy a Google Playen keresztül frissíti magát, mint bármelyik másik alkalmazás. Ez a kártya a DSM saját frissítési felülete, ugyanaz, mint a Vezérlőpulton.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Energiakezelő vezérlők</div>
+      <h2>Újraindítás és leállítás</h2>
+      <p class="lead">A Rendszerállapot alján, pirossal jelölve, mert minden csatlakozott felhasználót érintenek - azt is, aki éppen egy fájlmásolás közepén jár.</p>
+    </div>
+    <ul class="plain">
+      <li><b>NAS újraindítása</b> - tiszta újraindítás. A futtatás előtt megerősítést kér.</li>
+      <li><b>NAS leállítása</b> - tiszta kikapcsolás. A futtatás előtt megerősítést kér.</li>
+    </ul>
+    <div class="note stop"><b>Gondolja át a távoli leállítást.</b> Egy kikapcsolt NAS nem tudja továbbítani a saját ébresztőcsomagját. A hálózatán kívülről való visszahozásához VPN-re van szükség, vagy a Wake-on-LAN-t továbbító routerre. Lásd: <a href="/hu/guide/wake-on-lan/">Wake-on-LAN</a>, hogy mi hol működik.</div>
+    <div class="note" style="margin-top:14px"><b>A parancsikonok nem hagyják ki a megerősítést.</b> A <code>synomanager://reboot</code> és <code>synomanager://shutdown</code> <a href="/hu/guide/shortcuts/">hivatkozások</a> szándékosan csak <em>megnyitják az alkalmazást</em> ezen a képernyőn. Egy visszafordíthatatlan művelet nem válik egykoppintásossá attól, hogy indítóból váltották ki.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Erőforrások</div>
+      <h2>Élő grafikonok</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Erőforrás-figyelő grafikonok a CPU-hoz, a memóriához, a lemezolvasáshoz és a lemezíráshoz" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Az Erőforrások almenü ugyanezeket az adatokat gördülő grafikonként mutatja, ami akkor kell, amikor a kérdés az, hogy „ez egy csúcs, vagy állandó?”</p>
+        <ul class="plain">
+          <li><b>CPU-használat</b> a felhasználói és rendszerhányad szerinti bontással.</li>
+          <li><b>Memóriahasználat</b> a felhasznált a teljeshez képest.</li>
+          <li><b>Lemezolvasás</b> és <b>Lemezírás</b>, mindegyik saját grafikonnal, valamint az általános lemezkihasználtság.</li>
+          <li><b>Átlagos terhelés</b> egy, öt és tizenöt percre.</li>
+        </ul>
+        <div class="note">A grafikonok a <a href="/hu/guide/settings/#preferences">lekérdezési időközzel</a> töltődnek. A rövidebb időköz finomabb részleteket ad és több akkumulátort fogyaszt; a hosszabb kíméletesebb és durvább.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Naplók</div>
+      <h2>Mit rögzített a DSM</h2>
+      <p class="lead">Két lap: a <b>Rendszer</b> a DSM saját naplójához, a <b>Kapcsolat</b> a bejelentkezésekhez és a fájlhozzáféréshez. Mindkettő akkor olvasódik be, amikor kéri.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Egyszer töltődik be, és egy helyben marad.</b> Az a napló, amely időzítővel újraolvas, miközben Ön egy sort próbál elolvasni, használhatatlan, és feleslegesen fogyasztja az akkumulátort és a hálózatot.</li>
+      <li><b>A lejátszás gombbal követheti élőben.</b> Újabb nyomásra szünetel. A követés magától leáll, amikor elhagyja a képernyőt vagy háttérbe küldi az alkalmazást, így egy elfelejtett naplólap nem kérdez le csendben a zsebében.</li>
+      <li><b>Van keresőmező</b>, hogy egyetlen sort megtaláljon egy hosszú naplóban.</li>
+      <li><b>A konténer- és stacknaplók ugyanígy működnek</b> - lásd: <a href="/hu/guide/apps/#docker">Docker</a>.</li>
+      <li><b>A szöveg kijelölhető.</b> Hosszan nyomjon meg egy sort, és megjelenik a rendszer Másolás / Összes kijelölése / Megosztás sávja, mint bárhol máshol, ahol szöveg van a képernyőn.</li>
+      <li><b>Exportálja, amit néz.</b> Az exportálás gomb az élő kapcsoló mellett található a Rendszer lapon, és a lista felett a Kapcsolat lapon. Megnyit egy lapot három lehetőséggel: <b>Mentés fájlba</b>, <b>Megosztás</b> küldéshez vagy e-mailhez, vagy <b>Másolás a vágólapra</b>.</li>
+    </ul>
+    <div class="note"><b>Azt exportálja, ami a képernyőn van, nem a teljes naplót.</b> Amire a szintszűrő és a keresőmező leszűkítette a listát, az kerül ki - semmi, amit már kiszűrt, nem kerül vissza az exportba. A fájl egyszerű szöveg, soronként egy bejegyzéssel, az idő, a szint, a felhasználó és a leírás tabulátorral elválasztva.</div>
+    <div class="note warn"><b>Ha a napló nem töltődik be</b>, és kapcsolat-időtúllépést jelez, miközben az alkalmazás többi része rendben van, a NAS Log Center szolgáltatása az, amelyik nem válaszol, nem az Ön kapcsolata. Ellenőrizze, hogy a Log Center telepítve van-e és fut-e a DSM Csomagközpontjában - a rendszernapló API ennek része.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Rendszer - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Módosíthatom a ventilátor fordulatszámát az alkalmazásból?</summary><div class="body">Igen. A Rendszerállapot Hűtés kártyáján a Teljes sebesség, a Hűvös és a Csendes mód közül választhat. Az alkalmazás kiolvassa a NAS aktuális módját, beírja az Ön választását, majd visszaolvassa a megerősítéshez. Az a NAS, amely ezen a háromon kívüli módot jelent, csak olvasható kijelzést kap, nem pedig téves ábrázolást.</div></details>
+    <details><summary>Újraindíthatom vagy leállíthatom a NAS-omat a telefonomról?</summary><div class="body">Igen, a Rendszerállapot alján található Energiakezelő vezérlőkből. Mindkettő megerősítést kér a futtatás előtt. A távoli leállítást érdemes kétszer is átgondolni - egy kikapcsolt NAS nem ébreszthető fel az interneten keresztül VPN vagy Wake-on-LAN-ra beállított router nélkül.</div></details>
+    <details><summary>Mire jó a NAS azonosítása?</summary><div class="body">Villogtatja a NAS állapotjelző fényét, hogy megtudja, melyik doboz van előtte egy rackben vagy egy szekrényben. A Hangjelzés némítása leállítja a riasztás zümmögőjét, de nem szünteti meg azt az állapotot, amely kiváltotta.</div></details>
+    <details><summary>A naplók maguktól frissülnek?</summary><div class="body">Nem, és ez szándékos. A napló egyszer töltődik be, és egy helyben marad, hogy elolvashassa. A lejátszás gombbal élőben követheti, újabb nyomásra szünetelteti, és a képernyő elhagyásakor vagy az alkalmazás háttérbe küldésekor magától abbahagyja a követést.</div></details>
+    <details><summary>Exportálhatom vagy másolhatom a naplót, amit éppen nézek?</summary><div class="body">Igen. Hosszan nyomjon meg egy sort a rendszer Másolás / Összes kijelölése / Megosztás sávjához, vagy használja az exportálás gombot az élő kapcsoló mellett a Rendszer lapon, vagy a lista felett a Kapcsolat lapon. Megnyit egy lapot a Mentés fájlba, Megosztás vagy e-mail, és Másolás a vágólapra lehetőségekkel, és pontosan azokat a bejegyzéseket exportálja, amelyek a szintszűrő és a keresés után a képernyőn vannak - soronként egy bejegyzés, az időt, a szintet, a felhasználót és a leírást tabulátorral elválasztva.</div></details>
+    <details><summary>Miért magas az átlagos terhelés, ha a CPU rendben van?</summary><div class="body">Az átlagos terhelés a várakozó folyamatokat számolja, és ezek gyakran a lemezekre várnak, nem a CPU-ra. Nézze meg a Lemez I/O kihasználtságát ugyanazon a képernyőn - a magas kihasználtsági százalék alacsony CPU mellett a szokásos magyarázat.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Tárhely</h2>
+    <p class="lead" style="margin:0 auto 24px">Kötetek, készletek, meghajtónkénti SMART-állapot és biztonságos kiadás.</p>
+    <p><a class="btn" href="/hu/guide/storage/">Tárhely &amp; meghajtók &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

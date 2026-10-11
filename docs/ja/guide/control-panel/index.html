@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology のユーザー・タスク・UPS を管理 - Syno Manager</title>
+<meta name="description" content="システムアカウントを保護しながら Synology のユーザーアカウントを管理し、スケジュール済みタスクの実行や切り替え、UPS の充電量や推定稼働時間の確認を、スマートフォンから行えます。" />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ja/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology のユーザー・タスク・UPS を管理 - Syno Manager" />
+<meta property="og:description" content="システムアカウントを保護しながら Synology のユーザーアカウントを管理し、スケジュール済みタスクの実行や切り替え、UPS の充電量や推定稼働時間の確認を、スマートフォンから行えます。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ja/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ja_JP" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology のユーザー・タスク・UPS を管理 - Syno Manager" />
+<meta name="twitter:description" content="システムアカウントを保護しながら Synology のユーザーアカウントを管理し、スケジュール済みタスクの実行や切り替え、UPS の充電量や推定稼働時間の確認を、スマートフォンから行えます。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ja",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ホーム",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ユーザーガイド",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "コントロールパネル"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology のユーザー・タスク・UPS を管理 - Syno Manager",
+  "description": "システムアカウントを保護しながら Synology のユーザーアカウントを管理し、スケジュール済みタスクの実行や切り替え、UPS の充電量や推定稼働時間の確認を、スマートフォンから行えます。",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "ja",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "アプリから DSM ユーザーを追加・編集できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。ユーザーの追加、詳細の編集、パスワードの変更、アカウントの削除ができます。システムアカウント（admin、guest、DSM が作成するサービスアカウント）は検出されて削除から保護されます。削除すると NAS に面倒な不具合が生じて元に戻しにくいためです。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "スケジュール済みタスクを手動で実行できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "はい。DSM が実行を許可しているタスクには、それぞれ「今すぐ実行」があります。DSM を開かなくても、任意のタスクの有効・無効を切り替えることもできます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "UPS の画面には何が表示されますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS のモデル、商用電源かバッテリー駆動か、充電量（パーセンテージとバー）、接続方法、残りの推定稼働時間、NAS で UPS サポートが有効になっているかどうかが表示されます。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "バッテリー駆動時に NAS がシャットダウンするまでの待ち時間を変更できますか？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "いいえ。アプリが報告するのは UPS の状態です。シャットダウンのポリシーは、設定の影響がきちんと説明されている DSM の「ハードウェアと電源」で設定します。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ja/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager のアイコン" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="メニュー" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ガイドを検索..." data-i18n-empty="一致する結果がありません:" data-i18n-language="言語">
+      <a href="/ja/">ホーム</a>
+      <a href="/ja/guide/" class="active">ユーザーガイド</a>
+      <a href="/ja/#screenshots">スクリーンショット</a>
+      <a href="/ja/compatible-nas/">対応状況</a>
+      <a href="/ja/best-synology-nas-app/">乗り換える理由</a>
+      <a href="/ja/help/">ヘルプ</a>
+      <a href="/ja/#top" class="cta">ダウンロード</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ja/">ホーム</a> &rsaquo; <a href="/ja/guide/">ユーザーガイド</a> &rsaquo; コントロールパネル</div>
+      <div class="eyebrow">コントロールパネル</div>
+      <h1>アカウント、スケジュール、<span class="g">そして電源</span></h1>
+      <p>4つのサブビューがあります。<b>ユーザー</b>、<b>タスク</b>、UPS 用の<b>電源</b>、そしてアプリ自体の設定である<b>設定</b>です。設定は、今いるタブを離れずに開けます。</p>
+    </div>
+    <div class="hero-shot"><img alt="切り替えスイッチと「今すぐ実行」を備えたスケジュール済みタスクを表示したタスクスケジューラ" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>このページの内容</b><ul>
+      <li><a href="#users">ユーザー</a></li>
+      <li><a href="#tasks">タスクスケジューラ</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">設定</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">ユーザー</div>
+      <h2>DSM アカウント</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">NAS 上のすべてのアカウントを、表示名、説明、設定されている場合はメールアドレスとともに表示します。DSM が無効にしたアカウントには<b>期限切れ</b>のチップが付きます。</p>
+        <h3 style="margin-top:20px">できること</h3>
+        <ul class="plain">
+          <li>DSM が求める情報を入力して<b>ユーザーを追加</b>します。</li>
+          <li>既存のアカウントを<b>編集</b>します。</li>
+          <li><b>パスワードを変更します。</b></li>
+          <li>自分で作成したアカウントを<b>削除</b>します。</li>
+        </ul>
+        <div class="note"><b>システムアカウントは削除できません。</b><code>admin</code>、<code>guest</code>、および DSM が自身のパッケージのために作成するサービスアカウントは検出されて保護されます。これらを削除すると NAS に面倒な不具合が生じて元に戻しにくく、スマートフォンでそれを知るのは避けたい場面です。</div>
+      </div>
+      <img alt="2つの名前とアドレスを伏せた DSM ユーザーアカウント" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">このスクリーンショットでは2つのアカウントにぼかしを入れています。実在する人の名前とアドレスだからです。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">タスクスケジューラ</div>
+      <h2>予定されているタスクと、次に実行されるもの</h2>
+      <p class="lead">DSM のすべてのタスクについて、有効かどうか、何をするか、次にいつ実行されるかを表示します。</p>
+    </div>
+    <ul class="plain">
+      <li><b>タスク名とその種類</b>です。Hyper Backup タスク、ユーザー定義スクリプト、ごみ箱のクリーンアップなど、それぞれがどんな種類のものかを表示します。</li>
+      <li><b>実際に何をするか。</b>スクリプトタスクには実行するコマンド、バックアップタスクにはその説明が表示されます。</li>
+      <li><b>次回の実行</b>を、日付と時刻で表示します。</li>
+      <li><b>タスクごとのスイッチ</b>で、DSM を開かずに有効・無効を切り替えられます。</li>
+      <li>DSM がオンデマンドでの実行を許可しているタスクには、<b>今すぐ実行</b>があります。</li>
+    </ul>
+    <div class="note warn"><b>「今すぐ実行」は、その場で実行します。</b>アイドル状態の NAS で午前 3am に実行されることを想定したスクリプトは、ファイルコピー中の午後 6pm には違う動きをするかもしれません。ボタンは書かれたとおりに動作します。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">電源</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="モデル、充電量、接続モード、推定稼働時間を表示した UPS の状態" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">UPS が接続されている場合に表示されます。1枚のカードにすべてがまとまっています。</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>表示内容</th><th>内容</th></tr></thead>
+          <tbody>
+            <tr><td>メーカーとモデル</td><td>UPS 自身が報告する名称です。</td></tr>
+            <tr><td>状態</td><td>商用電源での<b>オンライン</b>、またはバッテリー駆動。</td></tr>
+            <tr><td>充電量</td><td>パーセンテージとバーで表示します。50% 未満はアンバー、20% 未満は赤です。</td></tr>
+            <tr><td>モード</td><td>NAS との通信方法です。USB またはネットワーク経由です。</td></tr>
+            <tr><td>稼働時間</td><td>UPS が負荷を支えられると見積もっている時間です。</td></tr>
+            <tr><td>有効</td><td>DSM で UPS サポートがオンになっているかどうかです。</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>充電量はヘルスバッジに反映されます。</b>放電中の UPS は、このタブを開かなくても<a href="/ja/guide/home/#header">ホーム画面</a>に表示されます。確認しようと思い立ったときには、残り時間が少ないかもしれないため、これが大切なのです。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">設定</div>
+      <h2>アプリ自体の設定</h2>
+      <p class="lead">4つ目のサブビューは設定です。ここに組み込まれているため、タブを離れずにポーリング間隔やアクセントカラーを変更できます。歯車アイコンで開く画面と同じものです。</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/ja/guide/settings/">すべての設定をわかりやすく解説</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">よくある質問</div>
+      <h2>コントロールパネル FAQ</h2>
+    </div>
+    <details open><summary>アプリから DSM ユーザーを追加・編集できますか？</summary><div class="body">はい。ユーザーの追加、詳細の編集、パスワードの変更、アカウントの削除ができます。システムアカウント（admin、guest、DSM が作成するサービスアカウント）は検出されて削除から保護されます。</div></details>
+    <details><summary>スケジュール済みタスクを手動で実行できますか？</summary><div class="body">はい。DSM が実行を許可しているタスクが対象です。DSM を開かなくても、任意のタスクの有効・無効を切り替えることもできます。</div></details>
+    <details><summary>UPS の画面には何が表示されますか？</summary><div class="body">UPS のモデル、商用電源かバッテリー駆動か、充電量（パーセンテージとバー）、接続方法、残りの推定稼働時間、NAS で UPS サポートが有効になっているかどうかが表示されます。</div></details>
+    <details><summary>バッテリー駆動時のシャットダウンポリシーを変更できますか？</summary><div class="body">いいえ。アプリが報告するのは UPS の状態です。ポリシーは、影響がきちんと説明されている DSM の「ハードウェアと電源」で設定します。</div></details>
+    <details><summary>電源のサブビューが表示されないのはなぜですか？</summary><div class="body">UPS が接続されていないか、DSM で UPS サポートがオフになっているためです。アプリは、存在しないハードウェアの画面を非表示にします。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>次へ：アシスタント</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS に質問すると、スマートフォン上のモデルが答えます。</p>
+    <p><a class="btn" href="/ja/guide/assistant/">アシスタント &rarr;</a> &nbsp; <a class="btn ghost" href="/ja/guide/">ガイドに戻る</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ja/">ホーム</a><a href="/ja/guide/">ユーザーガイド</a><a href="/ja/guide/getting-started/">はじめに</a><a href="/ja/compatible-nas/">対応状況</a><a href="/ja/best-synology-nas-app/">乗り換えの理由</a><a href="/ja/synology-app-for-iphone/">iPhone & iPad</a><a href="/ja/synology-app-for-android/">Android</a><a href="/ja/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ja/ds-finder-alternative/">vs DS finder</a><a href="/ja/help/">ヘルプ</a><a href="/ja/privacy/">プライバシー</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">不具合を報告</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager は独立したアプリであり、Synology Inc. の関連会社ではなく、同社による承認やスポンサーを受けたものでもありません。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station、QuickConnect は Synology Inc. の商標です。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

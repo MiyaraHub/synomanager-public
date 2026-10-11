@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN cho Synology NAS - Syno Manager</title>
+<meta name="description" content="Đánh thức Synology đang ngủ, hoặc bất kỳ máy nào trong mạng của bạn thông qua nó - chạy được từ mọi nơi. Điều gì cần VPN hoặc chuyển tiếp trên router, nói thẳng thắn." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN cho Synology NAS - Syno Manager" />
+<meta property="og:description" content="Đánh thức Synology đang ngủ, hoặc bất kỳ máy nào trong mạng của bạn thông qua nó - chạy được từ mọi nơi. Điều gì cần VPN hoặc chuyển tiếp trên router, nói thẳng thắn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN cho Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Đánh thức Synology đang ngủ, hoặc bất kỳ máy nào trong mạng của bạn thông qua nó - chạy được từ mọi nơi. Điều gì cần VPN hoặc chuyển tiếp trên router, nói thẳng thắn." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN cho Synology NAS - Syno Manager",
+  "description": "Đánh thức Synology đang ngủ, hoặc bất kỳ máy nào trong mạng của bạn thông qua nó - chạy được từ mọi nơi. Điều gì cần VPN hoặc chuyển tiếp trên router, nói thẳng thắn.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể đánh thức NAS từ bất cứ đâu không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chỉ khi có đường vào mạng của bạn mà không phụ thuộc vào việc NAS đang thức - VPN vào mạng, hoặc router được cấu hình chuyển tiếp Wake-on-LAN. NAS đã tắt nguồn không thể tự chuyển tiếp gói đánh thức của chính nó, và QuickConnect không thể kết nối tới NAS đang tắt. Trong cùng mạng thì chạy ngay."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể đánh thức PC của mình thông qua NAS không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, và cách này chạy được từ mọi nơi, miễn là chính NAS đang bật. Bạn yêu cầu NAS qua kết nối thông thường và NAS phát gói magic packet trên mạng LAN giúp bạn. Đó là cùng đường mà ứng dụng DS Router của chính Synology dùng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Địa chỉ MAC của NAS lấy từ đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ứng dụng tự động lấy nó trong lần đầu bạn kết nối, nên bạn không bao giờ phải tra cứu."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi cần gì để thêm một thiết bị khác?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Một cái tên bạn nhận ra và địa chỉ MAC của nó. Thường bạn tìm thấy MAC trong danh sách thiết bị của router, hoặc trên chính máy đó trong cài đặt mạng."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>Bật mọi thứ <span class="g">ngay từ ghế sofa</span></h1>
+      <p>Nút <b>Wake</b> cạnh Connect trong danh sách thiết bị dành cho chính NAS, và màn hình <b>Wake devices</b> cho mọi thứ khác trong mạng của bạn. Một trong hai chạy được từ mọi nơi; cái còn lại có một lưu ý thẳng thắn.</p>
+    </div>
+    <div class="hero-shot"><img alt="Màn hình Wake devices" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Bảng nói thẳng</div>
+      <h2>Cái gì chạy được từ đâu</h2>
+      <p class="lead">Wake-on-LAN là một gói phát quảng bá trên mạng cục bộ. Mọi điều về việc nó chạy được và không chạy được đều xuất phát từ một sự thật đó, nên ở đây nói thẳng thay vì giấu trong chú thích.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Thứ bạn muốn đánh thức</th><th>Bạn đang ở đâu</th><th>Có chạy không?</th><th>Lý do</th></tr></thead>
+      <tbody>
+        <tr><td>NAS</td><td>Trong cùng mạng</td><td class="yes">Có</td><td>Điện thoại của bạn phát gói trực tiếp. Không cần thiết lập gì.</td></tr>
+        <tr><td>Thiết bị khác</td><td>Trong cùng mạng</td><td class="yes">Có</td><td>Tương tự - điện thoại hoặc NAS đều có thể gửi.</td></tr>
+        <tr><td>Thiết bị khác, NAS đang bật</td><td>Bất cứ đâu</td><td class="yes">Có</td><td><b>NAS chuyển tiếp giúp bạn.</b> Bạn kết nối tới NAS qua đường thông thường và nó phát quảng bá trên mạng LAN. Đây là đường của DS Router.</td></tr>
+        <tr><td>Chính NAS, khi nó đang tắt</td><td>Bên ngoài mạng của bạn</td><td class="no">Cần thiết lập</td><td>NAS đã tắt nguồn không thể tự chuyển tiếp gói đánh thức của chính nó, và QuickConnect không thể kết nối tới NAS đang tắt. Bạn cần một <b>VPN</b> vào mạng, hoặc router chuyển tiếp <b>cổng UDP 9</b> tới địa chỉ quảng bá của LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Hàng ở giữa là hàng hữu ích.</b> Đánh thức máy tính để bàn ở nhà khi đang ngồi trên tàu là làm được, và không cần cấu hình router chút nào - vì NAS luôn bật là bên phát quảng bá.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS</div>
+      <h2>Đánh thức DiskStation của bạn</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Không cần cấu hình gì.</b> Ứng dụng lấy địa chỉ MAC của NAS trong lần đầu bạn kết nối, nên nút đã sẵn sàng trước khi bạn cần.</li>
+      <li><b>Mở Settings &rsaquo; Manage NAS Devices.</b></li>
+      <li><b>Chạm Wake</b> cạnh NAS.</li>
+      <li><b>Chờ một chút</b> rồi chạm Connect. NAS cần thời gian để khởi động, và ứng dụng sẽ không giả vờ nó đã sẵn sàng trước khi nó trả lời.</li>
+    </ol>
+    <div class="note warn"><b>Wake-on-LAN cũng phải được bật trên NAS.</b> Trong DSM, tại <b>Control Panel &rsaquo; Hardware &amp; Power &rsaquo; General</b>. NAS đã tắt tính năng này sẽ bỏ qua gói tin dù ai gửi.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Mọi thứ còn lại</div>
+      <h2>Đánh thức thiết bị khác thông qua NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>Settings &rsaquo; Wake devices</b>. Thêm bất kỳ máy nào trong mạng của bạn bằng tên và địa chỉ MAC, và NAS sẽ gửi magic packet giúp bạn từ bên trong mạng.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>Chạm Add device.</b></li>
+          <li><b>Đặt một cái tên</b> bạn nhận ra - "Desktop", "Games PC", "Server".</li>
+          <li><b>Nhập địa chỉ MAC của nó.</b> Danh sách thiết bị của router thường là nơi dễ tìm nhất.</li>
+          <li><b>Lưu.</b> Nó xuất hiện trong danh sách với nút Wake riêng.</li>
+        </ol>
+        <div class="note"><b>Vì NAS là bên gửi, cách này chạy được khi bạn ở xa</b> - qua dữ liệu di động, qua QuickConnect, từ bất cứ nơi nào bạn kết nối được tới NAS. Đó cũng là cách ứng dụng router của chính Synology làm, và là lý do đáng thiết lập ngay cả khi bạn không bao giờ đánh thức chính NAS.</div>
+      </div>
+      <img alt="Màn hình Wake devices với trạng thái trống và nút Add device" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Trên máy đích</div>
+      <h2>Điều gì phải đúng để việc đánh thức thành công</h2>
+      <p class="lead">Nếu gói đã gửi mà không có gì xảy ra, gần như chắc chắn là một trong những điều sau - ứng dụng không thể thấy hay sửa chúng từ bên ngoài.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN được bật trong BIOS hoặc UEFI của máy</b>, thường gọi là "Wake on PCIe" hoặc "Power on by PCI-E".</li>
+      <li><b>Cũng được bật trên card mạng.</b> Trên Windows: Device Manager, thuộc tính của card, Power Management, "Allow this device to wake the computer".</li>
+      <li><b>Tắt Fast Startup trên Windows.</b> Khi bật, một PC đã tắt thực ra đang ngủ đông và thường sẽ bỏ qua gói tin.</li>
+      <li><b>Thường là có dây.</b> Đánh thức qua Wi-Fi cần phần cứng và trình điều khiển hỗ trợ cụ thể; Ethernet đáng tin cậy hơn nhiều.</li>
+      <li><b>Máy vẫn được cấp điện ở ổ cắm.</b> Magic packet cần card mạng có nguồn chờ.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về Wake-on-LAN</h2>
+    </div>
+    <details open><summary>Tôi có thể đánh thức NAS từ bất cứ đâu không?</summary><div class="body">Chỉ khi có đường vào mạng của bạn mà không phụ thuộc vào việc NAS đang thức - VPN, hoặc router được cấu hình chuyển tiếp Wake-on-LAN. NAS đã tắt nguồn không thể tự chuyển tiếp gói đánh thức của chính nó, và QuickConnect không thể kết nối tới NAS đang tắt. Trong cùng mạng thì chạy ngay.</div></details>
+    <details><summary>Tôi có thể đánh thức PC của mình thông qua NAS không?</summary><div class="body">Có, và cách này chạy được từ mọi nơi miễn là chính NAS đang bật. Bạn yêu cầu NAS qua kết nối thông thường và nó phát magic packet trên mạng LAN giúp bạn.</div></details>
+    <details><summary>Địa chỉ MAC của NAS lấy từ đâu?</summary><div class="body">Ứng dụng tự động lấy nó trong lần đầu bạn kết nối, nên bạn không bao giờ phải tra cứu.</div></details>
+    <details><summary>Tôi cần gì để thêm một thiết bị khác?</summary><div class="body">Một cái tên bạn nhận ra và địa chỉ MAC của nó, thường có trong danh sách thiết bị của router.</div></details>
+    <details><summary>Tôi đã gửi lệnh đánh thức mà không có gì xảy ra.</summary><div class="body">Kiểm tra Wake-on-LAN đã được bật trên máy đích - trong BIOS, trên card mạng, và với Windows Fast Startup tắt. Cũng kiểm tra nó đang dùng Ethernet có dây, và NAS đã bật Wake-on-LAN trong Control Panel nếu NAS là thứ bạn đang đánh thức.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: widget</h2>
+    <p class="lead" style="margin:0 auto 24px">NAS của bạn ngay trên màn hình chính, với dấu thời gian trung thực.</p>
+    <p><a class="btn" href="/vi/guide/widgets/">Widget màn hình chính &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

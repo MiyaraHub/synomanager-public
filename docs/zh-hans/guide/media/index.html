@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>手机上的 Synology Photos、Drive 和摄像头 - Syno Manager</title>
+<meta name="description" content="按文件夹浏览 Synology Photos，全屏滑动切换照片，设备端 HEIC 解码，浏览 Synology Drive，并实时观看 Surveillance Station。" />
+<meta name="keywords" content="Synology Photos app, Synology photo viewer swipe, Synology Drive app, Surveillance Station live view phone, Synology camera app, Synology HEIC thumbnails, Synology photos QuickConnect" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hans/guide/media/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/media/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/media/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/media/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/media/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/media/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/media/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/media/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/media/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/media/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/media/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/media/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/media/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/media/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/media/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/media/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/media/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/media/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/media/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/media/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/media/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/media/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/media/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/media/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/media/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/media/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/media/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/media/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/media/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/media/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/media/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/media/" />
+<!--/hreflang-->
+<meta property="og:title" content="手机上的 Synology Photos、Drive 和摄像头 - Syno Manager" />
+<meta property="og:description" content="按文件夹浏览 Synology Photos，全屏滑动切换照片，设备端 HEIC 解码，浏览 Synology Drive，并实时观看 Surveillance Station。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hans/guide/media/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="手机上的 Synology Photos、Drive 和摄像头 - Syno Manager" />
+<meta name="twitter:description" content="按文件夹浏览 Synology Photos，全屏滑动切换照片，设备端 HEIC 解码，浏览 Synology Drive，并实时观看 Surveillance Station。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hans",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "主页",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "用户指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "媒体"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "手机上的 Synology Photos、Drive 和摄像头 - Syno Manager",
+  "description": "按文件夹浏览 Synology Photos，全屏滑动切换照片，设备端 HEIC 解码，浏览 Synology Drive，并实时观看 Surveillance Station。",
+  "image": "https://synomanager.com/screenshots/photos.webp",
+  "url": "https://synomanager.com/guide/media/",
+  "mainEntityOfPage": "https://synomanager.com/guide/media/",
+  "inLanguage": "zh-Hans",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "能按文件夹浏览我的 Synology Photos 图库吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。你可以像 DS Photo 那样浏览图库实际的文件夹结构，无需先创建相册，也可以打开你自己的相册和别人与你共享的相册。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能在全屏模式下滑动切换照片吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。打开任意照片，向左或向右滑动即可切换到下一张或上一张，无需先返回网格，这是全屏照片查看器的常规用法，现在这个查看器也是如此。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么我的一些 iPhone 照片在其他应用里显示为空白方块？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在 DSM 7.2.2 及更高版本上，NAS 不再为 HEIC 文件生成预览图。Syno Manager 改为在你的设备上解码这些照片，和 Synology 自家的应用做法一样，因此最近的 iPhone 照片会显示为图片，而不是损坏的方块。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "不在家时能查看摄像头吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。添加 NAS 时开启“通过 DSM 端口隧道传输摄像头实时画面”，实时画面就会通过你已在使用的 DSM HTTPS 端口传输，因此无需暴露 RTSP 的 554 端口。关闭该开关时，实时画面直接连接 RTSP，在你自己的网络中更快，但该端口必须可访问。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么有些摄像头显示“点按查看”，而不是显示画面？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为它们是 H.265 摄像头。DSM 只会为 H.264 摄像头生成实时快照图像，所以 H.265 摄像头在你打开其视频流之前没有静态图可显示。卡片会如实说明，而不是显示一个空框。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 图标" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="/zh-hans/">主页</a>
+      <a href="/zh-hans/guide/" class="active">用户指南</a>
+      <a href="/zh-hans/#screenshots">截图</a>
+      <a href="/zh-hans/compatible-nas/">兼容性</a>
+      <a href="/zh-hans/best-synology-nas-app/">为什么要换</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a href="/zh-hans/#top" class="cta">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; 媒体</div>
+      <div class="eyebrow">媒体</div>
+      <h1>图片、文件与<span class="g">大门口</span></h1>
+      <p>三个子视图：用于 Synology Photos 图库的 <b>Photos</b>、用于 Synology Drive 和团队文件夹的 <b>Drive</b>，以及用于 Surveillance Station 实时画面的<b>摄像头</b>。三者都可以通过 QuickConnect 使用，而不仅限于你自己的网络。</p>
+    </div>
+    <div class="hero-shot"><img alt="带缩略图预览的 Synology Photos 图库" src="/screenshots/photos.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本页内容</b><ul>
+      <li><a href="#photos">Synology Photos</a></li>
+      <li><a href="#viewer">全屏查看器</a></li>
+      <li><a href="#heic">HEIC 与空白方块</a></li>
+      <li><a href="#drive">Synology Drive</a></li>
+      <li><a href="#cameras">Surveillance Station</a></li>
+      <li><a href="#streaming">实时画面如何连接</a></li>
+    </ul></div>
+
+    <div class="section-head" id="photos">
+      <div class="eyebrow">Photos</div>
+      <h2>你的整个图库，而不只是相册</h2>
+      <p class="lead">顶部是摘要，显示照片数量和相册数量，然后是网格形式的<b>最近照片</b>，其余一切都近在咫尺。</p>
+    </div>
+    <ul class="plain">
+      <li><b>按文件夹浏览。</b>像 DS Photo 那样浏览图库实际的文件夹结构，无需先创建相册。这是人们换用 Synology Photos 时最怀念的功能。</li>
+      <li><b>相册，包括你自己的和共享的。</b>你自己的相册，以及别人与你共享的相册（通过访问密钥打开）。</li>
+      <li><b>全屏并支持双指缩放。</b>点按任意照片即可。</li>
+      <li>直接在手机上<b>下载或分享</b>任意照片。</li>
+      <li><b>重建图库索引。</b>当方块显示为空白时，让 NAS 重新生成缩略图，这与 DSM 自带的重建索引是同一操作，只是从这里启动。</li>
+      <li><b>离家在外也能用。</b>缩略图和完整图片可通过 QuickConnect、VPN 或移动数据加载，而不仅限于局域网。</li>
+    </ul>
+  </div>
+</section>
+
+<section id="viewer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">全屏</div>
+      <h2>从一张照片滑动到下一张</h2>
+      <p class="lead">打开照片后，<b>向左或向右滑动</b>即可切换到下一张或上一张，无需中途退回网格。双指缩放对当前屏幕上的任何照片依然有效。</p>
+    </div>
+    <div class="gallery">
+      <figure><img loading="lazy" alt="在查看器中全屏打开的照片" src="/screenshots/media-viewer.webp" width="1324" height="2644" decoding="async" /><figcaption>已打开</figcaption></figure>
+      <figure><img loading="lazy" alt="滑动之后的下一张照片" src="/screenshots/media-viewer-swipe.webp" width="1324" height="2644" decoding="async" /><figcaption>已滑动到下一张</figcaption></figure>
+    </div>
+    <div class="note" style="margin-top:22px"><b>本页面中的照片内容已做模糊处理</b>，与本站其他地方的规则一致，这些是来自真实图库的真实照片，而不是图库素材。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="heic">
+      <div class="eyebrow">一个 DSM 的怪癖，已处理</div>
+      <h2>为什么你的 iPhone 照片在这里不是空白</h2>
+      <p class="lead">在 <b>DSM 7.2.2 及更高版本</b>上，NAS 不再为 HEIC 文件生成预览图，而每部近年的 iPhone 拍摄的都是这种格式。指望 NAS 生成缩略图的客户端什么也拿不到，只能显示损坏的方块。</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Syno Manager 改为<b>在你的设备上</b>解码这些照片，Synology 自家的应用也是这么做的。你最近的 iPhone 照片会显示为图片。代价是手机多做一点工作，对 NAS 则毫无影响。</p>
+    <div class="note"><b>较早的照片仍然是空白？</b>这通常是缩略图确实缺失，而不是 HEIC 的问题。请使用<b>重建索引</b>，让 NAS 重新生成，图库很大时需要一段时间，而且它在 NAS 上运行，所以你可以关闭应用。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drive">
+      <div class="eyebrow">Drive</div>
+      <h2>个人 Drive 和团队文件夹</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">从 <code>/mydrive</code> 开始，像文件浏览器一样导航，团队文件夹与你的个人文件夹并列显示。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>文件夹显示修改日期</b>，文件显示大小和日期。</li>
+          <li><b>打开文件详情</b>，查看 Drive 保存的关于它的其余信息。</li>
+          <li><b>下载和分享</b>，而且下载在局域网之外也能通过 QuickConnect 进行，这一点通常是做不到的。</li>
+          <li><b>Synology Office 文档就保存在这里</b>，这就是<a href="/zh-hans/guide/files/#office">Office 界面</a>只是状态页面而不是编辑器的原因。</li>
+        </ul>
+      </div>
+      <img alt="Synology Drive 浏览个人云盘的文件夹和文件" src="/screenshots/drive.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cameras">
+      <div class="eyebrow">摄像头</div>
+      <h2>Surveillance Station 实时画面</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Surveillance Station 摄像头网格" src="/screenshots/cameras.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Surveillance Station 已知的每个摄像头，顶部显示数量，右侧有网格或列表切换。你选择的布局会被记住。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>每个摄像头有两个圆点。</b>左边的表示摄像头是否在线，右边的表示是否在录像。</li>
+          <li><b>H.264 摄像头会在其卡片上显示实时快照</b>，因此网格就是一面当前静态画面的墙。</li>
+          <li><b>H.265 摄像头会显示<em>点按查看</em>。</b>DSM 不会为 H.265 生成快照图片，所以在视频流打开之前没有静态画面可显示。卡片会直接告诉你原因，而不是放一个空框让你猜。</li>
+          <li><b>点按任意摄像头</b>即可全屏观看实时画面，带有静音控制和 LIVE 标识。</li>
+          <li><b>视频流时间与 NAS 时钟保持一致</b>，包括夏令时，因此画面中的时间戳与录像完全对得上。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="streaming">
+      <div class="eyebrow">连接方式</div>
+      <h2>实时画面是如何连接的</h2>
+      <p class="lead">背后有一个针对每台 NAS 的开关，在<a href="/zh-hans/guide/getting-started/#form">添加 NAS</a> 时设置，之后也可以修改：<b>通过 DSM 端口隧道传输摄像头实时画面</b>。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>开关</th><th>视频流的传输方式</th><th>适用场景</th></tr></thead>
+      <tbody>
+        <tr><td>关闭（默认）</td><td>直接走<b>端口 554 上的 RTSP</b>。</td><td>你自己的网络。延迟更低，中间环节更少。需要在你观看的位置能访问端口 554。</td></tr>
+        <tr><td>开启</td><td>通过你已在使用的 <b>DSM HTTPS 端口</b>，以安全 WebSocket 的方式隧道传输。</td><td>在外网观看。无需额外开放任何端口，因为它复用了你访问 DSM 的那个端口。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>如果在家里能看实时画面、出门后却不行</b>，首先就该改这个开关。打开它几乎总能解决问题，而且无需任何路由器配置。</div>
+    <div class="with-shot" style="margin-top:22px">
+      <div>
+        <div class="note" style="margin-top:0"><b>这里的摄像头画面是真实的。</b>本站没有任何内容是模拟图，这也是其他几张截图带有模糊处理的原因。</div>
+        <p style="color:var(--steel);margin-top:16px">全屏实时画面会显示摄像头名称、视频流运行时的 <b>LIVE</b> 标识以及静音控制。画面中的时间戳与 NAS 时钟一致，因此和录像相符。</p>
+      </div>
+      <img alt="带有 LIVE 标识和静音控制的 Surveillance Station 全屏实时画面" src="/screenshots/camera-live.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>媒体 FAQ</h2>
+    </div>
+    <details open><summary>能按文件夹浏览我的 Synology Photos 图库吗？</summary><div class="body">可以。你可以像 DS Photo 那样浏览图库实际的文件夹结构，无需先创建相册，也可以打开你自己的相册和别人与你共享的相册。</div></details>
+    <details><summary>能在全屏模式下滑动切换照片吗？</summary><div class="body">可以。打开任意照片后向左或向右滑动，即可切换到下一张或上一张，无需先返回网格视图。</div></details>
+    <details><summary>为什么我的一些 iPhone 照片在其他应用里显示为空白方块？</summary><div class="body">在 DSM 7.2.2 及更高版本中，NAS 不再为 HEIC 文件生成预览图。Syno Manager 会改在你的设备上解码这些照片，因此最新的 iPhone 照片会正常显示，而不是一个个损坏的缩略图。</div></details>
+    <details><summary>不在家时能查看摄像头吗？</summary><div class="body">可以。添加 NAS 时打开“通过 DSM 端口隧道传输摄像头实时画面”，实时画面就会通过你已在使用的 DSM HTTPS 端口传输，因此无需开放 RTSP 端口 554。</div></details>
+    <details><summary>为什么有些摄像头显示“点按查看”，而不是显示画面？</summary><div class="body">因为它们是 H.265。DSM 只为 H.264 摄像头生成实时快照图片，所以 H.265 摄像头在打开视频流之前没有静态画面可显示。</div></details>
+    <details><summary>可以回放录像吗？</summary><div class="body">应用提供的是实时画面。查看和导出录像请在 Surveillance Station 中进行，那里有时间轴和导出工具。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一篇：备份</h2>
+    <p class="lead" style="margin:0 auto 24px">Hyper Backup 和 Active Backup for Business。</p>
+    <p><a class="btn" href="/zh-hans/guide/backup/">备份 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hans/guide/">返回指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hans/">首页</a><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/compatible-nas/">兼容性</a><a href="/zh-hans/best-synology-nas-app/">为何换用</a><a href="/zh-hans/synology-app-for-iphone/">iPhone & iPad</a><a href="/zh-hans/synology-app-for-android/">Android</a><a href="/zh-hans/synology-app-for-mac-windows/">Mac & Windows</a><a href="/zh-hans/ds-finder-alternative/">对比 DS finder</a><a href="/zh-hans/help/">帮助</a><a href="/zh-hans/privacy/">隐私</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">报告问题</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 是一款独立应用，与 Synology Inc. 没有隶属、认可或赞助关系。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 和 QuickConnect 均为 Synology Inc. 的商标。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI-assistent på enheten for Synology NAS - Syno Manager</title>
+<meta name="description" content="Spør om Synology NAS-en din med vanlige ord og få samme helsedom som dashbordet viser. Kjører på telefonen, lærer av vurderingene dine og leser bare." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nb/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="AI-assistent på enheten for Synology NAS - Syno Manager" />
+<meta property="og:description" content="Spør om Synology NAS-en din med vanlige ord og få samme helsedom som dashbordet viser. Kjører på telefonen, lærer av vurderingene dine og leser bare." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nb/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI-assistent på enheten for Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Spør om Synology NAS-en din med vanlige ord og få samme helsedom som dashbordet viser. Kjører på telefonen, lærer av vurderingene dine og leser bare." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nb",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brukerguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Assistenten"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "AI-assistent på enheten for Synology NAS - Syno Manager",
+  "description": "Spør om Synology NAS-en din med vanlige ord og få samme helsedom som dashbordet viser. Kjører på telefonen, lærer av vurderingene dine og leser bare.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "nb",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Hvor kjører assistenten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "På telefonen din. Gemini Nano via AICore på Android, Apple Intelligence på iOS og macOS. Det finnes ingen skytjeneste å falle tilbake på - byggingen av appen mislykkes hvis en skyvert, en sky-SDK eller en API-nøkkel dukker opp noe sted i assistenten, så løftet håndheves av byggingen, ikke av at noen husker det."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Blir NAS-dataene mine sendt noe sted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. Spørsmålet ditt, dataene fra NAS-en din og svaret forlater aldri enheten. Det fungerer med nettverket slått av. Fordi ingenting overføres, finnes det ingen kopi som kan lagres, deles eller brukes til trening."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hva kan jeg spørre om?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Det finnes ingen fast liste. NAS-en din publiserer alt den kan rapportere - over tusen oppføringer på en typisk en - og assistenten søker i det og leser det spørsmålet ditt handler om. Installer en pakke, så kan den svare om den også, med en gang, uten appoppdatering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kan den endre noe på NAS-en min?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. Den leser bare. Den kan ikke starte, stoppe, slette eller starte noe på nytt - ikke som en regel modellen er bedt om å følge, men fordi den ikke får de verktøyene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Koster det noe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. Den bruker modellen som allerede er innebygd i enheten din, så det er ingenting å betale og ingen konto å opprette."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor ser jeg ikke Assistent-fanen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Fordi enheten ikke har noen brukbar modell på enheten. I stedet for å vise en funksjon som ikke kan fungere, skjuler appen den helt på maskinvare som ikke kan kjøre den."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Lærer assistenten noe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Den lærer av vurderingene dine, bare på denne enheten. Vurder et svar med tommelen under det, så starter lignende spørsmål der svaret ble hentet. Assistenten blir bedre til å lese NAS-en din jo mer du bruker den. Vurderinger forlater aldri enheten, og Glem vurderinger for denne NAS-en sletter dem."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hvorfor står det at modellen er opptatt eller tom for forsøk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modellen på enheten deles med alle andre apper på telefonen, og den kjører bare mens Syno Manager er åpen på skjermen. Når du treffer en av de grensene, sier assistenten hvilken, i stedet for å vise en generell feil, og forteller omtrent hvor lenge du må vente."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nb/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søk i guiden..." data-i18n-empty="Ingen treff for" data-i18n-language="Språk">
+      <a href="/nb/">Hjem</a>
+      <a href="/nb/guide/" class="active">Brukerguide</a>
+      <a href="/nb/#screenshots">Skjermbilder</a>
+      <a href="/nb/compatible-nas/">Kompatibilitet</a>
+      <a href="/nb/best-synology-nas-app/">Hvorfor bytte</a>
+      <a href="/nb/help/">Hjelp</a>
+      <a href="/nb/#top" class="cta">Last ned</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nb/">Hjem</a> &rsaquo; <a href="/nb/guide/">Brukerveiledning</a> &rsaquo; Assistenten</div>
+      <div class="eyebrow">Assistent &middot; beta</div>
+      <h1>Spør NAS-en din, <span class="g">med vanlige ord</span></h1>
+      <p>«Er det noe ved lagringen min som er verdt å bekymre seg for?» er et spørsmål som ellers betyr at du må åpne fire skjermer. Assistenten leser det NAS-en din har rapportert og svarer - med en modell som kjører på telefonen, uten nett, og som ikke sender noe noe sted.</p>
+    </div>
+    <div class="hero-shot"><img alt="Assistenten, klar med foreslåtte spørsmål" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>På denne siden</b><ul>
+      <li><a href="#asking">Stille et spørsmål</a></li>
+      <li><a href="#topics">Hva du kan spørre om</a></li>
+      <li><a href="#privacy">Hvor dataene dine går</a></li>
+      <li><a href="#readonly">Den leser bare</a></li>
+      <li><a href="#wrong">Den kan ta feil</a></li>
+      <li><a href="#learning">Lærer av vurderingene dine</a></li>
+      <li><a href="#availability">Hvilke enheter som har den</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Spørre</div>
+      <h2>Skriv det eller si det</h2>
+      <p class="lead">Assistent-fanen har to underfaner: <b>Spør</b> og <b>Slik fungerer det</b>. Spør åpner med fire forslag, som er der for å vise hvordan et godt spørsmål ser ut, ikke for å begrense deg.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Skriv et spørsmål</b> i feltet nederst, eller trykk på et av forslagene.</li>
+      <li><b>Si det</b> med mikrofonen, hvis du heller vil det.</li>
+      <li><b>La svaret leses opp</b> med høyttalerkontrollen øverst til høyre.</li>
+      <li><b>Svaret skrives ut mens det lages</b>, i stedet for å dukke opp på én gang - så du kan begynne å lese før det er ferdig.</li>
+      <li><b>Tøm</b> fjerner samtalen.</li>
+    </ul>
+    <div class="note"><b>Modellen lastes når du åpner skjermen</b>, ikke når du sender det første spørsmålet, så det første svaret ikke er det tregeste.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Omfang</div>
+      <h2>Det finnes ingen emneliste</h2>
+      <p class="lead">Dette er den delen som er lett å overse. Assistenten er ikke et sett ferdige svar om lagring og sikkerhetskopier - den er rettet mot alt NAS-en din faktisk publiserer.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>NAS-en din publiserer alt den kan rapportere</b> - over tusen oppføringer på en typisk en - og assistenten søker i den katalogen og leser det spørsmålet ditt handler om.</li>
+          <li><b>Installer en pakke, så kan den svare om den også</b>, med en gang, uten appoppdatering. Ingenting om katalogen er skrevet inn i appen; den oppdages fra enheten din.</li>
+          <li><b>Den blir raskere jo mer du bruker den.</b> Hvordan hver del av DSM leses, finnes ut én gang og huskes, så senere spørsmål om det samme går raskere.</li>
+          <li><b>«Hvordan går det med NAS-en min?» besvares med helsedommen</b> - den samme Frisk-, Advarsel- eller Kritisk-avlesningen som startskjermen viser, med årsakene bak, ikke en rå temperatur eller en enkeltmåling revet ut av sammenhengen.</li>
+        </ul>
+        <div class="note"><b>Gode spørsmål ser ut som spørsmål.</b> «Hvordan går det med NAS-en min?», «Er sikkerhetskopiene mine friske?», «Hva bruker mest plass?», «Hva kan du se om denne NAS-en?» - det siste er verdt å spørre om én gang, fordi svaret forteller hva den kommer til på <em>din</em> NAS.</div>
+      </div>
+      <img alt="Assistenten svarer på Hvordan går det med NAS-en min med helsedommen" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Personvern</div>
+      <h2>Ingenting forlater telefonen</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Modellen tilhører enheten. Spørsmålet ditt, dataene fra NAS-en din og svaret håndteres alle på telefonen, og det fungerer med nettverket slått av.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Det finnes ingen skytjeneste å falle tilbake på.</b> Ikke «vi velger å la være» - byggingen av appen <b>mislykkes</b> hvis en skyvert, en sky-SDK eller en API-nøkkel dukker opp noe sted i assistenten. Løftet holdes av byggingen, ikke av at noen husker det.</li>
+          <li><b>Fordi ingenting overføres, finnes det ingen kopi</b> som kan lagres, deles eller brukes til å trene noe.</li>
+          <li><b>Den er gratis og trenger ingen konto</b>, fordi modellen allerede ligger på enheten din.</li>
+        </ul>
+      </div>
+      <img alt="Slik fungerer det, med forklaring på at modellen ligger på enheten og ingen data forlater den" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Grenser</div>
+      <h2>Den leser bare</h2>
+      <p class="lead">Assistenten kan ikke starte, stoppe, slette eller starte noe på nytt. Ikke fordi den er blitt bedt om å la være - men fordi den ikke får de verktøyene i utgangspunktet.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Det betyr mer enn det høres ut som. En modell som er <em>instruert</em> til å ikke gjøre noe, kan overtales til å gjøre det. En modell som ikke har noen måte å gjøre det på, kan ikke. Hvis du vil starte en container på nytt, er <a href="/nb/guide/apps/#docker">Docker-skjermen</a> tre trykk unna, og den ber deg bekrefte.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Ærlighet</div>
+      <h2>Den kan ta feil, og skjermen sier det</h2>
+      <p class="lead">Dette er en liten modell som kjører på en telefon, ikke en stor en i et datasenter. Den kan lese feil på et tall eller høres sikrere ut enn den bør. Appen sier dette på skjermen, ikke i en fotnote.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Sjekk alt som betyr noe</b> på skjermen som eier det. Hvert svar handler om noe appen også viser deg direkte.</li>
+      <li><b>Den er merket BETA</b> i fanetoppen av nettopp denne grunnen.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Når den ikke kan svare akkurat nå, sier den hvorfor</h3>
+      <p class="lead">Ikke en generell feil. Én av tre navngitte årsaker, og omtrent hvor lenge du må vente.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Årsak</th><th>Hva det betyr</th></tr></thead>
+      <tbody>
+        <tr><td>Bruksgrense</td><td>Denne appen har brukt opp sin andel av modellen på enheten for nå. Enheten deler én modell mellom alle apper som bruker den; den svarer igjen når andelen din fornyes, vanligvis innen et minutt eller to.</td></tr>
+        <tr><td>Opptatt</td><td>Modellen på enheten er midt i et svar til en annen forespørsel akkurat nå. Prøv igjen om et øyeblikk.</td></tr>
+        <tr><td>I bakgrunnen</td><td>Modellen på enheten svarer bare mens Syno Manager er åpen på skjermen. Hent appen frem igjen og spør på nytt.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Ingenting går tapt når noe av dette skjer.</b> Spørsmålet ditt blir stående i samtalen; still det igjen når årsaken er borte.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Blir bedre</div>
+      <h2>Den lærer av vurderingene dine, på denne enheten</h2>
+      <p class="lead">En tommel opp eller ned står under hvert svar. Vurder ett, så starter lignende spørsmål der svaret ble hentet - assistenten blir bedre til å lese <em>din</em> NAS jo mer du bruker den, uten at noe forlater telefonen.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Bra svar</b> eller <b>Ikke et bra svar</b> - de to tommelene under et svar, trykket én gang.</li>
+          <li><b>Lagres per NAS.</b> Vurderinger lagres for NAS-en som svarte, på denne enheten, så når du bytter til en annen NAS, starter den på nytt.</li>
+          <li><b>Sendes aldri noe sted.</b> Vurderinger er like lokale som selve modellen - ingen konto, ingen synkronisering, ingen opplasting.</li>
+        </ul>
+      </div>
+      <img alt="Et assistentsvar med tommel opp valgt" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Kortet Hva den har lært her med ett vurdert svar og Glem vurderinger for denne NAS-en" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Hva den har lært her</b>, i fanen Slik fungerer det, teller hvor mange svar på gjeldende NAS som ble vurdert som bra, og leser dem tilbake med vanlige ord.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Ingen svar på denne NAS-en er vurdert som bra ennå</b> er det den sier før din første vurdering - ikke en null, fordi en null ville lest som en måling og ikke som fravær.</li>
+          <li><b>Glem vurderinger for denne NAS-en</b> sletter alle vurderinger som er lagret for gjeldende NAS på denne enheten, med ett trykk.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Tilgjengelighet</div>
+      <h2>Hvilke enheter som har den</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Plattform</th><th>Modell</th><th>Krav</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>En enhet med <b>AICore</b> og en Gemini Nano-modell tilgjengelig.</td></tr>
+        <tr><td>iOS og macOS</td><td>Apple Intelligence</td><td>En enhet der Apple Intelligence støttes og er slått på.</td></tr>
+        <tr><td>Alt annet</td><td>-</td><td>Fanen vises ikke i det hele tatt.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>En enhet uten brukbar modell viser ikke funksjonen.</b> Ikke grået ut, ikke en forsmak - borte. En kontroll som ikke kan fungere er verre enn ingen kontroll, så fanen finnes rett og slett ikke.</div>
+    <p style="color:var(--steel);margin-top:18px">Underfanen <b>Slik fungerer det</b> forteller deg hvilken tilstand din egen enhet er i, og hva den fant.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanlige spørsmål</div>
+      <h2>FAQ om assistenten</h2>
+    </div>
+    <details open><summary>Hvor kjører assistenten?</summary><div class="body">På telefonen din. Gemini Nano via AICore på Android, Apple Intelligence på iOS og macOS. Det finnes ingen skytjeneste å falle tilbake på - byggingen av appen mislykkes hvis en skyvert, en sky-SDK eller en API-nøkkel dukker opp noe sted i assistenten.</div></details>
+    <details><summary>Blir NAS-dataene mine sendt noe sted?</summary><div class="body">Nei. Spørsmålet ditt, dataene fra NAS-en din og svaret forlater aldri enheten, og det fungerer med nettverket slått av. Fordi ingenting overføres, finnes det ingen kopi som kan lagres, deles eller brukes til trening.</div></details>
+    <details><summary>Hva kan jeg spørre om?</summary><div class="body">Det finnes ingen fast liste. NAS-en din publiserer alt den kan rapportere - over tusen oppføringer på en typisk en - og assistenten søker i det. Installer en pakke, så kan den svare om den også, uten appoppdatering.</div></details>
+    <details><summary>Kan den endre noe på NAS-en min?</summary><div class="body">Nei. Den leser bare. Den kan ikke starte, stoppe, slette eller starte noe på nytt - fordi den ikke får de verktøyene.</div></details>
+    <details><summary>Koster det noe?</summary><div class="body">Nei. Den bruker modellen som allerede er innebygd i enheten din, så det er ingenting å betale og ingen konto å opprette.</div></details>
+    <details><summary>Hvorfor ser jeg ikke Assistent-fanen?</summary><div class="body">Fordi enheten ikke har noen brukbar modell på enheten. I stedet for å vise en funksjon som ikke kan fungere, skjuler appen den helt på maskinvare som ikke kan kjøre den.</div></details>
+    <details><summary>Lærer assistenten noe?</summary><div class="body">Den lærer av vurderingene dine, bare på denne enheten. Vurder et svar med tommelen under det, så starter lignende spørsmål der svaret ble hentet. Vurderinger forlater aldri enheten, og Glem vurderinger for denne NAS-en sletter dem.</div></details>
+    <details><summary>Hvorfor står det at modellen er opptatt eller tom for forsøk?</summary><div class="body">Modellen på enheten deles med alle andre apper på telefonen, og den kjører bare mens Syno Manager er åpen på skjermen. Assistenten sier hvilken av dem den traff, i stedet for å vise en generell feil.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Neste: Innstillinger</h2>
+    <p class="lead" style="margin:0 auto 24px">Alle innstillingene appen har, og hva hver av dem endrer.</p>
+    <p><a class="btn" href="/nb/guide/settings/">Innstillinger &rarr;</a> &nbsp; <a class="btn ghost" href="/nb/guide/">Tilbake til veiledningen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nb/">Hjem</a><a href="/nb/guide/">Brukerveiledning</a><a href="/nb/guide/getting-started/">Kom i gang</a><a href="/nb/compatible-nas/">Kompatibilitet</a><a href="/nb/best-synology-nas-app/">Hvorfor bytte</a><a href="/nb/synology-app-for-iphone/">iPhone & iPad</a><a href="/nb/synology-app-for-android/">Android</a><a href="/nb/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nb/ds-finder-alternative/">vs DS finder</a><a href="/nb/help/">Hjelp</a><a href="/nb/privacy/">Personvern</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Meld fra om feil</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uavhengig app og er ikke tilknyttet, godkjent av eller sponset av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemerker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

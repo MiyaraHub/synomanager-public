@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 的 Docker、套件和虚拟机 - Syno Manager</title>
+<meta name="description" content="从 Package Center 安装 DSM 套件，启动、停止和重启 Docker 容器，查看日志，运行 Compose 堆栈，并控制虚拟机。" />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hans/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 的 Docker、套件和虚拟机 - Syno Manager" />
+<meta property="og:description" content="从 Package Center 安装 DSM 套件，启动、停止和重启 Docker 容器，查看日志，运行 Compose 堆栈，并控制虚拟机。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hans/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 的 Docker、套件和虚拟机 - Syno Manager" />
+<meta name="twitter:description" content="从 Package Center 安装 DSM 套件，启动、停止和重启 Docker 容器，查看日志，运行 Compose 堆栈，并控制虚拟机。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hans",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "主页",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "用户指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "应用"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS 的 Docker、套件和虚拟机 - Syno Manager",
+  "description": "从 Package Center 安装 DSM 套件，启动、停止和重启 Docker 容器，查看日志，运行 Compose 堆栈，并控制虚拟机。",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "zh-Hans",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "能在手机上安装 DSM 套件吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。应用中的 Package Center 与 DSM 拥有相同的套件目录，包括已安装、全部套件、测试版和社区，并带搜索框。选好套件，选择存储空间，即可安装。更新和卸载的方式相同，每项操作都通过重新读取套件列表来确认，而不是看请求是否返回成功。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能在应用里重启 Docker 容器吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。每个容器都有启动、停止和重启，还有一个打开日志的按钮。已退出的容器显示启动按钮，而不是一个无法执行的停止按钮。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能控制 Docker Compose 堆栈吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。Projects 子视图会列出你的 Compose 项目，并可启动或停止整个堆栈，不必逐个去找容器。堆栈日志的打开方式与容器日志相同。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "能启动和停止虚拟机吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，前提是已安装 Virtual Machine Manager。可以启动、关机或强制关闭任意虚拟机。强制关闭需要长按确认，因为它相当于直接拔掉电源。如果虚拟机处于 NAS 既不称为运行也不称为关机的状态，应用会如实显示该状态，并提供恢复控件，而不是一个无法执行的启动按钮。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 图标" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="/zh-hans/">主页</a>
+      <a href="/zh-hans/guide/" class="active">用户指南</a>
+      <a href="/zh-hans/#screenshots">截图</a>
+      <a href="/zh-hans/compatible-nas/">兼容性</a>
+      <a href="/zh-hans/best-synology-nas-app/">为什么要换</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a href="/zh-hans/#top" class="cta">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; 应用</div>
+      <div class="eyebrow">应用</div>
+      <h1><span class="g">你的 NAS 所运行的</span>一切</h1>
+      <p>四个子视图：用于 DSM 套件的 <b>Package Center</b>、用于容器的 <b>Docker</b>、用于 Compose 堆栈的 <b>Projects</b>，以及安装 VMM 后出现的 <b>虚拟机</b>。</p>
+    </div>
+    <div class="hero-shot"><img alt="带有状态和控件的 Docker 容器" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本页内容</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">安装套件</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">容器日志</a></li>
+      <li><a href="#projects">Compose 项目</a></li>
+      <li><a href="#virtual-machines">虚拟机</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>完整目录，可搜索</h2>
+      <p class="lead">与 DSM 相同的四种筛选，外加覆盖全部筛选的搜索框。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>筛选</th><th>列出内容</th></tr></thead>
+          <tbody>
+            <tr><td>已安装</td><td>NAS 上现有的套件，附带版本、大小和运行指示。</td></tr>
+            <tr><td>全部套件</td><td>Synology 为你的型号提供的完整目录。</td></tr>
+            <tr><td>测试版</td><td>预发布套件。</td></tr>
+            <tr><td>社区</td><td>来自你在 DSM 中添加的第三方来源的套件。</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">每个条目都标明版本和下载大小、说明，以及所需的依赖项，如 <code>Needs Python2</code>、<code>Needs SynoFinder</code>，因此不会再有意料之外的二次安装。</p>
+        <div class="shots one" style="margin-top:22px"><img alt="在完整套件目录中搜索，并带有安装按钮" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">在<b>全部套件</b>中搜索尚未安装的套件。</p>
+      </div>
+      <img alt="显示已安装套件及运行状态的 Package Center" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">安装、更新、卸载</div>
+      <h2>点击“安装”后会发生什么</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>搜索或筛选</b>出你想要的套件。</li>
+          <li><b>安装。</b>对话框会列出套件名称和所有依赖项，并询问安装到哪个存储空间，同时显示各存储空间的可用容量，让你不必盲选。</li>
+          <li><b>确认。</b>NAS 开始安装，依赖项一并安装。</li>
+          <li><b>列表会重新读取自身。</b>按钮变成<b>卸载</b>，是因为套件列表现在显示它已安装，而不是因为请求返回了成功。</li>
+        </ol>
+        <div class="note"><b>最后这一步才是关键。</b>请求成功和安装完成是两件不同的事，应用等待的是后者。</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="显示套件名称、依赖项和目标存储空间的安装对话框" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>安装套件会为应用增加界面。</b>标签列表是根据 NAS 在连接时上报的内容构建的，因此安装 Download Station 之类的套件后，下拉刷新或重新打开应用，对应的子视图就会出现。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>每个容器，以及最实用的控件</h2>
+      <p class="lead">顶部是状态栏，显示<b>运行数 / 总数</b>，下面是 NAS 上所有容器的列表。</p>
+    </div>
+    <ul class="plain">
+      <li><b>名称和镜像标签</b>显示在每一行，因此来自同一镜像的两个容器仍能区分。</li>
+      <li><b>状态</b>以标签形式显示：<b>运行中</b>、<b>已退出</b>，以及 Docker 报告的其他状态。Docker 认为健康的容器会注明这一点 <code>Up 2 hours (healthy)</code>。</li>
+      <li><b>运行时长</b>，适用于所有正在运行的容器。</li>
+      <li><b>启动、停止和重启</b>，提供与当前状态相符的控件：已停止的容器给出启动，而不是一个无从执行的停止。</li>
+      <li><b>日志</b>，从每行的按钮打开。</li>
+      <li><b>展开某一行</b>查看详情，包括内存和网络数据。</li>
+      <li>只想看数量时，用顶部的控件<b>折叠整个列表</b>。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">日志</div>
+      <h2>读一次，需要时再跟随</h2>
+      <p class="lead">容器日志和堆栈日志的行为与<a href="/zh-hans/guide/system/#logs">系统日志</a>相同，原因也相同。</p>
+    </div>
+    <ul class="plain">
+      <li><b>只加载一次并保持静止</b>，因此你阅读时不会有某一行滚走。</li>
+      <li><b>点击播放即可实时跟随</b>，再点一次暂停。</li>
+      <li><b>离开界面或把应用切到后台时，跟随会自动停止</b>，不会有被遗忘的标签页在你口袋里一直轮询。</li>
+      <li>在长日志中<b>搜索</b>某一行。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Projects</div>
+      <h2>Compose 堆栈，按堆栈管理</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Docker Compose 项目，当前未配置任何项目" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">一个 Compose 项目由若干相互关联的容器组成。Projects 子视图正是这样看待它们的：<b>整个堆栈</b>一键启动或停止，不必在 Docker 列表里逐个找容器，还担心漏掉。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>每个项目</b>都会显示名称以及其中有多少个容器在运行。</li>
+          <li><b>启动或停止项目</b>，作为一个整体。</li>
+          <li><b>堆栈日志</b>的打开方式与容器日志相同。</li>
+          <li><b>没有项目时会明确说明</b>，显示“Docker Compose 项目将显示在这里”，而不是一片空白。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">虚拟机</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">安装 VMM 后才会出现。NAS 上的每台虚拟机、它在做什么，以及三种电源操作。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>操作</th><th>功能</th></tr></thead>
+      <tbody>
+        <tr><td>启动</td><td>为虚拟机开机。</td></tr>
+        <tr><td>关机</td><td>请求客户机操作系统正常关机。</td></tr>
+        <tr><td>强制关闭</td><td>切断电源。<b>长按确认</b>，因为它相当于直接拔掉一台正在运行的电脑的电源，轻轻一点未免太随便了。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>处于中间状态的虚拟机会如实描述。</b>如果 NAS 上报的状态既不是运行也不是关机，比如正在启动、正在挂起、已崩溃，应用会原样显示该词，并提供恢复控件，而不是一个无法执行的启动按钮，或一个并不属实的绿色对勾。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>应用常见问题</h2>
+    </div>
+    <details open><summary>能在手机上安装 DSM 套件吗？</summary><div class="body">可以。应用中的 Package Center 与 DSM 拥有相同的套件目录，包括已安装、全部套件、测试版和社区，并带搜索框。选好套件，选择存储空间，即可安装。更新和卸载的方式相同，每项操作都通过重新读取套件列表来确认。</div></details>
+    <details><summary>能在应用里重启 Docker 容器吗？</summary><div class="body">可以。每个容器都有启动、停止和重启，还有一个打开日志的按钮。已退出的容器显示启动按钮，而不是一个无法执行的停止按钮。</div></details>
+    <details><summary>能控制 Docker Compose 堆栈吗？</summary><div class="body">可以。Projects 子视图会列出你的 Compose 项目，并可启动或停止整个堆栈。堆栈日志的打开方式与容器日志相同。</div></details>
+    <details><summary>能启动和停止虚拟机吗？</summary><div class="body">可以，前提是已安装 Virtual Machine Manager。可以启动、关机或强制关闭任意虚拟机。强制关闭需要长按确认，因为它相当于直接拔掉电源。</div></details>
+    <details><summary>能在应用里创建新容器吗？</summary><div class="body">不能。创建容器涉及镜像选择、端口映射、卷挂载和环境变量，这样的表单适合放在能一眼看全的屏幕上。应用负责运行和监控你在 DSM 或 Portainer 中创建的容器。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一页：媒体</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos、Drive 和 Surveillance Station 实时画面。</p>
+    <p><a class="btn" href="/zh-hans/guide/media/">Photos、Drive &amp; 摄像头 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hans/guide/">返回指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hans/">首页</a><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/compatible-nas/">兼容性</a><a href="/zh-hans/best-synology-nas-app/">为何换用</a><a href="/zh-hans/synology-app-for-iphone/">iPhone & iPad</a><a href="/zh-hans/synology-app-for-android/">Android</a><a href="/zh-hans/synology-app-for-mac-windows/">Mac & Windows</a><a href="/zh-hans/ds-finder-alternative/">对比 DS finder</a><a href="/zh-hans/help/">帮助</a><a href="/zh-hans/privacy/">隐私</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">报告问题</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 是一款独立应用，与 Synology Inc. 没有隶属、认可或赞助关系。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 和 QuickConnect 均为 Synology Inc. 的商标。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

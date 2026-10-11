@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CPU وRAM والحرارة والمراوح في Synology - Syno Manager</title>
+<meta name="description" content="راقب CPU وRAM والحمل وI/O للأقراص والحرارة، وغيّر وضع سرعة المروحة، وتحقق من تحديثات DSM، وأعد تشغيل Synology أو أوقفه من هاتفك." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ar/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="CPU وRAM والحرارة والمراوح في Synology - Syno Manager" />
+<meta property="og:description" content="راقب CPU وRAM والحمل وI/O للأقراص والحرارة، وغيّر وضع سرعة المروحة، وتحقق من تحديثات DSM، وأعد تشغيل Synology أو أوقفه من هاتفك." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ar/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ar_AR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CPU وRAM والحرارة والمراوح في Synology - Syno Manager" />
+<meta name="twitter:description" content="راقب CPU وRAM والحمل وI/O للأقراص والحرارة، وغيّر وضع سرعة المروحة، وتحقق من تحديثات DSM، وأعد تشغيل Synology أو أوقفه من هاتفك." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ar",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "الرئيسية",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "دليل المستخدم",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "System"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "CPU وRAM والحرارة والمراوح في Synology - Syno Manager",
+  "description": "راقب CPU وRAM والحمل وI/O للأقراص والحرارة، وغيّر وضع سرعة المروحة، وتحقق من تحديثات DSM، وأعد تشغيل Synology أو أوقفه من هاتفك.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "ar",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "هل يمكنني تغيير سرعة المروحة من التطبيق؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. تحتوي «صحة النظام» على بطاقة تبريد بخيارات سرعة كاملة وبارد وهادئ. يقرأ التطبيق الوضع الحالي للـ NAS، ويكتب اختيارك، ثم يقرؤه مرة أخرى للتأكيد. والـ NAS الذي يبلّغ عن وضع خارج هذه الثلاثة يبقى عرضه للقراءة فقط بدل أن يُعرض بشكل خاطئ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني إعادة تشغيل الـ NAS أو إيقافه من هاتفي؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم، من بطاقة أدوات التحكم بالطاقة في أسفل «صحة النظام». كلاهما يُؤكَّد قبل التنفيذ، لأنهما يؤثران في كل مستخدم متصل. الإيقاف عن بُعد يستحق التفكير مرتين - فلا يمكن إيقاظ NAS مطفأ عبر الإنترنت دون VPN أو راوتر مضبوط على Wake-on-LAN."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ما فائدة «تعريف NAS»؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "يجعل ضوء حالة الـ NAS يومض لتعرف أي جهاز في الرف أو الخزانة تنظر إليه. أما «كتم الصافرة» فيوقف صافرة الإنذار دون إسكات الحالة التي أطلقتها - أصلح السبب أيضاً."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل تُحدَّث السجلات من تلقاء نفسها؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "لا، وهذا مقصود. كان السجل يُعاد قراءته بمؤقّت سواء كنت تقرؤه أم لا، مما يكلّف البطارية والشبكة بلا فائدة. أما الآن فيُحمَّل مرة واحدة ويبقى ثابتاً. اضغط تشغيل لمتابعته مباشرة، واضغط مرة أخرى للإيقاف المؤقت، وتتوقف المتابعة من تلقاء نفسها حين تغادر الشاشة."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "هل يمكنني تصدير السجل الذي أنظر إليه أو نسخه؟",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "نعم. اضغط مطولاً على أي سطر لشريط النظام نسخ / تحديد الكل / مشاركة، أو استخدم زر التصدير بجانب مفتاح البث المباشر في تبويب النظام، أو فوق القائمة في تبويب الاتصال. يفتح ورقة فيها حفظ في ملف، أو مشاركة أو بريد إلكتروني، أو نسخ إلى الحافظة، ويصدّر بالضبط الإدخالات المعروضة بعد مرشح المستوى والبحث - إدخال في كل سطر، مع الوقت والمستوى والمستخدم والوصف مفصولة بعلامات جدولة."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ar/"><img src="/assets/syno-manager-icon.png" alt="أيقونة Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="القائمة" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ابحث في الدليل..." data-i18n-empty="لا توجد نتائج لـ" data-i18n-language="اللغة">
+      <a href="/ar/">الرئيسية</a>
+      <a href="/ar/guide/" class="active">دليل المستخدم</a>
+      <a href="/ar/#screenshots">لقطات الشاشة</a>
+      <a href="/ar/compatible-nas/">التوافق</a>
+      <a href="/ar/best-synology-nas-app/">لماذا تنتقل إليه</a>
+      <a href="/ar/help/">المساعدة</a>
+      <a href="/ar/#top" class="cta">تنزيل</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ar/">الرئيسية</a> &rsaquo; <a href="/ar/guide/">دليل المستخدم</a> &rsaquo; النظام</div>
+      <div class="eyebrow">System</div>
+      <h1>ما الذي يفعله الجهاز <span class="g">فعلاً</span></h1>
+      <p>ثلاثة عروض فرعية: <b>صحة النظام</b> لحالة الجهاز، و<b>الموارد</b> للمخططات المباشرة، و<b>السجلات</b> لما سجّله DSM. إضافة إلى أدوات التحكم التي تغيّر شيئاً - وضع المروحة وضوء التعريف وتحديثات DSM وإعادة التشغيل والإيقاف.</p>
+    </div>
+    <div class="hero-shot"><img alt="صحة النظام مع مقاييس CPU وRAM ومتوسط الحمل وI/O للأقراص وسجل الحرارة" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>في هذه الصفحة</b><ul>
+      <li><a href="#health">System Health</a></li>
+      <li><a href="#cooling">التبريد ووضع المروحة</a></li>
+      <li><a href="#identify">التعريف والتنبيهات</a></li>
+      <li><a href="#dsm-update">تحديث DSM</a></li>
+      <li><a href="#power">أدوات التحكم بالطاقة</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#logs">السجلات</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">System Health</div>
+      <h2>القراءات</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>البطاقة</th><th>ما تعرضه</th></tr></thead>
+      <tbody>
+        <tr><td>مقاييس CPU وRAM</td><td>إجمالي CPU على هيئة حلقة، مع إبراز حصة <b>المستخدم</b> تحتها لتميّز حمل عملك الخاص من حمل النظام. ويعرض RAM النسبة والأرقام المطلقة.</td></tr>
+        <tr><td>الذاكرة</td><td>المستخدم مقابل الإجمالي، على هيئة شريط. أخضر حتى يصبح الأمر مهماً.</td></tr>
+        <tr><td>متوسط حمل CPU</td><td>أرقام دقيقة واحدة وخمس وخمس عشرة - العمليات المنتظرة وقت المعالج (CPU)، وليست نسبة مئوية. تُقاس بعدد أنوية معالجك، فالرقم السليم على جهاز rackmount بثماني أنوية هو رقم مشغول على جهاز بخليجين.</td></tr>
+        <tr><td>I/O للأقراص</td><td>معدل القراءة والكتابة إضافة إلى نسبة الاستخدام - كم من الوقت كانت الأقراص مشغولة، وهو في الغالب الجواب الحقيقي حين يبدو الـ NAS بطيئاً بينما يبدو CPU خاملاً.</td></tr>
+        <tr><td>سجل الحرارة</td><td>مخطط متحرك مع الرقم الحالي. بـ &deg;C أو &deg;F بحسب <a href="/ar/guide/settings/#preferences">تفضيلك</a>.</td></tr>
+        <tr><td>العمليات</td><td>كم عملية يشغّلها الـ NAS.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Cooling</div>
+      <h2>وضع سرعة المروحة، يُغيَّر من هاتفك</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">تعرض بطاقة التبريد حالة المروحة والوضع الذي يعمل عليه الـ NAS، كعنصر تحكم ثلاثي:</p>
+        <ul class="plain">
+          <li><b>سرعة كاملة</b> - أقصى تدفق للهواء وأقصى ضجيج. مناسب لرف أو خزانة.</li>
+          <li><b>بارد</b> - الافتراضي المتوازن.</li>
+          <li><b>هادئ</b> - سرعة أقل وحرارة أعلى. مناسب لـ NAS في غرفة المعيشة، إن كانت الأقراص تتحمل.</li>
+        </ul>
+        <div class="note"><b>مؤكَّد، لا مفترض.</b> يقرأ التطبيق الوضع الحالي من الـ NAS، ويكتب اختيارك، ثم <b>يقرؤه مرة أخرى</b>. الوضع الذي رفضه الـ NAS بصمت يُبلَّغ عنه كمرفوض، بدل أن يبقى على الشاشة كأنه طُبّق.</div>
+        <div class="note" style="margin-top:14px"><b>الوضع غير المعروف يبقى للقراءة فقط.</b> إن بلّغ الـ NAS عن وضع تبريد خارج هذه الثلاثة، تعرض البطاقة ما أبلغ به ولا تتيح تغييره - بدل أن تصفه خطأً بأحد الثلاثة التي تعرفها.</div>
+      </div>
+      <img alt="بطاقة التبريد مع سرعة كاملة وبارد وهادئ، إضافة إلى التعريف وأدوات التحكم بالطاقة" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">التعريف والتنبيهات</div>
+      <h2>اعثر على الجهاز، واكتم الصافرة</h2>
+    </div>
+    <ul class="plain">
+      <li><b>التعريف</b> يجعل ضوء حالة الـ NAS يومض لتعرف أي وحدة تقف أمامها. و<b>إيقاف</b> ينهيه.</li>
+      <li><b>كتم الصافرة</b> يوقف صافرة الإنذار. يسكت الضجيج لا الحالة - فما أطلق الإنذار لا يزال قائماً، وسيظل رأس الصحة يقول ذلك.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">تحديث DSM</div>
+      <h2>هل يوجد تحديث للبرنامج الثابت</h2>
+      <p class="lead">تبلّغ بطاقة تحديث DSM بالإصدار الذي تستخدمه وهل لدى Synology إصدار أحدث. <b>التحقق من وجود تحديث</b> يطلب من الـ NAS أن ينظر مجدداً.</p>
+    </div>
+    <div class="note"><b>هذا هو البرنامج الثابت للـ NAS، لا التطبيق.</b> يحدّث Syno Manager نفسه عبر App Store أو Google Play كأي تطبيق آخر. وهذه البطاقة هي واجهة التحديث الخاصة بـ DSM، نفسها الموجودة في لوحة التحكم.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">أدوات التحكم بالطاقة</div>
+      <h2>إعادة التشغيل والإيقاف</h2>
+      <p class="lead">في أسفل «صحة النظام» وباللون الأحمر، لأنهما يؤثران في كل مستخدم متصل - بمن فيهم من هو في منتصف نسخ ملف.</p>
+    </div>
+    <ul class="plain">
+      <li><b>إعادة تشغيل NAS</b> - إعادة تشغيل سليمة. تُؤكَّد قبل التنفيذ.</li>
+      <li><b>إيقاف NAS</b> - إطفاء سليم. يُؤكَّد قبل التنفيذ.</li>
+    </ul>
+    <div class="note stop"><b>فكّر قبل الإيقاف عن بُعد.</b> لا يستطيع NAS مطفأ أن يرحّل حزمة إيقاظه بنفسه. وإعادته من خارج شبكتك تتطلب VPN إليه، أو راوتراً مضبوطاً على تمرير Wake-on-LAN. راجع <a href="/ar/guide/wake-on-lan/">Wake-on-LAN</a> لمعرفة ما يعمل من أين.</div>
+    <div class="note" style="margin-top:14px"><b>الاختصارات لا تتخطى التأكيد.</b> رابطا <code>synomanager://reboot</code> و<code>synomanager://shutdown</code> <a href="/ar/guide/shortcuts/">يفتحان</a> التطبيق عند هذه الشاشة <em>فقط</em> عن قصد. لا يصبح إجراء مدمّر بضغطة واحدة لمجرد أنه صدر من مشغّل.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Resources</div>
+      <h2>مخططات مباشرة</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="مخططات مراقب الموارد لـ CPU والذاكرة وقراءة القرص وكتابته" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">العرض الفرعي «الموارد» هو البيانات نفسها كرسم متحرك، وهو ما تريده حين يكون السؤال «هل هذه ذروة عابرة أم حالة ثابتة؟»</p>
+        <ul class="plain">
+          <li><b>استخدام CPU</b> مع الفصل بين المستخدم والنظام.</li>
+          <li><b>استخدام الذاكرة</b> مع المستخدم مقابل الإجمالي.</li>
+          <li><b>قراءة القرص</b> و<b>كتابة القرص</b>، لكل منهما مخططه، إضافة إلى استخدام القرص الإجمالي.</li>
+          <li><b>متوسطات الحمل</b> على دقيقة وخمس وخمس عشرة.</li>
+        </ul>
+        <div class="note">تمتلئ المخططات عند <a href="/ar/guide/settings/#preferences">فترة الاستطلاع</a>. الفترة الأقصر تعطي تفصيلاً أدق وتكلّف بطارية أكثر؛ والأطول ألطف وأخشن.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">السجلات</div>
+      <h2>ما سجّله DSM</h2>
+      <p class="lead">تبويبان: <b>النظام</b> لسجل DSM نفسه، و<b>الاتصال</b> لتسجيلات الدخول والوصول إلى الملفات. كلاهما يُقرأ عندما تطلبه.</p>
+    </div>
+    <ul class="plain">
+      <li><b>يُحمَّل مرة واحدة ويبقى ثابتاً.</b> السجل الذي يعيد القراءة بمؤقّت بينما تحاول قراءة سطر منه عديم الفائدة، ويكلّف البطارية والشبكة بلا جدوى.</li>
+      <li><b>اضغط تشغيل للمتابعة المباشرة.</b> واضغط مرة أخرى للإيقاف المؤقت. تتوقف المتابعة من تلقاء نفسها حين تغادر الشاشة أو ترسل التطبيق إلى الخلفية، فلا تبقى علامة تبويب سجل منسية تستطلع بصمت في جيبك.</li>
+      <li><b>يوجد مربع بحث</b> للعثور على سطر واحد في سجل طويل.</li>
+      <li><b>سجلات الحاويات والمجموعات تعمل بالطريقة نفسها</b> - راجع <a href="/ar/guide/apps/#docker">Docker</a>.</li>
+      <li><b>النص قابل للتحديد.</b> اضغط مطولاً على سطر فيظهر شريط النظام نسخ / تحديد الكل / مشاركة، كما في أي مكان آخر يوجد فيه نص على الشاشة.</li>
+      <li><b>صدّر ما تنظر إليه.</b> يوجد زر تصدير بجانب مفتاح البث المباشر في تبويب النظام، وفوق القائمة في تبويب الاتصال. يفتح ورقة بثلاث طرق للإخراج: <b>حفظ في ملف</b>، أو <b>مشاركة</b> لإرساله أو إرساله بالبريد، أو <b>نسخ إلى الحافظة</b>.</li>
+    </ul>
+    <div class="note"><b>يصدّر ما على الشاشة، لا السجل كله.</b> ما ضيّقت القائمة إليه شريحة مرشح المستوى ومربع البحث هو ما يخرج - ولا يعود إلى التصدير شيء استبعدته بالفعل. الملف نص عادي، إدخال في كل سطر، مع الوقت والمستوى والمستخدم والوصف مفصولة بعلامات جدولة.</div>
+    <div class="note warn"><b>إذا لم يُحمَّل السجل</b> وبلّغ عن انتهاء مهلة الاتصال بينما بقية التطبيق سليمة، فالمشكلة في عدم استجابة خدمة Log Center على الـ NAS، لا في اتصالك. تحقق من أن Log Center مثبّت ويعمل في Package Center في DSM - فواجهة برمجة سجل النظام (API) جزء منه.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">أسئلة شائعة</div>
+      <h2>الأسئلة الشائعة (FAQ) عن النظام</h2>
+    </div>
+    <details open><summary>هل يمكنني تغيير سرعة المروحة من التطبيق؟</summary><div class="body">نعم. تحتوي «صحة النظام» على بطاقة تبريد بخيارات سرعة كاملة وبارد وهادئ. يقرأ التطبيق الوضع الحالي للـ NAS، ويكتب اختيارك، ثم يقرؤه مرة أخرى للتأكيد. والـ NAS الذي يبلّغ عن وضع خارج هذه الثلاثة يبقى عرضه للقراءة فقط بدل أن يُعرض بشكل خاطئ.</div></details>
+    <details><summary>هل يمكنني إعادة تشغيل الـ NAS أو إيقافه من هاتفي؟</summary><div class="body">نعم، من أدوات التحكم بالطاقة في أسفل «صحة النظام». كلاهما يُؤكَّد قبل التنفيذ. الإيقاف عن بُعد يستحق التفكير مرتين - فلا يمكن إيقاظ NAS مطفأ عبر الإنترنت دون VPN أو راوتر مضبوط على Wake-on-LAN.</div></details>
+    <details><summary>ما فائدة «تعريف NAS»؟</summary><div class="body">يجعل ضوء حالة الـ NAS يومض لتعرف أي جهاز في الرف أو الخزانة تنظر إليه. أما «كتم الصافرة» فيوقف صافرة الإنذار دون إسكات الحالة التي أطلقتها.</div></details>
+    <details><summary>هل تُحدَّث السجلات من تلقاء نفسها؟</summary><div class="body">لا، وهذا مقصود. يُحمَّل السجل مرة واحدة ويبقى ثابتاً لتقرأه. اضغط تشغيل لمتابعته مباشرة، واضغط مرة أخرى للإيقاف المؤقت، وتتوقف المتابعة من تلقاء نفسها حين تغادر الشاشة أو ترسل التطبيق إلى الخلفية.</div></details>
+    <details><summary>هل يمكنني تصدير السجل الذي أنظر إليه أو نسخه؟</summary><div class="body">نعم. اضغط مطولاً على أي سطر لشريط النظام نسخ / تحديد الكل / مشاركة، أو استخدم زر التصدير بجانب مفتاح البث المباشر في تبويب النظام، أو فوق القائمة في تبويب الاتصال. يفتح ورقة فيها حفظ في ملف، أو مشاركة أو بريد إلكتروني، أو نسخ إلى الحافظة، ويصدّر بالضبط الإدخالات المعروضة بعد مرشح المستوى والبحث - إدخال في كل سطر، مع الوقت والمستوى والمستخدم والوصف مفصولة بعلامات جدولة.</div></details>
+    <details><summary>لماذا متوسط الحمل مرتفع بينما يبدو CPU سليماً؟</summary><div class="body">يحسب متوسط الحمل العمليات المنتظرة، وغالباً ما تنتظر الأقراص لا CPU. تحقق من استخدام I/O للأقراص في الشاشة نفسها - نسبة استخدام عالية مع CPU منخفض هي التفسير المعتاد.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>التالي: التخزين</h2>
+    <p class="lead" style="margin:0 auto 24px">وحدات التخزين والمجمّعات وصحة SMART لكل قرص والإخراج الآمن.</p>
+    <p><a class="btn" href="/ar/guide/storage/">التخزين والأقراص &rarr;</a> &nbsp; <a class="btn ghost" href="/ar/guide/">العودة إلى الدليل</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ar/">الرئيسية</a><a href="/ar/guide/">دليل المستخدم</a><a href="/ar/guide/getting-started/">البدء</a><a href="/ar/compatible-nas/">التوافق</a><a href="/ar/best-synology-nas-app/">لماذا التحويل</a><a href="/ar/synology-app-for-iphone/">iPhone وiPad</a><a href="/ar/synology-app-for-android/">Android</a><a href="/ar/synology-app-for-mac-windows/">Mac وWindows</a><a href="/ar/ds-finder-alternative/">مقابل DS finder</a><a href="/ar/help/">المساعدة</a><a href="/ar/privacy/">الخصوصية</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">أبلغ عن خلل</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. تطبيق Syno Manager تطبيق مستقل وليس تابعاً لشركة Synology Inc. ولا معتمداً منها ولا برعايتها. Synology وDSM وDiskStation وRackStation وHyper Backup وActive Backup وSurveillance Station وQuickConnect علامات تجارية مملوكة لشركة Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

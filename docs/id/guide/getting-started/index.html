@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="id" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hubungkan Synology NAS Anda - Penyiapan Syno Manager</title>
+<meta name="description" content="Tambahkan Synology NAS Anda dalam waktu kurang dari semenit: alamat dan port, HTTPS dan sertifikat yang ditandatangani sendiri, QuickConnect, 2FA, dan apa yang harus dilakukan saat tidak bisa terhubung." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/id/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Hubungkan Synology NAS Anda - Penyiapan Syno Manager" />
+<meta property="og:description" content="Tambahkan Synology NAS Anda dalam waktu kurang dari semenit: alamat dan port, HTTPS dan sertifikat yang ditandatangani sendiri, QuickConnect, 2FA, dan apa yang harus dilakukan saat tidak bisa terhubung." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/id/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="id_ID" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hubungkan Synology NAS Anda - Penyiapan Syno Manager" />
+<meta name="twitter:description" content="Tambahkan Synology NAS Anda dalam waktu kurang dari semenit: alamat dan port, HTTPS dan sertifikat yang ditandatangani sendiri, QuickConnect, 2FA, dan apa yang harus dilakukan saat tidak bisa terhubung." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "id",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Beranda",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Panduan Pengguna",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Memulai"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Hubungkan Synology NAS Anda - Penyiapan Syno Manager",
+  "description": "Tambahkan Synology NAS Anda dalam waktu kurang dari semenit: alamat dan port, HTTPS dan sertifikat yang ditandatangani sendiri, QuickConnect, 2FA, dan apa yang harus dilakukan saat tidak bisa terhubung.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "id",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Apa yang saya butuhkan untuk memakai Syno Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Synology NAS dengan DSM 7.0 atau lebih baru, akun DSM di dalamnya, dan perangkat yang menjalankan Android 7+, iOS 16+, macOS 11+, atau Windows. Tidak ada yang perlu diinstal di NAS - aplikasi memakai API DSM sendiri, yang sudah ada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Alamat dan port apa yang harus saya masukkan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Di jaringan Anda sendiri, alamat IP lokal NAS dan port DSM - 5001 dengan HTTPS aktif, atau 5000 dengan HTTPS nonaktif. Anda juga bisa memasukkan hostname atau domain khusus. Jika Anda tidak mau berurusan dengan alamat sama sekali, ganti Jenis Koneksi ke QuickConnect dan masukkan ID QuickConnect Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mengapa Verifikasi Sertifikat SSL nonaktif secara bawaan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Karena sebagian besar DiskStation menyajikan sertifikat yang ditandatangani sendiri, yang tidak ditandatangani otoritas publik sehingga gagal verifikasi meskipun koneksinya tetap terenkripsi. Membiarkan verifikasi nonaktif menerima sertifikat itu. Jika Anda sudah memasang sertifikat asli - dari Let's Encrypt, misalnya - aktifkan verifikasi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Apakah saya perlu membuka port di router?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tidak. Di jaringan Anda sendiri tidak ada yang perlu diteruskan. Dari luar, QuickConnect me-relay koneksi untuk Anda, dan VPN juga bisa. Penerusan port hanya perlu jika Anda secara khusus menginginkan rute langsung dari internet, atau ingin tampilan langsung kamera lewat RTSP dari luar jaringan Anda."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muncul connection timeout. Sekarang bagaimana?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pesan itu berarti aplikasi tidak pernah mendapat jawaban, yang hampir selalu karena alamat, port, atau jaringan tempat ponsel berada. Periksa bahwa HTTPS cocok dengan port, bahwa ponsel berada di jaringan yang sama dengan NAS jika Anda memakai IP lokal, dan bahwa antarmuka web DSM sendiri terbuka di peramban ponsel pada alamat dan port yang sama."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/id/"><img src="/assets/syno-manager-icon.png" alt="Ikon Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Cari di panduan..." data-i18n-empty="Tidak ada hasil untuk" data-i18n-language="Bahasa">
+      <a href="/id/">Beranda</a>
+      <a href="/id/guide/" class="active">Panduan Pengguna</a>
+      <a href="/id/#screenshots">Tangkapan Layar</a>
+      <a href="/id/compatible-nas/">Kompatibilitas</a>
+      <a href="/id/best-synology-nas-app/">Mengapa beralih</a>
+      <a href="/id/help/">Bantuan</a>
+      <a href="/id/#top" class="cta">Unduh</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/id/">Beranda</a> &rsaquo; <a href="/id/guide/">Panduan Pengguna</a> &rsaquo; Memulai</div>
+      <div class="eyebrow">Memulai</div>
+      <h1>Terhubung dalam <span class="g">kurang dari semenit</span></h1>
+      <p>Tidak ada yang diinstal di NAS. Syno Manager berbicara dengan API DSM sendiri, yang sudah berjalan - Anda hanya memberi tahu di mana DiskStation Anda dan siapa Anda.</p>
+    </div>
+    <div class="hero-shot"><img alt="Formulir Tambah NAS di Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Di halaman ini</b><ul>
+      <li><a href="#requirements">Yang Anda butuhkan</a></li>
+      <li><a href="#address">Menemukan NAS Anda</a></li>
+      <li><a href="#form">Setiap kolom pada formulir</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Autentikasi dua faktor</a></li>
+      <li><a href="#test">Uji dan simpan</a></li>
+      <li><a href="#next">Apa yang terjadi selanjutnya</a></li>
+      <li><a href="#trouble">Saat tidak bisa terhubung</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Langkah nol</div>
+      <h2>Yang Anda butuhkan</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Persyaratan</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td>Synology NAS</td><td>Model apa pun yang menjalankan <b>DSM 7.0 atau lebih baru</b>. Tidak ada yang diinstal di dalamnya - aplikasi memakai API yang sama dengan antarmuka web DSM.</td></tr>
+        <tr><td>Akun DSM</td><td>Nama pengguna dan kata sandi DSM biasa Anda. Akun administrator melihat semuanya; non-administrator melihat apa yang diizinkan DSM, dan aplikasi menyembunyikan sisanya alih-alih menampilkan kontrol yang akan ditolak.</td></tr>
+        <tr><td>Perangkat Anda</td><td><b>Android 7.0</b> atau lebih baru, <b>iOS 16.0</b> atau lebih baru, <b>macOS 11.0</b> atau lebih baru, atau <b>Windows</b>. Aplikasi yang sama di keempatnya.</td></tr>
+        <tr><td>Rute menuju NAS</td><td>Jaringan lokal yang sama, VPN ke dalamnya, domain khusus, atau QuickConnect. Salah satunya sudah cukup.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Anda tidak perlu akun administrator</b> hanya untuk melihat. Pemantauan bekerja untuk pengguna DSM mana pun. Tindakan kendali - memulai ulang container, menjalankan pencadangan, mengeluarkan drive - membutuhkan izin apa pun yang diminta DSM sendiri untuk tindakan itu, dan aplikasi melaporkan penolakan, bukan berpura-pura berhasil.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Di mana</div>
+      <h2>Menemukan alamat NAS Anda</h2>
+      <p class="lead">Jika Anda sudah membuka DSM di peramban, bilah alamat memiliki semua yang Anda butuhkan: host dan port adalah dua nilai yang diminta aplikasi.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Dari DSM sendiri</h3>
+        <ul class="plain">
+          <li><b>Panel Kontrol &rsaquo; Jaringan &rsaquo; Antarmuka Jaringan</b> menampilkan alamat IP NAS pada setiap antarmuka.</li>
+          <li><b>Panel Kontrol &rsaquo; Jaringan &rsaquo; Pengaturan DSM</b> menampilkan port HTTP dan HTTPS yang didengarkan DSM. Biasanya 5000 dan 5001 kecuali ada yang mengubahnya.</li>
+        </ul>
+        <h3 style="margin-top:22px">Dari peramban Anda</h3>
+        <p style="color:var(--steel)">Apa pun yang Anda ketik untuk mencapai DSM adalah yang diinginkan aplikasi. Di <code>https://192.168.1.20:5001</code> hostnya adalah <code>192.168.1.20</code>, portnya <code>5001</code>, dan HTTPS aktif.</p>
+      </div>
+      <div>
+        <h3>Dari router Anda</h3>
+        <p style="color:var(--steel)">Sebagian besar router mencantumkan perangkat terhubung menurut nama. NAS muncul dengan nama servernya - yang diatur di <b>Panel Kontrol &rsaquo; Pusat Info</b>.</p>
+        <div class="note"><b>Beri alamat tetap.</b> Jika router memberi NAS IP berbeda setelah reboot, aplikasi tidak akan menemukannya lagi. Reservasi DHCP di router, atau alamat statis di NAS, mencegahnya. Hostname atau domain khusus juga bisa dan tidak peduli apa IP-nya.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Tambah NAS</div>
+      <h2>Setiap kolom pada formulir</h2>
+      <p class="lead">Ketuk <b>+ Tambah NAS</b> di daftar perangkat. Formulirnya singkat, dan hanya tiga kolom yang tidak memiliki nilai bawaan yang masuk akal.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Kolom</th><th>Apa yang diisi</th></tr></thead>
+          <tbody>
+            <tr><td>Nama Panggilan NAS</td><td>Nama apa pun yang Anda suka - hanya ditampilkan kepada Anda. Berguna saat Anda memiliki lebih dari satu.</td></tr>
+            <tr><td>Jenis Koneksi</td><td><b>IP Langsung</b> untuk alamat yang Anda ketik, atau <b>QuickConnect</b> untuk ID QuickConnect. Lihat <a href="#quickconnect">di bawah</a>.</td></tr>
+            <tr><td>Host / Alamat IP</td><td>IP lokal NAS, hostname-nya, atau domain khusus yang mengarah padanya.</td></tr>
+            <tr><td>Port</td><td><b>5001</b> dengan HTTPS aktif, <b>5000</b> dengan nonaktif - kecuali DSM dipindah ke port lain, dalam hal itu gunakan port tersebut.</td></tr>
+            <tr><td>HTTPS</td><td>Aktif secara bawaan, dan sebaiknya dibiarkan aktif. Semua yang melintas antara ponsel dan NAS dienkripsi, termasuk kata sandi Anda.</td></tr>
+            <tr><td>Verifikasi Sertifikat SSL</td><td>Nonaktif secara bawaan, karena sebagian besar DiskStation menyajikan sertifikat <b>yang ditandatangani sendiri</b> yang tidak bisa diverifikasi terhadap otoritas publik. Koneksi tetap terenkripsi dalam kedua kasus. Aktifkan ini hanya jika Anda sudah memasang sertifikat asli.</td></tr>
+            <tr><td>Nama Pengguna</td><td>Nama akun DSM Anda. <b>Nama pengguna yang mengandung spasi didukung</b> - aplikasi mengutipnya dengan benar, yang merupakan alasan umum klien lain gagal.</td></tr>
+            <tr><td>Kata Sandi</td><td>Kata sandi DSM Anda. Ikon mata menampilkannya saat Anda mengetik. Kata sandi ditulis ke keychain atau keystore platform dan tidak pernah disimpan sebagai teks biasa.</td></tr>
+            <tr><td>Autentikasi Dua Faktor</td><td>Aktifkan jika akun DSM Anda memakai aplikasi autentikator. Lihat <a href="#twofactor">di bawah</a>.</td></tr>
+            <tr><td>Terowongkan tampilan langsung kamera lewat port DSM</td><td>Nonaktif secara bawaan. <b>Nonaktif</b> berarti tampilan langsung kamera terhubung langsung ke RTSP di port 554, yang lebih cepat di jaringan Anda sendiri tetapi membutuhkan port itu bisa dijangkau dari mana pun Anda berada. <b>Aktif</b> menerowongkan aliran lewat port HTTPS DSM yang sudah Anda pakai, sehingga tampilan langsung bekerja dari luar tanpa membuka 554. Lihat <a href="/id/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Formulir Tambah NAS" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Tanpa alamat untuk diketik</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Ganti <b>Jenis Koneksi</b> ke <b>QuickConnect</b> dan masukkan ID QuickConnect Anda sebagai ganti host dan port. Relay Synology menemukan NAS Anda di mana pun berada, dan tidak ada konfigurasi router yang terlibat.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Di mana ID Anda berada.</b> DSM, di <b>Panel Kontrol &rsaquo; Akses Eksternal &rsaquo; QuickConnect</b>. Harus diaktifkan di sana terlebih dahulu.</li>
+      <li><b>Harganya bagi Anda.</b> Relay menambah latensi, jadi thumbnail dan tampilan langsung dimuat lebih lambat daripada di jaringan Anda sendiri. Semuanya tetap berfungsi.</li>
+      <li><b>Yang dihemat bagi Anda.</b> Tanpa penerusan port, tanpa dynamic DNS yang harus dijaga tetap mutakhir, dan tidak ada yang terbuka ke internet di sisi Anda.</li>
+    </ul>
+    <div class="note"><b>Anda bisa memiliki keduanya.</b> Menambahkan NAS yang sama dua kali - sekali lewat IP lokal, sekali lewat QuickConnect - memberi Anda entri yang cepat untuk di rumah dan yang andal untuk di luar. Keduanya entri terpisah dengan tata letak terpisah, jadi pilih yang mana pun yang lebih dekat dengan Anda.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Autentikasi dua faktor</h2>
+      <p class="lead">Jika akun DSM Anda dilindungi aplikasi autentikator, aktifkan <b>Autentikasi Dua Faktor (2FA)</b> sebelum menyimpan. Aplikasi meminta kode enam digit Anda tepat setelah kata sandi diterima.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Aktifkan sakelar</b> pada formulir Tambah NAS.</li>
+      <li><b>Simpan &amp; Hubungkan.</b> Aplikasi masuk, dan DSM meminta faktor kedua.</li>
+      <li><b>Masukkan kode</b> dari autentikator Anda.</li>
+      <li><b>Pilih apakah mengingat perangkat ini.</b> Jika ya, DSM menerbitkan token perangkat dan ponsel ini tidak diminta kode lagi. Token disimpan dengan cara yang sama seperti kata sandi, di keychain platform.</li>
+    </ol>
+    <div class="note warn"><b>Jika kode ditolak</b>, periksa jam. Kode autentikator diturunkan dari waktu saat ini, jadi ponsel atau NAS yang jamnya melenceng akan menghasilkan atau mengharapkan angka yang salah. Sumber waktu NAS ditampilkan di baris statistik cepat <a href="/id/guide/home/">layar beranda</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Sebelum Anda memutuskan</div>
+      <h2>Uji Koneksi, lalu simpan</h2>
+      <p class="lead"><b>Uji Koneksi</b> mencoba alamat, port, dan kredensial lalu memberi tahu apa yang terjadi tanpa menyimpan apa pun. Ini cara tercepat menemukan salah ketik, karena memisahkan "tidak bisa menjangkau NAS" dari "terjangkau, tetapi kata sandi itu salah".</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Yang dikatakannya</th><th>Artinya</th></tr></thead>
+      <tbody>
+        <tr><td>Connection timeout</td><td>Tidak ada yang menjawab. Alamat, port, atau jaringan tempat ponsel berada - bukan kredensial, yang belum pernah dicoba.</td></tr>
+        <tr><td>Kredensial tidak valid</td><td>NAS menjawab dan menolak proses masuk. Alamat dan port sudah benar; nama pengguna atau kata sandinya yang tidak.</td></tr>
+        <tr><td>Kesalahan sertifikat</td><td>HTTPS aktif dan <b>Verifikasi Sertifikat SSL</b> juga aktif terhadap sertifikat yang ditandatangani sendiri. Nonaktifkan verifikasi.</td></tr>
+        <tr><td>2FA diperlukan</td><td>Akun memakai autentikasi dua faktor dan sakelarnya nonaktif. Aktifkan lalu coba lagi.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Simpan &amp; Hubungkan</b> menyimpan entri dan masuk. Anda mendarat di layar beranda dengan NAS yang sudah mulai dimuat.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Anda sudah masuk</div>
+      <h2>Yang terjadi saat pertama kali terhubung</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Layar beranda Syno Manager setelah terhubung" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Aplikasi menanyakan apa yang bisa dilakukan NAS Anda.</b> Aplikasi menanyakan katalog API DSM dan menyimpan daftarnya. Itu sebabnya NAS tanpa Surveillance Station tidak pernah menampilkan tab Kamera, dan mengapa menginstal paket membuat layarnya muncul.</li>
+          <li><b>Setiap kartu yang didukung diaktifkan.</b> Kartu baru muncul terlihat, bukan tersembunyi, jadi fitur yang didukung NAS Anda adalah fitur yang bisa Anda lihat. <a href="/id/guide/customizing/">Sesuaikan</a> adalah tempat Anda mematikan sesuatu, bukan tempat mencarinya.</li>
+          <li><b>Alamat MAC NAS direkam</b> agar <a href="/id/guide/wake-on-lan/">Wake-on-LAN</a> bisa bekerja nanti tanpa Anda mencarinya.</li>
+          <li><b>Sambutan singkat muncul sekali.</b> Isinya menjelaskan apa yang dilakukan aplikasi dan di mana mengubah pengaturan. Ada kotak centang untuk menghentikannya muncul lagi.</li>
+          <li><b>Kartu bantuan muncul di layar yang perlu dijelaskan.</b> Tekan lama untuk menutupnya; pulihkan satu per satu dari <a href="/id/guide/settings/#help">Pengaturan</a>.</li>
+        </ul>
+        <div class="note"><b>Menginstal paket setelah terhubung?</b> Daftar kemampuan dibaca saat terhubung, jadi paket yang diinstal sejak itu belum memiliki tab. Tarik untuk menyegarkan, atau buka ulang aplikasi, dan layar baru muncul.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Saat tidak bisa terhubung</div>
+      <h2>Daftar periksa singkat</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Buka DSM di peramban ponsel</b> pada alamat dan port yang persis sama dengan yang Anda ketik. Jika peramban juga tidak bisa menjangkaunya, masalahnya di jaringan atau alamat, bukan aplikasi.</li>
+      <li><b>Periksa HTTPS cocok dengan port.</b> Port 5001 dengan HTTPS nonaktif, atau 5000 dengan HTTPS aktif, akan timeout. Keduanya pendengar yang berbeda.</li>
+      <li><b>Nonaktifkan Verifikasi Sertifikat SSL</b> jika NAS memakai sertifikat bawaan pabrik.</li>
+      <li><b>Periksa jaringan ponsel.</b> IP lokal tidak bisa dijangkau lewat data seluler. Sambungkan ke Wi-Fi, atau pakai QuickConnect, domain, atau VPN.</li>
+      <li><b>Di iOS, izinkan akses jaringan lokal.</b> Pengaturan &rsaquo; Aplikasi &rsaquo; Syno Manager &rsaquo; Jaringan Lokal. Tanpa itu, iOS diam-diam memblokir koneksi ke alamat di jaringan Anda sendiri.</li>
+      <li><b>Periksa firewall DSM.</b> Panel Kontrol &rsaquo; Keamanan &rsaquo; Firewall. Aturan yang hanya mengizinkan alamat tertentu akan memblokir ponsel yang bukan salah satunya.</li>
+      <li><b>Periksa blokir otomatis.</b> Panel Kontrol &rsaquo; Keamanan &rsaquo; Akun. Percobaan masuk yang gagal berulang bisa memblokir alamat ponsel Anda; alamat itu tercantum di sana dan bisa dihapus.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/id/help/">Panduan pemecahan masalah lengkap</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Pertanyaan umum</div>
+      <h2>FAQ Penyiapan</h2>
+    </div>
+    <details open><summary>Apa yang saya butuhkan untuk memakai Syno Manager?</summary><div class="body">Synology NAS dengan DSM 7.0 atau lebih baru, akun DSM di dalamnya, dan perangkat yang menjalankan Android 7+, iOS 16+, macOS 11+, atau Windows. Tidak ada yang perlu diinstal di NAS - aplikasi memakai API DSM sendiri, yang sudah ada.</div></details>
+    <details><summary>Alamat dan port apa yang harus saya masukkan?</summary><div class="body">Di jaringan Anda sendiri, alamat IP lokal NAS dan port DSM - 5001 dengan HTTPS aktif, atau 5000 dengan HTTPS nonaktif. Anda juga bisa memasukkan hostname atau domain khusus. Jika Anda tidak mau berurusan dengan alamat sama sekali, ganti Jenis Koneksi ke QuickConnect dan masukkan ID QuickConnect Anda.</div></details>
+    <details><summary>Mengapa Verifikasi Sertifikat SSL nonaktif secara bawaan?</summary><div class="body">Karena sebagian besar DiskStation menyajikan sertifikat yang ditandatangani sendiri, yang tidak ditandatangani otoritas publik sehingga gagal verifikasi meskipun koneksinya tetap terenkripsi. Membiarkan verifikasi nonaktif menerima sertifikat itu. Jika Anda sudah memasang sertifikat asli - dari Let's Encrypt, misalnya - aktifkan verifikasi.</div></details>
+    <details><summary>Apakah saya perlu membuka port di router?</summary><div class="body">Tidak. Di jaringan Anda sendiri tidak ada yang perlu diteruskan. Dari luar, QuickConnect me-relay koneksi untuk Anda, dan VPN juga bisa. Penerusan port hanya perlu jika Anda secara khusus menginginkan rute langsung dari internet, atau ingin tampilan langsung kamera lewat RTSP dari luar jaringan Anda.</div></details>
+    <details><summary>Muncul connection timeout. Sekarang bagaimana?</summary><div class="body">Pesan itu berarti aplikasi tidak pernah mendapat jawaban, yang hampir selalu karena alamat, port, atau jaringan tempat ponsel berada. Periksa bahwa HTTPS cocok dengan port, bahwa ponsel berada di jaringan yang sama dengan NAS jika Anda memakai IP lokal, dan bahwa antarmuka web DSM sendiri terbuka di peramban ponsel pada alamat dan port yang sama.</div></details>
+    <details><summary>Bisakah saya menambahkan lebih dari satu NAS?</summary><div class="body">Bisa, sebanyak yang Anda mau. Masing-masing menyimpan kredensial, tata letak dasbor, dan pengaturannya sendiri, dan Anda berpindah di antaranya dari daftar perangkat. Lihat <a href="/id/guide/multi-nas/">beberapa perangkat NAS</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Berikutnya: layar beranda</h2>
+    <p class="lead" style="margin:0 auto 24px">Apa yang ditampilkan setiap kartu, dan cara menjadikan dasbor milik Anda.</p>
+    <p><a class="btn" href="/id/guide/home/">Layar beranda &rarr;</a> &nbsp; <a class="btn ghost" href="/id/guide/">Kembali ke panduan</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/id/">Beranda</a><a href="/id/guide/">Panduan Pengguna</a><a href="/id/guide/getting-started/">Memulai</a><a href="/id/compatible-nas/">Kompatibilitas</a><a href="/id/best-synology-nas-app/">Mengapa beralih</a><a href="/id/synology-app-for-iphone/">iPhone & iPad</a><a href="/id/synology-app-for-android/">Android</a><a href="/id/synology-app-for-mac-windows/">Mac & Windows</a><a href="/id/ds-finder-alternative/">vs DS finder</a><a href="/id/help/">Bantuan</a><a href="/id/privacy/">Privasi</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Laporkan bug</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager adalah aplikasi independen dan tidak berafiliasi dengan, didukung oleh, atau disponsori oleh Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station, dan QuickConnect adalah merek dagang Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

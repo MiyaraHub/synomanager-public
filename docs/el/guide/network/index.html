@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="el" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Παρακολούθηση δικτύου, VPN και DDNS του Synology - Syno Manager</title>
+<meta name="description" content="Ζωντανή ταχύτητα μεταφοράς ανά διεπαφή, ενεργές συνδέσεις και αποκλεισμένες IP, υπηρεσίες DSM που μπορείτε να ενεργοποιείτε ή να απενεργοποιείτε, προφίλ πελάτη VPN και DDNS με τη δημόσια διεύθυνσή σας." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/el/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Παρακολούθηση δικτύου, VPN και DDNS του Synology - Syno Manager" />
+<meta property="og:description" content="Ζωντανή ταχύτητα μεταφοράς ανά διεπαφή, ενεργές συνδέσεις και αποκλεισμένες IP, υπηρεσίες DSM που μπορείτε να ενεργοποιείτε ή να απενεργοποιείτε, προφίλ πελάτη VPN και DDNS με τη δημόσια διεύθυνσή σας." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/el/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="el_GR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Παρακολούθηση δικτύου, VPN και DDNS του Synology - Syno Manager" />
+<meta name="twitter:description" content="Ζωντανή ταχύτητα μεταφοράς ανά διεπαφή, ενεργές συνδέσεις και αποκλεισμένες IP, υπηρεσίες DSM που μπορείτε να ενεργοποιείτε ή να απενεργοποιείτε, προφίλ πελάτη VPN και DDNS με τη δημόσια διεύθυνσή σας." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "el",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Αρχική",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Οδηγός Χρήσης",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Δίκτυο"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Παρακολούθηση δικτύου, VPN και DDNS του Synology - Syno Manager",
+  "description": "Ζωντανή ταχύτητα μεταφοράς ανά διεπαφή, ενεργές συνδέσεις και αποκλεισμένες IP, υπηρεσίες DSM που μπορείτε να ενεργοποιείτε ή να απενεργοποιείτε, προφίλ πελάτη VPN και DDNS με τη δημόσια διεύθυνσή σας.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "el",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Μπορώ να δω πόσο γρήγορα μεταφέρει δεδομένα το NAS αυτή τη στιγμή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Η υποπροβολή Δίκτυο δείχνει ζωντανή λήψη και αποστολή για κάθε διεπαφή του NAS, με δικό της γράφημα, ταχύτητα σύνδεσης και διεύθυνση. Οι συγκεντρωμένες διεπαφές εμφανίζονται ως ένα σύνολο, με τη συνολική ταχύτητα."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να ξεκινώ και να σταματώ υπηρεσίες DSM από την εφαρμογή;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι, για τις υπηρεσίες που το DSM επιτρέπει σε έναν πελάτη να ελέγχει - τα SMB, NFS, FTP, rsync και τα υπόλοιπα έχουν το καθένα διακόπτη. Κάποιες φέρουν ένδειξη διαχείρισης από το σύστημα, που σημαίνει ότι το DSM τις τρέχει με δικούς του όρους και η εφαρμογή δείχνει την κατάστασή τους χωρίς να προσφέρει αλλαγή."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Δείχνει η εφαρμογή ποιες διευθύνσεις IP είναι αποκλεισμένες;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ναι. Η υποπροβολή Συνδέσεις δείχνει την πολιτική αυτόματου αποκλεισμού - πόσες αποτυχημένες προσπάθειες μέσα σε πόσο χρόνο - και τη λίστα των διευθύνσεων που είναι αυτή τη στιγμή αποκλεισμένες, συμπτυγμένη πίσω από έναν αριθμό, ώστε εκατό καταχωρίσεις να μην θάβουν την υπόλοιπη οθόνη."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Μπορώ να καταλάβω αν το VPN μου είναι συνδεδεμένο;",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Η εφαρμογή απαριθμεί τα προφίλ πελάτη VPN του NAS και σας επιτρέπει να ζητήσετε σύνδεση ή αποσύνδεση ενός από αυτά. Δεν ισχυρίζεται ποιο είναι ενεργό, γιατί η εγγραφή του DSM που διαβάζει δεν περιέχει πεδίο κατάστασης. Το αντίθετο θα σήμαινε να επινοεί μια ένδειξη."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/el/"><img src="/assets/syno-manager-icon.png" alt="Εικονίδιο Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Μενού" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Αναζήτηση στον οδηγό..." data-i18n-empty="Δεν βρέθηκαν αποτελέσματα για" data-i18n-language="Γλώσσα">
+      <a href="/el/">Αρχική</a>
+      <a href="/el/guide/" class="active">Οδηγός Χρήσης</a>
+      <a href="/el/#screenshots">Στιγμιότυπα οθόνης</a>
+      <a href="/el/compatible-nas/">Συμβατότητα</a>
+      <a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a>
+      <a href="/el/help/">Βοήθεια</a>
+      <a href="/el/#top" class="cta">Λήψη</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/el/">Αρχική</a> &rsaquo; <a href="/el/guide/">Οδηγός χρήσης</a> &rsaquo; Δίκτυο</div>
+      <div class="eyebrow">Δίκτυο</div>
+      <h1>Τι κυκλοφορεί <span class="g">προς και από</span> το NAS</h1>
+      <p>Πέντε υποπροβολές: ζωντανή ταχύτητα <b>Δικτύου</b>, <b>Συνδέσεις</b> με αυτόματο αποκλεισμό, <b>Υπηρεσίες</b> που μπορείτε να ενεργοποιείτε, προφίλ <b>VPN</b> και <b>DDNS</b> με τη δημόσια διεύθυνσή σας.</p>
+    </div>
+    <div class="hero-shot"><img alt="Ζωντανή ταχύτητα δικτύου ανά διεπαφή" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Σε αυτή τη σελίδα</b><ul>
+      <li><a href="#throughput">Ταχύτητα μεταφοράς</a></li>
+      <li><a href="#connections">Συνδέσεις &amp; αυτόματος αποκλεισμός</a></li>
+      <li><a href="#services">Υπηρεσίες</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; εξωτερική IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Δίκτυο</div>
+      <h2>Ζωντανά, ανά διεπαφή</h2>
+      <p class="lead">Κάθε διεπαφή του NAS παίρνει τη δική της κάρτα - και αυτό περιλαμβάνει τις συγκεντρωμένες διεπαφές (bonds) και τις διεπαφές Open vSwitch, που πολλά εργαλεία προσπερνούν.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Εμφανίζεται</th><th>Σημασία</th></tr></thead>
+      <tbody>
+        <tr><td>Όνομα και ταχύτητα διεπαφής</td><td>Το όνομα που χρησιμοποιεί το DSM και η ταχύτητα που διαπραγματεύτηκε - <code>bond0 (20 Gbps)</code> για μια συγκέντρωση δύο θυρών, για παράδειγμα.</td></tr>
+        <tr><td>Διεύθυνση</td><td>Η IP που κατέχει αυτή τη στιγμή η διεπαφή.</td></tr>
+        <tr><td>Ένδειξη LIVE</td><td>Πράσινη όσο ενημερώνονται τα στοιχεία.</td></tr>
+        <tr><td>Λήψη / Αποστολή</td><td>Η τρέχουσα ταχύτητα μεταφοράς, με κυλιόμενο γράφημα από κάτω, ώστε μια στιγμιαία έξαρση να ξεχωρίζει από τη διαρκή κίνηση.</td></tr>
+        <tr><td>Πληροφορίες δικτύου</td><td>Όνομα διακομιστή, πύλη και κύριος DNS - οι τρεις τιμές που χρειάζεστε όταν κάτι στο δίκτυο δεν επιλύεται.</td></tr>
+        <tr><td>Ενεργές συνδέσεις</td><td>Ένας αριθμός, με τρόπο να μπείτε στις λεπτομέρειες.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Η κατεύθυνση ορίζεται από τη σκοπιά του NAS.</b> Η «Λήψη» είναι η κίνηση που φτάνει στο NAS· όταν αντιγράφετε ένα αρχείο <em>προς</em> το NAS, αυτό είναι η λήψη του.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Συνδέσεις</div>
+      <h2>Ποιος είναι συνδεδεμένος και ποιος αποκλεισμένος</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Τρία πράγματα, με τη σειρά που συνήθως τα θέλετε:</p>
+        <ul class="plain">
+          <li><b>Αυτόματος αποκλεισμός</b> - αν είναι ενεργή η προστασία του DSM από επιθέσεις ωμής βίας, πόσες αποτυχημένες προσπάθειες την ενεργοποιούν και μέσα σε ποιο χρονικό παράθυρο. Αυτή είναι η ρύθμιση που κλειδώνει έξω ένα κινητό μετά από μερικούς λάθος κωδικούς.</li>
+          <li><b>Αποκλεισμένες IP</b> - κάθε διεύθυνση που είναι αυτή τη στιγμή αποκλεισμένη, πίσω από έναν αριθμό. Εκατό αποκλεισμένες διευθύνσεις είναι φυσιολογικό σε ένα NAS εκτεθειμένο στο διαδίκτυο και θα έθαβαν την οθόνη, γι' αυτό μένει συμπτυγμένο μέχρι να το ανοίξετε.</li>
+          <li><b>Ενεργές συνδέσεις</b> - ποιος είναι συνδεδεμένος, από ποια διεύθυνση, με ποιο πρωτόκολλο και πότε ξεκίνησε η συνεδρία. HTTP/HTTPS, SMB, NFS, FTP - κάθε συνεδρία έχει όνομα.</li>
+        </ul>
+        <div class="note"><b>Μπορείτε να τερματίσετε μια συνεδρία.</b> Μια ενεργή σύνδεση μπορεί να αποβληθεί από εδώ, που είναι η γρήγορη απάντηση στο «κάτι κρατά ένα αρχείο ανοιχτό» ή στο «γιατί αυτή η διεύθυνση είναι ακόμα συνδεδεμένη».</div>
+      </div>
+      <img alt="Συνδέσεις που δείχνουν την πολιτική αυτόματου αποκλεισμού, τις αποκλεισμένες IP και τις ενεργές συνδέσεις" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Υπηρεσίες</div>
+      <h2>Τι τρέχει στο DSM</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Υπηρεσίες DSM με κατάσταση λειτουργίας και διακόπτες" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Ένας αριθμός στην κορυφή - <b>ενεργές από το σύνολο</b> - και μετά κάθε υπηρεσία που εκθέτει το DSM, με μια κουκκίδα κατάστασης και έναν διακόπτη.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Υπηρεσίες αρχείων και σύνδεσης</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Ενεργοποιήστε ή απενεργοποιήστε τις από το κινητό.</li>
+          <li><b>Ανακάλυψη και εκτύπωση</b> - Bonjour Printer Broadcast, WS-Discovery, ο δαίμονας εκτυπωτών CUPS.</li>
+          <li><b>Υποδομή</b> - NTP, KMIP και τα υπόλοιπα.</li>
+          <li><b>Οι υπηρεσίες που διαχειρίζεται το σύστημα φέρουν κλειδαριά.</b> Το DSM τις τρέχει με δικούς του όρους, γι' αυτό η εφαρμογή δείχνει την κατάστασή τους και δεν προσφέρει διακόπτη που θα απορριπτόταν. Ένας έλεγχος που δεν μπορεί να λειτουργήσει είναι χειρότερος από την απουσία ελέγχου.</li>
+        </ul>
+        <div class="note warn"><b>Η απενεργοποίηση του SMB θα αποσυνδέσει όποιον το χρησιμοποιεί.</b> Αυτοί είναι ζωντανοί διακόπτες σε διακομιστή που τρέχει, όχι οθόνη προτιμήσεων.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Προφίλ πελάτη</h2>
+      <p class="lead">Η υποπροβολή VPN απαριθμεί τα προφίλ <b>πελάτη</b> VPN που έχουν ρυθμιστεί στο NAS σας - τις συνδέσεις που κάνει προς κάπου αλλού - και σας επιτρέπει να ζητήσετε σύνδεση ή αποσύνδεση ενός από αυτά.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Δεν ισχυρίζεται ποιο προφίλ είναι συνδεδεμένο, και αυτό είναι σκόπιμο.</b> Το NAS επιβεβαιώνει ένα αίτημα σύνδεσης ή αποσύνδεσης, αλλά η εγγραφή του DSM που διαβάζει η εφαρμογή δεν έχει πεδίο κατάστασης, άρα δεν υπάρχει από πού να διαβαστεί κρίση. Αντί να εικάσει και να κάνει σίγουρα λάθος, η εφαρμογή το λέει ανοιχτά και σας στέλνει στη σελίδα Δίκτυο του DSM, που είναι το μέρος που ξέρει.</div>
+    <p style="color:var(--steel);margin-top:18px">Αν δεν υπάρχουν προφίλ, η οθόνη το λέει και σας δείχνει πού να προσθέσετε ένα: στο DSM, στο <b>Δίκτυο &rsaquo; Διεπαφή δικτύου</b>.</p>
+      </div>
+      <img alt="Η υποπροβολή VPN με τη λίστα προφίλ πελάτη" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Η δημόσια διεύθυνσή σας και το όνομα που δείχνει σε αυτήν</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Μία κάρτα, δύο ανεξάρτητα μισά:</p>
+        <ul class="plain">
+          <li><b>Εξωτερική IP</b> - η δημόσια διεύθυνση που έχει αυτή τη στιγμή η σύνδεσή σας.</li>
+          <li><b>Κάθε όνομα κεντρικού υπολογιστή DDNS</b> που δημοσιεύει το NAS σας, η κατάσταση που κρατά το DSM γι' αυτό, πότε ενημερώθηκε τελευταία φορά και πότε θα ενημερωθεί ξανά.</li>
+        </ul>
+        <h3 style="margin-top:22px">Ανανέωση και Ενημέρωση</h3>
+        <ul class="plain">
+          <li>Η <b>Ανανέωση</b> ξαναδιαβάζει ό,τι κρατά τώρα το DSM.</li>
+          <li>Η <b>Ενημέρωση τώρα</b> ζητά από το NAS να δημοσιεύσει ξανά τη διεύθυνσή του - ακριβώς ό,τι κάνει και το δικό του κουμπί στο DSM.</li>
+        </ul>
+        <div class="note"><b>Κάθε μισό αποτυγχάνει μόνο του.</b> Ένας πάροχος DDNS που δεν λειτουργεί δεν παρασύρει μαζί του την ανάγνωση της δημόσιας IP και μια IP που δεν διαβάζεται δεν σβήνει την κατάσταση του ονόματος. Δύο αναγνώσεις, δύο κρίσεις.</div>
+        <div class="note" style="margin-top:14px"><b>Αναφέρει ό,τι αποθηκεύει το DSM, όχι ζωντανό έλεγχο.</b> Η εφαρμογή δεν επιλύει η ίδια το όνομά σας για να ελέγξει αν δείχνει σε εσάς. Ένας πάροχος που απαντά σε αίτημα δεν λέει τίποτα για το αν η εγγραφή σας είναι σωστή, γι' αυτό η εφαρμογή μεταφέρει την κρίση του DSM αντί να επινοεί δεύτερη.</div>
+      </div>
+      <img alt="DDNS και εξωτερική IP, με θολωμένες τη δημόσια διεύθυνση και το όνομα κεντρικού υπολογιστή" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Η διεύθυνση και το όνομα κεντρικού υπολογιστή σε αυτό το στιγμιότυπο είναι θολωμένα - ανήκουν σε πραγματικό NAS.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Συχνές ερωτήσεις</div>
+      <h2>Συχνές ερωτήσεις για το δίκτυο</h2>
+    </div>
+    <details open><summary>Μπορώ να δω πόσο γρήγορα μεταφέρει δεδομένα το NAS αυτή τη στιγμή;</summary><div class="body">Ναι. Η υποπροβολή Δίκτυο δείχνει ζωντανή λήψη και αποστολή για κάθε διεπαφή του NAS, με δικό της γράφημα, ταχύτητα σύνδεσης και διεύθυνση. Οι συγκεντρωμένες διεπαφές εμφανίζονται ως ένα σύνολο, με τη συνολική ταχύτητα.</div></details>
+    <details><summary>Μπορώ να ξεκινώ και να σταματώ υπηρεσίες DSM από την εφαρμογή;</summary><div class="body">Ναι, για τις υπηρεσίες που το DSM επιτρέπει σε έναν πελάτη να ελέγχει - τα SMB, NFS, FTP, rsync και τα υπόλοιπα έχουν το καθένα διακόπτη. Κάποιες φέρουν ένδειξη διαχείρισης από το σύστημα, που σημαίνει ότι το DSM τις τρέχει με δικούς του όρους και η εφαρμογή δείχνει την κατάστασή τους χωρίς να προσφέρει αλλαγή.</div></details>
+    <details><summary>Δείχνει η εφαρμογή ποιες διευθύνσεις IP είναι αποκλεισμένες;</summary><div class="body">Ναι. Η υποπροβολή Συνδέσεις δείχνει την πολιτική αυτόματου αποκλεισμού και τη λίστα των διευθύνσεων που είναι αυτή τη στιγμή αποκλεισμένες, συμπτυγμένη πίσω από έναν αριθμό, ώστε εκατό καταχωρίσεις να μην θάβουν την υπόλοιπη οθόνη.</div></details>
+    <details><summary>Μπορώ να καταλάβω αν το VPN μου είναι συνδεδεμένο;</summary><div class="body">Η εφαρμογή απαριθμεί τα προφίλ πελάτη VPN του NAS και σας επιτρέπει να ζητήσετε σύνδεση ή αποσύνδεση ενός από αυτά. Δεν ισχυρίζεται ποιο είναι ενεργό, γιατί η εγγραφή του DSM που διαβάζει δεν έχει πεδίο κατάστασης. Η σελίδα Δίκτυο του DSM είναι το μέρος που ξέρει.</div></details>
+    <details><summary>Γιατί η δημόσια IP μου διαφέρει από αυτήν που μου δείχνει ένας ιστότοπος;</summary><div class="body">Επειδή αυτή είναι η διεύθυνση της σύνδεσης του NAS σας, όπως τη διαβάζει το DSM. Αν το κινητό σας είναι σε δεδομένα κινητής, έχει άλλη. Είναι δύο διαφορετικά δίκτυα και και οι δύο αναγνώσεις είναι σωστές.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Επόμενο: Αρχεία</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, κοινόχρηστοι φάκελοι, σημειώσεις, έγγραφα και επαφές.</p>
+    <p><a class="btn" href="/el/guide/files/">Αρχεία &amp; κοινόχρηστοι φάκελοι &rarr;</a> &nbsp; <a class="btn ghost" href="/el/guide/">Πίσω στον οδηγό</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/el/">Αρχική</a><a href="/el/guide/">Οδηγός χρήσης</a><a href="/el/guide/getting-started/">Πρώτα βήματα</a><a href="/el/compatible-nas/">Συμβατότητα</a><a href="/el/best-synology-nas-app/">Γιατί να αλλάξετε</a><a href="/el/synology-app-for-iphone/">iPhone & iPad</a><a href="/el/synology-app-for-android/">Android</a><a href="/el/synology-app-for-mac-windows/">Mac & Windows</a><a href="/el/ds-finder-alternative/">έναντι DS finder</a><a href="/el/help/">Βοήθεια</a><a href="/el/privacy/">Απόρρητο</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Αναφορά σφάλματος</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Το Syno Manager είναι ανεξάρτητη εφαρμογή και δεν σχετίζεται με τη Synology Inc., ούτε εγκρίνεται ή χορηγείται από αυτήν. Τα Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station και QuickConnect είναι εμπορικά σήματα της Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

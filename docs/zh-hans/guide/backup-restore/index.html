@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>备份应用设置 - Syno Manager</title>
+<meta name="description" content="把 Syno Manager 自己的设置导出到文件，并在新手机上还原。NAS 连接、密码和会话有意从不包含在内。" />
+<meta name="keywords" content="Syno Manager backup settings, move NAS app to new phone, export app settings, restore Synology app settings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup-restore/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup-restore/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup-restore/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup-restore/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup-restore/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup-restore/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup-restore/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup-restore/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup-restore/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup-restore/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup-restore/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup-restore/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup-restore/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup-restore/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup-restore/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup-restore/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup-restore/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup-restore/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup-restore/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup-restore/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup-restore/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup-restore/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup-restore/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup-restore/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup-restore/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup-restore/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup-restore/" />
+<!--/hreflang-->
+<meta property="og:title" content="备份应用设置 - Syno Manager" />
+<meta property="og:description" content="把 Syno Manager 自己的设置导出到文件，并在新手机上还原。NAS 连接、密码和会话有意从不包含在内。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hans/guide/backup-restore/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="备份应用设置 - Syno Manager" />
+<meta name="twitter:description" content="把 Syno Manager 自己的设置导出到文件，并在新手机上还原。NAS 连接、密码和会话有意从不包含在内。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hans",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "主页",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "用户指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "备份&amp;还原"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "备份应用设置 - Syno Manager",
+  "description": "把 Syno Manager 自己的设置导出到文件，并在新手机上还原。NAS 连接、密码和会话有意从不包含在内。",
+  "image": "https://synomanager.com/screenshots/settings-backup.webp",
+  "url": "https://synomanager.com/guide/backup-restore/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup-restore/",
+  "inLanguage": "zh-Hans",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "设置备份包含哪些内容？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "仅包含应用设置：主题、导航、仪表盘布局、启动行为、分类、轮询间隔和温度单位。NAS 连接、密码和会话从不包含。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "为什么不备份我的 NAS 凭据？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "因为一个便携的、包含 NAS 密码的文件，就是一个便携的、包含 NAS 密码的文件。凭据保存在设备的钥匙串或密钥库中，导出操作有意无法触及这里。你只需在新手机上重新输入一次。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "怎么换到新手机？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "在旧手机上用“下载”或“分享”导出，把文件传到新手机，安装应用，把文件内容粘贴到“还原”中，再重新添加你的 NAS。其余一切都会恢复成原来的样子。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "文件中不认识的设置会怎样？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只会应用已知的应用设置，文件中的其他内容都会被忽略，因此把旧版本的备份还原到新版本应用里，新增的设置会保持默认值，而不会报错。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 图标" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="/zh-hans/">主页</a>
+      <a href="/zh-hans/guide/" class="active">用户指南</a>
+      <a href="/zh-hans/#screenshots">截图</a>
+      <a href="/zh-hans/compatible-nas/">兼容性</a>
+      <a href="/zh-hans/best-synology-nas-app/">为什么要换</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a href="/zh-hans/#top" class="cta">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; 备份&amp;还原</div>
+      <div class="eyebrow">备份&amp;还原</div>
+      <h1>你的设置，<span class="g">带到下一部手机</span></h1>
+      <p>一个文件保存了你设置过的所有偏好，包括主题、底部栏、仪表盘布局、轮询和单位。它有意不包含任何凭据。</p>
+    </div>
+    <div class="hero-shot"><img alt="带有导出和还原的“备份与还原”界面" src="/screenshots/settings-backup.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">文件里有什么</div>
+      <h2>以及没有什么</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>包含项目</h3>
+        <ul class="plain">
+          <li>主题、界面、强调色和文字大小。</li>
+          <li>底部导航栏及其顺序。</li>
+          <li>仪表盘布局，以及启用了哪些卡片。</li>
+          <li>仪表盘分类。</li>
+          <li>启动行为。</li>
+          <li>轮询间隔。</li>
+          <li>温度单位。</li>
+        </ul>
+      </div>
+      <div>
+        <h3>从不包含</h3>
+        <ul class="plain">
+          <li><b>NAS 连接</b>，即地址、端口和选项。</li>
+          <li><b>密码。</b></li>
+          <li><b>会话和 2FA 设备令牌。</b></li>
+        </ul>
+        <div class="note stop"><b>不包含这些，正是关键所在。</b>一个可以发邮件给自己、放进云端文件夹的文件，就是一个可能泄露的文件。凭据保存在设备的钥匙串或密钥库中，正是为了让导出无法触及，应用也不会为了自己方便而破例。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">导出</div>
+      <h2>导出文件</h2>
+      <p class="lead"><b>设置 &rsaquo; 备份&amp;还原</b>，然后选择两个按钮之一。</p>
+    </div>
+    <ul class="plain">
+      <li><b>下载</b>会把 JSON 文件直接保存到设备。</li>
+      <li><b>分享</b>会交给系统分享面板，你可以发送到“文件”、Drive、其他应用或发给自己。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">还原</div>
+      <h2>恢复设置</h2>
+    </div>
+    <ol class="steps">
+      <li><b>打开备份文件</b>并复制其内容。</li>
+      <li><b>粘贴到“还原”框中</b>，或点按<b>从剪贴板粘贴</b>。</li>
+      <li><b>点按“还原设置”。</b></li>
+      <li><b>重新添加你的 NAS</b>，这部分从来就不在文件里。</li>
+    </ol>
+    <div class="note"><b>不认识的条目会被忽略，而不是被拒绝。</b>只会应用应用能识别的设置，因此旧版本生成的备份可以顺利还原到新版本中，当时还不存在的设置只会保持默认值。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">相关</div>
+      <h2>请勿混淆</h2>
+    </div>
+    <ul class="plain">
+      <li><b><a href="/zh-hans/guide/backup/">Hyper Backup 和 Active Backup</a></b>，是你的 NAS 在备份你的数据，与本界面无关。</li>
+      <li><b>DSM 配置备份</b>，即 NAS 自己的设置，在 DSM 的控制面板中导出。</li>
+      <li><b>设备备份。</b>Syno Manager 保存的凭据有意被<b>排除</b>在 Android 和 iOS 设备备份之外，因此用设备备份恢复手机时，不会带上 NAS 密码。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>备份&amp;还原常见问题</h2>
+    </div>
+    <details open><summary>设置备份包含哪些内容？</summary><div class="body">仅包含应用设置：主题、导航、仪表盘布局、启动行为、分类、轮询间隔和温度单位。NAS 连接、密码和会话从不包含。</div></details>
+    <details><summary>为什么不备份我的 NAS 凭据？</summary><div class="body">因为一个便携的、包含 NAS 密码的文件，就是一个便携的、包含 NAS 密码的文件。凭据保存在设备的钥匙串或密钥库中，导出操作有意无法触及这里。</div></details>
+    <details><summary>怎么换到新手机？</summary><div class="body">在旧手机上导出，把文件传过去，安装应用，把内容粘贴到“还原”中，再重新添加你的 NAS。</div></details>
+    <details><summary>文件中不认识的设置会怎样？</summary><div class="body">只会应用已知的设置，其他内容都会被忽略，因此把旧版本的备份还原到新版本应用里，新增的设置会保持默认值。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>出了问题？</h2>
+    <p class="lead" style="margin:0 auto 24px">故障排除指南涵盖连接失败、空白卡片、缺失标签和过期小组件。</p>
+    <p><a class="btn" href="/zh-hans/help/">故障排除 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hans/guide/">返回指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hans/">首页</a><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/compatible-nas/">兼容性</a><a href="/zh-hans/best-synology-nas-app/">为何换用</a><a href="/zh-hans/synology-app-for-iphone/">iPhone & iPad</a><a href="/zh-hans/synology-app-for-android/">Android</a><a href="/zh-hans/synology-app-for-mac-windows/">Mac & Windows</a><a href="/zh-hans/ds-finder-alternative/">对比 DS finder</a><a href="/zh-hans/help/">帮助</a><a href="/zh-hans/privacy/">隐私</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">报告问题</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 是一款独立应用，与 Synology Inc. 没有隶属、认可或赞助关系。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 和 QuickConnect 均为 Synology Inc. 的商标。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

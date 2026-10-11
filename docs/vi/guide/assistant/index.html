@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Trợ lý AI trên thiết bị cho Synology NAS - Syno Manager</title>
+<meta name="description" content="Hỏi về Synology NAS của bạn bằng lời thường ngày và nhận cùng một kết luận tình trạng như bảng điều khiển hiển thị. Chạy trên điện thoại, học từ đánh giá của bạn, chỉ đọc." />
+<meta name="keywords" content="on device AI NAS, Synology AI assistant, Gemini Nano app, Apple Intelligence app, private AI assistant, ask my NAS, offline AI assistant, AI assistant learns ratings" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/assistant/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/assistant/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/assistant/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/assistant/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/assistant/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/assistant/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/assistant/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/assistant/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/assistant/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/assistant/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/assistant/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/assistant/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/assistant/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/assistant/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/assistant/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/assistant/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/assistant/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/assistant/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/assistant/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/assistant/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/assistant/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/assistant/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/assistant/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/assistant/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/assistant/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/assistant/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/assistant/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/assistant/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/assistant/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/assistant/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/assistant/" />
+<!--/hreflang-->
+<meta property="og:title" content="Trợ lý AI trên thiết bị cho Synology NAS - Syno Manager" />
+<meta property="og:description" content="Hỏi về Synology NAS của bạn bằng lời thường ngày và nhận cùng một kết luận tình trạng như bảng điều khiển hiển thị. Chạy trên điện thoại, học từ đánh giá của bạn, chỉ đọc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/assistant/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Trợ lý AI trên thiết bị cho Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Hỏi về Synology NAS của bạn bằng lời thường ngày và nhận cùng một kết luận tình trạng như bảng điều khiển hiển thị. Chạy trên điện thoại, học từ đánh giá của bạn, chỉ đọc." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Trợ lý"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Trợ lý AI trên thiết bị cho Synology NAS - Syno Manager",
+  "description": "Hỏi về Synology NAS của bạn bằng lời thường ngày và nhận cùng một kết luận tình trạng như bảng điều khiển hiển thị. Chạy trên điện thoại, học từ đánh giá của bạn, chỉ đọc.",
+  "image": "https://synomanager.com/screenshots/assistant.webp",
+  "url": "https://synomanager.com/guide/assistant/",
+  "mainEntityOfPage": "https://synomanager.com/guide/assistant/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Trợ lý chạy ở đâu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trên điện thoại của bạn. Gemini Nano thông qua AICore trên Android, Apple Intelligence trên iOS và macOS. Không có tầng đám mây nào để dự phòng - bản dựng của ứng dụng sẽ thất bại nếu có máy chủ đám mây, SDK đám mây hoặc khóa API xuất hiện ở bất kỳ đâu trong trợ lý, nên lời hứa này được bản dựng bảo đảm chứ không phụ thuộc vào việc ai đó nhớ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Dữ liệu NAS của tôi có bị gửi đi đâu không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Câu hỏi, dữ liệu NAS của bạn và câu trả lời không bao giờ rời khỏi thiết bị. Nó hoạt động cả khi tắt mạng. Vì không có gì được truyền đi, nên không có bản sao nào để lưu trữ, chia sẻ hay dùng để huấn luyện."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể hỏi gì?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không có danh sách cố định. NAS của bạn công bố mọi thứ nó có thể báo cáo - hơn một nghìn mục trên một thiết bị thông thường - và trợ lý tìm kiếm trong đó rồi đọc bất cứ thứ gì câu hỏi của bạn nhắc đến. Cài một gói và nó có thể trả lời về gói đó ngay, không cần cập nhật ứng dụng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Nó có thể thay đổi gì trên NAS của tôi không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Nó chỉ đọc. Nó không thể khởi động, dừng, xóa hay khởi động lại bất cứ thứ gì - không phải vì một chính sách mà mô hình được yêu cầu tuân theo, mà vì nó không được cung cấp những công cụ đó."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Có tốn phí không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Nó dùng mô hình đã có sẵn trong thiết bị của bạn, nên không phải trả gì và không cần tạo tài khoản."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Sao tôi không thấy tab Trợ lý?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vì thiết bị không có mô hình trên thiết bị dùng được. Thay vì hiển thị một tính năng không thể hoạt động, ứng dụng ẩn hẳn nó trên phần cứng không chạy được."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trợ lý có học được gì không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nó học từ đánh giá của bạn, chỉ trên thiết bị này. Đánh giá một câu trả lời bằng các biểu tượng ngón tay bên dưới và những câu hỏi tương tự sẽ bắt đầu từ nơi câu trả lời đó được đọc, nên trợ lý càng đọc NAS của bạn tốt hơn khi bạn dùng nhiều hơn. Đánh giá không bao giờ rời khỏi thiết bị, và Quên các đánh giá cho NAS này sẽ xóa chúng."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vì sao nó báo mô hình đang bận hoặc hết lượt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mô hình trên thiết bị được dùng chung với mọi ứng dụng khác trên điện thoại của bạn, và nó chỉ chạy khi Syno Manager đang mở trên màn hình. Khi gặp một trong các giới hạn đó, trợ lý nói rõ là giới hạn nào, thay vì hiện một lỗi chung chung, và cho biết khoảng bao lâu nữa nên thử lại."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Trợ lý</div>
+      <div class="eyebrow">Trợ lý &middot; beta</div>
+      <h1>Hỏi NAS của bạn, <span class="g">bằng lời thường ngày</span></h1>
+      <p>“Có điều gì về bộ nhớ đáng lo không?” là một câu hỏi mà lẽ ra phải mở bốn màn hình mới biết. Trợ lý đọc những gì NAS của bạn báo cáo và trả lời - bằng một mô hình chạy trên điện thoại, ngoại tuyến, không bao giờ gửi gì đi đâu.</p>
+    </div>
+    <div class="hero-shot"><img alt="Trợ lý, sẵn sàng với các câu hỏi gợi ý" src="/screenshots/assistant.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#asking">Đặt câu hỏi</a></li>
+      <li><a href="#topics">Bạn có thể hỏi gì</a></li>
+      <li><a href="#privacy">Dữ liệu của bạn đi đâu</a></li>
+      <li><a href="#readonly">Chỉ đọc</a></li>
+      <li><a href="#wrong">Có thể sai</a></li>
+      <li><a href="#learning">Học từ đánh giá của bạn</a></li>
+      <li><a href="#availability">Thiết bị nào có tính năng này</a></li>
+    </ul></div>
+
+    <div class="section-head" id="asking">
+      <div class="eyebrow">Đặt câu hỏi</div>
+      <h2>Gõ hoặc nói</h2>
+      <p class="lead">Tab Trợ lý có hai chế độ xem con: <b>Hỏi</b> và <b>Cách hoạt động</b>. Chế độ Hỏi mở ra với bốn gợi ý, có mặt để cho thấy dạng một câu hỏi hay chứ không phải để giới hạn bạn.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Gõ câu hỏi</b> vào ô ở cuối màn hình, hoặc chạm vào một gợi ý.</li>
+      <li><b>Nói ra</b> bằng micrô, nếu bạn thích vậy hơn.</li>
+      <li><b>Nghe câu trả lời được đọc lại</b> bằng nút loa ở trên cùng bên phải.</li>
+      <li><b>Câu trả lời được viết ra dần khi nó được tạo</b>, thay vì hiện ra cùng một lúc - nên bạn có thể bắt đầu đọc trước khi nó xong.</li>
+      <li><b>Xóa</b> làm trống cuộc trò chuyện.</li>
+    </ul>
+    <div class="note"><b>Mô hình được tải khi bạn mở màn hình</b>, không phải khi bạn gửi câu hỏi đầu tiên, nên câu trả lời đầu tiên không phải là câu chậm nhất.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="topics">
+      <div class="eyebrow">Phạm vi</div>
+      <h2>Không có danh sách chủ đề</h2>
+      <p class="lead">Đây là phần dễ bị bỏ sót. Trợ lý không phải là một tập câu trả lời soạn sẵn về lưu trữ và sao lưu - nó hướng đến bất cứ thứ gì NAS của bạn thực sự công bố.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>NAS của bạn công bố mọi thứ nó có thể báo cáo</b> - hơn một nghìn mục trên một thiết bị thông thường - và trợ lý tìm kiếm trong danh mục đó rồi đọc bất cứ thứ gì câu hỏi của bạn nhắc đến.</li>
+          <li><b>Cài một gói và nó có thể trả lời về gói đó</b> ngay, không cần cập nhật ứng dụng. Không có gì về danh mục được viết cứng vào ứng dụng; nó được khám phá từ thiết bị của bạn.</li>
+          <li><b>Càng dùng càng nhanh.</b> Cách đọc từng phần của DSM chỉ được tìm ra một lần rồi ghi nhớ, nên các câu hỏi sau về cùng một thứ sẽ nhanh hơn.</li>
+          <li><b>“NAS của tôi đang thế nào?” được trả lời bằng kết luận tình trạng</b> - cùng một chỉ số Khỏe mạnh, Cảnh báo hoặc Nghiêm trọng mà màn hình chính hiển thị, kèm lý do đằng sau, chứ không phải một nhiệt độ thô hay một chỉ số đơn lẻ tách khỏi ngữ cảnh.</li>
+        </ul>
+        <div class="note"><b>Câu hỏi hay trông giống một câu hỏi thật sự.</b> “NAS của tôi đang thế nào?”, “Sao lưu của tôi có khỏe không?”, “Cái gì đang chiếm nhiều dung lượng nhất?”, “Bạn thấy được gì về NAS này?” - câu cuối đáng hỏi một lần, vì câu trả lời cho bạn biết nó có thể truy cập được gì trên NAS <em>của bạn</em>.</div>
+      </div>
+      <img alt="Trợ lý trả lời “NAS của tôi đang thế nào” bằng kết luận tình trạng" src="/screenshots/assistant-verdict.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="privacy">
+      <div class="eyebrow">Quyền riêng tư</div>
+      <h2>Không gì rời khỏi điện thoại</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Mô hình thuộc về thiết bị. Câu hỏi, dữ liệu NAS của bạn và câu trả lời đều được xử lý trên điện thoại, và nó hoạt động cả khi tắt mạng.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Không có tầng đám mây nào để dự phòng.</b> Không phải “chúng tôi chọn không dùng” - bản dựng của ứng dụng sẽ <b>thất bại</b> nếu có máy chủ đám mây, SDK đám mây hoặc khóa API xuất hiện ở bất kỳ đâu trong trợ lý. Lời hứa này được bản dựng giữ, chứ không phải do ai đó nhớ.</li>
+          <li><b>Vì không có gì được truyền đi, nên không có bản sao nào</b> để lưu trữ, chia sẻ hay dùng để huấn luyện bất cứ thứ gì.</li>
+          <li><b>Miễn phí và không cần tài khoản</b>, vì mô hình đã có sẵn trên thiết bị của bạn.</li>
+        </ul>
+      </div>
+      <img alt="Cách hoạt động, giải thích rằng mô hình nằm trên thiết bị và không có dữ liệu nào rời khỏi nó" src="/screenshots/assistant-how.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="readonly">
+      <div class="eyebrow">Ranh giới</div>
+      <h2>Nó chỉ đọc</h2>
+      <p class="lead">Trợ lý không thể khởi động, dừng, xóa hay khởi động lại bất cứ thứ gì. Không phải vì nó được nhờ nhẹ nhàng là đừng làm - mà vì ngay từ đầu nó không được cung cấp những công cụ đó.</p>
+    </div>
+    <p style="color:var(--steel);max-width:72ch">Điều đó quan trọng hơn vẻ bề ngoài. Một mô hình được <em>dặn</em> không làm điều gì đó vẫn có thể bị thuyết phục làm. Một mô hình không có cách nào làm thì không thể. Nếu bạn muốn khởi động lại container, <a href="/vi/guide/apps/#docker">màn hình Docker</a> chỉ cách ba lần chạm và sẽ yêu cầu bạn xác nhận.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="wrong">
+      <div class="eyebrow">Sự trung thực</div>
+      <h2>Nó có thể sai, và màn hình nói rõ điều đó</h2>
+      <p class="lead">Đây là một mô hình nhỏ chạy trên điện thoại, không phải mô hình lớn trong trung tâm dữ liệu. Nó có thể đọc sai một con số hoặc nghe chắc chắn hơn mức cần thiết. Ứng dụng nói điều này ngay trên màn hình chứ không giấu trong chú thích.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hãy kiểm tra mọi thứ quan trọng</b> trên màn hình phụ trách nó. Mọi câu trả lời đều nói về thứ mà ứng dụng cũng hiển thị trực tiếp cho bạn.</li>
+      <li><b>Nó được đánh dấu BETA</b> ở đầu tab chính vì lý do đó.</li>
+    </ul>
+    <div class="section-head" style="margin-top:34px">
+      <h3>Khi hiện tại không trả lời được, nó nói rõ vì sao</h3>
+      <p class="lead">Không phải lỗi chung chung. Mà là một trong ba lý do được gọi tên, kèm khoảng thời gian nên chờ.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Lý do</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Giới hạn sử dụng</td><td>Ứng dụng này đã dùng hết phần của mình trên mô hình trên thiết bị trong lúc này. Thiết bị dùng chung một mô hình cho mọi ứng dụng sử dụng nó; nó sẽ trả lời lại khi phần của bạn được làm mới, thường trong vòng một hai phút.</td></tr>
+        <tr><td>Bận</td><td>Mô hình trên thiết bị đang trả lời dở cho một yêu cầu khác. Hãy thử lại sau giây lát.</td></tr>
+        <tr><td>Ở chế độ nền</td><td>Mô hình trên thiết bị chỉ trả lời khi Syno Manager đang mở trên màn hình. Hãy đưa ứng dụng trở lại phía trước và hỏi lại.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Không mất gì khi những trường hợp này xảy ra.</b> Câu hỏi của bạn vẫn nằm trong cuộc trò chuyện; hãy hỏi lại khi lý do đó đã hết.</div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Ngày càng tốt hơn</div>
+      <h2>Nó học từ đánh giá của bạn, ngay trên thiết bị này</h2>
+      <p class="lead">Một ngón tay cái lên hoặc xuống nằm dưới mỗi câu trả lời. Đánh giá một câu và những câu hỏi tương tự sẽ bắt đầu từ nơi câu trả lời đó được đọc - trợ lý càng đọc NAS <em>của bạn</em> tốt hơn khi bạn dùng nhiều hơn, mà không có gì rời khỏi điện thoại.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <ul class="plain">
+          <li><b>Câu trả lời hay</b> hoặc <b>Câu trả lời chưa tốt</b> - hai ngón tay cái dưới câu trả lời, chạm một lần.</li>
+          <li><b>Lưu riêng cho từng NAS.</b> Đánh giá được lưu theo NAS đã trả lời, trên thiết bị này, nên chuyển sang NAS khác thì NAS đó bắt đầu lại từ đầu.</li>
+          <li><b>Không bao giờ gửi đi đâu.</b> Đánh giá cũng cục bộ như chính mô hình - không tài khoản, không đồng bộ, không tải lên.</li>
+        </ul>
+      </div>
+      <img alt="Một câu trả lời của trợ lý với đánh giá ngón tay cái lên được chọn" src="/screenshots/assistant-rating.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <div class="with-shot" style="margin-top:22px">
+      <img alt="Thẻ Những gì nó đã học được ở đây, hiển thị một câu trả lời được đánh giá và nút Quên các đánh giá cho NAS này" src="/screenshots/assistant-learning.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead" style="margin-top:0"><b>Những gì nó đã học được ở đây</b>, trên tab Cách hoạt động, đếm xem có bao nhiêu câu trả lời trên NAS hiện tại được đánh giá tốt và đọc lại chúng bằng lời thường ngày.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Chưa có câu trả lời nào trên NAS này được đánh giá tốt</b> là dòng bạn thấy trước lần đánh giá đầu tiên - không phải số không, vì số không sẽ trông như một phép đo chứ không phải sự vắng mặt.</li>
+          <li><b>Quên các đánh giá cho NAS này</b> xóa mọi đánh giá được lưu cho NAS hiện tại trên thiết bị này, chỉ trong một lần chạm.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="availability">
+      <div class="eyebrow">Khả dụng</div>
+      <h2>Thiết bị nào có tính năng này</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Nền tảng</th><th>Mô hình</th><th>Yêu cầu</th></tr></thead>
+      <tbody>
+        <tr><td>Android</td><td>Gemini Nano</td><td>Thiết bị có <b>AICore</b> và có sẵn mô hình Gemini Nano.</td></tr>
+        <tr><td>iOS và macOS</td><td>Apple Intelligence</td><td>Thiết bị hỗ trợ Apple Intelligence và đã bật nó.</td></tr>
+        <tr><td>Mọi trường hợp khác</td><td>-</td><td>Tab hoàn toàn không hiển thị.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Thiết bị không có mô hình dùng được thì không hiển thị tính năng này.</b> Không bị làm mờ, không phải bản dùng thử - mà là vắng mặt. Một nút điều khiển không thể hoạt động còn tệ hơn là không có nút, nên tab đơn giản là không có ở đó.</div>
+    <p style="color:var(--steel);margin-top:18px">Chế độ xem con <b>Cách hoạt động</b> cho bạn biết thiết bị của chính bạn đang ở trạng thái nào và nó đã tìm thấy gì.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về Trợ lý</h2>
+    </div>
+    <details open><summary>Trợ lý chạy ở đâu?</summary><div class="body">Trên điện thoại của bạn. Gemini Nano thông qua AICore trên Android, Apple Intelligence trên iOS và macOS. Không có tầng đám mây nào để dự phòng - bản dựng của ứng dụng sẽ thất bại nếu có máy chủ đám mây, SDK đám mây hoặc khóa API xuất hiện ở bất kỳ đâu trong trợ lý.</div></details>
+    <details><summary>Dữ liệu NAS của tôi có bị gửi đi đâu không?</summary><div class="body">Không. Câu hỏi, dữ liệu NAS của bạn và câu trả lời không bao giờ rời khỏi thiết bị, và nó hoạt động cả khi tắt mạng. Vì không có gì được truyền đi, nên không có bản sao nào để lưu trữ, chia sẻ hay dùng để huấn luyện.</div></details>
+    <details><summary>Tôi có thể hỏi gì?</summary><div class="body">Không có danh sách cố định. NAS của bạn công bố mọi thứ nó có thể báo cáo - hơn một nghìn mục trên một thiết bị thông thường - và trợ lý tìm kiếm trong đó. Cài một gói và nó có thể trả lời về gói đó, không cần cập nhật ứng dụng.</div></details>
+    <details><summary>Nó có thể thay đổi gì trên NAS của tôi không?</summary><div class="body">Không. Nó chỉ đọc. Nó không thể khởi động, dừng, xóa hay khởi động lại bất cứ thứ gì - vì nó không được cung cấp những công cụ đó.</div></details>
+    <details><summary>Có tốn phí không?</summary><div class="body">Không. Nó dùng mô hình đã có sẵn trong thiết bị của bạn, nên không phải trả gì và không cần tạo tài khoản.</div></details>
+    <details><summary>Sao tôi không thấy tab Trợ lý?</summary><div class="body">Vì thiết bị không có mô hình trên thiết bị dùng được. Thay vì hiển thị một tính năng không thể hoạt động, ứng dụng ẩn hẳn nó trên phần cứng không chạy được.</div></details>
+    <details><summary>Trợ lý có học được gì không?</summary><div class="body">Nó học từ đánh giá của bạn, chỉ trên thiết bị này. Đánh giá một câu trả lời bằng các biểu tượng ngón tay bên dưới và những câu hỏi tương tự sẽ bắt đầu từ nơi câu trả lời đó được đọc. Đánh giá không bao giờ rời khỏi thiết bị, và Quên các đánh giá cho NAS này sẽ xóa chúng.</div></details>
+    <details><summary>Vì sao nó báo mô hình đang bận hoặc hết lượt?</summary><div class="body">Mô hình trên thiết bị được dùng chung với mọi ứng dụng khác trên điện thoại của bạn, và nó chỉ chạy khi Syno Manager đang mở trên màn hình. Trợ lý nói rõ là giới hạn nào nó gặp phải, thay vì hiện một lỗi chung chung.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Cài đặt</h2>
+    <p class="lead" style="margin:0 auto 24px">Mọi tùy chọn của ứng dụng, và mỗi tùy chọn thay đổi điều gì.</p>
+    <p><a class="btn" href="/vi/guide/settings/">Cài đặt &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

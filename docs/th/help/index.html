@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>วิธีใช้และแก้ปัญหา Synology NAS - Syno Manager</title>
+<meta name="description" content="การเชื่อมต่อหมดเวลา ข้อผิดพลาดใบรับรอง 2FA แท็บที่หายไป ช่องรูปภาพว่าง กล้องใช้ไม่ได้นอกบ้าน และวิดเจ็ตล้าสมัย - แต่ละอย่างหมายความว่าอะไร" />
+<meta name="keywords" content="Syno Manager not connecting, Synology app connection timeout, Synology app certificate error, Synology app 2FA, Synology app blank photos, Synology camera not working remotely" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/help/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/help/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/help/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/help/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/help/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/help/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/help/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/help/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/help/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/help/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/help/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/help/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/help/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/help/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/help/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/help/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/help/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/help/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/help/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/help/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/help/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/help/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/help/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/help/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/help/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/help/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/help/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/help/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/help/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/help/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/help/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/help/" />
+<!--/hreflang-->
+<meta property="og:title" content="วิธีใช้และแก้ปัญหา Synology NAS - Syno Manager" />
+<meta property="og:description" content="การเชื่อมต่อหมดเวลา ข้อผิดพลาดใบรับรอง 2FA แท็บที่หายไป ช่องรูปภาพว่าง กล้องใช้ไม่ได้นอกบ้าน และวิดเจ็ตล้าสมัย - แต่ละอย่างหมายความว่าอะไร" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/help/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="วิธีใช้และแก้ปัญหา Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="การเชื่อมต่อหมดเวลา ข้อผิดพลาดใบรับรอง 2FA แท็บที่หายไป ช่องรูปภาพว่าง กล้องใช้ไม่ได้นอกบ้าน และวิดเจ็ตล้าสมัย - แต่ละอย่างหมายความว่าอะไร" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "วิธีใช้"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Syno Manager บอกว่าการเชื่อมต่อหมดเวลา หมายความว่าอะไร",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "หมายความว่าไม่มีอะไรตอบที่ที่อยู่และพอร์ตที่คุณระบุ ยังไม่ได้ลองข้อมูลเข้าสู่ระบบเลย ตรวจสอบว่า HTTPS ตรงกับพอร์ต - 5001 เมื่อเปิด HTTPS, 5000 เมื่อปิด - ว่าโทรศัพท์อยู่บนเครือข่ายที่เข้าถึง NAS ได้ และเว็บอินเทอร์เฟซของ DSM เองโหลดได้ในเบราว์เซอร์ของโทรศัพท์ที่ที่อยู่เดียวกัน"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไมแอปบอกว่าข้อมูลเข้าสู่ระบบไม่ถูกต้องทั้งที่รหัสผ่านถูก",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เพราะ NAS ตอบและปฏิเสธการลงชื่อเข้าใช้ ตรวจสอบการพิมพ์ผิด ตรวจสอบว่าบัญชีใช้การยืนยันตัวตนสองขั้นตอนหรือไม่ - ต้องเปิดสวิตช์ 2FA - และตรวจสอบรายการบล็อกอัตโนมัติของ DSM ที่แผงควบคุม ความปลอดภัย บัญชี เผื่อการลองซ้ำหลายครั้งทำให้ที่อยู่โทรศัพท์ของคุณถูกบล็อก"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไมไม่เห็นแท็บที่คาดไว้",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "อาจเป็นเพราะแพ็กเกจเบื้องหลังไม่ได้ติดตั้งบน NAS นั้น หรือมุมมองย่อยถูกซ่อน แอปอ่านสิ่งที่ NAS ทำได้ตอนเชื่อมต่อ แพ็กเกจที่ติดตั้งหลังจากนั้นจึงต้องรีเฟรช - ดึงลง หรือเปิดแอปใหม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "กล้องของฉันใช้ได้ที่บ้านแต่ไม่ได้นอกบ้าน",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เปิด ส่งภาพสดจากกล้องผ่านพอร์ต DSM ในการกำหนดค่าของ NAS เมื่อปิดอยู่ ภาพสดจะเชื่อมต่อตรงไปยัง RTSP พอร์ต 554 ซึ่งมักเข้าถึงจากนอกเครือข่ายไม่ได้"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "รูปภาพของฉันแสดงเป็นช่องว่าง",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ตั้งแต่ DSM 7.2.2 เป็นต้นไป NAS จะไม่สร้างภาพตัวอย่างสำหรับไฟล์ HEIC และ Syno Manager ถอดรหัสบนอุปกรณ์แทน หากรูปเก่าที่ไม่ใช่ HEIC ก็ว่างด้วย แปลว่าภาพขนาดย่อของ NAS หายไปจริง ให้ใช้จัดทำดัชนีใหม่ที่หน้าจอรูปภาพ แล้วปล่อยให้ NAS สร้างใหม่"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ทำไมวิดเจ็ตของฉันแสดงตัวเลขเก่า",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "เพราะ Android และ iOS เป็นผู้ตัดสินว่าวิดเจ็ตรีเฟรชได้เมื่อไร และทั้งสองจำกัดเพื่อประหยัดแบตเตอรี่ แต่ละวิดเจ็ตจึงแสดงเวลาที่จับข้อมูลด้วยเหตุผลนี้ การเปิดแอปเป็นวิธีรีเฟรชที่แน่นอนที่สุด"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/" class="active">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; วิธีใช้</div>
+    <div class="eyebrow">วิธีใช้</div>
+    <h1>เมื่อบางอย่าง<span class="g">ไม่ถูกต้อง</span></h1>
+    <p>ปัญหาส่วนใหญ่อยู่ในไม่กี่รูปแบบ แต่ละหัวข้อด้านล่างบอกว่าอาการนั้นหมายถึงอะไรจริง ๆ ซึ่งมักเป็นทางที่เร็วที่สุดไปสู่การแก้ไข</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>ข้ามไปที่</b><ul>
+      <li><a href="#connecting">เชื่อมต่อไม่ได้</a></li>
+      <li><a href="#credentials">ถูกปฏิเสธการลงชื่อเข้าใช้</a></li>
+      <li><a href="#missing">แท็บหรือการ์ดหาย</a></li>
+      <li><a href="#photos">ช่องรูปภาพว่าง</a></li>
+      <li><a href="#cameras">กล้องนอกบ้าน</a></li>
+      <li><a href="#logs">บันทึกไม่โหลด</a></li>
+      <li><a href="#widgets">วิดเจ็ตล้าสมัย</a></li>
+      <li><a href="#assistant">ไม่มีแท็บผู้ช่วย</a></li>
+      <li><a href="#contact">ยังแก้ไม่ได้</a></li>
+    </ul></div>
+
+    <div class="section-head" id="connecting">
+      <div class="eyebrow">การเชื่อมต่อ</div>
+      <h2>“การเชื่อมต่อหมดเวลา”</h2>
+      <p class="lead">หมายความว่า<b>ไม่มีอะไรตอบ</b> ยังไม่ได้ลองข้อมูลเข้าสู่ระบบ ปัญหาจึงอยู่ที่ที่อยู่ พอร์ต หรือเครือข่าย ไม่ใช่รหัสผ่านแน่นอน</p>
+    </div>
+    <ol class="steps">
+      <li><b>เปิด DSM ในเบราว์เซอร์ของโทรศัพท์</b>ที่ที่อยู่และพอร์ตตรงตามที่คุณพิมพ์ หากเบราว์เซอร์เข้าไม่ได้เช่นกัน ปัญหาไม่ใช่ที่แอป</li>
+      <li><b>ตรวจสอบว่า HTTPS ตรงกับพอร์ต</b> 5001 คือตัวรับ HTTPS และ 5000 คือ HTTP การสลับกันทำให้หมดเวลา</li>
+      <li><b>ตรวจสอบเครือข่ายของโทรศัพท์</b> ที่อยู่ภายในอย่าง <code>192.168.1.20</code> ไม่มีอยู่บนเน็ตมือถือ เชื่อมต่อ Wi-Fi หรือใช้ <a href="/th/guide/remote-access/">QuickConnect โดเมน หรือ VPN</a></li>
+      <li><b>บน iOS ให้อนุญาตการเข้าถึงเครือข่ายภายใน</b> การตั้งค่า &rsaquo; แอป &rsaquo; Syno Manager &rsaquo; เครือข่ายภายใน หากไม่มี iOS จะบล็อกการเชื่อมต่อไปยังเครือข่ายของคุณเองโดยไม่แจ้ง และอาการคือหมดเวลาที่ดูเหมือนเครือข่ายเสีย</li>
+      <li><b>ตรวจสอบไฟร์วอลล์ของ DSM</b> แผงควบคุม &rsaquo; ความปลอดภัย &rsaquo; ไฟร์วอลล์ - กฎที่อนุญาตเฉพาะบางที่อยู่จะบล็อกโทรศัพท์ที่ไม่ใช่หนึ่งในนั้น</li>
+      <li><b>ตรวจสอบว่า NAS ตื่นอยู่</b> NAS ที่หลับไม่ตอบ <a href="/th/guide/wake-on-lan/">ปลุก</a>ก่อน</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="credentials">
+      <div class="eyebrow">การลงชื่อเข้าใช้</div>
+      <h2>“ข้อมูลเข้าสู่ระบบไม่ถูกต้อง” หรือข้อผิดพลาดใบรับรอง</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>ข้อความ</th><th>ความหมาย</th><th>วิธีแก้</th></tr></thead>
+      <tbody>
+        <tr><td>Invalid credentials</td><td>NAS ตอบและปฏิเสธการลงชื่อเข้าใช้ ที่อยู่และพอร์ตถูกต้อง</td><td>ตรวจสอบชื่อผู้ใช้และรหัสผ่าน ตรวจสอบว่าบัญชีใช้ 2FA หรือไม่ - ต้องเปิดสวิตช์ ตรวจสอบรายการบล็อกอัตโนมัติของ DSM ที่ <b>แผงควบคุม &rsaquo; ความปลอดภัย &rsaquo; บัญชี</b> เผื่อความพยายามที่ล้มเหลวทำให้ที่อยู่ของคุณถูกบล็อก</td></tr>
+        <tr><td>Certificate error</td><td>เปิด HTTPS และเปิดการตรวจสอบใบรับรองด้วย กับใบรับรองที่ลงนามเอง</td><td>ปิด<b>ตรวจสอบใบรับรอง SSL</b> DiskStation ส่วนใหญ่ใช้ใบรับรองที่ลงนามเอง การเชื่อมต่อยังเข้ารหัสไม่ว่าจะเปิดหรือปิด</td></tr>
+        <tr><td>2FA required</td><td>บัญชีใช้การยืนยันตัวตนสองขั้นตอนและสวิตช์ปิดอยู่</td><td>เปิด<b>การยืนยันตัวตนสองขั้นตอน (2FA)</b>ในการกำหนดค่าของ NAS แล้วเชื่อมต่อใหม่</td></tr>
+        <tr><td>รหัส 2FA ถูกปฏิเสธ</td><td>มักเป็นเรื่องนาฬิกา ไม่ใช่รหัส</td><td>รหัสคำนวณจากเวลาปัจจุบัน ตรวจสอบนาฬิกาของโทรศัพท์และของ NAS - แหล่งเวลาของ NAS อยู่ในแถวสถิติด่วนของหน้าจอหลัก</td></tr>
+        <tr><td>เคยใช้ได้ แต่ตอนนี้ขอให้ลงชื่อเข้าใช้</td><td>ข้อมูลเข้าสู่ระบบที่เก็บไว้อ่านไม่ได้ - อาจเกิดหลังกู้คืนแอปลงโทรศัพท์เครื่องใหม่</td><td>แอปล้างสิ่งที่อ่านไม่ได้และขอให้คุณลงชื่อเข้าใช้อีกครั้ง กรอกรหัสผ่านใหม่หนึ่งครั้ง</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>ชื่อผู้ใช้มีช่องว่าง?</b> ใช้ได้ แอปใส่เครื่องหมายคำพูดให้ถูกต้อง ซึ่งเป็นสาเหตุทั่วไปที่ไคลเอนต์อื่นล้มเหลวกับบัญชีอย่าง <code>John Smith</code></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="missing">
+      <div class="eyebrow">สิ่งที่หายไป</div>
+      <h2>แท็บ มุมมองย่อย หรือการ์ดไม่อยู่</h2>
+      <p class="lead">มีสามเหตุผลพอดี และมีวิธีแก้ต่างกัน</p>
+    </div>
+    <ol class="steps">
+      <li><b>ไม่ได้ติดตั้งแพ็กเกจ</b> แอปอ่านสิ่งที่ NAS ทำได้และซ่อนทุกอย่างที่ทำไม่ได้ ไม่มีแพ็กเกจ Download Station ก็ไม่มีแท็บ Download Station ติดตั้งจาก <a href="/th/guide/apps/#package-center">Package Center</a></li>
+      <li><b>ติดตั้งหลังจากที่คุณเชื่อมต่อ</b> รายการความสามารถอ่านตอนเชื่อมต่อ ดึงเพื่อรีเฟรช หรือเปิดแอปใหม่ แล้วจะปรากฏ</li>
+      <li><b>ถูกซ่อนไว้</b> ตรวจสอบ<b>เมนู &#8942; ของแท็บ &rsaquo; ปรับแต่งมุมมอง</b> และ<b>การตั้งค่า &rsaquo; หมวดหมู่แดชบอร์ด</b>สำหรับการ์ด ดู<a href="/th/guide/customizing/">การปรับแต่ง</a></li>
+    </ol>
+    <div class="note"><b>การแตะการ์ดที่มุมมองถูกซ่อนจะบอกคุณ</b>และเสนอปุ่มปรับแต่ง หากบอกว่า NAS ของคุณไม่มีมุมมองนั้น แปลว่าไม่มีแพ็กเกจจริง ๆ</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="photos">
+      <div class="eyebrow">Photos</div>
+      <h2>ช่องว่างในคลังรูปภาพ</h2>
+    </div>
+    <ul class="plain">
+      <li><b>รูปจาก iPhone รุ่นใหม่:</b> เป็น HEIC และตั้งแต่ DSM 7.2.2 เป็นต้นไป NAS ไม่สร้างภาพตัวอย่างให้อีก Syno Manager ถอดรหัสบนอุปกรณ์แทน จึงควรปรากฏ หากไม่ปรากฏ ให้ตรวจสอบว่าใช้แอปเวอร์ชันปัจจุบัน</li>
+      <li><b>รูปเก่าก็ว่างด้วย:</b> ภาพขนาดย่อของ NAS หายไปจริง ให้ใช้<b>จัดทำดัชนีใหม่</b>ที่หน้าจอรูปภาพและปล่อยให้ NAS สร้างใหม่ ใช้เวลานานในคลังขนาดใหญ่และทำงานบน NAS คุณจึงปิดแอปได้</li>
+      <li><b>ทุกอย่างว่างและช้าผ่าน QuickConnect:</b> รีเลย์ถูกจำกัดอัตรา รอให้นานขึ้น หรือใช้รายการแบบตรงเมื่ออยู่ที่บ้าน</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cameras">
+      <div class="eyebrow">กล้อง</div>
+      <h2>ภาพสดใช้ได้ที่บ้านแต่ไม่ได้นอกบ้าน</h2>
+      <p class="lead">การตั้งค่าเดียวแก้ได้: <b>ส่งภาพสดจากกล้องผ่านพอร์ต DSM</b> ในการกำหนดค่าของ NAS</p>
+    </div>
+    <ul class="plain">
+      <li><b>ปิด</b> - ภาพสดเชื่อมต่อตรงไปยัง RTSP พอร์ต 554 เร็วบนเครือข่ายของคุณเอง แต่พอร์ตนั้นแทบไม่เคยเข้าถึงจากภายนอกได้</li>
+      <li><b>เปิด</b> - สตรีมถูกส่งผ่านพอร์ต HTTPS ของ DSM ที่คุณเชื่อมต่ออยู่แล้ว ไม่ต้องเปิดอะไรเพิ่ม และใช้ได้จากทุกที่ที่เข้าถึง DSM</li>
+      <li><b>กล้องที่แสดง “แตะเพื่อดู” ไม่ได้เสีย</b> เป็น H.265 และ DSM ไม่สร้างภาพนิ่งสำหรับกล้องแบบนั้น แตะแล้วสตรีมจะเปิด</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">บันทึก</div>
+      <h2>บันทึกระบบไม่โหลด</h2>
+      <p class="lead">หากบันทึกรายงานว่าการเชื่อมต่อหมดเวลาขณะที่ส่วนอื่นของแอปทำงานปกติ สิ่งที่ไม่ตอบคือบริการ Log Center บน NAS ไม่ใช่การเชื่อมต่อของคุณ</p>
+    </div>
+    <ul class="plain">
+      <li><b>ตรวจสอบว่า Log Center ติดตั้งและกำลังทำงาน</b>ใน Package Center ของ DSM API บันทึกระบบเป็นของมัน</li>
+      <li><b>ตรวจสอบสิทธิ์ของบัญชี</b> การอ่านบันทึกระบบต้องใช้สิทธิ์ผู้ดูแลระบบในการกำหนดค่า DSM ส่วนใหญ่</li>
+      <li><b>บันทึกคอนเทนเนอร์และสแตกแยกต่างหาก</b>และมาจาก Docker จึงอาจใช้ได้ขณะที่บันทึกระบบใช้ไม่ได้</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="widgets">
+      <div class="eyebrow">วิดเจ็ต</div>
+      <h2>วิดเจ็ตหน้าจอหลักล้าสมัย</h2>
+      <p class="lead">Android และ iOS เป็นผู้ตัดสินว่าวิดเจ็ตรีเฟรชได้เมื่อไร และทั้งสองจำกัดอย่างเข้มเพื่อประหยัดแบตเตอรี่ ไม่มีแอปใดบังคับได้ - ด้วยเหตุนี้แต่ละวิดเจ็ตจึงพิมพ์เวลาที่วัดตัวเลขแทนคำสัญญา</p>
+    </div>
+    <ul class="plain">
+      <li><b>เปิดแอป</b> - วิธีรีเฟรชที่แน่นอนที่สุด</li>
+      <li><b>Android:</b> ยกเว้น Syno Manager จากการเพิ่มประสิทธิภาพแบตเตอรี่</li>
+      <li><b>iOS:</b> ตรวจสอบว่าเปิดการรีเฟรชแอปเบื้องหลังสำหรับแอป</li>
+      <li><b>ตรวจสอบการเข้าถึง:</b> วิดเจ็ตอ่าน NAS ที่โทรศัพท์เข้าถึงไม่ได้ไม่ได้ บนเน็ตมือถือกับรายการที่ใช้ IP ในเครือข่ายอย่างเดียว จะไม่อัปเดตจนกว่าคุณจะถึงบ้าน</li>
+      <li><b>“ยังไม่เคยอัปเดต”</b> หมายถึงยังอ่านค่าสำเร็จไม่ได้ - เพิ่งเพิ่ม หรือแอปยังไม่ได้ทำงานตั้งแต่นั้น</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="assistant">
+      <div class="eyebrow">ผู้ช่วย</div>
+      <h2>ไม่มีแท็บผู้ช่วย</h2>
+      <p class="lead">ผู้ช่วยต้องมีโมเดลบนอุปกรณ์ และแท็บจะถูกซ่อนทั้งหมดบนฮาร์ดแวร์ที่ไม่มี ตัวควบคุมที่ใช้ไม่ได้แย่กว่าไม่มีตัวควบคุม</p>
+    </div>
+    <ul class="plain">
+      <li><b>Android</b> ต้องมี AICore ที่มีโมเดล Gemini Nano ให้ใช้</li>
+      <li><b>iOS และ macOS</b> ต้องรองรับและเปิดใช้ Apple Intelligence</li>
+      <li><b>ตรวจสอบสิ่งที่อุปกรณ์ของคุณรายงาน</b>ใน <b>การตั้งค่า &rsaquo; AI บนอุปกรณ์</b> ซึ่งระบุสถานะที่พบ</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="contact">
+      <div class="eyebrow">ยังแก้ไม่ได้</div>
+      <h2>รายงานปัญหา</h2>
+      <p class="lead">บั๊กและคำขอฟีเจอร์ไปที่ตัวติดตามสาธารณะ ซึ่งได้หมายเลขและเธรด แทนที่จะหายไปในกล่องจดหมาย</p>
+    </div>
+    <p style="margin-top:8px"><a class="btn" href="https://github.com/MiyaraHub/synomanager-public/issues">รายงานข้อบกพร่องหรือขอฟีเจอร์ใหม่</a></p>
+    <div class="note" style="margin-top:22px"><b>สิ่งที่ควรใส่:</b> เวอร์ชันแอป (การตั้งค่าแสดงให้เห็น และเกี่ยวกับมีหมายเลขบิลด์) เวอร์ชัน DSM รุ่น NAS ว่าคุณอยู่ในเครือข่ายของตัวเองหรืออยู่นอกบ้าน และสิ่งที่คุณคาดหวัง ภาพหน้าจอที่ตัดข้อมูลส่วนตัวออกช่วยได้มากกว่าคำอธิบาย</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับการแก้ปัญหา</h2>
+    </div>
+    <details open><summary>บอกว่าการเชื่อมต่อหมดเวลา หมายความว่าอะไร</summary><div class="body">หมายความว่าไม่มีอะไรตอบที่ที่อยู่และพอร์ตที่คุณระบุ - ยังไม่ได้ลองข้อมูลเข้าสู่ระบบ ตรวจสอบว่า HTTPS ตรงกับพอร์ต ว่าโทรศัพท์อยู่บนเครือข่ายที่เข้าถึง NAS ได้ และเว็บอินเทอร์เฟซของ DSM เองโหลดได้ในเบราว์เซอร์ของโทรศัพท์ที่ที่อยู่เดียวกัน</div></details>
+    <details><summary>ทำไมบอกว่าข้อมูลเข้าสู่ระบบไม่ถูกต้องทั้งที่รหัสผ่านถูก</summary><div class="body">เพราะ NAS ตอบและปฏิเสธการลงชื่อเข้าใช้ ตรวจสอบการพิมพ์ผิด ตรวจสอบว่าบัญชีใช้ 2FA หรือไม่ และตรวจสอบรายการบล็อกอัตโนมัติของ DSM เผื่อการลองซ้ำหลายครั้งทำให้ที่อยู่โทรศัพท์ของคุณถูกบล็อก</div></details>
+    <details><summary>ทำไมไม่เห็นแท็บที่คาดไว้</summary><div class="body">อาจเป็นเพราะแพ็กเกจเบื้องหลังไม่ได้ติดตั้ง หรือมุมมองย่อยถูกซ่อน แพ็กเกจที่ติดตั้งหลังจากที่คุณเชื่อมต่อต้องรีเฟรช - ดึงลง หรือเปิดแอปใหม่</div></details>
+    <details><summary>กล้องของฉันใช้ได้ที่บ้านแต่ไม่ได้นอกบ้าน</summary><div class="body">เปิด ส่งภาพสดจากกล้องผ่านพอร์ต DSM เมื่อปิดอยู่ ภาพสดต้องใช้ RTSP พอร์ต 554 ซึ่งมักเข้าถึงจากภายนอกไม่ได้</div></details>
+    <details><summary>รูปภาพของฉันแสดงเป็นช่องว่าง</summary><div class="body">รูป HEIC ถูกถอดรหัสบนอุปกรณ์เพราะ DSM 7.2.2+ ไม่สร้างภาพตัวอย่างให้อีก หากรูปเก่าก็ว่างด้วย ให้ใช้จัดทำดัชนีใหม่ที่หน้าจอรูปภาพ</div></details>
+    <details><summary>ทำไมวิดเจ็ตของฉันแสดงตัวเลขเก่า</summary><div class="body">เพราะระบบปฏิบัติการเป็นผู้ตัดสินว่าวิดเจ็ตรีเฟรชได้เมื่อไร แต่ละวิดเจ็ตแสดงเวลาที่จับข้อมูลด้วยเหตุผลนั้น การเปิดแอปเป็นวิธีรีเฟรชที่แน่นอนที่สุด</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>คู่มือฉบับเต็ม</h2>
+    <p class="lead" style="margin:0 auto 24px">ทุกหน้าจอ ทุกตัวควบคุม และสิ่งที่แต่ละอย่างจะไม่ทำ</p>
+    <p><a class="btn" href="/th/guide/">อ่านคู่มือผู้ใช้ &rarr;</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Wake-on-LAN עבור Synology NAS - Syno Manager</title>
+<meta name="description" content="הער Synology במצב שינה, או כל מכונה ברשת שלך דרכו - מה שעובד מכל מקום. מה שדורש VPN או העברה בנתב, בפשטות." />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Wake-on-LAN עבור Synology NAS - Syno Manager" />
+<meta property="og:description" content="הער Synology במצב שינה, או כל מכונה ברשת שלך דרכו - מה שעובד מכל מקום. מה שדורש VPN או העברה בנתב, בפשטות." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/he/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="he_IL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Wake-on-LAN עבור Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="הער Synology במצב שינה, או כל מכונה ברשת שלך דרכו - מה שעובד מכל מקום. מה שדורש VPN או העברה בנתב, בפשטות." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "he",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "בית",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "מדריך למשתמש",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Wake-on-LAN עבור Synology NAS - Syno Manager",
+  "description": "הער Synology במצב שינה, או כל מכונה ברשת שלך דרכו - מה שעובד מכל מקום. מה שדורש VPN או העברה בנתב, בפשטות.",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "he",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "האם אפשר להעיר את ה-NAS מכל מקום?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "רק אם יש נתיב לרשת שלך שאינו תלוי בכך שה-NAS ער - VPN לרשת, או נתב שמוגדר להעביר Wake-on-LAN. NAS כבוי לא יכול להעביר את חבילת ההערה של עצמו, ו-QuickConnect לא יכול להגיע ל-NAS כבוי. באותה רשת זה פשוט עובד."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "האם אפשר להעיר את ה-PC שלי דרך ה-NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "כן, וזה כן עובד מכל מקום, כל עוד ה-NAS עצמו דולק. אתה מבקש מה-NAS בחיבור הרגיל שלך וה-NAS משדר בשבילך את ה-magic packet ב-LAN. זה אותו נתיב שבו משתמשת אפליקציית DS Router של Synology עצמה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מאיפה מגיעה כתובת ה-MAC של ה-NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "האפליקציה לוכדת אותה אוטומטית בפעם הראשונה שאתה מתחבר, כך שלעולם לא צריך לחפש אותה."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "מה אני צריך כדי להוסיף התקן נוסף?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "שם שתזהה וכתובת ה-MAC שלו. לרוב אפשר למצוא את ה-MAC ברשימת ההתקנים של הנתב, או במכונה עצמה תחת הגדרות הרשת שלה."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/he/"><img src="/assets/syno-manager-icon.png" alt="סמל Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="תפריט" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="חיפוש במדריך..." data-i18n-empty="אין התאמות עבור" data-i18n-language="שפה">
+      <a href="/he/">בית</a>
+      <a href="/he/guide/" class="active">מדריך למשתמש</a>
+      <a href="/he/#screenshots">צילומי מסך</a>
+      <a href="/he/compatible-nas/">תאימות</a>
+      <a href="/he/best-synology-nas-app/">למה לעבור</a>
+      <a href="/he/help/">עזרה</a>
+      <a href="/he/#top" class="cta">הורדה</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/he/">בית</a> &rsaquo; <a href="/he/guide/">מדריך למשתמש</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1>הפעל דברים <span class="g">מהספה</span></h1>
+      <p>כפתור <b>הערה</b> ליד התחברות ברשימת ההתקנים עבור ה-NAS עצמו, ומסך <b>התקני הערה</b> לכל השאר ברשת שלך. אחד מהם עובד מכל מקום; לשני יש הסתייגות כנה.</p>
+    </div>
+    <div class="hero-shot"><img alt="מסך התקני ההערה" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">הטבלה הכנה</div>
+      <h2>מה עובד מאיפה</h2>
+      <p class="lead">Wake-on-LAN הוא שידור ברשת מקומית. כל מה שעובד ומה שלא נובע מעובדה אחת, ולכן הנה היא בפשטות ולא קבורה בהערת שוליים.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>מה אתה רוצה להעיר</th><th>איפה אתה</th><th>עובד?</th><th>למה</th></tr></thead>
+      <tbody>
+        <tr><td>ה-NAS</td><td>באותה רשת</td><td class="yes">כן</td><td>הטלפון שלך משדר את החבילה ישירות. אין מה להגדיר.</td></tr>
+        <tr><td>התקן אחר</td><td>באותה רשת</td><td class="yes">כן</td><td>אותו דבר - הטלפון שלך או ה-NAS יכולים לשלוח אותה.</td></tr>
+        <tr><td>התקן אחר, ה-NAS דולק</td><td>בכל מקום</td><td class="yes">כן</td><td><b>ה-NAS מעביר אותה בשבילך.</b> אתה ניגש ל-NAS בחיבור הרגיל שלך והוא משדר ב-LAN. זה נתיב DS Router.</td></tr>
+        <tr><td>ה-NAS עצמו, כשהוא כבוי</td><td>מחוץ לרשת שלך</td><td class="no">דורש הגדרה</td><td>NAS כבוי לא יכול להעביר את ההערה של עצמו, ו-QuickConnect לא יכול להגיע ל-NAS כבוי. אתה צריך <b>VPN</b> לרשת, או נתב שמעביר <b>יציאת UDP 9</b> לכתובת השידור של ה-LAN.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>השורה האמצעית היא השימושית.</b> להעיר מחשב שולחני בבית מתוך רכבת עובד, ולא דורש שום הגדרה בנתב - כי ה-NAS הדולק תמיד הוא שמשדר.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">ה-NAS</div>
+      <h2>הערת ה-DiskStation שלך</h2>
+    </div>
+    <ol class="steps">
+      <li><b>אין מה להגדיר.</b> האפליקציה לוכדת את כתובת ה-MAC של ה-NAS בפעם הראשונה שאתה מתחבר, כך שהכפתור מוכן לפני שאתה צריך אותו.</li>
+      <li><b>פתח הגדרות &rsaquo; ניהול התקני NAS.</b></li>
+      <li><b>הקש על הערה</b> ליד ה-NAS.</li>
+      <li><b>תן לו רגע</b> והקש על התחבר. ל-NAS לוקח זמן לאתחל, והאפליקציה לא תעמיד פנים שהוא פעיל לפני שהוא עונה.</li>
+    </ol>
+    <div class="note warn"><b>צריך להפעיל Wake-on-LAN גם ב-NAS.</b> ב-DSM, תחת <b>לוח בקרה &rsaquo; חומרה &amp; חשמל &rsaquo; כללי</b>. NAS שהאפשרות כבויה בו תתעלם מהחבילה לא משנה מי שולח אותה.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">כל השאר</div>
+      <h2>הערת התקנים אחרים דרך ה-NAS</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>הגדרות &rsaquo; התקני הערה</b>. הוסף כל מכונה ברשת שלך לפי שם וכתובת MAC, וה-NAS שולח בשבילך את ה-magic packet מתוך הרשת.</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>הקש על הוסף התקן.</b></li>
+          <li><b>תן לו שם</b> שתזהה - ״PC שולחני״, ״PC גיימינג״, ״שרת״.</li>
+          <li><b>הזן את כתובת ה-MAC שלו.</b> רשימת ההתקנים של הנתב היא בדרך כלל המקום הקל ביותר למצוא אותה.</li>
+          <li><b>שמור.</b> הוא מופיע ברשימה עם כפתור הערה משלו.</li>
+        </ol>
+        <div class="note"><b>מכיוון שה-NAS הוא ששולח, זה עובד גם כשאתה רחוק</b> - בנתוני סלולר, דרך QuickConnect, מכל מקום שאפשר להגיע ממנו ל-NAS. כך גם אפליקציית הנתב של Synology עצמה עושה זאת, ולכן שווה להגדיר את זה גם אם לעולם לא תעיר את ה-NAS עצמו.</div>
+      </div>
+      <img alt="מסך התקני הערה במצב ריק וכפתור הוסף התקן" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">במכונת היעד</div>
+      <h2>מה צריך להתקיים כדי שההערה תצליח</h2>
+      <p class="lead">אם נשלחה חבילה ושום דבר לא קרה, זה כמעט תמיד אחד מאלה - ושום דבר מהם האפליקציה לא יכולה לראות או לתקן מבחוץ.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wake-on-LAN מופעל ב-BIOS או ב-UEFI של המכונה</b>, שנקרא לעתים ״Wake on PCIe״ או ״Power on by PCI-E״.</li>
+      <li><b>מופעל גם בכרטיס הרשת.</b> ב-Windows: מנהל ההתקנים, מאפייני הכרטיס, ניהול צריכת חשמל, ״אפשר להתקן זה להעיר את המחשב״.</li>
+      <li><b>הפעלה מהירה כבויה ב-Windows.</b> כשהיא פועלת, PC שכובה נמצא בעצם בתרדמת ולעתים קרובות יתעלם מהחבילה.</li>
+      <li><b>בדרך כלל חוטי.</b> הערה דרך Wi-Fi דורשת חומרה ותמיכת מנהל התקן ספציפיות; Ethernet אמין הרבה יותר.</li>
+      <li><b>המכונה עדיין מחוברת לחשמל בקיר.</b> ל-magic packet צריך שלכרטיס הרשת יהיה מתח המתנה.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">שאלות נפוצות</div>
+      <h2>שאלות נפוצות על Wake-on-LAN (FAQ)</h2>
+    </div>
+    <details open><summary>האם אפשר להעיר את ה-NAS מכל מקום?</summary><div class="body">רק אם יש נתיב לרשת שלך שאינו תלוי בכך שה-NAS ער - VPN, או נתב שמוגדר להעביר Wake-on-LAN. NAS כבוי לא יכול להעביר את חבילת ההערה של עצמו, ו-QuickConnect לא יכול להגיע ל-NAS כבוי. באותה רשת זה פשוט עובד.</div></details>
+    <details><summary>האם אפשר להעיר את ה-PC שלי דרך ה-NAS?</summary><div class="body">כן, וזה כן עובד מכל מקום כל עוד ה-NAS עצמו דולק. אתה מבקש מה-NAS בחיבור הרגיל שלך והוא משדר בשבילך את ה-magic packet ב-LAN.</div></details>
+    <details><summary>מאיפה מגיעה כתובת ה-MAC של ה-NAS?</summary><div class="body">האפליקציה לוכדת אותה אוטומטית בפעם הראשונה שאתה מתחבר, כך שלעולם לא צריך לחפש אותה.</div></details>
+    <details><summary>מה אני צריך כדי להוסיף התקן נוסף?</summary><div class="body">שם שתזהה וכתובת ה-MAC שלו, שבדרך כלל נמצאת ברשימת ההתקנים של הנתב.</div></details>
+    <details><summary>שלחתי הערה ושום דבר לא קרה.</summary><div class="body">בדוק ש-Wake-on-LAN מופעל במכונת היעד - ב-BIOS שלה, בכרטיס הרשת שלה, ועם הפעלה מהירה של Windows כבויה. בדוק גם שהיא על Ethernet חוטי, ושב-NAS מופעל Wake-on-LAN בלוח הבקרה אם זה ה-NAS שאתה מעיר.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>הבא: ווידג׳טים</h2>
+    <p class="lead" style="margin:0 auto 24px">ה-NAS שלך במסך הבית, עם חותמת זמן כנה.</p>
+    <p><a class="btn" href="/he/guide/widgets/">ווידג׳טים למסך הבית &rarr;</a> &nbsp; <a class="btn ghost" href="/he/guide/">חזרה למדריך</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/he/">בית</a><a href="/he/guide/">מדריך למשתמש</a><a href="/he/guide/getting-started/">תחילת העבודה</a><a href="/he/compatible-nas/">תאימות</a><a href="/he/best-synology-nas-app/">למה לעבור</a><a href="/he/synology-app-for-iphone/">iPhone ו-iPad</a><a href="/he/synology-app-for-android/">Android</a><a href="/he/synology-app-for-mac-windows/">Mac ו-Windows</a><a href="/he/ds-finder-alternative/">לעומת DS finder</a><a href="/he/help/">עזרה</a><a href="/he/privacy/">פרטיות</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">דווחו על באג</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager היא אפליקציה עצמאית ואינה קשורה ל-Synology Inc., אינה מאושרת על ידה ואינה בחסותה. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ו-QuickConnect הם סימנים מסחריים של Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

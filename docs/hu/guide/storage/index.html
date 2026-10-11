@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology tárhely, RAID és SMART állapot - Syno Manager</title>
+<meta name="description" content="Synology kötetek és készletek RAID-típussal és szabad hellyel, meghajtónkénti SMART-állapot és hőmérséklet, gyors SMART-teszt, valamint biztonságos kiadás USB és eSATA eszközökhöz." />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology tárhely, RAID és SMART állapot - Syno Manager" />
+<meta property="og:description" content="Synology kötetek és készletek RAID-típussal és szabad hellyel, meghajtónkénti SMART-állapot és hőmérséklet, gyors SMART-teszt, valamint biztonságos kiadás USB és eSATA eszközökhöz." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology tárhely, RAID és SMART állapot - Syno Manager" />
+<meta name="twitter:description" content="Synology kötetek és készletek RAID-típussal és szabad hellyel, meghajtónkénti SMART-állapot és hőmérséklet, gyors SMART-teszt, valamint biztonságos kiadás USB és eSATA eszközökhöz." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Tárhely"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology tárhely, RAID és SMART állapot - Syno Manager",
+  "description": "Synology kötetek és készletek RAID-típussal és szabad hellyel, meghajtónkénti SMART-állapot és hőmérséklet, gyors SMART-teszt, valamint biztonságos kiadás USB és eSATA eszközökhöz.",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "hu",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Láthatom az egyes meghajtók SMART-állapotát?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A Lemezállapot almenü minden meghajtót felsorol a típusával, azzal, hogy HDD vagy SSD, a kapacitásával, a hőmérsékletével és a SMART-ítéletével. A telefonról bármelyik meghajtón indíthat gyors SMART-tesztet is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mekkora hőmérséklet túl magas egy NAS-meghajtónak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Az alkalmazás borostyánsárgára színezi a meghajtót 45 Celsius-fok felett, pirosra 55 felett, a rendszerhőmérsékletet pedig borostyánsárgára 50, pirosra 60 felett. Ezek a küszöbök a kezdőképernyő állapotjelzőjét is táplálják, így egy túl meleg meghajtó ott is megjelenik anélkül, hogy keresnie kellene."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Biztonságosan kiadhatok egy USB-meghajtót az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, a Külső almenüből. A kiadást az igazolja, hogy a meghajtó ténylegesen eltűnik az eszközlistából, nem az, hogy a kérést elfogadták - így az a meghajtó, amelyik azt mondja, hogy kiadták, tényleg ki van adva. A formázás vagy inicializálás alatt álló meghajtó nem adható ki."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Létrehozhatok vagy bővíthetek kötetet az alkalmazásból?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A kötetek és készletek létrehozása, bővítése és javítása a DSM Tárhelykezelőjében történik. Az alkalmazás jelenti, mit csinál a tárhelye, és lehetővé teszi a meghajtókon végzett műveleteket; nem alakítja át a tömbjét egy telefonról."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Tárhely</div>
+      <div class="eyebrow">Tárhely</div>
+      <h1>Minden kötet, <span class="g">minden meghajtó</span></h1>
+      <p>Három almenü: <b>Kötetek &amp; készletek</b> a kapacitáshoz és a RAID-hez, <b>Lemezállapot</b> a meghajtónkénti SMART-hoz és hőmérséklethez, és <b>Külső</b> mindenhez, ami hátul be van dugva.</p>
+    </div>
+    <div class="hero-shot"><img alt="Tárhelykötetek és meghajtók a Syno Managerben" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Ezen az oldalon</b><ul>
+      <li><a href="#volumes">Kötetek &amp; készletek</a></li>
+      <li><a href="#drives">A meghajtólista</a></li>
+      <li><a href="#disk-health">Lemezállapot &amp; SMART</a></li>
+      <li><a href="#thresholds">Hőmérsékleti küszöbök</a></li>
+      <li><a href="#external">Külső eszközök &amp; biztonságos kiadás</a></li>
+      <li><a href="#limits">Amit nem tesz</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Kötetek &amp; készletek</div>
+      <h2>Kapacitás egy pillantásra</h2>
+      <p class="lead">Minden kötet kap egy kártyát a nevével, RAID-típusával, állapotával és a mögötte álló meghajtók számával, egy használati sáv fölött, amely mutatja a felhasznált, a százalékos, a teljes és a szabad értéket.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Megjelenik</th><th>Jelentés</th></tr></thead>
+      <tbody>
+        <tr><td>Kötet neve</td><td>Ahogyan a DSM nevezi - <code>VOLUME_1</code>, és így tovább.</td></tr>
+        <tr><td>RAID-típus</td><td>RAID 5, SHR, RAID 1, Basic - bármi is a mögötte lévő készlet valójában.</td></tr>
+        <tr><td>Állapot</td><td>A kötet saját állapota: <b>normál</b>, degradált, összeomlott. A degradált tömb az egyetlen dolog ezen a képernyőn, amivel még ma érdemes foglalkozni.</td></tr>
+        <tr><td>Meghajtók száma</td><td>Hány fizikai meghajtót fog át a kötet.</td></tr>
+        <tr><td>Használati sáv</td><td>Normál esetben zöld, 80% felett borostyánsárga, 90% felett piros. Ugyanezeket a küszöböket használja az <a href="/hu/guide/home/#header">állapotjelző</a> is.</td></tr>
+        <tr><td>Felhasznált / Teljes / Szabad</td><td>Mind a három, mert a „70%-ig tele” és a „13 TB szabad” két különböző kérdésre válaszol.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>Mi van az egyes helyeken</h2>
+      <p class="lead">A kötetek alatt minden fizikai meghajtó, rekeszszám szerint.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Rekesz</b> - Lemez 1, Lemez 2 és így tovább, a ház címkéinek megfelelően.</li>
+      <li><b>Típus</b> - a meghajtó saját típusjelölése.</li>
+      <li><b>Gyártó és típus</b> - a gyártó, valamint hogy HDD vagy SSD. Az a meghajtó, amelynek gyártóját a NAS nem tudta azonosítani, <b>Ismeretlen</b> néven jelenik meg, nem találgatással.</li>
+      <li><b>Hőmérséklet</b>, az alábbi küszöbökhöz színezve.</li>
+      <li><b>SMART-ítélet</b> - <b>SMART OK</b>, ha a meghajtó saját önértékelése egészséges.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Lemezállapot</div>
+      <h2>SMART, és egy indítható teszt</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">A Lemezállapot almenü ugyanezeket a meghajtókat mutatja nagyobb helyen: a kapacitás, a típus, a hőmérséklet és a SMART-állapot külön-külön kap egy jelölőt, és minden meghajtón ott van a <b>Gyors SMART-teszt</b> gomb.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li>A <b>Gyors SMART-teszt</b> megkéri a meghajtót, hogy futtassa le a saját rövid önellenőrzését. Pár percig tart, és nem szakít meg semmit, ami a kötetet használja.</li>
+          <li><b>Az ítélet a meghajtóé, nem a miénk.</b> A SMART a meghajtó jelentése önmagáról; az alkalmazás továbbítja. Az a meghajtó, amely azt mondja, hogy rendben van, majd mégis meghibásodik, a SMART korlátja, nem a leolvasásé.</li>
+          <li><b>Az olvashatatlan SMART-állapot ismeretlenként jelenik meg</b>, soha nem egészségesként. A hiányzó leolvasás és a jó leolvasás két különböző dolog, és soha nem keverjük őket.</li>
+        </ul>
+      </div>
+      <img alt="A Lemezállapot minden meghajtót mutat SMART-állapottal, hőmérséklettel és Gyors SMART-teszt gombbal" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">A színek mögötti számok</div>
+      <h2>Küszöbök</h2>
+      <p class="lead">Semmi sem találgatás a hardveréről - ezek azok a pontok, ahol az alkalmazás színt vált, és ahol releváns, a kezdőképernyő állapotjelzője is.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Érték</th><th>Borostyánsárga innentől</th><th>Piros innentől</th></tr></thead>
+      <tbody>
+        <tr><td>Meghajtó hőmérséklete</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>Rendszerhőmérséklet</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>Kötet kihasználtsága</td><td>80%</td><td>90%</td></tr>
+        <tr><td>UPS töltöttsége</td><td>50% alatt</td><td>20% alatt</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">A &deg;C és &deg;F között a <a href="/hu/guide/settings/#preferences">Beállítások &rsaquo; Hőmérséklet-mértékegység</a> alatt válthat. Az alkalmazás minden hőmérséklete azonnal követi, a kezdőképernyőn és a widgetekben láthatók is.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">Külső</div>
+      <h2>USB, eSATA és biztonságos kiadás</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Külső tárhely és USB-eszközök, semmi csatlakoztatva, egy UPS felsorolva" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Két szakasz: a <b>Külső tárhely</b> a csatolható és kiadható meghajtóknak, az <b>USB-eszközök</b> pedig mindennek, ami más be van dugva - UPS, nyomtató, dongle.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>A kiadást az igazolja, hogy a meghajtó eltűnik.</b> Az alkalmazás nem azért jelent sikert, mert a kérés OK-val tért vissza; újraolvassa az eszközlistát, és csak akkor mondja, hogy a meghajtó ki van adva, ha az valóban eltűnt. Ez a különbség a „biztonságosan kihúzható” és a „valószínűleg biztonságosan kihúzható” között.</li>
+          <li><b>A foglalt meghajtó nem adható ki.</b> Az, amelyik formázás vagy inicializálás alatt áll, indoklással elutasításra kerül, ahelyett hogy írás közben kihúznák.</li>
+          <li><b>Ha nincs semmi csatlakoztatva, azt egyszerűen közli.</b> Az üres lista így szól: „Nincs csatlakoztatott külső meghajtó” - nem egy üres doboz, amelyet Önnek kell értelmeznie.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">Határok</div>
+      <h2>Amit ez a képernyő nem tesz meg</h2>
+      <p class="lead">A tárhely az az egyetlen hely, ahol egy téves koppintás nem visszafordítható, ezért az alkalmazás sokkal többet olvas, mint ír.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nem hoz létre, nem bővít és nem töröl kötetet vagy készletet.</b> Ezek a DSM Tárhelykezelőjében vannak, egy olyan képernyőn, amely elég nagy ahhoz, hogy megmutassa, mire készül.</li>
+      <li><b>Nem javít degradált tömböt.</b> Világosan, a kezdőképernyőn is jelzi, hogy egy degradált.</li>
+      <li><b>Nem formáz semmit.</b></li>
+      <li><b>Nem futtat teljes SMART-tesztet</b> - csak a gyorsat. A teljes felületvizsgálat órákig tart, és olyan helyre való, ahonnan nem fog elsétálni.</li>
+    </ul>
+    <div class="note"><b>A scrubbing, az újjáépítés és a paritásellenőrzés</b> futó műveletként jelenik meg, amíg folyamatban van, így az alkalmazásból is végignézheti, hogyan fejeződik be, még ha a DSM-ben indította is el.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Tárhely - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Láthatom az egyes meghajtók SMART-állapotát?</summary><div class="body">Igen. A Lemezállapot almenü minden meghajtót felsorol a típusával, azzal, hogy HDD vagy SSD, a kapacitásával, a hőmérsékletével és a SMART-ítéletével. A telefonról bármelyik meghajtón indíthat gyors SMART-tesztet is.</div></details>
+    <details><summary>Mekkora hőmérséklet túl magas egy NAS-meghajtónak?</summary><div class="body">Az alkalmazás borostyánsárgára színezi a meghajtót 45&deg;C felett, pirosra 55&deg;C felett, a rendszerhőmérsékletet pedig borostyánsárgára 50&deg;C, pirosra 60&deg;C felett. Ezek a küszöbök a kezdőképernyő állapotjelzőjét is táplálják.</div></details>
+    <details><summary>Biztonságosan kiadhatok egy USB-meghajtót az alkalmazásból?</summary><div class="body">Igen, a Külső almenüből. A kiadást az igazolja, hogy a meghajtó ténylegesen eltűnik az eszközlistából, nem az, hogy a kérést elfogadták. A formázás vagy inicializálás alatt álló meghajtó nem adható ki.</div></details>
+    <details><summary>Létrehozhatok vagy bővíthetek kötetet az alkalmazásból?</summary><div class="body">Nem. A kötetek és készletek létrehozása, bővítése és javítása a DSM Tárhelykezelőjében történik. Az alkalmazás jelenti, mit csinál a tárhelye, és lehetővé teszi a meghajtókon végzett műveleteket; nem alakítja át a tömbjét egy telefonról.</div></details>
+    <details><summary>Miért Ismeretlen a meghajtó gyártója?</summary><div class="body">Mert a NAS nem jelentett ilyet. Az alkalmazás azt mutatja, amit közöltek vele, ahelyett hogy a típusjelölésből következtetne a gyártóra, ami ténynek feltüntetett találgatás lenne.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: Hálózat</h2>
+    <p class="lead" style="margin:0 auto 24px">Adatforgalom, kapcsolatok, szolgáltatások, VPN és DDNS.</p>
+    <p><a class="btn" href="/hu/guide/network/">Hálózat &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

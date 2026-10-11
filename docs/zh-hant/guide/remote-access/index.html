@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>遠端存取你的 Synology NAS - Syno Manager</title>
+<meta name="description" content="透過 QuickConnect、自訂網域或 VPN，隨時隨地連上你的 Synology。了解各項功能適用哪種連線路徑，包括相片與攝影機即時檢視。" />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="遠端存取你的 Synology NAS - Syno Manager" />
+<meta property="og:description" content="透過 QuickConnect、自訂網域或 VPN，隨時隨地連上你的 Synology。了解各項功能適用哪種連線路徑，包括相片與攝影機即時檢視。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="遠端存取你的 Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="透過 QuickConnect、自訂網域或 VPN，隨時隨地連上你的 Synology。了解各項功能適用哪種連線路徑，包括相片與攝影機即時檢視。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "離開家時"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "遠端存取你的 Synology NAS - Syno Manager",
+  "description": "透過 QuickConnect、自訂網域或 VPN，隨時隨地連上你的 Synology。了解各項功能適用哪種連線路徑，包括相片與攝影機即時檢視。",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "遠端使用 NAS 需要設定連接埠轉送嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "不需要。QuickConnect 會透過 Synology 的服務轉送連線，完全不需要設定路由器，使用 VPN 連回你的網路也行得通。只有在你特別想要從網際網路直接連線時，才需要連接埠轉送。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "相片與攝影機即時檢視可以透過 QuickConnect 使用嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。縮圖、完整影像、攝影機即時檢視，以及 File Station 與 Drive 的下載，都會走目前使用中的路徑，包括 QuickConnect 轉送。轉送比你自己的網路慢，但可以正常運作。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我應該把 NAS 加兩次嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "這是個好做法。一個項目用區域網路 IP，在家時使用 - 快速、直接；另一個用 QuickConnect，外出時使用。它們是各自獨立的項目，版面配置也各自獨立，切換只要一點。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "QuickConnect 安全嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "使用 HTTPS 時，連線全程加密，Synology 的轉送服務只負責傳遞流量，不會保存你的資料。你的 DSM 憑證仍然有效，雙重驗證也照常運作。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 不在家時</div>
+      <div class="eyebrow">離開家時</div>
+      <h1>同一個 App，<span class="g">不同的路徑</span></h1>
+      <p>不論你就在 NAS 旁邊，還是在世界的另一端，Syno Manager 的運作都一樣。不同的只是連線抵達的方式，而每種路徑各有值得了解的取捨。</p>
+    </div>
+    <div class="hero-shot"><img alt="顯示直接 IP 與 QuickConnect 的新增 NAS 表單" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">三種路徑</div>
+      <h2>挑選最適合你的</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>路徑</th><th>設定方式</th><th>速度</th><th>會對外開放什麼嗎？</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>在 DSM 中啟用並輸入 ID。路由器完全不用動。</td><td>較慢 - 流量會經由 Synology 的轉送服務。</td><td class="yes">什麼都不會。你這邊沒有任何開放的連接埠。</td></tr>
+        <tr><td><b>自訂網域 / DDNS</b></td><td>一個指向你位址的主機名稱，再加上路由器上的連接埠轉送。</td><td>直接連線，速度取決於你的上傳頻寬。</td><td class="no">會 - DSM 連接埠可從網際網路連到。</td></tr>
+        <tr><td><b>VPN</b></td><td>在路由器或 NAS 上架設 VPN 伺服器，並在手機上安裝用戶端。</td><td>連線後即為直接連線。</td><td class="yes">只開放 VPN 連接埠。其他一切都保持私密。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>如果不確定，就用 QuickConnect。</b>它不需要任何路由器知識，也不會開放任何東西，而且 App 的所有功能都能透過它使用。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">遠端時可使用的功能</div>
+      <h2>全部都行，只有兩個附註</h2>
+      <p class="lead">你不在家時，App 的功能並不會縮水。需要稍微想一下的只有兩件事：攝影機即時檢視，以及喚醒已關機的 NAS。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>功能</th><th>離開家時</th></tr></thead>
+      <tbody>
+        <tr><td>監控 - 系統、儲存空間、網路、健康狀態</td><td class="yes">任何路徑都能使用。</td></tr>
+        <tr><td>Docker、套件、服務、工作、使用者</td><td class="yes">任何路徑都能使用。</td></tr>
+        <tr><td>Synology Photos - 縮圖與完整影像</td><td class="yes">可使用，包含轉送。</td></tr>
+        <tr><td>File Station 與 Drive 下載</td><td class="yes">可使用，包含轉送。</td></tr>
+        <tr><td>備份 - 狀態與立即執行</td><td class="yes">任何路徑都能使用。</td></tr>
+        <tr><td>透過 NAS 喚醒其他裝置</td><td class="yes">可使用，前提是 NAS 本身是開機的。</td></tr>
+        <tr><td><b>攝影機即時檢視</b></td><td>請開啟<b>透過 DSM 連接埠以通道傳送攝影機即時檢視</b>。若沒有開啟，即時檢視需要連接埠 554 上的 RTSP，而這通常無法從外部連到。請參閱<a href="/zh-hant/guide/media/#streaming">即時檢視如何連線</a>。</td></tr>
+        <tr><td><b>在 NAS 關機時喚醒它</b></td><td>需要 VPN 或路由器的 Wake-on-LAN 轉送。QuickConnect 無法連到已關機的 NAS。請參閱 <a href="/zh-hant/guide/wake-on-lan/">Wake-on-LAN</a>。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>設定方式</h2>
+    </div>
+    <ol class="steps">
+      <li><b>在 DSM 中：</b>控制台 &rsaquo; 外部存取 &rsaquo; QuickConnect。啟用後記下 QuickConnect ID。</li>
+      <li><b>在 App 中：</b>新增 NAS，並將<b>連線類型</b>切換為 <b>QuickConnect</b>。</li>
+      <li><b>輸入 ID</b> - 不是主機與連接埠。</li>
+      <li><b>你的 DSM 憑證</b>，如果帳號有啟用雙重驗證，也要輸入驗證碼。</li>
+      <li><b>儲存 &amp; 連線。</b></li>
+    </ol>
+    <div class="note"><b>速度會比較慢，請有心理準備。</b>轉送多了一個跳點，Synology 也會對其限速，所以相簿捲動起來不如在家時流暢。所有功能仍然正常 - 差別只在延遲，而不是能力。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">值得仿效的做法</div>
+      <h2>把同一台 NAS 加兩次</h2>
+      <p class="lead">一個項目用<b>區域網路 IP</b>，一個用 <b>QuickConnect</b>。幫它們取好名字以便區分 - 例如「NAS（家裡）」和「NAS（外出）」。</p>
+    </div>
+    <ul class="plain">
+      <li><b>在家時</b>，使用直接連線的那個：沒有轉送、全速、縮圖秒開。</li>
+      <li><b>外出時</b>，切換到 QuickConnect 的那個。</li>
+      <li><b>它們的版面配置各自獨立</b>，所以你可以把外出用的項目精簡成只剩你在行動數據下真正會看的幾張卡片。</li>
+      <li><b>切換只要一點</b>，在裝置清單中就能完成。</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">將<a href="/zh-hant/guide/settings/#launch">啟動行為</a>設為<b>上次使用的 NAS</b>，App 就會停留在你上次使用的那一台。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>遠端存取常見問題</h2>
+    </div>
+    <details open><summary>遠端使用 NAS 需要設定連接埠轉送嗎？</summary><div class="body">不需要。QuickConnect 不需任何路由器設定就能轉送連線，使用 VPN 也行得通。只有在你特別想要從網際網路直接連線時，才需要連接埠轉送。</div></details>
+    <details><summary>相片與攝影機即時檢視可以透過 QuickConnect 使用嗎？</summary><div class="body">可以。縮圖、完整影像、攝影機即時檢視，以及 File Station 與 Drive 的下載，都會走目前使用中的路徑，包括轉送。攝影機即時檢視需要開啟 DSM 連接埠通道開關。</div></details>
+    <details><summary>我應該把 NAS 加兩次嗎？</summary><div class="body">這是個好做法 - 一個項目用區域網路 IP 在家使用，一個用 QuickConnect 在外使用，版面配置各自獨立，一點即可切換。</div></details>
+    <details><summary>QuickConnect 安全嗎？</summary><div class="body">使用 HTTPS 時，連線全程加密，轉送服務只負責傳遞流量，不會保存你的資料。你的 DSM 憑證與雙重驗證仍然有效。</div></details>
+    <details><summary>為什麼我的區域網路 IP 項目在行動數據下無法使用？</summary><div class="body">因為像 192.168.x.x 這類私有位址只存在於你自己的網路中。請改用 QuickConnect 項目、網域，或先連上你的 VPN。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：備份 &amp; 還原</h2>
+    <p class="lead" style="margin:0 auto 24px">把你的 App 設定搬到新手機。</p>
+    <p><a class="btn" href="/zh-hant/guide/backup-restore/">備份 &amp; 還原 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">返回使用指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

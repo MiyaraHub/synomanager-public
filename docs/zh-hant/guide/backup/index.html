@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>在手機上監控 Synology Hyper Backup - Syno Manager</title>
+<meta name="description" content="顯示每個 Hyper Backup 工作在目的地實際佔用的空間，並提供 Active Backup for Business 裝置，以及依工作負載分類的重複資料刪除後容量。" />
+<meta name="keywords" content="Hyper Backup app, Synology backup monitoring phone, Active Backup for Business app, Synology backup size, run backup from phone, Synology backup status" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/backup/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/backup/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/backup/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/backup/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/backup/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/backup/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/backup/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/backup/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/backup/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/backup/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/backup/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/backup/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/backup/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/backup/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/backup/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/backup/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/backup/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/backup/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/backup/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/backup/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/backup/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/backup/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/backup/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/backup/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/backup/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/backup/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/backup/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/backup/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/backup/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/backup/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/backup/" />
+<!--/hreflang-->
+<meta property="og:title" content="在手機上監控 Synology Hyper Backup - Syno Manager" />
+<meta property="og:description" content="顯示每個 Hyper Backup 工作在目的地實際佔用的空間，並提供 Active Backup for Business 裝置，以及依工作負載分類的重複資料刪除後容量。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/backup/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="在手機上監控 Synology Hyper Backup - Syno Manager" />
+<meta name="twitter:description" content="顯示每個 Hyper Backup 工作在目的地實際佔用的空間，並提供 Active Backup for Business 裝置，以及依工作負載分類的重複資料刪除後容量。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "備份"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "在手機上監控 Synology Hyper Backup - Syno Manager",
+  "description": "顯示每個 Hyper Backup 工作在目的地實際佔用的空間，並提供 Active Backup for Business 裝置，以及依工作負載分類的重複資料刪除後容量。",
+  "image": "https://synomanager.com/screenshots/backup-hyper.webp",
+  "url": "https://synomanager.com/guide/backup/",
+  "mainEntityOfPage": "https://synomanager.com/guide/backup/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "可以用手機啟動備份嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。每個 Hyper Backup 工作都有「立即執行」按鈕，執行中的工作會顯示即時進度列，並可取消。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "備份大小與來源大小有什麼不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "來源大小是工作正在備份的資料量。備份大小則是經過重複資料刪除與壓縮後，在目的地實際佔用的空間。兩者並列，才看得出這兩項幫你省了多少，也能看出目的地是否比來源成長得更快而快要塞滿。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "有顯示 Active Backup for Business 嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "有。卡片與詳細檢視會顯示備份儲存庫經重複資料刪除後的總大小，並依工作負載細分 - 電腦、伺服器、虛擬機器與 DSM 裝置 - 各附裝置數量，另列出每台受保護的裝置、上次備份時間與「立即備份」按鈕。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "備份失敗時會通知我嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "會。每個工作都會顯示狀態，失敗的工作也會讓主畫面的健康狀態標章升級警示，所以你不用自己去找就能知道。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 備份</div>
+      <div class="eyebrow">備份</div>
+      <h1>備份<span class="g">真的有執行嗎？</span></h1>
+      <p>NAS 擁有者最常問的問題，一個畫面就能回答。<b>備份</b>涵蓋 Hyper Backup；<b>Active Backup</b>涵蓋 Active Backup for Business。</p>
+    </div>
+    <div class="hero-shot"><img alt="Hyper Backup 工作，顯示備份大小、來源大小與下次執行時間" src="/screenshots/backup-hyper.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#hyper">Hyper Backup</a></li>
+      <li><a href="#sizes">備份大小與來源大小</a></li>
+      <li><a href="#active">Active Backup for Business</a></li>
+      <li><a href="#failures">發生失敗時</a></li>
+    </ul></div>
+
+    <div class="section-head" id="hyper">
+      <div class="eyebrow">Hyper Backup</div>
+      <h2>每個工作，以及它正在做什麼</h2>
+      <p class="lead">頂端有摘要 - 共有多少工作、多少正常、多少有問題 - 接著是每個工作各一張卡片。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>顯示內容</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td>工作名稱</td><td>與你在 Hyper Backup 中的命名相同。</td></tr>
+        <tr><td>目的地</td><td>備份到哪裡 - Synology C2、遠端 NAS、本機資料夾或雲端服務供應商。</td></tr>
+        <tr><td>狀態</td><td><b>閒置</b>、執行中或失敗。執行中的工作會顯示即時進度列。</td></tr>
+        <tr><td>備份大小</td><td>工作<b>在目的地</b>佔用多少空間。</td></tr>
+        <tr><td>來源大小</td><td>正在備份的資料量。</td></tr>
+        <tr><td>上次備份</td><td>上次執行結束至今多久。</td></tr>
+        <tr><td>下次備份</td><td>排程下次觸發的時間。</td></tr>
+        <tr><td>立即執行</td><td>立即啟動工作。執行中的工作可以取消。</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="sizes">
+      <div class="eyebrow">刻意並列兩個數字</div>
+      <h2>備份大小與來源大小並排顯示</h2>
+      <p class="lead">多數工具只顯示其中一個。兩者並列，才能回答單看任何一個都無法回答的問題。</p>
+    </div>
+    <ul class="plain">
+      <li><b>重複資料刪除與壓縮替你省了多少。</b>來源為 758 GB、在目的地卻佔用 814 GB，和佔用 300 GB 所代表的意義截然不同 - 只有把兩個數字放在一起才看得出來。</li>
+      <li><b>目的地是否快要滿了。</b>來源的成長與目的地的成長並不是同一條曲線，而要判斷「下個月會不會失敗」，重點是目的地。</li>
+      <li><b>版本控管是否失控。</b>目的地成長得比來源快很多，通常代表保留原則保留的內容比你預期的還多。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="active">
+      <div class="eyebrow">Active Backup</div>
+      <h2>Active Backup for Business</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">標題顯示裝置與工作數量，接著是儲存庫大小，然後是各個裝置。</p>
+        <h3 style="margin-top:20px">備份大小</h3>
+        <ul class="plain">
+          <li>儲存庫<b>經重複資料刪除後的總大小</b>，依磁碟區分別顯示。</li>
+          <li><b>依工作負載細分</b> - 電腦、伺服器、虛擬機器與 DSM 裝置 - 各附自己的裝置數量與大小。</li>
+          <li><b>標示它真正的意義：</b>Active Backup 回報的目的地重複資料刪除後大小。不是把來源大小加總再假裝成這個數字。</li>
+        </ul>
+        <h3 style="margin-top:22px">裝置</h3>
+        <ul class="plain">
+          <li><b>每台受保護的裝置</b>，附位址與作業系統。</li>
+          <li><b>上次備份</b>；若從未執行則顯示<b>從未</b> - 這正是值得注意的項目。</li>
+          <li>每台裝置各有<b>立即備份</b>。</li>
+        </ul>
+      </div>
+      <img alt="Active Backup for Business，顯示依工作負載分類的儲存庫大小與受保護的裝置" src="/screenshots/backup-active.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="failures">
+      <div class="eyebrow">發生失敗時</div>
+      <h2>不必去找，就能知道</h2>
+    </div>
+    <ul class="plain">
+      <li><b>工作卡片會直接告知</b>，並附上 NAS 回報的狀態。</li>
+      <li><b>主畫面的健康狀態標章</b>會反映出來，所以備份失敗會顯示在你第一眼看到的畫面，而不是要點三層才看得到。</li>
+      <li><b>從未備份過的裝置</b>會顯示為<b>從未</b>，而不是空白或零 - 那些看起來都像是「沒問題」。</li>
+    </ul>
+    <div class="note"><b>App 不會做的事：</b>建立或編輯備份工作、變更保留原則，或從備份還原。這些是 Hyper Backup 自己的工作，尤其是還原，更不該在手機上不小心就啟動。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>備份常見問題</h2>
+    </div>
+    <details open><summary>可以用手機啟動備份嗎？</summary><div class="body">可以。每個 Hyper Backup 工作都有「立即執行」按鈕，執行中的工作會顯示即時進度列，並可取消。</div></details>
+    <details><summary>備份大小與來源大小有什麼不同？</summary><div class="body">來源大小是工作正在備份的資料量。備份大小則是經過重複資料刪除與壓縮後，在目的地實際佔用的空間。兩者並列，就能看出這兩項幫你省了多少，以及目的地是否比來源成長得更快而快要塞滿。</div></details>
+    <details><summary>有顯示 Active Backup for Business 嗎？</summary><div class="body">有 - 依工作負載細分的重複資料刪除後儲存庫大小，各附裝置數量，另列出每台受保護的裝置、上次備份時間與「立即備份」按鈕。</div></details>
+    <details><summary>備份失敗時會通知我嗎？</summary><div class="body">會。每個工作都會顯示狀態，失敗的工作也會讓主畫面的健康狀態標章升級警示。</div></details>
+    <details><summary>可以在 App 裡從備份還原嗎？</summary><div class="body">不行。還原要在 Hyper Backup 或 Active Backup 中進行，那裡有版本選擇與目標選擇。App 負責監控並觸發備份，不負責把資料放回去。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：控制台</h2>
+    <p class="lead" style="margin:0 auto 24px">使用者、排程工作、UPS，以及 App 本身的設定。</p>
+    <p><a class="btn" href="/zh-hant/guide/control-panel/">控制台 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">回到指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="nb" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Få tilgang til Synology NAS-en din eksternt - Syno Manager</title>
+<meta name="description" content="Nå Synology-en din fra hvor som helst med QuickConnect, et eget domene eller VPN. Hvilke funksjoner som fungerer over hvilken rute, inkludert bilder og direktevisning fra kamera." />
+<meta name="keywords" content="Synology QuickConnect app, access NAS remotely phone, Synology DDNS remote access, Synology VPN access, NAS without port forwarding" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nb/guide/remote-access/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/remote-access/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/remote-access/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/remote-access/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/remote-access/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/remote-access/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/remote-access/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/remote-access/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/remote-access/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/remote-access/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/remote-access/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/remote-access/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/remote-access/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/remote-access/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/remote-access/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/remote-access/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/remote-access/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/remote-access/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/remote-access/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/remote-access/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/remote-access/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/remote-access/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/remote-access/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/remote-access/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/remote-access/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/remote-access/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/remote-access/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/remote-access/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/remote-access/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/remote-access/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/remote-access/" />
+<!--/hreflang-->
+<meta property="og:title" content="Få tilgang til Synology NAS-en din eksternt - Syno Manager" />
+<meta property="og:description" content="Nå Synology-en din fra hvor som helst med QuickConnect, et eget domene eller VPN. Hvilke funksjoner som fungerer over hvilken rute, inkludert bilder og direktevisning fra kamera." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nb/guide/remote-access/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nb_NO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Få tilgang til Synology NAS-en din eksternt - Syno Manager" />
+<meta name="twitter:description" content="Nå Synology-en din fra hvor som helst med QuickConnect, et eget domene eller VPN. Hvilke funksjoner som fungerer over hvilken rute, inkludert bilder og direktevisning fra kamera." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nb",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Hjem",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Brukerguide",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Borte fra hjemmet"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Få tilgang til Synology NAS-en din eksternt - Syno Manager",
+  "description": "Nå Synology-en din fra hvor som helst med QuickConnect, et eget domene eller VPN. Hvilke funksjoner som fungerer over hvilken rute, inkludert bilder og direktevisning fra kamera.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/remote-access/",
+  "mainEntityOfPage": "https://synomanager.com/guide/remote-access/",
+  "inLanguage": "nb",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Må jeg videresende porter for å bruke NAS-en eksternt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nei. QuickConnect formidler tilkoblingen via Synologys tjeneste uten noen ruterkonfigurasjon, og en VPN inn til nettverket ditt fungerer også. Portvideresending trengs bare hvis du spesifikt vil ha en direkte rute fra internett."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Fungerer bilder og direktevisning fra kamera over QuickConnect?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Miniatyrbilder, fullstørrelsesbilder, direktevisning fra kamera og nedlastinger fra File Station og Drive går alle over den ruten som er aktiv, også QuickConnect-releet. Releet er tregere enn ditt eget nettverk, men det fungerer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bør jeg legge til NAS-en min to ganger?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Det er et godt mønster. Én oppføring med lokal IP når du er hjemme - raskt og direkte - og én med QuickConnect når du er ute. De er separate oppføringer med separate oppsett, og det tar ett trykk å bytte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er QuickConnect sikkert?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tilkoblingen er kryptert fra ende til ende når du bruker HTTPS, og Synologys rele sender trafikken videre uten å lagre dataene dine. DSM-påloggingen din gjelder fortsatt, og tofaktorautentisering fungerer fortsatt."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nb/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-ikon" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meny" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Søk i guiden..." data-i18n-empty="Ingen treff for" data-i18n-language="Språk">
+      <a href="/nb/">Hjem</a>
+      <a href="/nb/guide/" class="active">Brukerguide</a>
+      <a href="/nb/#screenshots">Skjermbilder</a>
+      <a href="/nb/compatible-nas/">Kompatibilitet</a>
+      <a href="/nb/best-synology-nas-app/">Hvorfor bytte</a>
+      <a href="/nb/help/">Hjelp</a>
+      <a href="/nb/#top" class="cta">Last ned</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nb/">Hjem</a> &rsaquo; <a href="/nb/guide/">Brukerveiledning</a> &rsaquo; Borte fra hjemmet</div>
+      <div class="eyebrow">Borte fra hjemmet</div>
+      <h1>Den samme appen, <span class="g">en annen rute</span></h1>
+      <p>Syno Manager fungerer likt enten du sitter ved siden av NAS-en eller på den andre siden av jorden. Det som endrer seg er hvordan tilkoblingen kommer fram, og hver rute har ulike avveininger det er greit å kjenne til.</p>
+    </div>
+    <div class="hero-shot"><img alt="Skjemaet for å legge til NAS med Direkte IP og QuickConnect" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Tre ruter</div>
+      <h2>Velg den som passer deg</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Rute</th><th>Oppsett</th><th>Hastighet</th><th>Eksponerer det noe?</th></tr></thead>
+      <tbody>
+        <tr><td><b>QuickConnect</b></td><td>Slå det på i DSM og skriv inn ID-en. Ingenting på ruteren.</td><td>Tregere - trafikken går via Synologys rele.</td><td class="yes">Ingenting. Ingen åpne porter på din side.</td></tr>
+        <tr><td><b>Eget domene / DDNS</b></td><td>Et vertsnavn som peker til adressen din, pluss portvideresending på ruteren.</td><td>Direkte, altså så raskt som opplastingshastigheten din tillater.</td><td class="no">Ja - DSM-porten kan nås fra internett.</td></tr>
+        <tr><td><b>VPN</b></td><td>En VPN-server på ruteren eller NAS-en, og en klient på telefonen.</td><td>Direkte når du er koblet til.</td><td class="yes">Bare VPN-porten. Alt annet forblir privat.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Er du usikker, bruk QuickConnect.</b> Det er valget som ikke krever noen ruterkunnskap og ikke åpner noe, og alle funksjonene i appen fungerer over det.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Hva som fungerer eksternt</div>
+      <h2>Alt, med to fotnoter</h2>
+      <p class="lead">Appen har ikke et redusert funksjonssett når du er borte. De to tingene som krever litt ettertanke er direktevisning fra kamera og å vekke en NAS som er av.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Funksjon</th><th>Borte fra hjemmet</th></tr></thead>
+      <tbody>
+        <tr><td>Overvåking - system, lagring, nettverk, helse</td><td class="yes">Fungerer på alle ruter.</td></tr>
+        <tr><td>Docker, pakker, tjenester, oppgaver, brukere</td><td class="yes">Fungerer på alle ruter.</td></tr>
+        <tr><td>Synology Photos - miniatyrbilder og fullstørrelsesbilder</td><td class="yes">Fungerer, også via releet.</td></tr>
+        <tr><td>Nedlastinger fra File Station og Drive</td><td class="yes">Fungerer, også via releet.</td></tr>
+        <tr><td>Sikkerhetskopier - status og Kjør nå</td><td class="yes">Fungerer på alle ruter.</td></tr>
+        <tr><td>Vekke en annen enhet via NAS-en</td><td class="yes">Fungerer, så lenge selve NAS-en er på.</td></tr>
+        <tr><td><b>Direktevisning fra kamera</b></td><td>Slå på <b>Tunnelér direktevisning fra kamera via DSM-porten</b>. Uten den vil direktevisning ha RTSP på port 554, som som regel ikke kan nås utenfra. Se <a href="/nb/guide/media/#streaming">hvordan direktevisning kobler til</a>.</td></tr>
+        <tr><td><b>Vekke selve NAS-en mens den er av</b></td><td>Krever en VPN eller en Wake-on-LAN-videresending på ruteren. QuickConnect kan ikke nå en NAS som er av. Se <a href="/nb/guide/wake-on-lan/">Wake-on-LAN</a>.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">QuickConnect</div>
+      <h2>Slik setter du det opp</h2>
+    </div>
+    <ol class="steps">
+      <li><b>I DSM:</b> Kontrollpanel &rsaquo; Ekstern tilgang &rsaquo; QuickConnect. Slå det på og noter QuickConnect-ID-en.</li>
+      <li><b>I appen:</b> legg til en NAS og bytt <b>Tilkoblingstype</b> til <b>QuickConnect</b>.</li>
+      <li><b>Skriv inn ID-en</b> - ikke en vert og port.</li>
+      <li><b>DSM-påloggingen din</b>, og 2FA hvis kontoen bruker det.</li>
+      <li><b>Lagre &amp; koble til.</b></li>
+    </ol>
+    <div class="note"><b>Regn med at det er tregere.</b> Releet legger til et ekstra ledd og Synology begrenser hastigheten, så et bildebibliotek ruller mindre jevnt enn hjemme. Alt fungerer fortsatt - det er en forskjell i forsinkelse, ikke i funksjonalitet.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Et mønster det lønner seg å kopiere</div>
+      <h2>Legg til den samme NAS-en to ganger</h2>
+      <p class="lead">Én oppføring med <b>lokal IP</b>, én med <b>QuickConnect</b>. Gi dem navn så du kan skille dem - «NAS (hjemme)» og «NAS (borte)».</p>
+    </div>
+    <ul class="plain">
+      <li><b>Hjemme</b> bruker du den direkte: ikke noe rele, full fart, umiddelbare miniatyrbilder.</li>
+      <li><b>Ute</b> bytter du til QuickConnect-oppføringen.</li>
+      <li><b>De har separate oppsett</b>, så du kan stripe ned borte-oppføringen til de få kortene du faktisk sjekker på mobildata.</li>
+      <li><b>Det tar ett trykk å bytte</b> fra enhetslisten.</li>
+    </ul>
+    <p style="color:var(--steel);margin-top:16px">Sett <a href="/nb/guide/settings/#launch">Oppstartsoppførsel</a> til <b>Siste NAS jeg brukte</b>, så holder appen seg til den du var på sist.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Vanlige spørsmål</div>
+      <h2>Vanlige spørsmål om ekstern tilgang</h2>
+    </div>
+    <details open><summary>Må jeg videresende porter for å bruke NAS-en eksternt?</summary><div class="body">Nei. QuickConnect formidler tilkoblingen uten noen ruterkonfigurasjon, og en VPN fungerer også. Portvideresending trengs bare hvis du spesifikt vil ha en direkte rute fra internett.</div></details>
+    <details><summary>Fungerer bilder og direktevisning fra kamera over QuickConnect?</summary><div class="body">Ja. Miniatyrbilder, fullstørrelsesbilder, direktevisning fra kamera og nedlastinger fra File Station og Drive går alle over den ruten som er aktiv, også releet. Direktevisning fra kamera krever at bryteren for DSM-port-tunnel er på.</div></details>
+    <details><summary>Bør jeg legge til NAS-en min to ganger?</summary><div class="body">Det er et godt mønster - én oppføring med lokal IP for hjemme og én med QuickConnect for borte, med separate oppsett og bytte med ett trykk.</div></details>
+    <details><summary>Er QuickConnect sikkert?</summary><div class="body">Tilkoblingen er kryptert fra ende til ende når du bruker HTTPS, og releet sender trafikken videre uten å lagre dataene dine. DSM-påloggingen din og tofaktorautentisering gjelder fortsatt.</div></details>
+    <details><summary>Hvorfor fungerer ikke oppføringen med lokal IP på mobildata?</summary><div class="body">Fordi en privat adresse som 192.168.x.x bare finnes på ditt eget nettverk. Bruk QuickConnect-oppføringen, et domene, eller koble til VPN-en først.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Neste: sikkerhetskopiering &amp; gjenoppretting</h2>
+    <p class="lead" style="margin:0 auto 24px">Flytt appinnstillingene dine til en ny telefon.</p>
+    <p><a class="btn" href="/nb/guide/backup-restore/">Sikkerhetskopiering &amp; gjenoppretting &rarr;</a> &nbsp; <a class="btn ghost" href="/nb/guide/">Tilbake til veiledningen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nb/">Hjem</a><a href="/nb/guide/">Brukerveiledning</a><a href="/nb/guide/getting-started/">Kom i gang</a><a href="/nb/compatible-nas/">Kompatibilitet</a><a href="/nb/best-synology-nas-app/">Hvorfor bytte</a><a href="/nb/synology-app-for-iphone/">iPhone & iPad</a><a href="/nb/synology-app-for-android/">Android</a><a href="/nb/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nb/ds-finder-alternative/">vs DS finder</a><a href="/nb/help/">Hjelp</a><a href="/nb/privacy/">Personvern</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Meld fra om feil</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager er en uavhengig app og er ikke tilknyttet, godkjent av eller sponset av Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station og QuickConnect er varemerker tilhørende Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

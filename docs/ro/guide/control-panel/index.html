@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gestionează utilizatori, sarcini și UPS Synology - Syno Manager</title>
+<meta name="description" content="Gestionează conturile de utilizator Synology cu conturile de sistem protejate, rulează și comută sarcini programate și citește încărcarea UPS și autonomia estimată de pe telefon." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Gestionează utilizatori, sarcini și UPS Synology - Syno Manager" />
+<meta property="og:description" content="Gestionează conturile de utilizator Synology cu conturile de sistem protejate, rulează și comută sarcini programate și citește încărcarea UPS și autonomia estimată de pe telefon." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Gestionează utilizatori, sarcini și UPS Synology - Syno Manager" />
+<meta name="twitter:description" content="Gestionează conturile de utilizator Synology cu conturile de sistem protejate, rulează și comută sarcini programate și citește încărcarea UPS și autonomia estimată de pe telefon." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Panou de control"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Gestionează utilizatori, sarcini și UPS Synology - Syno Manager",
+  "description": "Gestionează conturile de utilizator Synology cu conturile de sistem protejate, rulează și comută sarcini programate și citește încărcarea UPS și autonomia estimată de pe telefon.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "ro",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot adăuga sau edita utilizatori DSM din aplicație?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da. Adaugi un utilizator, îi editezi detaliile, schimbi o parolă sau ștergi un cont. Conturile de sistem - admin, guest și conturile de serviciu create de DSM - sunt detectate și protejate la ștergere, pentru că eliminarea unuia strică NAS-ul în moduri greu de reparat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot rula manual o sarcină programată?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Da, pentru sarcinile pe care DSM permite să fie declanșate - fiecare are un buton Rulează acum. Poți activa sau dezactiva orice sarcină fără să deschizi DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce arată ecranul UPS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Modelul UPS, dacă este pe rețea sau pe baterie, încărcarea ca procent și bară, modul de conectare, autonomia estimată rămasă și dacă suportul UPS este activat pe NAS."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pot schimba cât așteaptă NAS-ul înainte să se oprească pe baterie?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. Aplicația raportează starea UPS; politica de oprire se setează în DSM, la Hardware și alimentare, unde sunt explicate consecințele setării."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Panou de control</div>
+      <div class="eyebrow">Panou de control</div>
+      <h1>Conturi, programări <span class="g">și alimentare</span></h1>
+      <p>Patru sub-vizualizări: <b>Utilizatori</b>, <b>Sarcini</b>, <b>Alimentare</b> pentru UPS și <b>Setări</b> - preferințele proprii ale aplicației, accesibile fără să părăsești fila în care te afli.</p>
+    </div>
+    <div class="hero-shot"><img alt="Task Scheduler cu sarcini programate, comutatoare și Rulează acum" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#users">Utilizatori</a></li>
+      <li><a href="#tasks">Task Scheduler</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Setări</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Utilizatori</div>
+      <h2>Conturi DSM</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Fiecare cont de pe NAS, cu numele afișat, descrierea și adresa de email unde este setată. Un chip <b>Expirat</b> marchează conturile dezactivate de DSM.</p>
+        <h3 style="margin-top:20px">Ce poți face</h3>
+        <ul class="plain">
+          <li><b>Adaugă un utilizator</b> cu detaliile cerute de DSM.</li>
+          <li><b>Editează</b> un cont existent.</li>
+          <li><b>Schimbă o parolă.</b></li>
+          <li><b>Șterge</b> un cont creat de tine.</li>
+        </ul>
+        <div class="note"><b>Conturile de sistem nu pot fi șterse.</b> <code>admin</code>, <code>guest</code> și conturile de serviciu create de DSM pentru propriile pachete sunt detectate și protejate. Eliminarea unuia dintre ele strică NAS-ul în moduri greu de reparat, iar telefonul nu e locul unde să afli asta.</div>
+      </div>
+      <img alt="Conturi de utilizator DSM, cu două nume și adrese estompate" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Două conturi din această captură de ecran sunt estompate - sunt nume și adrese ale unor persoane reale.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Task Scheduler</div>
+      <h2>Ce este programat și ce rulează următorul</h2>
+      <p class="lead">Fiecare sarcină DSM, dacă este activă, ce face și când se declanșează următoarea dată.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Numele sarcinii și tipul ei</b> - o sarcină Hyper Backup, un script definit de utilizator, o curățare a coșului de reciclare - fiecare etichetată cu tipul ei.</li>
+      <li><b>Ce face de fapt.</b> O sarcină de tip script arată comanda pe care o rulează; o sarcină de backup arată descrierea ei.</li>
+      <li><b>Următoarea rulare</b>, ca dată și oră.</li>
+      <li><b>Un comutator pentru fiecare sarcină</b> ca să o activezi sau dezactivezi fără să deschizi DSM.</li>
+      <li><b>Rulează acum</b> pe sarcinile pe care DSM permite să fie declanșate la cerere.</li>
+    </ul>
+    <div class="note warn"><b>Rulează acum o rulează acum.</b> Un script programat care se așteaptă să ruleze la 3 dimineața pe un NAS inactiv se va comporta altfel la 6 seara, în timpul unei copieri de fișiere. Butonul face ce spune.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Alimentare</div>
+      <h2>UPS-ul</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Starea UPS cu model, încărcare, mod de conectare și autonomie estimată" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Apare când un UPS este conectat. Un singur card, cu tot ce ține de el.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Afișat</th><th>Semnificație</th></tr></thead>
+          <tbody>
+            <tr><td>Producător și model</td><td>Așa cum se raportează UPS-ul.</td></tr>
+            <tr><td>Stare</td><td><b>Online</b> pe rețea sau pe baterie.</td></tr>
+            <tr><td>Încărcare</td><td>Procent și o bară. Chihlimbar sub 50%, roșu sub 20%.</td></tr>
+            <tr><td>Mod</td><td>Cum comunică NAS-ul cu el - USB sau prin rețea.</td></tr>
+            <tr><td>Autonomie</td><td>Cât timp estimează UPS-ul că poate susține sarcina.</td></tr>
+            <tr><td>Activat</td><td>Dacă suportul UPS este pornit în DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Încărcarea alimentează indicatorul de stare.</b> Un UPS care se descarcă apare pe <a href="/ro/guide/home/#header">ecranul principal</a> fără să deschizi această filă - exact asta e ideea, pentru că până te gândești să verifici, s-ar putea să nu mai ai mult timp.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Setări</div>
+      <h2>Preferințele proprii ale aplicației</h2>
+      <p class="lead">A patra sub-vizualizare este Setări, integrată aici ca să poți schimba intervalul de interogare sau culoarea de accent fără să părăsești fila. Este același ecran pe care îl deschide pictograma roții dințate.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/ro/guide/settings/">Fiecare setare, explicată</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre Panoul de control</h2>
+    </div>
+    <details open><summary>Pot adăuga sau edita utilizatori DSM din aplicație?</summary><div class="body">Da. Adaugi un utilizator, îi editezi detaliile, schimbi o parolă sau ștergi un cont. Conturile de sistem - admin, guest și conturile de serviciu create de DSM - sunt detectate și protejate la ștergere.</div></details>
+    <details><summary>Pot rula manual o sarcină programată?</summary><div class="body">Da, pentru sarcinile pe care DSM permite să fie declanșate. Poți activa sau dezactiva orice sarcină fără să deschizi DSM.</div></details>
+    <details><summary>Ce arată ecranul UPS?</summary><div class="body">Modelul UPS, dacă este pe rețea sau pe baterie, încărcarea ca procent și bară, modul de conectare, autonomia estimată rămasă și dacă suportul UPS este activat pe NAS.</div></details>
+    <details><summary>Pot schimba politica de oprire pe baterie?</summary><div class="body">Nu. Aplicația raportează starea UPS; politica se setează în DSM, la Hardware și alimentare, unde sunt explicate consecințele.</div></details>
+    <details><summary>De ce lipsește sub-vizualizarea Alimentare?</summary><div class="body">Pentru că nu este conectat niciun UPS sau suportul UPS este oprit în DSM. Aplicația ascunde ecranele pentru hardware care nu există.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: Asistentul</h2>
+    <p class="lead" style="margin:0 auto 24px">Pune o întrebare NAS-ului tău, iar răspunsul vine de la un model aflat pe telefon.</p>
+    <p><a class="btn" href="/ro/guide/assistant/">Asistentul &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

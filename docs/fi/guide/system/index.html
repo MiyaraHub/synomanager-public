@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synologyn CPU, RAM, lämpötila ja tuulettimet - Syno Manager</title>
+<meta name="description" content="Seuraa CPU:ta, RAM:ia, kuormaa, levyn I/O:ta ja lämpötilaa, vaihda tuulettimen nopeustilaa, tarkista DSM-päivitykset sekä käynnistä Synologysi uudelleen tai sammuta se puhelimesta." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synologyn CPU, RAM, lämpötila ja tuulettimet - Syno Manager" />
+<meta property="og:description" content="Seuraa CPU:ta, RAM:ia, kuormaa, levyn I/O:ta ja lämpötilaa, vaihda tuulettimen nopeustilaa, tarkista DSM-päivitykset sekä käynnistä Synologysi uudelleen tai sammuta se puhelimesta." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synologyn CPU, RAM, lämpötila ja tuulettimet - Syno Manager" />
+<meta name="twitter:description" content="Seuraa CPU:ta, RAM:ia, kuormaa, levyn I/O:ta ja lämpötilaa, vaihda tuulettimen nopeustilaa, tarkista DSM-päivitykset sekä käynnistä Synologysi uudelleen tai sammuta se puhelimesta." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Järjestelmä"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synologyn CPU, RAM, lämpötila ja tuulettimet - Syno Manager",
+  "description": "Seuraa CPU:ta, RAM:ia, kuormaa, levyn I/O:ta ja lämpötilaa, vaihda tuulettimen nopeustilaa, tarkista DSM-päivitykset sekä käynnistä Synologysi uudelleen tai sammuta se puhelimesta.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Voinko muuttaa tuulettimen nopeutta sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Järjestelmän kunnossa on Jäähdytys-kortti, jossa Täysi teho, Viileä ja Hiljainen. Sovellus lukee tilan, jossa NAS parhaillaan on, kirjoittaa valintasi ja lukee sen takaisin vahvistaakseen. NAS, joka ilmoittaa muun kuin näistä kolmesta tilasta, säilyttää vain luettavan näytön sen sijaan, että se esitettäisiin väärin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko käynnistää uudelleen tai sammuttaa NAS-laitteeni puhelimesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä, Virran hallinta -kortista Järjestelmän kunnon alareunasta. Molemmat vahvistetaan ennen suoritusta, koska ne vaikuttavat kaikkiin yhdistettyihin käyttäjiin. Etäsammutusta kannattaa miettiä kahdesti - sammutettua NAS-laitetta ei voi herättää internetin yli ilman VPN:ää tai Wake-on-LANia varten määritettyä reititintä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mihin Tunnista NAS on tarkoitettu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Se vilkuttaa NAS-laitteen tilavaloa, jotta erotat, minkä laatikon edessä telineessä tai komerossa seisot. Hiljennä äänimerkki pysäyttää hälytyssummerin hiljentämättä tilaa, joka sen laukaisi - korjaa myös syy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Päivittyvätkö lokit itsestään?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei, ja tarkoituksella. Loki luettiin ennen uudelleen ajastimella riippumatta siitä, luitko sitä, mikä kulutti akkua ja verkkoa turhaan. Nyt se latautuu kerran ja pysyy paikallaan. Paina toistoa seurataksesi sitä livenä, paina uudelleen keskeyttääksesi, ja se lopettaa seuraamisen itsestään, kun poistut näkymästä."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko viedä tai kopioida katsomani lokin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Paina mitä tahansa riviä pitkään saadaksesi järjestelmän Kopioi / Valitse kaikki / Jaa -palkin, tai käytä vientipainiketta live-kytkimen vieressä Järjestelmä-välilehdellä tai luettelon yläpuolella Yhteys-välilehdellä. Se avaa taulun, jossa Tallenna tiedostoon, Jaa tai lähetä sähköpostilla ja Kopioi leikepöydälle, ja se vie täsmälleen ruudulla olevat merkinnät tasosuodattimen ja haun jälkeen - yksi merkintä per rivi, aika, taso, käyttäjä ja kuvaus tabulaattoreilla erotettuina."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Järjestelmä</div>
+      <div class="eyebrow">Järjestelmä</div>
+      <h1>Mitä laatikko <span class="g">oikeasti tekee</span></h1>
+      <p>Kolme alinäkymää: <b>Järjestelmän kunto</b> koneen tilalle, <b>Resurssit</b> reaaliaikaisille kaavioille ja <b>Lokit</b> sille, mitä DSM on tallentanut. Lisäksi ohjaimet, jotka muuttavat jotain - tuulettimen tila, tunnistusvalo, DSM-päivitykset, uudelleenkäynnistys ja sammutus.</p>
+    </div>
+    <div class="hero-shot"><img alt="Järjestelmän kunto: CPU- ja RAM-mittarit, kuormakeskiarvo, levyn I/O ja lämpötilahistoria" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#health">Järjestelmän kunto</a></li>
+      <li><a href="#cooling">Jäähdytys &amp; tuulettimen tila</a></li>
+      <li><a href="#identify">Tunnistus &amp; hälytykset</a></li>
+      <li><a href="#dsm-update">DSM-päivitys</a></li>
+      <li><a href="#power">Virran hallinta</a></li>
+      <li><a href="#resources">Resurssit</a></li>
+      <li><a href="#logs">Lokit</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Järjestelmän kunto</div>
+      <h2>Lukemat</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Kortti</th><th>Mitä se näyttää</th></tr></thead>
+      <tbody>
+        <tr><td>CPU- &amp; RAM-mittarit</td><td>Kokonais-CPU renkaana, ja <b>käyttäjän</b> osuus nostettuna alle, jotta erotat oman kuormasi järjestelmän yleiskustannuksista. RAM näyttää prosentin ja absoluuttiset luvut.</td></tr>
+        <tr><td>Muisti</td><td>Käytetty kokonaismäärästä, palkkina. Vihreä, kunnes sillä on väliä.</td></tr>
+        <tr><td>CPU:n kuormakeskiarvo</td><td>Yhden, viiden ja viidentoista minuutin luvut - suoritinaikaa odottavat prosessit, ei prosentti. Arvioidaan ytimien määrää vasten, joten kahdeksanytimisen telinelaitteen terve luku on kahden paikan laitteessa kiireinen.</td></tr>
+        <tr><td>Levyn I/O</td><td>Luku- ja kirjoitusläpäisy sekä käyttöaste prosentteina - kuinka suuren osan ajasta levyt olivat kiireisiä, mikä on usein todellinen vastaus, kun NAS tuntuu hitaalta mutta CPU näyttää joutilaalta.</td></tr>
+        <tr><td>Lämpötilahistoria</td><td>Vierivä kaavio ja nykyinen luku. Yksikkönä &deg;C tai &deg;F <a href="/fi/guide/settings/#preferences">asetuksesi</a> mukaan.</td></tr>
+        <tr><td>Prosessit</td><td>Kuinka monta prosessia NAS ajaa.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Jäähdytys</div>
+      <h2>Tuulettimen nopeustila, vaihdettavissa puhelimesta</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Jäähdytys-kortti näyttää tuulettimen tilan ja tilan, jossa NAS on, kolmivalintaisena ohjaimena:</p>
+        <ul class="plain">
+          <li><b>Täysi teho</b> - suurin ilmavirta, suurin melu. Sopii telineeseen tai komeroon.</li>
+          <li><b>Viileä</b> - tasapainoinen oletus.</li>
+          <li><b>Hiljainen</b> - pienempi nopeus, korkeammat lämpötilat. Sopii olohuoneen NAS-laitteelle, jos levyt kestävät sen.</li>
+        </ul>
+        <div class="note"><b>Vahvistettu, ei oletettu.</b> Sovellus lukee nykyisen tilan NAS-laitteelta, kirjoittaa valintasi ja <b>lukee sen takaisin</b>. Tila, jonka NAS hiljaa hylkäsi, ilmoitetaan hylätyksi sen sijaan, että se jäisi ruudulle näyttämään siltä kuin se olisi otettu käyttöön.</div>
+        <div class="note" style="margin-top:14px"><b>Tuntematon tila pysyy vain luettavana.</b> Jos NAS ilmoittaa jäähdytystilan näiden kolmen ulkopuolelta, kortti näyttää raportoidun eikä tarjoa sen muuttamista - sen sijaan että nimeäisi sen väärin yhdeksi tuntemistaan kolmesta.</div>
+      </div>
+      <img alt="Jäähdytys-kortti: Täysi teho, Viileä ja Hiljainen, sekä Tunnista ja Virran hallinta" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Tunnistus &amp; hälytykset</div>
+      <h2>Löydä laatikko, hiljennä summeri</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tunnista</b> vilkuttaa NAS-laitteen tilavaloa, jotta erotat, minkä yksikön edessä seisot. <b>Pysäytä</b> lopettaa sen.</li>
+      <li><b>Hiljennä äänimerkki</b> pysäyttää hälytyssummerin. Se hiljentää äänen, ei tilaa - mikä hälytyksen laukaisi, on yhä totta, ja kuntootsikko sanoo sen edelleen.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM-päivitys</div>
+      <h2>Onko laiteohjelmistopäivitys saatavilla</h2>
+      <p class="lead">DSM-päivityskortti kertoo käyttämäsi version ja sen, onko Synologylla jotain uudempaa. <b>Tarkista päivitys</b> pyytää NAS-laitetta katsomaan uudelleen.</p>
+    </div>
+    <div class="note"><b>Tämä on NAS-laitteesi laiteohjelmisto, ei sovellus.</b> Syno Manager päivittyy App Storen tai Google Playn kautta kuten mikä tahansa muu sovellus. Tämä kortti on DSM:n oma päivitysnäkymä, sama kuin Control Panelissa.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Virran hallinta</div>
+      <h2>Uudelleenkäynnistys ja sammutus</h2>
+      <p class="lead">Järjestelmän kunnon alareunassa ja punaisella merkittyinä, koska ne vaikuttavat kaikkiin yhdistettyihin käyttäjiin - myös henkilöön, joka on kesken tiedoston kopioinnin.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Käynnistä NAS uudelleen</b> - siisti uudelleenkäynnistys. Vahvistetaan ennen suoritusta.</li>
+      <li><b>Sammuta NAS</b> - siisti virran katkaisu. Vahvistetaan ennen suoritusta.</li>
+    </ul>
+    <div class="note stop"><b>Mieti ennen etäsammutusta.</b> Sammutettu NAS ei voi välittää omaa herätyspakettiaan. Sen palauttaminen verkkosi ulkopuolelta vaatii VPN-yhteyden siihen tai reitittimen, joka on asetettu välittämään Wake-on-LAN. Katso <a href="/fi/guide/wake-on-lan/">Wake-on-LAN</a>, mikä toimii mistäkin.</div>
+    <div class="note" style="margin-top:14px"><b>Oikotiet eivät ohita vahvistusta.</b> Linkit <code>synomanager://reboot</code> ja <code>synomanager://shutdown</code> <a href="/fi/guide/shortcuts/">avaavat</a> tarkoituksella vain <em>sovelluksen</em> tähän näkymään. Tuhoava toiminto ei muutu yhden napautuksen toiminnoksi sen takia, että se käynnistettiin käynnistimestä.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Resurssit</div>
+      <h2>Reaaliaikaiset kaaviot</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Resurssimonitorin kaaviot CPU:lle, muistille, levyn lukemiselle ja levyn kirjoittamiselle" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Resurssit-alinäkymä on sama data vierivänä kaaviona, mitä haluat, kun kysymys on ”onko tämä piikki vai jatkuvaa?”</p>
+        <ul class="plain">
+          <li><b>CPU:n käyttö</b> käyttäjän ja järjestelmän jaolla.</li>
+          <li><b>Muistin käyttö</b> käytettynä kokonaismäärästä.</li>
+          <li><b>Levyn luku</b> ja <b>levyn kirjoitus</b>, kummallakin oma kaavionsa, sekä levyn kokonaiskäyttöaste.</li>
+          <li><b>Kuormakeskiarvot</b> yhden, viiden ja viidentoista minuutin ajalta.</li>
+        </ul>
+        <div class="note">Kaaviot täyttyvät <a href="/fi/guide/settings/#preferences">päivitysvälillä</a>. Lyhyempi väli antaa tarkemman kuvan ja kuluttaa enemmän akkua; pidempi on lempeämpi ja karkeampi.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Lokit</div>
+      <h2>Mitä DSM tallensi</h2>
+      <p class="lead">Kaksi välilehteä: <b>Järjestelmä</b> DSM:n omalle lokille ja <b>Yhteys</b> kirjautumisille ja tiedostojen käytölle. Molemmat luetaan, kun pyydät.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se latautuu kerran ja pysyy paikallaan.</b> Loki, joka lukee itsensä uudelleen ajastimella, kun yrität lukea riviä, on käyttökelvoton ja kuluttaa akkua ja verkkoa turhaan.</li>
+      <li><b>Paina toistoa seurataksesi livenä.</b> Paina uudelleen keskeyttääksesi. Seuraaminen loppuu itsestään, kun poistut näkymästä tai siirrät sovelluksen taustalle, joten unohtunut lokivälilehti ei pollaile hiljaa taskussasi.</li>
+      <li><b>Hakukenttä</b> auttaa löytämään yhden rivin pitkästä lokista.</li>
+      <li><b>Kontti- ja pinolokit toimivat samoin</b> - katso <a href="/fi/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Teksti on valittavissa.</b> Paina riviä pitkään, niin järjestelmän Kopioi / Valitse kaikki / Jaa -palkki avautuu, kuten missä tahansa muualla, missä tekstiä on näytöllä.</li>
+      <li><b>Vie se, mitä katsot.</b> Vientipainike on live-kytkimen vieressä Järjestelmä-välilehdellä ja luettelon yläpuolella Yhteys-välilehdellä. Se avaa taulun, jossa on kolme ulospääsyä: <b>Tallenna tiedostoon</b>, <b>Jaa</b> lähettääksesi tai sähköpostittaaksesi, tai <b>Kopioi leikepöydälle</b>.</li>
+    </ul>
+    <div class="note"><b>Se vie sen, mikä on ruudulla, ei koko lokia.</b> Mihin tasosuodatin ja hakukenttä ovat luettelon supistaneet, se viedään - mitään jo suodattamaasi ei tule takaisin vientiin. Tiedosto on pelkkää tekstiä, yksi merkintä per rivi, aika, taso, käyttäjä ja kuvaus tabulaattoreilla erotettuina.</div>
+    <div class="note warn"><b>Jos loki ei lataudu</b> ja ilmoittaa yhteyden aikakatkaisusta, vaikka muu sovellus toimii, vastaamatta jättävä asia on NAS-laitteen Log Center -palvelu, ei yhteytesi. Tarkista, että Log Center on asennettu ja käynnissä DSM:n Package Centerissä - järjestelmälokin rajapinta kuuluu siihen.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Usein kysyttyä järjestelmästä</h2>
+    </div>
+    <details open><summary>Voinko muuttaa tuulettimen nopeutta sovelluksesta?</summary><div class="body">Kyllä. Järjestelmän kunnossa on Jäähdytys-kortti, jossa Täysi teho, Viileä ja Hiljainen. Sovellus lukee tilan, jossa NAS parhaillaan on, kirjoittaa valintasi ja lukee sen takaisin vahvistaakseen. NAS, joka ilmoittaa muun kuin näistä kolmesta tilasta, säilyttää vain luettavan näytön sen sijaan, että se esitettäisiin väärin.</div></details>
+    <details><summary>Voinko käynnistää uudelleen tai sammuttaa NAS-laitteeni puhelimesta?</summary><div class="body">Kyllä, Järjestelmän kunnon alareunan Virran hallinnasta. Molemmat vahvistetaan ennen suoritusta. Etäsammutusta kannattaa miettiä kahdesti - sammutettua NAS-laitetta ei voi herättää internetin yli ilman VPN:ää tai Wake-on-LANia varten määritettyä reititintä.</div></details>
+    <details><summary>Mihin Tunnista NAS on tarkoitettu?</summary><div class="body">Se vilkuttaa NAS-laitteen tilavaloa, jotta erotat, minkä laatikon edessä telineessä tai komerossa seisot. Hiljennä äänimerkki pysäyttää hälytyssummerin hiljentämättä tilaa, joka sen laukaisi.</div></details>
+    <details><summary>Päivittyvätkö lokit itsestään?</summary><div class="body">Ei, ja tarkoituksella. Loki latautuu kerran ja pysyy paikallaan, jotta voit lukea sitä. Paina toistoa seurataksesi sitä livenä, paina uudelleen keskeyttääksesi, ja se lopettaa seuraamisen itsestään, kun poistut näkymästä tai siirrät sovelluksen taustalle.</div></details>
+    <details><summary>Voinko viedä tai kopioida katsomani lokin?</summary><div class="body">Kyllä. Paina mitä tahansa riviä pitkään saadaksesi järjestelmän Kopioi / Valitse kaikki / Jaa -palkin, tai käytä vientipainiketta live-kytkimen vieressä Järjestelmä-välilehdellä tai luettelon yläpuolella Yhteys-välilehdellä. Se avaa taulun, jossa Tallenna tiedostoon, Jaa tai lähetä sähköpostilla ja Kopioi leikepöydälle, ja se vie täsmälleen ruudulla olevat merkinnät tasosuodattimen ja haun jälkeen - yksi merkintä per rivi, aika, taso, käyttäjä ja kuvaus tabulaattoreilla erotettuina.</div></details>
+    <details><summary>Miksi kuormakeskiarvoni on korkea, vaikka CPU näyttää rauhalliselta?</summary><div class="body">Kuormakeskiarvo laskee odottavat prosessit, ja ne odottavat usein levyjä, ei CPU:ta. Tarkista Levyn I/O:n käyttöaste samasta näkymästä - korkea käyttöaste matalan CPU:n kanssa on tavallinen selitys.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Tallennustila</h2>
+    <p class="lead" style="margin:0 auto 24px">Taltiot, poolit, levykohtainen SMART-kunto ja turvallinen irrotus.</p>
+    <p><a class="btn" href="/fi/guide/storage/">Tallennustila &amp; levyt &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

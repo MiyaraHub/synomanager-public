@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Quản lý nhiều Synology NAS - Syno Manager</title>
+<meta name="description" content="Thêm bao nhiêu thiết bị Synology tùy thích và chuyển đổi chỉ với một chạm. Mỗi thiết bị giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn." />
+<meta name="keywords" content="multiple Synology NAS app, manage two NAS phone, switch between NAS, Synology multi device app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/multi-nas/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/multi-nas/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/multi-nas/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/multi-nas/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/multi-nas/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/multi-nas/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/multi-nas/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/multi-nas/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/multi-nas/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/multi-nas/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/multi-nas/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/multi-nas/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/multi-nas/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/multi-nas/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/multi-nas/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/multi-nas/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/multi-nas/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/multi-nas/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/multi-nas/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/multi-nas/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/multi-nas/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/multi-nas/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/multi-nas/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/multi-nas/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/multi-nas/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/multi-nas/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/multi-nas/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/multi-nas/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/multi-nas/" />
+<!--/hreflang-->
+<meta property="og:title" content="Quản lý nhiều Synology NAS - Syno Manager" />
+<meta property="og:description" content="Thêm bao nhiêu thiết bị Synology tùy thích và chuyển đổi chỉ với một chạm. Mỗi thiết bị giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/multi-nas/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Quản lý nhiều Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Thêm bao nhiêu thiết bị Synology tùy thích và chuyển đổi chỉ với một chạm. Mỗi thiết bị giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Nhiều thiết bị NAS"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Quản lý nhiều Synology NAS - Syno Manager",
+  "description": "Thêm bao nhiêu thiết bị Synology tùy thích và chuyển đổi chỉ với một chạm. Mỗi thiết bị giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn.",
+  "image": "https://synomanager.com/screenshots/manage-nas.webp",
+  "url": "https://synomanager.com/guide/multi-nas/",
+  "mainEntityOfPage": "https://synomanager.com/guide/multi-nas/",
+  "inLanguage": "vi",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể thêm bao nhiêu thiết bị NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bao nhiêu tùy thích. Mỗi NAS giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn, nên một máy chủ media và một máy đích sao lưu không cần trông giống nhau."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Đổi tên NAS có thay đổi gì trên chính NAS không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Không. Đổi tên chỉ thay đổi tên hiển thị trong ứng dụng. Để đổi tên máy chủ của chính NAS, hãy dùng Control Panel của DSM."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Change IP và Edit Configuration khác nhau thế nào?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Change IP là lối tắt cho trường hay thay đổi nhất - địa chỉ và cổng. Edit Configuration mở toàn bộ biểu mẫu, gồm HTTPS, xác minh chứng chỉ, thông tin đăng nhập, 2FA và công tắc đường hầm camera."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Điều gì xảy ra khi tôi xóa một NAS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mục đó và thông tin đăng nhập đã lưu sẽ bị xóa khỏi ứng dụng. Không có gì trên NAS bị động tới - NAS không bị đăng xuất khỏi nơi nào khác và dữ liệu không bị ảnh hưởng."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Nhiều thiết bị NAS</div>
+      <div class="eyebrow">Nhiều thiết bị NAS</div>
+      <h1>Một ứng dụng, <span class="g">mọi DiskStation</span></h1>
+      <p>Thêm bao nhiêu tùy thích. Mỗi NAS giữ riêng thông tin đăng nhập, bố cục bảng điều khiển và cài đặt, nên máy sao lưu ngoài gara không cần trông giống máy chủ media trong phòng khách.</p>
+    </div>
+    <div class="hero-shot"><img alt="Danh sách thiết bị NAS với Connect và Wake" src="/screenshots/manage-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Danh sách thiết bị</div>
+      <h2>Mỗi mục hiển thị gì</h2>
+      <p class="lead">Vào từ <b>Settings &rsaquo; Manage NAS Devices</b>, hoặc là màn hình ứng dụng mở lên khi bạn có nhiều hơn một NAS và đã đặt để ứng dụng hỏi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Biệt danh và địa chỉ</b> - tên bạn đặt cho NAS, cùng máy chủ và cổng dùng để kết nối.</li>
+      <li><b>Các nhãn</b> cho những thông tin đáng xem mà không cần mở biểu mẫu: có dùng <b>HTTPS</b> hay không, <b>cổng</b> nào, và đăng nhập bằng <b>tài khoản</b> nào.</li>
+      <li><b>Connected</b> khi đó là NAS đang hoạt động.</li>
+      <li><b>Connect</b> để chuyển sang NAS đó, và <b>Wake</b> để gửi gói magic packet nếu NAS đang ngủ.</li>
+      <li><b>Tay kéo</b> - sắp xếp lại danh sách để NAS bạn dùng nhiều nhất nằm trên cùng.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Menu mở rộng</div>
+      <h2>Năm việc bạn có thể làm với một mục</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Hành động</th><th>Chức năng</th></tr></thead>
+          <tbody>
+            <tr><td>Rename</td><td>Chỉ thay đổi <b>tên hiển thị</b> - nhãn của ứng dụng cho NAS đó. Tên máy chủ của chính NAS không bị động tới; tên đó nằm trong Control Panel của DSM.</td></tr>
+            <tr><td>Change IP</td><td>Lối tắt cho trường hay thay đổi nhất - địa chỉ và cổng - mà không phải đi qua toàn bộ biểu mẫu.</td></tr>
+            <tr><td>Edit Configuration</td><td>Biểu mẫu đầy đủ: HTTPS, xác minh chứng chỉ, thông tin đăng nhập, xác thực hai yếu tố và đường hầm xem trực tiếp camera.</td></tr>
+            <tr><td>Test Connection</td><td>Kiểm tra khả năng kết nối mà không thay đổi gì, và phân biệt "không kết nối được" với "đã kết nối nhưng thông tin đăng nhập bị từ chối".</td></tr>
+            <tr><td>Remove NAS</td><td>Xóa mục và thông tin đăng nhập đã lưu <b>khỏi ứng dụng</b>. Không có gì trên NAS bị động tới.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Menu của từng NAS với Rename, Change IP, Edit Configuration, Test Connection và Remove" src="/screenshots/manage-nas-menu.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Những gì riêng cho từng NAS</div>
+      <h2>Mỗi thiết bị tự ghi nhớ những gì</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Theo từng NAS</h3>
+        <ul class="plain">
+          <li>Thông tin đăng nhập và token thiết bị 2FA.</li>
+          <li>Thẻ nào của bảng điều khiển được bật, và thứ tự của chúng.</li>
+          <li>Thẻ nào đang thu gọn.</li>
+          <li>Chế độ xem phụ nào bị ẩn trong từng tab, và thứ tự của chúng.</li>
+          <li>Cài đặt đường hầm xem trực tiếp camera.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Toàn ứng dụng</h3>
+        <ul class="plain">
+          <li>Giao diện, nền, màu nhấn và cỡ chữ.</li>
+          <li>Thanh điều hướng phía dưới.</li>
+          <li>Khoảng thời gian thăm dò và đơn vị nhiệt độ.</li>
+          <li>Cách khởi chạy.</li>
+          <li>Những thẻ trợ giúp bạn đã đóng.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>Thêm cùng một NAS hai lần là cách thiết lập hợp lý.</b> Một mục theo IP nội bộ cho khi ở nhà, một mục theo QuickConnect cho khi ở ngoài. Chúng là hai mục riêng với bố cục riêng, và chuyển đổi chỉ cần một chạm.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về nhiều NAS</h2>
+    </div>
+    <details open><summary>Tôi có thể thêm bao nhiêu thiết bị NAS?</summary><div class="body">Bao nhiêu tùy thích. Mỗi NAS giữ riêng thông tin đăng nhập, bố cục bảng điều khiển, thứ tự thẻ và trạng thái thu gọn.</div></details>
+    <details><summary>Đổi tên NAS có thay đổi gì trên chính NAS không?</summary><div class="body">Không. Đổi tên chỉ thay đổi tên hiển thị trong ứng dụng. Để đổi tên máy chủ của chính NAS, hãy dùng Control Panel của DSM.</div></details>
+    <details><summary>Change IP và Edit Configuration khác nhau thế nào?</summary><div class="body">Change IP là lối tắt cho địa chỉ và cổng. Edit Configuration mở toàn bộ biểu mẫu, gồm HTTPS, xác minh chứng chỉ, thông tin đăng nhập, 2FA và công tắc đường hầm camera.</div></details>
+    <details><summary>Điều gì xảy ra khi tôi xóa một NAS?</summary><div class="body">Mục đó và thông tin đăng nhập đã lưu sẽ bị xóa khỏi ứng dụng. Không có gì trên NAS bị động tới.</div></details>
+    <details><summary>Ứng dụng mở vào NAS nào?</summary><div class="body">Tùy theo những gì bạn đặt trong <a href="/vi/guide/settings/#launch">Launch Behavior</a> - bộ chọn thiết bị, NAS bạn dùng gần nhất, hoặc luôn là một NAS cụ thể.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Wake-on-LAN</h2>
+    <p class="lead" style="margin:0 auto 24px">Đánh thức NAS, hoặc bất kỳ thiết bị nào khác trong mạng của bạn thông qua NAS.</p>
+    <p><a class="btn" href="/vi/guide/wake-on-lan/">Wake-on-LAN &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

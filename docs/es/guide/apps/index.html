@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docker, paquetes y VM para Synology NAS - Syno Manager</title>
+<meta name="description" content="Instala paquetes de DSM desde Package Center, inicia, detén y reinicia contenedores Docker, lee sus registros, ejecuta stacks de Compose y controla máquinas virtuales." />
+<meta name="keywords" content="Synology Package Center app, install Synology package from phone, Synology Docker app, Docker container phone, Synology Docker Compose app, Synology Virtual Machine Manager app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/es/guide/apps/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/apps/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/apps/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/apps/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/apps/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/apps/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/apps/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/apps/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/apps/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/apps/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/apps/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/apps/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/apps/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/apps/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/apps/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/apps/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/apps/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/apps/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/apps/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/apps/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/apps/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/apps/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/apps/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/apps/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/apps/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/apps/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/apps/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/apps/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/apps/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/apps/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/apps/" />
+<!--/hreflang-->
+<meta property="og:title" content="Docker, paquetes y VM para Synology NAS - Syno Manager" />
+<meta property="og:description" content="Instala paquetes de DSM desde Package Center, inicia, detén y reinicia contenedores Docker, lee sus registros, ejecuta stacks de Compose y controla máquinas virtuales." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/es/guide/apps/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="es_ES" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docker, paquetes y VM para Synology NAS - Syno Manager" />
+<meta name="twitter:description" content="Instala paquetes de DSM desde Package Center, inicia, detén y reinicia contenedores Docker, lee sus registros, ejecuta stacks de Compose y controla máquinas virtuales." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "es",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guía de usuario",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Apps"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Docker, paquetes y VM para Synology NAS - Syno Manager",
+  "description": "Instala paquetes de DSM desde Package Center, inicia, detén y reinicia contenedores Docker, lee sus registros, ejecuta stacks de Compose y controla máquinas virtuales.",
+  "image": "https://synomanager.com/screenshots/docker.webp",
+  "url": "https://synomanager.com/guide/apps/",
+  "mainEntityOfPage": "https://synomanager.com/guide/apps/",
+  "inLanguage": "es",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Puedo instalar un paquete de DSM desde el móvil?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Package Center en la app tiene el mismo catálogo que DSM - Instalados, Todos los paquetes, Beta y Comunidad - con un cuadro de búsqueda. Elige un paquete, escoge el volumen e instala. Actualizar y desinstalar funcionan igual, y cada acción se confirma volviendo a leer la lista de paquetes, no porque la petición responda OK."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo reiniciar un contenedor Docker desde la app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Cada contenedor tiene iniciar, detener y reiniciar, además de un botón que abre sus registros. Un contenedor que ha terminado muestra un botón de iniciar en lugar de un detener que no podría cumplir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo controlar stacks de Docker Compose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La subvista Proyectos lista tus proyectos de Compose e inicia o detiene el stack entero, en vez de obligarte a buscar cada contenedor. Los registros del stack se abren igual que los de un contenedor."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Puedo iniciar y detener máquinas virtuales?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí, si Virtual Machine Manager está instalado. Inicia, apaga o fuerza el apagado de cualquier máquina. Forzar el apagado se confirma manteniendo pulsado porque equivale a desenchufar el cable. Una máquina en un estado que el NAS no llama en marcha ni apagada se muestra exactamente así, y se le ofrece el control de recuperación en lugar de un Iniciar que no podría cumplir."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/es/"><img src="/assets/syno-manager-icon.png" alt="Icono de Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menú" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Buscar en la guía..." data-i18n-empty="Sin resultados para" data-i18n-language="Idioma">
+      <a href="/es/">Inicio</a>
+      <a href="/es/guide/" class="active">Guía de usuario</a>
+      <a href="/es/#screenshots">Capturas de pantalla</a>
+      <a href="/es/compatible-nas/">Compatibilidad</a>
+      <a href="/es/best-synology-nas-app/">Por qué cambiarte</a>
+      <a href="/es/help/">Ayuda</a>
+      <a href="/es/#top" class="cta">Descargar</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/es/">Inicio</a> &rsaquo; <a href="/es/guide/">Guía de usuario</a> &rsaquo; Apps</div>
+      <div class="eyebrow">Apps</div>
+      <h1>Todo lo que <span class="g">ejecuta tu NAS</span></h1>
+      <p>Cuatro subvistas: <b>Package Center</b> para paquetes de DSM, <b>Docker</b> para contenedores, <b>Proyectos</b> para stacks de Compose y <b>Máquinas virtuales</b> cuando VMM está instalado.</p>
+    </div>
+    <div class="hero-shot"><img alt="Contenedores Docker con estado y controles" src="/screenshots/docker.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>En esta página</b><ul>
+      <li><a href="#package-center">Package Center</a></li>
+      <li><a href="#installing">Instalar un paquete</a></li>
+      <li><a href="#docker">Docker</a></li>
+      <li><a href="#logs">Registros de contenedores</a></li>
+      <li><a href="#projects">Proyectos de Compose</a></li>
+      <li><a href="#virtual-machines">Máquinas virtuales</a></li>
+    </ul></div>
+
+    <div class="section-head" id="package-center">
+      <div class="eyebrow">Package Center</div>
+      <h2>Todo el catálogo, con búsqueda</h2>
+      <p class="lead">Los mismos cuatro filtros que tiene DSM y un cuadro de búsqueda que los abarca todos.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Filtro</th><th>Qué lista</th></tr></thead>
+          <tbody>
+            <tr><td>Instalados</td><td>Lo que hay ahora en tu NAS, con su versión, su tamaño y un indicador de ejecución.</td></tr>
+            <tr><td>Todos los paquetes</td><td>El catálogo completo de Synology para tu modelo.</td></tr>
+            <tr><td>Beta</td><td>Paquetes preliminares.</td></tr>
+            <tr><td>Comunidad</td><td>Paquetes de fuentes de terceros que has añadido en DSM.</td></tr>
+          </tbody>
+        </table></div>
+        <p style="color:var(--steel);margin-top:16px">Cada entrada muestra su versión y tamaño de descarga, su descripción y cualquier dependencia que necesite - <code>Needs Python2</code>, <code>Needs SynoFinder</code> - para que una segunda instalación inesperada no sea una sorpresa.</p>
+        <div class="shots one" style="margin-top:22px"><img alt="Búsqueda en el catálogo completo de paquetes, con botones de Instalar" src="/screenshots/packages-search.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+        <p class="capt" style="text-align:center">Buscando en <b>Todos los paquetes</b> un paquete que aún no está instalado.</p>
+      </div>
+      <img alt="Package Center mostrando paquetes instalados con su estado de ejecución" src="/screenshots/packages.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="installing">
+      <div class="eyebrow">Instalar, actualizar, desinstalar</div>
+      <h2>Qué pasa al tocar Instalar</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <ol class="steps">
+          <li><b>Busca o filtra</b> hasta el paquete que quieres.</li>
+          <li><b>Instalar.</b> Un diálogo nombra el paquete, lista las dependencias y pregunta en qué volumen instalar, mostrando el espacio libre de cada uno para que no elijas a ciegas.</li>
+          <li><b>Confirma.</b> El NAS lo instala, dependencias incluidas.</li>
+          <li><b>La lista se vuelve a leer.</b> El botón cambia a <b>Desinstalar</b> porque la lista de paquetes ya dice que está instalado, no porque la petición haya devuelto OK.</li>
+        </ol>
+        <div class="note"><b>Ese último paso es la clave.</b> Una petición que tiene éxito y una instalación terminada son hechos distintos. La app espera al segundo.</div>
+      </div>
+      <div>
+        <div class="shots one"><img alt="El diálogo de instalación con el nombre del paquete, su dependencia y el volumen de destino" src="/screenshots/packages-install.webp" width="1324" height="2644" decoding="async" loading="lazy" /></div>
+      </div>
+    </div>
+    <div class="note warn" style="margin-top:24px"><b>Instalar un paquete añade pantallas a la app.</b> La lista de pestañas se construye con lo que tu NAS informa al conectarse, así que tras instalar algo como Download Station, desliza para actualizar o reabre la app y aparecerá su subvista.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="docker">
+      <div class="eyebrow">Docker</div>
+      <h2>Cada contenedor, con los controles que importan</h2>
+      <p class="lead">Un encabezado de estado - <b>en marcha de un total</b> - y luego todos los contenedores del NAS en una lista.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Nombre y etiqueta de imagen</b> en cada fila, para distinguir dos contenedores de la misma imagen.</li>
+      <li><b>Estado</b> como etiqueta: <b>En marcha</b>, <b>Terminado</b> y lo que más informe Docker. Un contenedor que Docker considera sano lo indica - <code>Up 2 hours (healthy)</code>.</li>
+      <li><b>Tiempo en marcha</b> para todo lo que se está ejecutando.</li>
+      <li><b>Iniciar, detener y reiniciar</b>, con el control que corresponde al estado: a un contenedor detenido se le ofrece iniciar, no un detener que no haría nada.</li>
+      <li><b>Registros</b> desde el botón de cada fila.</li>
+      <li><b>Expande una fila</b> para ver su detalle, con cifras de memoria y red entre otras.</li>
+      <li><b>Contrae toda la lista</b> con el control de arriba cuando solo quieres el recuento.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Registros</div>
+      <h2>Lee una vez, sigue cuando quieras</h2>
+      <p class="lead">Los registros de contenedores y stacks se comportan igual que <a href="/es/guide/system/#logs">el registro del sistema</a>, y por la misma razón.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Se carga una vez y se queda quieto</b>, para que ninguna línea se escape mientras la lees.</li>
+      <li><b>Pulsa reproducir para seguir en vivo</b>, púlsalo otra vez para pausar.</li>
+      <li><b>El seguimiento se detiene solo</b> al salir de la pantalla o mandar la app a segundo plano: ninguna pestaña olvidada consultando en tu bolsillo.</li>
+      <li><b>Busca</b> una línea concreta en un registro largo.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="projects">
+      <div class="eyebrow">Proyectos</div>
+      <h2>Stacks de Compose, como stacks</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Proyectos de Docker Compose, sin ninguno configurado" src="/screenshots/docker-projects.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Un proyecto de Compose son varios contenedores que van juntos. La subvista Proyectos los trata así: inicia o detiene <b>el stack entero</b> en lugar de buscar cada contenedor en la lista de Docker y esperar no haberte dejado ninguno.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Cada proyecto</b> muestra su nombre y cuántos de sus contenedores están en marcha.</li>
+          <li><b>Inicia o detén el proyecto</b> como una unidad.</li>
+          <li><b>Los registros del stack</b> se abren como los de un contenedor.</li>
+          <li><b>Si no hay proyectos, lo dice</b> - «Los proyectos de Docker Compose aparecerán aquí» - en lugar de dejar una pantalla vacía.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="virtual-machines">
+      <div class="eyebrow">Máquinas virtuales</div>
+      <h2>Virtual Machine Manager</h2>
+      <p class="lead">Aparece cuando VMM está instalado. Todas las máquinas virtuales del NAS, lo que hacen y las tres acciones de energía.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Acción</th><th>Qué hace</th></tr></thead>
+      <tbody>
+        <tr><td>Iniciar</td><td>Enciende la máquina.</td></tr>
+        <tr><td>Apagar</td><td>Pide al sistema operativo invitado que se apague de forma ordenada.</td></tr>
+        <tr><td>Forzar apagado</td><td>Corta la corriente. <b>Mantén pulsado para confirmar</b>, porque equivale a desenchufar un ordenador en marcha: un simple toque es demasiado fácil para eso.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Una máquina en un estado intermedio se describe como tal.</b> Si el NAS informa de un estado que no llama en marcha ni apagada - iniciando, suspendiendo, bloqueada - la app muestra exactamente esa palabra y ofrece el control de recuperación, en lugar de un botón de Iniciar que no puede cumplir o una marca verde que no es cierta.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2>Preguntas frecuentes de Apps</h2>
+    </div>
+    <details open><summary>¿Puedo instalar un paquete de DSM desde el móvil?</summary><div class="body">Sí. Package Center en la app tiene el mismo catálogo que DSM - Instalados, Todos los paquetes, Beta y Comunidad - con un cuadro de búsqueda. Elige un paquete, escoge el volumen e instala. Actualizar y desinstalar funcionan igual, y cada acción se confirma volviendo a leer la lista de paquetes.</div></details>
+    <details><summary>¿Puedo reiniciar un contenedor Docker desde la app?</summary><div class="body">Sí. Cada contenedor tiene iniciar, detener y reiniciar, además de un botón que abre sus registros. Un contenedor que ha terminado muestra un botón de iniciar en lugar de un detener que no podría cumplir.</div></details>
+    <details><summary>¿Puedo controlar stacks de Docker Compose?</summary><div class="body">Sí. La subvista Proyectos lista tus proyectos de Compose e inicia o detiene el stack entero. Los registros del stack se abren igual que los de un contenedor.</div></details>
+    <details><summary>¿Puedo iniciar y detener máquinas virtuales?</summary><div class="body">Sí, si Virtual Machine Manager está instalado. Inicia, apaga o fuerza el apagado de cualquier máquina. Forzar el apagado se confirma manteniendo pulsado porque equivale a desenchufar el cable.</div></details>
+    <details><summary>¿Puedo crear un contenedor nuevo desde la app?</summary><div class="body">No. Crear un contenedor implica elegir la imagen, asignar puertos, montar volúmenes y definir variables de entorno: un formulario que pertenece a una pantalla donde lo veas todo a la vez. La app ejecuta y monitoriza lo que has creado en DSM o Portainer.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Siguiente: Multimedia</h2>
+    <p class="lead" style="margin:0 auto 24px">Photos, Drive y vista en vivo de Surveillance Station.</p>
+    <p><a class="btn" href="/es/guide/media/">Photos, Drive &amp; cámaras &rarr;</a> &nbsp; <a class="btn ghost" href="/es/guide/">Volver a la guía</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/es/">Inicio</a><a href="/es/guide/">Guía de usuario</a><a href="/es/guide/getting-started/">Primeros pasos</a><a href="/es/compatible-nas/">Compatibilidad</a><a href="/es/best-synology-nas-app/">Por qué cambiar</a><a href="/es/synology-app-for-iphone/">iPhone & iPad</a><a href="/es/synology-app-for-android/">Android</a><a href="/es/synology-app-for-mac-windows/">Mac & Windows</a><a href="/es/ds-finder-alternative/">vs DS finder</a><a href="/es/help/">Ayuda</a><a href="/es/privacy/">Privacidad</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Informar de un error</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager es una app independiente y no está afiliada, respaldada ni patrocinada por Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station y QuickConnect son marcas registradas de Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

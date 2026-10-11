@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS 的网络唤醒 (Wake-on-LAN) - Syno Manager</title>
+<meta name="description" content="唤醒处于休眠状态的 Synology，或通过它唤醒网络中的任何设备 - 在任何地方都能用。哪些情况需要 VPN 或路由器转发，我们都说得清清楚楚。" />
+<meta name="keywords" content="Synology Wake-on-LAN app, wake NAS from phone, wake PC through NAS, remote wake on lan, magic packet app, DS Router wake" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/wake-on-lan/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/wake-on-lan/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS 的网络唤醒 (Wake-on-LAN) - Syno Manager" />
+<meta property="og:description" content="唤醒处于休眠状态的 Synology，或通过它唤醒网络中的任何设备 - 在任何地方都能用。哪些情况需要 VPN 或路由器转发，我们都说得清清楚楚。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hans/guide/wake-on-lan/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_CN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS 的网络唤醒 (Wake-on-LAN) - Syno Manager" />
+<meta name="twitter:description" content="唤醒处于休眠状态的 Synology，或通过它唤醒网络中的任何设备 - 在任何地方都能用。哪些情况需要 VPN 或路由器转发，我们都说得清清楚楚。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hans",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "主页",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "用户指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wake-on-LAN"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS 的网络唤醒 (Wake-on-LAN) - Syno Manager",
+  "description": "唤醒处于休眠状态的 Synology，或通过它唤醒网络中的任何设备 - 在任何地方都能用。哪些情况需要 VPN 或路由器转发，我们都说得清清楚楚。",
+  "image": "https://synomanager.com/screenshots/wake-devices.webp",
+  "url": "https://synomanager.com/guide/wake-on-lan/",
+  "mainEntityOfPage": "https://synomanager.com/guide/wake-on-lan/",
+  "inLanguage": "zh-Hans",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我可以在任何地方唤醒 NAS 吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "只有当存在一条不依赖 NAS 处于开机状态的通往你网络的路线时才行 - 比如通过 VPN 接入网络，或路由器已配置转发Wake-on-LAN。关机后的 NAS 无法自己转发唤醒数据包，QuickConnect 也无法连接已关机的 NAS。在同一网络内则直接可用。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "可以通过 NAS 唤醒我的PC吗？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，而且这个功能在任何地方都能用，前提是 NAS 本身处于开机状态。你通过日常连接向 NAS 发出请求，再由 NAS 在局域网内为你广播魔术包。这与 Synology 自家的 DS Router 应用采用的是同一路径。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS 的 MAC 地址是从哪里来的？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "应用会在你首次连接时自动获取，所以你无需自己去查。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "添加其他设备需要什么？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "一个你能认出的名称，以及它的 MAC 地址。通常可以在路由器的设备列表中，或在设备本身的网络设置里找到 MAC 地址。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hans/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 图标" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="菜单" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜索指南…" data-i18n-empty="没有找到匹配项：" data-i18n-language="语言">
+      <a href="/zh-hans/">主页</a>
+      <a href="/zh-hans/guide/" class="active">用户指南</a>
+      <a href="/zh-hans/#screenshots">截图</a>
+      <a href="/zh-hans/compatible-nas/">兼容性</a>
+      <a href="/zh-hans/best-synology-nas-app/">为什么要换</a>
+      <a href="/zh-hans/help/">帮助</a>
+      <a href="/zh-hans/#top" class="cta">下载</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hans/">首页</a> &rsaquo; <a href="/zh-hans/guide/">用户指南</a> &rsaquo; Wake-on-LAN</div>
+      <div class="eyebrow">Wake-on-LAN</div>
+      <h1><span class="g">躺在沙发上</span>就能开机</h1>
+      <p>设备列表中，NAS 本身的“连接”按钮旁有一个<b>唤醒</b>按钮；网络中的其他设备则通过<b>唤醒设备</b>界面操作。其中一种随处可用，另一种则有一个需要坦白说明的前提。</p>
+    </div>
+    <div class="hero-shot"><img alt="“唤醒设备”界面" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">坦诚的对照表</div>
+      <h2>什么情况下可行</h2>
+      <p class="lead">Wake-on-LAN是在本地网络内的一次广播。哪些可行、哪些不行，全都由这一点决定，所以这里直接说清楚，而不是埋在脚注里。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>你想唤醒的对象</th><th>你所在的位置</th><th>是否可行？</th><th>原因</th></tr></thead>
+      <tbody>
+        <tr><td>NAS</td><td>在同一网络内</td><td class="yes">是</td><td>你的手机直接广播数据包。无需任何设置。</td></tr>
+        <tr><td>其他设备</td><td>在同一网络内</td><td class="yes">是</td><td>同上 - 手机或 NAS 都可以发送。</td></tr>
+        <tr><td>其他设备，NAS 处于开机状态</td><td>任何地方</td><td class="yes">是</td><td><b>由 NAS 为你转发。</b>你通过正常连接访问 NAS，由它在LAN内广播。这就是 DS Router 的路径。</td></tr>
+        <tr><td>NAS 本身，处于关机状态时</td><td>在你的网络之外</td><td class="no">需要设置</td><td>关机后的 NAS 无法自己转发唤醒数据包，QuickConnect 也无法连接已关机的 NAS。你需要通过 <b>VPN</b> 接入网络，或让路由器把 <b>UDP 端口 9</b> 转发到LAN广播地址。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>中间这一行最实用。</b>坐在火车上唤醒家里的台式机是可行的，而且完全不需要任何路由器配置 - 因为始终开机的 NAS 在替你做广播。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">NAS</div>
+      <h2>唤醒你的 DiskStation</h2>
+    </div>
+    <ol class="steps">
+      <li><b>无需任何配置。</b>应用会在你首次连接时获取 NAS 的 MAC 地址，所以按钮在你需要之前就已准备就绪。</li>
+      <li><b>打开设置 &rsaquo; 管理 NAS 设备。</b></li>
+      <li><b>点按 NAS 旁边的“唤醒”</b>。</li>
+      <li><b>稍等片刻</b>再点按“连接”。NAS 启动需要一段时间，在它应答之前，应用不会假装它已经开机。</li>
+    </ol>
+    <div class="note warn"><b>NAS 上也必须启用Wake-on-LAN。</b>在 DSM 的<b>控制面板 &rsaquo; 硬件 &amp; 电源 &rsaquo; 常规</b>中设置。关闭了该功能的 NAS 无论谁来发送，都会忽略数据包。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">其他一切</div>
+      <h2>通过 NAS 唤醒其他设备</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead"><b>设置 &rsaquo; 唤醒设备</b>。按名称和 MAC 地址添加网络中的任意机器，NAS 会在网络内部为你发送魔术包。</p>
+        <ol class="steps" style="margin-top:18px">
+          <li><b>点按“添加设备”。</b></li>
+          <li><b>起一个</b>你能认出的名字 - “台式机”、“游戏PC”、“服务器”。</li>
+          <li><b>输入它的 MAC 地址。</b>在路由器的设备列表中通常最容易找到。</li>
+          <li><b>保存。</b>它会出现在列表中，并带有自己的“唤醒”按钮。</li>
+        </ol>
+        <div class="note"><b>由于发送工作由 NAS 完成，所以你在外出时也能使用</b> - 无论是移动数据、QuickConnect，还是任何能连上 NAS 的地方。Synology 自家的路由器应用也是这样做的，因此即使你从不需要唤醒 NAS 本身，这个功能也值得设置。</div>
+      </div>
+      <img alt="显示空状态和“添加设备”按钮的“唤醒设备”界面" src="/screenshots/wake-devices.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">在目标机器上</div>
+      <h2>唤醒要生效，必须满足什么条件</h2>
+      <p class="lead">如果发送了数据包却毫无反应，几乎总是下面这些原因之一 - 应用无法从外部看到或修复其中任何一项。</p>
+    </div>
+    <ul class="plain">
+      <li><b>在机器的 BIOS 或 UEFI 中启用Wake-on-LAN</b>，通常称为“Wake on PCIe”或“Power on by PCI-E”。</li>
+      <li><b>在网卡上也要启用。</b>在 Windows 中：设备管理器，网卡属性，电源管理，“允许此设备唤醒计算机”。</li>
+      <li><b>在 Windows 上关闭快速启动。</b>开启时，关机的PC实际上是在休眠，往往会忽略数据包。</li>
+      <li><b>通常要用有线连接。</b>通过 Wi-Fi 唤醒需要特定的硬件和驱动支持；以太网可靠得多。</li>
+      <li><b>机器仍需接通电源。</b>魔术包要求网卡有待机供电。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常见问题</div>
+      <h2>Wake-on-LAN FAQ</h2>
+    </div>
+    <details open><summary>我可以在任何地方唤醒 NAS 吗？</summary><div class="body">只有当存在一条不依赖 NAS 处于开机状态的通往你网络的路线时才行 - 比如 VPN，或已配置转发Wake-on-LAN的路由器。关机后的 NAS 无法自己转发唤醒数据包，QuickConnect 也无法连接已关机的 NAS。在同一网络内则直接可用。</div></details>
+    <details><summary>可以通过 NAS 唤醒我的PC吗？</summary><div class="body">可以，只要 NAS 本身处于开机状态，这种方式在任何地方都能用。你通过正常连接向 NAS 发出请求，由它在LAN内为你广播魔术包。</div></details>
+    <details><summary>NAS 的 MAC 地址是从哪里来的？</summary><div class="body">应用会在你首次连接时自动获取，所以你无需自己去查。</div></details>
+    <details><summary>添加其他设备需要什么？</summary><div class="body">一个你能认出的名称，以及它的 MAC 地址，通常可以在路由器的设备列表中找到。</div></details>
+    <details><summary>我发送了唤醒，但没有任何反应。</summary><div class="body">请检查目标机器是否启用了Wake-on-LAN - 在它的 BIOS 中、在它的网卡上，并且 Windows 的快速启动已关闭。还要确认它使用的是有线以太网；如果你要唤醒的是 NAS，则需确认 NAS 在控制面板中启用了Wake-on-LAN。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一篇：小组件</h2>
+    <p class="lead" style="margin:0 auto 24px">在主屏幕上查看你的 NAS，并带有如实的时间戳。</p>
+    <p><a class="btn" href="/zh-hans/guide/widgets/">主屏幕小组件 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hans/guide/">返回指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hans/">首页</a><a href="/zh-hans/guide/">用户指南</a><a href="/zh-hans/guide/getting-started/">快速入门</a><a href="/zh-hans/compatible-nas/">兼容性</a><a href="/zh-hans/best-synology-nas-app/">为何换用</a><a href="/zh-hans/synology-app-for-iphone/">iPhone & iPad</a><a href="/zh-hans/synology-app-for-android/">Android</a><a href="/zh-hans/synology-app-for-mac-windows/">Mac & Windows</a><a href="/zh-hans/ds-finder-alternative/">对比 DS finder</a><a href="/zh-hans/help/">帮助</a><a href="/zh-hans/privacy/">隐私</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">报告问题</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 是一款独立应用，与 Synology Inc. 没有隶属、认可或赞助关系。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 和 QuickConnect 均为 Synology Inc. 的商标。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

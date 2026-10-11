@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology CPU, RAM, Sıcaklık ve Fanlar - Syno Manager</title>
+<meta name="description" content="CPU, RAM, yük, disk G/Ç ve sıcaklığı izleyin, fan hızı modunu değiştirin, DSM güncellemelerini denetleyin ve Synology'nizi telefonunuzdan yeniden başlatın ya da kapatın." />
+<meta name="keywords" content="Synology CPU RAM phone, Synology fan speed mode app, Synology temperature monitor, Synology restart from phone, Synology DSM update app, Synology log viewer app, Synology resource monitor" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/tr/guide/system/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/system/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/system/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/system/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/system/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/system/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/system/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/system/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/system/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/system/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/system/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/system/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/system/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/system/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/system/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/system/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/system/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/system/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/system/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/system/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/system/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/system/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/system/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/system/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/system/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/system/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/system/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/system/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/system/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/system/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/system/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/system/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology CPU, RAM, Sıcaklık ve Fanlar - Syno Manager" />
+<meta property="og:description" content="CPU, RAM, yük, disk G/Ç ve sıcaklığı izleyin, fan hızı modunu değiştirin, DSM güncellemelerini denetleyin ve Synology'nizi telefonunuzdan yeniden başlatın ya da kapatın." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/tr/guide/system/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="tr_TR" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology CPU, RAM, Sıcaklık ve Fanlar - Syno Manager" />
+<meta name="twitter:description" content="CPU, RAM, yük, disk G/Ç ve sıcaklığı izleyin, fan hızı modunu değiştirin, DSM güncellemelerini denetleyin ve Synology'nizi telefonunuzdan yeniden başlatın ya da kapatın." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "tr",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Ana Sayfa",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Kullanım Kılavuzu",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Sistem"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology CPU, RAM, Sıcaklık ve Fanlar - Syno Manager",
+  "description": "CPU, RAM, yük, disk G/Ç ve sıcaklığı izleyin, fan hızı modunu değiştirin, DSM güncellemelerini denetleyin ve Synology'nizi telefonunuzdan yeniden başlatın ya da kapatın.",
+  "image": "https://synomanager.com/screenshots/system-health.webp",
+  "url": "https://synomanager.com/guide/system/",
+  "mainEntityOfPage": "https://synomanager.com/guide/system/",
+  "inLanguage": "tr",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Fan hızını uygulamadan değiştirebilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Sistem Sağlığı'nda Tam Hız, Serin ve Sessiz seçenekli bir Soğutma kartı vardır. Uygulama NAS'ın şu anda bulunduğu modu okur, seçiminizi yazar ve doğrulamak için geri okur. Bu üçünün dışında bir mod bildiren NAS, yanlış temsil edilmek yerine salt okunur bir görünüm korur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS'ımı telefonumdan yeniden başlatabilir veya kapatabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet, Sistem Sağlığı'nın altındaki Güç Denetimleri kartından. İkisi de çalışmadan önce onaylanır, çünkü bağlı her kullanıcıyı etkilerler. Uzaktan kapatmak iki kez düşünmeye değer - kapalı bir NAS, VPN ya da Wake-on-LAN için yapılandırılmış bir yönlendirici olmadan internet üzerinden uyandırılamaz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "NAS'ı Tanımla ne işe yarar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NAS'ın durum ışığını yakıp söndürür; böylece bir rafta ya da dolapta hangi kutuya baktığınızı anlayabilirsiniz. Bip sesini sustur, alarm zilini susturur ama onu tetikleyen durumu susturmaz - nedeni de giderin."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Günlükler kendiliğinden yenilenir mi?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hayır, ve bu bilinçli. Günlük eskiden siz okuyun ya da okumayın bir zamanlayıcıyla yeniden okunuyordu; bu da boşuna pil ve ağ harcıyordu. Artık bir kez yüklenir ve sabit kalır. Canlı izlemek için oynat'a basın, duraklatmak için yeniden basın; ekrandan ayrıldığınızda izleme kendiliğinden durur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Baktığım günlüğü dışa aktarabilir veya kopyalayabilir miyim?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Evet. Sistem Kopyala / Tümünü seç / Paylaş çubuğu için herhangi bir satıra uzun basın ya da Sistem sekmesinde canlı anahtarın yanındaki veya Bağlantı sekmesinde listenin üstündeki dışa aktarma düğmesini kullanın. Dosyaya kaydet, Paylaş veya e-postayla gönder ve Panoya kopyala seçeneklerini içeren bir sayfa açar ve düzey filtresi ile aramadan sonra ekranda olan girdileri tam olarak dışa aktarır - satır başına bir girdi; saat, düzey, kullanıcı ve açıklama sekmelerle ayrılır."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/tr/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager simgesi" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Kılavuzda ara..." data-i18n-empty="Eşleşme bulunamadı:" data-i18n-language="Dil">
+      <a href="/tr/">Ana Sayfa</a>
+      <a href="/tr/guide/" class="active">Kullanım Kılavuzu</a>
+      <a href="/tr/#screenshots">Ekran görüntüleri</a>
+      <a href="/tr/compatible-nas/">Uyumluluk</a>
+      <a href="/tr/best-synology-nas-app/">Neden geçmelisiniz</a>
+      <a href="/tr/help/">Yardım</a>
+      <a href="/tr/#top" class="cta">İndir</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/tr/">Ana Sayfa</a> &rsaquo; <a href="/tr/guide/">Kullanım Kılavuzu</a> &rsaquo; Sistem</div>
+      <div class="eyebrow">Sistem</div>
+      <h1>Kutu <span class="g">gerçekte ne yapıyor</span></h1>
+      <p>Üç alt görünüm: makinenin durumu için <b>Sistem Sağlığı</b>, canlı grafikler için <b>Kaynaklar</b> ve DSM'nin kaydettikleri için <b>Günlükler</b>. Ayrıca bir şeyi değiştiren denetimler - fan modu, tanımlama ışığı, DSM güncellemeleri, yeniden başlatma ve kapatma.</p>
+    </div>
+    <div class="hero-shot"><img alt="CPU ve RAM göstergeleri, yük ortalaması, disk G/Ç ve sıcaklık geçmişiyle Sistem Sağlığı" src="/screenshots/system-health.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Bu sayfada</b><ul>
+      <li><a href="#health">Sistem Sağlığı</a></li>
+      <li><a href="#cooling">Soğutma &amp; fan modu</a></li>
+      <li><a href="#identify">Tanımla &amp; uyarılar</a></li>
+      <li><a href="#dsm-update">DSM güncellemesi</a></li>
+      <li><a href="#power">Güç denetimleri</a></li>
+      <li><a href="#resources">Kaynaklar</a></li>
+      <li><a href="#logs">Günlükler</a></li>
+    </ul></div>
+
+    <div class="section-head" id="health">
+      <div class="eyebrow">Sistem Sağlığı</div>
+      <h2>Değerler</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Kart</th><th>Ne gösterir</th></tr></thead>
+      <tbody>
+        <tr><td>CPU &amp; RAM göstergeleri</td><td>Toplam CPU bir halka olarak, altında <b>kullanıcı</b> payı belirtilir; böylece kendi iş yükünüzü sistem ek yükünden ayırt edebilirsiniz. RAM yüzdeyi ve mutlak değerleri gösterir.</td></tr>
+        <tr><td>Bellek</td><td>Toplama karşı kullanılan, çubuk olarak. Önemli olana kadar yeşil.</td></tr>
+        <tr><td>CPU Yük Ortalaması</td><td>Bir, beş ve on beş dakikalık değerler - CPU zamanı bekleyen işlemler, yüzde değil. Çekirdek sayınıza göre değerlendirilir; yani sekiz çekirdekli bir rack sunucuda sağlıklı olan değer, iki yuvalı bir cihazda yoğundur.</td></tr>
+        <tr><td>Disk G/Ç</td><td>Okuma ve yazma aktarım hızı ile kullanım yüzdesi - disklerin zamanın ne kadarında meşgul olduğu; CPU boşta görünürken NAS yavaş hissettirdiğinde çoğunlukla gerçek yanıt budur.</td></tr>
+        <tr><td>Sıcaklık Geçmişi</td><td>Güncel değerle birlikte kayan bir grafik. <a href="/tr/guide/settings/#preferences">Tercihinize</a> göre &deg;C veya &deg;F.</td></tr>
+        <tr><td>İşlemler</td><td>NAS'ın kaç işlem çalıştırdığı.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="cooling">
+      <div class="eyebrow">Soğutma</div>
+      <h2>Telefonunuzdan değiştirilen fan hızı modu</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Soğutma kartı fan durumunu ve NAS'ın bulunduğu modu üç seçenekli bir denetim olarak gösterir:</p>
+        <ul class="plain">
+          <li><b>Tam Hız</b> - azami hava akışı, azami gürültü. Bir rack veya dolap için doğru seçim.</li>
+          <li><b>Serin</b> - dengeli varsayılan.</li>
+          <li><b>Sessiz</b> - daha düşük hız, daha yüksek sıcaklık. Sürücüler kaldırabiliyorsa oturma odasındaki bir NAS için doğru seçim.</li>
+        </ul>
+        <div class="note"><b>Varsayılmaz, doğrulanır.</b> Uygulama güncel modu NAS'tan okur, seçiminizi yazar, sonra <b>geri okur</b>. NAS'ın sessizce reddettiği bir mod, uygulanmış gibi ekranda durmak yerine reddedildi olarak bildirilir.</div>
+        <div class="note" style="margin-top:14px"><b>Tanınmayan bir mod salt okunur kalır.</b> NAS'ınız bu üçünün dışında bir soğutma modu bildirirse kart bildirileni gösterir ve değiştirmeyi önermez - bildiği üç moddan biri olarak yanlış etiketlemek yerine.</div>
+      </div>
+      <img alt="Tam Hız, Serin ve Sessiz seçenekleri ile Tanımla ve Güç Denetimlerini içeren Soğutma kartı" src="/screenshots/system-cooling.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="identify">
+      <div class="eyebrow">Tanımla &amp; Uyarılar</div>
+      <h2>Kutuyu bulun, zili susturun</h2>
+    </div>
+    <ul class="plain">
+      <li><b>Tanımla</b>, önünde durduğunuz birimi anlayabilmeniz için NAS'ın durum ışığını yakıp söndürür. <b>Durdur</b> bunu sonlandırır.</li>
+      <li><b>Bip sesini sustur</b>, alarm zilini durdurur. Gürültüyü susturur, durumu değil - alarmı tetikleyen şey hâlâ geçerlidir ve sağlık başlığı bunu söylemeye devam eder.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="dsm-update">
+      <div class="eyebrow">DSM Güncellemesi</div>
+      <h2>Bir bellenim güncellemesi var mı</h2>
+      <p class="lead">DSM Güncellemesi kartı, kullandığınız sürümü ve Synology'nin daha yenisi sunup sunmadığını bildirir. <b>Güncellemeyi denetle</b>, NAS'tan yeniden bakmasını ister.</p>
+    </div>
+    <div class="note"><b>Bu, uygulamanın değil NAS'ınızın bellenimidir.</b> Syno Manager, her uygulama gibi App Store veya Google Play üzerinden güncellenir. Bu kart, Denetim Masası'ndakiyle aynı olan DSM'nin kendi güncelleme yüzeyidir.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="power">
+      <div class="eyebrow">Güç Denetimleri</div>
+      <h2>Yeniden başlat ve kapat</h2>
+      <p class="lead">Sistem Sağlığı'nın altında ve kırmızıyla işaretli, çünkü bağlı her kullanıcıyı etkilerler - bir dosya kopyalamanın ortasındaki kişi dahil.</p>
+    </div>
+    <ul class="plain">
+      <li><b>NAS'ı Yeniden Başlat</b> - temiz bir yeniden başlatma. Çalışmadan önce onaylanır.</li>
+      <li><b>NAS'ı Kapat</b> - temiz bir güç kapatma. Çalışmadan önce onaylanır.</li>
+    </ul>
+    <div class="note stop"><b>Uzaktan kapatmadan önce düşünün.</b> Kapalı bir NAS kendi uyandırma paketini aktaramaz. Ağınızın dışından geri getirmek, ona bir VPN ya da Wake-on-LAN'ı yönlendirecek şekilde ayarlanmış bir yönlendirici gerektirir. Neyin nereden çalıştığı için bkz. <a href="/tr/guide/wake-on-lan/">Wake-on-LAN</a>.</div>
+    <div class="note" style="margin-top:14px"><b>Kısayollar onayı atlamaz.</b> <code>synomanager://reboot</code> ve <code>synomanager://shutdown</code> <a href="/tr/guide/shortcuts/">bağlantıları</a> bilinçli olarak uygulamayı yalnızca bu ekranda <em>açar</em>. Yıkıcı bir eylem, bir başlatıcıdan tetiklendi diye tek dokunuşluk hâle gelmez.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="resources">
+      <div class="eyebrow">Kaynaklar</div>
+      <h2>Canlı grafikler</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="CPU, bellek, disk okuma ve disk yazma için kaynak izleyici grafikleri" src="/screenshots/system-resources.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Kaynaklar alt görünümü aynı verinin kayan bir grafik hâlidir; soru "bu bir sıçrama mı yoksa sürekli mi?" olduğunda istediğiniz de budur.</p>
+        <ul class="plain">
+          <li>Kullanıcı ve sistem ayrımıyla <b>CPU Kullanımı</b>.</li>
+          <li>Toplama karşı kullanılanla <b>Bellek Kullanımı</b>.</li>
+          <li>Her biri kendi grafiğiyle <b>Disk Okuma</b> ve <b>Disk Yazma</b>, ayrıca genel disk kullanımı.</li>
+          <li>Bir, beş ve on beş dakika boyunca <b>Yük Ortalamaları</b>.</li>
+        </ul>
+        <div class="note">Grafikler <a href="/tr/guide/settings/#preferences">yoklama aralığında</a> dolar. Daha kısa aralık daha ince ayrıntı sağlar ve daha fazla pil harcar; daha uzunu daha nazik ve daha kabadır.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="logs">
+      <div class="eyebrow">Günlükler</div>
+      <h2>DSM'nin kaydettikleri</h2>
+      <p class="lead">İki sekme: DSM'nin kendi günlüğü için <b>Sistem</b> ve oturum açmalar ile dosya erişimi için <b>Bağlantı</b>. İkisi de siz istediğinizde okunur.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Bir kez yüklenir ve sabit kalır.</b> Siz bir satırı okumaya çalışırken zamanlayıcıyla yeniden okunan bir günlük işe yaramaz ve boşuna pil ile ağ harcar.</li>
+      <li><b>Canlı izlemek için oynat'a basın.</b> Duraklatmak için yeniden basın. Ekrandan ayrıldığınızda ya da uygulamayı arka plana attığınızda izleme kendiliğinden durur; böylece unutulmuş bir günlük sekmesi cebinizde sessizce yoklama yapmaz.</li>
+      <li><b>Bir arama kutusu var</b>; uzun bir günlükte tek bir satırı bulmak için.</li>
+      <li><b>Kapsayıcı ve yığın günlükleri de aynı şekilde çalışır</b> - bkz. <a href="/tr/guide/apps/#docker">Docker</a>.</li>
+      <li><b>Metin seçilebilir.</b> Bir satıra uzun basın; ekranda metnin bulunduğu her yerdeki gibi sistem Kopyala / Tümünü seç / Paylaş çubuğu açılır.</li>
+      <li><b>Baktığınızı dışa aktarın.</b> Sistem sekmesinde canlı anahtarın yanında, Bağlantı sekmesinde ise listenin üstünde bir dışa aktarma düğmesi bulunur. Üç çıkış yolu olan bir sayfa açar: <b>Dosyaya kaydet</b>, göndermek ya da e-postalamak için <b>Paylaş</b> veya <b>Panoya kopyala</b>.</li>
+    </ul>
+    <div class="note"><b>Tüm günlüğü değil, ekrandakini dışa aktarır.</b> Düzey filtresi çipi ve arama kutusu listeyi neye daraltmışsa o çıkar - zaten elediğiniz hiçbir şey dışa aktarmada geri gelmez. Dosya düz metindir, satır başına bir girdi; saat, düzey, kullanıcı ve açıklama sekmelerle ayrılır.</div>
+    <div class="note warn"><b>Günlük yüklenmiyorsa</b> ve uygulamanın geri kalanı sorunsuzken bağlantı zaman aşımı bildiriyorsa, yanıt vermeyen şey sizin bağlantınız değil, NAS'taki Log Center hizmetidir. DSM'nin Paket Merkezi'nde Log Center'ın kurulu ve çalışır olduğunu denetleyin - sistem günlüğü API'si onun bir parçasıdır.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Sık sorulan sorular</div>
+      <h2>Sistem SSS</h2>
+    </div>
+    <details open><summary>Fan hızını uygulamadan değiştirebilir miyim?</summary><div class="body">Evet. Sistem Sağlığı'nda Tam Hız, Serin ve Sessiz seçenekli bir Soğutma kartı vardır. Uygulama NAS'ın şu anda bulunduğu modu okur, seçiminizi yazar ve doğrulamak için geri okur. Bu üçünün dışında bir mod bildiren NAS, yanlış temsil edilmek yerine salt okunur bir görünüm korur.</div></details>
+    <details><summary>NAS'ımı telefonumdan yeniden başlatabilir veya kapatabilir miyim?</summary><div class="body">Evet, Sistem Sağlığı'nın altındaki Güç Denetimleri'nden. İkisi de çalışmadan önce onaylanır. Uzaktan kapatmak iki kez düşünmeye değer - kapalı bir NAS, VPN ya da Wake-on-LAN için yapılandırılmış bir yönlendirici olmadan internet üzerinden uyandırılamaz.</div></details>
+    <details><summary>NAS'ı Tanımla ne işe yarar?</summary><div class="body">NAS'ın durum ışığını yakıp söndürür; böylece bir rafta ya da dolapta hangi kutuya baktığınızı anlayabilirsiniz. Bip sesini sustur, alarm zilini susturur ama onu tetikleyen durumu susturmaz.</div></details>
+    <details><summary>Günlükler kendiliğinden yenilenir mi?</summary><div class="body">Hayır, ve bu bilinçli. Günlük bir kez yüklenir ve okuyabilmeniz için sabit kalır. Canlı izlemek için oynat'a basın, duraklatmak için yeniden basın; ekrandan ayrıldığınızda ya da uygulamayı arka plana attığınızda izleme kendiliğinden durur.</div></details>
+    <details><summary>Baktığım günlüğü dışa aktarabilir veya kopyalayabilir miyim?</summary><div class="body">Evet. Sistem Kopyala / Tümünü seç / Paylaş çubuğu için herhangi bir satıra uzun basın ya da Sistem sekmesinde canlı anahtarın yanındaki veya Bağlantı sekmesinde listenin üstündeki dışa aktarma düğmesini kullanın. Dosyaya kaydet, Paylaş veya e-postayla gönder ve Panoya kopyala seçeneklerini içeren bir sayfa açar ve düzey filtresi ile aramadan sonra ekranda olan girdileri tam olarak dışa aktarır - satır başına bir girdi; saat, düzey, kullanıcı ve açıklama sekmelerle ayrılır.</div></details>
+    <details><summary>CPU iyi görünürken yük ortalamam neden yüksek?</summary><div class="body">Yük ortalaması bekleyen işlemleri sayar ve bunlar çoğunlukla CPU'yu değil disk erişimini bekler. Aynı ekrandaki Disk G/Ç kullanımına bakın - düşük CPU ile yüksek kullanım yüzdesi olağan açıklamadır.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Sıradaki: Depolama</h2>
+    <p class="lead" style="margin:0 auto 24px">Birimler, havuzlar, sürücü başına SMART sağlığı ve güvenli çıkarma.</p>
+    <p><a class="btn" href="/tr/guide/storage/">Depolama &amp; sürücüler &rarr;</a> &nbsp; <a class="btn ghost" href="/tr/guide/">Rehbere dön</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/tr/">Ana sayfa</a><a href="/tr/guide/">Kullanım Kılavuzu</a><a href="/tr/guide/getting-started/">Başlarken</a><a href="/tr/compatible-nas/">Uyumluluk</a><a href="/tr/best-synology-nas-app/">Neden geçmeli</a><a href="/tr/synology-app-for-iphone/">iPhone & iPad</a><a href="/tr/synology-app-for-android/">Android</a><a href="/tr/synology-app-for-mac-windows/">Mac & Windows</a><a href="/tr/ds-finder-alternative/">DS finder ile karşılaştırma</a><a href="/tr/help/">Yardım</a><a href="/tr/privacy/">Gizlilik</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hata bildir</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager bağımsız bir uygulamadır; Synology Inc. ile bağlantılı değildir, onun tarafından onaylanmamış veya desteklenmemiştir. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ve QuickConnect, Synology Inc.'in ticari markalarıdır.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

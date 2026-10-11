@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Giám sát mạng, VPN & DDNS của Synology - Syno Manager</title>
+<meta name="description" content="Thông lượng trực tiếp theo từng giao diện, các kết nối đang hoạt động và IP bị chặn, dịch vụ DSM có thể bật tắt, hồ sơ VPN client, và DDNS cùng địa chỉ công khai của bạn." />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/vi/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Giám sát mạng, VPN &amp; DDNS của Synology - Syno Manager" />
+<meta property="og:description" content="Thông lượng trực tiếp theo từng giao diện, các kết nối đang hoạt động và IP bị chặn, dịch vụ DSM có thể bật tắt, hồ sơ VPN client, và DDNS cùng địa chỉ công khai của bạn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/vi/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="vi_VN" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Giám sát mạng, VPN &amp; DDNS của Synology - Syno Manager" />
+<meta name="twitter:description" content="Thông lượng trực tiếp theo từng giao diện, các kết nối đang hoạt động và IP bị chặn, dịch vụ DSM có thể bật tắt, hồ sơ VPN client, và DDNS cùng địa chỉ công khai của bạn." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "vi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Trang chủ",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Hướng dẫn sử dụng",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mạng"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Giám sát mạng, VPN & DDNS của Synology - Syno Manager",
+  "description": "Thông lượng trực tiếp theo từng giao diện, các kết nối đang hoạt động và IP bị chặn, dịch vụ DSM có thể bật tắt, hồ sơ VPN client, và DDNS cùng địa chỉ công khai của bạn.",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "vi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Tôi có thể xem NAS đang truyền dữ liệu nhanh đến đâu ngay lúc này không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Chế độ xem phụ Network hiển thị tốc độ tải xuống và tải lên trực tiếp của mọi giao diện mạng trên NAS, mỗi giao diện có biểu đồ riêng, tốc độ liên kết và địa chỉ. Các giao diện gộp (bond) hiện dưới dạng một bond, với tốc độ tổng hợp."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể bật và tắt dịch vụ DSM từ ứng dụng không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có, với những dịch vụ DSM cho phép máy khách điều khiển - SMB, NFS, FTP, rsync và các dịch vụ khác đều có công tắc. Một số được đánh dấu do hệ thống quản lý, nghĩa là DSM tự vận hành chúng theo cách riêng và ứng dụng chỉ hiển thị trạng thái mà không cho đổi."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ứng dụng có hiển thị địa chỉ IP nào đang bị chặn không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Có. Chế độ xem phụ Connections hiển thị chính sách tự động chặn - bao nhiêu lần thất bại trong bao lâu - và danh sách các địa chỉ hiện đang bị chặn, được thu gọn sau một con số để hàng trăm mục không làm chìm phần còn lại của màn hình."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Tôi có thể biết VPN của mình có đang kết nối không?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ứng dụng liệt kê các hồ sơ VPN client mà NAS của bạn có và cho phép bạn yêu cầu NAS kết nối hoặc ngắt một hồ sơ. Ứng dụng không khẳng định hồ sơ nào đang chạy, vì bản ghi DSM mà nó đọc không có trường trạng thái. Nói khác đi sẽ là bịa ra một số liệu."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/vi/"><img src="/assets/syno-manager-icon.png" alt="Biểu tượng Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Tìm trong hướng dẫn..." data-i18n-empty="Không có kết quả cho" data-i18n-language="Ngôn ngữ">
+      <a href="/vi/">Trang chủ</a>
+      <a href="/vi/guide/" class="active">Hướng dẫn sử dụng</a>
+      <a href="/vi/#screenshots">Ảnh chụp màn hình</a>
+      <a href="/vi/compatible-nas/">Khả năng tương thích</a>
+      <a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a>
+      <a href="/vi/help/">Trợ giúp</a>
+      <a href="/vi/#top" class="cta">Tải về</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/vi/">Trang chủ</a> &rsaquo; <a href="/vi/guide/">Hướng dẫn sử dụng</a> &rsaquo; Mạng</div>
+      <div class="eyebrow">Mạng</div>
+      <h1>Điều gì đang <span class="g">ra vào</span></h1>
+      <p>Năm chế độ xem phụ: thông lượng <b>Network</b> trực tiếp, <b>Connections</b> với tự động chặn, các <b>Services</b> bạn có thể bật tắt, hồ sơ <b>VPN</b>, và <b>DDNS</b> cùng địa chỉ công khai của bạn.</p>
+    </div>
+    <div class="hero-shot"><img alt="Thông lượng mạng trực tiếp theo từng giao diện" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Trên trang này</b><ul>
+      <li><a href="#throughput">Thông lượng</a></li>
+      <li><a href="#connections">Kết nối &amp; tự động chặn</a></li>
+      <li><a href="#services">Dịch vụ</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; IP bên ngoài</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">Mạng</div>
+      <h2>Trực tiếp, theo từng giao diện</h2>
+      <p class="lead">Mỗi giao diện mà NAS có đều có thẻ riêng - kể cả bond và giao diện Open vSwitch, những thứ nhiều công cụ bỏ qua.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hiển thị</th><th>Ý nghĩa</th></tr></thead>
+      <tbody>
+        <tr><td>Tên và tốc độ giao diện</td><td>Tên DSM dùng và tốc độ đã thỏa thuận - ví dụ <code>bond0 (20 Gbps)</code> cho bản gộp hai cổng.</td></tr>
+        <tr><td>Địa chỉ</td><td>Địa chỉ IP mà giao diện hiện đang giữ.</td></tr>
+        <tr><td>Chỉ báo LIVE</td><td>Màu xanh lá khi các số liệu đang được cập nhật.</td></tr>
+        <tr><td>Tải xuống / Tải lên</td><td>Thông lượng hiện tại, mỗi loại có một biểu đồ cuộn bên dưới để phân biệt một đợt tăng đột biến với lưu lượng kéo dài.</td></tr>
+        <tr><td>Network Info</td><td>Tên máy chủ, gateway và DNS chính - ba giá trị bạn cần khi có thứ gì đó trên mạng không phân giải được.</td></tr>
+        <tr><td>Kết nối đang hoạt động</td><td>Một con số, kèm lối vào chi tiết.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Hướng được tính từ góc nhìn của NAS.</b> "Download" là lưu lượng đến NAS; khi bạn sao chép một tệp <em>lên</em> NAS, đó là lưu lượng tải xuống của nó.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">Kết nối</div>
+      <h2>Ai đang kết nối, và ai bị cấm</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Ba thứ, theo thứ tự bạn thường muốn xem:</p>
+        <ul class="plain">
+          <li><b>Auto Block</b> - tính năng chống dò mật khẩu của DSM có bật không, bao nhiêu lần thất bại sẽ kích hoạt và trong khoảng thời gian bao lâu. Đây là cài đặt khiến điện thoại bị khóa sau vài lần nhập sai mật khẩu.</li>
+          <li><b>Blocked IPs</b> - mọi địa chỉ hiện đang bị cấm, sau một con số. Hàng trăm địa chỉ bị chặn là chuyện bình thường với NAS mở ra internet và sẽ làm chìm màn hình, nên danh sách luôn thu gọn cho đến khi bạn mở ra.</li>
+          <li><b>Active Connections</b> - ai đang đăng nhập, từ địa chỉ nào, qua giao thức nào, và phiên bắt đầu lúc nào. HTTP/HTTPS, SMB, NFS, FTP - mỗi phiên đều được gọi tên.</li>
+        </ul>
+        <div class="note"><b>Bạn có thể kết thúc một phiên.</b> Có thể ngắt một kết nối đang hoạt động ngay tại đây, đó là câu trả lời nhanh cho "có thứ gì đó đang giữ tệp mở" hoặc "sao địa chỉ đó vẫn còn kết nối".</div>
+      </div>
+      <img alt="Connections hiển thị chính sách tự động chặn, IP bị chặn và các kết nối đang hoạt động" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">Dịch vụ</div>
+      <h2>DSM đang chạy gì</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Các dịch vụ DSM với trạng thái chạy và công tắc" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Một con số ở trên cùng - <b>đang chạy trên tổng số</b> - rồi đến mọi dịch vụ DSM cung cấp, mỗi dịch vụ có chấm trạng thái và một công tắc.</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>Dịch vụ tệp và kết nối</b> - SMB, NFS, AFP, FTP, FTPS, SFTP, rsync, iSCSI. Bật hoặc tắt từng dịch vụ ngay từ điện thoại.</li>
+          <li><b>Phát hiện thiết bị và in ấn</b> - Bonjour Printer Broadcast, WS-Discovery, tiến trình máy in CUPS.</li>
+          <li><b>Hạ tầng</b> - NTP, KMIP và các dịch vụ khác.</li>
+          <li><b>Các dịch vụ do hệ thống quản lý có biểu tượng khóa.</b> DSM tự vận hành chúng theo cách riêng, nên ứng dụng chỉ hiển thị trạng thái và không đưa ra công tắc mà sẽ bị từ chối. Một nút điều khiển không dùng được còn tệ hơn là không có nút nào.</li>
+        </ul>
+        <div class="note warn"><b>Tắt SMB sẽ ngắt kết nối của mọi người đang dùng nó.</b> Đây là các công tắc thật trên một máy chủ đang chạy, không phải màn hình tùy chọn.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>Hồ sơ client</h2>
+      <p class="lead">Chế độ xem phụ VPN liệt kê các hồ sơ VPN <b>client</b> được cấu hình trên NAS - các kết nối NAS tạo ra tới nơi khác - và cho phép bạn yêu cầu NAS kết nối hoặc ngắt một hồ sơ.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>Ứng dụng không khẳng định hồ sơ nào đang kết nối, và đó là chủ ý.</b> NAS xác nhận yêu cầu kết nối hoặc ngắt, nhưng bản ghi DSM mà ứng dụng đọc không có trường trạng thái, nên không có gì để đưa ra kết luận. Thay vì suy đoán và sai một cách tự tin, ứng dụng nói rõ điều đó và dẫn bạn tới trang Network của DSM, nơi biết câu trả lời.</div>
+    <p style="color:var(--steel);margin-top:18px">Nếu chưa thiết lập hồ sơ nào, màn hình sẽ nói rõ và chỉ nơi để thêm: DSM, tại <b>Network &rsaquo; Network Interface</b>.</p>
+      </div>
+      <img alt="Chế độ xem phụ VPN liệt kê các hồ sơ client" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>Địa chỉ công khai của bạn, và tên trỏ tới nó</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Một thẻ, hai nửa độc lập:</p>
+        <ul class="plain">
+          <li><b>External IP</b> - địa chỉ công khai mà kết nối của bạn hiện có.</li>
+          <li><b>Mỗi tên miền DDNS</b> mà NAS của bạn công bố, trạng thái DSM đang lưu cho nó, lần cập nhật gần nhất và lần cập nhật tiếp theo.</li>
+        </ul>
+        <h3 style="margin-top:22px">Refresh và Update</h3>
+        <ul class="plain">
+          <li><b>Refresh</b> đọc lại những gì DSM hiện đang lưu.</li>
+          <li><b>Update now</b> yêu cầu NAS công bố lại địa chỉ của nó - giống hệt nút của chính DSM.</li>
+        </ul>
+        <div class="note"><b>Mỗi nửa tự thất bại độc lập.</b> Nhà cung cấp DDNS gặp sự cố không làm mất kết quả đọc IP công khai, và IP không đọc được cũng không xóa trạng thái tên miền. Hai số liệu, hai kết luận.</div>
+        <div class="note" style="margin-top:14px"><b>Ứng dụng báo cáo những gì DSM lưu, không phải một phép thử trực tiếp.</b> Ứng dụng không tự phân giải tên miền của bạn để kiểm tra nó có trỏ đúng về bạn hay không. Nhà cung cấp trả lời một yêu cầu không cho biết bản ghi của bạn có đúng hay không, nên ứng dụng chuyển tiếp kết luận của chính DSM thay vì tự bịa ra một kết luận thứ hai.</div>
+      </div>
+      <img alt="DDNS và IP bên ngoài, với địa chỉ công khai và tên miền được làm mờ" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Địa chỉ và tên miền trong ảnh chụp màn hình này đã được làm mờ - chúng thuộc về một NAS thật.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Câu hỏi thường gặp</div>
+      <h2>Câu hỏi thường gặp về mạng</h2>
+    </div>
+    <details open><summary>Tôi có thể xem NAS đang truyền dữ liệu nhanh đến đâu ngay lúc này không?</summary><div class="body">Có. Chế độ xem phụ Network hiển thị tốc độ tải xuống và tải lên trực tiếp của mọi giao diện mạng trên NAS, mỗi giao diện có biểu đồ riêng, tốc độ liên kết và địa chỉ. Các giao diện gộp (bond) hiện dưới dạng một bond, với tốc độ tổng hợp.</div></details>
+    <details><summary>Tôi có thể bật và tắt dịch vụ DSM từ ứng dụng không?</summary><div class="body">Có, với những dịch vụ DSM cho phép máy khách điều khiển - SMB, NFS, FTP, rsync và các dịch vụ khác đều có công tắc. Một số được đánh dấu do hệ thống quản lý, nghĩa là DSM tự vận hành chúng theo cách riêng và ứng dụng chỉ hiển thị trạng thái mà không cho đổi.</div></details>
+    <details><summary>Ứng dụng có hiển thị địa chỉ IP nào đang bị chặn không?</summary><div class="body">Có. Chế độ xem phụ Connections hiển thị chính sách tự động chặn và danh sách các địa chỉ hiện đang bị chặn, được thu gọn sau một con số để hàng trăm mục không làm chìm phần còn lại của màn hình.</div></details>
+    <details><summary>Tôi có thể biết VPN của mình có đang kết nối không?</summary><div class="body">Ứng dụng liệt kê các hồ sơ VPN client mà NAS của bạn có và cho phép bạn yêu cầu NAS kết nối hoặc ngắt một hồ sơ. Ứng dụng không khẳng định hồ sơ nào đang chạy, vì bản ghi DSM mà nó đọc không có trường trạng thái. Trang Network của DSM mới là nơi biết câu trả lời.</div></details>
+    <details><summary>Vì sao IP công khai của tôi khác với những gì một trang web cho tôi thấy?</summary><div class="body">Vì đây là địa chỉ của kết nối NAS của bạn, được đọc qua DSM. Nếu điện thoại của bạn đang dùng dữ liệu di động thì nó có một địa chỉ khác. Đó là hai mạng khác nhau và cả hai kết quả đều đúng.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Tiếp theo: Tệp</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station, thư mục chia sẻ, ghi chú, tài liệu và danh bạ.</p>
+    <p><a class="btn" href="/vi/guide/files/">Tệp &amp; thư mục chia sẻ &rarr;</a> &nbsp; <a class="btn ghost" href="/vi/guide/">Quay lại hướng dẫn</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/vi/">Trang chủ</a><a href="/vi/guide/">Hướng dẫn sử dụng</a><a href="/vi/guide/getting-started/">Bắt đầu</a><a href="/vi/compatible-nas/">Tương thích</a><a href="/vi/best-synology-nas-app/">Vì sao nên chuyển</a><a href="/vi/synology-app-for-iphone/">iPhone & iPad</a><a href="/vi/synology-app-for-android/">Android</a><a href="/vi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/vi/ds-finder-alternative/">So với DS finder</a><a href="/vi/help/">Trợ giúp</a><a href="/vi/privacy/">Quyền riêng tư</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Báo lỗi</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager là ứng dụng độc lập, không liên kết, không được bảo trợ hay xác nhận bởi Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station và QuickConnect là các nhãn hiệu của Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

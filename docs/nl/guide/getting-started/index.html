@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Verbind je Synology NAS - Installatie van Syno Manager</title>
+<meta name="description" content="Voeg je Synology NAS toe in minder dan een minuut: adres en poort, HTTPS en zelfondertekende certificaten, QuickConnect, 2FA, en wat te doen als het niet verbindt." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/nl/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Verbind je Synology NAS - Installatie van Syno Manager" />
+<meta property="og:description" content="Voeg je Synology NAS toe in minder dan een minuut: adres en poort, HTTPS en zelfondertekende certificaten, QuickConnect, 2FA, en wat te doen als het niet verbindt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/nl/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="nl_NL" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Verbind je Synology NAS - Installatie van Syno Manager" />
+<meta name="twitter:description" content="Voeg je Synology NAS toe in minder dan een minuut: adres en poort, HTTPS en zelfondertekende certificaten, QuickConnect, 2FA, en wat te doen als het niet verbindt." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "nl",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Handleiding",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Aan de slag"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Verbind je Synology NAS - Installatie van Syno Manager",
+  "description": "Voeg je Synology NAS toe in minder dan een minuut: adres en poort, HTTPS en zelfondertekende certificaten, QuickConnect, 2FA, en wat te doen als het niet verbindt.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "nl",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wat heb ik nodig om Syno Manager te gebruiken?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Een Synology NAS met DSM 7.0 of nieuwer, een DSM-account daarop, en een apparaat met Android 7+, iOS 16+, macOS 11+ of Windows. Er hoeft niets op de NAS te worden geïnstalleerd - de app gebruikt de eigen API's van DSM, die er al zijn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welk adres en welke poort voer ik in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Op je eigen netwerk het lokale IP-adres van de NAS en de poort van DSM - 5001 met HTTPS aan, of 5000 met HTTPS uit. Je kunt ook een hostnaam of een eigen domein invoeren. Wil je helemaal niets met adressen te maken hebben, zet dan Verbindingstype op QuickConnect en voer je QuickConnect-ID in."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Waarom staat SSL-certificaat verifiëren standaard uit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Omdat de meeste DiskStations een zelfondertekend certificaat gebruiken, dat niet door een openbare autoriteit is ondertekend en dus de verificatie niet doorstaat, ook al is de verbinding wel versleuteld. Verificatie uit laten staan accepteert dat certificaat. Heb je een echt certificaat geïnstalleerd - bijvoorbeeld van Let's Encrypt - zet verificatie dan aan."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Moet ik poorten op mijn router openen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nee. Op je eigen netwerk hoeft niets te worden doorgestuurd. Van buitenaf zorgt QuickConnect voor het doorgeven van de verbinding, en een VPN werkt ook. Port forwarding is alleen nodig als je specifiek een directe route vanaf het internet wilt, of live camerabeeld via RTSP van buiten je netwerk."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Er staat verbindingstime-out. Wat nu?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die melding betekent dat de app nooit een antwoord kreeg, wat bijna altijd aan het adres, de poort of het netwerk van de telefoon ligt. Controleer of HTTPS bij de poort past, of de telefoon op hetzelfde netwerk zit als de NAS als je een lokaal IP gebruikt, en of de eigen webinterface van DSM in de browser van de telefoon laadt op hetzelfde adres en dezelfde poort."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/nl/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager-pictogram" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Zoek in de handleiding..." data-i18n-empty="Geen resultaten voor" data-i18n-language="Taal">
+      <a href="/nl/">Start</a>
+      <a href="/nl/guide/" class="active">Handleiding</a>
+      <a href="/nl/#screenshots">Screenshots</a>
+      <a href="/nl/compatible-nas/">Compatibiliteit</a>
+      <a href="/nl/best-synology-nas-app/">Waarom overstappen</a>
+      <a href="/nl/help/">Hulp</a>
+      <a href="/nl/#top" class="cta">Downloaden</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/nl/">Home</a> &rsaquo; <a href="/nl/guide/">Gebruikershandleiding</a> &rsaquo; Aan de slag</div>
+      <div class="eyebrow">Aan de slag</div>
+      <h1>Verbonden in <span class="g">minder dan een minuut</span></h1>
+      <p>Er wordt niets op de NAS geïnstalleerd. Syno Manager praat met de eigen API's van DSM, die al draaien - je vertelt alleen waar je DiskStation staat en wie je bent.</p>
+    </div>
+    <div class="hero-shot"><img alt="Het formulier NAS toevoegen in Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Op deze pagina</b><ul>
+      <li><a href="#requirements">Wat je nodig hebt</a></li>
+      <li><a href="#address">Je NAS vinden</a></li>
+      <li><a href="#form">Elk veld in het formulier</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Tweestapsverificatie</a></li>
+      <li><a href="#test">Testen en opslaan</a></li>
+      <li><a href="#next">Wat er daarna gebeurt</a></li>
+      <li><a href="#trouble">Als het niet verbindt</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Stap nul</div>
+      <h2>Wat je nodig hebt</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Vereiste</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Een Synology NAS</td><td>Elk model met <b>DSM 7.0 of nieuwer</b>. Er wordt niets op geïnstalleerd - de app gebruikt dezelfde API's als de webinterface van DSM.</td></tr>
+        <tr><td>Een DSM-account</td><td>Je gewone DSM-gebruikersnaam en wachtwoord. Een beheerdersaccount ziet alles; een gebruiker zonder beheerrechten ziet wat DSM toestaat, en de app verbergt de rest in plaats van knoppen te tonen die geweigerd zullen worden.</td></tr>
+        <tr><td>Jouw apparaat</td><td><b>Android 7.0</b> of nieuwer, <b>iOS 16.0</b> of nieuwer, <b>macOS 11.0</b> of nieuwer, of <b>Windows</b>. Dezelfde app op alle vier.</td></tr>
+        <tr><td>Een route naar de NAS</td><td>Hetzelfde lokale netwerk, een VPN ernaartoe, een eigen domein of QuickConnect. Een van deze is genoeg.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Je hebt geen beheerdersaccount nodig</b> om alleen te kijken. Monitoren werkt voor elke DSM-gebruiker. Bedieningsacties - een container herstarten, een back-up uitvoeren, een schijf uitwerpen - vragen de rechten die DSM zelf voor die actie vereist, en de app meldt een weigering in plaats van te doen alsof het gelukt is.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Waar is het</div>
+      <h2>Het adres van je NAS vinden</h2>
+      <p class="lead">Als je DSM al in een browser opent, staat alles wat je nodig hebt in de adresbalk: de host en de poort zijn de twee waarden waar de app om vraagt.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Vanuit DSM zelf</h3>
+        <ul class="plain">
+          <li><b>Configuratiescherm &rsaquo; Netwerk &rsaquo; Netwerkinterface</b> toont het IP-adres van de NAS op elke interface.</li>
+          <li><b>Configuratiescherm &rsaquo; Netwerk &rsaquo; DSM-instellingen</b> toont de HTTP- en HTTPS-poorten waarop DSM luistert. Dat zijn 5000 en 5001, tenzij iemand ze heeft gewijzigd.</li>
+        </ul>
+        <h3 style="margin-top:22px">Vanuit je browser</h3>
+        <p style="color:var(--steel)">Wat je ook typt om DSM te bereiken, is wat de app wil. In <code>https://192.168.1.20:5001</code> is de host <code>192.168.1.20</code>, de poort <code>5001</code>, en staat HTTPS aan.</p>
+      </div>
+      <div>
+        <h3>Vanuit je router</h3>
+        <p style="color:var(--steel)">De meeste routers tonen verbonden apparaten op naam. De NAS verschijnt onder zijn servernaam - die je instelt in <b>Configuratiescherm &rsaquo; Infocentrum</b>.</p>
+        <div class="note"><b>Geef hem een vast adres.</b> Als je router de NAS na een herstart een ander IP geeft, vindt de app hem niet meer. Een DHCP-reservering op de router of een statisch adres op de NAS voorkomt dat. Een hostnaam of eigen domein werkt ook en trekt zich van het IP niets aan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS toevoegen</div>
+      <h2>Elk veld in het formulier</h2>
+      <p class="lead">Tik op <b>+ NAS toevoegen</b> in de apparatenlijst. Het formulier is kort, en slechts drie velden hebben geen zinnige standaardwaarde.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Veld</th><th>Wat je invult</th></tr></thead>
+          <tbody>
+            <tr><td>NAS-bijnaam</td><td>Elke naam die je wilt - hij wordt alleen aan jou getoond. Handig zodra je er meer dan één hebt.</td></tr>
+            <tr><td>Verbindingstype</td><td><b>Direct IP</b> voor een adres dat je typt, of <b>QuickConnect</b> voor een QuickConnect-ID. Zie <a href="#quickconnect">hieronder</a>.</td></tr>
+            <tr><td>Host / IP-adres</td><td>Het lokale IP van de NAS, zijn hostnaam of een eigen domein dat ernaar verwijst.</td></tr>
+            <tr><td>Poort</td><td><b>5001</b> met HTTPS aan, <b>5000</b> met HTTPS uit - tenzij DSM naar andere poorten is verplaatst, gebruik dan die.</td></tr>
+            <tr><td>HTTPS</td><td>Standaard aan, en het is verstandig dat zo te laten. Alles tussen de telefoon en de NAS is versleuteld, ook je wachtwoord.</td></tr>
+            <tr><td>SSL-certificaat verifiëren</td><td>Standaard uit, omdat de meeste DiskStations een <b>zelfondertekend</b> certificaat gebruiken dat niet bij een openbare autoriteit kan worden geverifieerd. De verbinding is hoe dan ook versleuteld. Zet dit alleen aan als je een echt certificaat hebt geïnstalleerd.</td></tr>
+            <tr><td>Gebruikersnaam</td><td>Je DSM-accountnaam. <b>Gebruikersnamen met spaties worden ondersteund</b> - de app zet ze correct tussen aanhalingstekens, wat een veelvoorkomende reden is dat andere clients falen.</td></tr>
+            <tr><td>Wachtwoord</td><td>Je DSM-wachtwoord. Met het oog zie je het terwijl je typt. Het wordt opgeslagen in de keychain of keystore van het platform en nooit als leesbare tekst bewaard.</td></tr>
+            <tr><td>Tweestapsverificatie</td><td>Zet dit aan als je DSM-account een authenticator-app gebruikt. Zie <a href="#twofactor">hieronder</a>.</td></tr>
+            <tr><td>Live camerabeeld tunnelen via de DSM-poort</td><td>Standaard uit. <b>Uit</b> betekent dat live camerabeeld rechtstreeks verbindt met RTSP op poort 554, wat sneller is op je eigen netwerk maar vereist dat die poort bereikbaar is vanaf waar je ook bent. <b>Aan</b> tunnelt de stream door de DSM HTTPS-poort die je al gebruikt, zodat live beeld van buitenaf werkt zonder 554 bloot te stellen. Zie <a href="/nl/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Het formulier NAS toevoegen" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Geen adres om te typen</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Zet <b>Verbindingstype</b> op <b>QuickConnect</b> en voer je QuickConnect-ID in in plaats van een host en poort. Het relay van Synology vindt je NAS waar die ook staat, en er komt geen routerconfiguratie aan te pas.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Waar je ID staat.</b> In DSM, onder <b>Configuratiescherm &rsaquo; Externe toegang &rsaquo; QuickConnect</b>. Het moet daar eerst zijn ingeschakeld.</li>
+      <li><b>Wat het je kost.</b> Het relay voegt vertraging toe, dus miniaturen en live beeld laden trager dan op je eigen netwerk. Alles werkt nog steeds.</li>
+      <li><b>Wat het je bespaart.</b> Geen port forwarding, geen dynamische DNS om actueel te houden, en niets dat aan jouw kant aan het internet wordt blootgesteld.</li>
+    </ul>
+    <div class="note"><b>Je kunt beide hebben.</b> Dezelfde NAS twee keer toevoegen - een keer via lokaal IP, een keer via QuickConnect - geeft je een snelle ingang voor thuis en een betrouwbare voor onderweg. Het zijn aparte items met aparte indelingen, dus kies degene die bij je situatie past.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Tweestapsverificatie</h2>
+      <p class="lead">Als je DSM-account met een authenticator-app is beveiligd, zet dan <b>Tweestapsverificatie (2FA)</b> aan voordat je opslaat. De app vraagt om je zescijferige code direct nadat het wachtwoord is geaccepteerd.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Zet de schakelaar aan</b> in het formulier NAS toevoegen.</li>
+      <li><b>Opslaan &amp; verbinden.</b> De app meldt zich aan en DSM vraagt om de tweede factor.</li>
+      <li><b>Voer de code in</b> uit je authenticator.</li>
+      <li><b>Kies of je dit apparaat wilt onthouden.</b> Als je dat doet, geeft DSM een apparaattoken uit en wordt deze telefoon niet opnieuw om een code gevraagd. Het token wordt op dezelfde manier opgeslagen als het wachtwoord, in de keychain van het platform.</li>
+    </ol>
+    <div class="note warn"><b>Als codes worden geweigerd</b>, controleer dan de klok. Authenticatorcodes worden afgeleid van de huidige tijd, dus een telefoon of NAS waarvan de klok is afgedreven, genereert of verwacht het verkeerde getal. De tijdbron van de NAS staat in de snelle statistiekenrij op het <a href="/nl/guide/home/">startscherm</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Voordat je definitief kiest</div>
+      <h2>Verbinding testen, dan opslaan</h2>
+      <p class="lead"><b>Verbinding testen</b> probeert het adres, de poort en de inloggegevens en vertelt je wat er gebeurde zonder iets op te slaan. Het is de snelste manier om een typfout te vinden, omdat het “kan de NAS niet bereiken” scheidt van “bereikt, maar dat wachtwoord is fout”.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Wat het zegt</th><th>Wat het betekent</th></tr></thead>
+      <tbody>
+        <tr><td>Time-out van de verbinding</td><td>Er antwoordde niets. Het adres, de poort of het netwerk van de telefoon - niet de inloggegevens, die nooit zijn geprobeerd.</td></tr>
+        <tr><td>Ongeldige inloggegevens</td><td>De NAS antwoordde en weigerde de aanmelding. Het adres en de poort kloppen; de gebruikersnaam of het wachtwoord niet.</td></tr>
+        <tr><td>Certificaatfout</td><td>HTTPS staat aan en <b>SSL-certificaat verifiëren</b> staat ook aan bij een zelfondertekend certificaat. Zet verificatie uit.</td></tr>
+        <tr><td>2FA vereist</td><td>Het account gebruikt tweestapsverificatie en de schakelaar staat uit. Zet hem aan en probeer opnieuw.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Opslaan &amp; verbinden</b> bewaart het item en meldt je aan. Je komt op het startscherm terecht terwijl je NAS al aan het laden is.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Je bent binnen</div>
+      <h2>Wat er bij de eerste verbinding gebeurt</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Het startscherm van Syno Manager na het verbinden" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>De app vraagt wat je NAS kan.</b> Hij bevraagt de API-catalogus van DSM en bewaart de lijst. Daarom toont een NAS zonder Surveillance Station nooit een tabblad Camera's, en daarom verschijnt het scherm van een pakket zodra je het installeert.</li>
+          <li><b>Elke ondersteunde kaart staat aan.</b> Nieuwe kaarten komen zichtbaar binnen in plaats van verborgen, zodat een functie die je NAS ondersteunt er een is die je kunt zien. <a href="/nl/guide/customizing/">Aanpassen</a> is waar je dingen uitzet, niet waar je ze gaat zoeken.</li>
+          <li><b>Het MAC-adres van de NAS wordt vastgelegd</b> zodat <a href="/nl/guide/wake-on-lan/">Wake-on-LAN</a> later kan werken zonder dat je het hoeft op te zoeken.</li>
+          <li><b>Eenmalig verschijnt een korte welkomstmelding.</b> Die zegt wat de app doet en waar je dingen wijzigt. Er is een selectievakje om te voorkomen dat hij opnieuw verschijnt.</li>
+          <li><b>Hulpkaarten verschijnen op schermen die uitleg nodig hebben.</b> Houd er een ingedrukt om hem te sluiten; herstel ze afzonderlijk via <a href="/nl/guide/settings/#help">Instellingen</a>.</li>
+        </ul>
+        <div class="note"><b>Na het verbinden een pakket geïnstalleerd?</b> De lijst met mogelijkheden wordt gelezen bij het verbinden, dus een pakket dat sindsdien is geïnstalleerd heeft nog geen tabblad. Trek omlaag om te verversen, of open de app opnieuw, en het nieuwe scherm verschijnt.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Als het niet verbindt</div>
+      <h2>De korte checklist</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Open DSM in de browser van de telefoon</b> op precies het adres en de poort die je hebt getypt. Als de browser er ook niet bij kan, ligt het probleem aan het netwerk of het adres, niet aan de app.</li>
+      <li><b>Controleer of HTTPS bij de poort past.</b> Poort 5001 met HTTPS uit, of 5000 met HTTPS aan, loopt op een time-out. Het zijn verschillende listeners.</li>
+      <li><b>Zet SSL-certificaat verifiëren uit</b> als de NAS het certificaat gebruikt waarmee hij is geleverd.</li>
+      <li><b>Controleer het netwerk van de telefoon.</b> Een lokaal IP is niet bereikbaar via mobiele data. Maak verbinding met het wifi-netwerk, of gebruik QuickConnect, een domein of een VPN.</li>
+      <li><b>Sta op iOS toegang tot het lokale netwerk toe.</b> Instellingen &rsaquo; Apps &rsaquo; Syno Manager &rsaquo; Lokaal netwerk. Zonder dit blokkeert iOS stilletjes verbindingen met adressen op je eigen netwerk.</li>
+      <li><b>Controleer de firewall van DSM.</b> Configuratiescherm &rsaquo; Beveiliging &rsaquo; Firewall. Een regel die alleen bepaalde adressen toestaat, blokkeert een telefoon die daar niet bij hoort.</li>
+      <li><b>Controleer automatisch blokkeren.</b> Configuratiescherm &rsaquo; Beveiliging &rsaquo; Account. Herhaalde mislukte aanmeldingen kunnen het adres van je telefoon blokkeren; het staat daar in de lijst en kan worden verwijderd.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/nl/help/">Volledige gids voor probleemoplossing</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Veelgestelde vragen</div>
+      <h2>Veelgestelde vragen over installatie</h2>
+    </div>
+    <details open><summary>Wat heb ik nodig om Syno Manager te gebruiken?</summary><div class="body">Een Synology NAS met DSM 7.0 of nieuwer, een DSM-account daarop, en een apparaat met Android 7+, iOS 16+, macOS 11+ of Windows. Er hoeft niets op de NAS te worden geïnstalleerd - de app gebruikt de eigen API's van DSM, die er al zijn.</div></details>
+    <details><summary>Welk adres en welke poort voer ik in?</summary><div class="body">Op je eigen netwerk het lokale IP-adres van de NAS en de poort van DSM - 5001 met HTTPS aan, of 5000 met HTTPS uit. Je kunt ook een hostnaam of een eigen domein invoeren. Wil je helemaal niets met adressen te maken hebben, zet dan Verbindingstype op QuickConnect en voer je QuickConnect-ID in.</div></details>
+    <details><summary>Waarom staat SSL-certificaat verifiëren standaard uit?</summary><div class="body">Omdat de meeste DiskStations een zelfondertekend certificaat gebruiken, dat niet door een openbare autoriteit is ondertekend en dus de verificatie niet doorstaat, ook al is de verbinding wel versleuteld. Verificatie uit laten staan accepteert dat certificaat. Heb je een echt certificaat geïnstalleerd - bijvoorbeeld van Let's Encrypt - zet verificatie dan aan.</div></details>
+    <details><summary>Moet ik poorten op mijn router openen?</summary><div class="body">Nee. Op je eigen netwerk hoeft niets te worden doorgestuurd. Van buitenaf zorgt QuickConnect voor het doorgeven van de verbinding, en een VPN werkt ook. Port forwarding is alleen nodig als je specifiek een directe route vanaf het internet wilt, of live camerabeeld via RTSP van buiten je netwerk.</div></details>
+    <details><summary>Er staat verbindingstime-out. Wat nu?</summary><div class="body">Die melding betekent dat de app nooit een antwoord kreeg, wat bijna altijd aan het adres, de poort of het netwerk van de telefoon ligt. Controleer of HTTPS bij de poort past, of de telefoon op hetzelfde netwerk zit als de NAS als je een lokaal IP gebruikt, en of de eigen webinterface van DSM in de browser van de telefoon laadt op hetzelfde adres en dezelfde poort.</div></details>
+    <details><summary>Kan ik meer dan één NAS toevoegen?</summary><div class="body">Ja, zoveel als je wilt. Elk bewaart zijn eigen inloggegevens, dashboardindeling en instellingen, en je schakelt ertussen vanuit de apparatenlijst. Zie <a href="/nl/guide/multi-nas/">meerdere NAS-apparaten</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Volgende: het startscherm</h2>
+    <p class="lead" style="margin:0 auto 24px">Wat elke kaart toont, en hoe je het dashboard van jou maakt.</p>
+    <p><a class="btn" href="/nl/guide/home/">Het startscherm &rarr;</a> &nbsp; <a class="btn ghost" href="/nl/guide/">Terug naar de handleiding</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/nl/">Home</a><a href="/nl/guide/">Gebruikershandleiding</a><a href="/nl/guide/getting-started/">Aan de slag</a><a href="/nl/compatible-nas/">Compatibiliteit</a><a href="/nl/best-synology-nas-app/">Waarom overstappen</a><a href="/nl/synology-app-for-iphone/">iPhone & iPad</a><a href="/nl/synology-app-for-android/">Android</a><a href="/nl/synology-app-for-mac-windows/">Mac & Windows</a><a href="/nl/ds-finder-alternative/">vs DS finder</a><a href="/nl/help/">Help</a><a href="/nl/privacy/">Privacy</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Bug melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager is een onafhankelijke app en is niet verbonden aan, goedgekeurd door of gesponsord door Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station en QuickConnect zijn handelsmerken van Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

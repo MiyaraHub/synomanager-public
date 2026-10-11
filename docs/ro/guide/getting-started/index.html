@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ro" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Conectează-ți Synology NAS-ul - configurare Syno Manager</title>
+<meta name="description" content="Adaugă-ți Synology NAS-ul în mai puțin de un minut: adresă și port, HTTPS și certificate autosemnate, QuickConnect, 2FA și ce faci când nu se conectează." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/ro/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Conectează-ți Synology NAS-ul - configurare Syno Manager" />
+<meta property="og:description" content="Adaugă-ți Synology NAS-ul în mai puțin de un minut: adresă și port, HTTPS și certificate autosemnate, QuickConnect, 2FA și ce faci când nu se conectează." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/ro/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="ro_RO" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Conectează-ți Synology NAS-ul - configurare Syno Manager" />
+<meta name="twitter:description" content="Adaugă-ți Synology NAS-ul în mai puțin de un minut: adresă și port, HTTPS și certificate autosemnate, QuickConnect, 2FA și ce faci când nu se conectează." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "ro",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Acasă",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ghid de utilizare",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Primii pași"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Conectează-ți Synology NAS-ul - configurare Syno Manager",
+  "description": "Adaugă-ți Synology NAS-ul în mai puțin de un minut: adresă și port, HTTPS și certificate autosemnate, QuickConnect, 2FA și ce faci când nu se conectează.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "ro",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "De ce am nevoie pentru a folosi Syno Manager?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un Synology NAS cu DSM 7.0 sau mai nou, un cont DSM pe el și un dispozitiv cu Android 7+, iOS 16+, macOS 11+ sau Windows. Nu trebuie instalat nimic pe NAS - aplicația folosește API-urile proprii ale DSM, care sunt deja acolo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ce adresă și ce port introduc?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "În rețeaua ta, adresa IP locală a NAS-ului și portul DSM - 5001 cu HTTPS activ sau 5000 fără HTTPS. Poți introduce și un nume de gazdă sau un domeniu personalizat. Dacă preferi să nu te ocupi deloc de adrese, schimbă Tipul conexiunii în QuickConnect și introdu ID-ul tău QuickConnect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "De ce este Verifică certificatul SSL dezactivat implicit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pentru că majoritatea DiskStation-urilor prezintă un certificat autosemnat, care nu este semnat de o autoritate publică și de aceea nu trece verificarea, deși conexiunea rămâne criptată. Lăsând verificarea dezactivată, certificatul este acceptat. Dacă ai instalat un certificat real - de exemplu de la Let's Encrypt - activează verificarea."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Trebuie să deschid porturi pe router?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nu. În rețeaua ta nu trebuie redirecționat nimic. Din exterior, QuickConnect retransmite conexiunea pentru tine, iar un VPN funcționează și el. Redirecționarea de porturi e necesară doar dacă vrei explicit o cale directă de pe internet sau dacă vrei vizualizarea live a camerelor prin RTSP din afara rețelei tale."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Scrie connection timeout. Ce fac?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mesajul înseamnă că aplicația n-a primit niciun răspuns, ceea ce aproape întotdeauna ține de adresă, de port sau de rețeaua în care se află telefonul. Verifică dacă HTTPS se potrivește cu portul, dacă telefonul este în aceeași rețea cu NAS-ul când folosești un IP local și dacă interfața web a DSM se încarcă în browserul telefonului la aceeași adresă și același port."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/ro/"><img src="/assets/syno-manager-icon.png" alt="Pictograma Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Meniu" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Căutați în ghid..." data-i18n-empty="Niciun rezultat pentru" data-i18n-language="Limbă">
+      <a href="/ro/">Acasă</a>
+      <a href="/ro/guide/" class="active">Ghid de utilizare</a>
+      <a href="/ro/#screenshots">Capturi de ecran</a>
+      <a href="/ro/compatible-nas/">Compatibilitate</a>
+      <a href="/ro/best-synology-nas-app/">De ce să treceți la el</a>
+      <a href="/ro/help/">Ajutor</a>
+      <a href="/ro/#top" class="cta">Descarcă</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/ro/">Acasă</a> &rsaquo; <a href="/ro/guide/">Ghid de utilizare</a> &rsaquo; Primii pași</div>
+      <div class="eyebrow">Primii pași</div>
+      <h1>Conectat în <span class="g">mai puțin de un minut</span></h1>
+      <p>Nu se instalează nimic pe NAS. Syno Manager vorbește cu API-urile proprii ale DSM, care rulează deja - îi spui doar unde este DiskStation-ul tău și cine ești.</p>
+    </div>
+    <div class="hero-shot"><img alt="Formularul Adaugă NAS din Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Pe această pagină</b><ul>
+      <li><a href="#requirements">Ce vă trebuie</a></li>
+      <li><a href="#address">Găsirea NAS-ului tău</a></li>
+      <li><a href="#form">Fiecare câmp al formularului</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Autentificare în doi pași</a></li>
+      <li><a href="#test">Testează și salvează</a></li>
+      <li><a href="#next">Ce urmează</a></li>
+      <li><a href="#trouble">Când nu se conectează</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Pasul zero</div>
+      <h2>Ce vă trebuie</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Cerință</th><th>Detalii</th></tr></thead>
+      <tbody>
+        <tr><td>Un Synology NAS</td><td>Orice model cu <b>DSM 7.0 sau mai nou</b>. Nu se instalează nimic pe el - aplicația folosește aceleași API-uri ca interfața web a DSM.</td></tr>
+        <tr><td>Un cont DSM</td><td>Numele de utilizator și parola tale DSM obișnuite. Un cont de administrator vede tot; un non-administrator vede ce îi permite DSM, iar aplicația ascunde restul, în loc să arate comenzi care vor fi refuzate.</td></tr>
+        <tr><td>Dispozitivul tău</td><td><b>Android 7.0</b> sau mai nou, <b>iOS 16.0</b> sau mai nou, <b>macOS 11.0</b> sau mai nou ori <b>Windows</b>. Aceeași aplicație pe toate patru.</td></tr>
+        <tr><td>Un traseu către NAS</td><td>Aceeași rețea locală, un VPN în ea, un domeniu personalizat sau QuickConnect. Oricare dintre ele este suficient.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Nu ai nevoie de un cont de administrator</b> doar ca să te uiți. Monitorizarea funcționează pentru orice utilizator DSM. Acțiunile de control - repornirea unui container, rularea unui backup, ejectarea unui disc - cer permisiunea pe care DSM o cere pentru acea acțiune, iar aplicația raportează un refuz, nu se preface că a mers.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Unde este</div>
+      <h2>Găsirea adresei NAS-ului</h2>
+      <p class="lead">Dacă deschizi deja DSM într-un browser, bara de adrese are tot ce îți trebuie: gazda și portul sunt cele două valori cerute de aplicație.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Din DSM</h3>
+        <ul class="plain">
+          <li><b>Panou de control &rsaquo; Rețea &rsaquo; Interfață de rețea</b> arată adresa IP a NAS-ului pe fiecare interfață.</li>
+          <li><b>Panou de control &rsaquo; Rețea &rsaquo; Setări DSM</b> arată porturile HTTP și HTTPS pe care ascultă DSM. Sunt 5000 și 5001, dacă nu le-a schimbat cineva.</li>
+        </ul>
+        <h3 style="margin-top:22px">Din browser</h3>
+        <p style="color:var(--steel)">Ce tastezi pentru a ajunge la DSM este ce vrea aplicația. În <code>https://192.168.1.20:5001</code> gazda este <code>192.168.1.20</code>, portul este <code>5001</code>, iar HTTPS este activ.</p>
+      </div>
+      <div>
+        <h3>Din router</h3>
+        <p style="color:var(--steel)">Majoritatea routerelor listează dispozitivele conectate după nume. NAS-ul apare sub numele de server - cel setat în <b>Panou de control &rsaquo; Centru de informații</b>.</p>
+        <div class="note"><b>Dă-i o adresă fixă.</b> Dacă routerul îi dă NAS-ului un alt IP după o repornire, aplicația nu îl va mai găsi. O rezervare DHCP pe router sau o adresă statică pe NAS previne asta. Un nume de gazdă sau un domeniu personalizat funcționează și el și nu îi pasă care este IP-ul.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">Adaugă NAS</div>
+      <h2>Fiecare câmp al formularului</h2>
+      <p class="lead">Atinge <b>+ Adaugă NAS</b> în lista de dispozitive. Formularul este scurt și doar trei câmpuri nu au o valoare implicită rezonabilă.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Câmp</th><th>Ce introduci</th></tr></thead>
+          <tbody>
+            <tr><td>Poreclă NAS</td><td>Orice nume vrei - îți este afișat doar ție. Util când ai mai mult de unul.</td></tr>
+            <tr><td>Tip conexiune</td><td><b>IP direct</b> pentru o adresă tastată de tine sau <b>QuickConnect</b> pentru un ID QuickConnect. Vezi <a href="#quickconnect">mai jos</a>.</td></tr>
+            <tr><td>Gazdă / Adresă IP</td><td>IP-ul local al NAS-ului, numele lui de gazdă sau un domeniu personalizat care trimite la el.</td></tr>
+            <tr><td>Port</td><td><b>5001</b> cu HTTPS activ, <b>5000</b> fără - dacă DSM nu a fost mutat pe alte porturi; în acest caz folosește-le pe acelea.</td></tr>
+            <tr><td>HTTPS</td><td>Activ implicit și merită lăsat așa. Tot ce circulă între telefon și NAS este criptat, inclusiv parola ta.</td></tr>
+            <tr><td>Verifică certificatul SSL</td><td>Dezactivat implicit, pentru că majoritatea DiskStation-urilor prezintă un certificat <b>autosemnat</b> care nu poate fi verificat față de o autoritate publică. Conexiunea este criptată oricum. Activează-l doar dacă ai instalat un certificat real.</td></tr>
+            <tr><td>Nume de utilizator</td><td>Numele contului tău DSM. <b>Numele de utilizator cu spații sunt suportate</b> - aplicația le pune corect între ghilimele, un motiv frecvent pentru care alți clienți eșuează.</td></tr>
+            <tr><td>Parolă</td><td>Parola ta DSM. Ochiul o dezvăluie cât tastezi. Este scrisă în keychain-ul sau keystore-ul platformei și niciodată stocată în text simplu.</td></tr>
+            <tr><td>Autentificare în doi pași</td><td>Activeaz-o dacă contul tău DSM folosește o aplicație de autentificare. Vezi <a href="#twofactor">mai jos</a>.</td></tr>
+            <tr><td>Tunelează vizualizarea live a camerelor prin portul DSM</td><td>Dezactivat implicit. <b>Dezactivat</b> înseamnă că vizualizarea live se conectează direct la RTSP pe portul 554, ceea ce e mai rapid în rețeaua ta, dar cere ca acel port să fie accesibil de oriunde te-ai afla. <b>Activat</b> tunelează fluxul prin portul HTTPS al DSM pe care îl folosești deja, deci vizualizarea live funcționează din exterior fără a expune 554. Vezi <a href="/ro/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Formularul Adaugă NAS" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Fără adresă de tastat</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Schimbă <b>Tipul conexiunii</b> în <b>QuickConnect</b> și introdu ID-ul tău QuickConnect în loc de gazdă și port. Releul Synology îți găsește NAS-ul oriunde ar fi, fără nicio configurare a routerului.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Unde se află ID-ul tău.</b> În DSM, la <b>Panou de control &rsaquo; Acces extern &rsaquo; QuickConnect</b>. Trebuie activat mai întâi acolo.</li>
+      <li><b>Ce te costă.</b> Releul adaugă latență, deci miniaturile și vizualizarea live se încarcă mai lent decât în rețeaua ta. Totul funcționează în continuare.</li>
+      <li><b>Ce îți economisește.</b> Fără redirecționare de porturi, fără DNS dinamic de ținut la zi și nimic expus la internet din partea ta.</li>
+    </ul>
+    <div class="note"><b>Le poți avea pe amândouă.</b> Adăugând același NAS de două ori - o dată cu IP local, o dată cu QuickConnect - ai o intrare rapidă pentru acasă și una de încredere pentru când ești plecat. Sunt intrări separate, cu aspecte separate, deci o alegi pe cea de care ești mai aproape.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Autentificare în doi pași</h2>
+      <p class="lead">Dacă contul tău DSM este protejat de o aplicație de autentificare, activează <b>Autentificarea în doi pași (2FA)</b> înainte de salvare. Aplicația îți cere codul de șase cifre imediat după ce parola este acceptată.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Activează comutatorul</b> din formularul Adaugă NAS.</li>
+      <li><b>Salvează &amp; conectează.</b> Aplicația se autentifică, iar DSM cere al doilea factor.</li>
+      <li><b>Introdu codul</b> din aplicația ta de autentificare.</li>
+      <li><b>Alege dacă să îți amintești acest dispozitiv.</b> Dacă da, DSM emite un token de dispozitiv și acest telefon nu mai este întrebat de cod. Tokenul este stocat la fel ca parola, în keychain-ul platformei.</li>
+    </ol>
+    <div class="note warn"><b>Dacă codurile sunt respinse</b>, verifică ceasul. Codurile de autentificare derivă din ora curentă, deci un telefon sau un NAS cu ceasul decalat va genera sau aștepta un număr greșit. Sursa de timp a NAS-ului este afișată în rândul de statistici rapide de pe <a href="/ro/guide/home/">ecranul principal</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Înainte să te angajezi</div>
+      <h2>Testează conexiunea, apoi salvează</h2>
+      <p class="lead"><b>Testează conexiunea</b> încearcă adresa, portul și datele de autentificare și îți spune ce s-a întâmplat, fără să salveze nimic. Este cea mai rapidă cale de a găsi o greșeală de tastare, pentru că separă „nu pot ajunge la NAS” de „am ajuns la el, dar parola e greșită”.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Ce spune</th><th>Ce înseamnă</th></tr></thead>
+      <tbody>
+        <tr><td>Connection timeout</td><td>Nu a răspuns nimic. Adresa, portul sau rețeaua în care se află telefonul - nu datele de autentificare, care nu au fost încercate niciodată.</td></tr>
+        <tr><td>Date de autentificare invalide</td><td>NAS-ul a răspuns și a respins autentificarea. Adresa și portul sunt corecte; numele de utilizator sau parola nu.</td></tr>
+        <tr><td>Eroare de certificat</td><td>HTTPS este activ și <b>Verifică certificatul SSL</b> este și el activ pentru un certificat autosemnat. Dezactivează verificarea.</td></tr>
+        <tr><td>2FA necesar</td><td>Contul folosește autentificare în doi pași, iar comutatorul este dezactivat. Activează-l și încearcă din nou.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Salvează &amp; conectează</b> stochează intrarea și te autentifică. Ajungi pe ecranul principal cu NAS-ul deja în curs de încărcare.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Ești înăuntru</div>
+      <h2>Ce se întâmplă la prima conectare</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Ecranul principal Syno Manager după conectare" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Aplicația întreabă ce poate face NAS-ul tău.</b> Interoghează catalogul de API-uri al DSM și păstrează lista. De aceea un NAS fără Surveillance Station nu arată niciodată o filă Camere, iar instalarea unui pachet face să apară ecranul lui.</li>
+          <li><b>Fiecare card suportat este activat.</b> Cardurile noi apar vizibile, nu ascunse, deci o funcție pe care NAS-ul o suportă este una pe care o poți vedea. <a href="/ro/guide/customizing/">Personalizează</a> este locul unde dezactivezi lucruri, nu unde le cauți.</li>
+          <li><b>Adresa MAC a NAS-ului este reținută</b> pentru ca <a href="/ro/guide/wake-on-lan/">Wake-on-LAN</a> să funcționeze ulterior fără să o cauți.</li>
+          <li><b>Apare o scurtă bun venit, o singură dată.</b> Spune ce face aplicația și unde schimbi lucrurile. Există o casetă de bifat ca să nu mai apară.</li>
+          <li><b>Cardurile de ajutor apar pe ecranele care au nevoie de explicații.</b> Apasă lung pe unul pentru a-l închide; restaurează-le individual din <a href="/ro/guide/settings/#help">Setări</a>.</li>
+        </ul>
+        <div class="note"><b>Ai instalat un pachet după conectare?</b> Lista de capabilități este citită la conectare, deci un pachet instalat de atunci nu va avea încă filă. Trage pentru reîmprospătare sau redeschide aplicația și ecranul nou apare.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Când nu se conectează</div>
+      <h2>Lista scurtă de verificare</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Deschide DSM în browserul telefonului</b> exact la adresa și portul tastate. Dacă nici browserul nu ajunge acolo, problema este rețeaua sau adresa, nu aplicația.</li>
+      <li><b>Verifică dacă HTTPS se potrivește cu portul.</b> Portul 5001 cu HTTPS dezactivat sau 5000 cu el activat va da timeout. Sunt ascultători diferiți.</li>
+      <li><b>Dezactivează Verifică certificatul SSL</b> dacă NAS-ul folosește certificatul cu care a venit.</li>
+      <li><b>Verifică rețeaua telefonului.</b> Un IP local nu poate fi atins prin date mobile. Fie te conectezi la Wi-Fi, fie folosești QuickConnect, un domeniu sau un VPN.</li>
+      <li><b>Pe iOS, permite accesul la rețeaua locală.</b> Setări &rsaquo; Aplicații &rsaquo; Syno Manager &rsaquo; Rețea locală. Fără el, iOS blochează pe tăcute conexiunile către adrese din propria ta rețea.</li>
+      <li><b>Verifică firewall-ul DSM.</b> Panou de control &rsaquo; Securitate &rsaquo; Firewall. O regulă care permite doar anumite adrese va bloca un telefon care nu se numără printre ele.</li>
+      <li><b>Verifică blocarea automată.</b> Panou de control &rsaquo; Securitate &rsaquo; Cont. Autentificările eșuate repetate pot bloca adresa telefonului tău; va fi listată acolo și poate fi eliminată.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/ro/help/">Ghid complet de depanare</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Întrebări frecvente</div>
+      <h2>Întrebări frecvente despre configurare</h2>
+    </div>
+    <details open><summary>De ce am nevoie pentru a folosi Syno Manager?</summary><div class="body">Un Synology NAS cu DSM 7.0 sau mai nou, un cont DSM pe el și un dispozitiv cu Android 7+, iOS 16+, macOS 11+ sau Windows. Nu trebuie instalat nimic pe NAS - aplicația folosește API-urile proprii ale DSM, care sunt deja acolo.</div></details>
+    <details><summary>Ce adresă și ce port introduc?</summary><div class="body">În rețeaua ta, adresa IP locală a NAS-ului și portul DSM - 5001 cu HTTPS activ sau 5000 fără HTTPS. Poți introduce și un nume de gazdă sau un domeniu personalizat. Dacă preferi să nu te ocupi deloc de adrese, schimbă Tipul conexiunii în QuickConnect și introdu ID-ul tău QuickConnect.</div></details>
+    <details><summary>De ce este Verifică certificatul SSL dezactivat implicit?</summary><div class="body">Pentru că majoritatea DiskStation-urilor prezintă un certificat autosemnat, care nu este semnat de o autoritate publică și de aceea nu trece verificarea, deși conexiunea rămâne criptată. Lăsând verificarea dezactivată, certificatul este acceptat. Dacă ai instalat un certificat real - de exemplu de la Let's Encrypt - activează verificarea.</div></details>
+    <details><summary>Trebuie să deschid porturi pe router?</summary><div class="body">Nu. În rețeaua ta nu trebuie redirecționat nimic. Din exterior, QuickConnect retransmite conexiunea pentru tine, iar un VPN funcționează și el. Redirecționarea de porturi e necesară doar dacă vrei explicit o cale directă de pe internet sau dacă vrei vizualizarea live a camerelor prin RTSP din afara rețelei tale.</div></details>
+    <details><summary>Scrie connection timeout. Ce fac?</summary><div class="body">Mesajul înseamnă că aplicația n-a primit niciun răspuns, ceea ce aproape întotdeauna ține de adresă, de port sau de rețeaua în care se află telefonul. Verifică dacă HTTPS se potrivește cu portul, dacă telefonul este în aceeași rețea cu NAS-ul când folosești un IP local și dacă interfața web a DSM se încarcă în browserul telefonului la aceeași adresă și același port.</div></details>
+    <details><summary>Pot adăuga mai mult de un NAS?</summary><div class="body">Da, câte vrei. Fiecare își păstrează propriile date de autentificare, aspectul panoului și setările, iar treci între ele din lista de dispozitive. Vezi <a href="/ro/guide/multi-nas/">mai multe dispozitive NAS</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Următorul: ecranul principal</h2>
+    <p class="lead" style="margin:0 auto 24px">Ce arată fiecare card și cum faci panoul al tău.</p>
+    <p><a class="btn" href="/ro/guide/home/">Ecranul principal &rarr;</a> &nbsp; <a class="btn ghost" href="/ro/guide/">Înapoi la ghid</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/ro/">Acasă</a><a href="/ro/guide/">Ghid de utilizare</a><a href="/ro/guide/getting-started/">Primii pași</a><a href="/ro/compatible-nas/">Compatibilitate</a><a href="/ro/best-synology-nas-app/">De ce să treci la noi</a><a href="/ro/synology-app-for-iphone/">iPhone & iPad</a><a href="/ro/synology-app-for-android/">Android</a><a href="/ro/synology-app-for-mac-windows/">Mac & Windows</a><a href="/ro/ds-finder-alternative/">vs DS finder</a><a href="/ro/help/">Ajutor</a><a href="/ro/privacy/">Confidențialitate</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Raportează o eroare</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager este o aplicație independentă și nu este afiliată, susținută sau sponsorizată de Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station și QuickConnect sunt mărci comerciale ale Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

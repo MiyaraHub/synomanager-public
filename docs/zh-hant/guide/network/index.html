@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology 網路、VPN 與 DDNS 監控 - Syno Manager</title>
+<meta name="description" content="每個網路介面的即時傳輸量、使用中的連線與遭封鎖的 IP、可切換的 DSM 服務、VPN 用戶端設定檔，以及顯示公開位址的 DDNS。" />
+<meta name="keywords" content="Synology network monitoring app, Synology throughput phone, Synology active connections, Synology blocked IP, Synology services app, Synology DDNS app, Synology external IP" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/zh-hant/guide/network/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/network/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/network/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/network/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/network/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/network/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/network/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/network/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/network/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/network/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/network/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/network/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/network/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/network/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/network/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/network/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/network/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/network/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/network/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/network/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/network/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/network/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/network/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/network/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/network/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/network/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/network/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/network/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/network/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/network/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/network/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/network/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology 網路、VPN 與 DDNS 監控 - Syno Manager" />
+<meta property="og:description" content="每個網路介面的即時傳輸量、使用中的連線與遭封鎖的 IP、可切換的 DSM 服務、VPN 用戶端設定檔，以及顯示公開位址的 DDNS。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/zh-hant/guide/network/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology 網路、VPN 與 DDNS 監控 - Syno Manager" />
+<meta name="twitter:description" content="每個網路介面的即時傳輸量、使用中的連線與遭封鎖的 IP、可切換的 DSM 服務、VPN 用戶端設定檔，以及顯示公開位址的 DDNS。" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "zh-Hant",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "首頁",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "使用指南",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "網路"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology 網路、VPN 與 DDNS 監控 - Syno Manager",
+  "description": "每個網路介面的即時傳輸量、使用中的連線與遭封鎖的 IP、可切換的 DSM 服務、VPN 用戶端設定檔，以及顯示公開位址的 DDNS。",
+  "image": "https://synomanager.com/screenshots/network.webp",
+  "url": "https://synomanager.com/guide/network/",
+  "mainEntityOfPage": "https://synomanager.com/guide/network/",
+  "inLanguage": "zh-Hant",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "我可以查看 NAS 目前的傳輸速度嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。「網路」子檢視會顯示 NAS 上每個介面的即時下載與上傳，每個介面都有自己的圖表、連線速度與位址。聚合的介面會以聚合群組顯示，並呈現合計速度。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我可以從 App 啟動與停止 DSM 服務嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以，DSM 允許用戶端控制的服務都能操作 - SMB、NFS、FTP、rsync 等都各有一個開關。有些服務標示為系統管理，表示 DSM 依自己的規則執行，App 只會顯示它們的狀態，不提供變更選項。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "App 能顯示哪些 IP 位址被封鎖嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "可以。「連線」子檢視會顯示自動封鎖原則 - 在多長時間內失敗幾次 - 以及目前遭封鎖的位址清單，並收合在一個數字之後，避免上百筆項目淹沒畫面的其餘內容。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "我能知道 VPN 是否已連線嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "App 會列出你的 NAS 擁有的 VPN 用戶端設定檔，並讓你要求它連線或中斷其中一個。它不會斷言哪一個正在連線，因為它讀取的 DSM 記錄中沒有狀態欄位。若硬說有，就等於捏造一個讀數。"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/zh-hant/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager 圖示" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="選單" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="搜尋指南..." data-i18n-empty="找不到符合的結果：" data-i18n-language="語言">
+      <a href="/zh-hant/">首頁</a>
+      <a href="/zh-hant/guide/" class="active">使用指南</a>
+      <a href="/zh-hant/#screenshots">螢幕截圖</a>
+      <a href="/zh-hant/compatible-nas/">相容性</a>
+      <a href="/zh-hant/best-synology-nas-app/">為什麼要換</a>
+      <a href="/zh-hant/help/">說明</a>
+      <a href="/zh-hant/#top" class="cta">下載</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/zh-hant/">首頁</a> &rsaquo; <a href="/zh-hant/guide/">使用指南</a> &rsaquo; 網路</div>
+      <div class="eyebrow">網路</div>
+      <h1>掌握<span class="g">進與出</span>的一切</h1>
+      <p>五個子檢視：即時的<b>網路</b>傳輸量、附自動封鎖的<b>連線</b>、可切換的<b>服務</b>、<b>VPN</b> 設定檔，以及顯示公開位址的 <b>DDNS</b>。</p>
+    </div>
+    <div class="hero-shot"><img alt="每個介面的即時網路傳輸量" src="/screenshots/network.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>本頁內容</b><ul>
+      <li><a href="#throughput">傳輸量</a></li>
+      <li><a href="#connections">連線 &amp; 自動封鎖</a></li>
+      <li><a href="#services">服務</a></li>
+      <li><a href="#vpn">VPN</a></li>
+      <li><a href="#ddns">DDNS &amp; 外部 IP</a></li>
+    </ul></div>
+
+    <div class="section-head" id="throughput">
+      <div class="eyebrow">網路</div>
+      <h2>即時顯示，逐一介面</h2>
+      <p class="lead">NAS 上的每個介面都有各自的卡片 - 包括許多工具會略過的聚合群組與 Open vSwitch 介面。</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>顯示內容</th><th>說明</th></tr></thead>
+      <tbody>
+        <tr><td>介面名稱與速度</td><td>DSM 使用的名稱及其協商後的速度 - 例如雙埠聚合會顯示 <code>bond0 (20 Gbps)</code>。</td></tr>
+        <tr><td>位址</td><td>該介面目前持有的 IP。</td></tr>
+        <tr><td>LIVE 指示燈</td><td>數據更新期間會亮綠燈。</td></tr>
+        <tr><td>下載 / 上傳</td><td>目前的傳輸量，下方各附一張滾動圖表，讓你能分辨瞬間爆量與持續流量。</td></tr>
+        <tr><td>網路資訊</td><td>伺服器名稱、閘道與主要 DNS - 網路上有東西無法解析時，你最需要的三個值。</td></tr>
+        <tr><td>使用中的連線</td><td>一個數字，並附有進入詳細資料的入口。</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>方向是從 NAS 的角度來看。</b>「下載」指的是抵達 NAS 的流量；當你把檔案複製<em>到</em> NAS 時，那就是它的下載。</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="connections">
+      <div class="eyebrow">連線</div>
+      <h2>誰正在連線，誰遭到封鎖</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">三項內容，依你通常想看的順序排列：</p>
+        <ul class="plain">
+          <li><b>自動封鎖</b> - DSM 的暴力破解防護是否開啟、失敗幾次會觸發，以及計算的時間範圍。就是這個設定會在手機輸錯幾次密碼後把它鎖在門外。</li>
+          <li><b>遭封鎖的 IP</b> - 目前所有被禁止的位址，收合在一個數字之後。對外開放網際網路的 NAS 有上百個遭封鎖的位址很正常，若直接展開會淹沒整個畫面，所以在你開啟之前都會保持收合。</li>
+          <li><b>使用中的連線</b> - 誰已登入、從哪個位址、透過哪種通訊協定，以及工作階段何時開始。HTTP/HTTPS、SMB、NFS、FTP - 每個工作階段都會標明名稱。</li>
+        </ul>
+        <div class="note"><b>你可以結束工作階段。</b>可以直接從這裡踢除使用中的連線，這是處理「有東西一直占用檔案」或「為什麼那個位址還連著」的快速解法。</div>
+      </div>
+      <img alt="顯示自動封鎖原則、遭封鎖的 IP 與使用中連線的連線畫面" src="/screenshots/network-connections.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="services">
+      <div class="eyebrow">服務</div>
+      <h2>DSM 正在執行什麼</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="附有執行狀態與開關的 DSM 服務" src="/screenshots/network-services.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">最上方有一個數字 - <b>執行中的數量 / 總數</b> - 接著列出 DSM 提供的每項服務，各有一個狀態燈號與一個開關。</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>檔案與連線服務</b> - SMB、NFS、AFP、FTP、FTPS、SFTP、rsync、iSCSI。直接用手機開啟或關閉。</li>
+          <li><b>探索與列印</b> - Bonjour 印表機廣播、WS-Discovery、CUPS 印表機常駐程式。</li>
+          <li><b>基礎架構</b> - NTP、KMIP 等。</li>
+          <li><b>系統管理的服務會帶有鎖頭圖示。</b>DSM 依自己的規則執行這些服務，因此 App 只會顯示它們的狀態，不會提供一個注定被拒絕的開關。無法運作的控制項比沒有控制項更糟。</li>
+        </ul>
+        <div class="note warn"><b>關閉 SMB 會中斷所有正在使用它的人。</b>這些是在運作中的伺服器上的即時開關，而不是偏好設定畫面。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="vpn">
+      <div class="eyebrow">VPN</div>
+      <h2>用戶端設定檔</h2>
+      <p class="lead">VPN 子檢視會列出 NAS 上設定的 VPN <b>用戶端</b>設定檔 - 也就是它主動連向其他地方的連線 - 並讓你要求它連線或中斷其中一個。</p>
+    </div>
+    <div class="with-shot">
+      <div>
+    <div class="note" style="margin-top:0"><b>它不會斷言哪個設定檔已連線，這是刻意的設計。</b>NAS 會確認收到連線或中斷的要求，但 App 讀取的 DSM 記錄中沒有狀態欄位，所以無從判斷結果。與其推測出一個理直氣壯卻錯誤的答案，App 選擇直接說明，並引導你前往最清楚狀況的 DSM 網路頁面。</div>
+    <p style="color:var(--steel);margin-top:18px">如果沒有設定任何設定檔，畫面會告訴你，並說明去哪裡新增：DSM 的<b>網路 &rsaquo; 網路介面</b>。</p>
+      </div>
+      <img alt="列出用戶端設定檔的 VPN 子檢視" src="/screenshots/network-vpn.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ddns">
+      <div class="eyebrow">DDNS</div>
+      <h2>你的公開位址，以及指向它的名稱</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">一張卡片，兩個各自獨立的部分：</p>
+        <ul class="plain">
+          <li><b>外部 IP</b> - 你的連線目前擁有的公開位址。</li>
+          <li><b>每個 DDNS 主機名稱</b>是你的 NAS 所發布的，包括 DSM 記錄的狀態、上次更新的時間，以及下次更新的時間。</li>
+        </ul>
+        <h3 style="margin-top:22px">重新整理與更新</h3>
+        <ul class="plain">
+          <li><b>重新整理</b>會重新讀取 DSM 目前記錄的內容。</li>
+          <li><b>立即更新</b>會要求 NAS 再次發布它的位址 - 與 DSM 本身的按鈕做的是同一件事。</li>
+        </ul>
+        <div class="note"><b>兩個部分各自獨立失敗。</b>DDNS 供應商停擺，不會拖累公開 IP 的讀取；讀不到 IP 也不會讓主機名稱的狀態變成空白。兩項讀數，兩個判定。</div>
+        <div class="note" style="margin-top:14px"><b>它回報的是 DSM 儲存的內容，而不是即時測試。</b>App 不會自行解析你的主機名稱來確認它是否指向你。供應商有回應請求，並不代表你的記錄是正確的，所以 App 轉述的是 DSM 本身的判定，而不是另創一個。</div>
+      </div>
+      <img alt="DDNS 與外部 IP，公開位址與主機名稱已遮蔽" src="/screenshots/network-ddns.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">這張螢幕截圖中的位址與主機名稱已經模糊處理 - 它們是真實 NAS 的資料。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">常見問題</div>
+      <h2>網路常見問題</h2>
+    </div>
+    <details open><summary>我可以查看 NAS 目前的傳輸速度嗎？</summary><div class="body">可以。「網路」子檢視會顯示 NAS 上每個介面的即時下載與上傳，每個介面都有自己的圖表、連線速度與位址。聚合的介面會以聚合群組顯示，並呈現合計速度。</div></details>
+    <details><summary>我可以從 App 啟動與停止 DSM 服務嗎？</summary><div class="body">可以，DSM 允許用戶端控制的服務都能操作 - SMB、NFS、FTP、rsync 等都各有一個開關。有些服務標示為系統管理，表示 DSM 依自己的規則執行，App 只會顯示它們的狀態，不提供變更選項。</div></details>
+    <details><summary>App 能顯示哪些 IP 位址被封鎖嗎？</summary><div class="body">可以。「連線」子檢視會顯示自動封鎖原則與目前遭封鎖的位址清單，並收合在一個數字之後，避免上百筆項目淹沒畫面的其餘內容。</div></details>
+    <details><summary>我能知道 VPN 是否已連線嗎？</summary><div class="body">App 會列出你的 NAS 擁有的 VPN 用戶端設定檔，並讓你要求它連線或中斷其中一個。它不會斷言哪一個正在連線，因為它讀取的 DSM 記錄中沒有狀態欄位。最清楚狀況的是 DSM 的網路頁面。</div></details>
+    <details><summary>為什麼我的公開 IP 和網站告訴我的不一樣？</summary><div class="body">因為這裡顯示的是你的 NAS 連線所擁有的位址，透過 DSM 讀取。如果你的手機使用行動數據，它的位址就會不同。這是兩個不同的網路，兩個讀數都是正確的。</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>下一頁：檔案</h2>
+    <p class="lead" style="margin:0 auto 24px">File Station、共用資料夾、筆記、文件與聯絡人。</p>
+    <p><a class="btn" href="/zh-hant/guide/files/">檔案 &amp; 共用 &rarr;</a> &nbsp; <a class="btn ghost" href="/zh-hant/guide/">返回使用指南</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/zh-hant/">首頁</a><a href="/zh-hant/guide/">使用指南</a><a href="/zh-hant/guide/getting-started/">快速上手</a><a href="/zh-hant/compatible-nas/">相容性</a><a href="/zh-hant/best-synology-nas-app/">為何改用</a><a href="/zh-hant/synology-app-for-iphone/">iPhone 與 iPad</a><a href="/zh-hant/synology-app-for-android/">Android</a><a href="/zh-hant/synology-app-for-mac-windows/">Mac 與 Windows</a><a href="/zh-hant/ds-finder-alternative/">與 DS finder 比較</a><a href="/zh-hant/help/">說明</a><a href="/zh-hant/privacy/">隱私權</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">回報問題</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC。Syno Manager 為獨立 App，與 Synology Inc. 無任何隸屬、背書或贊助關係。Synology、DSM、DiskStation、RackStation、Hyper Backup、Active Backup、Surveillance Station 與 QuickConnect 為 Synology Inc. 的商標。</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

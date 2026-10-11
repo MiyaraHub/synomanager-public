@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fi" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hallitse Synologyn käyttäjiä, tehtäviä ja UPS:ää - Syno Manager</title>
+<meta name="description" content="Hallitse Synology-käyttäjätilejä järjestelmätilit suojattuina, aja ja kytke ajastettuja tehtäviä ja lue UPS:n varaus ja arvioitu käyttöaika puhelimestasi." />
+<meta name="keywords" content="Synology user management app, Synology task scheduler phone, Synology UPS status app, DSM users from phone, run scheduled task Synology" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/fi/guide/control-panel/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/control-panel/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/control-panel/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/control-panel/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/control-panel/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/control-panel/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/control-panel/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/control-panel/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/control-panel/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/control-panel/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/control-panel/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/control-panel/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/control-panel/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/control-panel/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/control-panel/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/control-panel/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/control-panel/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/control-panel/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/control-panel/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/control-panel/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/control-panel/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/control-panel/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/control-panel/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/control-panel/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/control-panel/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/control-panel/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/control-panel/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/control-panel/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/control-panel/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/control-panel/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/control-panel/" />
+<!--/hreflang-->
+<meta property="og:title" content="Hallitse Synologyn käyttäjiä, tehtäviä ja UPS:ää - Syno Manager" />
+<meta property="og:description" content="Hallitse Synology-käyttäjätilejä järjestelmätilit suojattuina, aja ja kytke ajastettuja tehtäviä ja lue UPS:n varaus ja arvioitu käyttöaika puhelimestasi." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/fi/guide/control-panel/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="fi_FI" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Hallitse Synologyn käyttäjiä, tehtäviä ja UPS:ää - Syno Manager" />
+<meta name="twitter:description" content="Hallitse Synology-käyttäjätilejä järjestelmätilit suojattuina, aja ja kytke ajastettuja tehtäviä ja lue UPS:n varaus ja arvioitu käyttöaika puhelimestasi." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "fi",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Etusivu",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Käyttöopas",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ohjauspaneeli"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Hallitse Synologyn käyttäjiä, tehtäviä ja UPS:ää - Syno Manager",
+  "description": "Hallitse Synology-käyttäjätilejä järjestelmätilit suojattuina, aja ja kytke ajastettuja tehtäviä ja lue UPS:n varaus ja arvioitu käyttöaika puhelimestasi.",
+  "image": "https://synomanager.com/screenshots/tasks.webp",
+  "url": "https://synomanager.com/guide/control-panel/",
+  "mainEntityOfPage": "https://synomanager.com/guide/control-panel/",
+  "inLanguage": "fi",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Voinko lisätä tai muokata DSM-käyttäjiä sovelluksesta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä. Lisää käyttäjä, muokkaa tietoja, vaihda salasana tai poista tili. Järjestelmätilit - admin, guest ja DSM:n luomat palvelutilit - tunnistetaan ja suojataan poistamiselta, koska yhden poistaminen rikkoo NAS:in tavoilla, joita on työläs korjata."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko ajaa ajastetun tehtävän käsin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kyllä, tehtäville, jotka DSM sallii käynnistää - jokaisella on Aja nyt. Voit myös ottaa minkä tahansa tehtävän käyttöön tai pois käytöstä avaamatta DSM:ää."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mitä UPS-näyttö näyttää?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "UPS:n mallin, onko se verkkovirrassa vai akulla, sen varauksen prosentteina ja palkkina, miten se on kytketty, jäljellä olevan arvioidun käyttöajan ja onko UPS-tuki otettu käyttöön NAS:issa."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Voinko muuttaa, kuinka kauan NAS odottaa ennen sammumista akulla?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ei. Sovellus ilmoittaa UPS:n tilan; sammutuskäytäntö asetetaan DSM:ssä kohdassa Laitteisto ja virta, jossa asetuksen seuraukset selitetään."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/fi/"><img src="/assets/syno-manager-icon.png" alt="Syno Managerin kuvake" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Valikko" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Hae oppaasta..." data-i18n-empty="Ei osumia haulle" data-i18n-language="Kieli">
+      <a href="/fi/">Etusivu</a>
+      <a href="/fi/guide/" class="active">Käyttöopas</a>
+      <a href="/fi/#screenshots">Kuvakaappaukset</a>
+      <a href="/fi/compatible-nas/">Yhteensopivuus</a>
+      <a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a>
+      <a href="/fi/help/">Ohje</a>
+      <a href="/fi/#top" class="cta">Lataa</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/fi/">Etusivu</a> &rsaquo; <a href="/fi/guide/">Käyttöopas</a> &rsaquo; Ohjauspaneeli</div>
+      <div class="eyebrow">Ohjauspaneeli</div>
+      <h1>Tilit, aikataulut <span class="g">ja virta</span></h1>
+      <p>Neljä alinäkymää: <b>Käyttäjät</b>, <b>Tehtävät</b>, <b>Virta</b> UPS:lle ja <b>Asetukset</b> - sovelluksen omat asetukset, joihin pääsee poistumatta nykyiseltä välilehdeltä.</p>
+    </div>
+    <div class="hero-shot"><img alt="Tehtäväajastin, jossa ajastetut tehtävät, kytkimet ja Aja nyt" src="/screenshots/tasks.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Tällä sivulla</b><ul>
+      <li><a href="#users">Käyttäjät</a></li>
+      <li><a href="#tasks">Tehtäväajastin</a></li>
+      <li><a href="#ups">UPS</a></li>
+      <li><a href="#settings">Asetukset</a></li>
+    </ul></div>
+
+    <div class="section-head" id="users">
+      <div class="eyebrow">Käyttäjät</div>
+      <h2>DSM-tilit</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">Jokainen NAS:in tili näyttönimineen, kuvauksineen ja sähköpostiosoitteineen, kun sellainen on asetettu. <b>Vanhentunut</b>-merkki osoittaa tilit, jotka DSM on poistanut käytöstä.</p>
+        <h3 style="margin-top:20px">Mitä voit tehdä</h3>
+        <ul class="plain">
+          <li><b>Lisää käyttäjä</b> DSM:n pyytämillä tiedoilla.</li>
+          <li><b>Muokkaa</b> olemassa olevaa tiliä.</li>
+          <li><b>Vaihda salasana.</b></li>
+          <li><b>Poista</b> luomasi tili.</li>
+        </ul>
+        <div class="note"><b>Järjestelmätilejä ei voi poistaa.</b> <code>admin</code>, <code>guest</code> ja DSM:n omille paketeilleen luomat palvelutilit tunnistetaan ja suojataan. Niistä yhden poistaminen rikkoo NAS:in tavoilla, joita on työläs korjata, eikä puhelin ole paikka sen selvittämiseen.</div>
+      </div>
+      <img alt="DSM-käyttäjätilit, kaksi nimeä ja osoitetta peitetty" src="/screenshots/users.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+    <p class="capt" style="margin-top:14px">Kaksi tiliä tässä kuvakaappauksessa on sumennettu - ne ovat oikeiden ihmisten nimiä ja osoitteita.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="tasks">
+      <div class="eyebrow">Tehtäväajastin</div>
+      <h2>Mitä on ajastettu ja mitä ajetaan seuraavaksi</h2>
+      <p class="lead">Jokainen DSM:n tehtävä, onko se käytössä, mitä se tekee ja milloin se käynnistyy seuraavaksi.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Tehtävän nimi ja tyyppi</b> - Hyper Backup -tehtävä, käyttäjän määrittämä skripti, roskakorin siivous - kukin merkittynä sen mukaan, millainen se on.</li>
+      <li><b>Mitä se todella tekee.</b> Skriptitehtävä näyttää ajamansa komennon; varmuuskopiotehtävä näyttää kuvauksensa.</li>
+      <li><b>Seuraava ajo</b> päivämääränä ja kellonaikana.</li>
+      <li><b>Kytkin per tehtävä</b> sen ottamiseksi käyttöön tai pois käytöstä avaamatta DSM:ää.</li>
+      <li><b>Aja nyt</b> tehtävissä, jotka DSM sallii käynnistää pyydettäessä.</li>
+    </ul>
+    <div class="note warn"><b>Aja nyt ajaa sen nyt.</b> Ajastettu skripti, joka odottaa ajavansa kolmelta yöllä joutilaalla NAS:illa, käyttäytyy eri tavalla kuudelta illalla tiedostokopioinnin aikana. Painike tekee mitä sanoo.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="ups">
+      <div class="eyebrow">Virta</div>
+      <h2>UPS</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="UPS:n tila, malli, varaus, liitäntätapa ja arvioitu käyttöaika" src="/screenshots/ups.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">Näkyy, kun UPS on kytketty. Yksi kortti, kaikki sillä.</p>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Näytetään</th><th>Merkitys</th></tr></thead>
+          <tbody>
+            <tr><td>Valmistaja ja malli</td><td>Sellaisena kuin UPS ilmoittaa itsensä.</td></tr>
+            <tr><td>Tila</td><td><b>Verkkovirrassa</b> tai akulla.</td></tr>
+            <tr><td>Varaus</td><td>Prosentti ja palkki. Keltainen alle 50 %, punainen alle 20 %.</td></tr>
+            <tr><td>Tila</td><td>Miten NAS puhuu sille - USB:llä tai verkon yli.</td></tr>
+            <tr><td>Käyttöaika</td><td>Kuinka kauan UPS arvioi kykenevänsä kantamaan kuorman.</td></tr>
+            <tr><td>Käytössä</td><td>Onko UPS-tuki kytketty päälle DSM:ssä lainkaan.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Varaus syöttää kuntomerkkiä.</b> Purkautuva UPS näkyy <a href="/fi/guide/home/#header">aloitusnäytöllä</a> ilman että avaat tätä välilehteä - mikä on pointti, koska siihen mennessä, kun ajattelet tarkistaa, aikaa ei välttämättä ole paljon.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="settings">
+      <div class="eyebrow">Asetukset</div>
+      <h2>Sovelluksen omat asetukset</h2>
+      <p class="lead">Neljäs alinäkymä on Asetukset, upotettuna tähän, jotta voit muuttaa kyselyväliä tai korostusväriä poistumatta välilehdeltä. Se on sama näyttö, jonka rataskuvake avaa.</p>
+    </div>
+    <p style="margin-top:16px"><a class="btn ghost" href="/fi/guide/settings/">Jokainen asetus selitettynä</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Usein kysyttyä</div>
+      <h2>Ohjauspaneelin UKK</h2>
+    </div>
+    <details open><summary>Voinko lisätä tai muokata DSM-käyttäjiä sovelluksesta?</summary><div class="body">Kyllä. Lisää käyttäjä, muokkaa tietoja, vaihda salasana tai poista tili. Järjestelmätilit - admin, guest ja DSM:n luomat palvelutilit - tunnistetaan ja suojataan poistamiselta.</div></details>
+    <details><summary>Voinko ajaa ajastetun tehtävän käsin?</summary><div class="body">Kyllä, tehtäville, jotka DSM sallii käynnistää. Voit myös ottaa minkä tahansa tehtävän käyttöön tai pois käytöstä avaamatta DSM:ää.</div></details>
+    <details><summary>Mitä UPS-näyttö näyttää?</summary><div class="body">UPS:n mallin, onko se verkkovirrassa vai akulla, sen varauksen prosentteina ja palkkina, miten se on kytketty, jäljellä olevan arvioidun käyttöajan ja onko UPS-tuki otettu käyttöön NAS:issa.</div></details>
+    <details><summary>Voinko muuttaa akulla sammuttamisen käytäntöä?</summary><div class="body">Ei. Sovellus ilmoittaa UPS:n tilan; käytäntö asetetaan DSM:ssä kohdassa Laitteisto ja virta, jossa seuraukset selitetään.</div></details>
+    <details><summary>Miksi Virta-alinäkymä puuttuu?</summary><div class="body">Koska UPS:ää ei ole kytketty tai UPS-tuki on pois päältä DSM:ssä. Sovellus piilottaa näkymät laitteistolle, jota ei ole.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Seuraavaksi: Avustaja</h2>
+    <p class="lead" style="margin:0 auto 24px">Kysy NAS:iltasi kysymys, ja vastaajana on puhelimessasi toimiva malli.</p>
+    <p><a class="btn" href="/fi/guide/assistant/">Avustaja &rarr;</a> &nbsp; <a class="btn ghost" href="/fi/guide/">Takaisin oppaaseen</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/fi/">Etusivu</a><a href="/fi/guide/">Käyttöopas</a><a href="/fi/guide/getting-started/">Aloittaminen</a><a href="/fi/compatible-nas/">Yhteensopivuus</a><a href="/fi/best-synology-nas-app/">Miksi vaihtaa</a><a href="/fi/synology-app-for-iphone/">iPhone & iPad</a><a href="/fi/synology-app-for-android/">Android</a><a href="/fi/synology-app-for-mac-windows/">Mac & Windows</a><a href="/fi/ds-finder-alternative/">vs DS finder</a><a href="/fi/help/">Ohjeet</a><a href="/fi/privacy/">Tietosuoja</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Ilmoita virheestä</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager on itsenäinen sovellus, eikä Synology Inc. ole sen kumppani, suosittelija tai sponsori. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station ja QuickConnect ovat Synology Inc:n tavaramerkkejä.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

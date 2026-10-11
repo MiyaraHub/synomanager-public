@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="th" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>พื้นที่จัดเก็บ RAID และสุขภาพ SMART ของ Synology - Syno Manager</title>
+<meta name="description" content="วอลุ่มและพูลของ Synology พร้อมประเภท RAID และพื้นที่ว่าง สถานะ SMART และอุณหภูมิของแต่ละไดรฟ์ การทดสอบ SMART แบบเร็ว และการถอดอย่างปลอดภัยสำหรับ USB และ eSATA" />
+<meta name="keywords" content="Synology storage app, Synology SMART status phone, Synology RAID monitoring, Synology drive temperature, Synology safe eject USB, Synology volume usage app" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/th/guide/storage/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/storage/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/storage/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/storage/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/storage/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/storage/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/storage/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/storage/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/storage/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/storage/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/storage/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/storage/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/storage/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/storage/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/storage/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/storage/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/storage/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/storage/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/storage/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/storage/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/storage/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/storage/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/storage/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/storage/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/storage/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/storage/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/storage/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/storage/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/storage/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/storage/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/storage/" />
+<!--/hreflang-->
+<meta property="og:title" content="พื้นที่จัดเก็บ RAID และสุขภาพ SMART ของ Synology - Syno Manager" />
+<meta property="og:description" content="วอลุ่มและพูลของ Synology พร้อมประเภท RAID และพื้นที่ว่าง สถานะ SMART และอุณหภูมิของแต่ละไดรฟ์ การทดสอบ SMART แบบเร็ว และการถอดอย่างปลอดภัยสำหรับ USB และ eSATA" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/th/guide/storage/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="th_TH" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-10-01" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="พื้นที่จัดเก็บ RAID และสุขภาพ SMART ของ Synology - Syno Manager" />
+<meta name="twitter:description" content="วอลุ่มและพูลของ Synology พร้อมประเภท RAID และพื้นที่ว่าง สถานะ SMART และอุณหภูมิของแต่ละไดรฟ์ การทดสอบ SMART แบบเร็ว และการถอดอย่างปลอดภัยสำหรับ USB และ eSATA" />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "th",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "หน้าแรก",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "คู่มือผู้ใช้",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Storage"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "พื้นที่จัดเก็บ RAID และสุขภาพ SMART ของ Synology - Syno Manager",
+  "description": "วอลุ่มและพูลของ Synology พร้อมประเภท RAID และพื้นที่ว่าง สถานะ SMART และอุณหภูมิของแต่ละไดรฟ์ การทดสอบ SMART แบบเร็ว และการถอดอย่างปลอดภัยสำหรับ USB และ eSATA",
+  "image": "https://synomanager.com/screenshots/storage-volumes.webp",
+  "url": "https://synomanager.com/guide/storage/",
+  "mainEntityOfPage": "https://synomanager.com/guide/storage/",
+  "inLanguage": "th",
+  "dateModified": "2026-10-01",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ดูสถานะ SMART ของแต่ละไดรฟ์ได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ มุมมองย่อยสุขภาพดิสก์แสดงทุกไดรฟ์พร้อมรุ่น ว่าเป็น HDD หรือ SSD ความจุ อุณหภูมิ และผล SMART คุณยังเริ่มการทดสอบ SMART แบบเร็วกับไดรฟ์ใดก็ได้จากโทรศัพท์"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "อุณหภูมิเท่าไรถึงร้อนเกินไปสำหรับไดรฟ์ของ NAS",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "แอปแสดงไดรฟ์เป็นสีเหลืองอำพันเมื่อเกิน 45 องศา C และสีแดงเมื่อเกิน 55 องศา C ส่วนอุณหภูมิระบบเป็นสีเหลืองอำพันเมื่อเกิน 50 และสีแดงเมื่อเกิน 60 เกณฑ์เหล่านี้ยังส่งผลต่อป้ายสุขภาพบนหน้าจอหลัก ไดรฟ์ที่ร้อนจึงปรากฏที่นั่นโดยที่คุณไม่ต้องไปหา"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ถอด USB ไดรฟ์อย่างปลอดภัยจากแอปได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ได้ จากมุมมองย่อยภายนอก การถอดได้รับการยืนยันจากการที่ไดรฟ์หายไปจากรายการอุปกรณ์จริง ไม่ใช่จากการที่คำขอได้รับการตอบรับ ไดรฟ์ที่บอกว่าถอดแล้วจึงถอดแล้วจริง ไดรฟ์ที่กำลังฟอร์แมตหรือเริ่มต้นใช้งานถอดไม่ได้"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "สร้างหรือขยายวอลุ่มจากแอปได้ไหม",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ไม่ได้ การสร้าง ขยาย และซ่อมแซมวอลุ่มและพูลทำใน Storage Manager ของ DSM แอปรายงานว่าพื้นที่จัดเก็บกำลังทำอะไรและให้คุณสั่งการกับไดรฟ์ได้ แต่ไม่จัดโครงสร้างอาร์เรย์ของคุณใหม่จากโทรศัพท์"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/th/"><img src="/assets/syno-manager-icon.png" alt="ไอคอน Syno Manager" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="เมนู" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="ค้นหาในคู่มือ..." data-i18n-empty="ไม่พบผลลัพธ์สำหรับ" data-i18n-language="ภาษา">
+      <a href="/th/">หน้าแรก</a>
+      <a href="/th/guide/" class="active">คู่มือผู้ใช้</a>
+      <a href="/th/#screenshots">ภาพหน้าจอ</a>
+      <a href="/th/compatible-nas/">ความเข้ากันได้</a>
+      <a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a>
+      <a href="/th/help/">วิธีใช้</a>
+      <a href="/th/#top" class="cta">ดาวน์โหลด</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/th/">หน้าแรก</a> &rsaquo; <a href="/th/guide/">คู่มือผู้ใช้</a> &rsaquo; พื้นที่จัดเก็บ</div>
+      <div class="eyebrow">Storage</div>
+      <h1>ทุกวอลุ่ม <span class="g">ทุกไดรฟ์</span></h1>
+      <p>สามมุมมองย่อย: <b>วอลุ่ม &amp; พูล</b> สำหรับความจุและ RAID <b>สุขภาพดิสก์</b>สำหรับ SMART และอุณหภูมิของแต่ละไดรฟ์ และ<b>ภายนอก</b>สำหรับทุกอย่างที่เสียบอยู่ด้านหลัง</p>
+    </div>
+    <div class="hero-shot"><img alt="วอลุ่มและไดรฟ์พื้นที่จัดเก็บใน Syno Manager" src="/screenshots/storage-volumes.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>ในหน้านี้</b><ul>
+      <li><a href="#volumes">Volumes &amp; Pools</a></li>
+      <li><a href="#drives">รายการไดรฟ์</a></li>
+      <li><a href="#disk-health">สุขภาพดิสก์ &amp; SMART</a></li>
+      <li><a href="#thresholds">เกณฑ์อุณหภูมิ</a></li>
+      <li><a href="#external">ภายนอก &amp; ถอดอย่างปลอดภัย</a></li>
+      <li><a href="#limits">สิ่งที่จะไม่ทำ</a></li>
+    </ul></div>
+
+    <div class="section-head" id="volumes">
+      <div class="eyebrow">Volumes &amp; Pools</div>
+      <h2>ความจุ ดูได้ในพริบตา</h2>
+      <p class="lead">แต่ละวอลุ่มมีการ์ดแสดงชื่อ ประเภท RAID สถานะ และจำนวนไดรฟ์ที่รองรับ เหนือแถบการใช้งานที่แสดงใช้ไปแล้ว เปอร์เซ็นต์ ทั้งหมด และว่าง</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>ที่แสดง</th><th>ความหมาย</th></tr></thead>
+      <tbody>
+        <tr><td>ชื่อวอลุ่ม</td><td>ตามที่ DSM ตั้งชื่อ - <code>VOLUME_1</code> และอื่น ๆ</td></tr>
+        <tr><td>ประเภท RAID</td><td>RAID 5, SHR, RAID 1, Basic - ตามที่พูลด้านล่างเป็นจริง ๆ</td></tr>
+        <tr><td>สถานะ</td><td>สถานะของวอลุ่มเอง: <b>ปกติ</b> เสื่อมสภาพ ล่ม อาร์เรย์ที่เสื่อมสภาพคือสิ่งเดียวบนหน้าจอนี้ที่ควรจัดการวันนี้</td></tr>
+        <tr><td>จำนวนไดรฟ์</td><td>วอลุ่มครอบคลุมไดรฟ์จริงกี่ตัว</td></tr>
+        <tr><td>แถบการใช้งาน</td><td>เขียวเมื่อปกติ เหลืองอำพันเมื่อเกิน 80% และแดงเมื่อเกิน 90% เป็นเกณฑ์เดียวกับที่<a href="/th/guide/home/#header">ป้ายสุขภาพ</a>ใช้</td></tr>
+        <tr><td>ใช้ไป / ทั้งหมด / ว่าง</td><td>ทั้งสามค่า เพราะ “เต็ม 70%” กับ “ว่าง 13 TB” ตอบคนละคำถาม</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="drives">
+      <div class="eyebrow">Drives</div>
+      <h2>แต่ละช่องมีอะไร</h2>
+      <p class="lead">ใต้วอลุ่มคือทุกไดรฟ์จริงเรียงตามหมายเลขช่อง</p>
+    </div>
+    <ul class="plain">
+      <li><b>ช่อง</b> - Disk 1, Disk 2 และต่อไป ตรงกับป้ายบนตัวเครื่อง</li>
+      <li><b>รุ่น</b> - สตริงรุ่นของไดรฟ์เอง</li>
+      <li><b>ผู้ผลิตและประเภท</b> - ผู้ผลิตและว่าเป็น HDD หรือ SSD ไดรฟ์ที่ NAS ระบุผู้ผลิตไม่ได้จะแสดงเป็น<b>ไม่ทราบ</b> แทนที่จะเดา</li>
+      <li><b>อุณหภูมิ</b> แสดงสีตามเกณฑ์ด้านล่าง</li>
+      <li><b>ผล SMART</b> - <b>SMART OK</b> เมื่อการประเมินตนเองของไดรฟ์อยู่ในเกณฑ์ปกติ</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="disk-health">
+      <div class="eyebrow">Disk Health</div>
+      <h2>SMART และการทดสอบที่คุณเริ่มได้</h2>
+    </div>
+    <div class="with-shot">
+      <div>
+        <p class="lead">มุมมองย่อยสุขภาพดิสก์คือไดรฟ์ชุดเดิมแต่มีที่ว่างมากขึ้น ความจุ ประเภท อุณหภูมิ และสถานะ SMART แต่ละอย่างมีชิปของตัวเอง และทุกไดรฟ์มีปุ่ม<b>ทดสอบ SMART แบบเร็ว</b></p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>ทดสอบ SMART แบบเร็ว</b> สั่งให้ไดรฟ์ประเมินตนเองแบบสั้น ใช้เวลาสองสามนาทีและไม่ขัดจังหวะสิ่งที่ใช้วอลุ่มอยู่</li>
+          <li><b>ผลเป็นของไดรฟ์ ไม่ใช่ของเรา</b> SMART คือไดรฟ์รายงานตัวเอง แอปเพียงส่งต่อ ไดรฟ์ที่บอกว่าปกติแล้วเสียทีหลังเป็นข้อจำกัดของ SMART ไม่ใช่ของการอ่านค่า</li>
+          <li><b>สถานะ SMART ที่อ่านไม่ได้จะแสดงเป็นไม่ทราบ</b> ไม่เคยแสดงว่าปกติ ไม่มีค่ากับค่าที่ดีเป็นคนละเรื่องและไม่เคยถูกรวมกัน</li>
+        </ul>
+      </div>
+      <img alt="สุขภาพดิสก์ที่แสดงทุกไดรฟ์พร้อมสถานะ SMART อุณหภูมิ และปุ่มทดสอบ SMART แบบเร็ว" src="/screenshots/storage-disk-health.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="thresholds">
+      <div class="eyebrow">ตัวเลขเบื้องหลังสี</div>
+      <h2>เกณฑ์</h2>
+      <p class="lead">ไม่มีอะไรที่นี่เป็นการเดาเกี่ยวกับฮาร์ดแวร์ของคุณ นี่คือจุดที่แอปเปลี่ยนสี และป้ายสุขภาพของหน้าจอหลักเมื่อเกี่ยวข้อง</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>ค่าที่อ่าน</th><th>เหลืองอำพันที่</th><th>แดงที่</th></tr></thead>
+      <tbody>
+        <tr><td>อุณหภูมิไดรฟ์</td><td>45&deg;C</td><td>55&deg;C</td></tr>
+        <tr><td>อุณหภูมิระบบ</td><td>50&deg;C</td><td>60&deg;C</td></tr>
+        <tr><td>การใช้งานวอลุ่ม</td><td>80%</td><td>90%</td></tr>
+        <tr><td>ประจุ UPS</td><td>ต่ำกว่า 50%</td><td>ต่ำกว่า 20%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note">สลับระหว่าง &deg;C และ &deg;F ได้ที่ <a href="/th/guide/settings/#preferences">การตั้งค่า &rsaquo; หน่วยอุณหภูมิ</a> ทุกอุณหภูมิในแอปเปลี่ยนตามทันที รวมถึงที่หน้าจอหลักและในวิดเจ็ต</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="external">
+      <div class="eyebrow">External</div>
+      <h2>USB, eSATA และการถอดอย่างปลอดภัย</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="พื้นที่จัดเก็บภายนอกและอุปกรณ์ USB โดยไม่มีอะไรเสียบอยู่ และมี UPS อยู่ในรายการ" src="/screenshots/storage-external.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <p class="lead">สองส่วน: <b>พื้นที่จัดเก็บภายนอก</b>สำหรับไดรฟ์ที่เมานต์และถอดได้ และ<b>อุปกรณ์ USB</b>สำหรับทุกอย่างที่เสียบอยู่ เช่น UPS เครื่องพิมพ์ ดองเกิล</p>
+        <ul class="plain" style="margin-top:16px">
+          <li><b>การถอดได้รับการยืนยันจากการที่ไดรฟ์หายไป</b> แอปไม่รายงานว่าสำเร็จเพียงเพราะคำขอตอบกลับ OK แต่อ่านรายการอุปกรณ์ใหม่ และบอกว่าถอดแล้วต่อเมื่อไดรฟ์หายไปจริง นั่นคือความต่างระหว่าง “ถอดออกได้อย่างปลอดภัย” กับ “น่าจะถอดออกได้อย่างปลอดภัย”</li>
+          <li><b>ไดรฟ์ที่กำลังทำงานถอดไม่ได้</b> ไดรฟ์ที่กำลังฟอร์แมตหรือเริ่มต้นใช้งานจะถูกปฏิเสธพร้อมเหตุผล แทนที่จะถูกดึงออกกลางการเขียน</li>
+          <li><b>เมื่อไม่มีอะไรเสียบอยู่ก็บอกตรง ๆ</b> รายการว่างแสดงว่า “ไม่มีไดรฟ์ภายนอกเชื่อมต่ออยู่” ไม่ใช่กล่องว่างที่คุณต้องตีความ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="limits">
+      <div class="eyebrow">ขอบเขต</div>
+      <h2>สิ่งที่หน้าจอนี้จะไม่ทำ</h2>
+      <p class="lead">พื้นที่จัดเก็บเป็นที่เดียวที่แตะผิดแล้วกู้คืนไม่ได้ แอปจึงอ่านมากกว่าเขียนมาก</p>
+    </div>
+    <ul class="plain">
+      <li><b>จะไม่สร้าง ขยาย หรือลบวอลุ่มหรือพูล</b> สิ่งเหล่านั้นอยู่ใน Storage Manager ของ DSM บนหน้าจอที่ใหญ่พอจะแสดงสิ่งที่คุณกำลังจะทำ</li>
+      <li><b>จะไม่ซ่อมแซมอาร์เรย์ที่เสื่อมสภาพ</b> แต่จะบอกคุณอย่างชัดเจน และบนหน้าจอหลัก ว่ามีอาร์เรย์ที่เสื่อมสภาพ</li>
+      <li><b>จะไม่ฟอร์แมตอะไรทั้งสิ้น</b></li>
+      <li><b>จะไม่รันการทดสอบ SMART แบบเต็ม</b> เฉพาะแบบเร็ว การสแกนพื้นผิวเต็มใช้เวลาหลายชั่วโมงและควรทำในที่ที่คุณไม่เดินหนีไป</li>
+    </ul>
+    <div class="note"><b>การ scrub การสร้างใหม่ และการตรวจพาริตี้</b> ปรากฏเป็นการทำงานที่กำลังดำเนินอยู่ คุณจึงดูมันเสร็จจากแอปได้แม้จะเริ่มใน DSM</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">คำถามที่พบบ่อย</div>
+      <h2>คำถามที่พบบ่อยเกี่ยวกับพื้นที่จัดเก็บ</h2>
+    </div>
+    <details open><summary>ดูสถานะ SMART ของแต่ละไดรฟ์ได้ไหม</summary><div class="body">ได้ มุมมองย่อยสุขภาพดิสก์แสดงทุกไดรฟ์พร้อมรุ่น ว่าเป็น HDD หรือ SSD ความจุ อุณหภูมิ และผล SMART คุณยังเริ่มการทดสอบ SMART แบบเร็วกับไดรฟ์ใดก็ได้จากโทรศัพท์</div></details>
+    <details><summary>อุณหภูมิเท่าไรถึงร้อนเกินไปสำหรับไดรฟ์ของ NAS</summary><div class="body">แอปแสดงไดรฟ์เป็นสีเหลืองอำพันเมื่อเกิน 45&deg;C และสีแดงเมื่อเกิน 55&deg;C ส่วนอุณหภูมิระบบเป็นสีเหลืองอำพันเมื่อเกิน 50&deg;C และสีแดงเมื่อเกิน 60&deg;C เกณฑ์เหล่านี้ยังส่งผลต่อป้ายสุขภาพบนหน้าจอหลัก</div></details>
+    <details><summary>ถอด USB ไดรฟ์อย่างปลอดภัยจากแอปได้ไหม</summary><div class="body">ได้ จากมุมมองย่อยภายนอก การถอดได้รับการยืนยันจากการที่ไดรฟ์หายไปจากรายการอุปกรณ์จริง ไม่ใช่จากการที่คำขอได้รับการตอบรับ ไดรฟ์ที่กำลังฟอร์แมตหรือเริ่มต้นใช้งานถอดไม่ได้</div></details>
+    <details><summary>สร้างหรือขยายวอลุ่มจากแอปได้ไหม</summary><div class="body">ไม่ได้ การสร้าง ขยาย และซ่อมแซมวอลุ่มและพูลทำใน Storage Manager ของ DSM แอปรายงานว่าพื้นที่จัดเก็บกำลังทำอะไรและให้คุณสั่งการกับไดรฟ์ได้ แต่ไม่จัดโครงสร้างอาร์เรย์ของคุณใหม่จากโทรศัพท์</div></details>
+    <details><summary>ทำไมไดรฟ์แสดงผู้ผลิตเป็นไม่ทราบ</summary><div class="body">เพราะ NAS ไม่ได้รายงานมา แอปแสดงสิ่งที่ได้รับแจ้ง แทนที่จะอนุมานผู้ผลิตจากสตริงรุ่น ซึ่งจะเป็นการเดาที่นำเสนอเป็นข้อเท็จจริง</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>ถัดไป: เครือข่าย</h2>
+    <p class="lead" style="margin:0 auto 24px">ปริมาณข้อมูล การเชื่อมต่อ บริการ VPN และ DDNS</p>
+    <p><a class="btn" href="/th/guide/network/">เครือข่าย &rarr;</a> &nbsp; <a class="btn ghost" href="/th/guide/">กลับไปที่คู่มือ</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/th/">หน้าแรก</a><a href="/th/guide/">คู่มือผู้ใช้</a><a href="/th/guide/getting-started/">เริ่มต้นใช้งาน</a><a href="/th/compatible-nas/">ความเข้ากันได้</a><a href="/th/best-synology-nas-app/">ทำไมต้องเปลี่ยน</a><a href="/th/synology-app-for-iphone/">iPhone & iPad</a><a href="/th/synology-app-for-android/">Android</a><a href="/th/synology-app-for-mac-windows/">Mac & Windows</a><a href="/th/ds-finder-alternative/">เทียบกับ DS finder</a><a href="/th/help/">ช่วยเหลือ</a><a href="/th/privacy/">ความเป็นส่วนตัว</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">แจ้งข้อบกพร่อง</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager เป็นแอปอิสระ ไม่มีส่วนเกี่ยวข้อง ไม่ได้รับการรับรอง และไม่ได้รับการสนับสนุนจาก Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station และ QuickConnect เป็นเครื่องหมายการค้าของ Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

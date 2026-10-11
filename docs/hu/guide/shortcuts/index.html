@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="hu" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Parancsikonok, Siri és mélyhivatkozások - Syno Manager</title>
+<meta name="description" content="A synomanager:// URL-séma bármelyik képernyőn megnyitja az alkalmazást, Macen pedig a Siri és a Parancsok natívan látja a Syno Managert az App Intents révén." />
+<meta name="keywords" content="synomanager url scheme, Synology app deep link, Siri shortcut NAS, Synology Mac Shortcuts app, macOS App Intents, Android shortcut Synology, NAS automation shortcut" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/hu/guide/shortcuts/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/shortcuts/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/shortcuts/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/shortcuts/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/shortcuts/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/shortcuts/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/shortcuts/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/shortcuts/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/shortcuts/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/shortcuts/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/shortcuts/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/shortcuts/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/shortcuts/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/shortcuts/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/shortcuts/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/shortcuts/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/shortcuts/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/shortcuts/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/shortcuts/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/shortcuts/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/shortcuts/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/shortcuts/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/shortcuts/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/shortcuts/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/shortcuts/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/shortcuts/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/shortcuts/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/shortcuts/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/shortcuts/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/shortcuts/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/shortcuts/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/shortcuts/" />
+<!--/hreflang-->
+<meta property="og:title" content="Parancsikonok, Siri és mélyhivatkozások - Syno Manager" />
+<meta property="og:description" content="A synomanager:// URL-séma bármelyik képernyőn megnyitja az alkalmazást, Macen pedig a Siri és a Parancsok natívan látja a Syno Managert az App Intents révén." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/hu/guide/shortcuts/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="hu_HU" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="de_DE" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-23" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Parancsikonok, Siri és mélyhivatkozások - Syno Manager" />
+<meta name="twitter:description" content="A synomanager:// URL-séma bármelyik képernyőn megnyitja az alkalmazást, Macen pedig a Siri és a Parancsok natívan látja a Syno Managert az App Intents révén." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "hu",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Kezdőlap",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Felhasználói útmutató",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Parancsikonok"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Parancsikonok, Siri és mélyhivatkozások - Syno Manager",
+  "description": "A synomanager:// URL-séma bármelyik képernyőn megnyitja az alkalmazást, Macen pedig a Siri és a Parancsok natívan látja a Syno Managert az App Intents révén.",
+  "image": "https://synomanager.com/screenshots/dashboard.webp",
+  "url": "https://synomanager.com/guide/shortcuts/",
+  "mainEntityOfPage": "https://synomanager.com/guide/shortcuts/",
+  "inLanguage": "hu",
+  "dateModified": "2026-09-23",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Van a Syno Managernek URL-sémája?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. A synomanager://<name> egy adott képernyőn nyitja meg az alkalmazást. Az irányítópultnak, a tárhelynek, a rendszernek, a hálózatnak, az alkalmazásoknak, a mentésnek, a fájloknak és az ébresztésnek is van egy-egy, így a Siri-parancsikonok, az Android-indítóparancsikonok és az automatizálási alkalmazások közvetlenül oda ugorhatnak, ahová szeretné."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Újraindíthatja egy parancsikon a NAS-t egyetlen koppintásra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem, és ez szándékos. Az újraindítási és leállítási hivatkozások csak az energiakezelő vezérlőknél nyitják meg az alkalmazást, ahol a meglévő megerősítés érvényes. Egy visszafordíthatatlan művelet nem válik egykoppintásossá attól, hogy indítóból váltották ki."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Használhatom ezeket a Sirivel?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen. Hozzon létre egy parancsikont az Apple Parancsok alkalmazásában, amely megnyitja az URL-t, adjon neki egy kifejezést, és a Siri közvetlenül oda visz."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "A parancsikonok egy adott NAS-t választanak?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nem. A parancsikon egy képernyőt nyit meg; hogy melyik NAS-on, az az Indítási viselkedés beállításától függ."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Működik a Syno Manager a Parancsok alkalmazással Macen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Igen, natívan. A Szakasz megnyitása, a NAS újraindítása és a NAS leállítása Syno Manager műveletként jelenik meg az Apple Parancsok alkalmazásában macOS-en, URL beírása nélkül. A NAS újraindítása és a NAS leállítása előbb megerősítést kér a Sirivel vagy a Parancsokkal, és csak ezután nyitja meg az alkalmazást az energiakezelő vezérlőknél - ugyanaz a „előbb megerősítés” szabály, mint mindenhol máshol."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/hu/"><img src="/assets/syno-manager-icon.png" alt="A Syno Manager ikonja" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Keresés az útmutatóban..." data-i18n-empty="Nincs találat erre:" data-i18n-language="Nyelv">
+      <a href="/hu/">Kezdőlap</a>
+      <a href="/hu/guide/" class="active">Felhasználói útmutató</a>
+      <a href="/hu/#screenshots">Képernyőképek</a>
+      <a href="/hu/compatible-nas/">Kompatibilitás</a>
+      <a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a>
+      <a href="/hu/help/">Súgó</a>
+      <a href="/hu/#top" class="cta">Letöltés</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="crumb"><a href="/hu/">Főoldal</a> &rsaquo; <a href="/hu/guide/">Felhasználói útmutató</a> &rsaquo; Parancsikonok</div>
+    <div class="eyebrow">Parancsikonok &amp; hivatkozások</div>
+    <h1>Közvetlenül <span class="g">a kívánt képernyőre</span></h1>
+    <p>A Syno Manager regisztrálja a <code>synomanager://</code> URL-sémát, így egy Siri-kifejezés, egy indítóparancsikon vagy egy automatizálási alkalmazás pontosan oda nyithatja meg az alkalmazást, ahová szüksége van, a kezdőképernyő helyett. Macen a Siri és a Parancsok alkalmazás natívan látja a Syno Managert, egyáltalán nem kell URL-t beírni.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">A hivatkozások</div>
+      <h2>Minden parancsikon</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Hivatkozás</th><th>Megnyitja</th></tr></thead>
+      <tbody>
+        <tr><td><code>synomanager://dashboard</code></td><td>A kezdőképernyő.</td></tr>
+        <tr><td><code>synomanager://storage</code></td><td><a href="/hu/guide/storage/">Tárhely</a> - kötetek, lemezállapot, külső.</td></tr>
+        <tr><td><code>synomanager://system</code></td><td><a href="/hu/guide/system/">Rendszer</a> - állapot, erőforrások, naplók.</td></tr>
+        <tr><td><code>synomanager://network</code></td><td><a href="/hu/guide/network/">Hálózat</a> - adatforgalom, kapcsolatok, szolgáltatások, VPN, DDNS.</td></tr>
+        <tr><td><code>synomanager://apps</code></td><td><a href="/hu/guide/apps/">Alkalmazások</a> - csomagok, Docker, projektek, virtuális gépek.</td></tr>
+        <tr><td><code>synomanager://backup</code></td><td><a href="/hu/guide/backup/">Mentés</a> - Hyper Backup és Active Backup.</td></tr>
+        <tr><td><code>synomanager://files</code></td><td><a href="/hu/guide/files/">Fájlok</a> - File Station és megosztások.</td></tr>
+        <tr><td><code>synomanager://wake</code></td><td>Az <a href="/hu/guide/wake-on-lan/">Eszközök ébresztése</a> képernyő.</td></tr>
+        <tr><td><code>synomanager://reboot</code></td><td>Az energiakezelő vezérlők. <b>Csak megnyitja</b> - lásd alább.</td></tr>
+        <tr><td><code>synomanager://shutdown</code></td><td>Az energiakezelő vezérlők. <b>Csak megnyitja</b> - lásd alább.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Szándékos korlát</div>
+      <h2>Miért csak megnyitja az alkalmazást az újraindítás és a leállítás</h2>
+      <p class="lead">Az energiakezelő vezérlőkhöz visznek. Önmagukban nem indítanak újra és nem állítanak le semmit.</p>
+    </div>
+    <p style="color:var(--steel);max-width:74ch">A parancsikont könnyű véletlenül elindítani - egy félrekoppintott indítóikon, egy félrehallott hangparancs, egy rossz eseményre induló automatizálás. A NAS újraindítása mindenkit lecsatlakoztat, aki használja, és megszakít mindent, amit éppen csinált. Ez a kettő nem tartozik össze, ezért a hivatkozás a képernyőnél megáll, és <a href="/hu/guide/system/#power">a meglévő megerősítés</a> továbbra is érvényes.</p>
+    <div class="note"><b>Minden más hivatkozás természeténél fogva biztonságos</b>, mert csak megmutat valamit. Ezért az összes többi egy koppintás, ez a kettő pedig nem.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Használatuk</div>
+      <h2>Platformonként</h2>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>iOS - Siri és Parancsok</h3>
+        <ol class="steps">
+          <li>Nyissa meg a <b>Parancsok</b> alkalmazást, és hozzon létre egy új parancsikont.</li>
+          <li>Adja hozzá az <b>URL-ek megnyitása</b> műveletet.</li>
+          <li>Írja be a hivatkozást, például <code>synomanager://storage</code>.</li>
+          <li>Nevezze el valamilyen kimondható névvel - „Nézd meg a NAS tárhelyét”.</li>
+          <li>Adja hozzá a kezdőképernyőhöz, vagy egyszerűen kérje a Sirit.</li>
+        </ol>
+      </div>
+      <div>
+        <h3>Android - indítók és automatizálás</h3>
+        <ol class="steps">
+          <li>A legtöbb indító el tud helyezni egy URL-t megnyitó parancsikont.</li>
+          <li>Az automatizálási alkalmazások - Tasker, MacroDroid és hasonlók - bármilyen eseményre megnyithatnak egyet.</li>
+          <li>Egy jegyzetben vagy oldalon lévő <code>&lt;a href="synomanager://system"&gt;</code> hivatkozás is működik.</li>
+        </ol>
+      </div>
+    </div>
+    <div class="note" style="margin-top:24px"><b>Hogy melyik NAS-on nyílik meg, az az <a href="/hu/guide/settings/#launch">Indítási viselkedés</a> beállítástól függ.</b> A parancsikon képernyőt választ, nem eszközt - így ha a „Legutóbb használt NAS” van beállítva, a <code>synomanager://storage</code> annak a NAS-nak a tárhelyét mutatja, amelyiken utoljára volt.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">macOS</div>
+      <h2>Siri és Parancsok, natívan</h2>
+      <p class="lead">Macen a Syno Managernek egyáltalán nincs szüksége URL-re. Három műveletet közvetlenül regisztrál az Apple App Intents rendszerében, így a Siri és a Parancsok alkalmazás a <b>Syno Managert</b> saját szókinccsel rendelkező alkalmazásként látja, ugyanúgy, ahogyan az Apple saját alkalmazásait.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Művelet</th><th>Mit csinál</th><th>Mondja a Sirinek</th></tr></thead>
+      <tbody>
+        <tr><td>Szakasz megnyitása</td><td>A Syno Managert a kiválasztott szakaszban nyitja meg - Irányítópult, Tárhely, Rendszer, Hálózat, Alkalmazások, Mentés, Fájlok vagy Ébresztés.</td><td>„Nyisd meg a Syno Managert”</td></tr>
+        <tr><td>NAS újraindítása</td><td>Megerősítést kér, majd megnyitja az alkalmazást az energiakezelő vezérlőknél. A NAS-nak addig nem megy semmi, amíg ott újra meg nem erősíti.</td><td>„Indítsd újra a NAS-omat a Syno Managerrel”</td></tr>
+        <tr><td>NAS leállítása</td><td>Ugyanolyan felépítésű, mint az Újraindítás: megerősítés a Sirivel vagy a Parancsokkal, majd az alkalmazás megnyílik az energiakezelő vezérlőknél.</td><td>„Állítsd le a NAS-omat a Syno Managerrel”</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Az újraindítás és a leállítás továbbra is kétszer kér megerősítést.</b> A Siri vagy a Parancsok kérdez először - „Megnyitja a Syno Managert a NAS újraindításához? A NAS-nak még nem megy semmi - az alkalmazásban erősíti meg” -, majd az alkalmazás saját energiakezelő vezérlői kérdeznek újra. Egy olyan hangparancs, amely az első félrehallott szóra újraindítja a NAS-t, nem érdemel funkciónak lenni.</div>
+    <p style="color:var(--steel);margin-top:18px;max-width:74ch"><b>Építsen saját automatizálásokat ezekre.</b> Mivel hétköznapi Parancsok-műveletek, a Szakasz megnyitása beilleszthető bármelyik Ön által készített parancsikonba - futtathatja ütemezve, indíthatja Home Hubról, vagy láncolhatja valami más után - pontosan úgy, mint bármelyik másik Mac-alkalmazás műveletét.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Gyakori kérdések</div>
+      <h2>Parancsikonok - gyakori kérdések (FAQ)</h2>
+    </div>
+    <details open><summary>Van a Syno Managernek URL-sémája?</summary><div class="body">Igen. A <code>synomanager://&lt;name&gt;</code> egy adott képernyőn nyitja meg az alkalmazást. Az irányítópultnak, a tárhelynek, a rendszernek, a hálózatnak, az alkalmazásoknak, a mentésnek, a fájloknak és az ébresztésnek is van egy-egy.</div></details>
+    <details><summary>Újraindíthatja egy parancsikon a NAS-t egyetlen koppintásra?</summary><div class="body">Nem, és ez szándékos. Az újraindítási és leállítási hivatkozások csak az energiakezelő vezérlőknél nyitják meg az alkalmazást, ahol a meglévő megerősítés érvényes.</div></details>
+    <details><summary>Használhatom ezeket a Sirivel?</summary><div class="body">Igen. Hozzon létre egy parancsikont az Apple Parancsok alkalmazásában, amely megnyitja az URL-t, adjon neki egy kifejezést, és a Siri közvetlenül oda visz.</div></details>
+    <details><summary>A parancsikonok egy adott NAS-t választanak?</summary><div class="body">Nem. A parancsikon egy képernyőt nyit meg; hogy melyik NAS-on, az az Indítási viselkedés beállításától függ.</div></details>
+    <details><summary>Működik a Syno Manager a Parancsok alkalmazással Macen?</summary><div class="body">Igen, natívan. A Szakasz megnyitása, a NAS újraindítása és a NAS leállítása Syno Manager műveletként jelenik meg az Apple Parancsok alkalmazásában macOS-en, URL beírása nélkül. A két energiakezelő művelet megerősítést kér a Sirivel vagy a Parancsokkal, mielőtt bármit tenne, majd csak az energiakezelő vezérlőknél nyitja meg az alkalmazást.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Következő: testreszabás</h2>
+    <p class="lead" style="margin:0 auto 24px">Kártyák, lapok, almenük és a sorrendjük.</p>
+    <p><a class="btn" href="/hu/guide/customizing/">Az alkalmazás testreszabása &rarr;</a> &nbsp; <a class="btn ghost" href="/hu/guide/">Vissza az útmutatóhoz</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/hu/">Kezdőlap</a><a href="/hu/guide/">Felhasználói útmutató</a><a href="/hu/guide/getting-started/">Első lépések</a><a href="/hu/compatible-nas/">Kompatibilitás</a><a href="/hu/best-synology-nas-app/">Miért érdemes váltani</a><a href="/hu/synology-app-for-iphone/">iPhone és iPad</a><a href="/hu/synology-app-for-android/">Android</a><a href="/hu/synology-app-for-mac-windows/">Mac és Windows</a><a href="/hu/ds-finder-alternative/">vs DS finder</a><a href="/hu/help/">Súgó</a><a href="/hu/privacy/">Adatvédelem</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Hiba bejelentése</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. A Syno Manager független alkalmazás, amelyet a Synology Inc. nem támogat, nem hagyott jóvá, és amellyel nem áll kapcsolatban. A Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station és QuickConnect a Synology Inc. védjegyei.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

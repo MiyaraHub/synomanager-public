@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="de" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Synology NAS verbinden - Syno Manager Einrichtung</title>
+<meta name="description" content="Füge dein Synology NAS in unter einer Minute hinzu: Adresse und Port, HTTPS und selbstsignierte Zertifikate, QuickConnect, 2FA und was zu tun ist, wenn es sich nicht verbinden lässt." />
+<meta name="keywords" content="connect Synology app, add NAS to app, Synology QuickConnect app, DSM port 5001, Synology self-signed certificate app, Synology 2FA app, Synology app not connecting" />
+<meta name="author" content="MiyaraHub Technologies LLC" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<meta name="theme-color" content="#3b82f6" />
+<link rel="canonical" href="https://synomanager.com/de/guide/getting-started/" />
+<!--hreflang-->
+<link rel="alternate" hreflang="en" href="https://synomanager.com/guide/getting-started/" />
+<link rel="alternate" hreflang="ar" href="https://synomanager.com/ar/guide/getting-started/" />
+<link rel="alternate" hreflang="cs" href="https://synomanager.com/cs/guide/getting-started/" />
+<link rel="alternate" hreflang="da" href="https://synomanager.com/da/guide/getting-started/" />
+<link rel="alternate" hreflang="de" href="https://synomanager.com/de/guide/getting-started/" />
+<link rel="alternate" hreflang="el" href="https://synomanager.com/el/guide/getting-started/" />
+<link rel="alternate" hreflang="es" href="https://synomanager.com/es/guide/getting-started/" />
+<link rel="alternate" hreflang="fi" href="https://synomanager.com/fi/guide/getting-started/" />
+<link rel="alternate" hreflang="fr" href="https://synomanager.com/fr/guide/getting-started/" />
+<link rel="alternate" hreflang="he" href="https://synomanager.com/he/guide/getting-started/" />
+<link rel="alternate" hreflang="hi" href="https://synomanager.com/hi/guide/getting-started/" />
+<link rel="alternate" hreflang="hu" href="https://synomanager.com/hu/guide/getting-started/" />
+<link rel="alternate" hreflang="id" href="https://synomanager.com/id/guide/getting-started/" />
+<link rel="alternate" hreflang="it" href="https://synomanager.com/it/guide/getting-started/" />
+<link rel="alternate" hreflang="ja" href="https://synomanager.com/ja/guide/getting-started/" />
+<link rel="alternate" hreflang="ko" href="https://synomanager.com/ko/guide/getting-started/" />
+<link rel="alternate" hreflang="nb" href="https://synomanager.com/nb/guide/getting-started/" />
+<link rel="alternate" hreflang="nl" href="https://synomanager.com/nl/guide/getting-started/" />
+<link rel="alternate" hreflang="pl" href="https://synomanager.com/pl/guide/getting-started/" />
+<link rel="alternate" hreflang="pt" href="https://synomanager.com/pt/guide/getting-started/" />
+<link rel="alternate" hreflang="pt-BR" href="https://synomanager.com/pt-br/guide/getting-started/" />
+<link rel="alternate" hreflang="ro" href="https://synomanager.com/ro/guide/getting-started/" />
+<link rel="alternate" hreflang="ru" href="https://synomanager.com/ru/guide/getting-started/" />
+<link rel="alternate" hreflang="sv" href="https://synomanager.com/sv/guide/getting-started/" />
+<link rel="alternate" hreflang="th" href="https://synomanager.com/th/guide/getting-started/" />
+<link rel="alternate" hreflang="tr" href="https://synomanager.com/tr/guide/getting-started/" />
+<link rel="alternate" hreflang="uk" href="https://synomanager.com/uk/guide/getting-started/" />
+<link rel="alternate" hreflang="vi" href="https://synomanager.com/vi/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hans" href="https://synomanager.com/zh-hans/guide/getting-started/" />
+<link rel="alternate" hreflang="zh-Hant" href="https://synomanager.com/zh-hant/guide/getting-started/" />
+<link rel="alternate" hreflang="x-default" href="https://synomanager.com/guide/getting-started/" />
+<!--/hreflang-->
+<meta property="og:title" content="Synology NAS verbinden - Syno Manager Einrichtung" />
+<meta property="og:description" content="Füge dein Synology NAS in unter einer Minute hinzu: Adresse und Port, HTTPS und selbstsignierte Zertifikate, QuickConnect, 2FA und was zu tun ist, wenn es sich nicht verbinden lässt." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://synomanager.com/de/guide/getting-started/" />
+<meta property="og:site_name" content="Syno Manager" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+<meta property="og:locale:alternate" content="ar_AR" />
+<meta property="og:locale:alternate" content="cs_CZ" />
+<meta property="og:locale:alternate" content="da_DK" />
+<meta property="og:locale:alternate" content="el_GR" />
+<meta property="og:locale:alternate" content="es_ES" />
+<meta property="og:locale:alternate" content="fi_FI" />
+<meta property="og:locale:alternate" content="fr_FR" />
+<meta property="og:locale:alternate" content="he_IL" />
+<meta property="og:locale:alternate" content="hi_IN" />
+<meta property="og:locale:alternate" content="hu_HU" />
+<meta property="og:locale:alternate" content="id_ID" />
+<meta property="og:locale:alternate" content="it_IT" />
+<meta property="og:locale:alternate" content="ja_JP" />
+<meta property="og:locale:alternate" content="ko_KR" />
+<meta property="og:locale:alternate" content="nb_NO" />
+<meta property="og:locale:alternate" content="nl_NL" />
+<meta property="og:locale:alternate" content="pl_PL" />
+<meta property="og:locale:alternate" content="pt_PT" />
+<meta property="og:locale:alternate" content="pt_BR" />
+<meta property="og:locale:alternate" content="ro_RO" />
+<meta property="og:locale:alternate" content="ru_RU" />
+<meta property="og:locale:alternate" content="sv_SE" />
+<meta property="og:locale:alternate" content="th_TH" />
+<meta property="og:locale:alternate" content="tr_TR" />
+<meta property="og:locale:alternate" content="uk_UA" />
+<meta property="og:locale:alternate" content="vi_VN" />
+<meta property="og:locale:alternate" content="zh_CN" />
+<meta property="og:locale:alternate" content="zh_TW" />
+<meta property="og:image" content="https://synomanager.com/assets/og-card.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<meta property="article:modified_time" content="2026-09-05" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Synology NAS verbinden - Syno Manager Einrichtung" />
+<meta name="twitter:description" content="Füge dein Synology NAS in unter einer Minute hinzu: Adresse und Port, HTTPS und selbstsignierte Zertifikate, QuickConnect, 2FA und was zu tun ist, wenn es sich nicht verbinden lässt." />
+<meta name="twitter:image" content="https://synomanager.com/assets/og-card.png" />
+<meta name="twitter:image:alt" content="Syno Manager, an independent app for Synology NAS on iPhone, Android, Mac and Windows. Not affiliated with Synology Inc." />
+<link rel="icon" href="/assets/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png" />
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://img.shields.io" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<link rel="stylesheet" href="/assets/site.css" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://synomanager.com/#organization",
+  "name": "MiyaraHub Technologies LLC",
+  "url": "https://miyarahub.com",
+  "logo": "https://synomanager.com/assets/icon-512.png",
+  "sameAs": [
+    "https://miyarahub.com",
+    "https://github.com/MiyaraHub"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://synomanager.com/#website",
+  "name": "Syno Manager",
+  "url": "https://synomanager.com/",
+  "inLanguage": "de",
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://synomanager.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Benutzerhandbuch",
+      "item": "https://synomanager.com/guide/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Erste Schritte"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Synology NAS verbinden - Syno Manager Einrichtung",
+  "description": "Füge dein Synology NAS in unter einer Minute hinzu: Adresse und Port, HTTPS und selbstsignierte Zertifikate, QuickConnect, 2FA und was zu tun ist, wenn es sich nicht verbinden lässt.",
+  "image": "https://synomanager.com/screenshots/add-nas.webp",
+  "url": "https://synomanager.com/guide/getting-started/",
+  "mainEntityOfPage": "https://synomanager.com/guide/getting-started/",
+  "inLanguage": "de",
+  "dateModified": "2026-09-05",
+  "isPartOf": {
+    "@id": "https://synomanager.com/#website"
+  },
+  "author": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "publisher": {
+    "@id": "https://synomanager.com/#organization"
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "@id": "https://synomanager.com/#app",
+    "name": "Syno Manager",
+    "operatingSystem": "Android, iOS, macOS, Windows",
+    "applicationCategory": "UtilitiesApplication"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was brauche ich, um Syno Manager zu nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ein Synology NAS mit DSM 7.0 oder neuer, ein DSM-Konto darauf und ein Gerät mit Android 7+, iOS 16+, macOS 11+ oder Windows. Auf dem NAS muss nichts installiert werden - die App nutzt die eigenen APIs von DSM, die bereits vorhanden sind."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Adresse und welchen Port gebe ich ein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In deinem eigenen Netzwerk die lokale IP-Adresse des NAS und den Port von DSM - 5001 mit HTTPS, oder 5000 ohne HTTPS. Du kannst auch einen Hostnamen oder eine eigene Domain eingeben. Wenn du dich gar nicht mit Adressen befassen willst, stelle den Verbindungstyp auf QuickConnect und gib deine QuickConnect-ID ein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum ist SSL-Zertifikat prüfen standardmäßig aus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil die meisten DiskStations ein selbstsigniertes Zertifikat vorlegen, das nicht von einer öffentlichen Stelle signiert ist und deshalb die Prüfung nicht besteht, obwohl die Verbindung trotzdem verschlüsselt ist. Ist die Prüfung aus, wird dieses Zertifikat akzeptiert. Wenn du ein echtes Zertifikat installiert hast - zum Beispiel von Let's Encrypt -, schalte die Prüfung ein."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich Ports an meinem Router öffnen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. In deinem eigenen Netzwerk muss nichts weitergeleitet werden. Von außen leitet QuickConnect die Verbindung für dich weiter, und auch ein VPN funktioniert. Portweiterleitung brauchst du nur, wenn du ausdrücklich einen direkten Weg aus dem Internet willst oder die Kamera-Live-Ansicht über RTSP von außerhalb deines Netzwerks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Es steht dort Verbindungs-Timeout. Was nun?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Diese Meldung heißt, dass die App nie eine Antwort bekommen hat, was fast immer an der Adresse, am Port oder am Netzwerk liegt, in dem das Handy ist. Prüfe, ob HTTPS zum Port passt, ob das Handy im selben Netzwerk wie das NAS ist, wenn du eine lokale IP nutzt, und ob die eigene Weboberfläche von DSM im Browser des Handys unter derselben Adresse und demselben Port lädt."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="/de/"><img src="/assets/syno-manager-icon.png" alt="Syno Manager Symbol" width="104" height="104" decoding="async" /> Syno Manager</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.getElementById('m').classList.toggle('open')">&#9776;</button>
+    <nav id="m" data-i18n-search="Handbuch durchsuchen..." data-i18n-empty="Keine Treffer für" data-i18n-language="Sprache">
+      <a href="/de/">Start</a>
+      <a href="/de/guide/" class="active">Benutzerhandbuch</a>
+      <a href="/de/#screenshots">Screenshots</a>
+      <a href="/de/compatible-nas/">Kompatibilität</a>
+      <a href="/de/best-synology-nas-app/">Warum wechseln</a>
+      <a href="/de/help/">Hilfe</a>
+      <a href="/de/#top" class="cta">Herunterladen</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero split">
+  <div class="wrap">
+    <div>
+      <div class="crumb"><a href="/de/">Start</a> &rsaquo; <a href="/de/guide/">Benutzerhandbuch</a> &rsaquo; Erste Schritte</div>
+      <div class="eyebrow">Erste Schritte</div>
+      <h1>Verbunden in <span class="g">unter einer Minute</span></h1>
+      <p>Auf dem NAS wird nichts installiert. Syno Manager spricht mit den eigenen APIs von DSM, die schon laufen - du sagst nur, wo deine DiskStation ist und wer du bist.</p>
+    </div>
+    <div class="hero-shot"><img alt="Das Formular NAS hinzufügen in Syno Manager" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" fetchpriority="high" /></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="onthispage"><b>Auf dieser Seite</b><ul>
+      <li><a href="#requirements">Was Sie brauchen</a></li>
+      <li><a href="#address">Dein NAS finden</a></li>
+      <li><a href="#form">Jedes Feld des Formulars</a></li>
+      <li><a href="#quickconnect">QuickConnect</a></li>
+      <li><a href="#twofactor">Zwei-Faktor-Authentifizierung</a></li>
+      <li><a href="#test">Testen und speichern</a></li>
+      <li><a href="#next">Wie es weitergeht</a></li>
+      <li><a href="#trouble">Wenn es sich nicht verbinden lässt</a></li>
+    </ul></div>
+
+    <div class="section-head" id="requirements">
+      <div class="eyebrow">Schritt null</div>
+      <h2>Was Sie brauchen</h2>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Voraussetzung</th><th>Details</th></tr></thead>
+      <tbody>
+        <tr><td>Ein Synology NAS</td><td>Jedes Modell mit <b>DSM 7.0 oder neuer</b>. Darauf wird nichts installiert - die App nutzt dieselben APIs wie die Weboberfläche von DSM.</td></tr>
+        <tr><td>Ein DSM-Konto</td><td>Dein normaler DSM-Benutzername und dein Passwort. Ein Administratorkonto sieht alles; ein Nicht-Administrator sieht, was DSM ihm zeigt, und die App blendet den Rest aus, statt Steuerelemente zu zeigen, die abgelehnt würden.</td></tr>
+        <tr><td>Dein Gerät</td><td><b>Android 7.0</b> oder neuer, <b>iOS 16.0</b> oder neuer, <b>macOS 11.0</b> oder neuer oder <b>Windows</b>. Dieselbe App auf allen vieren.</td></tr>
+        <tr><td>Ein Weg zum NAS</td><td>Dasselbe lokale Netzwerk, ein VPN hinein, eine eigene Domain oder QuickConnect. Jeder einzelne reicht.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>Du brauchst kein Administratorkonto</b>, nur um nachzusehen. Das Überwachen funktioniert mit jedem DSM-Benutzer. Steuerungsaktionen - einen Container neu starten, ein Backup ausführen, ein Laufwerk auswerfen - brauchen die Berechtigung, die DSM selbst für diese Aktion verlangt, und die App meldet eine Ablehnung, statt so zu tun, als hätte es geklappt.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="address">
+      <div class="eyebrow">Wo ist es</div>
+      <h2>Die Adresse deines NAS finden</h2>
+      <p class="lead">Wenn du DSM bereits im Browser öffnest, steht in der Adressleiste alles, was du brauchst: Host und Port sind die beiden Werte, nach denen die App fragt.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>In DSM selbst</h3>
+        <ul class="plain">
+          <li><b>Systemsteuerung &rsaquo; Netzwerk &rsaquo; Netzwerkschnittstelle</b> zeigt die IP-Adresse des NAS auf jeder Schnittstelle.</li>
+          <li><b>Systemsteuerung &rsaquo; Netzwerk &rsaquo; DSM-Einstellungen</b> zeigt die HTTP- und HTTPS-Ports, auf denen DSM lauscht. Das sind 5000 und 5001, sofern niemand sie geändert hat.</li>
+        </ul>
+        <h3 style="margin-top:22px">Im Browser</h3>
+        <p style="color:var(--steel)">Was du eingibst, um DSM zu erreichen, ist das, was die App will. In <code>https://192.168.1.20:5001</code> ist der Host <code>192.168.1.20</code>, der Port <code>5001</code>, und HTTPS ist an.</p>
+      </div>
+      <div>
+        <h3>Am Router</h3>
+        <p style="color:var(--steel)">Die meisten Router listen verbundene Geräte mit Namen auf. Das NAS erscheint unter seinem Servernamen - dem, der unter <b>Systemsteuerung &rsaquo; Infozentrum</b> festgelegt ist.</p>
+        <div class="note"><b>Gib ihm eine feste Adresse.</b> Wenn dein Router dem NAS nach einem Neustart eine andere IP gibt, findet die App es nicht mehr. Eine DHCP-Reservierung am Router oder eine statische Adresse am NAS verhindert das. Ein Hostname oder eine eigene Domain funktioniert ebenfalls und kümmert sich nicht um die IP.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="form">
+      <div class="eyebrow">NAS hinzufügen</div>
+      <h2>Jedes Feld des Formulars</h2>
+      <p class="lead">Tippe in der Geräteliste auf <b>+ NAS hinzufügen</b>. Das Formular ist kurz, und nur drei Felder haben keinen sinnvollen Standardwert.</p>
+    </div>
+    <div class="with-shot">
+      <div>
+        <div class="tscroll"><table class="t">
+          <thead><tr><th>Feld</th><th>Was du eintragen sollst</th></tr></thead>
+          <tbody>
+            <tr><td>NAS-Spitzname</td><td>Ein beliebiger Name - er wird nur dir angezeigt. Nützlich, sobald du mehr als eins hast.</td></tr>
+            <tr><td>Verbindungstyp</td><td><b>Direkte IP</b> für eine Adresse, die du tippst, oder <b>QuickConnect</b> für eine QuickConnect-ID. Siehe <a href="#quickconnect">unten</a>.</td></tr>
+            <tr><td>Host / IP-Adresse</td><td>Die lokale IP des NAS, sein Hostname oder eine eigene Domain, die darauf zeigt.</td></tr>
+            <tr><td>Port</td><td><b>5001</b> mit HTTPS, <b>5000</b> ohne - außer DSM wurde auf andere Ports gelegt, dann nimm diese.</td></tr>
+            <tr><td>HTTPS</td><td>Standardmäßig an und es lohnt sich, es anzulassen. Alles zwischen Handy und NAS ist verschlüsselt, auch dein Passwort.</td></tr>
+            <tr><td>SSL-Zertifikat prüfen</td><td>Standardmäßig aus, weil die meisten DiskStations ein <b>selbstsigniertes</b> Zertifikat vorlegen, das sich nicht gegen eine öffentliche Stelle prüfen lässt. Die Verbindung ist so oder so verschlüsselt. Schalte das nur ein, wenn du ein echtes Zertifikat installiert hast.</td></tr>
+            <tr><td>Benutzername</td><td>Der Name deines DSM-Kontos. <b>Benutzernamen mit Leerzeichen werden unterstützt</b> - die App setzt sie korrekt in Anführungszeichen, was ein häufiger Grund ist, warum andere Clients scheitern.</td></tr>
+            <tr><td>Passwort</td><td>Dein DSM-Passwort. Das Auge zeigt es beim Tippen an. Es wird im Schlüsselbund bzw. Keystore der Plattform gespeichert und nie im Klartext abgelegt.</td></tr>
+            <tr><td>Zwei-Faktor-Authentifizierung</td><td>Aktiviere das, wenn dein DSM-Konto eine Authenticator-App nutzt. Siehe <a href="#twofactor">unten</a>.</td></tr>
+            <tr><td>Kamera-Live-Ansicht über den DSM-Port tunneln</td><td>Standardmäßig aus. <b>Aus</b> heißt, die Kamera-Live-Ansicht verbindet sich direkt per RTSP über Port 554, was im eigenen Netzwerk schneller ist, aber voraussetzt, dass dieser Port von deinem jeweiligen Standort erreichbar ist. <b>An</b> tunnelt den Stream über den DSM-HTTPS-Port, den du ohnehin nutzt, sodass die Live-Ansicht auch von außerhalb funktioniert, ohne 554 freizugeben. Siehe <a href="/de/guide/media/#cameras">Surveillance Station</a>.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <img alt="Das Formular NAS hinzufügen" src="/screenshots/add-nas.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="quickconnect">
+      <div class="eyebrow">Keine Adresse zum Tippen</div>
+      <h2>QuickConnect</h2>
+      <p class="lead">Stelle den <b>Verbindungstyp</b> auf <b>QuickConnect</b> und gib deine QuickConnect-ID statt Host und Port ein. Das Relay von Synology findet dein NAS, wo auch immer es ist, und es ist keine Router-Konfiguration nötig.</p>
+    </div>
+    <ul class="plain">
+      <li><b>Wo deine ID steht.</b> In DSM unter <b>Systemsteuerung &rsaquo; Externer Zugriff &rsaquo; QuickConnect</b>. Dort muss es zuerst aktiviert sein.</li>
+      <li><b>Was es dich kostet.</b> Das Relay fügt Latenz hinzu, daher laden Vorschaubilder und Live-Ansicht langsamer als in deinem eigenen Netzwerk. Alles funktioniert trotzdem.</li>
+      <li><b>Was es dir spart.</b> Keine Portweiterleitung, kein Dynamic-DNS, das du aktuell halten musst, und nichts, was auf deiner Seite dem Internet ausgesetzt ist.</li>
+    </ul>
+    <div class="note"><b>Du kannst beides haben.</b> Fügst du dasselbe NAS zweimal hinzu - einmal per lokaler IP, einmal per QuickConnect -, hast du einen schnellen Eintrag für zu Hause und einen verlässlichen für unterwegs. Das sind getrennte Einträge mit getrennten Layouts, nimm also, was dir gerade näher ist.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="twofactor">
+      <div class="eyebrow">2FA</div>
+      <h2>Zwei-Faktor-Authentifizierung</h2>
+      <p class="lead">Wenn dein DSM-Konto durch eine Authenticator-App geschützt ist, schalte <b>Zwei-Faktor-Authentifizierung (2FA)</b> vor dem Speichern ein. Die App fragt direkt nach Annahme des Passworts nach deinem sechsstelligen Code.</p>
+    </div>
+    <ol class="steps">
+      <li><b>Aktiviere den Schalter</b> im Formular NAS hinzufügen.</li>
+      <li><b>Speichern &amp; Verbinden.</b> Die App meldet sich an, und DSM fragt nach dem zweiten Faktor.</li>
+      <li><b>Gib den Code</b> aus deiner Authenticator-App ein.</li>
+      <li><b>Wähle, ob dieses Gerät gemerkt werden soll.</b> Wenn ja, stellt DSM ein Geräte-Token aus, und dieses Handy wird nicht erneut nach einem Code gefragt. Das Token wird genauso gespeichert wie das Passwort, im Schlüsselbund der Plattform.</li>
+    </ol>
+    <div class="note warn"><b>Wenn Codes abgelehnt werden</b>, prüfe die Uhr. Authenticator-Codes werden aus der aktuellen Uhrzeit berechnet, ein Handy oder NAS mit abgedrifteter Uhr erzeugt oder erwartet also die falsche Zahl. Die Zeitquelle des NAS steht in der Schnellstatus-Zeile des <a href="/de/guide/home/">Startbildschirms</a>.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="test">
+      <div class="eyebrow">Bevor du dich festlegst</div>
+      <h2>Verbindung testen, dann speichern</h2>
+      <p class="lead"><b>Verbindung testen</b> probiert Adresse, Port und Zugangsdaten aus und sagt dir, was passiert ist, ohne etwas zu speichern. So findest du einen Tippfehler am schnellsten, weil es „das NAS ist nicht erreichbar“ von „erreicht, aber das Passwort stimmt nicht“ unterscheidet.</p>
+    </div>
+    <div class="tscroll"><table class="t">
+      <thead><tr><th>Was es sagt</th><th>Was es bedeutet</th></tr></thead>
+      <tbody>
+        <tr><td>Verbindungs-Timeout</td><td>Nichts hat geantwortet. Die Adresse, der Port oder das Netzwerk, in dem das Handy ist - nicht die Zugangsdaten, die nie ausprobiert wurden.</td></tr>
+        <tr><td>Ungültige Zugangsdaten</td><td>Das NAS hat geantwortet und die Anmeldung abgelehnt. Adresse und Port stimmen; Benutzername oder Passwort nicht.</td></tr>
+        <tr><td>Zertifikatsfehler</td><td>HTTPS ist an, und <b>SSL-Zertifikat prüfen</b> ist ebenfalls an, gegen ein selbstsigniertes Zertifikat. Schalte die Prüfung aus.</td></tr>
+        <tr><td>2FA erforderlich</td><td>Das Konto nutzt Zwei-Faktor-Authentifizierung, und der Schalter ist aus. Schalte ihn ein und versuch es erneut.</td></tr>
+      </tbody>
+    </table></div>
+    <p style="color:var(--steel);margin-top:16px"><b>Speichern &amp; Verbinden</b> speichert den Eintrag und meldet dich an. Du landest auf dem Startbildschirm, auf dem dein NAS schon lädt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="next">
+      <div class="eyebrow">Du bist drin</div>
+      <h2>Was beim ersten Verbinden passiert</h2>
+    </div>
+    <div class="with-shot left">
+      <img alt="Der Startbildschirm von Syno Manager nach dem Verbinden" src="/screenshots/dashboard.webp" width="1324" height="2644" decoding="async" loading="lazy" />
+      <div>
+        <ul class="plain">
+          <li><b>Die App fragt, was dein NAS kann.</b> Sie fragt den API-Katalog von DSM ab und merkt sich die Liste. Deshalb zeigt ein NAS ohne Surveillance Station nie einen Tab Kameras, und deshalb erscheint der Bildschirm eines Pakets, sobald du es installierst.</li>
+          <li><b>Jede unterstützte Karte ist eingeschaltet.</b> Neue Karten kommen sichtbar statt versteckt, sodass eine Funktion, die dein NAS unterstützt, auch eine ist, die du siehst. Unter <a href="/de/guide/customizing/">Anpassen</a> schaltest du Dinge aus - dort findest du sie nicht erst.</li>
+          <li><b>Die MAC-Adresse des NAS wird erfasst</b>, damit <a href="/de/guide/wake-on-lan/">Wake-on-LAN</a> später funktioniert, ohne dass du sie nachschlagen musst.</li>
+          <li><b>Einmal erscheint eine kurze Begrüßung.</b> Sie sagt, was die App tut und wo du etwas ändern kannst. Es gibt ein Kontrollkästchen, damit sie nicht wieder erscheint.</li>
+          <li><b>Hilfekarten erscheinen auf Bildschirmen, die eine Erklärung brauchen.</b> Drücke lange auf eine, um sie zu schließen; einzeln wiederherstellen kannst du sie unter <a href="/de/guide/settings/#help">Einstellungen</a>.</li>
+        </ul>
+        <div class="note"><b>Nach dem Verbinden ein Paket installiert?</b> Die Liste der Fähigkeiten wird beim Verbinden gelesen, ein seitdem installiertes Paket hat also noch keinen Tab. Ziehe zum Aktualisieren oder öffne die App neu, und der neue Bildschirm erscheint.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head" id="trouble">
+      <div class="eyebrow">Wenn es sich nicht verbinden lässt</div>
+      <h2>Die kurze Checkliste</h2>
+    </div>
+    <ol class="steps">
+      <li><b>Öffne DSM im Browser des Handys</b> genau unter der Adresse und dem Port, die du eingegeben hast. Erreicht auch der Browser es nicht, liegt das Problem am Netzwerk oder an der Adresse, nicht an der App.</li>
+      <li><b>Prüfe, ob HTTPS zum Port passt.</b> Port 5001 ohne HTTPS oder 5000 mit HTTPS läuft in ein Timeout. Das sind verschiedene Listener.</li>
+      <li><b>Schalte SSL-Zertifikat prüfen aus</b>, wenn das NAS das mitgelieferte Zertifikat verwendet.</li>
+      <li><b>Prüfe das Netzwerk des Handys.</b> Eine lokale IP ist über mobile Daten nicht erreichbar. Verbinde dich entweder mit dem WLAN oder nutze QuickConnect, eine Domain oder ein VPN.</li>
+      <li><b>Erlaube unter iOS den Zugriff auf das lokale Netzwerk.</b> Einstellungen &rsaquo; Apps &rsaquo; Syno Manager &rsaquo; Lokales Netzwerk. Ohne ihn blockiert iOS stillschweigend Verbindungen zu Adressen in deinem eigenen Netzwerk.</li>
+      <li><b>Prüfe die Firewall von DSM.</b> Systemsteuerung &rsaquo; Sicherheit &rsaquo; Firewall. Eine Regel, die nur bestimmte Adressen zulässt, blockiert ein Handy, das keine davon ist.</li>
+      <li><b>Prüfe die automatische Sperre.</b> Systemsteuerung &rsaquo; Sicherheit &rsaquo; Konto. Wiederholte fehlgeschlagene Anmeldungen können die Adresse deines Handys sperren; sie steht dort in der Liste und lässt sich entfernen.</li>
+    </ol>
+    <p style="margin-top:22px"><a class="btn ghost" href="/de/help/">Vollständige Anleitung zur Fehlerbehebung</a></p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Häufige Fragen</div>
+      <h2>FAQ zur Einrichtung</h2>
+    </div>
+    <details open><summary>Was brauche ich, um Syno Manager zu nutzen?</summary><div class="body">Ein Synology NAS mit DSM 7.0 oder neuer, ein DSM-Konto darauf und ein Gerät mit Android 7+, iOS 16+, macOS 11+ oder Windows. Auf dem NAS muss nichts installiert werden - die App nutzt die eigenen APIs von DSM, die bereits vorhanden sind.</div></details>
+    <details><summary>Welche Adresse und welchen Port gebe ich ein?</summary><div class="body">In deinem eigenen Netzwerk die lokale IP-Adresse des NAS und den Port von DSM - 5001 mit HTTPS, oder 5000 ohne HTTPS. Du kannst auch einen Hostnamen oder eine eigene Domain eingeben. Wenn du dich gar nicht mit Adressen befassen willst, stelle den Verbindungstyp auf QuickConnect und gib deine QuickConnect-ID ein.</div></details>
+    <details><summary>Warum ist SSL-Zertifikat prüfen standardmäßig aus?</summary><div class="body">Weil die meisten DiskStations ein selbstsigniertes Zertifikat vorlegen, das nicht von einer öffentlichen Stelle signiert ist und deshalb die Prüfung nicht besteht, obwohl die Verbindung trotzdem verschlüsselt ist. Ist die Prüfung aus, wird dieses Zertifikat akzeptiert. Wenn du ein echtes Zertifikat installiert hast - zum Beispiel von Let's Encrypt -, schalte die Prüfung ein.</div></details>
+    <details><summary>Muss ich Ports an meinem Router öffnen?</summary><div class="body">Nein. In deinem eigenen Netzwerk muss nichts weitergeleitet werden. Von außen leitet QuickConnect die Verbindung für dich weiter, und auch ein VPN funktioniert. Portweiterleitung brauchst du nur, wenn du ausdrücklich einen direkten Weg aus dem Internet willst oder die Kamera-Live-Ansicht über RTSP von außerhalb deines Netzwerks.</div></details>
+    <details><summary>Es steht dort Verbindungs-Timeout. Was nun?</summary><div class="body">Diese Meldung heißt, dass die App nie eine Antwort bekommen hat, was fast immer an der Adresse, am Port oder am Netzwerk liegt, in dem das Handy ist. Prüfe, ob HTTPS zum Port passt, ob das Handy im selben Netzwerk wie das NAS ist, wenn du eine lokale IP nutzt, und ob die eigene Weboberfläche von DSM im Browser des Handys unter derselben Adresse und demselben Port lädt.</div></details>
+    <details><summary>Kann ich mehr als ein NAS hinzufügen?</summary><div class="body">Ja, so viele du willst. Jedes behält seine eigenen Zugangsdaten, sein Dashboard-Layout und seine Einstellungen, und du wechselst in der Geräteliste zwischen ihnen. Siehe <a href="/de/guide/multi-nas/">mehrere NAS-Geräte</a>.</div></details>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap">
+    <h2>Weiter: der Startbildschirm</h2>
+    <p class="lead" style="margin:0 auto 24px">Was jede Karte zeigt und wie du das Dashboard zu deinem machst.</p>
+    <p><a class="btn" href="/de/guide/home/">Der Startbildschirm &rarr;</a> &nbsp; <a class="btn ghost" href="/de/guide/">Zurück zur Anleitung</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks"><a href="/de/">Start</a><a href="/de/guide/">Anleitung</a><a href="/de/guide/getting-started/">Erste Schritte</a><a href="/de/compatible-nas/">Kompatibilität</a><a href="/de/best-synology-nas-app/">Warum wechseln</a><a href="/de/synology-app-for-iphone/">iPhone & iPad</a><a href="/de/synology-app-for-android/">Android</a><a href="/de/synology-app-for-mac-windows/">Mac & Windows</a><a href="/de/ds-finder-alternative/">vs. DS finder</a><a href="/de/help/">Hilfe</a><a href="/de/privacy/">Datenschutz</a><a href="https://play.google.com/store/apps/details?id=com.synomanager">Google Play</a><a href="https://apps.apple.com/us/app/syno-manager/id6763011668">App Store</a><a href="https://apps.microsoft.com/detail/9P19N2B54N1R">Microsoft Store</a><a href="https://github.com/MiyaraHub/synomanager-public/issues">Fehler melden</a><a href="https://miyarahub.com">MiyaraHub</a></div>
+    <p class="legal">&copy; MiyaraHub Technologies LLC. Syno Manager ist eine unabhängige App und steht in keiner Verbindung zu Synology Inc., wird weder von Synology Inc. unterstützt noch gesponsert. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station und QuickConnect sind Marken von Synology Inc.</p>
+  </div>
+</footer>
+
+<script defer src="/assets/search.js"></script>
+<script defer src="/assets/lightbox.js"></script>
+<script src="/assets/lang.js" defer></script>
+</body>
+</html>

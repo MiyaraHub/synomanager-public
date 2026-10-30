@@ -71,46 +71,18 @@ DSM 6 is not supported - it uses different API versions and authentication behav
 - **Manual:** [synomanager.com/guide](https://synomanager.com/guide/)
 - **Troubleshooting:** [synomanager.com/help](https://synomanager.com/help/)
 - **Discord:** [discord.gg/UmVtxE5fXN](https://discord.gg/UmVtxE5fXN)
-- **Microsoft Store:** [9P19N2B54N1R](https://apps.microsoft.com/detail/9P19N2B54N1R)
 - **Email:** [admin@miyarahub.com](mailto:admin@miyarahub.com)
 
 If the app made your NAS easier to live with, leave a review on the Play Store or App Store - it genuinely helps the project keep shipping updates.
-
----
-
-## The website
-
-`docs/` is the published site, served by GitHub Pages at [synomanager.com](https://synomanager.com).
-
-**Edit `content/`, never `docs/`.** Each file in `content/` is a page body with a small JSON header; `tools/build_site.py` wraps it in the shared navigation, footer, canonical URL, Open Graph tags and structured data, stamps every image with its real dimensions, and writes `docs/`.
-
-```
-tools/build_site.py            # rebuild docs/ from content/
-tools/build_site.py --check    # fail if docs/ is out of date
-tools/build_search_index.py    # rebuild the on-site search index
-tools/check_site.py            # links, images, dashes, SEO limits and leaks
-```
 
 ### Screenshots
 
 Every screenshot on the site is the real app running against a real Synology, not a mock-up. The pipeline is two steps and both are in the repo:
 
-```
-tools/capture.sh NAME          # pull a raw capture off a connected device into .raw/
-tools/build_screenshots.py     # blur, frame and write docs/screenshots/
-```
-
-`build_screenshots.py` holds the manifest, and its `SHOTS` list is where the **privacy pass** is written down: which regions of which capture are destroyed before framing, so a reader can audit what was removed rather than trust that something was. Raw captures live in `.raw/`, which git never sees.
-
-`tools/check_site.py` then greps the built HTML for the specific values the capture device really had - a public IP, a DDNS hostname, real names and addresses - because a blur only protects an image, and the same value can reach a page through prose or a meta description.
-
----
 
 <div align="center">
 
 <img src="docs/assets/miyarahub-logo.png" width="88" alt="MiyaraHub Technologies" />
-
-**A MiyaraHub Technologies app**
 
 <sub>&copy; MiyaraHub Technologies LLC. All rights reserved. Syno Manager is not affiliated with, endorsed by, or sponsored by Synology Inc. Synology, DSM, DiskStation, RackStation, Hyper Backup, Active Backup, Surveillance Station and QuickConnect are trademarks of Synology Inc.</sub>
 
